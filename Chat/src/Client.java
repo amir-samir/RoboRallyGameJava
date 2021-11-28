@@ -1,102 +1,130 @@
+
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client {
+
+
+public class Client implements Runnable {
+
     private Socket socket;
+    private String userName;
     private BufferedReader bufferedReader;
-    private BufferedWriter bufferedWriter;
-    Scanner scanner;
+    private PrintWriter bufferedWriter;
+    public Server server;
+    public ObservableList<String> chatMessages;
+    private ClientHandler clientHandler ;
+    private ServerSocket serverSocket;
+    Server server1 = new Server(serverSocket);
 
-    public Client(Socket socket) {
-        this.scanner = new Scanner(System.in);
+    /**
+     * A Constructor that builds a connection between the client and the server and asks the server if
+     * the username is not taken.
+     *
+     * @param userName                The input username from the user.
+     * @throws IOException            Throw this exception if the connection between server and client fails.
+     *
+     */
+    public Client(String userName) throws IOException {
+        socket = new Socket("localhost", 1234);
+        bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
 
-        try {
-            this.socket = socket;
-            this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        } catch (IOException var3) {
-            this.closeEverything(socket, this.bufferedReader, this.bufferedWriter);
+        //bufferedWriter.println(userName);
+        //String checkUsername = bufferedReader.readLine();
+
+
+        if (!server1.checkName(userName)) {
+            clientHandler.newUsername();
+
+        } else {
+            this.userName = userName;
+            chatMessages = FXCollections.observableArrayList();
+            bufferedWriter.println(userName);
+
         }
 
     }
 
-    public static void main(String[] args) {
-        try {
-            System.out.println("Enter your username for the group chat: ");
-            Socket socket = new Socket("localhost", 1234);
-            Client client = new Client(socket);
-            client.listenForMessage();
-            client.sendMessage();
-        } catch (Exception var3) {
-            var3.printStackTrace();
-            System.err.println("Dieser Client konnte nicht erstellt werden.");
-        }
+
+    /**
+     * Get the username.
+     */
+    public String getUserName() {
+
+        return userName;
 
     }
 
-    public void sendMessage() {
-        while(true) {
+    /**
+     * Sets the username.
+     * @param name The name from user.
+     */
+    public void setUserName(String name) {
+
+        this.userName = name;
+
+    }
+
+    /**
+     * A method that transfer the input to the Server.
+     * @param input The input from user.
+     */
+    public void printMessage(String input) {
+
+        bufferedWriter.println(input);
+
+    }
+
+    /**
+     * A method that receive and returns information from the Server.
+     * @throws IOException Throw this exception if the connection between server and client fails.
+     */
+    public String receiveFromServer() throws IOException {
+
+        return bufferedReader.readLine();
+
+    }
+
+    public void closeConnection() throws IOException {
+
+        socket.close();
+
+    }
+
+    /**
+     * This method is an overridden method which displays the input that is coming from the server in
+     * the Chat view.
+     */
+    @Override
+    public void run() {
+
+        while (true) {
             try {
-                if (this.socket.isConnected()) {
-                    String messageToSend = this.scanner.nextLine();
-                    if (messageToSend.equalsIgnoreCase("bye")) {
-                        this.bufferedWriter.write(messageToSend);
-                        this.bufferedWriter.newLine();
-                        this.bufferedWriter.flush();
-                        this.closeEverything(this.socket, this.bufferedReader, this.bufferedWriter);
-                        System.exit(0);
-                    }
+                String inputFromServer = bufferedReader.readLine(); // Data read from the Server.
 
-                    this.bufferedWriter.write(messageToSend);
-                    this.bufferedWriter.newLine();
-                    this.bufferedWriter.flush();
-                    continue;
+                if (inputFromServer == null) {
+                    break;
                 }
-            } catch (IOException var2) {
-                this.closeEverything(this.socket, this.bufferedReader, this.bufferedWriter);
-            }
 
-            return;
+                Platform.runLater(() -> {
+                    chatMessages.add(inputFromServer); // Adding the input to Chat window.
+                });
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+                break;
+
+            }
         }
-    }
-
-    public void listenForMessage() {
-        (new Thread(() -> {
-            while(Client.this.socket.isConnected()) {
-                try {
-                    String msgFromGroupChat = Client.this.bufferedReader.readLine();
-                    if (msgFromGroupChat != null) {
-                        System.out.println(msgFromGroupChat);
-                    }
-                } catch (IOException var3) {
-                    Client.this.closeEverything(Client.this.socket, Client.this.bufferedReader, Client.this.bufferedWriter);
-                }
-            }
-
-        })).start();
-    }
-
-    public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
-        try {
-            if (bufferedReader != null) {
-                bufferedReader.close();
-            }
-
-            if (bufferedWriter != null) {
-                bufferedWriter.close();
-            }
-
-            if (socket != null) {
-                socket.close();
-            }
-        } catch (IOException var5) {
-            var5.printStackTrace();
-        }
-
     }
 }

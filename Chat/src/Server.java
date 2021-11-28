@@ -1,74 +1,118 @@
-
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
-import java.util.Iterator;
+
+/**
+ * Diese Klasse stellt den Server dar, auf welchem der Chat und das Spiel ausgeführt werden.
+ * @author Luca, Dairen
+ *
+ */
 
 public class Server {
-    public HashMap<String, ClientHandler> users = new HashMap();
+
+    public HashMap<String, ClientHandler> users = new HashMap<String, ClientHandler>();
     private ServerSocket serverSocket;
+    public Game game;
+    private Client client;
+
 
     public Server(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
     }
+
+    /**
+     * Dies ist die Main-Methode. Sie instanziiert einen neuen Server und startet diesen.
+     * @param args Kommandozeilenparameter
+     */
 
     public static void main(String[] args) {
         try {
             ServerSocket serverSocket = new ServerSocket(1234);
             Server server = new Server(serverSocket);
             server.startServer();
-        } catch (Exception var3) {
-            var3.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
             System.err.println("Fehler. Der Server konnte nicht gestartet werden.");
         }
-
     }
 
+    /**
+     * Diese Methode sorgt dafür, dass private Nachrichten verschickt werden können.
+     * @param user Username des Empfängers der Nachricht
+     * @param message Die Nachricht, die versendet werden soll
+     */
     public void singleMessage(String user, String message) {
-        this.users.get(user).writer.println(message);
+        users.get(user).writer.println(message);
     }
 
+    /**
+     * Diese Methode verschickt eine Nachricht an alle aktiven Mitglieder des Chat-Raums.
+     * @param message Die Nachricht, die versendet werden soll
+     */
     public void messageForAllUsers(String message) {
-
-        for (ClientHandler clientHandler : this.users.values()) {
+        for (ClientHandler clientHandler : users.values()) {
             clientHandler.writer.println(message);
         }
-
     }
 
+    /**
+     * Diese Methode erstellt ein neues Spiel.
+     */
+    public void createGame(){
+        messageForAllUsers("A new Game was created");
+    }
 
+    /**
+     * Diese Methode fügt neue Mitglieder des Chat-Raums in die HashMap aller Mitglieder hinzu.
+     * @param clientHandler Der ClientHandler, der in die HashMap eingefügt werden soll.
+     * @return Gibt zurück, ob der ClientHandler in die HashMap eingefügt werden konnte.
+     */
     public boolean addClient(ClientHandler clientHandler) {
-        if (this.users.containsKey(clientHandler.username)) {
+        if (users.containsKey(clientHandler.username)) {
             return false;
         } else {
-            this.users.put(clientHandler.username, clientHandler);
+            users.put(clientHandler.username, clientHandler);
             return true;
         }
     }
 
+    /**
+     * Diese Methode prüft, ob ein Username schon in der Hashmap vorhanden ist.
+     * @param username Der Username, der überprüft werden soll
+     * @return Gibt zurück, ob der Username schon exisitiert
+     */
     public boolean checkName(String username) {
-        return !this.users.containsKey(username);
+        return !users.containsKey(username);
     }
 
+    /**
+     * Diese Methode startet den Server und baut die Verbindungen zu neuen Spielern auf.
+     * Hierfür werden neue Threads instanziiert, um mehrere Verbindungen gleichzeitig aufrechtzuerhalten.
+     */
     public void startServer() {
-        while(true) {
-            try {
-                if (!this.serverSocket.isClosed()) {
-                    Socket socket = this.serverSocket.accept();
-                    System.out.println("A new client has connected");
-                    ClientHandler clientHandler = new ClientHandler(socket, this);
-                    Thread thread = new Thread(clientHandler);
-                    thread.start();
-                    continue;
-                }
-            } catch (IOException var4) {
-                var4.printStackTrace();
+        try {
+            while (!serverSocket.isClosed()) {
+                Socket socket = serverSocket.accept();
+                System.out.println("A new client has connected");
+                ClientHandler clientHandler = new ClientHandler(socket, this);
+                Thread thread = new Thread(clientHandler);
+                thread.start();
             }
-
-            return;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
+    /**
+     * Diese Methode gibt, sofern es existiert, das Spiel zurück. Für den Fall, dass noch kein Spiel erstellt wurde, wird nichts zurückgegeben.
+     * @return Das aktive Spiel oder null (wenn kein Spiel existiert)
+     */
+    public void getGame(){
+        messageForAllUsers("There is No Game implemented yet");
+    }
+
+    public void closeGame(){
+        messageForAllUsers("Game End");
+    }
 }
