@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -54,7 +55,8 @@ public class FirstViewModel {
 
         //Close if Bye
         stage.setOnCloseRequest(e -> {
-            clientHandler.writer.equals("bye");
+            Platform.exit();
+            //clientHandler.writer.equals("bye");
             stage.close();
             System.exit(0);
         });
