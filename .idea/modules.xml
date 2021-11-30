@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/innige-irrwege-hp.iml" filepath="$PROJECT_DIR$/.idea/innige-irrwege-hp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chat/Chat.iml" filepath="$PROJECT_DIR$/Chat/Chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/innige-irrwege-hp2.iml" filepath="$PROJECT_DIR$/.idea/innige-irrwege-hp2.iml" />
     </modules>
   </component>
 </project>
