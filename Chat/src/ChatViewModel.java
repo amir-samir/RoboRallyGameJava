@@ -3,6 +3,11 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ChatViewModel {
     // Properties corresponding to ChatView
@@ -12,9 +17,7 @@ public class ChatViewModel {
     private BooleanProperty exitGame = new SimpleBooleanProperty();
     private BooleanProperty joinGame = new SimpleBooleanProperty();
     private BooleanProperty createRoomGame = new SimpleBooleanProperty();
-    private BooleanProperty leftCard = new SimpleBooleanProperty();
-    private BooleanProperty rightCard = new SimpleBooleanProperty();
-    // Setting up the Client
+
     private Thread clientThread;
     private Client client;
     private ClientHandler clientHandler;
@@ -106,24 +109,13 @@ public class ChatViewModel {
      * Retrieves the current property of the leftCard
      * @return Boolean Property of the leftCard
      */
-    public BooleanProperty leftCardProperty() {
-        return leftCard;
-    }
-    /**
-     * Retrieves the current property of the rightCard
-     * @return Boolean Property of the rightCard
-     */
-    public BooleanProperty rightCardProperty() {
-        return rightCard;
-    }
-    /**
-     * Fetch the current message from ChatView, pass it on to the server and
-     */
+
     public final void joiningGame() {
         client.printMessage("/JOIN");
     }
-    public final void createRoomGame() {
+    public final void createRoomGame()  {
         client.printMessage("/CREATE");
+
     }
     /**
      * Fetch the current message from ChatView, pass it on to the server and

@@ -2,7 +2,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 
 public class ChatView {
@@ -35,7 +38,11 @@ public class ChatView {
 
     @FXML
     void initialize() {
-
+        writeField.setOnKeyPressed( event -> {
+            if( event.getCode() == KeyCode.ENTER ) {
+                viewModel.sendMessage();
+            }
+        } );
         writeField.textProperty().bindBidirectional(viewModel.messageProperty());
         sendButton.defaultButtonProperty().bindBidirectional(viewModel.sendButtonProperty());
         joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
@@ -59,7 +66,7 @@ public class ChatView {
     public void exitGame() {
         viewModel.exitingGame();
     }
-    public void createRoomGame() {
+    public void createRoomGame() throws IOException {
         viewModel.createRoomGame();
     }
 
