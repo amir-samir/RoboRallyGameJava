@@ -47,7 +47,9 @@ public class FirstViewModel {
 
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatView.fxml"));
-        stage.setScene(new Scene(loader.load()));
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        scene.getStylesheets().add("SignInStyle.css");
 
         ChatView chatView = loader.getController();
         chatView.setClient(client);

@@ -5,6 +5,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
+
 
 public class ChatView {
 
@@ -64,7 +66,7 @@ public class ChatView {
     public void exitGame() {
         viewModel.exitingGame();
     }
-    public void createRoomGame() {
+    public void createRoomGame() throws IOException {
         viewModel.createRoomGame();
     }
 
