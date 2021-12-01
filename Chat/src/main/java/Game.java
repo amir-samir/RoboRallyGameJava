@@ -1,3 +1,4 @@
+package main.java;
 
 /**
  * In dieser Klasse werden die Spielregeln und die logischen Abläufe behandelt
