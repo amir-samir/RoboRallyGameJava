@@ -2,14 +2,14 @@ package Messages;
 
 public class MessageBody {
 
-    String[] content;
+    Object[] content;
 
-    public MessageBody(String[] inhalt){
+    public MessageBody(Object[] inhalt){
         super();
         content = inhalt;
     }
 
-    public String[] getContent() {
+    public Object[] getContent() {
         return content;
     }
 }

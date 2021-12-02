@@ -20,9 +20,9 @@ public class jsonTest {
     public void testZ(){
 
         Message message = new HelloClient("Version 0.2");
-        String[] inhalt = message.getMessageBody().getContent();
+        Object[] inhalt = message.getMessageBody().getContent();
 
-        String string = inhalt[0];
+        Object string = (Object) inhalt[0];
 
         assertEquals(string, "Version 0.2");
 
