@@ -1,4 +1,3 @@
-
 /**
  * @extends Card
  * description: die Klasse initialisiert alle Gamer Eigenschaften
