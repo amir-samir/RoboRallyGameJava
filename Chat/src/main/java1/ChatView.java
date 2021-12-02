@@ -1,11 +1,16 @@
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 
 public class ChatView {
@@ -34,6 +39,7 @@ public class ChatView {
     private ListView<String> chatBox;
 
     private final ChatViewModel viewModel = new ChatViewModel();
+
 
 
     @FXML
@@ -75,6 +81,25 @@ public class ChatView {
 
         viewModel.sendMessage();
 
+    }
+    public void chooseRoboter() {
+        // Parent loader1;
+
+        try {
+            //Passing the current stage to the ViewModel
+            Stage stageRobot = new Stage();
+            //FXMLLoader loader1 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseRobotView.fxml")));
+            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("ChooseRobotView.fxml"));
+            Scene scene = new Scene(loader1.load());
+            stageRobot.setScene(scene);
+            ChooseRobotView chooseRobotView = loader1.getController();
+
+            stageRobot.show();
+
+            //Client-Constructor throws DuplicateNameException if name already taken
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
