@@ -30,8 +30,24 @@ public class ChooseRobotViewModel {
         return hammerBot;
     }
 
+    private Thread clientThread;
+    private Client client;
 
 
+    public void setClient(Client client) {
+        this.client = client;
+        //this.clientThread = new Thread(client);
+        //clientThread.start();
+    }
+
+    public void sendChooesenBot(String bot) {
+        client.printMessage(bot);
+    }
+
+    public Client getClient() {
+
+        return client;
+    }
 }
 
 

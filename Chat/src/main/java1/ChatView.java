@@ -93,7 +93,8 @@ public class ChatView {
             Scene scene = new Scene(loader1.load());
             stageRobot.setScene(scene);
             ChooseRobotView chooseRobotView = loader1.getController();
-
+            Client client = viewModel.getClient();
+            chooseRobotView.setClient(client);
             stageRobot.show();
 
             //Client-Constructor throws DuplicateNameException if name already taken

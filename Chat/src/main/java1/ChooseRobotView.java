@@ -17,7 +17,6 @@ public class ChooseRobotView {
     private Button hammerBot;
 
     private Thread clientThread;
-    private Client client;
 
     private final ChooseRobotViewModel chooseRobotViewModel = new ChooseRobotViewModel();
     @FXML
@@ -31,16 +30,19 @@ public class ChooseRobotView {
         hammerBot.defaultButtonProperty().bindBidirectional(chooseRobotViewModel.getHammerBot());
 
     }
+
     public void setClient(Client client) {
-        this.client = client;
-        this.clientThread = new Thread(client);
-        clientThread.start();
+
+        chooseRobotViewModel.setClient(client);
+        //chatBox.setItems(viewModel.getClient().chatMessages);
+
     }
 
     public void OnRobotButton(){
+        String bot = "No bot";
         if (!chooseRobotViewModel.getHammerBot().getValue()) {
-            String bot = hammerBot.getText();
-           // client.printMessage();
+            bot = hammerBot.getText();
+            chooseRobotViewModel.sendChooesenBot("I choose " + bot);
 
         }
 

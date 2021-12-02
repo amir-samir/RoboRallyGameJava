@@ -23,11 +23,6 @@ public class ChatViewModel {
     private ClientHandler clientHandler;
 
 
-
-
-
-
-
     /**
      * Sets and runs the current client, called from the View-Class
      * param client The successfully constructed Client from Welcome-View
@@ -37,6 +32,10 @@ public class ChatViewModel {
         this.client = client;
         this.clientThread = new Thread(client);
         clientThread.start();
+    }
+
+    public void chooseBotClient() {
+
     }
 
     /**
@@ -154,4 +153,6 @@ public class ChatViewModel {
             this.setMessage("");
         }
     }
+
+
 }
