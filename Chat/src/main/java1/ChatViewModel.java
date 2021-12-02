@@ -23,6 +23,11 @@ public class ChatViewModel {
     private ClientHandler clientHandler;
 
 
+
+
+
+
+
     /**
      * Sets and runs the current client, called from the View-Class
      * param client The successfully constructed Client from Welcome-View

@@ -8,22 +8,22 @@
 
 <AnchorPane fx:id="rootSignIn" prefHeight="500.0" prefWidth="676.0" styleClass="signIn" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstView">
     <children>
-        <Label alignment="CENTER" layoutX="14.0" layoutY="175.0" prefHeight="21.0" prefWidth="199.0" text="Please enter your User Name" textAlignment="CENTER" textFill="#e00909" />
-        <TextField fx:id="insertUsername" layoutX="20.0" layoutY="205.0" onKeyPressed="#submitUserName" prefHeight="31.0" prefWidth="186.0" text="Enter User Name here" />
-        <Button fx:id="signInButton" layoutX="16.0" layoutY="242.0" mnemonicParsing="false" onAction="#submitUserName" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: #8bb4f7;" text="Sign In" textFill="#262c26">
+        <Label alignment="CENTER" layoutX="239.0" layoutY="143.0" prefHeight="21.0" prefWidth="199.0" text="Please enter your User Name" textAlignment="CENTER" textFill="#e00909" />
+        <TextField fx:id="insertUsername" layoutX="245.0" layoutY="171.0" onKeyPressed="#submitUserName" prefHeight="31.0" prefWidth="186.0" text="Enter User Name here" />
+        <Button fx:id="signInButton" layoutX="242.0" layoutY="206.0" mnemonicParsing="false" onAction="#submitUserName" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: #8bb4f7;" text="Sign In" textFill="#262c26">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font></Button>
         <Label fx:id="nameExists" alignment="CENTER" layoutX="213.0" layoutY="263.0" prefHeight="35.0" textAlignment="CENTER" textFill="#0e24cd" visible="false" />
         <Line endX="150.0" layoutX="350.0" layoutY="91.0" startX="-159.0" />
-        <Label alignment="CENTER" layoutX="8.0" layoutY="398.0" prefHeight="35.0" prefWidth="239.0" text="Robo Rally Game by: " textAlignment="CENTER" textFill="#08c0ee">
+        <Label alignment="CENTER" layoutX="226.0" layoutY="269.0" prefHeight="35.0" prefWidth="239.0" text="Robo Rally Game by: " textAlignment="CENTER" textFill="#08c0ee">
             <font>
-                <Font name="Comic Sans MS Bold" size="20.0" />
+                <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="3.0" layoutY="433.0" prefHeight="35.0" prefWidth="411.0" text="Amir, Dairen, Yilu, Chen, Mataeo, Luca" textFill="#e40679">
+        <Label alignment="CENTER" layoutX="140.0" layoutY="304.0" prefHeight="35.0" prefWidth="411.0" text="Amir, Dairen, Yilu, Chen, Mataeo, Luca" textFill="#e40679">
             <font>
-                <Font name="Comic Sans MS Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0" />
             </font>
         </Label>
       <ImageView cache="true" cacheHint="QUALITY" fitHeight="87.0" fitWidth="321.0" layoutX="178.0" layoutY="1.0" pickOnBounds="true">

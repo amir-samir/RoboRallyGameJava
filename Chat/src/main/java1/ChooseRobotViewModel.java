@@ -1,4 +1,5 @@
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.Property;
 import javafx.beans.property.SimpleBooleanProperty;
 
 public class ChooseRobotViewModel {
@@ -25,9 +26,12 @@ public class ChooseRobotViewModel {
     public BooleanProperty getTwinkyBot(){
         return twinkyBot;
     }
-    public BooleanProperty getHammerBot(){
+    public Property<Boolean> getHammerBot(){
         return hammerBot;
     }
 
 
+
 }
+
+
