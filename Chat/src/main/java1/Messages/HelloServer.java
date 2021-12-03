@@ -10,7 +10,7 @@ public class HelloServer extends Message{
         inhalt[2] = isAI;
         inhalt[3] = protocol;
 
-        messageType = "Hello Server";
+        messageType = "HelloServer";
         messageBody = new MessageBody(inhalt);
     }
 }
