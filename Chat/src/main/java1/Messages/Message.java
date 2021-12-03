@@ -2,7 +2,7 @@ package Messages;
 
 public class Message {
 
-    String messageType = null;
+    String messageType;
     MessageBody messageBody = null;
 
     public String getMessageType(){
