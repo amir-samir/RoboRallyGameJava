@@ -1,6 +1,5 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -10,7 +9,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 
 public class ChatView {
@@ -94,7 +92,7 @@ public class ChatView {
             stageRobot.setScene(scene);
             ChooseRobotView chooseRobotView = loader1.getController();
             Client client = viewModel.getClient();
-            chooseRobotView.setClient(client);
+            chooseRobotView.setClientAndStage(client, stageRobot);
             stageRobot.show();
 
             //Client-Constructor throws DuplicateNameException if name already taken

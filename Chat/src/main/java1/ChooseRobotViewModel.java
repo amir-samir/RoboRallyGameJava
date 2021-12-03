@@ -1,6 +1,7 @@
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.stage.Stage;
 
 public class ChooseRobotViewModel {
 
@@ -30,18 +31,23 @@ public class ChooseRobotViewModel {
         return hammerBot;
     }
 
-    private Thread clientThread;
     private Client client;
+    private Stage stage;
 
 
-    public void setClient(Client client) {
+    public void setClientandStage(Client client, Stage stage) {
         this.client = client;
+        this.stage = stage;
         //this.clientThread = new Thread(client);
         //clientThread.start();
     }
 
     public void sendChooesenBot(String bot) {
         client.printMessage(bot);
+    }
+
+    public void closeStage(){
+        stage.close();
     }
 
     public Client getClient() {

@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 
 public class ChooseRobotView {
@@ -16,7 +17,6 @@ public class ChooseRobotView {
     @FXML
     private Button hammerBot;
 
-    private Thread clientThread;
 
     private final ChooseRobotViewModel chooseRobotViewModel = new ChooseRobotViewModel();
     @FXML
@@ -31,20 +31,49 @@ public class ChooseRobotView {
 
     }
 
-    public void setClient(Client client) {
+    public void setClientAndStage(Client client, Stage stage) {
 
-        chooseRobotViewModel.setClient(client);
-        //chatBox.setItems(viewModel.getClient().chatMessages);
+        chooseRobotViewModel.setClientandStage(client, stage);
 
     }
 
-    public void OnRobotButton(){
-        String bot = "No bot";
-        if (!chooseRobotViewModel.getHammerBot().getValue()) {
-            bot = hammerBot.getText();
+    public void OnHulkBot(){
+        String bot = hulkBot.getText();
+        chooseRobotViewModel.sendChooesenBot("I choose " + bot);
+        chooseRobotViewModel.closeStage();
+
+    }
+
+    public void OnHammerBot(){
+            String bot = hammerBot.getText();
             chooseRobotViewModel.sendChooesenBot("I choose " + bot);
+            chooseRobotViewModel.closeStage();
 
         }
+
+    public void OnSmashBot(){
+        String bot = smashBot.getText();
+        chooseRobotViewModel.sendChooesenBot("I choose " + bot);
+        chooseRobotViewModel.closeStage();
+
+    }
+
+    public void OnSpinBot(){
+        String bot = spinBot.getText();
+        chooseRobotViewModel.sendChooesenBot("I choose " + bot);
+        chooseRobotViewModel.closeStage();
+
+    }
+    public void OnTwinkyBot(){
+        String bot = twinkyBot.getText();
+        chooseRobotViewModel.sendChooesenBot("I choose " + bot);
+        chooseRobotViewModel.closeStage();
+
+    }
+    public void OnZoomBot(){
+        String bot = zoomBot.getText();
+        chooseRobotViewModel.sendChooesenBot("I choose " + bot);
+        chooseRobotViewModel.closeStage();
 
     }
 
