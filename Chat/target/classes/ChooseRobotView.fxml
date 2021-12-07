@@ -6,7 +6,7 @@
 
 <AnchorPane cacheShape="false" centerShape="false" prefHeight="624.0" prefWidth="816.0" scaleShape="false" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseRobotView">
    <children>
-      <Button fx:id="hammerBot" layoutX="53.0" layoutY="45.0" mnemonicParsing="false" prefHeight="205.0" prefWidth="176.0" />
+      <Button fx:id="hammerBot" layoutX="53.0" layoutY="45.0" mnemonicParsing="false" onAction="#OnRobotButton" prefHeight="205.0" prefWidth="176.0" text="HammerBot" />
       <ImageView fitHeight="191.0" fitWidth="163.0" layoutX="61.0" layoutY="51.0" pickOnBounds="true">
          <image>
             <Image url="@assets/HammerBoot.png" />

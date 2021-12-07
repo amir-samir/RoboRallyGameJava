@@ -1,8 +1,6 @@
 package JSON;
 
-import Messages.HelloClient;
-import Messages.Message;
-import Messages.MessageBody;
+import Messages.*;
 import org.hamcrest.Condition;
 import org.junit.Test;
 
@@ -26,5 +24,17 @@ public class jsonTest {
 
         assertEquals(string, "Version 0.2");
 
+    }
+
+    @Test
+    public void GsonTest(){
+        Adopter a = new Adopter();
+        String string = "{ \"messageType\": \"Welcome\", \"messageBody\": { \"clientID\": 42}}";
+        Welcome m = new Welcome(42);
+
+        Message ergebnis = a.jsonToJavaBean(string);
+
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
     }
 }
