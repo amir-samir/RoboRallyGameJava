@@ -33,7 +33,7 @@ public class Client implements Runnable {
      *
      */
     public Client(String userName) throws IOException {
-        socket = new Socket("localhost", 1234);
+        socket = new Socket("localhost", 1523);
         bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
 

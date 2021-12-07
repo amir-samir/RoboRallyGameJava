@@ -6,29 +6,49 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootSignIn" prefHeight="500.0" prefWidth="676.0" styleClass="signIn" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstView">
+<AnchorPane fx:id="rootSignIn" prefHeight="769.0" prefWidth="676.0" styleClass="signIn" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstView">
     <children>
-        <Label alignment="CENTER" layoutX="239.0" layoutY="143.0" prefHeight="21.0" prefWidth="199.0" text="Please enter your User Name" textAlignment="CENTER" textFill="#e00909" />
-        <TextField fx:id="insertUsername" layoutX="245.0" layoutY="171.0" onKeyPressed="#submitUserName" prefHeight="31.0" prefWidth="186.0" text="Enter User Name here" />
-        <Button fx:id="signInButton" layoutX="242.0" layoutY="206.0" mnemonicParsing="false" onAction="#submitUserName" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: #8bb4f7;" text="Sign In" textFill="#262c26">
+        <Label alignment="CENTER" layoutX="177.0" layoutY="101.0" prefHeight="21.0" prefWidth="321.0" text="Please enter your User Name" textAlignment="CENTER" textFill="#e00909" />
+        <TextField fx:id="insertUsername" layoutX="245.0" layoutY="122.0" onKeyPressed="#submitUserName" prefHeight="31.0" prefWidth="186.0" text="Enter User Name here" />
+        <Button fx:id="signInButton" layoutX="242.0" layoutY="718.0" mnemonicParsing="false" onAction="#submitUserName" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: #8bb4f7;" text="Sign In" textFill="#262c26">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font></Button>
         <Label fx:id="nameExists" alignment="CENTER" layoutX="213.0" layoutY="263.0" prefHeight="35.0" textAlignment="CENTER" textFill="#0e24cd" visible="false" />
         <Line endX="150.0" layoutX="350.0" layoutY="91.0" startX="-159.0" />
-        <Label alignment="CENTER" layoutX="226.0" layoutY="269.0" prefHeight="35.0" prefWidth="239.0" text="Robo Rally Game by: " textAlignment="CENTER" textFill="#08c0ee">
-            <font>
-                <Font name="Arial Bold" size="20.0" />
-            </font>
-        </Label>
-        <Label alignment="CENTER" layoutX="140.0" layoutY="304.0" prefHeight="35.0" prefWidth="411.0" text="Amir, Dairen, Yilu, Chen, Mataeo, Luca" textFill="#e40679">
-            <font>
-                <Font name="Arial Bold" size="18.0" />
-            </font>
-        </Label>
-      <ImageView cache="true" cacheHint="QUALITY" fitHeight="87.0" fitWidth="321.0" layoutX="178.0" layoutY="1.0" pickOnBounds="true">
+      <ImageView fx:id="roboRallyImageView" cache="true" cacheHint="QUALITY" fitHeight="87.0" fitWidth="321.0" layoutX="178.0" layoutY="1.0" pickOnBounds="true">
          <image>
             <Image url="@assets/Logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="twinkyImageView" fitHeight="139.0" fitWidth="134.0" layoutX="-134.0" layoutY="138.0" onMouseClicked="#pressFoto" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/twonkyMovegif.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="smashBotImageView" fitHeight="93.0" fitWidth="123.0" layoutX="-123.0" layoutY="234.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@assets/smashbotMove1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hulkBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-148.0" layoutY="307.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/hulkMove1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="zoomBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-127.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/zoombotgif.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="spinBotImageView" fitHeight="93.0" fitWidth="131.0" layoutX="-112.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/spinbotMove1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hammerBotImageView" fitHeight="117.0" fitWidth="134.0" layoutX="-101.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/hammerMove1.gif" />
          </image>
       </ImageView>
     </children>
