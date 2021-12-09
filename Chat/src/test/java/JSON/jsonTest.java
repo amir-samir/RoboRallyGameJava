@@ -4,6 +4,10 @@ import Messages.*;
 import org.hamcrest.Condition;
 import org.junit.Test;
 
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Map;
+
 import static junit.framework.Assert.assertEquals;
 
 
@@ -28,11 +32,11 @@ public class jsonTest {
 
     @Test
     public void GsonTest(){
-        Adopter a = new Adopter();
         String string = "{ \"messageType\": \"Welcome\", \"messageBody\": { \"clientID\": 42}}";
         Welcome m = new Welcome(42);
 
-        Message ergebnis = a.jsonToJavaBean(string);
+        Message ergebnis = Adopter.getMessage(string);
+
 
         assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
         assertEquals(ergebnis.getMessageType(), m.getMessageType());
