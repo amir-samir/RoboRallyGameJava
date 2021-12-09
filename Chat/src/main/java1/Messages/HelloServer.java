@@ -2,7 +2,7 @@ package Messages;
 
 public class HelloServer extends Message{
 
-    HelloServer(String group, boolean isAI, String protocol){
+   public HelloServer(String group, boolean isAI, String protocol){
         super();
 
         Object[] inhalt = new Object[3];

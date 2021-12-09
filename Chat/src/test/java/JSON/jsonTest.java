@@ -26,15 +26,63 @@ public class jsonTest {
 
     }
 
+
     @Test
-    public void GsonTest(){
-        Adopter a = new Adopter();
+    public void GsonTestWelcomeMessage(){
         String string = "{ \"messageType\": \"Welcome\", \"messageBody\": { \"clientID\": 42}}";
         Welcome m = new Welcome(42);
 
-        Message ergebnis = a.jsonToJavaBean(string);
+        Message ergebnis = Adopter.getMessage(string);
+
 
         assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
         assertEquals(ergebnis.getMessageType(), m.getMessageType());
     }
+    @Test
+    public void GsonTestHelloServer(){
+        String string = "{ \"messageType\": \"HelloServer\", \"messageBody\": { \"group\": \"TolleTrolle\", \"isAI\": false,\"protocol\":\"Version 0.1\" }}";
+       HelloServer m = new HelloServer("TolleTrolle",false,"Version 0.1");
+
+        Message ergebnis = Adopter.getMessage(string);
+
+
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+    }
+
+    @Test
+    public void GsonTestHalloClient(){
+        String string = "{ \"messageType\": \"HelloClient\", \"messageBody\": { \"protocol\":\"Version 0.1\" }}";
+        HelloClient m = new HelloClient("Version 0.1");
+
+        Message ergebnis = Adopter.getMessage(string);
+
+
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+    }
+
+    @Test
+    public void GsonTestAlive(){
+        String string = "{ \"messageType\": \"Alive\", \"messageBody\": { }}";
+        Alive m = new Alive();
+
+        Message ergebnis = Adopter.getMessage(string);
+
+
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+    }
+
+    @Test
+    public void GsonTestPlayerValues(){
+        String string = "{ \"messageType\": \"PlayerValues\", \"messageBody\": { \"clientID\": 42,  \"figure\": 5 }}";
+        PlayerValues m = new PlayerValues("Nr. 5",5);
+        Message ergebnis = Adopter.getMessage(string);
+
+
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+    }
+
 }

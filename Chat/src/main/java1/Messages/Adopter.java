@@ -1,5 +1,9 @@
 package Messages;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.util.Map;
 
 public class Adopter {
 
@@ -26,6 +30,33 @@ public class Adopter {
         Message message = gson.fromJson(json, Message.class);
         return message;
     }
+
+    public static Message getMessage(String json) {
+        Gson gson = new Gson();
+        Map map = gson.fromJson(json, Map.class);
+        Message message = new Message();
+        try {
+            String messageType = map.get("messageType").toString();
+            Map messageBody = (Map) map.get("messageBody");
+            Object[] content = new Object[messageBody.size()];
+            int i = 0;
+            for (Object value : messageBody.values()) {
+                    content[i] = value;
+                i++;
+            }
+            MessageBody mbody = new MessageBody(content);
+            message.setMessageBody(mbody);
+            message.setMessageType(messageType);
+            return message;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
 
     /**
      *
