@@ -84,5 +84,32 @@ public class jsonTest {
         assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
         assertEquals(ergebnis.getMessageType(), m.getMessageType());
     }
+    @Test
+    public void GsonTestSelectMap(){
+        String string = "{\n" +
+                "\"messageType\": \"SelectMap\",\n" +
+                "\"messageBody\": {\n" +
+                "\"availableMaps\": [\"DizzyHighway\"]\n" +
+                "}\n" +
+                "}";
+        String[] map = new String[1];
+        map[0] = "DizzyHighway";
+        SelectMap m = new SelectMap(map);
+        Message ergebnis = Adopter.getMessage(string);
+
+
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+    }
+
+    @Test
+    public void GsonToJsonSelectMap(){
+        String[] map = new String[1];
+        map[0] = "DizzyHighway";
+        SelectMap m = new SelectMap(map);
+        String ergebnis = Adopter.javabeanToJson(m);
+        System.out.println(ergebnis);
+
+    }
 
 }
