@@ -5,11 +5,18 @@ public class MessageBody {
     Object[] content;
     Object[] keys;
 
-    public MessageBody(Object[] inhalt, Object[] inhaltKeys){
+    public MessageBody(Object[] inhalt){
         super();
         content = inhalt;
-        keys = inhaltKeys;
     }
+
+    public void setKeys(Object[] keys) {
+        this.keys = keys;
+    }
+    public Object[] getKeys() {
+        return keys;
+    }
+
 
     public Object[] getContent() {
         return content;

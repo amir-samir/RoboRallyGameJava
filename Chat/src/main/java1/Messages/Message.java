@@ -17,6 +17,7 @@ public class Message {
         this.messageBody = messageBody;
     }
 
+
     public void setMessageType(String messageType) {
         this.messageType = messageType;
     }

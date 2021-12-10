@@ -4,6 +4,8 @@ import Messages.*;
 import org.hamcrest.Condition;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static junit.framework.Assert.assertEquals;
 
 
@@ -98,18 +100,26 @@ public class jsonTest {
         Message ergebnis = Adopter.getMessage(string);
 
 
-        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
-        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+        System.out.println(Arrays.toString(ergebnis.getMessageBody().getContent()));
+        Object[] keys = new Object[1];
+        keys[0] = "availableMaps";
+        ergebnis.getMessageBody().setKeys(keys);
+        String ergebnis2 = Adopter.javabeanToJson(ergebnis);
+        System.out.println(ergebnis2);
+//        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+//        assertEquals(ergebnis.getMessageType(), m.getMessageType());
     }
 
     @Test
     public void GsonToJsonSelectMap(){
         String[] map = new String[1];
         map[0] = "DizzyHighway";
-        SelectMap m = new SelectMap(map);
+        PlayerValues m = new PlayerValues("Nr. 5",5);
+        Object[] keys = new Object[2];
+        keys[0] = "clientID";
+        keys[1] = "figure";
+        m.getMessageBody().setKeys(keys);
         String ergebnis = Adopter.javabeanToJson(m);
         System.out.println(ergebnis);
-
     }
-
 }
