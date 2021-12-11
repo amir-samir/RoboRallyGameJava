@@ -34,6 +34,10 @@ public class ChatViewModel {
         clientThread.start();
     }
 
+    public void chooseBotClient() {
+
+    }
+
     /**
      * Get the current client. Accessed by the ChatView-Class to append incoming messages
      * @return The current client-object
@@ -149,4 +153,6 @@ public class ChatViewModel {
             this.setMessage("");
         }
     }
+
+
 }

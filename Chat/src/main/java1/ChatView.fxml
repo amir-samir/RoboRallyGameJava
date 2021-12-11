@@ -29,7 +29,7 @@
             </font>
         </Button>
         <Button fx:id="joinGame" layoutX="476.0" layoutY="68.0" mnemonicParsing="false" onAction="#joinGame" prefHeight="45.0" prefWidth="172.0" text="Join Game" />
-        <Button fx:id="createRoomGame" layoutX="476.0" layoutY="14.0" mnemonicParsing="false" onAction="#createRoomGame" prefHeight="45.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Create Game">
+        <Button fx:id="createRoomGame" layoutX="476.0" layoutY="14.0" mnemonicParsing="false" onAction="#chooseRoboter" prefHeight="45.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Create Game">
             <font>
                 <Font name="System Bold" size="19.0" />
             </font>

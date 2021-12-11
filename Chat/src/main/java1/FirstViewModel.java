@@ -8,10 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.net.Socket;
 
 public class FirstViewModel {
+
+
 
     @FXML
     private ClientHandler clientHandler;
