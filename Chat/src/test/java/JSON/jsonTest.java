@@ -139,7 +139,6 @@ public class jsonTest {
     public void GsonToJsonSelectMap2(){
         String[] map = new String[1];
         map[0] = "DizzyHighway";
-
         String[] keys = new String[1];
         keys[0] = "availableMaps";
 
@@ -148,11 +147,9 @@ public class jsonTest {
 
         String expected = "{\"messageType\":\"SelectMap\",\"messageBody\":{\"availableMaps\":[\"DizzyHighway\"]}}";
         System.out.println("Erwartet: " + expected);
-
         String ergebnis = Adopter.javabeanToJson(toParse);
         System.out.println("Ergebnis: " + ergebnis);
 
         assertEquals(expected, ergebnis);
-
     }
 }
