@@ -1,3 +1,7 @@
+import Messages.Adopter;
+import Messages.HelloServer;
+import Messages.Message;
+import Messages.SendChat;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,21 +12,20 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
-
 
 
 public class Client implements Runnable {
 
-    private Socket socket;
+    private final Socket SOCKET;
+    private final String GROUP = "Innige Irrwege";
+    private boolean isAi;
+    private int ID;
+
     private String userName;
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
-    public Server server;
     public ObservableList<String> chatMessages;
-    private ClientHandler clientHandler ;
-    private ServerSocket serverSocket;
-    Server server1 = new Server(serverSocket);
+    public String protocol;
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -33,54 +36,44 @@ public class Client implements Runnable {
      *
      */
     public Client(String userName) throws IOException {
-        socket = new Socket("localhost", 1523);
-        bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
-
-        //bufferedWriter.println(userName);
-        //String checkUsername = bufferedReader.readLine();
-
-
-        if (!server1.checkName(userName)) {
-            clientHandler.newUsername();
-
-        } else {
-            this.userName = userName;
-            chatMessages = FXCollections.observableArrayList();
-            bufferedWriter.println(userName);
-
-        }
+        SOCKET = new Socket("localhost", 1523);
+        bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
+        bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
+        this.userName = userName;
+        chatMessages = FXCollections.observableArrayList();
+        bufferedWriter.println(userName);
+        isAi = false;
+        //listenForMessages();
 
     }
 
-
-    /**
-     * Get the username.
-     */
-    public String getUserName() {
-
-        return userName;
-
-    }
-
-    /**
-     * Sets the username.
-     * @param name The name from user.
-     */
-    public void setUserName(String name) {
-
-        this.userName = name;
-
-    }
+   /* public void listenForMessages(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String message;
+                while (SOCKET.isConnected()){
+                    try {
+                        message = bufferedReader.readLine();
+                        System.out.println(message);
+                    } catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    } */
 
     /**
      * A method that transfer the input to the Server.
      * @param input The input from user.
      */
     public void printMessage(String input) {
-
-        bufferedWriter.println(input);
-
+        SendChat message = new SendChat(input, -1);
+        String[] key = {"message", "to"};
+        message.getMessageBody().setKeys(key);
+        String toSend = Adopter.javabeanToJson(message);
+        bufferedWriter.println(toSend);
     }
 
     /**
@@ -88,15 +81,11 @@ public class Client implements Runnable {
      * @throws IOException Throw this exception if the connection between server and client fails.
      */
     public String receiveFromServer() throws IOException {
-
         return bufferedReader.readLine();
-
     }
 
     public void closeConnection() throws IOException {
-
-        socket.close();
-
+        SOCKET.close();
     }
 
     /**
@@ -105,24 +94,45 @@ public class Client implements Runnable {
      */
     @Override
     public void run() {
-
         while (true) {
             try {
+                String toSend;
                 String inputFromServer = bufferedReader.readLine(); // Data read from the Server.
-
                 if (inputFromServer == null) {
                     break;
                 }
+                Message message = Adopter.getMessage(inputFromServer);
+                if(message.getMessageType().equals("HelloClient")){
+                    protocol = (String) message.getMessageBody().getContent()[0];
+                    toSend = "Das Protokoll wurde eingelesen. Verwendete Version: " + protocol;
+                    HelloServer output = new HelloServer(GROUP, isAi, protocol);
+                    String[] keys = {"group", "isAI", "protocol"};
+                    output.getMessageBody().setKeys(keys);
+                    String S = Adopter.javabeanToJson(output);
+                    bufferedWriter.println(S);
+                } else if (message.getMessageType().equals("Error1")) {
+                    toSend = (String) message.getMessageBody().getContent()[0];
+                } else if (message.getMessageType().equals("Welcome")){
+                    double wert = (double) message.getMessageBody().getContent()[0];
+                    ID = (int) wert;
+                    toSend = "Willkommen im Chat. Deine ID wurde erfolgreich generiert.";
+                } else if(message.getMessageType().equals("ReceivedChat")){
+                    int from = (int)(double)message.getMessageBody().getContent()[0];
+                    boolean isPrivate = (boolean) message.getMessageBody().getContent()[1];
+                    String nachricht = (String) message.getMessageBody().getContent()[2];
+                    toSend = from + ": " + nachricht;
+                } else {
+                    toSend = inputFromServer;
+                }
 
                 Platform.runLater(() -> {
-                    chatMessages.add(inputFromServer); // Adding the input to Chat window.
+                    if (toSend != null) {
+                        chatMessages.add(toSend); // Adding the input to Chat window.
+                    }
                 });
-
             } catch (IOException e) {
-
                 e.printStackTrace();
                 break;
-
             }
         }
     }

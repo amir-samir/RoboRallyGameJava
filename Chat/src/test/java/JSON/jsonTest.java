@@ -60,8 +60,21 @@ public class jsonTest {
         String ergebnis3 = (String) feld[2];
 
         assertEquals(erwartet1, ergebnis1);
+        System.out.println(erwartet1);
         assertEquals(erwartet2, ergebnis2);
         assertEquals(erwartet3, ergebnis3);
+        System.out.println(erwartet3);
+
+        String[] keys = {"group", "isAI", "protocol"};
+        m.getMessageBody().setKeys(keys);
+        System.out.println((String)m.getMessageBody().getContent()[0]);
+        System.out.println(Adopter.javabeanToJson(m));
+
+        HelloServer output = new HelloServer("II", false, "Version 0.2");
+        String[] key = {"group", "isAI", "protocol"};
+        output.getMessageBody().setKeys(key);
+        String S = Adopter.javabeanToJson(output);
+        System.out.println(S);
     }
 
     @Test
@@ -151,5 +164,35 @@ public class jsonTest {
         System.out.println("Ergebnis: " + ergebnis);
 
         assertEquals(expected, ergebnis);
+    }
+
+    @Test
+    public void helloClient(){
+        HelloClient message = new HelloClient("Version 0.2");
+        String[] key = new String[1];
+        key[0] = "protocol";
+
+        message.getMessageBody().setKeys(key);
+        String toSend = Adopter.javabeanToJson(message);
+
+        System.out.println(toSend);
+    }
+
+    @Test
+    public void error1(){
+        Error1 error = new Error1("Testfehler");
+        String[] key = {"error"};
+        error.getMessageBody().setKeys(key);
+        String ergebnis = Adopter.javabeanToJson(error);
+        System.out.println(ergebnis);
+    }
+
+    @Test
+    public void sendChat(){
+        SendChat message = new SendChat("Test", 2000);
+        String[] key = {"message", "to"};
+        message.getMessageBody().setKeys(key);
+        String toSend = Adopter.javabeanToJson(message);
+        System.out.println(toSend);
     }
 }

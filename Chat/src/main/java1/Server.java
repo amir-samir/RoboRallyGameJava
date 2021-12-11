@@ -1,3 +1,5 @@
+import Messages.*;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -11,8 +13,11 @@ import java.util.HashMap;
 
 public class Server {
 
-    public HashMap<String, ClientHandler> users = new HashMap<String, ClientHandler>();
+    public static int laufendeID = 2000;
+    public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
+    public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     private ServerSocket serverSocket;
+    public String protocol;
     public Game game;
     private Client client;
 
@@ -30,6 +35,7 @@ public class Server {
         try {
             ServerSocket serverSocket = new ServerSocket(1523);
             Server server = new Server(serverSocket);
+            server.protocol = "Version 0.2";
             server.startServer();
         } catch (Exception e){
             e.printStackTrace();
@@ -39,28 +45,32 @@ public class Server {
 
     /**
      * Diese Methode sorgt dafür, dass private Nachrichten verschickt werden können.
-     * @param user Username des Empfängers der Nachricht
+     * @param id Username des Empfängers der Nachricht
      * @param message Die Nachricht, die versendet werden soll
      */
-    public void singleMessage(String user, String message) {
-        users.get(user).writer.println(message);
+    public void singleMessage(int from, String message, int to) {
+        ReceivedChat toSend = new ReceivedChat(message, from, true);
+        String[] keys = {"message", "from", "to"};
+        toSend.getMessageBody().setKeys(keys);
+        String nachricht = Adopter.javabeanToJson(toSend);
+        ClientHandler c = users.get(to);
+        c.owriter.println(nachricht);
+        System.out.println(nachricht + " single");
     }
 
     /**
      * Diese Methode verschickt eine Nachricht an alle aktiven Mitglieder des Chat-Raums.
      * @param message Die Nachricht, die versendet werden soll
      */
-    public void messageForAllUsers(String message) {
-        for (ClientHandler clientHandler : users.values()) {
-            clientHandler.writer.println(message);
+    public void messageForAllUsers(String message, int from) {
+        ReceivedChat toSend = new ReceivedChat(message, from, false);
+        String[] keys = {"message", "from", "isPrivate"};
+        toSend.getMessageBody().setKeys(keys);
+        String nachricht = Adopter.javabeanToJson(toSend);
+        for(ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(nachricht);
         }
-    }
-
-    /**
-     * Diese Methode erstellt ein neues Spiel.
-     */
-    public void createGame(){
-        messageForAllUsers("A new Game was created");
+        System.out.println(nachricht + " all");
     }
 
     /**
@@ -69,12 +79,8 @@ public class Server {
      * @return Gibt zurück, ob der ClientHandler in die HashMap eingefügt werden konnte.
      */
     public boolean addClient(ClientHandler clientHandler) {
-        if (users.containsKey(clientHandler.username)) {
-            return false;
-        } else {
-            users.put(clientHandler.username, clientHandler);
-            return true;
-        }
+        users.put(clientHandler.ID, clientHandler);
+        return true;
     }
 
     /**
@@ -94,25 +100,37 @@ public class Server {
         try {
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
-                System.out.println("A new client has connected");
                 ClientHandler clientHandler = new ClientHandler(socket, this);
                 Thread thread = new Thread(clientHandler);
                 thread.start();
+                sendHelloClient(clientHandler);
+                System.out.println("A new client has connected");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Diese Methode gibt, sofern es existiert, das Spiel zurück. Für den Fall, dass noch kein Spiel erstellt wurde, wird nichts zurückgegeben.
-     * @return Das aktive Spiel oder null (wenn kein Spiel existiert)
-     */
-    public void getGame(){
-        messageForAllUsers("There is No Game implemented yet");
+    public void sendHelloClient(ClientHandler clientHandler){
+        HelloClient message = new HelloClient(this.protocol);
+        String[] key = {"protocol"};
+        message.getMessageBody().setKeys(key);
+        String toSend = Adopter.javabeanToJson(message);
+
+        try {
+            clientHandler.owriter.println(toSend);
+        } catch (Exception e){
+
+        }
     }
 
-    public void closeGame(){
-        messageForAllUsers("Game End");
+    public int generateID(){
+        int ID = this.laufendeID;
+        laufendeID++;
+        return ID;
+    }
+
+    public void print(String s){
+        System.out.println(s);
     }
 }

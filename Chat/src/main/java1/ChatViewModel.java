@@ -142,14 +142,11 @@ public class ChatViewModel {
     public final void sendMessage() {
         String currentMessage = getMessage();
         client.printMessage(currentMessage);
-
         // Close window and stop process if user enters "!BYE"
         if (currentMessage.equalsIgnoreCase("BYE")) {
             Platform.exit();
             System.exit(0);
-
         } else {
-
             this.setMessage("");
         }
     }
