@@ -3,7 +3,7 @@ package Messages;
 public class Message {
 
     String messageType;
-    MessageBody messageBody = null;
+    MessageBody messageBody;
 
     public String getMessageType(){
         return messageType;
@@ -16,6 +16,7 @@ public class Message {
     public void setMessageBody(MessageBody messageBody) {
         this.messageBody = messageBody;
     }
+
 
     public void setMessageType(String messageType) {
         this.messageType = messageType;
