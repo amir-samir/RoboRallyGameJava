@@ -42,14 +42,60 @@ public class Adopter {
         Object[] values = message.messageBody.getContent();
         for (int i = 0; i < keys.length; i++) {
             Object value = values[i];
+
             String key = (String) keys[i];
+            System.out.println(value);
             bodyMap.put(key, value);
         }
         jsonMap.put(messageType, bodyMap);
         gson = new Gson();
-        String json = gson.toJson(jsonMap);
+        String json = gson.toJson(bodyMap);
         return json;
     }
+
+    public static String insertString(
+            String originalString,
+            String stringToBeInserted,
+            int index)
+    {
+
+        // Create a new string
+        String newString = originalString.substring(0, index + 1)
+                + stringToBeInserted
+                + originalString.substring(index + 1);
+
+        // return the modified String
+        return newString;
+    }
+
+    private static int countOccurences(
+            String json, char searchedChar) {
+        int count = 0;
+        for (int i = 0; i < json.length(); i++) {
+            Character currentChar = json.charAt(i);
+            if (currentChar.equals(searchedChar) ) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    private static String replaceFirstOccurences(
+            String json, char originalChar, String replacement) {
+        StringBuilder sb = new StringBuilder(json);
+        int index = json.indexOf(originalChar);
+        for (int i = 0; i < json.length(); i++) {
+            Character currentChar = json.charAt(i);
+            if (currentChar.equals(originalChar) ) {
+                json = sb.deleteCharAt(index).toString();
+                json = insertString(json, replacement, index-1);
+                break;
+            }
+        }
+        return json;
+    }
+
 
     /**
      *
@@ -62,7 +108,33 @@ public class Adopter {
         return message;
     }
 
+    public static String jsonWithBrackets(String json) {
+        StringBuilder sb = new StringBuilder(json);
+        int count = countOccurences(json, '[');
+
+
+        for (int i = 0; i < count; i++) {
+            if (json.contains("[")) {
+                int indexAuf = json.indexOf("[");
+                int indexZu = json.indexOf("]");
+                sb = new StringBuilder(json);
+                json = sb.deleteCharAt(indexAuf).toString();
+                json = insertString(json, "[", indexAuf);
+                json = replaceFirstOccurences(json, '[', "%");
+                sb = new StringBuilder(json);
+                json = sb.deleteCharAt(indexZu).toString();
+                json = insertString(json, "]", indexZu -2);
+                json = replaceFirstOccurences(json, ']', "§");
+            }
+        }
+        json = json.replace("%", "[");
+        json = json.replace("§", "]");
+        System.out.println(json);
+        return json;
+    }
+
     public static Message getMessage(String json) {
+        json = jsonWithBrackets(json);
         Gson gson = new Gson();
         Map map = gson.fromJson(json, Map.class);
         Message message = new Message();
@@ -84,6 +156,7 @@ public class Adopter {
 //                j++;
 //            }
             MessageBody mbody = new MessageBody(content);
+            System.out.println(mbody.getContent());
 //            mbody.setKeys(contenKeys);
             message.setMessageBody(mbody);
             message.setMessageType(messageType);

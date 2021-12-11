@@ -78,7 +78,7 @@ public class jsonTest {
 
     @Test
     public void GsonTestPlayerValues(){
-        String string = "{ \"messageType\": \"PlayerValues\", \"messageBody\": { \"clientID\": 42,  \"figure\": 5 }}";
+        String string = "{ \"messageType\": \"PlayerValues\", \"messageBody\": { \"availableMaps\": [\"DizzyHighway\"],  \"availableMaps\": [\"DizzyHighway\"]}}";
         PlayerValues m = new PlayerValues("Nr. 5",5);
         Message ergebnis = Adopter.getMessage(string);
 
@@ -88,26 +88,20 @@ public class jsonTest {
     }
     @Test
     public void GsonTestSelectMap(){
-        String string = "{\n" +
-                "\"messageType\": \"SelectMap\",\n" +
-                "\"messageBody\": {\n" +
-                "\"availableMaps\": [\"DizzyHighway\"]\n" +
-                "}\n" +
-                "}";
+        String string = "{ \"messageType\": \"PlayerValues\", \"messageBody\": { \"availableMaps\": \"DizzyHighway\",  \"avalableMaps\": [\"DizzHighway\"]}}";
         String[] map = new String[1];
-        map[0] = "DizzyHighway";
+        map[0] = "[DizzyHighway]";
         SelectMap m = new SelectMap(map);
         Message ergebnis = Adopter.getMessage(string);
 
 
-        System.out.println(Arrays.toString(ergebnis.getMessageBody().getContent()));
         Object[] keys = new Object[1];
         keys[0] = "availableMaps";
-        ergebnis.getMessageBody().setKeys(keys);
-        String ergebnis2 = Adopter.javabeanToJson(ergebnis);
-        System.out.println(ergebnis2);
-//        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
-//        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+        m.getMessageBody().setKeys(keys);
+        String ergebnis2 = Adopter.getJsonBody(m);
+        System.out.println(ergebnis);
+        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
+        assertEquals(ergebnis.getMessageType(), m.getMessageType());
     }
 
     @Test
