@@ -43,13 +43,25 @@ public class jsonTest {
     @Test
     public void GsonTestHelloServer(){
         String string = "{ \"messageType\": \"HelloServer\", \"messageBody\": { \"group\": \"TolleTrolle\", \"isAI\": false,\"protocol\":\"Version 0.1\" }}";
-       HelloServer m = new HelloServer("TolleTrolle",false,"Version 0.1");
+        HelloServer m = new HelloServer("TolleTrolle",false,"Version 0.1");
 
         Message ergebnis = Adopter.getMessage(string);
 
+        Object[] erwartet = new Object[3];
+        erwartet = m.getMessageBody().getContent();
+        String erwartet1 = (String) erwartet[0];
+        Boolean erwartet2 = (Boolean) erwartet[1];
+        String erwartet3 = (String) erwartet[2];
 
-        assertEquals(ergebnis.getMessageBody().getContent(), m.getMessageBody().getContent());
-        assertEquals(ergebnis.getMessageType(), m.getMessageType());
+        Object[] feld = new Object[3];
+        feld = ergebnis.getMessageBody().getContent();
+        String ergebnis1 = (String) feld[0];
+        Boolean ergebnis2 = (Boolean) feld[1];
+        String ergebnis3 = (String) feld[2];
+
+        assertEquals(erwartet1, ergebnis1);
+        assertEquals(erwartet2, ergebnis2);
+        assertEquals(erwartet3, ergebnis3);
     }
 
     @Test

@@ -6,9 +6,9 @@ public class HelloServer extends Message{
         super();
 
         Object[] inhalt = new Object[3];
-        inhalt[1] = group;
-        inhalt[2] = isAI;
-        inhalt[3] = protocol;
+        inhalt[0] = group;
+        inhalt[1] = isAI;
+        inhalt[2] = protocol;
 
         messageType = "HelloServer";
         messageBody = new MessageBody(inhalt);

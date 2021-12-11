@@ -13,6 +13,7 @@ public class MessageBody {
     public void setKeys(Object[] keys) {
         this.keys = keys;
     }
+
     public Object[] getKeys() {
         return keys;
     }
