@@ -111,7 +111,7 @@ public class jsonTest {
     }
 
     @Test
-    public void GsonToJsonSelectMap(){
+    public void GsonToJson(){
         String[] map = new String[1];
         map[0] = "DizzyHighway";
         PlayerValues m = new PlayerValues("Nr. 5",5);
