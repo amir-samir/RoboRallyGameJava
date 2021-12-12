@@ -17,38 +17,47 @@ public class Adopter {
     public static String javabeanToJson(Message message) {
         gson = new Gson();
         String jsonType = gson.toJson(message);
-        Object[] keys = message.messageBody.getkeys();
-        for (Object k: keys){
-            String key = (String) k;
-            jsonType = jsonType.replaceFirst("content", key);
-        }
-        int index = jsonType.indexOf("\"messageBody");
-        jsonType = jsonType.substring(0,index);
-        String jsonBody = getJsonBody(message);
-        String messageType = message.getMessageType();
-        jsonBody = jsonBody.replaceFirst(messageType, "messageBody");
-        jsonBody = jsonBody.substring(1, jsonBody.length());
-        String final_json = new StringBuilder(jsonType).append(jsonBody).toString();
-
-
-        return final_json;
+        if(message.getMessageBody() != null) {
+            Object[] keys = message.messageBody.getkeys();
+            if (keys != null) {
+                for (Object k : keys) {
+                    String key = (String) k;
+                    jsonType = jsonType.replaceFirst("content", key);
+                }
+            }
+            int index = jsonType.indexOf("\"messageBody");
+            jsonType = jsonType.substring(0, index);
+            String jsonBody;
+            if (!getJsonBody(message).equals("{}")) {
+                String messageType = message.getMessageType();
+                jsonBody = getJsonBody(message);
+                jsonBody = jsonBody.replaceFirst(messageType, "messageBody");
+                jsonBody = jsonBody.substring(1, jsonBody.length());
+            } else {
+                jsonBody = "{}";
+            }
+            String final_json = new StringBuilder(jsonType).append(jsonBody).toString();
+            return final_json;
+        } else return new StringBuilder(jsonType).append("{}").toString();
     }
 
     public static String getJsonBody(Message message) {
-        Map<String, Map> jsonMap = new HashMap<>();
-        Map<String, Object> bodyMap = new HashMap<>();
-        String messageType = message.getMessageType();
-        Object[] keys = message.messageBody.getkeys();
-        Object[] values = message.messageBody.getContent();
-        for (int i = 0; i < keys.length; i++) {
-            Object value = values[i];
-            String key = (String) keys[i];
-            bodyMap.put(key, value);
-        }
-        jsonMap.put(messageType, bodyMap);
-        gson = new Gson();
-        String json = gson.toJson(jsonMap);
-        return json;
+        if (message.getMessageBody() != null) {
+            Map<String, Map> jsonMap = new HashMap<>();
+            Map<String, Object> bodyMap = new HashMap<>();
+            String messageType = message.getMessageType();
+            Object[] keys = message.messageBody.getkeys();
+            Object[] values = message.messageBody.getContent();
+            for (int i = 0; i < keys.length; i++) {
+                Object value = values[i];
+                String key = (String) keys[i];
+                bodyMap.put(key, value);
+            }
+            jsonMap.put(messageType, bodyMap);
+            gson = new Gson();
+            String json = gson.toJson(jsonMap);
+            return json;
+        } else return "{}";
     }
 
     /**

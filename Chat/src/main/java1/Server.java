@@ -70,7 +70,6 @@ public class Server {
         for(ClientHandler clientHandler: users.values()){
             clientHandler.owriter.println(nachricht);
         }
-        System.out.println(nachricht + " all");
     }
 
     /**

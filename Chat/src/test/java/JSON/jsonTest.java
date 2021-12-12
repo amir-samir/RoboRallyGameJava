@@ -195,4 +195,11 @@ public class jsonTest {
         String toSend = Adopter.javabeanToJson(message);
         System.out.println(toSend);
     }
+
+    @Test
+    public void alive(){
+        Alive alive = new Alive();
+        String ergebnis = Adopter.javabeanToJson(alive);
+        System.out.println(ergebnis);
+    }
 }

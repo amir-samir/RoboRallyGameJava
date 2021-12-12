@@ -43,7 +43,7 @@ public class FirstViewModel {
 
     public void takeUsername(Stage stage) throws IOException {
 
-        Client client = new Client(getUsername());
+        Client client = new Client();
         //clientHandler.getUsername();
            stage.setTitle(getUsername());
 

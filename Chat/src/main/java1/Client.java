@@ -1,7 +1,4 @@
-import Messages.Adopter;
-import Messages.HelloServer;
-import Messages.Message;
-import Messages.SendChat;
+import Messages.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,15 +28,13 @@ public class Client implements Runnable {
      * A Constructor that builds a connection between the client and the server and asks the server if
      * the username is not taken.
      *
-     * @param userName                The input username from the user.
      * @throws IOException            Throw this exception if the connection between server and client fails.
-     *
      */
-    public Client(String userName) throws IOException {
+    public Client() throws IOException {
         SOCKET = new Socket("localhost", 1523);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
-        this.userName = userName;
+        //this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
         bufferedWriter.println(userName);
         isAi = false;
@@ -76,6 +71,22 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
+    public void getUsernames(){
+
+    }
+
+    public void singleMessage(String message, String userName){
+
+    }
+
+    public void configuration(String name, int figur){
+        PlayerValues message = new PlayerValues(name, figur);
+    }
+
+    public int getID(){
+        return ID;
+    }
+
     /**
      * A method that receive and returns information from the Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
@@ -86,6 +97,15 @@ public class Client implements Runnable {
 
     public void closeConnection() throws IOException {
         SOCKET.close();
+    }
+
+    public void sendHelloClient(Message message){
+        protocol = (String) message.getMessageBody().getContent()[0];
+        HelloServer output = new HelloServer(GROUP, isAi, protocol);
+        String[] keys = {"group", "isAI", "protocol"};
+        output.getMessageBody().setKeys(keys);
+        String S = Adopter.javabeanToJson(output);
+        bufferedWriter.println(S);
     }
 
     /**
@@ -103,13 +123,8 @@ public class Client implements Runnable {
                 }
                 Message message = Adopter.getMessage(inputFromServer);
                 if(message.getMessageType().equals("HelloClient")){
-                    protocol = (String) message.getMessageBody().getContent()[0];
+                    sendHelloClient(message);
                     toSend = "Das Protokoll wurde eingelesen. Verwendete Version: " + protocol;
-                    HelloServer output = new HelloServer(GROUP, isAi, protocol);
-                    String[] keys = {"group", "isAI", "protocol"};
-                    output.getMessageBody().setKeys(keys);
-                    String S = Adopter.javabeanToJson(output);
-                    bufferedWriter.println(S);
                 } else if (message.getMessageType().equals("Error1")) {
                     toSend = (String) message.getMessageBody().getContent()[0];
                 } else if (message.getMessageType().equals("Welcome")){
@@ -121,6 +136,9 @@ public class Client implements Runnable {
                     boolean isPrivate = (boolean) message.getMessageBody().getContent()[1];
                     String nachricht = (String) message.getMessageBody().getContent()[2];
                     toSend = from + ": " + nachricht;
+                } else if(message.getMessageType().equals("Alive")){
+                    bufferedWriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
+                    toSend = null;
                 } else {
                     toSend = inputFromServer;
                 }
