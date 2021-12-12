@@ -21,15 +21,12 @@ public class ClientHandler implements Runnable {
     public int ID;
 
     public String username;
+    public int figure;
     public String group;
     public boolean isAi;
-    public String protocol;
 
     public BufferedReader reader;
     public PrintWriter owriter;
-    public BufferedWriter writer;
-    public Gamer gamer;
-    public Client client;
 
     /**
      * Diese Methode stellt den Konstruktor dar. Sie initialisiert die globalen Variablen und fügt nach Überprüfung den
@@ -42,14 +39,10 @@ public class ClientHandler implements Runnable {
 
         this.SERVER = server;
         this.SOCKET = socket;
-        this.protocol = "Version 0.2";
 
         try {
             owriter = new PrintWriter(socket.getOutputStream(), true);
             reader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
-            String name = reader.readLine();
-            username = name;
-
         } catch (Exception e) {
             closeEverything(socket, reader, owriter);
             e.printStackTrace();
@@ -81,30 +74,48 @@ public class ClientHandler implements Runnable {
                         error.getMessageBody().setKeys(key);
                         owriter.println(Adopter.javabeanToJson(error));
                     } else {
-                        isAi = (boolean) message.getMessageBody().getContent()[1];
-                        group = (String) message.getMessageBody().getContent()[2];
-                        int id = SERVER.generateID();
-                        this.ID = id;
-                        SERVER.addClient(this);
-                        Welcome welcome = new Welcome(ID);
-                        String[] key = {"clientID"};
-                        welcome.getMessageBody().setKeys(key);
-                        owriter.println(Adopter.javabeanToJson(welcome));
+                        sendWelcomeMessage(message);
                     }
                 } else if (message.getMessageType().equals("SendChat")){
                     String toSend = (String) message.getMessageBody().getContent()[1];
                     int to = (int)(double) message.getMessageBody().getContent()[0];
-                    System.out.println("To: " +to);
                     if (to == -1){
                         SERVER.messageForAllUsers(toSend, this.ID);
                     } else {
                         SERVER.singleMessage(this.ID, toSend, to);
+                    }
+                } else if (message.getMessageType().equals("PlayerValues")){
+                    int figure = (int) (double) message.getMessageBody().getContent()[0];
+                    String name = (String) message.getMessageBody().getContent()[1];
+                    username = name;
+                    SERVER.addUsername(this);
+                    if(SERVER.checkFigure(figure, this)){
+                        this.figure = figure;
+                        SERVER.playerAdded(this);
+                    } else {
+                        Error1 error = new Error1("Diese Figur wurde bereits von einem anderem Spieler gewählt.");
+                        String[] keys = {"error"};
+                        error.getMessageBody().setKeys(keys);
+                        owriter.println(Adopter.javabeanToJson(error));
                     }
                 }
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
+    }
+
+    public void sendWelcomeMessage(Message message){
+        isAi = (boolean) message.getMessageBody().getContent()[1];
+        group = (String) message.getMessageBody().getContent()[2];
+        int id = SERVER.generateID();
+        this.ID = id;
+        SERVER.addClient(this);
+        Welcome welcome = new Welcome(ID);
+        String[] key = {"clientID"};
+        welcome.getMessageBody().setKeys(key);
+        owriter.println(Adopter.javabeanToJson(welcome));
+        System.out.println("Erledigt");
     }
 
     /**

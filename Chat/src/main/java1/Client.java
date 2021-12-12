@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 
 
 public class Client implements Runnable {
@@ -18,11 +19,13 @@ public class Client implements Runnable {
     private boolean isAi;
     private int ID;
 
-    private String userName;
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
     public ObservableList<String> chatMessages;
     public String protocol;
+
+    public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    public int[] figuren = new int[6];
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -36,7 +39,6 @@ public class Client implements Runnable {
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         //this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
-        bufferedWriter.println(userName);
         isAi = false;
         //listenForMessages();
 
@@ -77,10 +79,14 @@ public class Client implements Runnable {
 
     public void singleMessage(String message, String userName){
 
+        //SendChat sendChat = new SendChat(String message, int to);
     }
 
     public void configuration(String name, int figur){
         PlayerValues message = new PlayerValues(name, figur);
+        String[] keys = {"name", "figure"};
+        message.getMessageBody().setKeys(keys);
+        bufferedWriter.println(Adopter.javabeanToJson(message));
     }
 
     public int getID(){
@@ -99,7 +105,7 @@ public class Client implements Runnable {
         SOCKET.close();
     }
 
-    public void sendHelloClient(Message message){
+    public void sendHelloServer(Message message){
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
         String[] keys = {"group", "isAI", "protocol"};
@@ -123,7 +129,7 @@ public class Client implements Runnable {
                 }
                 Message message = Adopter.getMessage(inputFromServer);
                 if(message.getMessageType().equals("HelloClient")){
-                    sendHelloClient(message);
+                    sendHelloServer(message);
                     toSend = "Das Protokoll wurde eingelesen. Verwendete Version: " + protocol;
                 } else if (message.getMessageType().equals("Error1")) {
                     toSend = (String) message.getMessageBody().getContent()[0];
@@ -131,6 +137,7 @@ public class Client implements Runnable {
                     double wert = (double) message.getMessageBody().getContent()[0];
                     ID = (int) wert;
                     toSend = "Willkommen im Chat. Deine ID wurde erfolgreich generiert.";
+                    //this.configuration("Robert", 2);
                 } else if(message.getMessageType().equals("ReceivedChat")){
                     int from = (int)(double)message.getMessageBody().getContent()[0];
                     boolean isPrivate = (boolean) message.getMessageBody().getContent()[1];
@@ -139,6 +146,13 @@ public class Client implements Runnable {
                 } else if(message.getMessageType().equals("Alive")){
                     bufferedWriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
                     toSend = null;
+                } else if(message.getMessageType().equals("PlayerAdded")) {
+                    int newFigure = (int)(double) message.getMessageBody().getContent()[0];
+                    int clientID = (int)(double) message.getMessageBody().getContent()[1];
+                    String username = (String) message.getMessageBody().getContent()[2];
+                    ids.put(username, clientID);
+                    figuren[newFigure] = clientID;
+                    toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
                 } else {
                     toSend = inputFromServer;
                 }

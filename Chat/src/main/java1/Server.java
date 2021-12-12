@@ -14,12 +14,13 @@ import java.util.HashMap;
 public class Server {
 
     public static int laufendeID = 2000;
+
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    public int[] figuren = new int[6];
+
     private ServerSocket serverSocket;
     public String protocol;
-    public Game game;
-    private Client client;
 
 
     public Server(ServerSocket serverSocket) {
@@ -55,7 +56,6 @@ public class Server {
         String nachricht = Adopter.javabeanToJson(toSend);
         ClientHandler c = users.get(to);
         c.owriter.println(nachricht);
-        System.out.println(nachricht + " single");
     }
 
     /**
@@ -80,6 +80,27 @@ public class Server {
     public boolean addClient(ClientHandler clientHandler) {
         users.put(clientHandler.ID, clientHandler);
         return true;
+    }
+
+    public void addUsername(ClientHandler clientHandler){
+        ids.put(clientHandler.username, clientHandler.ID);
+    }
+
+    public boolean checkFigure(int figur, ClientHandler clientHandler){
+        if(figuren[figur] == 0){
+            figuren[figur] = clientHandler.ID;
+            System.out.println("Figur wurde gewählt");
+            return true;
+        } else return false;
+    }
+
+    public void playerAdded(ClientHandler clientHandler){
+        PlayerAdded playerAdded = new PlayerAdded(clientHandler.ID, clientHandler.username, clientHandler.figure);
+        String[] keys = {"clientID", "name", "figure"};
+        playerAdded.getMessageBody().setKeys(keys);
+        for (ClientHandler clientHandler1 : users.values()){
+            clientHandler1.owriter.println(Adopter.javabeanToJson(playerAdded));
+        }
     }
 
     /**
@@ -115,7 +136,6 @@ public class Server {
         String[] key = {"protocol"};
         message.getMessageBody().setKeys(key);
         String toSend = Adopter.javabeanToJson(message);
-
         try {
             clientHandler.owriter.println(toSend);
         } catch (Exception e){

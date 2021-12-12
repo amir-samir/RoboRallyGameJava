@@ -202,4 +202,13 @@ public class jsonTest {
         String ergebnis = Adopter.javabeanToJson(alive);
         System.out.println(ergebnis);
     }
+
+    @Test
+    public void PlayerValues(){
+        PlayerValues playerValues = new PlayerValues("Robert", 5);
+        String[] keys = {"name", "figure"};
+        playerValues.getMessageBody().setKeys(keys);
+        String toSend = Adopter.javabeanToJson(playerValues);
+        System.out.println(toSend);
+    }
 }
