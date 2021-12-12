@@ -98,6 +98,12 @@ public class ClientHandler implements Runnable {
             }
         }
     }
+    public int getID(){
+        return ID;
+    }
+    public Socket getSOCKET(){
+        return SOCKET;
+    }
 
     /**
      * Diese Methode schließt für ein ordnungsgemäßes Schließen der Verbindung zum Server alle zugehörigen Instanzen.

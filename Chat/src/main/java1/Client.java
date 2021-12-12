@@ -136,4 +136,7 @@ public class Client implements Runnable {
             }
         }
     }
+    public int getID(){
+        return ID;
+    }
 }

@@ -88,6 +88,20 @@ public class FirstView implements Initializable {
 
 
 
+
+
+
+
+   }
+
+   public void pressFoto(){
+      System.out.println("funktioniert");
+      twinkyImageView.setDisable(true);
+      twinkyImageView.setVisible(false);
+   }
+
+   public void chooseUserName() throws IOException {
+      viewModel.chooseUsername();
       // Fade: Hide and Show the Title Photo
       FadeTransition fade = new FadeTransition();
       fade.setNode(roboRallyImageView);
@@ -205,15 +219,6 @@ public class FirstView implements Initializable {
       rotate5.setInterpolator(Interpolator.LINEAR);
       rotate5.setByAngle(360);
       rotate5.play();
-
-
-
-   }
-
-   public void pressFoto(){
-      System.out.println("funktioniert");
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
    }
 
 

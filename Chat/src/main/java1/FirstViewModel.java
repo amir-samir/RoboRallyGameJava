@@ -14,7 +14,7 @@ import java.net.Socket;
 
 public class FirstViewModel {
 
-
+Client client1;
 
     @FXML
     private ClientHandler clientHandler;
@@ -39,11 +39,19 @@ public class FirstViewModel {
         username.set(readUsername);
     }
 
+    public void chooseUsername() throws IOException {
+        Client client = new Client(getUsername());
+        client1 = client;
+
+
+
+    }
+
 
 
     public void takeUsername(Stage stage) throws IOException {
 
-        Client client = new Client(getUsername());
+        //Client client = new Client(getUsername());
         //clientHandler.getUsername();
            stage.setTitle(getUsername());
 
@@ -55,7 +63,7 @@ public class FirstViewModel {
         scene.getStylesheets().add("SignInStyle.css");
 
         ChatView chatView = loader.getController();
-        chatView.setClient(client);
+        chatView.setClient(client1);
         stage.show();
 
         //Close if Bye

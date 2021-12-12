@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 
 public class Server {
-
+    public static ClientHandler clientHandler;
     public static int laufendeID = 2000;
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
@@ -20,6 +20,7 @@ public class Server {
     public String protocol;
     public Game game;
     private Client client;
+
 
 
     public Server(ServerSocket serverSocket) {
@@ -45,7 +46,7 @@ public class Server {
 
     /**
      * Diese Methode sorgt dafür, dass private Nachrichten verschickt werden können.
-     * @param id Username des Empfängers der Nachricht
+     * param id Username des Empfängers der Nachricht
      * @param message Die Nachricht, die versendet werden soll
      */
     public void singleMessage(int from, String message, int to) {
@@ -133,4 +134,11 @@ public class Server {
     public void print(String s){
         System.out.println(s);
     }
+
+    public ClientHandler getClientHandlerByID(int currentId){
+       clientHandler = users.getOrDefault(currentId,clientHandler);
+       return clientHandler;
+    }
+
+
 }

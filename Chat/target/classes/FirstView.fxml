@@ -51,5 +51,6 @@
             <Image url="@assets/hammerMove1.gif" />
          </image>
       </ImageView>
+      <Button layoutX="462.0" layoutY="125.0" mnemonicParsing="false" onAction="#chooseUserName" text="choose" />
     </children>
 </AnchorPane>
