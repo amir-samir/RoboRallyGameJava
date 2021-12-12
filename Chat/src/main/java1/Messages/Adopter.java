@@ -14,6 +14,32 @@ public class Adopter {
      * @param message
      * @return Json String
      */
+//    public static String javabeanToJson(Message message) {
+//        String jsonBody = getJsonBody(message);
+//        String final_json = "";
+//        if (jsonBody.equals("MessageBody ist leer!")){
+//            final_json = "{ \"messageType\": \"" + message.getMessageType() + "\", \"messageBody\": { }}";
+//        }
+//        else {
+//            gson = new Gson();
+//            String jsonType = gson.toJson(message);
+//            Object[] keys = message.messageBody.getkeys();
+//            for (Object k: keys){
+//                String key = (String) k;
+//                jsonType = jsonType.replaceFirst("content", key);
+//            }
+//            int index = jsonType.indexOf("\"messageBody");
+//            jsonType = jsonType.substring(0,index);
+//            String messageType = message.getMessageType();
+//            jsonBody = jsonBody.replaceFirst(messageType, "messageBody");
+//            jsonBody = jsonBody.substring(1);
+//            final_json = new StringBuilder(jsonType).append(jsonBody).toString();
+//        }
+//
+//        return final_json;
+//    }
+
+
     public static String javabeanToJson(Message message) {
         String jsonBody = getJsonBody(message);
         String final_json = "";
@@ -21,43 +47,47 @@ public class Adopter {
             final_json = "{ \"messageType\": \"" + message.getMessageType() + "\", \"messageBody\": { }}";
         }
         else {
-            gson = new Gson();
-            String jsonType = gson.toJson(message);
-            Object[] keys = message.messageBody.getkeys();
-            for (Object k: keys){
-                String key = (String) k;
-                jsonType = jsonType.replaceFirst("content", key);
-            }
-            int index = jsonType.indexOf("\"messageBody");
-            jsonType = jsonType.substring(0,index);
-            String messageType = message.getMessageType();
-            jsonBody = jsonBody.replaceFirst(messageType, "messageBody");
-            jsonBody = jsonBody.substring(1);
-            final_json = new StringBuilder(jsonType).append(jsonBody).toString();
+            final_json = "{ \"messageType\": \"" + message.getMessageType() + "\", \"messageBody\": " + getJsonBody(message);
         }
 
         return final_json;
     }
 
+    public static boolean checkForLetter(String value) {
+        boolean hasLetters = false;
+        for (char ch : value.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                hasLetters = true;
+                break;
+            }
+        }
+        return hasLetters;
+    }
+
     public static String getJsonBody(Message message) {
-        Map<String, Object> jsonMap = new HashMap<>();
-        String json = "";
-        Map<String, Object> bodyMap = new HashMap<>();
-        String messageType = message.getMessageType();
+        String json = "{ ";
         Object[] keys = message.messageBody.getkeys();
         Object[] values = message.messageBody.getContent();
         if (keys != null && values != null) {
             for (int i = 0; i < keys.length; i++) {
                 Object value = values[i];
                 String key = (String) keys[i];
-                bodyMap.put(key, value);
-            }
-            jsonMap.put(messageType, bodyMap);
+                if (value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
+                json = json + "\"" + key + "\": "  + value + ", ";
+            } else {
 
-            gson = new Gson();
-            json = gson.toJson(jsonMap);
+                json = json + "\"" + key + "\": \""  + value + "\"" + ", ";
+            }}
+            StringBuilder sb = new StringBuilder(json);
+            json = sb.deleteCharAt(json.length()-1).toString();
+            sb = new StringBuilder(json);
+            json = sb.deleteCharAt(json.length()-1).toString();
+            json = json + " }}";
         }
-        else {json = "MessageBody ist leer!";}
+        else {
+            json = "MessageBody ist leer!";
+        }
+
         return json;
     }
 
@@ -104,18 +134,6 @@ public class Adopter {
         return json;
     }
 
-
-    /**
-     *
-     * @param json
-     * @return message
-     */
-    public static Message jsonToJavaBean(String json) {
-        Gson gson = new Gson();
-        Message message = gson.fromJson(json, Message.class);
-        return message;
-    }
-
     public static String jsonWithBrackets(String json) {
         StringBuilder sb = new StringBuilder(json);
         int count = countOccurences(json, '[');
@@ -140,6 +158,11 @@ public class Adopter {
         return json;
     }
 
+    /**
+     *
+     * @param json
+     * @return message
+     */
     public static Message getMessage(String json) {
         json = jsonWithBrackets(json);
         Gson gson = new Gson();
@@ -150,20 +173,11 @@ public class Adopter {
             Map messageBody = (Map) map.get("messageBody");
             Object[] content = new Object[messageBody.size()];
             int i = 0;
-
             for (Object value : messageBody.values()) {
                     content[i] = value;
                     i++;
             }
-//            Object[] contenKeys = new String[messageBody.size()];
-//            Set keys = messageBody.keySet();
-//            int j = 0;
-//            for(Object key: keys){
-//                contenKeys[j] = messageBody.get(key);
-//                j++;
-//            }
             MessageBody mbody = new MessageBody(content);
-//            mbody.setKeys(contenKeys);
             message.setMessageBody(mbody);
             message.setMessageType(messageType);
             return message;
