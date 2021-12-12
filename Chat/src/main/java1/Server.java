@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 
 public class Server {
-    public static ClientHandler clientHandler;
+
     public static int laufendeID = 2000;
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
@@ -20,7 +20,6 @@ public class Server {
     public String protocol;
     public Game game;
     private Client client;
-
 
 
     public Server(ServerSocket serverSocket) {
@@ -71,7 +70,6 @@ public class Server {
         for(ClientHandler clientHandler: users.values()){
             clientHandler.owriter.println(nachricht);
         }
-        System.out.println(nachricht + " all");
     }
 
     /**
@@ -134,11 +132,7 @@ public class Server {
     public void print(String s){
         System.out.println(s);
     }
-
-    public ClientHandler getClientHandlerByID(int currentId){
-       clientHandler = users.getOrDefault(currentId,clientHandler);
-       return clientHandler;
+    public void printPlayerValues(String name, int figure){
+        System.out.println(name + figure);
     }
-
-
 }

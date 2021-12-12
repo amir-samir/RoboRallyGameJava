@@ -1,13 +1,12 @@
-import Messages.Adopter;
-import Messages.Error1;
-import Messages.Message;
-import Messages.Welcome;
+import Messages.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Diese Klasse fungiert als Bindestück zwischen Client und Server. Sie sorgt für die richtige Verarbeitung der
@@ -62,6 +61,15 @@ public class ClientHandler implements Runnable {
      */
     @Override
     public void run() {
+        Timer t = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                owriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
+                System.out.println("Timer aktiviert");
+            }
+        };
+        t.schedule(timerTask, 0,5000);
         while (SOCKET.isConnected()) {
             try{
                 String input = reader.readLine();
@@ -97,12 +105,6 @@ public class ClientHandler implements Runnable {
                 e.printStackTrace();
             }
         }
-    }
-    public int getID(){
-        return ID;
-    }
-    public Socket getSOCKET(){
-        return SOCKET;
     }
 
     /**

@@ -15,7 +15,7 @@ import java.net.Socket;
 public class FirstViewModel {
 
 Client client1;
-
+    FirstView firstView;
     @FXML
     private ClientHandler clientHandler;
     Socket socket = new Socket();
@@ -38,6 +38,7 @@ Client client1;
     public final void setUsername(String readUsername){
         username.set(readUsername);
     }
+
 
     public void chooseUsername() throws IOException {
         Client client = new Client(getUsername());

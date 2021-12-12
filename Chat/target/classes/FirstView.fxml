@@ -21,32 +21,32 @@
             <Image url="@assets/Logo.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="twinkyImageView" fitHeight="139.0" fitWidth="134.0" layoutX="-134.0" layoutY="138.0" onMouseClicked="#pressFoto" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="twinkyImageView" fitHeight="139.0" fitWidth="134.0" layoutX="-134.0" layoutY="138.0" onMouseClicked="#TwinkyRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/twonkyMovegif.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="smashBotImageView" fitHeight="93.0" fitWidth="123.0" layoutX="-123.0" layoutY="234.0" pickOnBounds="true" smooth="false">
+      <ImageView fx:id="smashBotImageView" fitHeight="93.0" fitWidth="123.0" layoutX="-123.0" layoutY="234.0" onMouseClicked="#SmashRoboterPressed" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@assets/smashbotMove1.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="hulkBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-148.0" layoutY="307.0" pickOnBounds="true">
+      <ImageView fx:id="hulkBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-148.0" layoutY="307.0" onMouseClicked="#HulkRoboterPressed" pickOnBounds="true">
          <image>
             <Image url="@assets/hulkMove1.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="zoomBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-127.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="zoomBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-127.0" layoutY="385.0" onMouseClicked="#ZoomRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/zoombotgif.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="spinBotImageView" fitHeight="93.0" fitWidth="131.0" layoutX="-112.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="spinBotImageView" fitHeight="93.0" fitWidth="131.0" layoutX="-112.0" layoutY="485.0" onMouseClicked="#SpinRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/spinbotMove1.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="hammerBotImageView" fitHeight="117.0" fitWidth="134.0" layoutX="-101.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="hammerBotImageView" fitHeight="117.0" fitWidth="134.0" layoutX="-101.0" layoutY="578.0" onMouseClicked="#HammerRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/hammerMove1.gif" />
          </image>
