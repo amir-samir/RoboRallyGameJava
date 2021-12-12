@@ -1,7 +1,4 @@
-import Messages.Adopter;
-import Messages.HelloServer;
-import Messages.Message;
-import Messages.SendChat;
+import Messages.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +17,7 @@ public class Client implements Runnable {
     private final Socket SOCKET;
     private final String GROUP = "Innige Irrwege";
     private boolean isAi;
+    private boolean connected;
     private int ID;
 
     private String userName;
@@ -110,6 +108,10 @@ public class Client implements Runnable {
         SOCKET.close();
     }
 
+    public boolean isConnected(){
+        return connected;
+    }
+
     public void sendHelloServer(Message message){
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
@@ -141,6 +143,7 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("Welcome")){
                     double wert = (double) message.getMessageBody().getContent()[0];
                     ID = (int) wert;
+                    connected = true;
                     toSend = "Willkommen im Chat. Deine ID wurde erfolgreich generiert.";
                 } else if(message.getMessageType().equals("ReceivedChat")){
                     int from = (int)(double)message.getMessageBody().getContent()[0];
