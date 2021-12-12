@@ -1,4 +1,7 @@
-import Messages.*;
+import Messages.Adopter;
+import Messages.HelloServer;
+import Messages.Message;
+import Messages.SendChat;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +22,7 @@ public class Client implements Runnable {
     private boolean isAi;
     private int ID;
 
+    private String userName;
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
     public ObservableList<String> chatMessages;
@@ -33,12 +37,13 @@ public class Client implements Runnable {
      *
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
-    public Client() throws IOException {
+    public Client(String username) throws IOException {
         SOCKET = new Socket("localhost", 1523);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
-        //this.userName = userName;
+        this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
+        bufferedWriter.println(userName);
         isAi = false;
         //listenForMessages();
 
@@ -137,7 +142,6 @@ public class Client implements Runnable {
                     double wert = (double) message.getMessageBody().getContent()[0];
                     ID = (int) wert;
                     toSend = "Willkommen im Chat. Deine ID wurde erfolgreich generiert.";
-                    //this.configuration("Robert", 2);
                 } else if(message.getMessageType().equals("ReceivedChat")){
                     int from = (int)(double)message.getMessageBody().getContent()[0];
                     boolean isPrivate = (boolean) message.getMessageBody().getContent()[1];

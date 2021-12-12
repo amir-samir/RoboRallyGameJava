@@ -46,7 +46,7 @@ public class Server {
 
     /**
      * Diese Methode sorgt dafür, dass private Nachrichten verschickt werden können.
-     * @param id Username des Empfängers der Nachricht
+     * param id Username des Empfängers der Nachricht
      * @param message Die Nachricht, die versendet werden soll
      */
     public void singleMessage(int from, String message, int to) {
@@ -151,5 +151,8 @@ public class Server {
 
     public void print(String s){
         System.out.println(s);
+    }
+    public void printPlayerValues(String name, int figure){
+        System.out.println(name + figure);
     }
 }

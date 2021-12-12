@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 
 
 public class FirstView implements Initializable {
+   private int figure;
    @FXML
    private ImageView roboRallyImageView;
    @FXML
@@ -88,6 +89,63 @@ public class FirstView implements Initializable {
 
 
 
+
+
+
+
+   }
+
+   public void TwinkyRoboterPressed(){
+      figure = 0;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      twinkyImageView.setDisable(true);
+      twinkyImageView.setVisible(false);
+   }
+   public void SmashRoboterPressed(){
+      figure = 1;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      smashBotImageView.setDisable(true);
+      smashBotImageView.setVisible(false);
+   }
+   public void HulkRoboterPressed(){
+      figure = 2;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      hulkBotImageView.setDisable(true);
+      hulkBotImageView.setVisible(false);
+   }
+   public void ZoomRoboterPressed(){
+      figure = 3;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      zoomBotImageView.setDisable(true);
+      zoomBotImageView.setVisible(false);
+   }
+   public void SpinRoboterPressed(){
+      figure = 4;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      spinBotImageView.setDisable(true);
+      spinBotImageView.setVisible(false);
+   }
+   public void HammerRoboterPressed(){
+      figure = 5;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      hammerBotImageView.setDisable(true);
+      hammerBotImageView.setVisible(false);
+   }
+   public int getFigure(){
+      return figure;
+   }
+
+
+
+
+   public void chooseUserName() throws IOException {
+      viewModel.chooseUsername();
       // Fade: Hide and Show the Title Photo
       FadeTransition fade = new FadeTransition();
       fade.setNode(roboRallyImageView);
@@ -205,15 +263,6 @@ public class FirstView implements Initializable {
       rotate5.setInterpolator(Interpolator.LINEAR);
       rotate5.setByAngle(360);
       rotate5.play();
-
-
-
-   }
-
-   public void pressFoto(){
-      System.out.println("funktioniert");
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
    }
 
 
@@ -221,6 +270,8 @@ public class FirstView implements Initializable {
    public void submitUserName() {
 
       try {
+         viewModel.client1.configuration(viewModel.getUsername(), getFigure());
+         System.out.println(viewModel.getUsername() + getFigure());
          //Passing the current stage to the ViewModel
          Stage stage = (Stage) signInButton.getScene().getWindow();
          viewModel.takeUsername(stage);
