@@ -104,8 +104,8 @@ public class ChatView {
 
     public void setClient(Client client) {
 
-        viewModel.setClient(client);
-        chatBox.setItems(viewModel.getClient().chatMessages);
+        viewModel.setClient(SaveClients.client);
+        chatBox.setItems(SaveClients.client.chatMessages);
 
     }
 
