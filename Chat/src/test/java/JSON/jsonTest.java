@@ -45,7 +45,7 @@ public class jsonTest {
         String string = "{ \"messageType\": \"HelloServer\", \"messageBody\": { \"group\": \"TolleTrolle\", \"isAI\": false,\"protocol\":\"Version 0.1\" }}";
         HelloServer m = new HelloServer("TolleTrolle",false,"Version 0.1");
 
-        m.getMessageBody().setKeys(keys);
+        //m.getMessageBody().setKeys(keys);
 
         Object[] erwartet = new Object[3];
         erwartet = m.getMessageBody().getContent();
@@ -54,7 +54,7 @@ public class jsonTest {
         String erwartet3 = (String) erwartet[2];
 
         Object[] feld = new Object[3];
-        feld = ergebnis.getMessageBody().getContent();
+        //feld = ergebnis.getMessageBody().getContent();
         String ergebnis1 = (String) feld[0];
         Boolean ergebnis2 = (Boolean) feld[1];
         String ergebnis3 = (String) feld[2];
