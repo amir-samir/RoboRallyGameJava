@@ -153,17 +153,17 @@ public class Client implements Runnable {
                     connected = true;
                     toSend = "Willkommen im Chat. Deine ID wurde erfolgreich generiert.";
                 } else if(message.getMessageType().equals("ReceivedChat")){
-                    int from = (int)(double)message.getMessageBody().getContent()[0];
-                    boolean isPrivate = (boolean) message.getMessageBody().getContent()[1];
-                    String nachricht = (String) message.getMessageBody().getContent()[2];
+                    int from = (int)(double)message.getMessageBody().getContent()[1];
+                    boolean isPrivate = (boolean) message.getMessageBody().getContent()[2];
+                    String nachricht = (String) message.getMessageBody().getContent()[0];
                     toSend = from + ": " + nachricht;
                 } else if(message.getMessageType().equals("Alive")){
                     bufferedWriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
                     toSend = null;
                 } else if(message.getMessageType().equals("PlayerAdded")) {
-                    int newFigure = (int)(double) message.getMessageBody().getContent()[0];
-                    int clientID = (int)(double) message.getMessageBody().getContent()[1];
-                    String username = (String) message.getMessageBody().getContent()[2];
+                    int newFigure = (int)(double) message.getMessageBody().getContent()[2];
+                    int clientID = (int)(double) message.getMessageBody().getContent()[0];
+                    String username = (String) message.getMessageBody().getContent()[1];
                     ids.put(username, clientID);
                     figuren[newFigure] = clientID;
                     toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;

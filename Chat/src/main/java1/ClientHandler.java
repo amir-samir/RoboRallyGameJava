@@ -68,7 +68,7 @@ public class ClientHandler implements Runnable {
                 String input = reader.readLine();
                 Message message = Adopter.getMessage(input);
                 if (message.getMessageType().equals("HelloServer")){
-                    if(!SERVER.protocol.equals((String) message.getMessageBody().getContent()[0])){
+                    if(!SERVER.protocol.equals((String) message.getMessageBody().getContent()[2])){
                         Error1 error = new Error1("Das verwendete Protokoll wird nicht unterstützt. Das Programm wird jetzt beendet.");
                         String[] key = {"error"};
                         error.getMessageBody().setKeys(key);
@@ -77,16 +77,16 @@ public class ClientHandler implements Runnable {
                         sendWelcomeMessage(message);
                     }
                 } else if (message.getMessageType().equals("SendChat")){
-                    String toSend = (String) message.getMessageBody().getContent()[1];
-                    int to = (int)(double) message.getMessageBody().getContent()[0];
+                    String toSend = (String) message.getMessageBody().getContent()[0];
+                    int to = (int)(double) message.getMessageBody().getContent()[1];
                     if (to == -1){
                         SERVER.messageForAllUsers(toSend, this.ID);
                     } else {
                         SERVER.singleMessage(this.ID, toSend, to);
                     }
                 } else if (message.getMessageType().equals("PlayerValues")){
-                    int figure = (int) (double) message.getMessageBody().getContent()[0];
-                    String name = (String) message.getMessageBody().getContent()[1];
+                    int figure = (int) (double) message.getMessageBody().getContent()[1];
+                    String name = (String) message.getMessageBody().getContent()[0];
                     username = name;
                     SERVER.addUsername(this);
                     if(SERVER.checkFigure(figure, this)){
@@ -107,7 +107,7 @@ public class ClientHandler implements Runnable {
 
     public void sendWelcomeMessage(Message message){
         isAi = (boolean) message.getMessageBody().getContent()[1];
-        group = (String) message.getMessageBody().getContent()[2];
+        group = (String) message.getMessageBody().getContent()[0];
         int id = SERVER.generateID();
         this.ID = id;
         SERVER.addClient(this);
