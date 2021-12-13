@@ -18,9 +18,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import Messages.*;
 
 
 public class FirstView implements Initializable {
+   private Thread clientThread;
+   private Client client;
+
+   Client client1;
    private int figure;
    @FXML
    private ImageView roboRallyImageView;
@@ -64,7 +69,7 @@ public class FirstView implements Initializable {
 
 
 
-
+   private  GetID getID;
    private final FirstViewModel viewModel = new FirstViewModel();
 
    private final SignIn signIn = new SignIn();
@@ -75,7 +80,6 @@ public class FirstView implements Initializable {
 
 
    public void initialize(URL arg0, ResourceBundle arg1)  {
-
 
       insertUsername.textProperty()
               .bindBidirectional(viewModel.getUsernameProperty());
@@ -265,12 +269,21 @@ public class FirstView implements Initializable {
       rotate5.play();
    }
 
+   public void setClient(Client client){
+      this.client = client;
+      this.clientThread = new Thread(client);
+      clientThread.start();
+   }
+
 
 
    public void submitUserName() {
 
       try {
-         viewModel.client1.configuration(viewModel.getUsername(), getFigure());
+
+         setClient(SaveClients.client);
+         SaveClients.client.configuration(viewModel.getUsername(), getFigure());
+         //viewModel.client1.configuration(viewModel.getUsername(), getFigure());
          System.out.println(viewModel.getUsername() + getFigure());
          //Passing the current stage to the ViewModel
          Stage stage = (Stage) signInButton.getScene().getWindow();
@@ -282,13 +295,5 @@ public class FirstView implements Initializable {
       }
    }
 
-   @FXML
-
-   /**
-    * Hint label / notification can only be seen if userName is already taken
-    */
-   public void hideNameTakenLabel() {
-      nameExists.setVisible(false);
-   }
 
 }

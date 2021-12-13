@@ -41,8 +41,8 @@ Client client1;
 
 
     public void chooseUsername() throws IOException {
-        Client client = new Client(getUsername());
-        client1 = client;
+        //Client client = new Client(getUsername());
+        //client1 = client;
     }
 
 

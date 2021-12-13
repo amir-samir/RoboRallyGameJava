@@ -35,13 +35,13 @@ public class Client implements Runnable {
      *
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
-    public Client(String username) throws IOException {
+    public Client() throws IOException {
         SOCKET = new Socket("localhost", 1523);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
-        this.userName = userName;
+        //this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
-        bufferedWriter.println(userName);
+        //bufferedWriter.println(userName);
         isAi = false;
         //listenForMessages();
 
@@ -63,6 +63,10 @@ public class Client implements Runnable {
             }
         });
     } */
+
+    public void setCleint(Client client){
+
+    }
 
     /**
      * A method that transfer the input to the Server.
@@ -160,6 +164,7 @@ public class Client implements Runnable {
                     ids.put(username, clientID);
                     figuren[newFigure] = clientID;
                     toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
+                    // System.out.println(toSend) ;
                 } else {
                     toSend = inputFromServer;
                 }
