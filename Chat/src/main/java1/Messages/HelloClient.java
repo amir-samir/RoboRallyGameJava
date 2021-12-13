@@ -6,9 +6,14 @@ public class HelloClient extends Message{
 
         String[] daten = new String[1];
         daten[0] = protocol;
+        String keys[] = {"protocol"};
 
         messageType = "HelloClient";
-        messageBody = new MessageBody(daten);
+
+        MessageBody b = new MessageBody(daten);
+        messageBody  = b;
+        b.setKeys(keys);
+
     }
 
 
