@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GetID">
+   <children>
+      <Button layoutX="207.0" layoutY="175.0" mnemonicParsing="false" onAction="#GetIDPressed" prefHeight="25.0" prefWidth="184.0" text="GetID" />
+   </children>
+</AnchorPane>

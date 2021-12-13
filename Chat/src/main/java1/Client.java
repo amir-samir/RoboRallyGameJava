@@ -85,8 +85,11 @@ public class Client implements Runnable {
     }
 
     public void singleMessage(String message, String userName){
-
-        //SendChat sendChat = new SendChat(String message, int to);
+        int empfaenger = ids.get(userName);
+        SendChat sendChat = new SendChat(message, empfaenger);
+        String[] keys = {"message", "to"};
+        sendChat.getMessageBody().setKeys(keys);
+        bufferedWriter.println(Adopter.javabeanToJson(sendChat));
     }
 
     public void configuration(String name, int figur){

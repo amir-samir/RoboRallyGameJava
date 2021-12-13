@@ -71,9 +71,5 @@ Client client1;
             stage.close();
             System.exit(0);
         });
-
-
-
-
     }
 }
