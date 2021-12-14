@@ -100,6 +100,7 @@ public class Server {
         playerAdded.getMessageBody().setKeys(keys);
         for (ClientHandler clientHandler1 : users.values()){
             clientHandler1.owriter.println(Adopter.javabeanToJson(playerAdded));
+
         }
     }
 

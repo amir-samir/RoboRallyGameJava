@@ -25,7 +25,7 @@ public class Client implements Runnable {
     private PrintWriter bufferedWriter;
     public ObservableList<String> chatMessages;
     public String protocol;
-
+    public  ObservableList<String> usernamesGui;
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public int[] figuren = new int[6];
 
@@ -39,6 +39,7 @@ public class Client implements Runnable {
         SOCKET = new Socket("localhost", 1523);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
+        usernamesGui = FXCollections.observableArrayList();
         //this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
         //bufferedWriter.println(userName);
@@ -80,8 +81,8 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
-    public void getUsernames(){
-
+    public synchronized  ObservableList getUsernames(){
+       return usernamesGui;
     }
 
     public void singleMessage(String message, String userName){
@@ -163,6 +164,7 @@ public class Client implements Runnable {
                     String username = (String) message.getMessageBody().getContent()[2];
                     ids.put(username, clientID);
                     figuren[newFigure] = clientID;
+                    usernamesGui.add(username);
                     toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
                     // System.out.println(toSend) ;
                 } else {

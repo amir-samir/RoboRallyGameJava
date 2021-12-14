@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPaneChat" prefHeight="586.0" prefWidth="646.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
+<AnchorPane fx:id="rootPaneChat" prefHeight="586.0" prefWidth="870.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
     <children>
         <AnchorPane fx:id="chatWrite" layoutX="25.0" layoutY="541.0" prefHeight="45.0" prefWidth="450.0">
             <children>
@@ -39,5 +39,6 @@
             <Image url="@assets/ChatViewPic.png" />
          </image>
       </ImageView>
+      <ComboBox fx:id="PrivateMessage" layoutX="664.0" layoutY="24.0" prefHeight="25.0" prefWidth="172.0" />
     </children>
 </AnchorPane>
