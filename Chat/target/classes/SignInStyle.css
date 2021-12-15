@@ -3,9 +3,15 @@
 -fx-background-size:cover;
 }
 
-.chatBox{
--fx-background-image:url('assets/Black-Texture-PC-Gaming-Wallpaper.png');
--fx-background-size:cover;
+.chatBox {
+    -fx-background-image: url('assets/Black-Texture-PC-Gaming-Wallpaper.png');
+    -fx-background-size: cover;
 }
+
+.getID{
+    -fx-background-image: url('assets/RazerBackground.gif');
+    -fx-background-size: cover;
+}
+
 
 

@@ -16,9 +16,9 @@
             </font></Button>
         <Label fx:id="nameExists" alignment="CENTER" layoutX="213.0" layoutY="263.0" prefHeight="35.0" textAlignment="CENTER" textFill="#0e24cd" visible="false" />
         <Line endX="150.0" layoutX="350.0" layoutY="91.0" startX="-159.0" />
-      <ImageView fx:id="roboRallyImageView" cache="true" cacheHint="QUALITY" fitHeight="87.0" fitWidth="321.0" layoutX="178.0" layoutY="1.0" pickOnBounds="true">
+      <ImageView fx:id="roboRallyImageView" cache="true" cacheHint="QUALITY" fitHeight="87.0" fitWidth="321.0" layoutX="191.0" pickOnBounds="true">
          <image>
-            <Image url="@assets/Logo.png" />
+            <Image url="@assets/RoboRallyLogo.png" />
          </image>
       </ImageView>
       <ImageView fx:id="twinkyImageView" fitHeight="139.0" fitWidth="134.0" layoutX="-134.0" layoutY="138.0" onMouseClicked="#TwinkyRoboterPressed" pickOnBounds="true" preserveRatio="true">
