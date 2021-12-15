@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPaneChat" prefHeight="586.0" prefWidth="870.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
+<AnchorPane fx:id="rootPaneChat" prefHeight="677.0" prefWidth="656.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
     <children>
         <AnchorPane fx:id="chatWrite" layoutX="25.0" layoutY="541.0" prefHeight="45.0" prefWidth="450.0">
             <children>
@@ -18,18 +18,17 @@
                 <ListView id="chatBox" fx:id="chatBox" prefHeight="525.0" prefWidth="450.0" styleClass="loader" stylesheets="@SignInStyle.css" />
             </children>
         </AnchorPane>
-        <Button fx:id="startGame" layoutX="476.0" layoutY="122.0" mnemonicParsing="false" onAction="#startGame" prefHeight="65.0" prefWidth="172.0" style="-fx-background-color: green;" text="Start Game" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="startGame" layoutX="25.0" layoutY="586.0" mnemonicParsing="false" onAction="#startGame" prefHeight="45.0" prefWidth="450.0" style="-fx-background-color: green;" text="READY!" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Button>
-        <Button fx:id="exitGame" layoutX="476.0" layoutY="196.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="45.0" prefWidth="172.0" style="-fx-background-color: red;" text="Exit" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="exitGame" layoutX="25.0" layoutY="641.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="30.0" prefWidth="450.0" style="-fx-background-color: red;" text="Exit" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Button>
-        <Button fx:id="joinGame" layoutX="476.0" layoutY="68.0" mnemonicParsing="false" onAction="#joinGame" prefHeight="45.0" prefWidth="172.0" text="Join Game" />
-        <Button fx:id="createRoomGame" layoutX="476.0" layoutY="14.0" mnemonicParsing="false" onAction="#chooseRoboter" prefHeight="45.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Create Game">
+        <Button fx:id="createRoomGame" layoutX="476.0" layoutY="196.0" mnemonicParsing="false" onAction="#chooseRoboter" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Create Game">
             <font>
                 <Font name="System Bold" size="19.0" />
             </font>
@@ -39,6 +38,13 @@
             <Image url="@assets/ChatViewPic.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="PrivateMessage" layoutX="664.0" layoutY="24.0" prefHeight="25.0" prefWidth="172.0" />
+      <ComboBox fx:id="PrivateMessage" layoutX="476.0" layoutY="34.0" prefHeight="25.0" prefWidth="179.0" />
+      <TextField layoutX="476.0" layoutY="60.0" prefHeight="25.0" prefWidth="179.0" />
+      <Button layoutX="476.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="179.0" text="SEND!Priavte" />
+      <Label layoutX="476.0" layoutY="8.0" prefHeight="18.0" prefWidth="179.0" text="Send priavte messages" textAlignment="CENTER" textFill="#0d0c0c">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

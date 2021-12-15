@@ -57,13 +57,13 @@ public class ChatView {
         } );
         writeField.textProperty().bindBidirectional(viewModel.messageProperty());
         sendButton.defaultButtonProperty().bindBidirectional(viewModel.sendButtonProperty());
-        joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
+        //joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
         startGame.defaultButtonProperty().bindBidirectional(viewModel.startGameProperty());
         exitGame.defaultButtonProperty().bindBidirectional(viewModel.exitGameProperty());
-        createRoomGame.defaultButtonProperty().bindBidirectional(viewModel.createRoomGameProperty());
+        //createRoomGame.defaultButtonProperty().bindBidirectional(viewModel.createRoomGameProperty());
         //ObservableList idsNamesList = (ObservableList) Client.ids;
         //PrivateMessage.setItems(viewModel.getClient().usernamesGui);
-        //usernamesUpdated = Client.getUsernames();
+        // usernamesUpdated = Client.getUsernames();
         PrivateMessage.setItems(SaveClients.client.usernamesGui);
         //PrivateMessage.getSelectionModel().selectFirst();
 
