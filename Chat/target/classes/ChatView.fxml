@@ -38,9 +38,9 @@
             <Image url="@assets/ChatViewPic.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="PrivateMessage" layoutX="476.0" layoutY="34.0" prefHeight="25.0" prefWidth="179.0" />
-      <TextField layoutX="476.0" layoutY="60.0" prefHeight="25.0" prefWidth="179.0" />
-      <Button layoutX="476.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="179.0" text="SEND!Priavte" />
+      <ComboBox fx:id="PrivateMessage" layoutX="476.0" layoutY="34.0" onAction="#comboAction" prefHeight="25.0" prefWidth="179.0" />
+      <TextField fx:id="privateMsgInput" layoutX="476.0" layoutY="60.0" prefHeight="25.0" prefWidth="179.0" />
+      <Button fx:id="sendPrivateMsg" layoutX="476.0" layoutY="85.0" mnemonicParsing="false" onAction="#sendPrivateMsgFun" prefHeight="25.0" prefWidth="179.0" text="SEND!Priavte" />
       <Label layoutX="476.0" layoutY="8.0" prefHeight="18.0" prefWidth="179.0" text="Send priavte messages" textAlignment="CENTER" textFill="#0d0c0c">
          <font>
             <Font name="System Bold" size="16.0" />

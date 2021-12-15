@@ -45,7 +45,6 @@ public class Client implements Runnable {
         //bufferedWriter.println(userName);
         isAi = false;
         //listenForMessages();
-
     }
 
    /* public void listenForMessages(){
@@ -68,6 +67,18 @@ public class Client implements Runnable {
     public void setCleint(Client client){
 
     }
+    public void singleMessage(int senderId, String message, String userName){
+        int empfaenger = ids.get(userName);
+        //int senderId = ids.get(senderName);
+        String[] keys = {"message", "to"};
+        SendChat sendChat = new SendChat(message, empfaenger);
+        sendChat.getMessageBody().setKeys(keys);
+        bufferedWriter.println(Adopter.javabeanToJson(sendChat));
+
+        SendChat sentMsg= new SendChat(message + " was sent to " + userName, senderId);
+        sentMsg.getMessageBody().setKeys(keys);
+        bufferedWriter.println(Adopter.javabeanToJson(sentMsg));
+    }
 
     /**
      * A method that transfer the input to the Server.
@@ -85,10 +96,7 @@ public class Client implements Runnable {
        return usernamesGui;
     }
 
-    public void singleMessage(String message, String userName){
 
-        //SendChat sendChat = new SendChat(String message, int to);
-    }
 
     public void configuration(String name, int figur){
         PlayerValues message = new PlayerValues(name, figur);
@@ -100,7 +108,9 @@ public class Client implements Runnable {
     public int getID(){
         return ID;
     }
-
+    public String getUserName(){
+        return userName;
+    }
     /**
      * A method that receive and returns information from the Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
@@ -164,7 +174,9 @@ public class Client implements Runnable {
                     String username = (String) message.getMessageBody().getContent()[2];
                     ids.put(username, clientID);
                     figuren[newFigure] = clientID;
-                    usernamesGui.add(username);
+
+
+                    usernamesGui.add(clientID + "," + username);
                     toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
                     // System.out.println(toSend) ;
                 } else {

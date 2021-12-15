@@ -17,6 +17,7 @@ public class ChatViewModel {
     private BooleanProperty exitGame = new SimpleBooleanProperty();
     private BooleanProperty joinGame = new SimpleBooleanProperty();
     private BooleanProperty createRoomGame = new SimpleBooleanProperty();
+    private StringProperty privteMessage = new SimpleStringProperty();
 
     private Thread clientThread;
     private Client client;
@@ -55,6 +56,9 @@ public class ChatViewModel {
      */
     public StringProperty messageProperty() {
         return message;
+    }
+    public StringProperty privateMessageProperty() {
+        return privteMessage;
     }
 
     /**
@@ -150,6 +154,5 @@ public class ChatViewModel {
             this.setMessage("");
         }
     }
-
 
 }

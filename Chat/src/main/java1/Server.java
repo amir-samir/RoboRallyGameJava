@@ -16,7 +16,7 @@ public class Server {
     public static int laufendeID = 2000;
 
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
-    public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public int[] figuren = new int[6];
 
     private ServerSocket serverSocket;

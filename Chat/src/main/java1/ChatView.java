@@ -1,5 +1,6 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -46,7 +47,8 @@ public class ChatView {
     @FXML
     private ComboBox PrivateMessage;
 
-
+    @FXML
+    private TextField privateMsgInput;
 
     @FXML
     void initialize() {
@@ -65,11 +67,24 @@ public class ChatView {
         //PrivateMessage.setItems(viewModel.getClient().usernamesGui);
         // usernamesUpdated = Client.getUsernames();
         PrivateMessage.setItems(SaveClients.client.usernamesGui);
+        privateMsgInput.textProperty().bindBidirectional(viewModel.privateMessageProperty());
+
         //PrivateMessage.getSelectionModel().selectFirst();
 
 
     }
 
+    public void sendPrivateMsgFun() {
+        String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
+        String msg = privateMsgInput.getText();
+
+        SaveClients.client.singleMessage(SaveClients.client.getID(), msg, selectedUser);
+    }
+    public void comboAction(ActionEvent event) {
+        String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
+        System.out.println(privateMsgInput.getText());
+
+    }
     public void joinGame() {
         viewModel.joiningGame();
         joinGame.setDisable(true);
@@ -78,9 +93,9 @@ public class ChatView {
 
     }
     public void startGame() {
+        System.out.println(PrivateMessage);
         viewModel.startingGame();
         startGame.setDisable(true);
-
     }
 
     public void exitGame() {

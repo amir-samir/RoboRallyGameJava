@@ -29,7 +29,6 @@ public class ClientHandler implements Runnable {
 
     public BufferedReader reader;
     public PrintWriter owriter;
-    public static ObservableList<String> usernamesGui = FXCollections.observableArrayList();
 
     /**
      * Diese Methode stellt den Konstruktor dar. Sie initialisiert die globalen Variablen und fügt nach Überprüfung den
