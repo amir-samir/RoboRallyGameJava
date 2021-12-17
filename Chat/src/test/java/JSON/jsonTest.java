@@ -209,4 +209,17 @@ public class jsonTest {
         String toSend = Adopter.javabeanToJson(playerValues);
         System.out.println(toSend);
     }
+
+    @Test
+    public void GameStarted(){
+        String map = "{\"messageType\":\"GameStarted\",\"messageBody\":{\"gameMap\":[[[{ " +
+                "\"type\":\"ConveyorBelt\",\"isOnBoard\":\"1B\",\"speed\":2,\"orientations\":[" +
+                "\"top\",\"right\",\"bottom\"]}],[{\"type\":\"PushPanel\",\"isOnBoard\":\"1B\"," +
+                    "\"orientations\":[\"left\"],\"registers\":[2, 4]}]][[{\"type\":\"Wall\"," +
+                    "\"isOnBoard\":\"4A\",\"orientations\":[\"top\",\"right\"]},{\"type\":\"Laser\"," +
+                    "\"isOnBoard\":\"4A\",\"orientations\":[\"bottom\"],\"count\":2}],[null]]]}}";
+        Message m = Adopter.getMessage(map);
+        System.out.println(map);
+        //GameStarted message = new GameStarted();
+    }
 }
