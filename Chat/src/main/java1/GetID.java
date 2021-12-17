@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class GetID extends Application {
     private Thread clientThread;
@@ -23,6 +25,7 @@ public class GetID extends Application {
             this.clientThread = new Thread(client);
             clientThread.start();
             SaveClients.client = client;
+
             stage.setTitle("Get Id");
             Parent getID = FXMLLoader.load(getClass().getResource("GetID.fxml"));
             Scene getIdScene = new Scene(getID);
@@ -35,8 +38,8 @@ public class GetID extends Application {
     }
 
     public void GetIDPressed() throws IOException {
-        //Client client = new Client();
-        //SaveClients.client = client;
+
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FirstView.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = new Stage();

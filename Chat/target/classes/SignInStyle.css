@@ -12,6 +12,9 @@
     -fx-background-image: url('assets/RazerBackground.gif');
     -fx-background-size: cover;
 }
-
+.firstView{
+    -fx-background-image:url('assets/SigninBand.gif');
+    -fx-background-size:cover;
+}
 
 
