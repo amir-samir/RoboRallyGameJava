@@ -157,6 +157,7 @@ public class jsonTest {
         toParse.getMessageBody().setKeys(keys);
 
         String expected = "{\"messageType\":\"SelectMap\",\"messageBody\":{\"availableMaps\":[\"DizzyHighway\"]}}";
+        Message m = Adopter.getMessage(expected);
         System.out.println("Erwartet: " + expected);
         String ergebnis = Adopter.javabeanToJson(toParse);
         System.out.println("Ergebnis: " + ergebnis);
@@ -212,14 +213,15 @@ public class jsonTest {
 
     @Test
     public void GameStarted(){
-        String map = "{\"messageType\":\"GameStarted\",\"messageBody\":{\"gameMap\":[[[{ " +
-                "\"type\":\"ConveyorBelt\",\"isOnBoard\":\"1B\",\"speed\":2,\"orientations\":[" +
-                "\"top\",\"right\",\"bottom\"]}],[{\"type\":\"PushPanel\",\"isOnBoard\":\"1B\"," +
-                    "\"orientations\":[\"left\"],\"registers\":[2, 4]}]][[{\"type\":\"Wall\"," +
+        String map = "{ \"messageType\": \"GameStarted\",\"messageBody\": {\"gameMap\": [[[{ " +
+                "\"type\": \"ConveyorBelt\",\"isOnBoard\": \"1B\",\"speed\": 2,\"orientations\": [" +
+                "\"top\",\"right\",\"bottom\"]}],[{\"type\": \"PushPanel\",\"isOnBoard\": \"1B\"," +
+                    "\"orientations\": [\"left\"],\"registers\": [2, 4]}]],[[{\"type\":\"Wall\"," +
                     "\"isOnBoard\":\"4A\",\"orientations\":[\"top\",\"right\"]},{\"type\":\"Laser\"," +
                     "\"isOnBoard\":\"4A\",\"orientations\":[\"bottom\"],\"count\":2}],[null]]]}}";
         Message m = Adopter.getMessage(map);
-        System.out.println(map);
+
+        System.out.println(m.getMessageBody().getContent());
         //GameStarted message = new GameStarted();
     }
 }

@@ -164,7 +164,7 @@ public class Adopter {
      * @return message
      */
     public static Message getMessage(String json) {
-        json = jsonWithBrackets(json);
+  //      json = jsonWithBrackets(json);
         Gson gson = new Gson();
         Map map = gson.fromJson(json, Map.class);
         Message message = new Message();
