@@ -220,6 +220,7 @@ public class jsonTest {
                     "\"isOnBoard\":\"4A\",\"orientations\":[\"top\",\"right\"]},{\"type\":\"Laser\"," +
                     "\"isOnBoard\":\"4A\",\"orientations\":[\"bottom\"],\"count\":2}],[null]]]}}";
         Message m = Adopter.getMessage(map);
+       // GameStarted gs = new GameStarted(map);
 
         System.out.println(m.getMessageBody().getContent());
         //GameStarted message = new GameStarted();
