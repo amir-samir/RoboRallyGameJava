@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 
@@ -19,14 +18,16 @@ public class Client implements Runnable {
     private boolean isAi;
     private boolean connected;
     private int ID;
+    private boolean ready = false;
 
     private String userName;
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
-    public ObservableList<String> chatMessages;
     public String protocol;
+    public ObservableList<String> chatMessages;
     public  ObservableList<String> usernamesGui;
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
 
     /**
@@ -67,6 +68,21 @@ public class Client implements Runnable {
     public void setCleint(Client client){
 
     }
+
+    public void setReady(){
+        if(ready){
+            ready = false;
+            player.get(userName).ready = false;
+            SetStatus setStatus = new SetStatus(false);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        } else if (!ready){
+            ready = true;
+            player.get(userName).ready = true;
+            SetStatus setStatus = new SetStatus(true);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        }
+    }
+
     public void singleMessage(int senderId, String message, String userName){
         int empfaenger = ids.get(userName);
         //int senderId = ids.get(senderName);
@@ -166,18 +182,31 @@ public class Client implements Runnable {
                 } else if(message.getMessageType().equals("Alive")){
                     bufferedWriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
                     toSend = null;
-                } else if(message.getMessageType().equals("PlayerAdded")) {
+                } else if(message.getMessageType().equals("PlayerAdded")){
                     int newFigure = (int)(double) message.getMessageBody().getContent()[2];
                     int clientID = (int)(double) message.getMessageBody().getContent()[0];
                     String username = (String) message.getMessageBody().getContent()[1];
                     ids.put(username, clientID);
                     figuren[newFigure] = clientID;
-
                     usernamesGui.add(clientID + "," + username);
+                    Player newPlayer = new Player(clientID, username, newFigure);
+                    player.put(clientID, newPlayer);
                     toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
                     // System.out.println(toSend) ;
-                } else {
-                    toSend = inputFromServer;
+                } else if(message.getMessageType().equals("PlayerConfirmed")){
+                    boolean isReady = (boolean) message.getMessageBody().getContent()[0];
+                    int clientID = (int) (double) message.getMessageBody().getContent()[1];
+
+                    for(Player player: player.values()){
+                        if(player.ID == clientID){
+                            player.ready = isReady;
+                            //Information an GUI weitergeben?
+                        }
+                    }
+                    toSend = "Folgender Spieler hat seinen Bereitschaftsstatus auf " + isReady + " gesetzt: " + player.get(clientID).name;
+                }
+                else {
+                        toSend = inputFromServer;
                 }
 
                 Platform.runLater(() -> {

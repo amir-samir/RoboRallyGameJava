@@ -94,14 +94,48 @@ public class Server {
         } else return false;
     }
 
-    public void playerAdded(ClientHandler clientHandler){
+    public void playerAdded(ClientHandler clientHandler) {
         PlayerAdded playerAdded = new PlayerAdded(clientHandler.ID, clientHandler.username, clientHandler.figure);
         String[] keys = {"clientID", "name", "figure"};
         playerAdded.getMessageBody().setKeys(keys);
-        for (ClientHandler clientHandler1 : users.values()){
+        //Versendung des neuen Spielers an alle anderen
+        for (ClientHandler clientHandler1 : users.values()) {
             clientHandler1.owriter.println(Adopter.javabeanToJson(playerAdded));
-
         }
+        //Versendung aller anderen Spieler an den neuen
+        for (ClientHandler clientHandler1 : users.values()) {
+            if (clientHandler.ID != clientHandler1.ID) {
+                System.out.println(clientHandler1.ID + " " + clientHandler1.username + " " + clientHandler1.figure);
+                PlayerAdded pA = new PlayerAdded(clientHandler1.ID, clientHandler1.username, clientHandler1.figure);
+                String[] key = {"clientID", "name", "figure"};
+                pA.getMessageBody().setKeys(key);
+                clientHandler.owriter.println(Adopter.javabeanToJson(pA));
+            }
+        }
+    }
+
+    public void handleReady(ClientHandler cH){
+        int countReady = 0;
+        for (ClientHandler clientHandler: users.values()){
+            if(clientHandler.isReady == true){
+                countReady += 1;
+            }
+        }
+
+        if (countReady == 1){
+            //Select Map verschickem
+        }
+
+        PlayerStatus playerStatus = new PlayerStatus(cH.ID, cH.isReady);
+        String[] keys = {"clientID", "ready"};
+        playerStatus.getMessageBody().setKeys(keys);
+
+        for (ClientHandler clientHandler: users.values()){
+            if(clientHandler.ID == cH.ID) {
+                clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));
+            }
+        }
+
     }
 
     /**
