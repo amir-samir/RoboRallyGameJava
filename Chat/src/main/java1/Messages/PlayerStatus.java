@@ -1,13 +1,12 @@
 package Messages;
 
-public class ConfirmPlayerStatus extends Message{
-    ConfirmPlayerStatus(int clientID, boolean ready){
+public class PlayerStatus extends Message{
+    public PlayerStatus(int clientID, boolean ready){
         super();
 
         Object[] inhalt = new Object[2];
-        inhalt[1] = clientID;
-        inhalt[2] = ready;
-
+        inhalt[0] = clientID;
+        inhalt[1] = ready;
 
         messageType = "PlayerStatus";
         messageBody = new MessageBody(inhalt);

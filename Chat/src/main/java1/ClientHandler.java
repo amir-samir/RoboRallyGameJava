@@ -1,9 +1,4 @@
 import Messages.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
@@ -26,6 +21,7 @@ public class ClientHandler implements Runnable {
     public int figure;
     public String group;
     public boolean isAi;
+    public boolean isReady;
 
     public BufferedReader reader;
     public PrintWriter owriter;
@@ -100,6 +96,9 @@ public class ClientHandler implements Runnable {
                         error.getMessageBody().setKeys(keys);
                         owriter.println(Adopter.javabeanToJson(error));
                     }
+                } else if (message.getMessageType().equals("SetStatus")){
+                    boolean ready = (boolean) message.getMessageBody().getContent()[0];
+                    SERVER.handleReady(this);
                 }
             } catch (Exception e){
                 e.printStackTrace();
