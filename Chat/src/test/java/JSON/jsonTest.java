@@ -225,4 +225,13 @@ public class jsonTest {
         System.out.println(m.getMessageBody().getContent());
         //GameStarted message = new GameStarted();
     }
+
+    @Test
+    public void selectMap(){
+        String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
+        SelectMap selectMap = new SelectMap(availableMaps);
+        String[] keys = {"availableMaps"};
+        selectMap.getMessageBody().setKeys(keys);
+        System.out.println(Adopter.javabeanToJson(selectMap));
+    }
 }

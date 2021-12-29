@@ -25,7 +25,7 @@ public class Client implements Runnable {
     private PrintWriter bufferedWriter;
     public String protocol;
     public ObservableList<String> chatMessages;
-    public  ObservableList<String> usernamesGui;
+    public ObservableList<String> usernamesGui;
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
@@ -72,12 +72,12 @@ public class Client implements Runnable {
     public void setReady(){
         if(ready){
             ready = false;
-            player.get(userName).ready = false;
+            player.get(ID).ready = false;
             SetStatus setStatus = new SetStatus(false);
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         } else if (!ready){
             ready = true;
-            player.get(userName).ready = true;
+            player.get(ID).ready = true;
             SetStatus setStatus = new SetStatus(true);
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         }
@@ -150,6 +150,13 @@ public class Client implements Runnable {
         bufferedWriter.println(S);
     }
 
+    public void mapSelected(String map){
+        MapSelected mapSelected = new MapSelected(map);
+        String[] key = {"map"};
+        mapSelected.getMessageBody().setKeys(key);
+        bufferedWriter.println(mapSelected);
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -191,22 +198,32 @@ public class Client implements Runnable {
                     usernamesGui.add(clientID + "," + username);
                     Player newPlayer = new Player(clientID, username, newFigure);
                     player.put(clientID, newPlayer);
-                    toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
-                    // System.out.println(toSend) ;
-                } else if(message.getMessageType().equals("PlayerConfirmed")){
-                    boolean isReady = (boolean) message.getMessageBody().getContent()[0];
-                    int clientID = (int) (double) message.getMessageBody().getContent()[1];
-
+                    toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
+                    setReady();
+                } else if(message.getMessageType().equals("PlayerStatus")){
+                    boolean isReady = (boolean) message.getMessageBody().getContent()[1];
+                    int clientID = (int) (double) message.getMessageBody().getContent()[0];
                     for(Player player: player.values()){
                         if(player.ID == clientID){
                             player.ready = isReady;
                             //Information an GUI weitergeben?
                         }
                     }
-                    toSend = "Folgender Spieler hat seinen Bereitschaftsstatus auf " + isReady + " gesetzt: " + player.get(clientID).name;
+                    if(isReady){
+                        toSend = player.get(clientID).name + " ist jetzt bereit.";
+                    } else {
+                        toSend = player.get(clientID).name + " ist nicht mehr bereit.";
+                    }
+                } else if (message.getMessageType().equals("SelectMap")){
+                    //Methode von AMIR aufrufen --> GUI: Select Map
+                    toSend = "Bitte wähle die Map aus.";
+                    mapSelected("DizzyHighway");
+                } else if (message.getMessageType().equals("MapSelected")){
+                    String map = (String) message.getMessageBody().getContent()[0];
+                    toSend = "Folgende Map wurde ausgewählt: " + map;
                 }
                 else {
-                        toSend = inputFromServer;
+                    toSend = inputFromServer;
                 }
 
                 Platform.runLater(() -> {

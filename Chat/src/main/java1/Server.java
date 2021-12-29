@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Diese Klasse stellt den Server dar, auf welchem der Chat und das Spiel ausgeführt werden.
@@ -18,6 +19,8 @@ public class Server {
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public int[] figuren = new int[6];
+    public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
+    String activeMap = null;
 
     private ServerSocket serverSocket;
     public String protocol;
@@ -36,7 +39,7 @@ public class Server {
         try {
             ServerSocket serverSocket = new ServerSocket(1523);
             Server server = new Server(serverSocket);
-            server.protocol = "Version 0.2";
+            server.protocol = "Version 1.0";
             server.startServer();
         } catch (Exception e){
             e.printStackTrace();
@@ -105,11 +108,16 @@ public class Server {
         //Versendung aller anderen Spieler an den neuen
         for (ClientHandler clientHandler1 : users.values()) {
             if (clientHandler.ID != clientHandler1.ID) {
-                System.out.println(clientHandler1.ID + " " + clientHandler1.username + " " + clientHandler1.figure);
                 PlayerAdded pA = new PlayerAdded(clientHandler1.ID, clientHandler1.username, clientHandler1.figure);
                 String[] key = {"clientID", "name", "figure"};
                 pA.getMessageBody().setKeys(key);
                 clientHandler.owriter.println(Adopter.javabeanToJson(pA));
+                if (clientHandler1.isReady){
+                    PlayerStatus playerStatus = new PlayerStatus(clientHandler1.ID, true);
+                    String[] k = {"clientID", "ready"};
+                    playerStatus.getMessageBody().setKeys(k);
+                    clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));
+                }
             }
         }
     }
@@ -117,13 +125,19 @@ public class Server {
     public void handleReady(ClientHandler cH){
         int countReady = 0;
         for (ClientHandler clientHandler: users.values()){
-            if(clientHandler.isReady == true){
+            if(clientHandler.isReady){
                 countReady += 1;
             }
         }
 
         if (countReady == 1){
-            //Select Map verschickem
+            if (cH.isReady){
+                SelectMap selectMap = new SelectMap(availableMaps);
+                String[] keys = {"availableMaps"};
+                selectMap.getMessageBody().setKeys(keys);
+                cH.owriter.println(Adopter.javabeanToJson(selectMap));
+                System.out.println(Adopter.javabeanToJson(selectMap));
+            }
         }
 
         PlayerStatus playerStatus = new PlayerStatus(cH.ID, cH.isReady);
@@ -131,11 +145,35 @@ public class Server {
         playerStatus.getMessageBody().setKeys(keys);
 
         for (ClientHandler clientHandler: users.values()){
-            if(clientHandler.ID == cH.ID) {
-                clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));
-            }
+            clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));
+        }
+    }
+
+    public void handleMapSelected (String map){
+        MapSelected mapToSend = new MapSelected(map);
+        String[] key = {"map"};
+        mapToSend.getMessageBody().setKeys(key);
+        activeMap = map;
+        for (ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(Adopter.javabeanToJson(mapToSend));
         }
 
+        if(readyToStart()){
+            createMap();
+        }
+    }
+
+    public boolean readyToStart(){
+        int count = 0;
+        for (ClientHandler clientHandler: users.values()){
+            count += 1;
+            if (!clientHandler.isReady) return false;
+        }
+        return true;
+    }
+
+    public void createMap(){
+        //Map erstellen
     }
 
     /**

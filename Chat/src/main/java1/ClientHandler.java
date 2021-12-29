@@ -57,7 +57,7 @@ public class ClientHandler implements Runnable {
             @Override
             public void run() {
                 owriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
-                System.out.println("Timer aktiviert");
+                //System.out.println("Timer aktiviert");
             }
         };
         t.schedule(timerTask, 0,5000);
@@ -98,7 +98,12 @@ public class ClientHandler implements Runnable {
                     }
                 } else if (message.getMessageType().equals("SetStatus")){
                     boolean ready = (boolean) message.getMessageBody().getContent()[0];
+                    this.isReady = ready;
                     SERVER.handleReady(this);
+                }
+                else if(message.getMessageType().equals("MapSelected")){
+                    String map = (String) message.getMessageBody().getContent()[0];
+                    SERVER.handleMapSelected(map);
                 }
             } catch (Exception e){
                 e.printStackTrace();
