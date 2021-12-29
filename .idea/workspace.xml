@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ChatViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ChooseRobotView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ChooseRobotViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FirstView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Gamer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SaveClients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SignIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Belt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardLaser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Checkpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpaces.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Gears.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Pits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/PushPanels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/RotatingBelt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Walls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Black-Texture-PC-Gaming-Wallpaper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ChatViewPic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/HammerBoot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Hulk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LetsPlayButtonEdited.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LogoPic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/NewBackgroung.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/RazerBackground.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/RoboRallyLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Smashbot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/SpinRot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Twinky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Zoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Zoom1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/backround54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hammerMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hammerMove2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hulkMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hulkMove2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/smashbotMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/smashbotMove2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/spinbotMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/twonkyMovegif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/zoombotgif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/SignInStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChooseRobotView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/FirstView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/GetID.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/sample.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ChatViewModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ChooseRobotView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ChooseRobotViewModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/FirstView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Gamer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SaveClients.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/Black-Texture-PC-Gaming-Wallpaper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ChatViewPic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/HammerBoot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/Hulk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LetsPlayButtonEdited.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LogoPic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/NewBackgroung.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/RazerBackground.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/RoboRallyLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/Smashbot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/SpinRot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/Twinky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/Zoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/Zoom1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/backround54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/hammerMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/hammerMove2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/hulkMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/hulkMove2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/smashbotMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/smashbotMove2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/spinbotMove1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/twonkyMovegif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/zoombotgif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/css/SignInStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fxml/ChooseRobotView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fxml/GetID.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Antenna.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Belt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Board.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardLaser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Checkpoints.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Empty.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/EnergySpaces.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Gears.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Pits.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/PushPanels.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/RestartPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/RotatingBelt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/StartPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Walls.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/AgainCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/BackUpCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/BrakesCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/CardUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Cards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/DamageCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/LeftTurnCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Move1Card.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Move2Card.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Move3Card.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/PowerUpCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/ProgrammingCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/RightTurnCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Spam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/SpamFolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/SpecialProgrammingCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Trojan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/UTurnCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/UpgradeCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/VirusCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Worm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Animation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/CheckPointReached.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Energy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/GameFinished.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Movement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/PlayerTurning.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Reboot.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/RebootDirection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/ActivePhase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Alive.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/BackToJava.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/CardPlayed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/ConfirmPlayerStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/CurrentPlayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Error1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/GameStarted.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/MapSelected.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/MessageBody.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CardSelected.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CardsYouGotNow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CurrentCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/NotYourCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/ReplaceCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SelectedCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SelectionFinished.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SetStartingPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/ShuffleCoding.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/StartingPointTaken.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/TimerEnded.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/TimerStarted.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/YourCards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerAdded.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerConfirmed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerReady.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerValues.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PublicMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/ReceivedChat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/SendChat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/SetName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Welcome.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/sample.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Json_Chat" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Desktop/vp-brave-barsche-master/src/main/java/Shared/Message/TCPMessage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Desktop/vp-brave-barsche-master/src/main/java/Shared/Message/TCPMessageBuilder.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="21ssciyP741WYX4n2ZuWMp0aGbA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/css" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SignIn">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="16" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="innige-irrweg-hp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="16" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="SignIn" />
+      <module name="innige-irrweg-hp" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JSON.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JSON" />
+      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsonTest.GsonTestHelloServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JSON.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JSON" />
+      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
+      <option name="METHOD_NAME" value="GsonTestHelloServer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsonTest.GsonTestWelcomeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JSON.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JSON" />
+      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
+      <option name="METHOD_NAME" value="GsonTestWelcomeMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.SignIn" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="JUnit.jsonTest.GsonTestHelloServer" />
+      <item itemvalue="JUnit.jsonTest" />
+      <item itemvalue="JUnit.jsonTest.GsonTestWelcomeMessage" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SignIn" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.jsonTest" />
+        <item itemvalue="JUnit.jsonTest.GsonTestWelcomeMessage" />
+        <item itemvalue="JUnit.jsonTest.GsonTestHelloServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="" />
+      <created>1638741223995</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638741223995</updated>
+    </task>
+    <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
+      <created>1638753613056</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638753613057</updated>
+    </task>
+    <task id="LOCAL-00002" summary="@yilu und chen Adopter">
+      <created>1639131037040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639131037040</updated>
+    </task>
+    <task id="LOCAL-00003" summary="@yilu und dairen Adopte, Message">
+      <created>1639138075735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639138075738</updated>
+    </task>
+    <task id="LOCAL-00004" summary="@yilu und dairen Adopte, Message">
+      <created>1639144711170</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639144711170</updated>
+    </task>
+    <task id="LOCAL-00005" summary="q">
+      <created>1639338951559</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639338951559</updated>
+    </task>
+    <task id="LOCAL-00006" summary="q">
+      <created>1639339000736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639339000738</updated>
+    </task>
+    <task id="LOCAL-00007" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <created>1640269448945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640269448946</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt" />
+    <MESSAGE value="@yilu und chen Adopter" />
+    <MESSAGE value="@yilu und dairen Adopte, Message" />
+    <MESSAGE value="q" />
+    <MESSAGE value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
+  </component>
+</project>
