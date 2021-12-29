@@ -199,7 +199,6 @@ public class Client implements Runnable {
                     Player newPlayer = new Player(clientID, username, newFigure);
                     player.put(clientID, newPlayer);
                     toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
-                    setReady();
                 } else if(message.getMessageType().equals("PlayerStatus")){
                     boolean isReady = (boolean) message.getMessageBody().getContent()[1];
                     int clientID = (int) (double) message.getMessageBody().getContent()[0];
@@ -217,7 +216,6 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("SelectMap")){
                     //Methode von AMIR aufrufen --> GUI: Select Map
                     toSend = "Bitte wähle die Map aus.";
-                    mapSelected("DizzyHighway");
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
                     toSend = "Folgende Map wurde ausgewählt: " + map;
