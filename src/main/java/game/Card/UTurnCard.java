@@ -1,4 +1,4 @@
-package game.Cards;
+package game.Card;
 
 public class UTurnCard extends ProgrammingCards {
     final String description = "The Cards.UTurnCard turns your robot 180 degrees so it faces the opposite direction. The robot remains in its current space.";

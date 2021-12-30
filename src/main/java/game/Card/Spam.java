@@ -1,4 +1,4 @@
-package game.Cards;
+package game.Card;
 
 public class Spam extends DamageCards{
 }

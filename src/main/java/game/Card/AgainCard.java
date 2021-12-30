@@ -1,4 +1,4 @@
-package game.Cards;
+package game.Card;
 
 public class AgainCard extends ProgrammingCards {
     final String description = "Repeat the programming in \n" +

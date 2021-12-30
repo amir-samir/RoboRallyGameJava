@@ -5,211 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ChatViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ChooseRobotView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ChooseRobotViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FirstView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Gamer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SaveClients.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SignIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Belt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardLaser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Checkpoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpaces.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Gears.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Pits.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/PushPanels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/RotatingBelt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/Walls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Black-Texture-PC-Gaming-Wallpaper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ChatViewPic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/HammerBoot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Hulk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LetsPlayButtonEdited.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LogoPic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/NewBackgroung.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/RazerBackground.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/RoboRallyLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Smashbot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/SpinRot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Twinky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Zoom1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/backround54.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hammerMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hammerMove2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hulkMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/hulkMove2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/smashbotMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/smashbotMove2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/spinbotMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/twonkyMovegif.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/zoombotgif.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/SignInStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChooseRobotView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/FirstView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/GetID.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/sample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ChatViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ChooseRobotView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ChooseRobotViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FirstView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Gamer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/SaveClients.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/Black-Texture-PC-Gaming-Wallpaper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/ChatViewPic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/HammerBoot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/Hulk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/LetsPlayButtonEdited.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/LogoPic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/NewBackgroung.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/RazerBackground.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/RoboRallyLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/Smashbot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/SpinRot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/Twinky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/Zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/Zoom1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/backround54.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/hammerMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/hammerMove2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/hulkMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/hulkMove2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/smashbotMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/smashbotMove2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/spinbotMove1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/twonkyMovegif.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/zoombotgif.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/css/SignInStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fxml/ChooseRobotView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fxml/GetID.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Antenna.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Belt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Board.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardLaser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Checkpoints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Empty.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/EnergySpaces.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Gears.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Pits.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/PushPanels.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/RestartPoint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/RotatingBelt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/StartPoint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Board/Walls.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/AgainCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/BackUpCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/BrakesCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/CardUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Cards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/DamageCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/LeftTurnCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Move1Card.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Move2Card.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Move3Card.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/PowerUpCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/ProgrammingCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/RightTurnCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Spam.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/SpamFolder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/SpecialProgrammingCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Trojan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/UTurnCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/UpgradeCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/VirusCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Cards/Worm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Animation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/CheckPointReached.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Energy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/GameFinished.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Movement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/PlayerTurning.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Reboot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Actions/RebootDirection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/ActivePhase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Alive.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/BackToJava.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/CardPlayed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/ConfirmPlayerStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/CurrentPlayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Error1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/GameStarted.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/MapSelected.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/MessageBody.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CardSelected.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CardsYouGotNow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CurrentCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/NotYourCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/ReplaceCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SelectedCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SelectionFinished.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SetStartingPoint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/ShuffleCoding.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/StartingPointTaken.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/TimerEnded.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/TimerStarted.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/YourCards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayCard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerAdded.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerConfirmed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerReady.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PlayerValues.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/PublicMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/ReceivedChat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/SendChat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/SetName.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game/Messages/Welcome.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/sample.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Gamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/AgainCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/BrakesCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BrakesCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/CardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/CardUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/DamageCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/DamageCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/LeftTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/PowerUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/ProgrammingCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/RightTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/SpamFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/SpamFolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/SpecialProgrammingCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/SpecialProgrammingCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/UTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/UpgradeCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UpgradeCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,6 +105,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
@@ -429,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640269448946</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <created>1640779789267</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640779789267</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

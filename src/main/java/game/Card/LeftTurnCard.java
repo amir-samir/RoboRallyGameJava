@@ -1,4 +1,4 @@
-package game.Cards;
+package game.Card;
 
 public class LeftTurnCard extends ProgrammingCards {
     final String description = "Cards.LeftTurnCard moves your robot turn 90 degrees to the left. The roboter remains in his current position.";
