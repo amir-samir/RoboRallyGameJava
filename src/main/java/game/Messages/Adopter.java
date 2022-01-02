@@ -136,7 +136,6 @@ public class Adopter {
         StringBuilder sb = new StringBuilder(json);
         int count = countOccurences(json, '[');
 
-
         for (int i = 0; i < count; i++) {
             if (json.contains("[")) {
                 int indexAuf = json.indexOf("[");
@@ -162,7 +161,6 @@ public class Adopter {
      * @return message
      */
     public static Message getMessage(String json) {
-        json = jsonWithBrackets(json);
         Gson gson = new Gson();
         Map map = gson.fromJson(json, Map.class);
         Message message = new Message();

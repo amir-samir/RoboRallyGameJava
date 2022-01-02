@@ -18,14 +18,16 @@ public class Client implements Runnable {
     private boolean isAi;
     private boolean connected;
     private int ID;
+    private boolean ready = false;
 
     private String userName;
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
-    public ObservableList<String> chatMessages;
     public String protocol;
-
+    public ObservableList<String> chatMessages;
+    public ObservableList<String> usernamesGui;
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
 
     /**
@@ -38,12 +40,12 @@ public class Client implements Runnable {
         SOCKET = new Socket("localhost", 1523);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
+        usernamesGui = FXCollections.observableArrayList();
         //this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
         //bufferedWriter.println(userName);
         isAi = false;
         //listenForMessages();
-
     }
 
    /* public void listenForMessages(){
@@ -67,6 +69,33 @@ public class Client implements Runnable {
 
     }
 
+    public void setReady(){
+        if(ready){
+            ready = false;
+            player.get(ID).ready = false;
+            SetStatus setStatus = new SetStatus(false);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        } else if (!ready){
+            ready = true;
+            player.get(ID).ready = true;
+            SetStatus setStatus = new SetStatus(true);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        }
+    }
+
+    public void singleMessage(int senderId, String message, String userName){
+        int empfaenger = ids.get(userName);
+        //int senderId = ids.get(senderName);
+        String[] keys = {"message", "to"};
+        SendChat sendChat = new SendChat(message, empfaenger);
+        sendChat.getMessageBody().setKeys(keys);
+        bufferedWriter.println(Adopter.javabeanToJson(sendChat));
+
+        SendChat sentMsg= new SendChat(message + " was sent to " + userName, senderId);
+        sentMsg.getMessageBody().setKeys(keys);
+        bufferedWriter.println(Adopter.javabeanToJson(sentMsg));
+    }
+
     /**
      * A method that transfer the input to the Server.
      * @param input The input from user.
@@ -79,16 +108,8 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
-    public void getUsernames(){
-
-    }
-
-    public void singleMessage(String message, String userName){
-        int empfaenger = ids.get(userName);
-        SendChat sendChat = new SendChat(message, empfaenger);
-        String[] keys = {"message", "to"};
-        sendChat.getMessageBody().setKeys(keys);
-        bufferedWriter.println(Adopter.javabeanToJson(sendChat));
+    public synchronized  ObservableList getUsernames(){
+       return usernamesGui;
     }
 
     public void configuration(String name, int figur){
@@ -101,7 +122,9 @@ public class Client implements Runnable {
     public int getID(){
         return ID;
     }
-
+    public String getUserName(){
+        return userName;
+    }
     /**
      * A method that receive and returns information from the Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
@@ -125,6 +148,21 @@ public class Client implements Runnable {
         output.getMessageBody().setKeys(keys);
         String S = Adopter.javabeanToJson(output);
         bufferedWriter.println(S);
+    }
+
+    public void mapSelected(String map){
+        MapSelected mapSelected = new MapSelected(map);
+        String[] key = {"map"};
+        mapSelected.getMessageBody().setKeys(key);
+        bufferedWriter.println(mapSelected);
+    }
+
+    public void playCard(String card){
+        PlayCard playCard = new PlayCard(card);
+        String[] key = {"card"};
+        playCard.getMessageBody().setKeys(key);
+
+        bufferedWriter.println(Adopter.javabeanToJson(playCard));
     }
 
     /**
@@ -159,15 +197,38 @@ public class Client implements Runnable {
                 } else if(message.getMessageType().equals("Alive")){
                     bufferedWriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
                     toSend = null;
-                } else if(message.getMessageType().equals("PlayerAdded")) {
+                } else if(message.getMessageType().equals("PlayerAdded")){
                     int newFigure = (int)(double) message.getMessageBody().getContent()[2];
                     int clientID = (int)(double) message.getMessageBody().getContent()[0];
                     String username = (String) message.getMessageBody().getContent()[1];
                     ids.put(username, clientID);
                     figuren[newFigure] = clientID;
-                    toSend = username + " hat sich verbunden. Er spielt mit Figur: " + newFigure;
-                    // System.out.println(toSend) ;
-                } else {
+                    usernamesGui.add(clientID + "," + username);
+                    Player newPlayer = new Player(clientID, username, newFigure);
+                    player.put(clientID, newPlayer);
+                    toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
+                } else if(message.getMessageType().equals("PlayerStatus")){
+                    boolean isReady = (boolean) message.getMessageBody().getContent()[1];
+                    int clientID = (int) (double) message.getMessageBody().getContent()[0];
+                    for(Player player: player.values()){
+                        if(player.ID == clientID){
+                            player.ready = isReady;
+                            //Information an GUI weitergeben?
+                        }
+                    }
+                    if(isReady){
+                        toSend = player.get(clientID).name + " ist jetzt bereit.";
+                    } else {
+                        toSend = player.get(clientID).name + " ist nicht mehr bereit.";
+                    }
+                } else if (message.getMessageType().equals("SelectMap")){
+                    //Methode von AMIR aufrufen --> GUI: Select Map
+                    toSend = "Bitte wähle die Map aus.";
+                } else if (message.getMessageType().equals("MapSelected")){
+                    String map = (String) message.getMessageBody().getContent()[0];
+                    toSend = "Folgende Map wurde ausgewählt: " + map;
+                }
+                else {
                     toSend = inputFromServer;
                 }
 

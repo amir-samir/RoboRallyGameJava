@@ -13,8 +13,5 @@ public class HelloClient extends Message{
         MessageBody b = new MessageBody(daten);
         messageBody  = b;
         b.setKeys(keys);
-
     }
-
-
 }

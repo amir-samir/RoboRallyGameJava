@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Gamer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/AgainCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/BrakesCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BrakesCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/CardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/CardUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/DamageCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/DamageCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/LeftTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/PowerUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/ProgrammingCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/RightTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/SpamFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/SpamFolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/SpecialProgrammingCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/SpecialProgrammingCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/UTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/UpgradeCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UpgradeCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Cards/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,10 +35,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../Desktop/vp-brave-barsche-master/src/main/java/Shared/Message/TCPMessage.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Desktop/vp-brave-barsche-master/src/main/java/Shared/Message/TCPMessageBuilder.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

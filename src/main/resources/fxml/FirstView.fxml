@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootSignIn" prefHeight="769.0" prefWidth="676.0" styleClass="signIn" stylesheets="@../css/SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstView">
+<AnchorPane fx:id="rootSignIn" prefHeight="769.0" prefWidth="676.0" styleClass="firstView" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstView">
     <children>
         <Label alignment="CENTER" layoutX="177.0" layoutY="101.0" prefHeight="21.0" prefWidth="321.0" text="Please enter your User Name" textAlignment="CENTER" textFill="#e00909" />
         <TextField fx:id="insertUsername" layoutX="245.0" layoutY="122.0" onKeyPressed="#submitUserName" prefHeight="31.0" prefWidth="186.0" text="Enter User Name here" />
@@ -18,37 +18,37 @@
         <Line endX="150.0" layoutX="350.0" layoutY="91.0" startX="-159.0" />
       <ImageView fx:id="roboRallyImageView" cache="true" cacheHint="QUALITY" fitHeight="87.0" fitWidth="321.0" layoutX="191.0" pickOnBounds="true">
          <image>
-            <Image url="@../assets/RoboRallyLogo.png" />
+            <Image url="@assets/RoboRallyLogo.png" />
          </image>
       </ImageView>
       <ImageView fx:id="twinkyImageView" fitHeight="139.0" fitWidth="134.0" layoutX="-134.0" layoutY="138.0" onMouseClicked="#TwinkyRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/twonkyMovegif.gif" />
+            <Image url="@assets/twonkyMovegif.gif" />
          </image>
       </ImageView>
       <ImageView fx:id="smashBotImageView" fitHeight="93.0" fitWidth="123.0" layoutX="-123.0" layoutY="234.0" onMouseClicked="#SmashRoboterPressed" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../assets/smashbotMove1.gif" />
+            <Image url="@assets/smashbotMove1.gif" />
          </image>
       </ImageView>
       <ImageView fx:id="hulkBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-148.0" layoutY="307.0" onMouseClicked="#HulkRoboterPressed" pickOnBounds="true">
          <image>
-            <Image url="@../assets/hulkMove1.gif" />
+            <Image url="@assets/hulkMove1.gif" />
          </image>
       </ImageView>
       <ImageView fx:id="zoomBotImageView" fitHeight="93.0" fitWidth="148.0" layoutX="-127.0" layoutY="385.0" onMouseClicked="#ZoomRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/zoombotgif.gif" />
+            <Image url="@assets/zoombotgif.gif" />
          </image>
       </ImageView>
       <ImageView fx:id="spinBotImageView" fitHeight="93.0" fitWidth="131.0" layoutX="-112.0" layoutY="485.0" onMouseClicked="#SpinRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/spinbotMove1.gif" />
+            <Image url="@assets/spinbotMove1.gif" />
          </image>
       </ImageView>
       <ImageView fx:id="hammerBotImageView" fitHeight="117.0" fitWidth="134.0" layoutX="-101.0" layoutY="578.0" onMouseClicked="#HammerRoboterPressed" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/hammerMove1.gif" />
+            <Image url="@assets/hammerMove1.gif" />
          </image>
       </ImageView>
       <Button layoutX="462.0" layoutY="125.0" mnemonicParsing="false" onAction="#chooseUserName" text="choose" />

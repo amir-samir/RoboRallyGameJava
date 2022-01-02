@@ -1,7 +1,4 @@
-import game.Messages.Adopter;
-import game.Messages.Error1;
-import game.Messages.Message;
-import game.Messages.Welcome;
+import Messages.*;
 
 import java.io.*;
 import java.net.Socket;
@@ -24,6 +21,7 @@ public class ClientHandler implements Runnable {
     public int figure;
     public String group;
     public boolean isAi;
+    public boolean isReady;
 
     public BufferedReader reader;
     public PrintWriter owriter;
@@ -59,7 +57,7 @@ public class ClientHandler implements Runnable {
             @Override
             public void run() {
                 owriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
-                System.out.println("Timer aktiviert");
+                //System.out.println("Timer aktiviert");
             }
         };
         t.schedule(timerTask, 0,5000);
@@ -98,6 +96,17 @@ public class ClientHandler implements Runnable {
                         error.getMessageBody().setKeys(keys);
                         owriter.println(Adopter.javabeanToJson(error));
                     }
+                } else if (message.getMessageType().equals("SetStatus")){
+                    boolean ready = (boolean) message.getMessageBody().getContent()[0];
+                    this.isReady = ready;
+                    SERVER.handleReady(this);
+                }
+                else if(message.getMessageType().equals("MapSelected")){
+                    String map = (String) message.getMessageBody().getContent()[0];
+                    SERVER.handleMapSelected(map);
+                } else if(message.getMessageType().equals("PlayCard")){
+                    String card = (String) message.getMessageBody().getContent()[0];
+                    SERVER.handlePlayCard(card, ID);
                 }
             } catch (Exception e){
                 e.printStackTrace();

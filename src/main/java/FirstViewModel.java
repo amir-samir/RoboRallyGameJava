@@ -60,7 +60,7 @@ Client client1;
         scene.getStylesheets().add("css/SignInStyle.css");
 
         ChatView chatView = loader.getController();
-        chatView.setClient(client1);
+        chatView.setClient();
         stage.show();
 
         //Close if Bye

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Diese Klasse stellt den Server dar, auf welchem der Chat und das Spiel ausgeführt werden.
@@ -19,8 +20,12 @@ public class Server {
     public static int laufendeID = 2000;
 
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
-    public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public int[] figuren = new int[6];
+    public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
+    String activeMap = null;
+
+    Game game;
 
     private ServerSocket serverSocket;
     public String protocol;
@@ -39,7 +44,7 @@ public class Server {
         try {
             ServerSocket serverSocket = new ServerSocket(1523);
             Server server = new Server(serverSocket);
-            server.protocol = "Version 0.2";
+            server.protocol = "Version 1.0";
             server.startServer();
         } catch (Exception e){
             e.printStackTrace();
@@ -99,13 +104,90 @@ public class Server {
         }
     }
 
-    public void playerAdded(ClientHandler clientHandler){
+    public void playerAdded(ClientHandler clientHandler) {
         PlayerAdded playerAdded = new PlayerAdded(clientHandler.ID, clientHandler.username, clientHandler.figure);
         String[] keys = {"clientID", "name", "figure"};
         playerAdded.getMessageBody().setKeys(keys);
-        for (ClientHandler clientHandler1 : users.values()){
+        //Versendung des neuen Spielers an alle anderen
+        for (ClientHandler clientHandler1 : users.values()) {
             clientHandler1.owriter.println(Adopter.javabeanToJson(playerAdded));
         }
+        //Versendung aller anderen Spieler an den neuen
+        for (ClientHandler clientHandler1 : users.values()) {
+            if (clientHandler.ID != clientHandler1.ID) {
+                PlayerAdded pA = new PlayerAdded(clientHandler1.ID, clientHandler1.username, clientHandler1.figure);
+                String[] key = {"clientID", "name", "figure"};
+                pA.getMessageBody().setKeys(key);
+                clientHandler.owriter.println(Adopter.javabeanToJson(pA));
+                if (clientHandler1.isReady){
+                    PlayerStatus playerStatus = new PlayerStatus(clientHandler1.ID, true);
+                    String[] k = {"clientID", "ready"};
+                    playerStatus.getMessageBody().setKeys(k);
+                    clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));
+                }
+            }
+        }
+    }
+
+    public void handleReady(ClientHandler cH){
+        int countReady = 0;
+        for (ClientHandler clientHandler: users.values()){
+            if(clientHandler.isReady){
+                countReady += 1;
+            }
+        }
+
+        if (countReady == 1){
+            if (cH.isReady){
+                SelectMap selectMap = new SelectMap(availableMaps);
+                String[] keys = {"availableMaps"};
+                selectMap.getMessageBody().setKeys(keys);
+                cH.owriter.println(Adopter.javabeanToJson(selectMap));
+                System.out.println(Adopter.javabeanToJson(selectMap));
+            }
+        }
+
+        PlayerStatus playerStatus = new PlayerStatus(cH.ID, cH.isReady);
+        String[] keys = {"clientID", "ready"};
+        playerStatus.getMessageBody().setKeys(keys);
+
+        for (ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));
+        }
+    }
+
+    public void handleMapSelected (String map){
+        MapSelected mapToSend = new MapSelected(map);
+        String[] key = {"map"};
+        mapToSend.getMessageBody().setKeys(key);
+        activeMap = map;
+        for (ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(Adopter.javabeanToJson(mapToSend));
+        }
+
+        if(readyToStart()){
+            createGame();
+            createMap();
+        }
+    }
+
+    public boolean readyToStart(){
+        int count = 0;
+        for (ClientHandler clientHandler: users.values()){
+            count += 1;
+            if (!clientHandler.isReady) return false;
+        }
+        if(count > 1){
+            return true;
+        } else return false;
+    }
+
+    public void createMap(){
+        //Map erstellen
+    }
+
+    public void createGame(){
+
     }
 
     /**
@@ -148,16 +230,21 @@ public class Server {
         }
     }
 
+    public void handlePlayCard(String card, int ID){
+        //game.cardPlayed(card);
+
+        CardPlayed cardPlayed = new CardPlayed(ID, card);
+        String[] keys = {"clientID", "card"};
+        cardPlayed.getMessageBody().setKeys(keys);
+        for(ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(Adopter.javabeanToJson(cardPlayed));
+        }
+
+    }
+
     public int generateID(){
         int ID = Server.laufendeID;
         laufendeID++;
         return ID;
-    }
-
-    public void print(String s){
-        System.out.println(s);
-    }
-    public void printPlayerValues(String name, int figure){
-        System.out.println(name + figure);
     }
 }

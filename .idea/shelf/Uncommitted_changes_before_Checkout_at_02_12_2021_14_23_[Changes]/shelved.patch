@@ -1,0 +1,18 @@
+Index: Chat/Chat.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_16\">\r\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java1\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java1\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/java\" isTestSource=\"true\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"16 (2)\" jdkType=\"JavaSDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"lib\" level=\"application\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.google.code.gson:gson:2.8.9\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Chat/Chat.iml b/Chat/Chat.iml
+--- a/Chat/Chat.iml	
++++ b/Chat/Chat.iml	
+@@ -8,6 +8,7 @@
+       <sourceFolder url="file://$MODULE_DIR$/src/main/java1" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/main/java1" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
++      <excludeFolder url="file://$MODULE_DIR$/target" />
+     </content>
+     <orderEntry type="jdk" jdkName="16 (2)" jdkType="JavaSDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
