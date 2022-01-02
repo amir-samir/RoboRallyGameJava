@@ -1,4 +1,4 @@
-package Messages;
+package game.Messages;
 
 public class PlayerStatus extends Message{
     public PlayerStatus(int clientID, boolean ready){
@@ -8,7 +8,7 @@ public class PlayerStatus extends Message{
         inhalt[0] = clientID;
         inhalt[1] = ready;
 
-        messageType = "PlayerStatus";
-        messageBody = new MessageBody(inhalt);
+        this.setMessageType("PlayerStatus");
+        this.setMessageBody(new MessageBody(inhalt));
     }
 }

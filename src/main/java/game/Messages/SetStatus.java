@@ -1,6 +1,6 @@
-package Messages;
+package game.Messages;
 
-public class SetStatus extends Message{
+public class SetStatus extends Message {
 
     public SetStatus(boolean ready){
         Boolean[] daten = {ready};

@@ -1,7 +1,4 @@
-import game.Messages.Adopter;
-import game.Messages.HelloClient;
-import game.Messages.PlayerAdded;
-import game.Messages.ReceivedChat;
+import game.Messages.*;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -24,8 +21,7 @@ public class Server {
     public int[] figuren = new int[6];
     public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
     String activeMap = null;
-
-    Game game;
+    //Game game;
 
     private ServerSocket serverSocket;
     public String protocol;

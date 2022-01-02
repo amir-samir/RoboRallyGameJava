@@ -27,7 +27,7 @@ public class GetID extends Application {
             SaveClients.client = client;
 
             stage.setTitle("Get Id");
-            Parent getID = FXMLLoader.load(getClass().getResource("GetID.fxml"));
+            Parent getID = FXMLLoader.load(getClass().getResource("fxml/GetID.fxml"));
             Scene getIdScene = new Scene(getID);
             stage.setScene(getIdScene);
             stage.show();
@@ -40,11 +40,11 @@ public class GetID extends Application {
     public void GetIDPressed() throws IOException {
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("FirstView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/FirstView.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
-        scene.getStylesheets().add("SignInStyle.css");
+        scene.getStylesheets().add("css/SignInStyle.css");
 
         FirstView chatView = loader.getController();
         //chatView.setClient(client1);

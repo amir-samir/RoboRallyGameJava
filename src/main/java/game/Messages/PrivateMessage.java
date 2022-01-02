@@ -8,7 +8,6 @@ public class PrivateMessage extends Message{
         inhalt[1] = message;
         inhalt[2] = to;
 
-
         messageType = "SendChat";
         messageBody = new MessageBody(inhalt);
     }

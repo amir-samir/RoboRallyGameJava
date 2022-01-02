@@ -4,7 +4,79 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="" />
+    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="Merge: JSON_Chat -&gt; BoardElements">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java1/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/MaybeMap.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/MaybeMapsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/HelloClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/PlayerStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/SetStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/TryingToMakeAMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/2016Board.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap71.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap77.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap78.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap81.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap85.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap91.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/Identifier_Board_1A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/LetsPlayButtonEdited.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/RazerBackground.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/RoboRallyLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/SigninBackground.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/innige-irrweg-hp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FirstViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SaveClients.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SaveClients.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SignIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/ConfirmPlayerStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,8 +134,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -77,8 +149,19 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.SignIn">
+  <component name="RunManager" selected="Application.GetID">
+    <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GetID" />
+      <module name="innige-irrweg-hp" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="16" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -113,22 +196,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="jsonTest.GsonTestHelloServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Chat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JSON.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="JSON" />
-      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
-      <option name="METHOD_NAME" value="GsonTestHelloServer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="jsonTest.GsonTestWelcomeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Chat" />
       <extension name="coverage">
@@ -145,20 +212,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="innige-irrweg-hp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="innige-irrweg-hp" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.SignIn" />
       <item itemvalue="Application.Server" />
-      <item itemvalue="JUnit.jsonTest.GsonTestHelloServer" />
+      <item itemvalue="Application.GetID" />
       <item itemvalue="JUnit.jsonTest" />
       <item itemvalue="JUnit.jsonTest.GsonTestWelcomeMessage" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SignIn" />
+        <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.SignIn" />
         <item itemvalue="JUnit.jsonTest" />
         <item itemvalue="JUnit.jsonTest.GsonTestWelcomeMessage" />
-        <item itemvalue="JUnit.jsonTest.GsonTestHelloServer" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640779789267</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
+      <created>1641139886511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1641139886511</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,6 +335,8 @@
     <MESSAGE value="@yilu und dairen Adopte, Message" />
     <MESSAGE value="q" />
     <MESSAGE value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
+    <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
+    <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge: JSON_Chat -&gt; BoardElements" />
   </component>
 </project>

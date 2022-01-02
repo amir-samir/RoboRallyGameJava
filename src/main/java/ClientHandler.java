@@ -1,4 +1,4 @@
-import Messages.*;
+import game.Messages.*;
 
 import java.io.*;
 import java.net.Socket;
