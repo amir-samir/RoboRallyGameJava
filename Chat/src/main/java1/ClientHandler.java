@@ -104,6 +104,9 @@ public class ClientHandler implements Runnable {
                 else if(message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
                     SERVER.handleMapSelected(map);
+                } else if(message.getMessageType().equals("PlayCard")){
+                    String card = (String) message.getMessageBody().getContent()[0];
+                    SERVER.handlePlayCard(card, ID);
                 }
             } catch (Exception e){
                 e.printStackTrace();

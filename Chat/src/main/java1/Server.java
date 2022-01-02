@@ -22,6 +22,8 @@ public class Server {
     public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
     String activeMap = null;
 
+    Game game;
+
     private ServerSocket serverSocket;
     public String protocol;
 
@@ -159,6 +161,7 @@ public class Server {
         }
 
         if(readyToStart()){
+            createGame();
             createMap();
         }
     }
@@ -169,11 +172,17 @@ public class Server {
             count += 1;
             if (!clientHandler.isReady) return false;
         }
-        return true;
+        if(count > 1){
+            return true;
+        } else return false;
     }
 
     public void createMap(){
         //Map erstellen
+    }
+
+    public void createGame(){
+
     }
 
     /**
@@ -216,16 +225,21 @@ public class Server {
         }
     }
 
+    public void handlePlayCard(String card, int ID){
+        //game.cardPlayed(card);
+
+        CardPlayed cardPlayed = new CardPlayed(ID, card);
+        String[] keys = {"clientID", "card"};
+        cardPlayed.getMessageBody().setKeys(keys);
+        for(ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(Adopter.javabeanToJson(cardPlayed));
+        }
+
+    }
+
     public int generateID(){
         int ID = this.laufendeID;
         laufendeID++;
         return ID;
-    }
-
-    public void print(String s){
-        System.out.println(s);
-    }
-    public void printPlayerValues(String name, int figure){
-        System.out.println(name + figure);
     }
 }

@@ -157,6 +157,14 @@ public class Client implements Runnable {
         bufferedWriter.println(mapSelected);
     }
 
+    public void playCard(String card){
+        PlayCard playCard = new PlayCard(card);
+        String[] key = {"card"};
+        playCard.getMessageBody().setKeys(key);
+
+        bufferedWriter.println(Adopter.javabeanToJson(playCard));
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
