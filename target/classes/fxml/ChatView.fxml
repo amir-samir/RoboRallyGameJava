@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPaneChat" prefHeight="677.0" prefWidth="656.0" styleClass="loader" stylesheets="@../css/SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
+<AnchorPane fx:id="rootPaneChat" prefHeight="677.0" prefWidth="656.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
     <children>
         <AnchorPane fx:id="chatWrite" layoutX="25.0" layoutY="541.0" prefHeight="45.0" prefWidth="450.0">
             <children>
@@ -15,7 +15,7 @@
         </AnchorPane>
         <AnchorPane fx:id="chatPane" layoutX="25.0" layoutY="14.0" prefHeight="525.0" prefWidth="450.0">
             <children>
-                <ListView id="chatBox" fx:id="chatBox" prefHeight="525.0" prefWidth="450.0" styleClass="loader" stylesheets="@../css/SignInStyle.css" />
+                <ListView id="chatBox" fx:id="chatBox" prefHeight="525.0" prefWidth="450.0" styleClass="loader" stylesheets="@SignInStyle.css" />
             </children>
         </AnchorPane>
         <Button fx:id="startGame" layoutX="25.0" layoutY="586.0" mnemonicParsing="false" onAction="#startGame" prefHeight="45.0" prefWidth="450.0" style="-fx-background-color: green;" text="READY!" textAlignment="CENTER" textFill="WHITE">
@@ -35,7 +35,7 @@
         </Button>
       <ImageView fitHeight="337.0" fitWidth="172.0" layoutX="476.0" layoutY="248.0" pickOnBounds="true">
          <image>
-            <Image url="@../assets/ChatViewPic.png" />
+            <Image url="@assets/ChatViewPic.png" />
          </image>
       </ImageView>
       <ComboBox fx:id="PrivateMessage" layoutX="476.0" layoutY="34.0" onAction="#comboAction" prefHeight="25.0" prefWidth="179.0" />

@@ -4,78 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="Merge: JSON_Chat -&gt; BoardElements">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/src/main/java1/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/MaybeMap.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/MaybeMapsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/HelloClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/PlayerStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/SetStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/TryingToMakeAMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/2016Board.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap77.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap78.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap81.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap85.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap86.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap91.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap92.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/Identifier_Board_1A.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/LetsPlayButtonEdited.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/RazerBackground.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/RoboRallyLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/SigninBackground.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/innige-irrweg-hp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FirstViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SaveClients.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SaveClients.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SignIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/ConfirmPlayerStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap00.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap00.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap18.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap23.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap27.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap37.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap37.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap38.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap40.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap40.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap41.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap41.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap42.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap43.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap46.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap49.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap49.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap52.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap52.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap53.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap53.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap56.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap68.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap68.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap71.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap71.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap72.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap77.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap77.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap78.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap78.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap81.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap81.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap85.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap85.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap86.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap86.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap91.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap91.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap92.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap92.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/Identifier_Board_1A.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/Identifier_Board_1A.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/SigninBackground.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/SigninBackground.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +64,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Json_Chat" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,9 +114,10 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
+      <recent name="$PROJECT_DIR$/src/main/resources/assets" />
       <recent name="$PROJECT_DIR$/src/main/resources/css" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -157,7 +127,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$PATH_TO_FX$&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
