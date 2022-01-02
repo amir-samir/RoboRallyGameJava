@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 public class GetID extends Application {
     private Thread clientThread;
@@ -44,7 +42,7 @@ public class GetID extends Application {
         Scene scene = new Scene(loader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
-        scene.getStylesheets().add("css/SignInStyle.css");
+        scene.getStylesheets().add("fxml/SignInStyle.css");
 
         FirstView chatView = loader.getController();
         //chatView.setClient(client1);

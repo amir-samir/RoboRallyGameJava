@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="708.0" styleClass="getID" stylesheets="@../css/SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GetID">
+<AnchorPane prefHeight="400.0" prefWidth="708.0" styleClass="getID" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GetID">
    <children>
       <ImageView fitHeight="150.0" fitWidth="170.0" layoutX="300.0" layoutY="119.0" onMouseClicked="#GetIDPressed" pickOnBounds="true" preserveRatio="true">
          <image>

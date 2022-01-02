@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -111,26 +112,24 @@ public class ChatView {
         viewModel.sendMessage();
 
     }
-    public void chooseRoboter() {
-        // Parent loader1;
 
-        try {
-            //Passing the current stage to the ViewModel
-            Stage stageRobot = new Stage();
-            //FXMLLoader loader1 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseRobotView.fxml")));
-            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("fxml/ChooseRobotView.fxml"));
-            Scene scene = new Scene(loader1.load());
-            stageRobot.setScene(scene);
-            ChooseRobotView chooseRobotView = loader1.getController();
-            Client client = viewModel.getClient();
-            chooseRobotView.setClientAndStage(client, stageRobot);
-            stageRobot.show();
+    public void selectMap() throws IOException {
+        Stage stage1 = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SelectMap.fxml"));
+        Scene scene = new Scene(loader.load());
+        stage1.setScene(scene);
+        scene.getStylesheets().add("SignInStyle.css");
+        stage1.show();
 
-            //Client-Constructor throws DuplicateNameException if name already taken
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //Close if Bye
+        stage1.setOnCloseRequest(e -> {
+            Platform.exit();
+            //clientHandler.writer.equals("bye");
+            stage1.close();
+            System.exit(0);
+        });
     }
+
 
 
     public void setClient() {

@@ -47,6 +47,8 @@ public class MaybeMapsController implements Initializable {
     Image image29 = new Image("assets/ExtraCrispyMap68.png");
     Image image30 = new Image("assets/ExtraCrispyMap78.png");
     Image image31 = new Image("assets/ExtraCrispyMap49.png");
+    Image figureTest = new Image("assets/figureTest2.png");
+    //Image testImage = new Image("assets/MateoTry.jpeg");
 
     // Array
     //int[][] crispyMapArray = new int[10][10];
@@ -55,9 +57,9 @@ public class MaybeMapsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         int[][] crispyMapArray = new int[][]{
-                { 0, 5, 1, 1, 1, 4, 9, 15, 18, 1 },
-                { 1, 5, 1, 16, 19, 1, 1, 1, 18, 1 },
-                { 1, 5, 10, 17, 1, 1, 17, 24, 18, 1 },
+                { 0, 5, 1, 1, 1, 4, 9, 15, 10, 1 },
+                { 1, 5, 1, 16, 19, 1, 1, 1, 10, 1 },
+                { 1, 5, 10, 17, 1, 1, 17, 24, 10, 1 },
                 { 1, 6, 11, 17, 9, 18, 17, 25, 28, 1 },
                 { 2, 1, 12, 18, 1, 1, 21, 12, 4, 31 },
                 { 3, 1, 12, 19, 4, 1, 22, 12, 1, 3 },
@@ -74,10 +76,17 @@ public class MaybeMapsController implements Initializable {
             for (int j = 0; j < crispyMapArray.length; j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j] )),j,i);
+                gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
+                //gridpane1.add(new ImageView(testImage),j,i);
             }
         }
+        gridpane1.add(new ImageView(figureTest),0,0);
 
+    }
+
+    public void moveFigureTest(){
+        gridpane1.add(new ImageView(image0),0,0);
+        gridpane1.add(new ImageView(figureTest),1,0);
     }
 
     public Image getImageForMap(int image){
