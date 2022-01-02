@@ -5,77 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="Merge: JSON_Chat -&gt; BoardElements">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/src/main/java1/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/MaybeMap.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/MaybeMapsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/HelloClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/PlayerStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Messages/SetStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/TryingToMakeAMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/2016Board.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap77.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap78.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap81.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap85.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap86.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap91.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/ExtraCrispyMap92.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/Identifier_Board_1A.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/LetsPlayButtonEdited.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/RazerBackground.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/RoboRallyLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat/target/classes/assets/SigninBackground.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/innige-irrweg-hp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FirstViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SaveClients.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SaveClients.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SignIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/ConfirmPlayerStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641139886511</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
+      <created>1641140977313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641140977313</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
