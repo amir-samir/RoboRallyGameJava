@@ -57,7 +57,7 @@ Client client1;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/ChatView.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
-        scene.getStylesheets().add("css/SignInStyle.css");
+        scene.getStylesheets().add("fxml/SignInStyle.css");
 
         ChatView chatView = loader.getController();
         chatView.setClient();
