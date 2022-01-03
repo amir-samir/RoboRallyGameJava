@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Merge: JSON_Chat -&gt; BoardElements">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/figureTest2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2021_14_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2021_14_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innige-irrweg-hp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GetID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/SignInStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FirstView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FirstView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/GetID.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/GetID.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FirstViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SignIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/SignInStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/GetID.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/GetID.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Merge: JSON_Chat -&gt; BoardElements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -288,6 +260,7 @@
     <MESSAGE value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
     <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: JSON_Chat -&gt; BoardElements" />
+    <MESSAGE value="Cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cards" />
   </component>
 </project>
