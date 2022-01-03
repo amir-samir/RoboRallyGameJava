@@ -5,46 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innige-irrweg-hp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap00.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap00.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap18.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap23.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap23.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap27.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap27.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap37.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap37.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap38.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap40.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap40.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap41.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap41.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap42.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap42.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap43.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap46.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap46.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap49.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap49.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap50.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap52.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap52.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap53.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap53.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap56.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap68.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap68.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap71.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap71.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap72.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap72.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap77.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap77.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap78.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap78.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap81.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap81.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap85.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap85.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap86.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap86.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap91.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap91.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap92.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap92.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/Identifier_Board_1A.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/Identifier_Board_1A.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/SigninBackground.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/SigninBackground.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/BrakesCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/SpamFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/SpamFolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/SpecialProgrammingCards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +103,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />

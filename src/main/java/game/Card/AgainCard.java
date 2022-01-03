@@ -1,6 +1,6 @@
 package game.Card;
 
-public class AgainCard extends ProgrammingCards {
+public class AgainCard extends Cards {
     final String description = "Repeat the programming in \n" +
             "your previous register. If your \n" +
             "previous register was a dam-\n" +
