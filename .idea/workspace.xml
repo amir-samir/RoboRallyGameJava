@@ -82,7 +82,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -157,8 +157,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.GetID" />
         <item itemvalue="JUnit.jsonTest.selectMap" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.GameStarted" />
