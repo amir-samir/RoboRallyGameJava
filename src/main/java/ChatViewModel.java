@@ -126,17 +126,19 @@ public class ChatViewModel {
 
     }
     /**
-     * Fetch the current message from ChatView, pass it on to the server and
+     * set Ready for the Client
      */
     public final void startingGame() {
-        client.printMessage("/START");
+        //client.printMessage("funktioniert");
+        client.setReady();
     }
 
     /**
-     * Fetch the current message from ChatView, pass it on to the server and
+     * set unready for Client
      */
     public final void exitingGame() {
-        client.printMessage("BYE");
+        client.printMessage("set unready");
+        client.setReady();
     }
     /**
      * Fetch the current message from ChatView, pass it on to the server and

@@ -1,3 +1,5 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -11,10 +13,24 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MaybeMapsController implements Initializable {
+    BesmellaUpdatingForAllView besmellaUpdatingForAllView = new BesmellaUpdatingForAllView();
+    public ObservableList<Object> usernamesGui = FXCollections.observableArrayList();
     @FXML
     private GridPane gridpane1;
     @FXML
-    RowConstraints firstGrid;
+    int[][] crispyMapArray = new int[][]{
+            { 0, 5, 1, 1, 1, 4, 9, 15, 10, 1 },
+            { 1, 5, 1, 16, 19, 1, 1, 1, 10, 1 },
+            { 1, 5, 10, 17, 1, 1, 17, 24, 10, 1 },
+            { 1, 6, 11, 17, 9, 18, 17, 25, 28, 1 },
+            { 2, 1, 12, 18, 1, 1, 21, 12, 4, 31 },
+            { 3, 1, 12, 19, 4, 1, 22, 12, 1, 3 },
+            { 1, 7, 11, 17, 9, 18, 17, 25, 29, 1 },
+            { 1, 8, 14, 17, 1, 1, 17, 26, 30, 1 },
+            { 1, 8, 1, 1, 1, 20, 23, 1, 30, 1 },
+            { 4, 9, 15, 18, 1, 1, 1, 1, 30, 1 }
+
+    };
     @FXML
     Image image0 = new Image("assets/ExtraCrispyMap00.png");
     Image image1 = new Image("assets/ExtraCrispyMap10.png");
@@ -56,19 +72,7 @@ public class MaybeMapsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        int[][] crispyMapArray = new int[][]{
-                { 0, 5, 1, 1, 1, 4, 9, 15, 10, 1 },
-                { 1, 5, 1, 16, 19, 1, 1, 1, 10, 1 },
-                { 1, 5, 10, 17, 1, 1, 17, 24, 10, 1 },
-                { 1, 6, 11, 17, 9, 18, 17, 25, 28, 1 },
-                { 2, 1, 12, 18, 1, 1, 21, 12, 4, 31 },
-                { 3, 1, 12, 19, 4, 1, 22, 12, 1, 3 },
-                { 1, 7, 11, 17, 9, 18, 17, 25, 29, 1 },
-                { 1, 8, 14, 17, 1, 1, 17, 26, 30, 1 },
-                { 1, 8, 1, 1, 1, 20, 23, 1, 30, 1 },
-                { 4, 9, 15, 18, 1, 1, 1, 1, 30, 1 }
-
-        };
+        usernamesGui.add(crispyMapArray);
         Image image = new Image("assets/ExtraCrispyMap27.png");
         ImageView imageViewForAll = new ImageView();
 
@@ -85,9 +89,21 @@ public class MaybeMapsController implements Initializable {
     }
 
     public void moveFigureTest(){
-        gridpane1.add(new ImageView(image0),0,0);
-        gridpane1.add(new ImageView(figureTest),1,0);
+       gridpane1.add(new ImageView(image0),0,0);
+       gridpane1.add(new ImageView(figureTest),1,0);
+       /* besmellaUpdatingForAllView.changeMap();
+        crispyMapArray = besmellaUpdatingForAllView.getCrispyMapArray();
+        for (int i = 0; i < crispyMapArray.length; i++){
+            for (int j = 0; j < crispyMapArray.length; j++){
+                gridpane1.setHgap(-80);
+                //gridpane1.setVgap(10);
+                gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
+                //gridpane1.add(new ImageView(testImage),j,i);
+            }
+        } */
+
     }
+
 
     public Image getImageForMap(int image){
         switch (image){
