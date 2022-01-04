@@ -11,17 +11,21 @@ import java.util.List;
 
 @Data
 public class Gamer {
+    private int gamerID;
     private Game game;
     private Robot robot;
+    private List<Cards> register;
+    private int registerCount = 0;
     private Boolean inRoboting = false;
     private List<Cards> cards;
     private List<Cards> handCards;
     private List<Cards> playedCards;
     private List<Integer> points;
+    private int energyCubes = 0;
 
     public void reboot() {
         this.inRoboting = true;
-        this.handCards.addAll(game.getTwoDamageCards());
+        this.handCards.addAll(game.getTwoSpamCards());
         clearCards();
     }
 
@@ -41,4 +45,12 @@ public class Gamer {
     public void pushCard(Cards cards) {
         this.handCards.add(cards);
     }
+
+
+    public void getNewEnergycube() {
+        energyCubes++;
+    }
+
+
+
 }

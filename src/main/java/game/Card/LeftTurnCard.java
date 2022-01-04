@@ -7,9 +7,10 @@ public class LeftTurnCard extends Cards {
     final String name = "LeftTurn";
 
 
+@Override
 public void effect(){
         Robot robot = new Robot();
-        robot.LEFT();
+        robot.rotate(-90);
     }
 
     @Override

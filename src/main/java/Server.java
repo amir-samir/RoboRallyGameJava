@@ -171,11 +171,15 @@ public class Server {
         int count = 0;
         for (ClientHandler clientHandler: users.values()){
             count += 1;
-            if (!clientHandler.isReady) return false;
+            if (!clientHandler.isReady) {
+                return false;
+            }
         }
         if(count > 1){
             return true;
-        } else return false;
+        } else {
+            return false;
+        }
     }
 
     public void createMap(){
