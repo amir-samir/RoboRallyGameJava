@@ -64,15 +64,13 @@ public class Adopter {
 
     public static String getJsonBody(Message message) {
         String json = "{ ";
-        Gson gson = new Gson();
         Object[] keys = message.messageBody.getkeys();
         Object[] values = message.messageBody.getContent();
         if (keys != null && values != null) {
             for (int i = 0; i < keys.length; i++) {
-                //Object value = values[i];
-                String value = gson.toJson(values[i]);
+                Object value = values[i];
                 String key = (String) keys[i];
-                if (values[i] instanceof String[] || value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
+                if (value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
                     json = json + "\"" + key + "\": "  + value + ", ";
                 } else {
 
