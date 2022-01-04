@@ -4,9 +4,8 @@ import com.google.gson.Gson;
 import lombok.Data;
 
 @Data
-public class Board {
+public abstract class Board {
     private String name;
-    private String des;
     private int width;
     private int height;
     private BoardElement[][] map;
@@ -19,4 +18,5 @@ public class Board {
         // verwandlte in client
         Gson gson = new Gson();
     }
+
 }

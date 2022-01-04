@@ -9,7 +9,7 @@ public class LeftTurnCard extends Cards {
 
 public void effect(){
         Robot robot = new Robot();
-        robot.LEFT();
+        robot.turnLEFT();
     }
 
     @Override

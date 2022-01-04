@@ -1,6 +1,5 @@
 package game;
-
-import game.Card.DamageCards;
+import game.Card.Spam;
 import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +11,14 @@ import java.util.List;
 @Data
 
 public class Game {
-    private List<DamageCards> damageCards;
+    private Gamer gamer;
+    private Robot robot;
+    private List<Spam> spams;
 
-    public List<DamageCards> getTwoDamageCards() {
-        List<DamageCards> damageCards = new ArrayList<>();
-        return damageCards;
+    public List<Spam> getTwoSpamCards() {
+        List<Spam> spams = new ArrayList<>();
+        return spams;
     }
+
 }
 
