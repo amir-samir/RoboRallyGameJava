@@ -4,38 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="@new">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Bugfix">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22__22_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22__22_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_01_22__14_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_01_22__14_49__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/Belt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/Belt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/EnergySpaces.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/EnergySpaces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/Gears.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/Gears.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/AgainCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/AgainCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/BackUpCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/BackUpCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/BrakesCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/LeftTurnCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/LeftTurnCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move1Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Move1Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move2Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Move2Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move3Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Move3Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/PowerUpCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/PowerUpCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/ProgrammingCards.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/RightTurnCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/RightTurnCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Spam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Spam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/SpamFolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/SpecialProgrammingCards.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Trojan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Trojan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/UTurnCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/UTurnCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/VirusCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/VirusCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Worm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Worm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Gamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Gamer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,11 +90,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignIn">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$PATH_TO_FX$&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,9 +158,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SignIn" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.SignIn" />
         <item itemvalue="JUnit.jsonTest" />
         <item itemvalue="JUnit.jsonTest.GsonTestWelcomeMessage" />
       </list>
