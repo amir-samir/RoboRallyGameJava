@@ -8,7 +8,7 @@ public class SelectMap extends Message{
         daten[0] = maps;
 
         messageType = "SelectMap";
-        messageBody = new MessageBody(maps);
+        messageBody = new MessageBody(daten);
     }
 
 }
