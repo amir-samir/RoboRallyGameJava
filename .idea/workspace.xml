@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="Bugfix" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Ready Button">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ViewsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="BoardElements" />
+        <entry key="$PROJECT_DIR$" value="JSON_Chat" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +94,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,12 +176,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="" />
+      <changelist id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Ready Button" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638741223995</updated>
       <workItem from="1641316643712" duration="4776000" />
+      <workItem from="1641331885192" duration="1913000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>

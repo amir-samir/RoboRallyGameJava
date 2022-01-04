@@ -34,6 +34,7 @@ public class Client implements Runnable {
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
+    ChatView chatView = new ChatView();
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -228,6 +229,17 @@ public class Client implements Runnable {
                     }
                 } else if (message.getMessageType().equals("SelectMap")){
                     //Methode von AMIR aufrufen --> GUI: Select Map
+                    Platform.runLater(new Runnable(){
+
+                        @Override
+                        public void run() {
+                            try {
+                                chatView.selectMap();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
                     toSend = "Bitte wähle die Map aus.";
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
