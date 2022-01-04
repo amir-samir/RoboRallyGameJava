@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_04_01_2022_20_32_[Changes]" date="1641324739075" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 04.01.2022 20:32 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/test-classes/JSON/mapTest.class" />
+    <option name="AFTER_PATH" value="target/test-classes/JSON/mapTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32_[Changes]/mapTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Client.class" />
+    <option name="AFTER_PATH" value="target/classes/Client.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32_[Changes]/Client.class" />
+  </binary>
+</changelist>
