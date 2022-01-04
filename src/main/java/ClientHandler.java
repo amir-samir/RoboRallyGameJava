@@ -124,7 +124,6 @@ public class ClientHandler implements Runnable {
         String[] key = {"clientID"};
         welcome.getMessageBody().setKeys(key);
         owriter.println(Adopter.javabeanToJson(welcome));
-        System.out.println("Erledigt");
     }
 
     /**

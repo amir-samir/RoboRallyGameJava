@@ -93,7 +93,6 @@ public class Server {
     public boolean checkFigure(int figur, ClientHandler clientHandler){
         if(figuren[figur] == 0){
             figuren[figur] = clientHandler.ID;
-            System.out.println("Figur wurde gewählt");
             return true;
         } else {
             return false;

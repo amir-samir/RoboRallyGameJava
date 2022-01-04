@@ -1,4 +1,5 @@
 import game.*;
+import game.Board.BoardElement;
 import game.Messages.*;
 import game.*;
 import javafx.application.Platform;
@@ -21,6 +22,8 @@ public class Client implements Runnable {
     private boolean connected;
     private int ID;
     private boolean ready = false;
+
+    private BoardElement[][] map;
 
     private String userName;
     private BufferedReader bufferedReader;
