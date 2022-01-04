@@ -7,9 +7,10 @@ public class UTurnCard extends Cards {
     final String name = "RightTurn";
 
 
+    @Override
     public void effect(){
         Robot robot = new Robot();
-        robot.Opposite();
+        robot.rotate(180);
     }
 
     @Override

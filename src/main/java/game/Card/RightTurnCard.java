@@ -9,7 +9,7 @@ public class RightTurnCard extends Cards {
     @Override
     public void effect(){
         Robot robot = new Robot();
-        robot.turnRIGHT();
+        robot.rotate(90);
     }
 
     @Override

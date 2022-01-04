@@ -9,6 +9,6 @@ public class BackUpCard extends Cards {
     @Override
     public void effect(){
         Robot robot = new Robot();
-        robot.backup(1);
+        robot.forward(-1);
     }
 }
