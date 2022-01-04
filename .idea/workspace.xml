@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Merge new JavaFX Features (Select Map, Test Moving on Map ...) only Testing Version" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Merge new JavaFX Features (Select Map, Test Moving on Map ...) only Testing Version">
+      <change afterPath="$PROJECT_DIR$/src/main/java/BesmellaUpdatingForAllView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="BoardElements" />
+        <entry key="$PROJECT_DIR$" value="FixGui" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -169,7 +180,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638741223995</updated>
-      <workItem from="1641155266885" duration="2449000" />
+      <workItem from="1641155266885" duration="8142000" />
+      <workItem from="1641211897791" duration="853000" />
+      <workItem from="1641322757245" duration="1638000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -241,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641157264055</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge new JavaFX Features (Select Map, Test Moving on Map ...) only Testing Version">
+      <created>1641157726602</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641157726602</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

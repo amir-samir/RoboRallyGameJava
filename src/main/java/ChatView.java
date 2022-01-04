@@ -96,7 +96,6 @@ public class ChatView {
     public void startGame() {
         System.out.println(PrivateMessage);
         viewModel.startingGame();
-        startGame.setDisable(true);
     }
 
     public void exitGame() {
