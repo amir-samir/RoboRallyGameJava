@@ -17,7 +17,7 @@ public class SignIn extends Application {
     public void start(Stage stage) throws Exception {
       try {
           stage.setTitle("Sign In");
-          Parent signIn = FXMLLoader.load(getClass().getResource("MaybeMap.fxml"));
+          Parent signIn = FXMLLoader.load(getClass().getResource("fxml/MaybeMap.fxml"));
           Scene signInScene = new Scene(signIn);
           stage.setScene(signInScene);
           stage.show();
