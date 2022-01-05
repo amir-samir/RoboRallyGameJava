@@ -227,7 +227,7 @@ public class Client implements Runnable {
                         toSend = player.get(clientID).name + " ist nicht mehr bereit.";
                     }
                 } else if (message.getMessageType().equals("SelectMap")){
-                    //Methode von AMIR aufrufen --> GUI: Select Map
+                    //GUI? --> Amir
                     toSend = "Bitte wähle die Map aus.";
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];

@@ -2,6 +2,7 @@ package JSON;
 
 import com.google.gson.internal.LinkedTreeMap;
 import game.Board.BoardElement;
+import game.Board.Empty;
 import game.Messages.Adopter;
 import game.Messages.Message;
 import org.junit.Test;
@@ -11,16 +12,69 @@ import java.util.ArrayList;
 public class mapTest {
 
     public void generateMap(Message m){
-        BoardElement[][] map = new BoardElement[5][5];
-        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
+        ArrayList<BoardElement>[][] map = new ArrayList[5][5];
+        int i = 0;
+        while (i < map.length){
+            int u = 0;
+            while (u < map[i].length){
+                map[i][u] = new ArrayList<BoardElement>();
+                u++;
+            }
+            i++;
+        }
 
+        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
         int x = 0;
         while (x < list.size()){
             ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
             int y = 0;
-            while (y < list.size()){
+            while (y < y_list.size()){
+                ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
+                int z = 0;
+                while (z < field.size()){
+                    LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
+                    if (typ == null){
+                        map[x][y].add(new Empty());
+                    } else {
+                        String zuPrüfen = (String) typ.get("type");
+                        switch (zuPrüfen) {
+                            case "StartPoint":
+                                break;
+                            case "ConveyorBelt":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "PushPanel":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Gear":
+                                break;
+                            case "Pit":
+                                break;
+                            case "EnergySpace":
+                                break;
+                            case "Wall":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Laser":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Antenna":
+                                break;
+                            case "CheckPoint":
+                                break;
+                            case "RestartPoint":
+                                break;
+                            default:
+                        }
+                    }
+                    z += 1;
+                }
+                y += 1;
             }
+            x += 1;
         }
+
+        System.out.println();
     }
 
     @Test
