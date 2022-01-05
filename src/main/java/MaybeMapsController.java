@@ -14,7 +14,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MaybeMapsController implements Initializable {
-    public ObservableList<Object> usernamesGui = FXCollections.observableArrayList();
     @FXML
     private GridPane gridpane1;
     @FXML
@@ -23,12 +22,12 @@ public class MaybeMapsController implements Initializable {
             { 1, 9, 1, 1, 4, 1, 10, 11, 1, 1, 1, 4, 1},
             { 1, 12, 1, 1, 4, 13, 14, 1, 1, 14, 15, 4, 1},
             { 9, 1, 1, 1, 16, 17, 14, 6, 8, 14, 18, 19, 1},
-            { },
-            { 3, 1, 12, 19, 4, 1, 22, 12, 1, 3 },
-            { 1, 7, 11, 17, 9, 18, 17, 25, 29, 1 },
-            { 1, 8, 14, 17, 1, 1, 17, 26, 30, 1 },
-            { 1, 8, 1, 1, 1, 20, 23, 1, 30, 1 },
-            { 4, 9, 15, 18, 1, 1, 1, 1, 30, 1 }
+            { 20, 9, 21, 22, 1, 23, 24, 1, 1, 21, 23, 25, 12},
+            { 1, 9, 21, 26, 1, 23, 27, 5, 1, 28, 23, 1, 26},
+            { 9, 1, 1, 1, 29, 17, 14, 6, 8, 14, 18, 30, 1},
+            { 1, 26, 1, 1, 31, 32, 14, 1, 1, 14, 33, 31, 1},
+            { 1, 9, 1, 1, 31, 1, 1, 1, 2, 34, 1, 31, 1},
+            { 35, 1, 2, 5, 6, 7, 8, 1, 1, 1, 1, 31, 1}
 
     };
     @FXML
@@ -72,7 +71,6 @@ public class MaybeMapsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        usernamesGui.add(crispyMapArray);
         Image image = new Image("assets/ExtraCrispyMap27.png");
         ImageView imageViewForAll = new ImageView();
 
