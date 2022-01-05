@@ -3,6 +3,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image ;
@@ -13,17 +14,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MaybeMapsController implements Initializable {
-    BesmellaUpdatingForAllView besmellaUpdatingForAllView = new BesmellaUpdatingForAllView();
     public ObservableList<Object> usernamesGui = FXCollections.observableArrayList();
     @FXML
     private GridPane gridpane1;
     @FXML
     int[][] crispyMapArray = new int[][]{
-            { 0, 5, 1, 1, 1, 4, 9, 15, 10, 1 },
-            { 1, 5, 1, 16, 19, 1, 1, 1, 10, 1 },
-            { 1, 5, 10, 17, 1, 1, 17, 24, 10, 1 },
-            { 1, 6, 11, 17, 9, 18, 17, 25, 28, 1 },
-            { 2, 1, 12, 18, 1, 1, 21, 12, 4, 31 },
+            { 0, 1, 2 ,3 ,4 ,1 ,1, 1, 5, 6, 7, 8, 1},
+            { 1, 9, 1, 1, 4, 1, 10, 11, 1, 1, 1, 4, 1},
+            { 1, 12, 1, 1, 4, 13, 14, 1, 1, 14, 15, 4, 1},
+            { 9, 1, 1, 1, 16, 17, 14, 6, 8, 14, 18, 19, 1},
+            { },
             { 3, 1, 12, 19, 4, 1, 22, 12, 1, 3 },
             { 1, 7, 11, 17, 9, 18, 17, 25, 29, 1 },
             { 1, 8, 14, 17, 1, 1, 17, 26, 30, 1 },
@@ -172,6 +172,19 @@ public class MaybeMapsController implements Initializable {
             default:
                 return image4;
         }
+    }
+    public void clickGrid(javafx.scene.input.MouseEvent event) {
+        Node clickedNode = event.getPickResult().getIntersectedNode();
+        if (clickedNode != gridpane1) {
+            // click on descendant node
+            Integer colIndex = GridPane.getColumnIndex(clickedNode);
+            Integer rowIndex = GridPane.getRowIndex(clickedNode);
+            System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
+        }
+    }
+
+    public void takeStartingPointZero(){
+        SaveClients.client.printMessage("ya rab ya habibi");
     }
 
 
