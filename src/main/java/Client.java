@@ -35,6 +35,7 @@ public class Client implements Runnable {
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
     ChatView chatView = new ChatView();
+    private String selectedMap = "ExtraCrispyMap";
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -52,6 +53,9 @@ public class Client implements Runnable {
         //bufferedWriter.println(userName);
         isAi = false;
         //listenForMessages();
+    }
+    public String getSelectedMap(){
+        return selectedMap;
     }
 
    /* public void listenForMessages(){

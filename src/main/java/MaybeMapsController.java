@@ -172,17 +172,60 @@ public class MaybeMapsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image image = new Image("assets/ExtraCrispyMap27.png");
         ImageView imageViewForAll = new ImageView();
-
-        for (int i = 0; i < gridpane1.getRowCount(); i++){
+        setDefaultMap();
+        /*for (int i = 0; i < gridpane1.getRowCount(); i++){
             for (int j = 0; j < gridpane1.getColumnCount(); j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
                 gridpane1.add(new ImageView(getImageForMap(DizzyHighwayMap[i][j])),j,i);
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
+        }*/
+
+
+    }
+
+    public void setDefaultMap(){
+        if (SaveClients.client.getSelectedMap().equals("DizzyHighwayMap")){
+            for (int i = 0; i < gridpane1.getRowCount(); i++){
+                for (int j = 0; j < gridpane1.getColumnCount(); j++){
+                    gridpane1.setHgap(-80);
+                    //gridpane1.setVgap(10);
+                    gridpane1.add(new ImageView(getImageForMap(DizzyHighwayMap[i][j])),j,i);
+                    //gridpane1.add(new ImageView(testImage),j,i);
+                }
+            }
         }
-
-
+        if (SaveClients.client.getSelectedMap().equals("ExtraCrispyMap")){
+            for (int i = 0; i < gridpane1.getRowCount(); i++){
+                for (int j = 0; j < gridpane1.getColumnCount(); j++){
+                    gridpane1.setHgap(-80);
+                    //gridpane1.setVgap(10);
+                    gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
+                    //gridpane1.add(new ImageView(testImage),j,i);
+                }
+            }
+        }
+        if (SaveClients.client.getSelectedMap().equals("DeathTrapMap")){
+            for (int i = 0; i < gridpane1.getRowCount(); i++){
+                for (int j = 0; j < gridpane1.getColumnCount(); j++){
+                    gridpane1.setHgap(-80);
+                    //gridpane1.setVgap(10);
+                    gridpane1.add(new ImageView(getImageForMap(DeathTrapMap[i][j])),j,i);
+                    //gridpane1.add(new ImageView(testImage),j,i);
+                }
+            }
+        }
+        if (SaveClients.client.getSelectedMap().equals("LostBearingArray")){
+            for (int i = 0; i < gridpane1.getRowCount(); i++){
+                for (int j = 0; j < gridpane1.getColumnCount(); j++){
+                    gridpane1.setHgap(-80);
+                    //gridpane1.setVgap(10);
+                    gridpane1.add(new ImageView(getImageForMap(LostBearingArray[i][j])),j,i);
+                    //gridpane1.add(new ImageView(testImage),j,i);
+                }
+            }
+        }
     }
 
     public void moveFigureTest(){

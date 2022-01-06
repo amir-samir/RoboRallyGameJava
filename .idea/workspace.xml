@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Adding Images for DizzyHighwayMap">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="DizzyHighwayMap implementiert und getestet">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +91,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignIn">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -154,9 +158,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SignIn" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.SignIn" />
         <item itemvalue="JUnit.jsonTest.selectMap" />
         <item itemvalue="JUnit.mapTest.Test" />
       </list>
@@ -177,7 +181,7 @@
       <workItem from="1641415156892" duration="42000" />
       <workItem from="1641415968736" duration="2815000" />
       <workItem from="1641418864138" duration="1285000" />
-      <workItem from="1641420173594" duration="22401000" />
+      <workItem from="1641420173594" duration="23045000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -319,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641507030350</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="DizzyHighwayMap implementiert und getestet">
+      <created>1641510036541</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1641510036541</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +365,8 @@
     <MESSAGE value="Adding Images for DeathTrapMap" />
     <MESSAGE value="DeathTrapMap implementiert und getestet" />
     <MESSAGE value="Adding Images for DizzyHighwayMap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Images for DizzyHighwayMap" />
+    <MESSAGE value="DizzyHighwayMap implementiert und getestet" />
+    <option name="LAST_COMMIT_MESSAGE" value="DizzyHighwayMap implementiert und getestet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
