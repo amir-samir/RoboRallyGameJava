@@ -1,7 +1,7 @@
 package game.Board;
+
 import game.Card.CardUtil;
 import game.Card.Spam;
-import game.Gamer;
 import lombok.Data;
 
 /**
@@ -18,7 +18,7 @@ public abstract class BoardElement {
     /**
      * @param: gamer/user
      */
-    public void effect(Gamer gamer) {
+    /*public void effect(Gamer gamer) {
         switch (this.name) {
             case "Pits":
                 //method from gamer wiederrufen
@@ -55,4 +55,5 @@ public abstract class BoardElement {
                 break;
         }
     }
+     */
 }

@@ -3,7 +3,9 @@ import game.Messages.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,13 +17,14 @@ import java.util.Map;
 public class Server {
 
     public static int laufendeID = 2000;
+    public List<ClientHandler> verbindungen = new ArrayList<ClientHandler>();
 
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public int[] figuren = new int[6];
     public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
     String activeMap = null;
-    //Game game;
+    Game game;
 
     private ServerSocket serverSocket;
     public String protocol;
@@ -82,6 +85,7 @@ public class Server {
      * @return Gibt zurück, ob der ClientHandler in die HashMap eingefügt werden konnte.
      */
     public boolean addClient(ClientHandler clientHandler) {
+        verbindungen.add(clientHandler);
         users.put(clientHandler.ID, clientHandler);
         return true;
     }
@@ -182,17 +186,9 @@ public class Server {
     }
 
     public void createGame(){
-
+        game = new Game(this, users);
     }
 
-    /**
-     * Diese Methode prüft, ob ein Username schon in der Hashmap vorhanden ist.
-     * @param username Der Username, der überprüft werden soll
-     * @return Gibt zurück, ob der Username schon exisitiert
-     */
-    public boolean checkName(String username) {
-        return !users.containsKey(username);
-    }
 
     /**
      * Diese Methode startet den Server und baut die Verbindungen zu neuen Spielern auf.

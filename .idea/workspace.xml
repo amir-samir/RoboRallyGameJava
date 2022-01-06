@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="updated git-ignore">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38_[Changes]/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38_[Changes]/ClientHandler$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38_[Changes]/ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38_[Changes]/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_2021_12_38__Changes_.xml" beforeDir="false" />
+    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="Improved method generateMap()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/JSON/mapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JSON/mapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/mapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JSON/mapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Gamer.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.mapTest.Test">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -168,9 +169,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.selectMap" />
         <item itemvalue="JUnit.jsonTest.GameStarted" />
       </list>
@@ -186,7 +187,8 @@
       <updated>1638741223995</updated>
       <workItem from="1641316643712" duration="4776000" />
       <workItem from="1641404819489" duration="505000" />
-      <workItem from="1641417782506" duration="2976000" />
+      <workItem from="1641417782506" duration="4801000" />
+      <workItem from="1641471393977" duration="3082000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -286,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641328575276</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Improved method generateMap()">
+      <created>1641421076965</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641421076965</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +323,8 @@
     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="updated git-ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated git-ignore" />
+    <MESSAGE value="Improved method generateMap()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved method generateMap()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -323,11 +333,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
           <line>219</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/JSON/mapTest.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

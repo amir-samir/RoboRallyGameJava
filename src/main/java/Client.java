@@ -206,12 +206,14 @@ public class Client implements Runnable {
                     int newFigure = (int)(double) message.getMessageBody().getContent()[2];
                     int clientID = (int)(double) message.getMessageBody().getContent()[0];
                     String username = (String) message.getMessageBody().getContent()[1];
-                    ids.put(username, clientID);
-                    figuren[newFigure] = clientID;
-                    usernamesGui.add(clientID + "," + username);
-                    Player newPlayer = new Player(clientID, username, newFigure);
-                    player.put(clientID, newPlayer);
-                    toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
+                    if (ids.get(username) == null) {
+                        ids.put(username, clientID);
+                        figuren[newFigure] = clientID;
+                        usernamesGui.add(clientID + "," + username);
+                        Player newPlayer = new Player(clientID, username, newFigure);
+                        player.put(clientID, newPlayer);
+                        toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
+                    } else toSend = null;
                 } else if(message.getMessageType().equals("PlayerStatus")){
                     boolean isReady = (boolean) message.getMessageBody().getContent()[1];
                     int clientID = (int) (double) message.getMessageBody().getContent()[0];
