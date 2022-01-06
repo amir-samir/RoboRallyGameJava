@@ -30,6 +30,19 @@ public class MaybeMapsController implements Initializable {
             { 35, 1, 2, 5, 6, 7, 8, 1, 1, 1, 1, 31, 1}
 
     };
+    int[][] LostBearingArray = new int[][]{
+            { 0, 1, 2, 1, 36, 1, 1, 1, 1, 1, 1, 37, 1},
+            { 1, 9, 1, 11, 38, 1, 11, 11, 2, 2, 1, 39, 11},
+            { 1, 12, 1, 1, 1, 40, 14, 1, 33, 14, 40, 1, 1},
+            { 9, 1, 1, 1, 1, 4, 41, 7, 7, 8, 4, 1, 1},
+            { 20, 9, 21, 1, 1, 28, 1, 40, 28, 1, 24, 15, 1},
+            { 1, 9, 21, 1, 32, 24, 1, 24, 40, 1, 28, 1, 1},
+            { 9, 1, 1, 1, 1, 31, 6, 7, 7, 42, 31, 1, 1},
+            { 1, 26, 1, 1, 1, 40, 14, 1, 13, 14, 40, 1, 1},
+            { 1, 9, 1, 2, 43, 1, 1, 1, 1, 1, 1, 44, 2},
+            { 45, 1, 2, 46, 36, 1, 1, 1, 1, 1, 1, 37, 1}
+
+    };
     @FXML
     Image image0 = new Image("assets/ExtraCrispyMapStartBoard00.png");
     Image image1 = new Image("assets/ExtraCrispyMap10.png");
@@ -67,6 +80,19 @@ public class MaybeMapsController implements Initializable {
     Image image33 = new Image("assets/ExtraCrispyMap77.png");
     Image image34 = new Image("assets/ExtraCrispyMap86.png");
     Image image35 = new Image("assets/ExtraCrispyMapStartBoardA.png");
+    Image image36 = new Image("assets/LostBearingMapGreenPfileNachUnten.png");
+    Image image37 = new Image("assets/LostBearingMapGreenPfileNachOben.png");
+    Image image38 = new Image("assets/LostBearingMapGreenPfileTurnRight.png");
+    Image image39 = new Image("assets/LostBearingMapGreenPfeilTurnRightNachOben.png");
+    Image image40 = new Image("assets/LostBearingMapDoubleEnergy.png");
+    Image image41 = new Image("assets/LostBearingMapLaserWall.png");
+    Image image42 = new Image("assets/LostBearingMapLaserWall42.png");
+    Image image43 = new Image("assets/LostBearingMapGreenPfileTurnRightNachUnten.png");
+    Image image44 = new Image("assets/LostBearingMapGreenTurnRightLast.png");
+    Image image45 = new Image("assets/ExtraCrispyMapStartBoardA.png");
+    Image image46 = new Image("assets/LostBearingMapA1.png");
+
+
     Image figureTest = new Image("assets/figureTest2.png");
     //Image testImage = new Image("assets/MateoTry.jpeg");
 
@@ -83,7 +109,7 @@ public class MaybeMapsController implements Initializable {
             for (int j = 0; j < gridpane1.getColumnCount(); j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
+                gridpane1.add(new ImageView(getImageForMap(LostBearingArray[i][j])),j,i);
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }
@@ -171,6 +197,28 @@ public class MaybeMapsController implements Initializable {
                 return image34;
             case 35:
                 return image35;
+            case 36:
+                return image36;
+            case 37:
+                return image37;
+            case 38:
+                return image38;
+            case 39:
+                return image39;
+            case 40:
+                return image40;
+            case 41:
+                return image41;
+            case 42:
+                return image42;
+            case 43:
+                return image43;
+            case 44:
+                return image44;
+            case 45:
+                return image45;
+            case 46:
+                return image46;
 
             default:
                 return image4;
