@@ -31,7 +31,7 @@
             <image>
                 <Image url="@../assets/ExtraCrispyMap.png" />
             </image></ImageView>
-      <ImageView fitHeight="132.0" fitWidth="312.0" layoutX="250.0" layoutY="183.0" pickOnBounds="true">
+      <ImageView fitHeight="132.0" fitWidth="312.0" layoutX="250.0" layoutY="183.0" onMouseClicked="#ChooseDizzyHighwayMap" onMouseEntered="#ChooseDizzyHighwayMap" pickOnBounds="true">
          <image>
             <Image url="@../assets/DizzyHighwayMap.png" />
          </image>

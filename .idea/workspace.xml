@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="SelectMap erweitert für alle Maps und Design geändert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SelectMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SelectMapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SelectMapView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +179,7 @@
       <workItem from="1641415156892" duration="42000" />
       <workItem from="1641415968736" duration="2815000" />
       <workItem from="1641418864138" duration="1285000" />
-      <workItem from="1641420173594" duration="24342000" />
+      <workItem from="1641420173594" duration="24900000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -333,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641510764184</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="SelectMap erweitert für alle Maps und Design geändert">
+      <created>1641512032092</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1641512032092</updated>
+    </task>
+    <task id="LOCAL-00024" summary="SelectMap erweitert für alle Maps und Design geändert">
+      <created>1641512048127</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1641512048127</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +386,8 @@
     <MESSAGE value="Adding Images for DizzyHighwayMap" />
     <MESSAGE value="DizzyHighwayMap implementiert und getestet" />
     <MESSAGE value="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)" />
-    <option name="LAST_COMMIT_MESSAGE" value="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)" />
+    <MESSAGE value="SelectMap erweitert für alle Maps und Design geändert" />
+    <option name="LAST_COMMIT_MESSAGE" value="SelectMap erweitert für alle Maps und Design geändert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
