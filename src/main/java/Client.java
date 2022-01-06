@@ -22,10 +22,10 @@ public class Client implements Runnable {
     private boolean connected;
     private int ID;
     private boolean ready = false;
+    private int activePlayer;
 
     private BoardElement[][] map;
 
-    private String userName;
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
     public String protocol;
@@ -46,34 +46,10 @@ public class Client implements Runnable {
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
-        //this.userName = userName;
         chatMessages = FXCollections.observableArrayList();
-        //bufferedWriter.println(userName);
-        isAi = false;
-        //listenForMessages();
+        isAi = false;;
     }
-
-   /* public void listenForMessages(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                String message;
-                while (SOCKET.isConnected()){
-                    try {
-                        message = bufferedReader.readLine();
-                        System.out.println(message);
-                    } catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
-    } */
-
-    public void setCleint(Client client){
-
-    }
-
+    
     public void setReady(){
         if(ready){
             ready = false;
@@ -90,7 +66,6 @@ public class Client implements Runnable {
 
     public void singleMessage(int senderId, String message, String userName){
         int empfaenger = ids.get(userName);
-        //int senderId = ids.get(senderName);
         String[] keys = {"message", "to"};
         SendChat sendChat = new SendChat(message, empfaenger);
         sendChat.getMessageBody().setKeys(keys);
@@ -113,10 +88,6 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
-    public synchronized  ObservableList getUsernames(){
-       return usernamesGui;
-    }
-
     public void configuration(String name, int figur){
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
@@ -127,9 +98,7 @@ public class Client implements Runnable {
     public int getID(){
         return ID;
     }
-    public String getUserName(){
-        return userName;
-    }
+
     /**
      * A method that receive and returns information from the Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
@@ -234,6 +203,32 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
                     toSend = "Folgende Map wurde ausgewählt: " + map;
+                } else if (message.getMessageType().equals("ActivePhase")){
+                    int activePhase = (int) (double) message.getMessageBody().getContent()[0];
+                    if (activePhase == 0){
+                        //GUI? StartBoard auswählen
+                        toSend = "Die Aufbauphase läuft aktuell.";
+                    } else if (activePhase == 1){
+                        //UpgradePhase? GUI
+                        toSend = "Die Upgradephase läuft aktuell.";
+                    } else if (activePhase == 2){
+                        //ProgrammierPhase? GUI?
+                        toSend = "Die Programmierphase läuft aktuell.";
+                    } else if (activePhase == 3){
+                        //AktivierungsPhase? GUI?
+                        toSend = "Die Aktivierungsphase läuft aktuell.";
+                    } else toSend = null;
+                } else if (message.getMessageType().equals("CurrentPlayer")){
+                    int currentPlayer = (int)(double)message.getMessageBody().getContent()[0];
+                    activePlayer = currentPlayer;
+                    if (this.ID == this.activePlayer){
+                        //GUI?
+                        toSend = "Du bist am Zug.";
+                    } else {
+                        //GUI?
+                        String name = player.get(activePlayer).name;
+                        toSend = name + " (" + ID + ") " + "ist aktuell am Zug";
+                    }
                 }
                 else {
                     toSend = inputFromServer;

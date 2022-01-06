@@ -79,6 +79,12 @@ public class Server {
         }
     }
 
+    public void sendMessageForAllUsers(Message m){
+        for (ClientHandler clientHandler: users.values()){
+            clientHandler.owriter.println(Adopter.javabeanToJson(m));
+        }
+    }
+
     /**
      * Diese Methode fügt neue Mitglieder des Chat-Raums in die HashMap aller Mitglieder hinzu.
      * @param clientHandler Der ClientHandler, der in die HashMap eingefügt werden soll.
@@ -186,7 +192,7 @@ public class Server {
     }
 
     public void createGame(){
-        game = new Game(this, users);
+        game = new Game(this, users, verbindungen);
     }
 
 

@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="Improved method generateMap()">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="New Board Structure">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gamer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Gamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Gamer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +175,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3aac40d7-1e18-4abb-a517-937d96503548" name="Changes" comment="" />
+      <changelist id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="New Board Structure" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -189,6 +184,7 @@
       <workItem from="1641404819489" duration="505000" />
       <workItem from="1641417782506" duration="4801000" />
       <workItem from="1641471393977" duration="3082000" />
+      <workItem from="1641496660465" duration="6058000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
