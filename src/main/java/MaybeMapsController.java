@@ -124,6 +124,10 @@ public class MaybeMapsController implements Initializable {
     Image image64 = new Image("assets/DeathTrapMap95.png");
     Image image65 = new Image("assets/DeathTrapMapFlag2.png");
     Image image66 = new Image("assets/DeathTrapMap18.png");
+    Image image67 = new Image("");
+    Image image68 = new Image("");
+    Image image69 = new Image("");
+    Image image70 = new Image("");
     Image figureTest = new Image("assets/figureTest2.png");
     //Image testImage = new Image("assets/MateoTry.jpeg");
 
@@ -140,7 +144,7 @@ public class MaybeMapsController implements Initializable {
             for (int j = 0; j < gridpane1.getColumnCount(); j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(DeathTrapMap[i][j])),j,i);
+                gridpane1.add(new ImageView(getImageForMap(LostBearingArray[i][j])),j,i);
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }
