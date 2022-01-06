@@ -56,6 +56,19 @@ public class MaybeMapsController implements Initializable {
             { 63, 1, 1, 1, 1, 64, 2, 2, 2, 1, 11, 1, 0}
 
     };
+    int[][] DizzyHighwayMap = new int[][]{
+            { 1, 1, 2, 1, 67, 67, 1, 1, 1, 1, 1, 1, 68},
+            { 1, 9, 1, 1, 69, 70, 71, 71, 71, 71, 71, 72, 71},
+            { 1, 12, 1, 1, 67, 68, 1, 1, 1, 1, 1, 73, 71},
+            { 9, 1, 1, 1, 67, 1, 74, 75, 76, 77, 1, 78, 79},
+            { 20, 9, 21, 1, 67, 1, 80, 1, 68, 1, 1, 78, 1},
+            { 1, 9, 21, 1, 67, 1, 1, 68, 1, 81, 1, 78, 1},
+            { 9, 1, 1, 1, 67, 1, 82, 83, 1, 84, 1, 78, 1},
+            { 1, 26, 1, 85, 86, 1, 1, 1, 1, 1, 68, 78, 1},
+            { 1, 9, 1, 85, 87, 85, 85, 85, 85, 85, 88, 89, 1},
+            { 35, 1, 2, 68, 1, 1, 1, 1, 1, 1, 78, 78, 90}
+
+    };
     @FXML
     Image image0 = new Image("assets/ExtraCrispyMapStartBoard00.png");
     Image image1 = new Image("assets/ExtraCrispyMap10.png");
@@ -124,10 +137,30 @@ public class MaybeMapsController implements Initializable {
     Image image64 = new Image("assets/DeathTrapMap95.png");
     Image image65 = new Image("assets/DeathTrapMapFlag2.png");
     Image image66 = new Image("assets/DeathTrapMap18.png");
-    Image image67 = new Image("");
-    Image image68 = new Image("");
-    Image image69 = new Image("");
-    Image image70 = new Image("");
+    Image image67 = new Image("assets/DizzyHighwayMap01.png");
+    Image image68 = new Image("assets/DizzyHighwayMap09.png");
+    Image image69 = new Image("assets/DizzyHighwayMap11.png");
+    Image image70 = new Image("assets/DizzyHighwayMap12.png");
+    Image image71 = new Image("assets/DizzyHighwayMap13.png");
+    Image image72 = new Image("assets/DizzyHighwayMap18.png");
+    Image image73 = new Image("assets/DizzyHighwayMap28.png");
+    Image image74 = new Image("assets/DizzyHighwayMap33.png");
+    Image image75 = new Image("assets/DizzyHighwayMap34.png");
+    Image image76 = new Image("assets/DizzyHighwayMap35.png");
+    Image image77 = new Image("assets/DizzyHighwayMap36.png");
+    Image image78 = new Image("assets/DizzyHighwayMap38.png");
+    Image image79 = new Image("assets/DeathTrapMapFlag1.png");
+    Image image80 = new Image("assets/DizzyHighwayMap43.png");
+    Image image81 = new Image("assets/DizzyHighwayMap56.png");
+    Image image82 = new Image("assets/DizzyHighwayMap63.png");
+    Image image83 = new Image("assets/DizzyHighwayMap64.png");
+    Image image84 = new Image("assets/DizzyHighwayMap66.png");
+    Image image85 = new Image("assets/DizzyHighwayMap70.png");
+    Image image86 = new Image("assets/DizzyHighwayMap71.png");
+    Image image87 = new Image("assets/DizzyHighwayMap81.png");
+    Image image88 = new Image("assets/DizzyHighwayMap87.png");
+    Image image89 = new Image("assets/DizzyHighwayMap88.png");
+    Image image90 = new Image("assets/DizzyHighwayMap99.png");
     Image figureTest = new Image("assets/figureTest2.png");
     //Image testImage = new Image("assets/MateoTry.jpeg");
 
@@ -144,7 +177,7 @@ public class MaybeMapsController implements Initializable {
             for (int j = 0; j < gridpane1.getColumnCount(); j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(LostBearingArray[i][j])),j,i);
+                gridpane1.add(new ImageView(getImageForMap(DizzyHighwayMap[i][j])),j,i);
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }
@@ -294,6 +327,54 @@ public class MaybeMapsController implements Initializable {
                 return image65;
             case 66:
                 return image66;
+            case 67:
+                return image67;
+            case 68:
+                return image68;
+            case 69:
+                return image69;
+            case 70:
+                return image70;
+            case 71:
+                return image71;
+            case 72:
+                return image72;
+            case 73:
+                return image73;
+            case 74:
+                return image74;
+            case 75:
+                return image75;
+            case 76:
+                return image76;
+            case 77:
+                return image77;
+            case 78:
+                return image78;
+            case 79:
+                return image79;
+            case 80:
+                return image80;
+            case 81:
+                return image81;
+            case 82:
+                return image82;
+            case 83:
+                return image83;
+            case 84:
+                return image84;
+            case 85:
+                return image85;
+            case 86:
+                return image86;
+            case 87:
+                return image87;
+            case 88:
+                return image88;
+            case 89:
+                return image89;
+            case 90:
+                return image90;
 
             default:
                 return image4;
