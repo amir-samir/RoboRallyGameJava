@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="On mouse Click for GridPane">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Adding Start Board to Map">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapNumber18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapA1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapDoubleEnergy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfeilTurnRightNachOben.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileNachOben.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileNachUnten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileTurnRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileTurnRightNachUnten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenTurnRightLast.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapLaserWall.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BesmellaUpdatingForAllView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BesmellaUpdatingForAllView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -86,7 +103,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.SignIn">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -107,6 +124,7 @@
     <configuration name="SignIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SignIn" />
       <module name="innige-irrweg-hp" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,15 +164,15 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
+      <item itemvalue="Application.SignIn" />
       <item itemvalue="JUnit.mapTest.Test" />
       <item itemvalue="JUnit.jsonTest.selectMap" />
-      <item itemvalue="Application.SignIn" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SignIn" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.SignIn" />
         <item itemvalue="JUnit.jsonTest.selectMap" />
         <item itemvalue="JUnit.mapTest.Test" />
       </list>
@@ -173,7 +191,9 @@
       <workItem from="1641337239749" duration="166000" />
       <workItem from="1641398574244" duration="2636000" />
       <workItem from="1641415156892" duration="42000" />
-      <workItem from="1641415968736" duration="2587000" />
+      <workItem from="1641415968736" duration="2815000" />
+      <workItem from="1641418864138" duration="1285000" />
+      <workItem from="1641420173594" duration="8032000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -273,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641417872583</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Adding Start Board to Map">
+      <created>1641418658559</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641418658559</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +329,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Select Map (GUI und Client verbinden)" />
     <MESSAGE value="On mouse Click for GridPane" />
-    <option name="LAST_COMMIT_MESSAGE" value="On mouse Click for GridPane" />
+    <MESSAGE value="Adding Start Board to Map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Start Board to Map" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22,7 +22,7 @@ public class MaybeMapsController implements Initializable {
             { 1, 9, 1, 1, 4, 1, 10, 11, 1, 1, 1, 4, 1},
             { 1, 12, 1, 1, 4, 13, 14, 1, 1, 14, 15, 4, 1},
             { 9, 1, 1, 1, 16, 17, 14, 6, 8, 14, 18, 19, 1},
-            { 20, 9, 21, 22, 1, 23, 24, 1, 1, 21, 23, 25, 12},
+            { 20, 9, 21, 22, 1, 23, 24, 1, 1, 21, 23, 5, 12},
             { 1, 9, 21, 26, 1, 23, 27, 5, 1, 28, 23, 1, 26},
             { 9, 1, 1, 1, 29, 17, 14, 6, 8, 14, 18, 30, 1},
             { 1, 26, 1, 1, 31, 32, 14, 1, 1, 14, 33, 31, 1},
@@ -31,37 +31,42 @@ public class MaybeMapsController implements Initializable {
 
     };
     @FXML
-    Image image0 = new Image("assets/ExtraCrispyMap00.png");
+    Image image0 = new Image("assets/ExtraCrispyMapStartBoard00.png");
     Image image1 = new Image("assets/ExtraCrispyMap10.png");
-    Image image2 = new Image("assets/ExtraCrispyMap40.png");
-    Image image3 = new Image("assets/ExtraCrispyMap50.png");
-    Image image4 = new Image("assets/ExtraCrispyMap100.png");
-    Image image5 = new Image("assets/ExtraCrispyMap01.png");
-    Image image6 = new Image("assets/ExtraCrispyMap41.png");
-    Image image7 = new Image("assets/ExtraCrispyMap71.png");
-    Image image8 = new Image("assets/ExtraCrispyMap81.png");
-    Image image9 = new Image("assets/ExtraCrispyMap91.png");
-    Image image10 = new Image("assets/ExtraCrispyMap32.png");
-    Image image11 = new Image("assets/ExtraCrispyMap42.png");
-    Image image12 = new Image("assets/ExtraCrispyMap52.png");
-    Image image14 = new Image("assets/ExtraCrispyMap72.png");
-    Image image15 = new Image("assets/ExtraCrispyMap92.png");
-    Image image16 = new Image("assets/ExtraCrispyMap13.png");
-    Image image17 = new Image("assets/ExtraCrispyMap23.png");
-    Image image18 = new Image("assets/ExtraCrispyMap43.png");
-    Image image19 = new Image("assets/ExtraCrispyMap53.png");
-    Image image20 = new Image("assets/ExtraCrispyMap85.png");
+    Image image2 = new Image("assets/ExtraCrispyMapStartBorad0last.png");
+    Image image3 = new Image("assets/ExtraCrispyMap00.png");
+    Image image4 = new Image("assets/ExtraCrispyMap01.png");
+    Image image5 = new Image("assets/ExtraCrispyMap100.png");
+    Image image6 = new Image("assets/ExtraCrispyMap91.png");
+    Image image7 = new Image("assets/ExtraCrispyMap92.png");
+    Image image8 = new Image("assets/ExtraCrispyMap011.png");
+    Image image9 = new Image("assets/ExtraCrispyMapStartBoardStartPoint.png");
+    Image image10 = new Image("assets/ExtraCrispyMap13.png");
+    Image image11 = new Image("assets/ExtraCrispyMap14.png");
+    Image image12 = new Image("assets/ExtraCrispyMapStartBoard21.png");
+    Image image13 = new Image("assets/ExtraCrispyMap32.png");
+    Image image14 = new Image("assets/ExtraCrispyMap23.png");
+    Image image15 = new Image("assets/ExtraCrispyMap27.png");
+    Image image16 = new Image("assets/ExtraCrispyMap41.png");
+    Image image17 = new Image("assets/ExtraCrispyMap42.png");
+    Image image18 = new Image("assets/ExtraCrispyMapNumber18.png");
+    Image image19 = new Image("assets/ExtraCrispyMap38.png");
+    Image image20 = new Image("assets/ExtraCrispyMapStartBoardAntenne.png");
     Image image21 = new Image("assets/ExtraCrispyMap46.png");
-    Image image22 = new Image("assets/ExtraCrispyMap56.png");
-    Image image23 = new Image("assets/ExtraCrispyMap86.png");
-    Image image24 = new Image("assets/ExtraCrispyMap27.png");
+    Image image22 = new Image("assets/ExtraCrispyMap40.png");
+    Image image23 = new Image("assets/ExtraCrispyMap52.png");
+    Image image24 = new Image("assets/ExtraCrispyMap43.png");
     Image image25 = new Image("assets/ExtraCrispyMap37.png");
-    Image image26 = new Image("assets/ExtraCrispyMap77.png");
-    Image image27 = new Image("assets/ExtraCrispyMap18.png");
-    Image image28 = new Image("assets/ExtraCrispyMap38.png");
-    Image image29 = new Image("assets/ExtraCrispyMap68.png");
-    Image image30 = new Image("assets/ExtraCrispyMap78.png");
-    Image image31 = new Image("assets/ExtraCrispyMap49.png");
+    Image image26 = new Image("assets/ExtraCrispyMap50.png");
+    Image image27 = new Image("assets/ExtraCrispyMap53.png");
+    Image image28 = new Image("assets/ExtraCrispyMap56.png");
+    Image image29 = new Image("assets/ExtraCrispyMap71.png");
+    Image image30 = new Image("assets/ExtraCrispyMap68.png");
+    Image image31 = new Image("assets/ExtraCrispyMap81.png");
+    Image image32 = new Image("assets/ExtraCrispyMap72.png");
+    Image image33 = new Image("assets/ExtraCrispyMap77.png");
+    Image image34 = new Image("assets/ExtraCrispyMap86.png");
+    Image image35 = new Image("assets/ExtraCrispyMapStartBoardA.png");
     Image figureTest = new Image("assets/figureTest2.png");
     //Image testImage = new Image("assets/MateoTry.jpeg");
 
@@ -74,32 +79,21 @@ public class MaybeMapsController implements Initializable {
         Image image = new Image("assets/ExtraCrispyMap27.png");
         ImageView imageViewForAll = new ImageView();
 
-        for (int i = 0; i < crispyMapArray.length; i++){
-            for (int j = 0; j < crispyMapArray.length; j++){
+        for (int i = 0; i < gridpane1.getRowCount(); i++){
+            for (int j = 0; j < gridpane1.getColumnCount(); j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
                 gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }
-        gridpane1.add(new ImageView(figureTest),0,0);
+
 
     }
 
     public void moveFigureTest(){
-       gridpane1.add(new ImageView(image0),0,0);
-       gridpane1.add(new ImageView(figureTest),1,0);
-       /* besmellaUpdatingForAllView.changeMap();
-        crispyMapArray = besmellaUpdatingForAllView.getCrispyMapArray();
-        for (int i = 0; i < crispyMapArray.length; i++){
-            for (int j = 0; j < crispyMapArray.length; j++){
-                gridpane1.setHgap(-80);
-                //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
-                //gridpane1.add(new ImageView(testImage),j,i);
-            }
-        } */
-
+        gridpane1.add(new ImageView(image0),0,0);
+        gridpane1.add(new ImageView(figureTest),1,0);
     }
 
 
@@ -131,6 +125,8 @@ public class MaybeMapsController implements Initializable {
                 return image11;
             case 12:
                 return image12;
+            case 13:
+                return image13;
             case 14:
                 return image14;
             case 15:
@@ -167,6 +163,15 @@ public class MaybeMapsController implements Initializable {
                 return image30;
             case 31:
                 return image31;
+            case 32:
+                return image32;
+            case 33:
+                return image33;
+            case 34:
+                return image34;
+            case 35:
+                return image35;
+
             default:
                 return image4;
         }
@@ -177,13 +182,11 @@ public class MaybeMapsController implements Initializable {
             // click on descendant node
             Integer colIndex = GridPane.getColumnIndex(clickedNode);
             Integer rowIndex = GridPane.getRowIndex(clickedNode);
+            gridpane1.add(new ImageView(figureTest),colIndex,rowIndex);
             System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
         }
     }
 
-    public void takeStartingPointZero(){
-        SaveClients.client.printMessage("ya rab ya habibi");
-    }
 
 
 }
