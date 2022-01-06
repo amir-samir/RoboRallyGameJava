@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="DizzyHighwayMap implementiert und getestet">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +177,7 @@
       <workItem from="1641415156892" duration="42000" />
       <workItem from="1641415968736" duration="2815000" />
       <workItem from="1641418864138" duration="1285000" />
-      <workItem from="1641420173594" duration="23045000" />
+      <workItem from="1641420173594" duration="24342000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -330,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641510036541</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)">
+      <created>1641510764184</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1641510764184</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +369,8 @@
     <MESSAGE value="DeathTrapMap implementiert und getestet" />
     <MESSAGE value="Adding Images for DizzyHighwayMap" />
     <MESSAGE value="DizzyHighwayMap implementiert und getestet" />
-    <option name="LAST_COMMIT_MESSAGE" value="DizzyHighwayMap implementiert und getestet" />
+    <MESSAGE value="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
