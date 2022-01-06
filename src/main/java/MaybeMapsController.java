@@ -43,6 +43,19 @@ public class MaybeMapsController implements Initializable {
             { 45, 1, 2, 46, 36, 1, 1, 1, 1, 1, 1, 37, 1}
 
     };
+    int[][] DeathTrapMap = new int[][]{
+            { 1, 1, 11, 11, 47, 1, 1, 1, 1, 1, 11, 1, 45},
+            { 48, 49, 1, 50, 39, 11, 1, 14, 66, 37, 1, 9, 1},
+            { 1, 14, 51, 14, 52, 1, 53, 49, 54, 37, 1, 12, 1},
+            { 1, 1, 55, 1, 56, 1, 1, 14, 57, 37, 1, 1, 9},
+            { 1, 36, 1, 14, 65, 1, 49, 1, 44, 58, 57, 9, 1},
+            { 59, 60, 1, 56, 49, 26, 14, 1, 37, 1, 57, 9, 20},
+            { 36, 21, 14, 1, 52, 1, 1, 52, 1, 1, 1, 1, 9},
+            { 36, 61, 56, 53, 1, 1, 14, 66, 14, 1, 1, 26, 1},
+            { 36, 51, 14, 1, 2, 43, 12, 62, 56, 1, 1, 9, 1},
+            { 63, 1, 1, 1, 1, 64, 2, 2, 2, 1, 11, 1, 0}
+
+    };
     @FXML
     Image image0 = new Image("assets/ExtraCrispyMapStartBoard00.png");
     Image image1 = new Image("assets/ExtraCrispyMap10.png");
@@ -91,8 +104,26 @@ public class MaybeMapsController implements Initializable {
     Image image44 = new Image("assets/LostBearingMapGreenTurnRightLast.png");
     Image image45 = new Image("assets/ExtraCrispyMapStartBoardA.png");
     Image image46 = new Image("assets/LostBearingMapA1.png");
-
-
+    Image image47 = new Image("assets/DeathTrapMap04.png");
+    Image image48 = new Image("assets/DeathTrapMapFlag5.png");
+    Image image49 = new Image("assets/DeathTrapMap11.png");
+    Image image50 = new Image("assets/ExtraCrispyMap50.png");
+    Image image51 = new Image("assets/DeathTrapMap22.png");
+    Image image52 = new Image("assets/DeathTrapMap24.png");
+    Image image53 = new Image("assets/DeathTrapMap26.png");
+    Image image54 = new Image("assets/DeathTrapMapFlag4.png");
+    Image image55 = new Image("assets/DeathTrapMap32.png");
+    Image image56 = new Image("assets/DeathTrapMap34.png");
+    Image image57 = new Image("assets/DeathTrapMap38.png");
+    Image image58 = new Image("assets/DeathTrapMap49.png");
+    Image image59 = new Image("assets/DeathTrapMap50.png");
+    Image image60 = new Image("assets/DeathTrapMap51.png");
+    Image image61 = new Image("assets/DeathTrapMapFlag1.png");
+    Image image62 = new Image("assets/DeathTrapMapFlag3.png");
+    Image image63 = new Image("assets/DeathTrapMap2A.png");
+    Image image64 = new Image("assets/DeathTrapMap95.png");
+    Image image65 = new Image("assets/DeathTrapMapFlag2.png");
+    Image image66 = new Image("assets/DeathTrapMap18.png");
     Image figureTest = new Image("assets/figureTest2.png");
     //Image testImage = new Image("assets/MateoTry.jpeg");
 
@@ -109,7 +140,7 @@ public class MaybeMapsController implements Initializable {
             for (int j = 0; j < gridpane1.getColumnCount(); j++){
                 gridpane1.setHgap(-80);
                 //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(LostBearingArray[i][j])),j,i);
+                gridpane1.add(new ImageView(getImageForMap(DeathTrapMap[i][j])),j,i);
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }
@@ -219,6 +250,46 @@ public class MaybeMapsController implements Initializable {
                 return image45;
             case 46:
                 return image46;
+            case 47:
+                return image47;
+            case 48:
+                return image48;
+            case 49:
+                return image49;
+            case 50:
+                return image50;
+            case 51:
+                return image51;
+            case 52:
+                return image52;
+            case 53:
+                return image53;
+            case 54:
+                return image54;
+            case 55:
+                return image55;
+            case 56:
+                return image56;
+            case 57:
+                return image57;
+            case 58:
+                return image58;
+            case 59:
+                return image59;
+            case 60:
+                return image60;
+            case 61:
+                return image61;
+            case 62:
+                return image62;
+            case 63:
+                return image63;
+            case 64:
+                return image64;
+            case 65:
+                return image65;
+            case 66:
+                return image66;
 
             default:
                 return image4;
