@@ -17,6 +17,8 @@ public class MaybeMapsController implements Initializable {
     @FXML
     private GridPane gridpane1;
     @FXML
+    private ImageView Card1;
+    @FXML
     int[][] crispyMapArray = new int[][]{
             { 0, 1, 2 ,3 ,4 ,1 ,1, 1, 5, 6, 7, 8, 1},
             { 1, 9, 1, 1, 4, 1, 10, 11, 1, 1, 1, 4, 1},
@@ -181,7 +183,7 @@ public class MaybeMapsController implements Initializable {
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }*/
-
+      Card1.setImage(image);
 
     }
 
@@ -433,6 +435,11 @@ public class MaybeMapsController implements Initializable {
             System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
         }
     }
+
+    public void ChangeImageTest(){
+        Card1.setImage(image4);
+    }
+    //TODO: Method for inserting ein Figure auf dem Map, wird von Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
 
 
 

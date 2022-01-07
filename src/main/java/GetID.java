@@ -16,6 +16,7 @@ public class GetID extends Application {
         Application.launch(args);
     }
 
+
     @Override
     public void start(Stage stage) throws Exception {
         try {
@@ -23,13 +24,12 @@ public class GetID extends Application {
             this.clientThread = new Thread(client);
             clientThread.start();
             SaveClients.client = client;
-
             stage.setTitle("Get Id");
             Parent getID = FXMLLoader.load(getClass().getResource("fxml/GetID.fxml"));
             Scene getIdScene = new Scene(getID);
             stage.setScene(getIdScene);
             stage.show();
-            stage.setOnCloseRequest(e -> Platform.exit());
+            stage.setOnCloseRequest(e -> stage.close());
         } catch (IOException e){
             e.printStackTrace();
         }

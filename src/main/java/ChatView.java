@@ -122,10 +122,8 @@ public class ChatView {
 
         //Close if Bye
         stage1.setOnCloseRequest(e -> {
-            Platform.exit();
             //clientHandler.writer.equals("bye");
             stage1.close();
-            System.exit(0);
         });
     }
 
