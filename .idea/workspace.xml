@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="SelectMapView Class erweitert und methoden für Clients SelecteMap() implementiert">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GetID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Managing Closing Windows and Scenes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,7 +174,7 @@
       <workItem from="1641415968736" duration="2815000" />
       <workItem from="1641418864138" duration="1285000" />
       <workItem from="1641420173594" duration="25263000" />
-      <workItem from="1641565663606" duration="4072000" />
+      <workItem from="1641565663606" duration="4131000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -362,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641512661580</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Managing Closing Windows and Scenes">
+      <created>1641573999344</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1641573999344</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +397,8 @@
     <MESSAGE value="setDefaultMap() Function prüft welche Map von Client ausgewählt wurde und je nachdem wird die Map initialisiert(wurde getestet)" />
     <MESSAGE value="SelectMap erweitert für alle Maps und Design geändert" />
     <MESSAGE value="SelectMapView Class erweitert und methoden für Clients SelecteMap() implementiert" />
-    <option name="LAST_COMMIT_MESSAGE" value="SelectMapView Class erweitert und methoden für Clients SelecteMap() implementiert" />
+    <MESSAGE value="Managing Closing Windows and Scenes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Managing Closing Windows and Scenes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
