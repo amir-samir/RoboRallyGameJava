@@ -64,29 +64,36 @@ public class Adopter {
 
     public static String getJsonBody(Message message) {
         String json = "{ ";
-        Object[] keys = message.messageBody.getkeys();
-        Object[] values = message.messageBody.getContent();
-        if (keys != null && values != null) {
-            for (int i = 0; i < keys.length; i++) {
-                Object value = values[i];
-                String key = (String) keys[i];
-                if (value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
-                    json = json + "\"" + key + "\": "  + value + ", ";
-                } else {
-
-                    json = json + "\"" + key + "\": \""  + value + "\"" + ", ";
-                }}
-            StringBuilder sb = new StringBuilder(json);
-            json = sb.deleteCharAt(json.length()-1).toString();
-            sb = new StringBuilder(json);
-            json = sb.deleteCharAt(json.length()-1).toString();
-            json = json + " }}";
+        Gson gson = new Gson();
+        Object[] keys = null;
+        Object[] values = null;
+        try {
+            keys = message.messageBody.getkeys();
+            values = message.messageBody.getContent();
+        } catch (NullPointerException e) {
+            return "MessageBody ist leer!";
         }
-        else {
-            json = "MessageBody ist leer!";
-        }
+        for (int i = 0; i < keys.length; i++) {
+            Object value = values[i];
+            String valueString = value.toString();
+            if (value instanceof String[]) {
+                valueString = gson.toJson(values[i]);
+            }
 
-        return json;
+            String key = (String) keys[i];
+            if (values[i] instanceof String[] || value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
+                json = json + "\"" + key + "\": "  + valueString + ", ";
+            } else {
+
+                json = json + "\"" + key + "\": \""  + valueString + "\"" + ", ";
+            }}
+        StringBuilder sb = new StringBuilder(json);
+        json = sb.deleteCharAt(json.length()-1).toString();
+        sb = new StringBuilder(json);
+        json = sb.deleteCharAt(json.length()-1).toString();
+        json = json + " }}";
+
+        return json.trim();
     }
 
     public static String insertString(
