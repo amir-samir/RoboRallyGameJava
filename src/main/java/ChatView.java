@@ -56,7 +56,12 @@ public class ChatView {
     private ImageView FigureChat;
 
     @FXML
-    Image figure3 = new Image("assets/hulkMove2.gif");
+    Image figure0 = new Image("assets/twonkyMovegif.gif");
+    Image figure1 = new Image("assets/smashbotMove2.gif");
+    Image figure2 = new Image("assets/hulkMove2.gif");
+    Image figure3 = new Image("assets/zoombotgif.gif");
+    Image figure4 = new Image("assets/spinbotMove1.gif");
+    Image figure5 = new Image("assets/hammerMove2.gif");
     @FXML
     Image testImage = new Image("assets/LostBearingMap.png");
 
@@ -72,7 +77,6 @@ public class ChatView {
                 viewModel.sendMessage();
             }
         } );
-        FigureChat.setImage(setImageForChatFigure(SaveClients.client.getfigur()));
         writeField.textProperty().bindBidirectional(viewModel.messageProperty());
         sendButton.defaultButtonProperty().bindBidirectional(viewModel.sendButtonProperty());
         //joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
@@ -152,22 +156,25 @@ public class ChatView {
 
     }
     public void setScheissImage(){
-        FigureChat.setImage(figure3);
+        FigureChat.setImage(figure2);
     }
-    public Image setImageForChatFigure(int figure) {
+    public void setImageFromFigur(int figure){
+        FigureChat.setImage(getImageForChatFigure(figure));
+    }
+    public Image getImageForChatFigure(int figure) {
         switch (figure){
             case 0:
-               return testImage;
+               return figure0;
             case 1:
-                return testImage;
+                return figure1;
             case 2:
-                return testImage;
+                return figure2;
             case 3:
                 return figure3;
             case 4:
-                return testImage;
+                return figure4;
             case 5:
-                return testImage;
+                return figure5;
             default:
                 return testImage;
         }

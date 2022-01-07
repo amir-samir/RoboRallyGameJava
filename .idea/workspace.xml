@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Managing Closing Windows and Scenes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/StageSaver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_22__19_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_22__19_40__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21__15_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21__15_19__Changes_.xml" afterDir="false" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Stages Manager and View Manager&#10;@Dairen. Amir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GetID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +182,7 @@
       <workItem from="1641418864138" duration="1285000" />
       <workItem from="1641420173594" duration="25263000" />
       <workItem from="1641565663606" duration="4131000" />
-      <workItem from="1641580735296" duration="7928000" />
+      <workItem from="1641580735296" duration="13361000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -380,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641580738113</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Stages Manager and View Manager&#10;@Dairen. Amir">
+      <created>1641589021319</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1641589021319</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +420,9 @@
     <MESSAGE value="SelectMap erweitert für alle Maps und Design geändert" />
     <MESSAGE value="SelectMapView Class erweitert und methoden für Clients SelecteMap() implementiert" />
     <MESSAGE value="Managing Closing Windows and Scenes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Managing Closing Windows and Scenes" />
+    <MESSAGE value="Stages Manager and View Manager" />
+    <MESSAGE value="Stages Manager and View Manager&#10;@Dairen. Amir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stages Manager and View Manager&#10;@Dairen. Amir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

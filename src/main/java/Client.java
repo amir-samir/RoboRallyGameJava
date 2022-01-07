@@ -92,7 +92,7 @@ public class Client implements Runnable {
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         } else if (!ready){
             ready = true;
-            getChatView().setScheissImage();
+            //getChatView().setScheissImage();
             player.get(ID).ready = true;
             SetStatus setStatus = new SetStatus(true);
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
@@ -133,11 +133,17 @@ public class Client implements Runnable {
     }
 
     public void configuration(String name, int figur){
-        figureForGui = figur;
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
         message.getMessageBody().setKeys(keys);
         bufferedWriter.println(Adopter.javabeanToJson(message));
+       Platform.runLater(new Runnable(){
+
+            @Override
+            public void run() {
+                getChatView().setImageFromFigur(figur);
+            }
+        });
     }
 
     public int getID(){
