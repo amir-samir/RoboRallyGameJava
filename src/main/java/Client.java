@@ -1,7 +1,5 @@
-import game.*;
 import game.Board.BoardElement;
 import game.Messages.*;
-import game.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,7 +33,9 @@ public class Client implements Runnable {
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
     ChatView chatView = new ChatView();
-    private String selectedMap = "ExtraCrispyMap";
+    public static ChatView chatView1;
+    private String selectedMap = "DizzyHighwayMap";
+    public int figureForGui;
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -57,7 +57,12 @@ public class Client implements Runnable {
     public String getSelectedMap(){
         return selectedMap;
     }
-
+    public static void setChatViewModel(ChatView chatView){
+        chatView1 = chatView;
+    }
+    public ChatView getChatView(){
+        return chatView1;
+    }
    /* public void listenForMessages(){
         new Thread(new Runnable() {
             @Override
@@ -87,6 +92,7 @@ public class Client implements Runnable {
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         } else if (!ready){
             ready = true;
+            getChatView().setScheissImage();
             player.get(ID).ready = true;
             SetStatus setStatus = new SetStatus(true);
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
@@ -122,7 +128,12 @@ public class Client implements Runnable {
        return usernamesGui;
     }
 
+    public Integer getfigur(){
+        return figureForGui;
+    }
+
     public void configuration(String name, int figur){
+        figureForGui = figur;
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
         message.getMessageBody().setKeys(keys);
@@ -238,12 +249,14 @@ public class Client implements Runnable {
                         @Override
                         public void run() {
                             try {
-                                chatView.selectMap();
+                                getChatView().selectMap();
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
                     });
+
+
                     toSend = "Bitte wähle die Map aus.";
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];

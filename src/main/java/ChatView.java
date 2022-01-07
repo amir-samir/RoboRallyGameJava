@@ -1,4 +1,3 @@
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -50,7 +51,20 @@ public class ChatView {
 
     @FXML
     private TextField privateMsgInput;
+    
+    @FXML
+    private ImageView FigureChat;
 
+    @FXML
+    Image figure3 = new Image("assets/hulkMove2.gif");
+    @FXML
+    Image testImage = new Image("assets/LostBearingMap.png");
+
+    public ChatView(){
+        Client.setChatViewModel(this);
+    }
+    
+    
     @FXML
     void initialize() {
         writeField.setOnKeyPressed( event -> {
@@ -58,6 +72,7 @@ public class ChatView {
                 viewModel.sendMessage();
             }
         } );
+        FigureChat.setImage(setImageForChatFigure(SaveClients.client.getfigur()));
         writeField.textProperty().bindBidirectional(viewModel.messageProperty());
         sendButton.defaultButtonProperty().bindBidirectional(viewModel.sendButtonProperty());
         //joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
@@ -134,6 +149,29 @@ public class ChatView {
         viewModel.setClient(SaveClients.client);
         chatBox.setItems(SaveClients.client.chatMessages);
         PrivateMessage.setItems(SaveClients.client.usernamesGui);
+
+    }
+    public void setScheissImage(){
+        FigureChat.setImage(figure3);
+    }
+    public Image setImageForChatFigure(int figure) {
+        switch (figure){
+            case 0:
+               return testImage;
+            case 1:
+                return testImage;
+            case 2:
+                return testImage;
+            case 3:
+                return figure3;
+            case 4:
+                return testImage;
+            case 5:
+                return testImage;
+            default:
+                return testImage;
+        }
+
 
     }
 
