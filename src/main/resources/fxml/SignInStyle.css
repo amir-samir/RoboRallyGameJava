@@ -19,5 +19,8 @@
 .selectMapBackgroundColor{
     -fx-background-color: black;
 }
+.MapsBackground{
+    -fx-background-color: gray;
+}
 
 
