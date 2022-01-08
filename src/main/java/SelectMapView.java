@@ -12,16 +12,20 @@ public SelectMapView(){
 
     public void ChooseExtraCrispyMap() throws IOException {
        SaveClients.client.mapSelected("ExtraCrispy");
+       StageSaver.getStageSaver().getCurrentStage().close();
     }
 
     public void ChooseDizzyHighwayMap(){
         SaveClients.client.mapSelected("DizzyHighway");
+        StageSaver.getStageSaver().getCurrentStage().close();
     }
     public void ChooseDeathTrapMap(){
         SaveClients.client.mapSelected("DeathTrap");
+        StageSaver.getStageSaver().getCurrentStage().close();
     }
     public void ChooseLostBearingMap(){
         SaveClients.client.mapSelected("LostBearing");
+        StageSaver.getStageSaver().getCurrentStage().close();
     }
 
     public void RunMap() throws Exception{
