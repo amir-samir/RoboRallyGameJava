@@ -133,6 +133,7 @@ public class ChatView {
 
     public void selectMap() throws IOException {
         Stage stage1 = new Stage();
+        StageSaver.getStageSaver().setStageSaver(stage1);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SelectMap.fxml"));
         Scene scene = new Scene(loader.load());
         stage1.setScene(scene);
