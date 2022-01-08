@@ -41,7 +41,7 @@ public class Client implements Runnable {
     ChatView chatView = new ChatView();
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
-    private String selectedMap = "DizzyHighwayMap";
+    private String selectedMap = "DizzyHighway";
     public int figureForGui;
 
     /**

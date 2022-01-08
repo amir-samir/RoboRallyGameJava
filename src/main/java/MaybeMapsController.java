@@ -19,6 +19,14 @@ public class MaybeMapsController implements Initializable {
     @FXML
     private ImageView Card1;
     @FXML
+    private ImageView Card2;
+    @FXML
+    private ImageView Card3;
+    @FXML
+    private ImageView Card4;
+    @FXML
+    private ImageView Card5;
+    @FXML
     int[][] crispyMapArray = new int[][]{
             { 0, 1, 2 ,3 ,4 ,1 ,1, 1, 5, 6, 7, 8, 1},
             { 1, 9, 1, 1, 4, 1, 10, 11, 1, 1, 1, 4, 1},
@@ -164,6 +172,7 @@ public class MaybeMapsController implements Initializable {
     Image image89 = new Image("assets/DizzyHighwayMap88.png");
     Image image90 = new Image("assets/DizzyHighwayMap99.png");
     Image figureTest = new Image("assets/figureTest2.png");
+    Image Karte = new Image("assets/Karte.png");
     //Image testImage = new Image("assets/MateoTry.jpeg");
 
     // Array
@@ -183,7 +192,12 @@ public class MaybeMapsController implements Initializable {
                 //gridpane1.add(new ImageView(testImage),j,i);
             }
         }*/
-      Card1.setImage(image);
+      Card1.setImage(Karte);
+      Card2.setImage(Karte);
+      Card3.setImage(Karte);
+      Card4.setImage(Karte);
+      Card5.setImage(Karte);
+
 
     }
 
@@ -431,7 +445,7 @@ public class MaybeMapsController implements Initializable {
             // click on descendant node
             Integer colIndex = GridPane.getColumnIndex(clickedNode);
             Integer rowIndex = GridPane.getRowIndex(clickedNode);
-            gridpane1.add(new ImageView(figureTest),colIndex,rowIndex);
+            //gridpane1.add(new ImageView(figureTest),colIndex,rowIndex);
            SaveClients.client.setStartingPoint(rowIndex,colIndex);
         }
     }
@@ -440,6 +454,96 @@ public class MaybeMapsController implements Initializable {
         Card1.setImage(image4);
     }
     //TODO: Method for inserting ein Figure auf dem Map, wird von Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
+
+    public void setFigureOnMap(int x, int y){
+        gridpane1.add(new ImageView(figureTest),y,x);
+    }
+    public void setFigureOnMapNew(int figure,String direction, int x, int y){
+        if (figure == 0){
+            if (direction == "Forward"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "right"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "left") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "BackUp") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+        }
+        if (figure == 1){
+            if (direction == "Forward"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "right"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "left") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "BackUp") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+        }
+        if (figure == 2){
+            if (direction == "Forward"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "right"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "left") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "BackUp") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+        }
+        if (figure == 3){
+            if (direction == "Forward"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "right"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "left") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "BackUp") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+        }
+        if (figure == 4){
+            if (direction == "Forward"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "right"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "left") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "BackUp") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+        }
+        if (figure == 5){
+            if (direction == "Forward"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "right"){
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "left") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+            if (direction == "BackUp") {
+                gridpane1.add(new ImageView(figureTest),y,x);
+            }
+        }
+    }
 
 
 

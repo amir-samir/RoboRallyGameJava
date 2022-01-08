@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
@@ -35,7 +34,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
-      <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="200.0" layoutX="97.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="480.0" layoutY="573.0" mnemonicParsing="false" onAction="#ChangeImageTest" text="Button" />
+      <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="107.0" layoutX="97.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card2" fitHeight="150.0" fitWidth="107.0" layoutX="204.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card3" fitHeight="147.0" fitWidth="107.0" layoutX="311.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card4" fitHeight="150.0" fitWidth="107.0" layoutX="418.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card5" fitHeight="150.0" fitWidth="107.0" layoutX="525.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>
