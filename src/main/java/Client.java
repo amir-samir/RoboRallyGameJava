@@ -1,7 +1,5 @@
-import game.*;
 import game.Board.BoardElement;
 import game.Messages.*;
-import game.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
