@@ -1,5 +1,6 @@
 package game.Card;
 
+import game.Gamer;
 import game.Robot;
 
 public class UTurnCard extends Cards {
@@ -8,9 +9,8 @@ public class UTurnCard extends Cards {
 
 
     @Override
-    public void effect(){
-        Robot robot = new Robot();
-        robot.rotate(180);
+    public void effect(Gamer gamer){
+       gamer.getRobot().rotate(180);
     }
 
     @Override
