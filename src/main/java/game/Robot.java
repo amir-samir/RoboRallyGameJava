@@ -69,6 +69,10 @@ public class Robot {
         return y;
     }
 
+    public int getGamerID() {
+        return gamerID;
+    }
+
     /**
     public void moveTo(String Direction,String int step, ) {
         String temp = this.direction;

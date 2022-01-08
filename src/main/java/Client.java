@@ -40,7 +40,7 @@ public class Client implements Runnable {
     ChatView chatView = new ChatView();
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
-    private String selectedMap = "DizzyHighwayMap";
+    private String selectedMap;
     public int figureForGui;
 
     /**
@@ -246,6 +246,15 @@ public class Client implements Runnable {
         return map;
     }
 
+    public void updateFigure(int x, int y, int ID){
+        for (Robot robot: figuren){
+            if (robot.getGamerID() == ID){
+                robot.setX(x);
+                robot.setY(y);
+            }
+        }
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -367,9 +376,7 @@ public class Client implements Runnable {
                     int x = (int) (double) message.getMessageBody().getContent()[0];
                     int y = (int) (double) message.getMessageBody().getContent()[1];
                     int clientID = (int) (double) message.getMessageBody().getContent()[2];
-
-                    //WOHIN? AMIR --> GUI!!
-
+                    updateFigure(x, y, clientID);
                     toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
                 }
                 else {
