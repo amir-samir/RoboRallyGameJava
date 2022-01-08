@@ -1,9 +1,8 @@
 import com.google.gson.internal.LinkedTreeMap;
-import game.Board.BoardElement;
-import game.Board.Empty;
-import game.Board.StartPoint;
+import game.Board.*;
 import game.Messages.*;
 import game.Messages.Phase.SetStartingPoint;
+import game.Robot;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,23 +20,23 @@ public class Client implements Runnable {
 
     private final Socket SOCKET;
     private final String GROUP = "Innige Irrwege";
-    private boolean isAi;
+    private final boolean isAi;
     private boolean connected;
     private int ID;
     private boolean ready = false;
     private int activePlayer;
-    private String userName;
 
     private ArrayList<BoardElement>[][] map;
 
-    private BufferedReader bufferedReader;
-    private PrintWriter bufferedWriter;
+    private final BufferedReader bufferedReader;
+    private final PrintWriter bufferedWriter;
+
     public String protocol;
     public ObservableList<String> chatMessages;
     public ObservableList<String> usernamesGui;
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
-    public int[] figuren = new int[6];
+    public Robot[] figuren = new Robot[6];
     ChatView chatView = new ChatView();
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
@@ -101,7 +100,7 @@ public class Client implements Runnable {
        return usernamesGui;
     }
 
-    public Integer getfigur(){
+    public Integer getFigur(){
         return figureForGui;
     }
 
@@ -122,9 +121,7 @@ public class Client implements Runnable {
     public int getID(){
         return ID;
     }
-    public String getUserName(){
-        return userName;
-    }
+
     /**
      * A method that receive and returns information from the Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
@@ -197,8 +194,8 @@ public class Client implements Runnable {
                     if (typ == null) {
                         //map[x][y].add(new Empty());
                     } else {
-                        String zuPrüfen = (String) typ.get("type");
-                        switch (zuPrüfen) {
+                        String zuPruefen = (String) typ.get("type");
+                        switch (zuPruefen) {
                             case "Empty":
                                 map[x][y].add(new Empty("A"));
                                 break;
@@ -287,11 +284,11 @@ public class Client implements Runnable {
                     String username = (String) message.getMessageBody().getContent()[1];
                     if (ids.get(username) == null) {
                         ids.put(username, clientID);
-                        figuren[newFigure] = clientID;
+                        figuren[newFigure] = new Robot(clientID);
                         usernamesGui.add(clientID + "," + username);
                         Player newPlayer = new Player(clientID, username, newFigure);
                         player.put(clientID, newPlayer);
-                        toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure + "\n" + inputFromServer;
+                        toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
                     } else toSend = null;
                 } else if(message.getMessageType().equals("PlayerStatus")){
                     boolean isReady = (boolean) message.getMessageBody().getContent()[1];
@@ -333,7 +330,7 @@ public class Client implements Runnable {
                         toSend = "Die Aufbauphase läuft aktuell. Bitte wähle deine Startposition";
                     } else if (activePhase == 1){
                         //UpgradePhase? GUI
-                        toSend = "Die Upgradephase läuft aktuell.";
+                        toSend = "Die UpgradePhase läuft aktuell.";
                     } else if (activePhase == 2){
                         //ProgrammierPhase? GUI?
                         toSend = "Die Programmierphase läuft aktuell.";
@@ -342,8 +339,7 @@ public class Client implements Runnable {
                         toSend = "Die Aktivierungsphase läuft aktuell.";
                     } else toSend = null;
                 } else if (message.getMessageType().equals("CurrentPlayer")){
-                    int currentPlayer = (int)(double)message.getMessageBody().getContent()[0];
-                    activePlayer = currentPlayer;
+                    int activePlayer = (int)(double)message.getMessageBody().getContent()[0];
                     if (this.ID == this.activePlayer){
                         //GUI?
                         toSend = "Du bist am Zug.";

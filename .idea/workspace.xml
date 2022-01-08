@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="bugfix">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Implemented Aufbauphase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +188,7 @@
       <workItem from="1641417782506" duration="4801000" />
       <workItem from="1641471393977" duration="3082000" />
       <workItem from="1641496660465" duration="6722000" />
-      <workItem from="1641663608322" duration="2285000" />
+      <workItem from="1641663608322" duration="4571000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -359,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641653428541</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Implemented Aufbauphase">
+      <created>1641667323656</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1641667323657</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +394,8 @@
     <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="Implemented Aufbauphase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Aufbauphase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
