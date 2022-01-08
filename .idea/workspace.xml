@@ -4,32 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Merge: GUI &amp; Kommunikation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/TestMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SelectMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SelectMapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SelectMapView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" afterDir="false" />
-    </list>
-    <list id="6acac2ac-45b6-4ce2-91c8-34e876ef855c" name="Changes by jonci" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SelectMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
-    </list>
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Support for SetStartingPoint" />
+    <list id="6acac2ac-45b6-4ce2-91c8-34e876ef855c" name="Changes by jonci" comment="Changes by Amir" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,46 +36,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/MaybeMapsController.java">
-      <ranges>
-        <range start1="190" end1="191" start2="190" end2="191" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="200" end1="201" start2="200" end2="201" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="210" end1="211" start2="210" end2="211" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="220" end1="221" start2="220" end2="221" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="434" end1="435" start2="434" end2="435" changelist="6acac2ac-45b6-4ce2-91c8-34e876ef855c" />
-        <range start1="442" end1="442" start2="442" end2="444" changelist="6acac2ac-45b6-4ce2-91c8-34e876ef855c" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/SelectMapView.java">
-      <ranges>
-        <range start1="8" end1="8" start2="8" end2="11" changelist="6acac2ac-45b6-4ce2-91c8-34e876ef855c" />
-        <range start1="10" end1="23" start2="13" end2="14" changelist="6acac2ac-45b6-4ce2-91c8-34e876ef855c" />
-        <range start1="26" end1="27" start2="17" end2="18" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="29" end1="30" start2="20" end2="21" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="31" end1="34" start2="22" end2="22" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="35" end1="36" start2="23" end2="24" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="37" end1="37" start2="25" end2="42" changelist="6acac2ac-45b6-4ce2-91c8-34e876ef855c" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Client.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="2" end1="2" start2="2" end2="4" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="3" end1="4" start2="5" end2="6" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="13" end1="13" start2="15" end2="16" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="27" end1="28" start2="30" end2="31" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="39" end1="39" start2="42" end2="43" changelist="6acac2ac-45b6-4ce2-91c8-34e876ef855c" />
-        <range start1="56" end1="66" start2="60" end2="60" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="148" end1="148" start2="142" end2="149" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="172" end1="172" start2="173" end2="250" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="215" end1="216" start2="293" end2="294" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="254" end1="255" start2="332" end2="333" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="276" end1="276" start2="354" end2="368" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-        <range start1="292" end1="292" start2="384" end2="405" changelist="98cfb236-0ed7-47a2-9897-7d923def34f4" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -365,7 +301,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641640016711</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Support for SetStartingPoint">
+      <created>1641650949015</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650949015</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Changes by Amir">
+      <created>1641650969450</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650969450</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +346,9 @@
     <MESSAGE value="Improved method generateMap()" />
     <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
     <MESSAGE value="Merge: GUI &amp; Kommunikation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: GUI &amp; Kommunikation" />
+    <MESSAGE value="Support for SetStartingPoint" />
+    <MESSAGE value="Changes by Amir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Amir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
