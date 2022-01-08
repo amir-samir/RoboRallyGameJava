@@ -24,7 +24,7 @@ public class ClientHandler implements Runnable {
     public boolean isReady;
 
     public BufferedReader reader;
-    public PrintWriter owriter;
+    public PrintWriter writer;
 
     /**
      * Diese Methode stellt den Konstruktor dar. Sie initialisiert die globalen Variablen und fügt nach Überprüfung den
@@ -39,10 +39,10 @@ public class ClientHandler implements Runnable {
         this.SOCKET = socket;
 
         try {
-            owriter = new PrintWriter(socket.getOutputStream(), true);
+            writer = new PrintWriter(socket.getOutputStream(), true);
             reader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         } catch (Exception e) {
-            closeEverything(socket, reader, owriter);
+            closeEverything(socket, reader, writer);
             e.printStackTrace();
         }
     }
@@ -56,21 +56,22 @@ public class ClientHandler implements Runnable {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                owriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
+                writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
                 //System.out.println("Timer aktiviert");
             }
         };
         t.schedule(timerTask, 0,5000);
         while (SOCKET.isConnected()) {
             try{
-                String input = reader.readLine();
+                String input = reader.
+                        readLine();
                 Message message = Adopter.getMessage(input);
                 if (message.getMessageType().equals("HelloServer")){
                     if(!SERVER.protocol.equals((String) message.getMessageBody().getContent()[2])){
                         Error1 error = new Error1("Das verwendete Protokoll wird nicht unterstützt. Das Programm wird jetzt beendet.");
                         String[] key = {"error"};
                         error.getMessageBody().setKeys(key);
-                        owriter.println(Adopter.javabeanToJson(error));
+                        writer.println(Adopter.javabeanToJson(error));
                     } else {
                         sendWelcomeMessage(message);
                     }
@@ -94,7 +95,7 @@ public class ClientHandler implements Runnable {
                         Error1 error = new Error1("Diese Figur wurde bereits von einem anderem Spieler gewählt.");
                         String[] keys = {"error"};
                         error.getMessageBody().setKeys(keys);
-                        owriter.println(Adopter.javabeanToJson(error));
+                        writer.println(Adopter.javabeanToJson(error));
                     }
                 } else if (message.getMessageType().equals("SetStatus")){
                     boolean ready = (boolean) message.getMessageBody().getContent()[0];
@@ -107,6 +108,10 @@ public class ClientHandler implements Runnable {
                 } else if(message.getMessageType().equals("PlayCard")){
                     String card = (String) message.getMessageBody().getContent()[0];
                     SERVER.handlePlayCard(card, ID);
+                } else if (message.getMessageType().equals("SetStartingPoint")){
+                    int x = (int) (double) message.getMessageBody().getContent()[0];
+                    int y = (int) (double) message.getMessageBody().getContent()[1];
+                    SERVER.setStartingPoint(x, y);
                 }
             } catch (Exception e){
                 e.printStackTrace();
@@ -123,7 +128,7 @@ public class ClientHandler implements Runnable {
         Welcome welcome = new Welcome(ID);
         String[] key = {"clientID"};
         welcome.getMessageBody().setKeys(key);
-        owriter.println(Adopter.javabeanToJson(welcome));
+        writer.println(Adopter.javabeanToJson(welcome));
     }
 
     /**

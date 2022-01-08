@@ -24,16 +24,13 @@ public class SelectMapView {
     }
 
     public void ChooseDizzyHighwayMap(){
-        SaveClients.client.mapSelected("DizzyHighwayMap");
+        SaveClients.client.mapSelected("DizzyHighway");
     }
     public void ChooseDeathTrapMap(){
-        SaveClients.client.mapSelected("DeathTrapMap");
-    }
-    public void ChooseExtraCrispymap(){
-        SaveClients.client.mapSelected("ExtraCrispyMap");
+        SaveClients.client.mapSelected("DeathTrap");
     }
     public void ChooseLostBearingMap(){
-        SaveClients.client.mapSelected("LostBearingMap");
+        SaveClients.client.mapSelected("LostBearing");
     }
 
 }

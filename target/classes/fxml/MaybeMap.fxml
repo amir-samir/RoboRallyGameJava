@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="800.0" styleClass="MapsBackground" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MaybeMapsController">
     <children>
-        <GridPane fx:id="gridpane1" layoutX="64.0" layoutY="31.0" onMouseClicked="#clickGrid" onMousePressed="#clickGrid" prefHeight="496.0" prefWidth="698.0">
+        <GridPane fx:id="gridpane1" layoutX="64.0" layoutY="31.0" onMouseClicked="#clickGrid" prefHeight="496.0" prefWidth="698.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="102.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="102.0" />

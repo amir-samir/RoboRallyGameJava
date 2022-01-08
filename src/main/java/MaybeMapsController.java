@@ -188,7 +188,7 @@ public class MaybeMapsController implements Initializable {
     }
 
     public void setDefaultMap(){
-        if (SaveClients.client.getSelectedMap().equals("DizzyHighwayMap")){
+        if (SaveClients.client.getSelectedMap().equals("DizzyHighway")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
                 for (int j = 0; j < gridpane1.getColumnCount(); j++){
                     gridpane1.setHgap(-80);
@@ -198,7 +198,7 @@ public class MaybeMapsController implements Initializable {
                 }
             }
         }
-        if (SaveClients.client.getSelectedMap().equals("ExtraCrispyMap")){
+        if (SaveClients.client.getSelectedMap().equals("ExtraCrispy")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
                 for (int j = 0; j < gridpane1.getColumnCount(); j++){
                     gridpane1.setHgap(-80);
@@ -208,7 +208,7 @@ public class MaybeMapsController implements Initializable {
                 }
             }
         }
-        if (SaveClients.client.getSelectedMap().equals("DeathTrapMap")){
+        if (SaveClients.client.getSelectedMap().equals("DeathTrap")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
                 for (int j = 0; j < gridpane1.getColumnCount(); j++){
                     gridpane1.setHgap(-80);
@@ -218,7 +218,7 @@ public class MaybeMapsController implements Initializable {
                 }
             }
         }
-        if (SaveClients.client.getSelectedMap().equals("LostBearingArray")){
+        if (SaveClients.client.getSelectedMap().equals("LostBearing")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
                 for (int j = 0; j < gridpane1.getColumnCount(); j++){
                     gridpane1.setHgap(-80);

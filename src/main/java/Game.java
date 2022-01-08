@@ -1,3 +1,4 @@
+import game.Board.Board;
 import game.Card.DamageCards;
 import game.Messages.ActivePhase;
 import game.Messages.CurrentPlayer;
@@ -21,18 +22,20 @@ public class Game {
 
     int activePhase;
     int activePlayer;
+    String activeMap;
 
     //private Board board? Map map?
 
     private List<DamageCards> damageCards;
 
 
-    public Game(Server server, HashMap<Integer, ClientHandler> hashMap, List<ClientHandler> verbindungen){
+    public Game(Server server, HashMap<Integer, ClientHandler> hashMap, List<ClientHandler> verbindungen, String activeMap){
         this.SERVER = server;
         this.users = hashMap;
         this.verbindungen = verbindungen;
         this.activePhase = 0;
         this.activePlayer = 0;
+        this.activeMap = activeMap;
         startGame();
     }
 
@@ -41,10 +44,6 @@ public class Game {
         CurrentPlayer currentPlayer = new CurrentPlayer(verbindungen.get(activePlayer).ID);
         currentPlayer.getMessageBody().setKeys(new String[]{"clientID"});
         SERVER.sendMessageForAllUsers(currentPlayer);
-
-        ActivePhase activePhase = new ActivePhase(this.activePhase);
-        activePhase.getMessageBody().setKeys(new String[]{"phase"});
-        SERVER.sendMessageForAllUsers(activePhase);
 
         if(this.activePhase == 0){
             aufbauPhase();
@@ -58,7 +57,9 @@ public class Game {
     }
 
     public void aufbauPhase(){
-
+        ActivePhase activePhase = new ActivePhase(this.activePhase);
+        activePhase.getMessageBody().setKeys(new String[]{"phase"});
+        SERVER.sendMessageForSingleClient(activePhase, verbindungen.get(activePlayer));
     }
 
     public void upgradePhase(){
@@ -70,6 +71,10 @@ public class Game {
     }
 
     public void aktivierungsPhase(){
+
+    }
+
+    public void setStartingPoint(int x, int y){
 
     }
 

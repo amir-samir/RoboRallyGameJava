@@ -1,7 +1,9 @@
-import game.*;
+import com.google.gson.internal.LinkedTreeMap;
 import game.Board.BoardElement;
+import game.Board.Empty;
+import game.Board.StartPoint;
 import game.Messages.*;
-import game.*;
+import game.Messages.Phase.SetStartingPoint;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -25,7 +28,7 @@ public class Client implements Runnable {
     private int activePlayer;
     private String userName;
 
-    private BoardElement[][] map;
+    private ArrayList<BoardElement>[][] map;
 
     private BufferedReader bufferedReader;
     private PrintWriter bufferedWriter;
@@ -54,16 +57,6 @@ public class Client implements Runnable {
         chatMessages = FXCollections.observableArrayList();
         isAi = false;
     }
-    public String getSelectedMap(){
-        return selectedMap;
-    }
-    public static void setChatViewModel(ChatView chatView){
-        chatView1 = chatView;
-    }
-    public ChatView getChatView(){
-        return chatView1;
-    }
-
 
     public void setReady(){
         if(ready){
@@ -147,6 +140,13 @@ public class Client implements Runnable {
         return connected;
     }
 
+    public void setStartingPoint(int x, int y){
+        SetStartingPoint setStartingPoint = new SetStartingPoint(x, y);
+        setStartingPoint.getMessageBody().setKeys(new String[]{"x", "y"});
+        bufferedWriter.println(Adopter.javabeanToJson(setStartingPoint));
+        System.out.println(Adopter.javabeanToJson(setStartingPoint));
+    }
+
     public void sendHelloServer(Message message){
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
@@ -169,6 +169,83 @@ public class Client implements Runnable {
         playCard.getMessageBody().setKeys(key);
 
         bufferedWriter.println(Adopter.javabeanToJson(playCard));
+    }
+
+    public ArrayList<BoardElement>[][] generateMap(Message m) {
+        ArrayList<BoardElement>[][] map = new ArrayList[13][10];
+        int i = 0;
+        while (i < map.length) {
+            int u = 0;
+            while (u < map[i].length) {
+                map[i][u] = new ArrayList<BoardElement>();
+                u++;
+            }
+            i++;
+        }
+
+        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
+        int x = 0;
+        while (x < list.size()) {
+            ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
+            int y = 0;
+            while (y < y_list.size()) {
+                ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
+                int z = 0;
+                while (z < field.size()) {
+                    LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
+                    if (typ == null) {
+                        //map[x][y].add(new Empty());
+                    } else {
+                        String zuPrüfen = (String) typ.get("type");
+                        switch (zuPrüfen) {
+                            case "Empty":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "StartPoint":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "ConveyorBelt":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "PushPanel":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Gear":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Pit":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "EnergySpace":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Wall":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Laser":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "Antenna":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "CheckPoint":
+                                map[x][y].add(new Empty());
+                                break;
+                            case "RestartPoint":
+                                map[x][y].add(new Empty());
+                                break;
+                            default:
+                        }
+                    }
+                    z += 1;
+                }
+                y += 1;
+            }
+            x += 1;
+        }
+
+        System.out.println("test");
+        return map;
     }
 
     /**
@@ -213,7 +290,7 @@ public class Client implements Runnable {
                         usernamesGui.add(clientID + "," + username);
                         Player newPlayer = new Player(clientID, username, newFigure);
                         player.put(clientID, newPlayer);
-                        toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
+                        toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure + "\n" + inputFromServer;
                     } else toSend = null;
                 } else if(message.getMessageType().equals("PlayerStatus")){
                     boolean isReady = (boolean) message.getMessageBody().getContent()[1];
@@ -252,7 +329,7 @@ public class Client implements Runnable {
                     int activePhase = (int) (double) message.getMessageBody().getContent()[0];
                     if (activePhase == 0){
                         //GUI? StartBoard auswählen
-                        toSend = "Die Aufbauphase läuft aktuell.";
+                        toSend = "Die Aufbauphase läuft aktuell. Bitte wähle deine Startposition";
                     } else if (activePhase == 1){
                         //UpgradePhase? GUI
                         toSend = "Die Upgradephase läuft aktuell.";
@@ -274,6 +351,20 @@ public class Client implements Runnable {
                         String name = player.get(activePlayer).name;
                         toSend = name + " (" + ID + ") " + "ist aktuell am Zug";
                     }
+                } else if (message.getMessageType().equals("GameStarted")){
+                    map = generateMap(message);
+                    //HIER
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                selectMapView.RunMap();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    toSend = null;
                 }
                 else {
                     toSend = inputFromServer;
@@ -290,4 +381,25 @@ public class Client implements Runnable {
             }
         }
     }
+
+    public String getSelectedMap(){
+        return selectedMap;
+    }
+
+
+    public static void setChatViewModel(ChatView chatView){
+        chatView1 = chatView;
+    }
+    public static void setSelectMapView(SelectMapView selectMapView1){
+        selectMapView = selectMapView1;
+    }
+    public SelectMapView getSelectMapView(){
+        return selectMapView;
+    }
+
+
+    public ChatView getChatView(){
+        return chatView1;
+    }
+
 }
