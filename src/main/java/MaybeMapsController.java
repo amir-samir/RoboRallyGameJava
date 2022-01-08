@@ -14,6 +14,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MaybeMapsController implements Initializable {
+    public MaybeMapsController(){
+        Client.setMaybeMapsController(this);
+    }
     @FXML
     private GridPane gridpane1;
     @FXML
