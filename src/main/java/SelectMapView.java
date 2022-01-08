@@ -14,7 +14,6 @@ public class SelectMapView {
         stage.setScene(scene);
         stage.show();
 
-
         //Close if Bye
         stage.setOnCloseRequest(e -> {
             Platform.exit();
@@ -23,4 +22,18 @@ public class SelectMapView {
             System.exit(0);
         });
     }
+
+    public void ChooseDizzyHighwayMap(){
+        SaveClients.client.mapSelected("DizzyHighwayMap");
+    }
+    public void ChooseDeathTrapMap(){
+        SaveClients.client.mapSelected("DeathTrapMap");
+    }
+    public void ChooseExtraCrispymap(){
+        SaveClients.client.mapSelected("ExtraCrispyMap");
+    }
+    public void ChooseLostBearingMap(){
+        SaveClients.client.mapSelected("LostBearingMap");
+    }
+
 }

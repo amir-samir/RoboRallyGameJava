@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]" date="1640787577053" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 29.12.21, 15:19 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Chat/target/classes/Messages/Adopter.class" />
+    <option name="AFTER_PATH" value="Chat/target/classes/Messages/Adopter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]/Adopter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Chat/target/test-classes/JSON/jsonTest.class" />
+    <option name="AFTER_PATH" value="Chat/target/test-classes/JSON/jsonTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]/jsonTest.class" />
+  </binary>
+</changelist>

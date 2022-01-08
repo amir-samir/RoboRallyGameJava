@@ -1,4 +1,3 @@
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -50,7 +51,25 @@ public class ChatView {
 
     @FXML
     private TextField privateMsgInput;
+    
+    @FXML
+    private ImageView FigureChat;
 
+    @FXML
+    Image figure0 = new Image("assets/twonkyMovegif.gif");
+    Image figure1 = new Image("assets/smashbotMove2.gif");
+    Image figure2 = new Image("assets/hulkMove2.gif");
+    Image figure3 = new Image("assets/zoombotgif.gif");
+    Image figure4 = new Image("assets/spinbotMove1.gif");
+    Image figure5 = new Image("assets/hammerMove2.gif");
+    @FXML
+    Image testImage = new Image("assets/LostBearingMap.png");
+
+    public ChatView(){
+        Client.setChatViewModel(this);
+    }
+    
+    
     @FXML
     void initialize() {
         writeField.setOnKeyPressed( event -> {
@@ -122,10 +141,8 @@ public class ChatView {
 
         //Close if Bye
         stage1.setOnCloseRequest(e -> {
-            Platform.exit();
             //clientHandler.writer.equals("bye");
             stage1.close();
-            System.exit(0);
         });
     }
 
@@ -136,6 +153,32 @@ public class ChatView {
         viewModel.setClient(SaveClients.client);
         chatBox.setItems(SaveClients.client.chatMessages);
         PrivateMessage.setItems(SaveClients.client.usernamesGui);
+
+    }
+    public void setScheissImage(){
+        FigureChat.setImage(figure2);
+    }
+    public void setImageFromFigur(int figure){
+        FigureChat.setImage(getImageForChatFigure(figure));
+    }
+    public Image getImageForChatFigure(int figure) {
+        switch (figure){
+            case 0:
+               return figure0;
+            case 1:
+                return figure1;
+            case 2:
+                return figure2;
+            case 3:
+                return figure3;
+            case 4:
+                return figure4;
+            case 5:
+                return figure5;
+            default:
+                return testImage;
+        }
+
 
     }
 

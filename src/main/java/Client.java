@@ -1,5 +1,7 @@
+import game.*;
 import game.Board.BoardElement;
 import game.Messages.*;
+import game.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +23,7 @@ public class Client implements Runnable {
     private int ID;
     private boolean ready = false;
     private int activePlayer;
+    private String userName;
 
     private BoardElement[][] map;
 
@@ -32,6 +35,10 @@ public class Client implements Runnable {
     public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public int[] figuren = new int[6];
+    ChatView chatView = new ChatView();
+    public static ChatView chatView1;
+    private String selectedMap = "DizzyHighwayMap";
+    public int figureForGui;
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -45,9 +52,19 @@ public class Client implements Runnable {
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
         chatMessages = FXCollections.observableArrayList();
-        isAi = false;;
+        isAi = false;
     }
-    
+    public String getSelectedMap(){
+        return selectedMap;
+    }
+    public static void setChatViewModel(ChatView chatView){
+        chatView1 = chatView;
+    }
+    public ChatView getChatView(){
+        return chatView1;
+    }
+
+
     public void setReady(){
         if(ready){
             ready = false;
@@ -86,17 +103,34 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
+    public synchronized  ObservableList getUsernames(){
+       return usernamesGui;
+    }
+
+    public Integer getfigur(){
+        return figureForGui;
+    }
+
     public void configuration(String name, int figur){
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
         message.getMessageBody().setKeys(keys);
         bufferedWriter.println(Adopter.javabeanToJson(message));
+       Platform.runLater(new Runnable(){
+
+            @Override
+            public void run() {
+                getChatView().setImageFromFigur(figur);
+            }
+        });
     }
 
     public int getID(){
         return ID;
     }
-
+    public String getUserName(){
+        return userName;
+    }
     /**
      * A method that receive and returns information from the Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
@@ -126,7 +160,7 @@ public class Client implements Runnable {
         MapSelected mapSelected = new MapSelected(map);
         String[] key = {"map"};
         mapSelected.getMessageBody().setKeys(key);
-        bufferedWriter.println(mapSelected);
+        bufferedWriter.println(Adopter.javabeanToJson(mapSelected));
     }
 
     public void playCard(String card){
@@ -196,10 +230,23 @@ public class Client implements Runnable {
                         toSend = player.get(clientID).name + " ist nicht mehr bereit.";
                     }
                 } else if (message.getMessageType().equals("SelectMap")){
-                    //GUI? --> Amir
+                    Platform.runLater(new Runnable(){
+
+                        @Override
+                        public void run() {
+                            try {
+                                getChatView().selectMap();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+
                     toSend = "Bitte wähle die Map aus.";
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
+                    selectedMap = map;
                     toSend = "Folgende Map wurde ausgewählt: " + map;
                 } else if (message.getMessageType().equals("ActivePhase")){
                     int activePhase = (int) (double) message.getMessageBody().getContent()[0];

@@ -16,5 +16,11 @@
     -fx-background-image:url('../assets/SigninBackground.gif');
     -fx-background-size:cover;
 }
+.selectMapBackgroundColor{
+    -fx-background-color: black;
+}
+.MapsBackground{
+    -fx-background-color: gray;
+}
 
 

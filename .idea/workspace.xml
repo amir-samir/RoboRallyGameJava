@@ -4,8 +4,180 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="SetStartingPoint &amp; ActivePhase support">
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="bugfix">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2022_22_31_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2022_22_31_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2022_22_31__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_22,_19_40_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_22__19_40__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]/Adopter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]/jsonTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21,_15_19_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21__15_19__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/StageSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap2A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMap95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMapFlag1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMapFlag2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMapFlag3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMapFlag4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DeathTrapMapFlag5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/DizzyHighwayMap99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapNumber18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoard00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoard21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoard42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoard81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoardA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoardAntenne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBoardStartPoint.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMapStartBorad0last.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapA1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapDoubleEnergy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfeilTurnRightNachOben.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileNachOben.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileNachUnten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileTurnRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenPfileTurnRightNachUnten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapGreenTurnRightLast.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapLaserWall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/LostBearingMapLaserWall42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap2A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMap95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMapFlag1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMapFlag2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMapFlag3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMapFlag4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DeathTrapMapFlag5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/DizzyHighwayMap99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMap011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapNumber18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoard00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoard21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoard42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoard81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoardA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoardAntenne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBoardStartPoint.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/ExtraCrispyMapStartBorad0last.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapA1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapDoubleEnergy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapGreenPfeilTurnRightNachOben.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapGreenPfileNachOben.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapGreenPfileNachUnten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapGreenPfileTurnRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapGreenPfileTurnRightNachUnten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapGreenTurnRightLast.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapLaserWall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/assets/LostBearingMapLaserWall42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BesmellaUpdatingForAllView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GetID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SelectMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SelectMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SignInStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BesmellaUpdatingForAllView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SelectMapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SelectMapView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/MaybeMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/SignInStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/SignInStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
