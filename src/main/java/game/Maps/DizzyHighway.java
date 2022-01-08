@@ -10,7 +10,7 @@ public class DizzyHighway extends Board {
     private int height = 10;
 
     public DizzyHighway() {
-        ArrayList<BoardElement>[][] map = new ArrayList[5][5];
+        ArrayList<BoardElement>[][] map = new ArrayList[9][12];
         int i = 0;
         while (i < map.length) {
             int u = 0;

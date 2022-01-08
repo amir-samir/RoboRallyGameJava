@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_04_01_22,_21_52_[Changes]1" date="1641329588142" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22,_21_52_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 04.01.22, 21:52 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/game/Messages/SelectMap.class" />
+    <option name="AFTER_PATH" value="target/classes/game/Messages/SelectMap.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22,_21_52_[Changes]1/SelectMap.class" />
+  </binary>
+</changelist>

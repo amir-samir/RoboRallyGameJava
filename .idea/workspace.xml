@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Bugfix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/ConveyorBelt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Belt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BeltEffect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardLaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Laser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Checkpoints.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Gears.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Gear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Pits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Pit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/PushPanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/PushPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/RotatingBelt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Walls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" afterDir="false" />
-    </list>
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="@new Struktur von BoardElment class&#10;@1.map" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641324482156</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="@new Struktur von BoardElment class&#10;@1.map">
+      <created>1641650008550</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650008553</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +282,7 @@
     <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
     <MESSAGE value="@new" />
-    <option name="LAST_COMMIT_MESSAGE" value="@new" />
+    <MESSAGE value="@new Struktur von BoardElment class&#10;@1.map" />
+    <option name="LAST_COMMIT_MESSAGE" value="@new Struktur von BoardElment class&#10;@1.map" />
   </component>
 </project>
