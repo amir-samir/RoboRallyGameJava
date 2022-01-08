@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class DizzyHighway extends Board {
     private String name = "DizzyHighway";
-    private int width = 10;
-    private int height = 10;
+    private int width = 9;
+    private int height = 12;
 
     public DizzyHighway() {
         ArrayList<BoardElement>[][] map = new ArrayList[9][12];
