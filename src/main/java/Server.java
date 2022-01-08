@@ -1,4 +1,6 @@
 import game.Messages.*;
+import game.Messages.Phase.StartingPointTaken;
+import game.Robot;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -20,7 +22,7 @@ public class Server {
 
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
-    public int[] figuren = new int[6];
+    public Robot[] figuren = new Robot[6];
     public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
     String activeMap = null;
     Game game;
@@ -105,8 +107,8 @@ public class Server {
     }
 
     public boolean checkFigure(int figur, ClientHandler clientHandler){
-        if(figuren[figur] == 0){
-            figuren[figur] = clientHandler.ID;
+        if(figuren[figur] == null){
+            figuren[figur] = new Robot(clientHandler.ID);
             return true;
         } else {
             return false;
@@ -205,13 +207,18 @@ public class Server {
 
 
     public void createGame(){
-        game = new Game(this, users, verbindungen, activeMap);
+        game = new Game(this, users, verbindungen, activeMap, figuren);
     }
 
-    public void setStartingPoint(int x, int y){
-        game.setStartingPoint(x, y);
+    public void setStartingPoint(int x, int y, ClientHandler clientHandler){
+        game.setStartingPoint(x, y, clientHandler);
     }
 
+    public void validStartingPoint(int x, int y, ClientHandler clientHandler){
+        StartingPointTaken startingPointTaken = new StartingPointTaken(x, y, clientHandler.ID);
+        startingPointTaken.getMessageBody().setKeys(new String[]{"x", "y", "clientID"});
+        sendMessageForAllUsers(startingPointTaken);
+    }
 
     /**
      * Diese Methode startet den Server und baut die Verbindungen zu neuen Spielern auf.
@@ -245,8 +252,6 @@ public class Server {
     }
 
     public void handlePlayCard(String card, int ID){
-        //game.cardPlayed(card);
-
         CardPlayed cardPlayed = new CardPlayed(ID, card);
         String[] keys = {"clientID", "card"};
         cardPlayed.getMessageBody().setKeys(keys);

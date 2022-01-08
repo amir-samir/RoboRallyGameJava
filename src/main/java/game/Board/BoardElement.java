@@ -17,4 +17,13 @@ public abstract class BoardElement {
     public void setIsOnBoard(String isOnBoard){
         this.isOnBoard = isOnBoard;
     }
+
+    public String getIsOnBoard() {
+        return isOnBoard;
+    }
+
+    public String getType() {
+        return type;
+    }
+
 }
