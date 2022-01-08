@@ -1,6 +1,5 @@
 package game;
 
-import game.Board.BeltEffect;
 import lombok.Data;
 
 /**
@@ -46,8 +45,8 @@ public class Robot {
         this.direction = String.valueOf((Integer.parseInt(this.direction) + (angle / 90)) % 4);
     }
 
-
-    public void moveTo(String newDirection, int step, boolean keepDirection) {
+    /**
+    public void moveTo(String Direction,String int step, ) {
         String temp = this.direction;
         this.direction = newDirection;
         forward(step);
@@ -55,6 +54,8 @@ public class Robot {
             this.direction = temp;
         }
     }
+
+    /**
 
     public void moveInBelt(BeltEffect effect) {
         String temp = this.direction;
@@ -64,4 +65,5 @@ public class Robot {
             this.direction = temp;
         }
     }
+     */
 }

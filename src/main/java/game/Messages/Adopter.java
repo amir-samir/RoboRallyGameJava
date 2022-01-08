@@ -88,7 +88,6 @@ public class Adopter {
 
         return json;
     }
-
     public static String insertString(
             String originalString,
             String stringToBeInserted,

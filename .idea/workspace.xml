@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22__22_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22__22_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_01_22__14_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_01_22__14_49__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Board/ConveyorBelt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Belt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BeltEffect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardLaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Laser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Checkpoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Gears.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Gear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Pits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Pit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/PushPanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/PushPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/RotatingBelt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Walls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +114,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$PATH_TO_FX$&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

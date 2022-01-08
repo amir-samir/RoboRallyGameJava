@@ -2,10 +2,10 @@ package game.Board;
 
 import game.Gamer;
 
-public class StartPoint extends BoardElement {
+public class Pit extends BoardElement {
 
-    public void StartPoint(String isOnBoard){
-        this.setType("StartPoint");
+    public Pit(String isOnBoard){
+        this.setType("Pit");
         this.setIsOnBoard(isOnBoard);
     }
 

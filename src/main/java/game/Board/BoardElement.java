@@ -1,17 +1,18 @@
 package game.Board;
-import game.Card.Spam;
 import game.Gamer;
 import lombok.Data;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author yiluye
  */
+
 @Data
 public abstract class BoardElement {
+    private String type;
+    private String isOnBoard;
+    public abstract void effect(Gamer gamer);
+
+    /**
     private String name;
     private int x;
     private int y;
@@ -24,10 +25,13 @@ public abstract class BoardElement {
     private String conditionDirection;
     private List<Integer> pushPanelLabel;
     private Map<String, BeltEffect> beltEffect;
+     */
+
 
     /**
      * @param: gamer/user
      */
+    /**
     public void effect(Gamer gamer) {
         switch (this.name) {
             case "Pits":
@@ -55,7 +59,7 @@ public abstract class BoardElement {
                 }
                 break;
             case "Gears":
-                Gears gears = new Gears();
+                Gear gears = new Gear();
                 if (gears.getColor().equals("red")) {
                     gamer.getRobot().rotate(-90);
                 } else if (gears.getColor().equals("green")) {
@@ -81,4 +85,5 @@ public abstract class BoardElement {
                 break;
         }
     }
+     */
 }

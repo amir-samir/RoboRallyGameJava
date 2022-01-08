@@ -1,5 +1,16 @@
 package game.Board;
 
+import game.Gamer;
+
 public class RestartPoint extends BoardElement {
-    private String name = "RestartPoints";
+
+    public RestartPoint(){
+        this.setType("RestartPoint");
+    }
+
+    @Override
+    public void effect(Gamer gamer){
+
+    }
 }
+
