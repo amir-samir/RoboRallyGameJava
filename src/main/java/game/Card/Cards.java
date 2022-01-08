@@ -1,6 +1,6 @@
 package game.Card;
 
-import game.Gamer;
+//import game.Gamer;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -378,6 +378,17 @@ public class Client implements Runnable {
                     int y = (int) (double) message.getMessageBody().getContent()[1];
                     int clientID = (int) (double) message.getMessageBody().getContent()[2];
                     updateFigure(x, y, clientID);
+
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                for (int i = 0; i < figuren.length; i++) {
+                                    if (figuren[i] != null && figuren[i].getX() != -1) {
+                                        getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                                    }
+                                }
+                            }
+                        });
                     toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
                 }
                 else {
