@@ -40,6 +40,7 @@ public class Client implements Runnable {
     public int[] figuren = new int[6];
     ChatView chatView = new ChatView();
     public static ChatView chatView1;
+    public static SelectMapView selectMapView = new SelectMapView();
     private String selectedMap = "DizzyHighwayMap";
     public int figureForGui;
 

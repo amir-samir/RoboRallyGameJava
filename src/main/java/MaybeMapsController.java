@@ -432,7 +432,7 @@ public class MaybeMapsController implements Initializable {
             Integer colIndex = GridPane.getColumnIndex(clickedNode);
             Integer rowIndex = GridPane.getRowIndex(clickedNode);
             gridpane1.add(new ImageView(figureTest),colIndex,rowIndex);
-            System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
+           SaveClients.client.setStartingPoint(rowIndex,colIndex);
         }
     }
 
@@ -440,6 +440,8 @@ public class MaybeMapsController implements Initializable {
         Card1.setImage(image4);
     }
     //TODO: Method for inserting ein Figure auf dem Map, wird von Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
+
+
 
 
 
