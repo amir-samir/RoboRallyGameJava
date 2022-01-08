@@ -363,6 +363,15 @@ public class Client implements Runnable {
                     });
                     toSend = null;
                 }
+                else if (message.getMessageType().equals("StartingPointTaken")){
+                    int x = (int) (double) message.getMessageBody().getContent()[0];
+                    int y = (int) (double) message.getMessageBody().getContent()[1];
+                    int clientID = (int) (double) message.getMessageBody().getContent()[2];
+
+                    //WOHIN? AMIR --> GUI!!
+
+                    toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
+                }
                 else {
                     toSend = inputFromServer;
                 }
