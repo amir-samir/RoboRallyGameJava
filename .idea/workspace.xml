@@ -4,32 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="get MaybeMapsController">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: New GUI &amp; New Logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BeltEffect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/StartPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Board/StartPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Gamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Maps/DizzyHighway$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Maps/DizzyHighway$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Maps/DizzyHighway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Maps/DizzyHighway.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
-    </list>
-    <list id="3ff1dc2e-2055-4b07-8c11-6c85055d5eea" name="Changes by LuXusHD" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,22 +42,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Client.java">
-      <ranges>
-        <range start1="251" end1="254" start2="251" end2="256" changelist="3ff1dc2e-2055-4b07-8c11-6c85055d5eea" />
-        <range start1="257" end1="257" start2="259" end2="268" changelist="3ff1dc2e-2055-4b07-8c11-6c85055d5eea" />
-        <range start1="358" end1="359" start2="369" end2="370" changelist="3ff1dc2e-2055-4b07-8c11-6c85055d5eea" />
-        <range start1="380" end1="380" start2="391" end2="402" changelist="21db7267-cf47-4527-9a15-fb0a4f33be8b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/game/Card/Cards.java">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="3" changelist="21db7267-cf47-4527-9a15-fb0a4f33be8b" />
-        <range start1="69" end1="70" start2="69" end2="70" changelist="3ff1dc2e-2055-4b07-8c11-6c85055d5eea" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -384,14 +349,7 @@
       <option name="project" value="LOCAL" />
       <updated>1641670130152</updated>
     </task>
-    <task id="LOCAL-00024" summary="get MaybeMapsController">
-      <created>1641670422359</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1641670422359</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,8 +386,7 @@
     <MESSAGE value="bugfix" />
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
-    <MESSAGE value="get MaybeMapsController" />
-    <option name="LAST_COMMIT_MESSAGE" value="get MaybeMapsController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialisieren von Start Karten" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
