@@ -6,19 +6,23 @@ import lombok.Data;
  * @author: yilu ,chen
  * @Date: 2021/12/29
  */
-@Data
 
 public class Robot {
 
     private String name;
     private int gamerID;
+
+    private String direction;
     private int x;
     private int y;
-    private int startingPoint;
-    private String direction;
-    private boolean isDead;
-    private boolean isOnEnergySpace;
-    private boolean isOnBelt;
+
+
+    public Robot(int ID){
+        x = -1;
+        y = -1;
+        this.gamerID = ID;
+    }
+
 
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
@@ -43,6 +47,30 @@ public class Robot {
     // @param: right rotate angle
     public void rotate(int angle) {
         this.direction = String.valueOf((Integer.parseInt(this.direction) + (angle / 90)) % 4);
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getGamerID() {
+        return gamerID;
     }
 
     /**

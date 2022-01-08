@@ -111,7 +111,7 @@ public class ClientHandler implements Runnable {
                 } else if (message.getMessageType().equals("SetStartingPoint")){
                     int x = (int) (double) message.getMessageBody().getContent()[0];
                     int y = (int) (double) message.getMessageBody().getContent()[1];
-                    SERVER.setStartingPoint(x, y);
+                    SERVER.setStartingPoint(x, y, this);
                 }
             } catch (Exception e){
                 e.printStackTrace();

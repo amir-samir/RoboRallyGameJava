@@ -8,8 +8,8 @@ public class Move1Card extends Cards {
 
 
     public void effect(){
-        Robot robot = new Robot();
-        robot.forward(1);
+        //Robot robot = new Robot();
+        //robot.forward(1);
     }
 
     @Override
