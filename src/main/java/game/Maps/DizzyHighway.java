@@ -5,11 +5,13 @@ import game.Board.*;
 import java.util.ArrayList;
 
 public class DizzyHighway extends Board {
+
     private String name = "DizzyHighway";
     private int width = 9;
     private int height = 12;
 
     public DizzyHighway() {
+
         ArrayList<BoardElement>[][] map = new ArrayList[9][12];
         int i = 0;
         while (i < map.length) {
@@ -164,6 +166,5 @@ public class DizzyHighway extends Board {
         map[9][10].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
         map[9][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
         map[9][12].add(new Empty("5B"));
-
     }
 }
