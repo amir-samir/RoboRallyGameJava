@@ -200,40 +200,40 @@ public class Client implements Runnable {
                         String zuPrüfen = (String) typ.get("type");
                         switch (zuPrüfen) {
                             case "Empty":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "StartPoint":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "ConveyorBelt":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "PushPanel":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Gear":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Pit":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "EnergySpace":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Wall":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Laser":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Antenna":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "CheckPoint":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "RestartPoint":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             default:
                         }

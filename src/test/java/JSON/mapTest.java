@@ -34,17 +34,17 @@ public class mapTest {
                 while (z < field.size()){
                     LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
                     if (typ == null){
-                        map[x][y].add(new Empty());
+                        map[x][y].add(new Empty("A"));
                     } else {
                         String zuPrüfen = (String) typ.get("type");
                         switch (zuPrüfen) {
                             case "StartPoint":
                                 break;
                             case "ConveyorBelt":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "PushPanel":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Gear":
                                 break;
@@ -53,10 +53,10 @@ public class mapTest {
                             case "EnergySpace":
                                 break;
                             case "Wall":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Laser":
-                                map[x][y].add(new Empty());
+                                map[x][y].add(new Empty("A"));
                                 break;
                             case "Antenna":
                                 break;

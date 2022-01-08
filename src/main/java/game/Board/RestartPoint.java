@@ -1,6 +1,5 @@
 package game.Board;
 
-import game.Gamer;
 
 public class RestartPoint extends BoardElement {
 
@@ -9,7 +8,7 @@ public class RestartPoint extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer){
+    public void effect(){
 
     }
 }

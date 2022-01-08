@@ -1,8 +1,6 @@
 package game.Board;
 
-import game.Gamer;
 
-import java.util.Arrays;
 
 public class PushPanel extends BoardElement {
 
@@ -17,10 +15,10 @@ public class PushPanel extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer) {
-        if (Arrays.asList(registers).contains(gamer.getRegisterCount() + 1)) {
+    public void effect() {
+        /*if (Arrays.asList(registers).contains(gamer.getRegisterCount() + 1)) {
             gamer.getRobot().forward(1);
         }
-
+        */
     }
 }

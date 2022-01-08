@@ -1,6 +1,4 @@
 package game.Board;
-import game.Gamer;
-import lombok.Data;
 
 /**
  * @author yiluye
@@ -10,5 +8,13 @@ import lombok.Data;
 public abstract class BoardElement {
     private String type;
     private String isOnBoard;
-    public abstract void effect(Gamer gamer);
+    public abstract void effect();
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public void setIsOnBoard(String isOnBoard){
+        this.isOnBoard = isOnBoard;
+    }
 }

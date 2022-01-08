@@ -1,7 +1,5 @@
 package game.Board;
 
-import game.Gamer;
-
 public class Wall extends BoardElement {
 
     String[] orientations;
@@ -13,8 +11,8 @@ public class Wall extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer) {
-        gamer.getRobot().forward(0);
+    public void effect() {
+        //gamer.getRobot().forward(0);
     }
 }
 

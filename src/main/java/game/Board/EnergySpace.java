@@ -1,7 +1,5 @@
 package game.Board;
 
-import game.Gamer;
-
 public class EnergySpace extends BoardElement {
 
     int count;
@@ -14,11 +12,12 @@ public class EnergySpace extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer) {
-        if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == true) {
+    public void effect() {
+       /* if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == true) {
             gamer.getNewEnergycube();
         }  else if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == false && gamer.getRegisterCount() == 5) {
             gamer.getNewEnergycube();
         }
+        */
     }
 }

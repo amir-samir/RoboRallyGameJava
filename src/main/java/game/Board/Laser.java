@@ -1,8 +1,5 @@
 package game.Board;
 
-import game.Card.Spam;
-import game.Gamer;
-
 public class Laser extends BoardElement {
 
     String[] orientations;
@@ -16,7 +13,7 @@ public class Laser extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer){
-        gamer.pushCard(new Spam());
+    public void effect(){
+        //gamer.pushCard(new Spam());
     }
 }

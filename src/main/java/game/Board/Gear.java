@@ -1,7 +1,5 @@
 package game.Board;
 
-import game.Gamer;
-
 public class Gear extends BoardElement {
 
     String[] orientations;
@@ -13,11 +11,13 @@ public class Gear extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer) {
-        if (orientations.equals(new String[]{"counterclockwise"})) {
+    public void effect() {
+        /*if (orientations.equals(new String[]{"counterclockwise"})) {
             gamer.getRobot().rotate(-90);
         } else if (orientations.equals(new String[]{"clockwise"})) {
             gamer.getRobot().rotate(90);
         }
+
+         */
     }
 }

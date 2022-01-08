@@ -1,7 +1,5 @@
 package game.Board;
 
-import game.Gamer;
-
 public class Pit extends BoardElement {
 
     public Pit(String isOnBoard){
@@ -10,7 +8,7 @@ public class Pit extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer){
+    public void effect(){
 
     }
 }

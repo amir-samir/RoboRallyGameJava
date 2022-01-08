@@ -1,5 +1,4 @@
 package game.Board;
-import game.Gamer;
 
 public class CheckPoint extends BoardElement {
 
@@ -12,8 +11,8 @@ public class CheckPoint extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer) {
-        gamer.getPoints().add(this.count);
+    public void effect() {
+
     }
 
 }

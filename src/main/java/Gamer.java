@@ -23,7 +23,7 @@ public class Gamer {
 
     public void reboot() {
         this.inRoboting = true;
-        this.handCards.addAll(game.getTwoSpamCards());
+        //this.handCards.addAll(game.getTwoSpamCards());
         clearCards();
     }
 

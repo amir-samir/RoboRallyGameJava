@@ -1,6 +1,5 @@
 package game.Board;
 
-import game.Gamer;
 
 public class Empty extends BoardElement {
 
@@ -10,7 +9,7 @@ public class Empty extends BoardElement {
     }
 
     @Override
-    public void effect(Gamer gamer) {
+    public void effect() {
 
     }
 
