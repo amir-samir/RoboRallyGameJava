@@ -191,12 +191,16 @@ public class Server {
         int count = 0;
         for (ClientHandler clientHandler: users.values()){
             count += 1;
-            if (!clientHandler.isReady) return false;
+            if (!clientHandler.isReady) {
+                return false;
+            }
         }
         if(count > 1){
             System.out.println("Jetzt kann es losgehen");
             return true;
-        } else return false;
+        } else {
+            return false;
+        }
     }
 
 

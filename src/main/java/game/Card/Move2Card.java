@@ -1,10 +1,19 @@
 package game.Card;
 
-public class Move2Card extends ProgrammingCards {
-        final String description = "Cards.Move1Card moves your robot in the direction it is facing by 2";
+import game.Robot;
+
+public class Move2Card extends Cards {
+        final String description = "Cards.Move2Card moves your robot in the direction it is facing by 2";
         final String name = "Move2";
 
-        @Override
+
         public void effect(){
+                Robot robot = new Robot();
+                robot.forward(2);
+        }
+
+        @Override
+        public String getName() {
+                return name;
         }
 }

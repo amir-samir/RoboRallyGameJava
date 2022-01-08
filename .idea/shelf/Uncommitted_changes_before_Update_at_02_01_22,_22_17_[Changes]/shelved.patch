@@ -1,0 +1,269 @@
+Index: src/main/java/game/Board/BoardElement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game.Board;\nimport game.Card.CardUtil;\nimport game.Card.Spam;\nimport game.Gamer;\nimport lombok.Data;\n\n/**\n * @author yiluye\n */\n@Data\npublic abstract class BoardElement {\n    private String name;\n    private int x;\n    private int y;\n    private int distance = 0;\n    private int point = 0;\n\n    /**\n     * @param: gamer/user\n     */\n    public void effect(Gamer gamer) {\n        switch (this.name) {\n            case \"Pits\":\n                //method from gamer wiederrufen\n                gamer.reboot();\n                gamer.pushCard(CardUtil.getDamageCard());\n                break;\n            case \"Belt\":\n                gamer.getRobot().forward(this.distance);\n                break;\n            case \"BoardLaser\":\n                gamer.pushCard(new Spam());\n                break;\n            case \"Checkpoints\":\n                gamer.getPoints().add(this.point);\n                break;\n            case \"Empty\":\n                break;\n            case \"EnergySpaces\":\n                break;\n            case \"Gears\":\n                break;\n            case \"PushPanels\":\n                break;\n            case \"RestartPoint\":\n                break;\n            case \"RotatingBelt\":\n                break;\n            case \"StartPoint\":\n                break;\n            case \"Walls\":\n                break;\n\n            default:  //todo: catch exception\n                break;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/game/Board/BoardElement.java b/src/main/java/game/Board/BoardElement.java
+--- a/src/main/java/game/Board/BoardElement.java	(revision 050c3365777a4c9d273b5069198dcb915023167e)
++++ b/src/main/java/game/Board/BoardElement.java	(date 1641158235499)
+@@ -1,5 +1,4 @@
+ package game.Board;
+-import game.Card.CardUtil;
+ import game.Card.Spam;
+ import game.Gamer;
+ import lombok.Data;
+@@ -14,6 +13,7 @@
+     private int y;
+     private int distance = 0;
+     private int point = 0;
++    private boolean isThereAnEnergyCube = true;
+ 
+     /**
+      * @param: gamer/user
+@@ -23,7 +23,7 @@
+             case "Pits":
+                 //method from gamer wiederrufen
+                 gamer.reboot();
+-                gamer.pushCard(CardUtil.getDamageCard());
++                gamer.pushCard(new Spam());
+                 break;
+             case "Belt":
+                 gamer.getRobot().forward(this.distance);
+@@ -35,8 +35,14 @@
+                 gamer.getPoints().add(this.point);
+                 break;
+             case "Empty":
++                //todo: Leere Felder (z.B. bei nicht rechteckigen Spielfeldern) werden mit null belegt.
+                 break;
+             case "EnergySpaces":
++                if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == true) {
++                    gamer.getNewEnergycube();
++                } else if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == false ) {
++                    return;
++                    }
+                 break;
+             case "Gears":
+                 break;
+Index: src/main/java/game/Robot.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game;\n\nimport lombok.Data;\n\n/**\n * @author: yiluye\n * @Date: 2021/12/29\n */\n@Data\n\npublic class Robot {\n    private int x;\n    private int y;\n    private String direction;\n\n    // 0→ 1← 2↑ 3↓\n    public void forward(int step) {\n        switch (this.direction) {\n            case \"0\":\n                x += step;\n                break;\n            case \"1\":\n                x -= step;\n                break;\n            case \"2\":\n                y += step;\n                break;\n            case \"3\":\n                y -= step;\n                break;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/game/Robot.java b/src/main/java/game/Robot.java
+--- a/src/main/java/game/Robot.java	(revision 050c3365777a4c9d273b5069198dcb915023167e)
++++ b/src/main/java/game/Robot.java	(date 1641157077011)
+@@ -9,9 +9,16 @@
+ @Data
+ 
+ public class Robot {
++
++    private String name;
++    private int playerID;
+     private int x;
+     private int y;
++    private int startingPoint;
+     private String direction;
++    private boolean isDead;
++    private boolean isOnEnergySpace;
++
+ 
+     // 0→ 1← 2↑ 3↓
+     public void forward(int step) {
+Index: src/main/java/game/Gamer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game;\n\nimport game.Card.Cards;\nimport lombok.Data;\n\nimport java.util.List;\n\n/**\n * @author:Yilu\n **/\n\n@Data\npublic class Gamer {\n    private Game game;\n    private Robot robot;\n    private Boolean inRoboting = false;\n    private List<Cards> cards;\n    private List<Cards> handCards;\n    private List<Cards> playedCards;\n    private List<Integer> points;\n\n    public void reboot() {\n        this.inRoboting = true;\n        this.handCards.addAll(game.getTwoDamageCards());\n        clearCards();\n    }\n\n    /**\n     *\n    public void boot() {\n        this.inRebooting = false;\n    }\n\n     */\n\n    public void clearCards() {\n        this.playedCards.addAll(this.handCards);\n        this.handCards.clear();\n    }\n\n    public void pushCard(Cards cards) {\n        this.handCards.add(cards);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/game/Gamer.java b/src/main/java/game/Gamer.java
+--- a/src/main/java/game/Gamer.java	(revision 050c3365777a4c9d273b5069198dcb915023167e)
++++ b/src/main/java/game/Gamer.java	(date 1641157825819)
+@@ -13,11 +13,13 @@
+ public class Gamer {
+     private Game game;
+     private Robot robot;
++    private List<Integer> register;
+     private Boolean inRoboting = false;
+     private List<Cards> cards;
+     private List<Cards> handCards;
+     private List<Cards> playedCards;
+     private List<Integer> points;
++    private int energyCubes;
+ 
+     public void reboot() {
+         this.inRoboting = true;
+@@ -41,4 +43,12 @@
+     public void pushCard(Cards cards) {
+         this.handCards.add(cards);
+     }
++
++
++    public void getNewEnergycube() {
++        energyCubes++;
++    }
++
++    public void getRegister(int i) {
++    }
+ }
+Index: src/main/java/Server.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import game.Messages.*;\n\nimport java.io.IOException;\nimport java.net.ServerSocket;\nimport java.net.Socket;\nimport java.util.HashMap;\nimport java.util.Map;\n\n/**\n * Diese Klasse stellt den Server dar, auf welchem der Chat und das Spiel ausgeführt werden.\n * @author Luca, Dairen\n *\n */\n\npublic class Server {\n\n    public static int laufendeID = 2000;\n\n    public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();\n    public static HashMap<String, Integer> ids = new HashMap<String, Integer>();\n    public int[] figuren = new int[6];\n    public String[] availableMaps = {\"DizzyHighway\", \"ExtraCrispy\", \"LostBearings\", \"Death Trap\"};\n    String activeMap = null;\n    //Game game;\n\n    private ServerSocket serverSocket;\n    public String protocol;\n\n\n    public Server(ServerSocket serverSocket) {\n        this.serverSocket = serverSocket;\n    }\n\n    /**\n     * Dies ist die Main-Methode. Sie instanziiert einen neuen Server und startet diesen.\n     * @param args Kommandozeilenparameter\n     */\n\n    public static void main(String[] args) {\n        try {\n            ServerSocket serverSocket = new ServerSocket(1523);\n            Server server = new Server(serverSocket);\n            server.protocol = \"Version 1.0\";\n            server.startServer();\n        } catch (Exception e){\n            e.printStackTrace();\n            System.err.println(\"Fehler. Der Server konnte nicht gestartet werden.\");\n        }\n    }\n\n    /**\n     * Diese Methode sorgt dafür, dass private Nachrichten verschickt werden können.\n     * param id Username des Empfängers der Nachricht\n     * @param message Die Nachricht, die versendet werden soll\n     */\n    public void singleMessage(int from, String message, int to) {\n        ReceivedChat toSend = new ReceivedChat(message, from, true);\n        String[] keys = {\"message\", \"from\", \"to\"};\n        toSend.getMessageBody().setKeys(keys);\n        String nachricht = Adopter.javabeanToJson(toSend);\n        ClientHandler c = users.get(to);\n        c.owriter.println(nachricht);\n    }\n\n    /**\n     * Diese Methode verschickt eine Nachricht an alle aktiven Mitglieder des Chat-Raums.\n     * @param message Die Nachricht, die versendet werden soll\n     */\n    public void messageForAllUsers(String message, int from) {\n        ReceivedChat toSend = new ReceivedChat(message, from, false);\n        String[] keys = {\"message\", \"from\", \"isPrivate\"};\n        toSend.getMessageBody().setKeys(keys);\n        String nachricht = Adopter.javabeanToJson(toSend);\n        for(ClientHandler clientHandler: users.values()){\n            clientHandler.owriter.println(nachricht);\n        }\n    }\n\n    /**\n     * Diese Methode fügt neue Mitglieder des Chat-Raums in die HashMap aller Mitglieder hinzu.\n     * @param clientHandler Der ClientHandler, der in die HashMap eingefügt werden soll.\n     * @return Gibt zurück, ob der ClientHandler in die HashMap eingefügt werden konnte.\n     */\n    public boolean addClient(ClientHandler clientHandler) {\n        users.put(clientHandler.ID, clientHandler);\n        return true;\n    }\n\n    public void addUsername(ClientHandler clientHandler){\n        ids.put(clientHandler.username, clientHandler.ID);\n    }\n\n    public boolean checkFigure(int figur, ClientHandler clientHandler){\n        if(figuren[figur] == 0){\n            figuren[figur] = clientHandler.ID;\n            System.out.println(\"Figur wurde gewählt\");\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    public void playerAdded(ClientHandler clientHandler) {\n        PlayerAdded playerAdded = new PlayerAdded(clientHandler.ID, clientHandler.username, clientHandler.figure);\n        String[] keys = {\"clientID\", \"name\", \"figure\"};\n        playerAdded.getMessageBody().setKeys(keys);\n        //Versendung des neuen Spielers an alle anderen\n        for (ClientHandler clientHandler1 : users.values()) {\n            clientHandler1.owriter.println(Adopter.javabeanToJson(playerAdded));\n        }\n        //Versendung aller anderen Spieler an den neuen\n        for (ClientHandler clientHandler1 : users.values()) {\n            if (clientHandler.ID != clientHandler1.ID) {\n                PlayerAdded pA = new PlayerAdded(clientHandler1.ID, clientHandler1.username, clientHandler1.figure);\n                String[] key = {\"clientID\", \"name\", \"figure\"};\n                pA.getMessageBody().setKeys(key);\n                clientHandler.owriter.println(Adopter.javabeanToJson(pA));\n                if (clientHandler1.isReady){\n                    PlayerStatus playerStatus = new PlayerStatus(clientHandler1.ID, true);\n                    String[] k = {\"clientID\", \"ready\"};\n                    playerStatus.getMessageBody().setKeys(k);\n                    clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));\n                }\n            }\n        }\n    }\n\n    public void handleReady(ClientHandler cH){\n        int countReady = 0;\n        for (ClientHandler clientHandler: users.values()){\n            if(clientHandler.isReady){\n                countReady += 1;\n            }\n        }\n\n        if (countReady == 1){\n            if (cH.isReady){\n                SelectMap selectMap = new SelectMap(availableMaps);\n                String[] keys = {\"availableMaps\"};\n                selectMap.getMessageBody().setKeys(keys);\n                cH.owriter.println(Adopter.javabeanToJson(selectMap));\n                System.out.println(Adopter.javabeanToJson(selectMap));\n            }\n        }\n\n        PlayerStatus playerStatus = new PlayerStatus(cH.ID, cH.isReady);\n        String[] keys = {\"clientID\", \"ready\"};\n        playerStatus.getMessageBody().setKeys(keys);\n\n        for (ClientHandler clientHandler: users.values()){\n            clientHandler.owriter.println(Adopter.javabeanToJson(playerStatus));\n        }\n    }\n\n    public void handleMapSelected (String map){\n        MapSelected mapToSend = new MapSelected(map);\n        String[] key = {\"map\"};\n        mapToSend.getMessageBody().setKeys(key);\n        activeMap = map;\n        for (ClientHandler clientHandler: users.values()){\n            clientHandler.owriter.println(Adopter.javabeanToJson(mapToSend));\n        }\n\n        if(readyToStart()){\n            createGame();\n            createMap();\n        }\n    }\n\n    public boolean readyToStart(){\n        int count = 0;\n        for (ClientHandler clientHandler: users.values()){\n            count += 1;\n            if (!clientHandler.isReady) return false;\n        }\n        if(count > 1){\n            return true;\n        } else return false;\n    }\n\n    public void createMap(){\n        //Map erstellen\n    }\n\n    public void createGame(){\n\n    }\n\n    /**\n     * Diese Methode prüft, ob ein Username schon in der Hashmap vorhanden ist.\n     * @param username Der Username, der überprüft werden soll\n     * @return Gibt zurück, ob der Username schon exisitiert\n     */\n    public boolean checkName(String username) {\n        return !users.containsKey(username);\n    }\n\n    /**\n     * Diese Methode startet den Server und baut die Verbindungen zu neuen Spielern auf.\n     * Hierfür werden neue Threads instanziiert, um mehrere Verbindungen gleichzeitig aufrechtzuerhalten.\n     */\n    public void startServer() {\n        try {\n            while (!serverSocket.isClosed()) {\n                Socket socket = serverSocket.accept();\n                ClientHandler clientHandler = new ClientHandler(socket, this);\n                Thread thread = new Thread(clientHandler);\n                thread.start();\n                sendHelloClient(clientHandler);\n                System.out.println(\"A new client has connected\");\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n\n    public void sendHelloClient(ClientHandler clientHandler){\n        HelloClient message = new HelloClient(this.protocol);\n        String[] key = {\"protocol\"};\n        message.getMessageBody().setKeys(key);\n        String toSend = Adopter.javabeanToJson(message);\n        try {\n            clientHandler.owriter.println(toSend);\n        } catch (Exception e){\n\n        }\n    }\n\n    public void handlePlayCard(String card, int ID){\n        //game.cardPlayed(card);\n\n        CardPlayed cardPlayed = new CardPlayed(ID, card);\n        String[] keys = {\"clientID\", \"card\"};\n        cardPlayed.getMessageBody().setKeys(keys);\n        for(ClientHandler clientHandler: users.values()){\n            clientHandler.owriter.println(Adopter.javabeanToJson(cardPlayed));\n        }\n\n    }\n\n    public int generateID(){\n        int ID = Server.laufendeID;\n        laufendeID++;\n        return ID;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Server.java b/src/main/java/Server.java
+--- a/src/main/java/Server.java	(revision 050c3365777a4c9d273b5069198dcb915023167e)
++++ b/src/main/java/Server.java	(date 1641154172058)
+@@ -171,11 +171,15 @@
+         int count = 0;
+         for (ClientHandler clientHandler: users.values()){
+             count += 1;
+-            if (!clientHandler.isReady) return false;
++            if (!clientHandler.isReady) {
++                return false;
++            }
+         }
+         if(count > 1){
+             return true;
+-        } else return false;
++        } else {
++            return false;
++        }
+     }
+ 
+     public void createMap(){
+Index: src/main/java/game/TryingToMakeAMap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javafx.scene.Scene;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.layout.TilePane;\nimport javafx.stage.Stage;\n\nimport java.awt.*;\n\npublic class TryingToMakeAMap {\n   public Stage stage;\n   private TilePane tilePane;\n   private Scene scene;\n   private ImageView[] imageView;\n   private Image image;\n\n   public TryingToMakeAMap(Stage stage){\n      this.stage = stage;\n      buildUI();\n   }\n   private void buildUI() {\n      // Create TilePane\n      tilePane = new TilePane();\n      // add child Nodes to the TilePane\n      for (int i = 0; i < 10; i++){\n         ImageView imageView1 = new ImageView();\n         \n      }\n   }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/game/TryingToMakeAMap.java b/src/main/java/game/TryingToMakeAMap.java
+--- a/src/main/java/game/TryingToMakeAMap.java	(revision 050c3365777a4c9d273b5069198dcb915023167e)
++++ b/src/main/java/game/TryingToMakeAMap.java	(date 1641153042270)
+@@ -1,3 +1,5 @@
++package game;
++
+ import javafx.scene.Scene;
+ import javafx.scene.image.ImageView;
+ import javafx.scene.layout.TilePane;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"98cfb236-0ed7-47a2-9897-7d923def34f4\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/innige-irrweg-hp.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/innige-irrweg-hp.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/MaybeMap.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap00.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap00.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap01.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap01.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap10.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap10.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap100.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap100.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap13.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap13.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap14.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap14.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap18.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap18.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap23.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap23.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap27.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap27.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap32.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap32.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap37.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap37.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap38.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap38.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap40.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap40.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap41.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap41.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap42.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap42.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap43.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap43.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap46.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap46.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap49.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap49.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap50.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap50.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap52.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap52.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap53.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap53.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap56.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap56.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap68.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap68.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap71.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap71.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap72.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap72.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap77.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap77.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap78.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap78.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap81.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap81.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap85.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap85.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap86.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap86.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap91.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap91.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap92.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap92.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/Identifier_Board_1A.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/Identifier_Board_1A.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/game/assets/SigninBackground.gif\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/assets/SigninBackground.gif\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/fxml/ChatView.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/fxml/ChatView.fxml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CodeStyleSettingsInfer\">\n    <option name=\"done\" value=\"true\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"useMavenConfig\" value=\"true\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectCodeStyleSettingsMigration\">\n    <option name=\"version\" value=\"2\" />\n  </component>\n  <component name=\"ProjectId\" id=\"21ssciyP741WYX4n2ZuWMp0aGbA\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib\" />\n    <property name=\"project.structure.last.edited\" value=\"Libraries\" />\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"MavenSettings\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/resources/fxml\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/assets\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/css\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.GetID\">\n    <configuration name=\"GetID\" type=\"Application\" factoryName=\"Application\" singleton=\"false\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"GetID\" />\n      <module name=\"innige-irrweg-hp\" />\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;$PATH_TO_FX$&quot; --add-modules javafx.controls,javafx.fxml,javafx.media\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Server\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"16\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"Server\" />\n      <module name=\"innige-irrweg-hp\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"SignIn\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"16\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"SignIn\" />\n      <module name=\"innige-irrweg-hp\" />\n      <option name=\"VM_PARAMETERS\" value=\"--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"jsonTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Chat\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"JSON.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"JSON\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"JSON.jsonTest\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"jsonTest.GsonTestWelcomeMessage\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Chat\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"JSON.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"JSON\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"JSON.jsonTest\" />\n      <option name=\"METHOD_NAME\" value=\"GsonTestWelcomeMessage\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <module name=\"innige-irrweg-hp\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <module name=\"innige-irrweg-hp\" />\n      <option name=\"filePath\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.SignIn\" />\n      <item itemvalue=\"Application.Server\" />\n      <item itemvalue=\"Application.GetID\" />\n      <item itemvalue=\"JUnit.jsonTest\" />\n      <item itemvalue=\"JUnit.jsonTest.GsonTestWelcomeMessage\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.GetID\" />\n        <item itemvalue=\"Application.Server\" />\n        <item itemvalue=\"Application.SignIn\" />\n        <item itemvalue=\"JUnit.jsonTest\" />\n        <item itemvalue=\"JUnit.jsonTest.GsonTestWelcomeMessage\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"3aac40d7-1e18-4abb-a517-937d96503548\" name=\"Changes\" comment=\"\" />\n      <created>1638741223995</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1638741223995</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt\">\n      <created>1638753613056</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1638753613057</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"@yilu und chen Adopter\">\n      <created>1639131037040</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639131037040</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"@yilu und dairen Adopte, Message\">\n      <created>1639138075735</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639138075738</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"@yilu und dairen Adopte, Message\">\n      <created>1639144711170</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639144711170</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"q\">\n      <created>1639338951559</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639338951559</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"q\">\n      <created>1639339000736</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639339000738</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements\">\n      <created>1640269448945</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640269448946</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements\">\n      <created>1640779789267</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640779789267</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Merge: JSON_Chat -&gt; BoardElements\">\n      <created>1641139886511</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1641139886511</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"10\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt\" />\n    <MESSAGE value=\"@yilu und chen Adopter\" />\n    <MESSAGE value=\"@yilu und dairen Adopte, Message\" />\n    <MESSAGE value=\"q\" />\n    <MESSAGE value=\"@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements\" />\n    <MESSAGE value=\"Merge: BoardElements &amp; JSON_Chat\" />\n    <MESSAGE value=\"Merge: JSON_Chat -&gt; BoardElements\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Merge: JSON_Chat -&gt; BoardElements\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 050c3365777a4c9d273b5069198dcb915023167e)
++++ b/.idea/workspace.xml	(date 1641155484879)
+@@ -4,47 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="@struktur">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/innige-irrweg-hp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/innige-irrweg-hp.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/MaybeMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MaybeMap.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap00.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap00.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap01.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap10.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap100.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap13.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap14.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap18.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap18.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap23.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap23.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap27.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap27.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap32.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap37.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap37.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap38.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap40.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap40.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap41.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap41.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap42.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap42.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap43.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap46.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap46.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap49.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap49.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap50.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap52.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap52.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap53.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap53.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap56.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap68.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap68.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap71.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap71.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap72.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap72.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap77.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap77.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap78.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap78.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap81.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap81.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap85.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap85.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap86.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap86.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap91.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap91.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/ExtraCrispyMap92.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/ExtraCrispyMap92.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/Identifier_Board_1A.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/Identifier_Board_1A.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/game/assets/SigninBackground.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/SigninBackground.gif" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/game/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Gamer.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/game/TryingToMakeAMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/TryingToMakeAMap.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/TryingToMakeAMap.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -123,7 +92,7 @@
+       <recent name="" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.GetID">
++  <component name="RunManager" selected="Application.SignIn">
+     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="GetID" />
+       <module name="innige-irrweg-hp" />
+@@ -204,9 +173,9 @@
+     </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.SignIn" />
+         <item itemvalue="Application.GetID" />
+         <item itemvalue="Application.Server" />
+-        <item itemvalue="Application.SignIn" />
+         <item itemvalue="JUnit.jsonTest" />
+         <item itemvalue="JUnit.jsonTest.GsonTestWelcomeMessage" />
+       </list>
+@@ -284,7 +253,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1641139886511</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="@struktur">
++      <created>1641144445824</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1641144445831</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -307,6 +283,7 @@
+     <MESSAGE value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
+     <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
+     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Merge: JSON_Chat -&gt; BoardElements" />
++    <MESSAGE value="@struktur" />
++    <option name="LAST_COMMIT_MESSAGE" value="@struktur" />
+   </component>
+ </project>
+\ No newline at end of file
