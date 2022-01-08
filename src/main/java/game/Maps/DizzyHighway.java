@@ -9,8 +9,8 @@ public class DizzyHighway extends Board {
     public DizzyHighway() {
 
         this.setName("DizzyHighway");
-        this.setHeight(12);
-        this.setWidth(9);
+        this.setHeight(10);
+        this.setWidth(13);
 
         json = "{\"messageType\":\"GameStarted\",\"messageBody\":{\"gameMap\":[[[{\"isOnBoard\":\"Start A\",\"type\":" +
                 "\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}]" +
@@ -38,7 +38,7 @@ public class DizzyHighway extends Board {
                 "\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"bottom\",\"top\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"bottom\",\"left\",\"top\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"right\",\"left\",\"top\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]],[[{\"speed\":2,\"orientations\":[\"bottom\",\"top\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"left\",\"top\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"count\":1,\"isOnBoard\":\"5B\",\"type\":\"EnergySpace\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"orientations\":[\"top\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"count\":1,\"orientations\":[\"top\"],\"isOnBoard\":\"5B\",\"type\":\"Laser\"},{\"orientations\":[\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"orientations\":[\"left\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"},{\"orientations\":[\"bottom\"],\"isOnBoard\":\"DizzyHighway\",\"type\":\"RestartPoint\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"count\":1,\"isOnBoard\":\"5B\",\"type\":\"EnergySpace\"}],[{\"count\":1,\"orientations\":[\"left\"],\"isOnBoard\":\"5B\",\"type\":\"Laser\"},{\"orientations\":[\"right\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"count\":1,\"orientations\":[\"right\"],\"isOnBoard\":\"5B\",\"type\":\"Laser\"},{\"orientations\":[\"left\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"count\":1,\"isOnBoard\":\"5B\",\"type\":\"EnergySpace\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"orientations\":[\"right\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"count\":1,\"orientations\":[\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"Laser\"},{\"orientations\":[\"top\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"orientations\":[\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"count\":1,\"isOnBoard\":\"5B\",\"type\":\"EnergySpace\"}],[{\"speed\":2,\"orientations\":[\"right\",\"bottom\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}]],[[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"right\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\",\"left\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}]],[[{\"count\":1,\"isOnBoard\":\"5B\",\"type\":\"EnergySpace\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"speed\":2,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"5B\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"},{\"order\":0,\"isOnBoard\":\"DizzyHighway\",\"type\":\"CheckPoint\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"5B\",\"type\":\"Empty\"}]]]}}";
 
 
-        ArrayList<BoardElement>[][] map = new ArrayList[9][12];
+        ArrayList<BoardElement>[][] map = new ArrayList[10][13];
         int i = 0;
         while (i < map.length) {
             int u = 0;
@@ -64,7 +64,7 @@ public class DizzyHighway extends Board {
         map[0][12].add(new EnergySpace("5B", 1));
 
         map[1][0].add(new Empty("A"));
-        map[1][1].add(new StartPoint());
+        map[1][1].add(new StartPoint("A"));
         map[1][2].add(new Empty("A"));
         map[1][3].add(new Empty("A"));
         map[1][4].add(new ConveyorBelt("5B",new String[]{"bottom","top","right"},2));
@@ -91,7 +91,7 @@ public class DizzyHighway extends Board {
         map[2][11].add(new ConveyorBelt("5B",new String[]{"top","bottom","right"},2));
         map[2][12].add(new ConveyorBelt("5B",new String[]{"right","left"},1));
 
-        map[3][0].add(new StartPoint());
+        map[3][0].add(new StartPoint("A"));
         map[3][1].add(new Empty("A"));
         map[3][2].add(new Empty("5B"));
         map[3][3].add(new Empty("5B"));
@@ -104,10 +104,10 @@ public class DizzyHighway extends Board {
         map[3][9].add(new Wall("5B", new String[]{"right"}));
         map[3][10].add(new Empty("5B"));
         map[3][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
-        map[3][12].add(new CheckPoint());
+        map[3][12].add(new CheckPoint("5B", 1));
 
         map[4][0].add(new Antenna("A",new String[]{"left"}));
-        map[4][1].add(new StartPoint());
+        map[4][1].add(new StartPoint("A"));
         map[4][2].add(new Wall("A",new String[]{"right"}));
         map[4][3].add(new Empty("5B"));
         map[4][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
@@ -122,7 +122,7 @@ public class DizzyHighway extends Board {
         map[4][12].add(new Empty("5B"));
 
         map[5][0].add(new Empty("A"));
-        map[5][1].add(new StartPoint());
+        map[5][1].add(new StartPoint("A"));
         map[5][2].add(new Wall("A",new String[]{"right"}));
         map[5][3].add(new Empty("5B"));
         map[5][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
@@ -136,7 +136,7 @@ public class DizzyHighway extends Board {
         map[5][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
         map[5][12].add(new Empty("5B"));
 
-        map[6][0].add(new StartPoint());
+        map[6][0].add(new StartPoint("A"));
         map[6][1].add(new Empty("A"));
         map[6][2].add(new Empty("A"));
         map[6][3].add(new Empty("5B"));
@@ -166,7 +166,7 @@ public class DizzyHighway extends Board {
         map[7][12].add(new Empty("5B"));
 
         map[8][0].add(new Empty("A"));
-        map[8][1].add(new StartPoint());
+        map[8][1].add(new StartPoint("A"));
         map[8][2].add(new Empty("A"));
         map[8][3].add(new ConveyorBelt("5B", new String[]{"right","left"},2));
         map[8][4].add(new ConveyorBelt("5B", new String[]{"right","top","left"},2));

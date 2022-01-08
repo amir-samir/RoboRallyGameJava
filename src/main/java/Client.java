@@ -249,11 +249,22 @@ public class Client implements Runnable {
 
     public void updateFigure(int x, int y, int ID){
         for (Robot robot: figuren){
-            if (robot.getGamerID() == ID){
-                robot.setX(x);
-                robot.setY(y);
+            if (robot != null) {
+                if (robot.getGamerID() == ID) {
+                    robot.setX(x);
+                    robot.setY(y);
+                }
             }
         }
+    }
+
+    public int getFigurenID(int ID){
+        for (int i = 0; i < figuren.length; i++){
+            if (figuren[i].getGamerID() == ID){
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -356,7 +367,7 @@ public class Client implements Runnable {
                     } else {
                         //GUI?
                         String name = player.get(activePlayer).name;
-                        toSend = name + " (" + ID + ") " + "ist aktuell am Zug";
+                        toSend = name + " (" + activePlayer + ") " + "ist aktuell am Zug";
                     }
                 } else if (message.getMessageType().equals("GameStarted")){
                     map = generateMap(message);

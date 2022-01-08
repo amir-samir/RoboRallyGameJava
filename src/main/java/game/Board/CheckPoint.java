@@ -4,7 +4,7 @@ public class CheckPoint extends BoardElement {
 
     int count;
 
-    public void CheckPoint(String isOnBoard, int count) {
+    public CheckPoint(String isOnBoard, int count) {
         this.setType("CheckPoint");
         this.setIsOnBoard(isOnBoard);
         this.count = count;

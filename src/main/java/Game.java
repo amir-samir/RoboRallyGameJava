@@ -93,7 +93,7 @@ public class Game {
             figuren[clientHandler.figure].setY(y);
             SERVER.validStartingPoint(x, y, clientHandler);
             nextPlayer();
-            aufbauPhase();
+            startGame();
         } else {
             Error1 error1 = new Error1("Der gewählte Startpunkt ist ungültig.");
             error1.getMessageBody().setKeys(new String[]{"error"});

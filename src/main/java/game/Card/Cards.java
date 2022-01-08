@@ -67,7 +67,7 @@ public void addAllCard() {
          }**/
 
 
-public void init(Gamer gamer){
+public void init(){
     programmCardLibrary();
     discardPile.addAll(handCards);
     handCards.clear();
