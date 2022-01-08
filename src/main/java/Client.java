@@ -40,6 +40,7 @@ public class Client implements Runnable {
     ChatView chatView = new ChatView();
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
+    public static MaybeMapsController maybeMapsController;
     private String selectedMap;
     public int figureForGui;
 
@@ -408,6 +409,12 @@ public class Client implements Runnable {
     }
     public SelectMapView getSelectMapView(){
         return selectMapView;
+    }
+    public static void setMaybeMapsController(MaybeMapsController maybeMapsController1){
+        maybeMapsController = maybeMapsController1;
+    }
+    public MaybeMapsController getMaybeMapsController(){
+        return maybeMapsController;
     }
 
 
