@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Support for SetStartingPoint" />
-    <list id="6acac2ac-45b6-4ce2-91c8-34e876ef855c" name="Changes by jonci" comment="Changes by Amir" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Merge: BoardElement -&gt; JSON Chat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641650969450</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
+      <created>1641652292871</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1641652292871</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +354,8 @@
     <MESSAGE value="Merge: GUI &amp; Kommunikation" />
     <MESSAGE value="Support for SetStartingPoint" />
     <MESSAGE value="Changes by Amir" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Amir" />
+    <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge: BoardElement -&gt; JSON Chat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
