@@ -186,21 +186,24 @@ public class Game {
         System.out.println(Adopter.javabeanToJson(timerEnded));
 
         fillRegisters(zuLangsameSpieler);
+        activePhase = 3;
+        startGame();
     }
 
-    public void fillRegisters(Integer[] integers){
-        for (Integer integer: integers){
-            for (int i = 0; i < figuren.length; i++){
-                if (figuren[i].getGamerID() == (int) integer){
-                    figuren[i].fillRegisters();
-                    String[] karten = new String[5];
-                    for(int u = 0; u < karten.length; i++){
-                        karten[u] = figuren[i].getRegister()[u].getName();
+    public void fillRegisters(Integer[] integers) {
+        for (Integer integer : integers) {
+            for (int i = 0; i < figuren.length; i++) {
+                if (figuren[i] != null)
+                    if (figuren[i].getGamerID() == (int) integer) {
+                        figuren[i].fillRegisters();
+                        String[] karten = new String[5];
+                        for (int u = 0; u < karten.length; i++) {
+                            karten[u] = figuren[i].getRegister()[u].getName();
+                        }
+                        CardsYouGotNow cardsYouGotNow = new CardsYouGotNow(karten);
+                        cardsYouGotNow.getMessageBody().setKeys(new String[]{"cards"});
+                        SERVER.sendMessageForSingleClient(cardsYouGotNow, users.get(integer));
                     }
-                    CardsYouGotNow cardsYouGotNow = new CardsYouGotNow(karten);
-                    cardsYouGotNow.getMessageBody().setKeys(new String[]{"cards"});
-                    SERVER.sendMessageForSingleClient(cardsYouGotNow, users.get(integer));
-                }
             }
         }
     }
