@@ -628,23 +628,12 @@ public class MaybeMapsController implements Initializable {
             Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
         }
         public void ChooseCard4(){
-
+            Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
         }
         public void ChooseCard5(){
-
+            Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
         }
-        public void ChooseCard6(){
 
-        }
-        public void ChooseCard7(){
-
-        }
-        public void ChooseCard8(){
-
-        }
-        public void ChooseCard9(){
-
-    }
 
 
 

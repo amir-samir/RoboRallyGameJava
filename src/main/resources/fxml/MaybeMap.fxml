@@ -34,10 +34,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
-      <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="107.0" layoutX="97.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="Card2" fitHeight="150.0" fitWidth="107.0" layoutX="204.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="Card3" fitHeight="147.0" fitWidth="107.0" layoutX="311.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="Card4" fitHeight="150.0" fitWidth="107.0" layoutX="418.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="Card5" fitHeight="150.0" fitWidth="107.0" layoutX="525.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="107.0" layoutX="97.0" layoutY="598.0" onMouseClicked="#Choosecard1" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card2" fitHeight="150.0" fitWidth="107.0" layoutX="204.0" layoutY="598.0" onMouseClicked="#ChooseCard2" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card3" fitHeight="147.0" fitWidth="107.0" layoutX="311.0" layoutY="598.0" onMouseClicked="#ChooseCard3" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card4" fitHeight="150.0" fitWidth="107.0" layoutX="418.0" layoutY="598.0" onMouseClicked="#ChooseCard4" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Card5" fitHeight="150.0" fitWidth="107.0" layoutX="525.0" layoutY="598.0" onMouseClicked="#ChooseCard5" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>
