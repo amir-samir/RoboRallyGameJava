@@ -109,7 +109,7 @@ public class Game {
 
     public boolean aufbauPhaseFertig(){
         for (int i = 0; i < figuren.length; i++){
-            if (figuren[0].getX() == -1 && figuren[i] != null){
+            if ( figuren[i] != null && figuren[i].getX() == -1){
                 return false;
             }
         }
