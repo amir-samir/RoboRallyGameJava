@@ -1,6 +1,10 @@
 package game;
 
+import game.Card.Cards;
+import game.Card.ProgrammingCardsForPlayer;
 import lombok.Data;
+
+import java.util.ArrayList;
 
 /**
  * @author: yilu ,chen
@@ -16,11 +20,23 @@ public class Robot {
     private int x;
     private int y;
 
+    private ProgrammingCardsForPlayer deck;
+    private ArrayList<Cards> handCards;
+
 
     public Robot(int ID){
+        deck = new ProgrammingCardsForPlayer();
+        handCards = new ArrayList<Cards>();
+
         x = -1;
         y = -1;
         this.gamerID = ID;
+    }
+
+    public void drawHandCards(){
+        for (int i = 0; i < handCards.size(); i++){
+            handCards.add(deck.getDeck().remove(i));
+        }
     }
 
 
@@ -71,6 +87,10 @@ public class Robot {
 
     public int getGamerID() {
         return gamerID;
+    }
+
+    public ArrayList<Cards> getHandCards() {
+        return handCards;
     }
 
     /**

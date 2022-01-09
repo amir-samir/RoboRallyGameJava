@@ -1,9 +1,12 @@
 import game.Board.Board;
+import game.Card.Cards;
 import game.Card.DamageCards;
 import game.Maps.DizzyHighway;
 import game.Messages.ActivePhase;
 import game.Messages.CurrentPlayer;
 import game.Messages.Error1;
+import game.Messages.Phase.NotYourCards;
+import game.Messages.Phase.YourCards;
 import game.Robot;
 
 import java.util.ArrayList;
@@ -35,7 +38,12 @@ public class Game {
         this.activeMap = activeMap;
         this.figuren = figuren;
 
+        initializeDeck();
         startGame();
+    }
+
+    public void initializeDeck(){
+
     }
 
     public void startGame(){
@@ -70,7 +78,24 @@ public class Game {
     }
 
     public void programmierPhase(){
+        ActivePhase activePhase = new ActivePhase(this.activePhase);
+        activePhase.getMessageBody().setKeys(new String[]{"phase"});
+        SERVER.sendMessageForAllUsers(activePhase);
 
+        for (Robot robot: figuren){
+            if (robot != null) {
+
+                robot.drawHandCards();
+
+                YourCards yourCards = new YourCards(convertListToArray(robot.getHandCards()));
+                yourCards.getMessageBody().setKeys(new String[]{"cardsInHand"});
+                SERVER.sendMessageForSingleClient(yourCards, users.get(robot.getGamerID()));
+
+                NotYourCards notYourCards = new NotYourCards(robot.getGamerID(), robot.getHandCards().size());
+                notYourCards.getMessageBody().setKeys(new String[]{"clientID", "cardsInHand"});
+                SERVER.sendMessageForAllUsers(notYourCards);
+            }
+        }
     }
 
     public void aktivierungsPhase(){
@@ -127,6 +152,15 @@ public class Game {
         if (verbindungen.size() == activePlayer){
             activePlayer = 0;
         }
+    }
+
+    public String[] convertListToArray(ArrayList cards){
+        String[] newCards = new String[cards.size()];
+        for (int i = 0; i < newCards.length; i++){
+            Cards card = (Cards) cards.get(i);
+            newCards[i] = card.getName();
+        }
+        return newCards;
     }
 
     public void sendError(String nachricht, ClientHandler clientHandler){

@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix: Multiple Starting Points">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCardsForPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641725926149</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Bugfix: Multiple Starting Points">
+      <created>1641726303054</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1641726303054</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +416,8 @@
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Bugfix: Multiple Starting Points" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix: Multiple Starting Points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

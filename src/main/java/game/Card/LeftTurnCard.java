@@ -3,17 +3,15 @@ package game.Card;
 //import game.Gamer;
 
 public class LeftTurnCard extends Cards {
+
     final String description = "Cards.LeftTurnCard moves your robot turn 90 degrees to the left. The roboter remains in his current position.";
-    final String name = "LeftTurn";
 
-
-@Override
-public void effect(){
-       //gamer.getRobot().rotate(-90);
+    public LeftTurnCard(){
+        this.setName("TurnLeft");
     }
 
     @Override
-public String getName() {
-        return name;
+    public void effect(){
+       //gamer.getRobot().rotate(-90);
     }
 }

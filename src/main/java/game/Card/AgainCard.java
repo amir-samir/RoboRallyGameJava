@@ -4,9 +4,12 @@ package game.Card;
 
 public class AgainCard extends Cards {
 
-    final String name = "Again";
+    public AgainCard(){
+        this.setName("Again");
+    }
 
     @Override
     public void effect(){
     }
+
 }
