@@ -76,12 +76,12 @@ public class Adopter {
         for (int i = 0; i < keys.length; i++) {
             Object value = values[i];
             String valueString = value.toString();
-            if (value instanceof String[]) {
+            if (value.getClass().isArray()) {
                 valueString = gson.toJson(values[i]);
             }
 
             String key = (String) keys[i];
-            if (values[i] instanceof String[] || value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
+            if (values[i].getClass().isArray() || value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {
                 json = json + "\"" + key + "\": "  + valueString + ", ";
             } else {
 
