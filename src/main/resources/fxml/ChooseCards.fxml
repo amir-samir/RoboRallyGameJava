@@ -45,7 +45,7 @@
             <Image url="@../assets/Karte.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Card6" fitHeight="150.0" fitWidth="109.0" layoutX="62.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Card6" fitHeight="150.0" fitWidth="109.0" layoutX="62.0" layoutY="182.0" onMouseClicked="#ChooseCard6" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Karte.png" />
          </image>

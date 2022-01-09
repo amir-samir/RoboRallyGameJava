@@ -45,6 +45,7 @@ public class Client implements Runnable {
     public static MaybeMapsController maybeMapsController;
     private String selectedMap;
     public int figureForGui;
+    public String CardOfGui = "SomeCard";
 
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
@@ -74,7 +75,12 @@ public class Client implements Runnable {
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         }
     }
-
+    public void setCardOfGui(String cardName){
+        this.CardOfGui = cardName;
+    }
+    public String getCardOfGui(){
+        return CardOfGui;
+    }
     public void singleMessage(int senderId, String message, String userName){
         int empfaenger = ids.get(userName);
         String[] keys = {"message", "to"};
