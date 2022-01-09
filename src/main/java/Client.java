@@ -1,6 +1,6 @@
 import com.google.gson.internal.LinkedTreeMap;
 import game.Board.*;
-import game.Card.Cards;
+import game.Card.*;
 import game.Messages.*;
 import game.Messages.Phase.SelectedCard;
 import game.Messages.Phase.SetStartingPoint;
@@ -198,6 +198,44 @@ public class Client implements Runnable {
         return -1;
     }
 
+    public ArrayList<Cards> arrayToList (ArrayList<String> array){
+        ArrayList<Cards> handcards= new ArrayList<Cards>();
+        for (String s: array) {
+            switch (s){
+                case "MoveI":
+                    handcards.add(new Move1Card());
+                    break;
+                case "MoveII":
+                    handcards.add(new Move2Card());
+                    break;
+                case "MoveIII":
+                    handcards.add(new Move3Card());
+                    break;
+                case "TurnLeft":
+                    handcards.add(new LeftTurnCard());
+                    break;
+                case "TurnRight":
+                    handcards.add(new RightTurnCard());
+                    break;
+                case "UTurn":
+                    handcards.add(new UTurnCard());
+                    break;
+                case "BackUp":
+                    handcards.add(new BackUpCard());
+                    break;
+                case "PowerUp":
+                    handcards.add(new PowerUpCard());
+                    break;
+                case "Again":
+                    handcards.add(new AgainCard());
+                    break;
+                default:
+                    break;
+            }
+        }
+        return handcards;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -332,8 +370,9 @@ public class Client implements Runnable {
                         });
                     toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
                 } else if (message.getMessageType().equals("YourCards")){
-                    ArrayList<Cards> cards = (ArrayList<Cards>) message.getMessageBody().getContent()[0];
-                    figuren[player.get(this.ID).figur].setHandCards(cards);
+                    ArrayList<String> cards = (ArrayList<String>) message.getMessageBody().getContent()[0];
+                    ArrayList<Cards> handkarten = this.arrayToList(cards);
+                    figuren[player.get(this.ID).figur].setHandCards(handkarten);
                     String senden = "Folgende Karten befinden sich auf deiner Hand: ";
                     for (int i = 0; i < figuren[player.get(this.ID).figur].getHandCards().size(); i++){
                         senden += figuren[player.get(this.ID).figur].getHandCards().get(i).getName() + " ";

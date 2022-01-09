@@ -23,12 +23,14 @@ public class Robot {
     private ProgrammingCardsForPlayer deck;
     private ArrayList<Cards> handCards;
     private Cards[] register;
+    private boolean ableToFillRegisters;
 
 
     public Robot(int ID){
         deck = new ProgrammingCardsForPlayer();
         handCards = new ArrayList<Cards>();
         register = new Cards[5];
+        ableToFillRegisters = true;
 
         x = -1;
         y = -1;
@@ -39,6 +41,36 @@ public class Robot {
         for (int i = handCards.size(); i < 9; i++){
             handCards.add(deck.getDeck().remove(i));
         }
+    }
+
+    public boolean cardIntoRegister(String card, int register){
+        if(ableToFillRegisters) {
+            if (card == null) {
+                if (this.register != null) {
+                    handCards.add(this.register[register]);
+                }
+                this.register[register] = null;
+                return true;
+            }
+            for (int i = 0; i < handCards.size(); i++) {
+                if (handCards.get(i).equals(card)) {
+                    this.register[register] = handCards.get(i);
+                    handCards.remove(i);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean allRegistersFilled(){
+        for (Cards card: this.register){
+            if (card == null){
+                return false;
+            }
+        }
+        ableToFillRegisters = false;
+        return true;
     }
 
 

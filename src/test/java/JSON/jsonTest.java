@@ -6,6 +6,10 @@ import game.Messages.Phase.YourCards;
 import game.Robot;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import static junit.framework.Assert.assertEquals;
 
 
@@ -258,6 +262,19 @@ public class jsonTest {
         System.out.println(Adopter.javabeanToJson(yourCards));
 
         Message m = Adopter.getMessage(string);
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         System.out.println();
+    }
+
+    @Test
+    public void timerTest(){
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Aktiv");
+            }
+        };
+        timer.schedule(timerTask, 2000);
     }
 }

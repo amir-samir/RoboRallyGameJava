@@ -5,13 +5,11 @@ import game.Maps.DizzyHighway;
 import game.Messages.ActivePhase;
 import game.Messages.CurrentPlayer;
 import game.Messages.Error1;
-import game.Messages.Phase.NotYourCards;
-import game.Messages.Phase.YourCards;
+import game.Messages.Phase.*;
 import game.Robot;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.nio.file.AccessDeniedException;
+import java.util.*;
 
 public class Game {
 
@@ -134,15 +132,53 @@ public class Game {
 
     public boolean aufbauPhaseFertig(){
         for (int i = 0; i < figuren.length; i++){
-            if (figuren[0].getX() == -1 && figuren[i] != null){
-                return false;
+            if (figuren[i] != null) {
+                if (figuren[i].getX() == -1 && figuren[i] != null) {
+                    return false;
+                }
             }
         }
         return true;
     }
 
     public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
+        if (figuren[clientHandler.figure].cardIntoRegister(card, register)){
+            boolean filled = true;
+            if(card == null) filled = false;
+            CardSelected cardSelected = new CardSelected(clientHandler.ID, register, filled);
+            cardSelected.getMessageBody().setKeys(new String[]{"clientID", "register", "filled"});
+            SERVER.sendMessageForAllUsers(cardSelected);
+            if (figuren[clientHandler.figure].allRegistersFilled()){
+                sendSelectionFinished(clientHandler);
+                startTimer();
+            }
+        } else {
+            sendError("Dies ist nicht möglich.", clientHandler);
+        }
+    }
 
+    public void startTimer(){
+        TimerStarted timerStarted = new TimerStarted();
+        SERVER.sendMessageForAllUsers(timerStarted);
+
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                timerEnded();
+            }
+        };
+        timer.schedule(timerTask, 2000);
+    }
+
+    public void timerEnded(){
+
+    }
+
+    public void sendSelectionFinished(ClientHandler clientHandler){
+        SelectionFinished selectionFinished = new SelectionFinished(clientHandler.ID);
+        selectionFinished.getMessageBody().setKeys(new String[] {"clientID"});
+        SERVER.sendMessageForAllUsers(selectionFinished);
     }
 
     public void sendActivePlayer(){
