@@ -266,15 +266,10 @@ public class jsonTest {
         System.out.println();
     }
 
+    Thread thread;
+
     @Test
     public void timerTest(){
-        Timer timer = new Timer();
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("Aktiv");
-            }
-        };
-        timer.schedule(timerTask, 2000);
+
     }
 }

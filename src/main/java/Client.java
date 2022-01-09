@@ -407,19 +407,22 @@ public class Client implements Runnable {
     public static void setChatViewModel(ChatView chatView){
         chatView1 = chatView;
     }
+
     public static void setSelectMapView(SelectMapView selectMapView1){
         selectMapView = selectMapView1;
     }
+
     public SelectMapView getSelectMapView(){
         return selectMapView;
     }
+
     public static void setMaybeMapsController(MaybeMapsController maybeMapsController1){
         maybeMapsController = maybeMapsController1;
     }
+
     public MaybeMapsController getMaybeMapsController(){
         return maybeMapsController;
     }
-
 
     public ChatView getChatView(){
         return chatView1;

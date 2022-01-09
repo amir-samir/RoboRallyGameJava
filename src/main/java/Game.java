@@ -21,6 +21,7 @@ public class Game {
     int activePlayer;
     String activeMap;
     Robot[] figuren;
+    boolean timerActivated;
     Board board = new DizzyHighway();
 
 
@@ -35,6 +36,7 @@ public class Game {
         this.activePlayer = 0;
         this.activeMap = activeMap;
         this.figuren = figuren;
+        this.timerActivated = false;
 
         initializeDeck();
         startGame();
@@ -148,9 +150,10 @@ public class Game {
             CardSelected cardSelected = new CardSelected(clientHandler.ID, register, filled);
             cardSelected.getMessageBody().setKeys(new String[]{"clientID", "register", "filled"});
             SERVER.sendMessageForAllUsers(cardSelected);
-            if (figuren[clientHandler.figure].allRegistersFilled()){
+            if (figuren[clientHandler.figure].allRegistersFilled() && !timerActivated){
                 sendSelectionFinished(clientHandler);
                 startTimer();
+                timerActivated = true;
             }
         } else {
             sendError("Dies ist nicht möglich.", clientHandler);
@@ -161,24 +164,56 @@ public class Game {
         TimerStarted timerStarted = new TimerStarted();
         SERVER.sendMessageForAllUsers(timerStarted);
 
-        Timer timer = new Timer();
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                timerEnded();
-            }
-        };
-        timer.schedule(timerTask, 2000);
+        OurTimer ourTimer = new OurTimer(30, this);
     }
 
     public void timerEnded(){
+        System.out.println("Timer Ended");
+        ArrayList<Integer> schlafmützen = checkWhoIsntDone();
+        Integer[] zuLangsameSpieler  = new Integer[schlafmützen.size()];
+        for (int i = 0; i < schlafmützen.size(); i++){
+            zuLangsameSpieler[i] = schlafmützen.get(i);
+        }
 
+        TimerEnded timerEnded = new TimerEnded(zuLangsameSpieler);
+        timerEnded.getMessageBody().setKeys(new String[]{"clientIDs"});
+        SERVER.sendMessageForAllUsers(timerEnded);
+
+        fillRegisters(zuLangsameSpieler);
+    }
+
+    public void fillRegisters(Integer[] integers){
+        for (Integer integer: integers){
+            for (int i = 0; i < figuren.length; i++){
+                if (figuren[i].getGamerID() == (int) integer){
+                    figuren[i].fillRegisters();
+                    String[] karten = new String[5];
+                    for(int u = 0; u < karten.length; i++){
+                        karten[u] = figuren[i].getRegister()[u].getName();
+                    }
+                    CardsYouGotNow cardsYouGotNow = new CardsYouGotNow(karten);
+                    cardsYouGotNow.getMessageBody().setKeys(new String[]{"cards"});
+                    SERVER.sendMessageForSingleClient(cardsYouGotNow, users.get(integer));
+                }
+            }
+        }
     }
 
     public void sendSelectionFinished(ClientHandler clientHandler){
         SelectionFinished selectionFinished = new SelectionFinished(clientHandler.ID);
         selectionFinished.getMessageBody().setKeys(new String[] {"clientID"});
         SERVER.sendMessageForAllUsers(selectionFinished);
+    }
+
+    public ArrayList<Integer> checkWhoIsntDone(){
+        ArrayList<Integer> schlafmützen = new ArrayList<Integer>();
+        for (Robot robot: figuren){
+            if (robot.getAbleToFillRegisters()){
+                schlafmützen.add(robot.getGamerID());
+                robot.setAbleToFillRegisters(false);
+            }
+        }
+        return schlafmützen;
     }
 
     public void sendActivePlayer(){

@@ -5,6 +5,7 @@ import game.Card.ProgrammingCardsForPlayer;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author: yilu ,chen
@@ -39,7 +40,10 @@ public class Robot {
 
     public void drawHandCards(){
         for (int i = handCards.size(); i < 9; i++){
-            handCards.add(deck.getDeck().remove(i));
+            if (deck.getDeck().get(0) == null){
+                mischen();
+            }
+            handCards.add(deck.getDeck().remove(0));
         }
     }
 
@@ -73,6 +77,29 @@ public class Robot {
         return true;
     }
 
+    public void fillRegisters(){
+        for (int i = 0; i < this.handCards.size(); i++){
+            Cards card = handCards.remove(0);
+            this.deck.getDiscard().add(card);
+        }
+        for (int i = 0; i < register.length; i++){
+            if (register[i] == null){
+                if (deck.getDeck().get(0) == null) {
+                    mischen();
+                }
+                register[i] = deck.getDeck().remove(0);
+            }
+        }
+    }
+
+    public void mischen(){
+        ArrayList<Cards> cards = deck.getDiscard();
+        Collections.shuffle(cards);
+        Collections.shuffle(cards);
+        Collections.shuffle(cards);
+        deck.setDeck(cards);
+        deck.setDiscard(new ArrayList<Cards>());
+    }
 
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
@@ -115,6 +142,10 @@ public class Robot {
         this.handCards = handCards;
     }
 
+    public void setAbleToFillRegisters(boolean ableToFillRegisters) {
+        this.ableToFillRegisters = ableToFillRegisters;
+    }
+
     public int getX() {
         return x;
     }
@@ -129,6 +160,14 @@ public class Robot {
 
     public ArrayList<Cards> getHandCards() {
         return handCards;
+    }
+
+    public boolean getAbleToFillRegisters(){
+        return ableToFillRegisters;
+    }
+
+    public Cards[] getRegister() {
+        return register;
     }
 
     /**

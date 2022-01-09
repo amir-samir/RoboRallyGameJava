@@ -6,6 +6,7 @@ import java.util.Collections;
 public class ProgrammingCardsForPlayer {
 
     private ArrayList<Cards> deck = new ArrayList<Cards>();
+    private ArrayList<Cards> discard = new ArrayList<Cards>();
 
     public ProgrammingCardsForPlayer(){
         for (int i = 0; i < 5; i++) {
@@ -34,5 +35,17 @@ public class ProgrammingCardsForPlayer {
 
     public ArrayList<Cards> getDeck() {
         return deck;
+    }
+
+    public ArrayList<Cards> getDiscard() {
+        return discard;
+    }
+
+    public void setDeck(ArrayList<Cards> deck) {
+        this.deck = deck;
+    }
+
+    public void setDiscard(ArrayList<Cards> discard) {
+        this.discard = discard;
     }
 }
