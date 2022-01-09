@@ -16,7 +16,7 @@ public class ConveyorBelt extends BoardElement {
 
     @Override
     public void effect(Gamer gamer) {
-
+        gamer.getRobot().moveTo(this.orientations[this.orientations.length],this.speed,false);
     }
 
 }

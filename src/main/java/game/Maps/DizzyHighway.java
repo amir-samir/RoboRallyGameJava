@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class DizzyHighway extends Board {
     private String name = "DizzyHighway";
-    private int width = 9;
-    private int height = 12;
+    private int width = 10;
+    private int height = 13;
 
     public DizzyHighway() {
-        ArrayList<BoardElement>[][] map = new ArrayList[9][12];
+        ArrayList<BoardElement>[][] map = new ArrayList[10][13];
         int i = 0;
         while (i < map.length) {
             int u = 0;
@@ -36,7 +36,7 @@ public class DizzyHighway extends Board {
         map[0][12].add(new EnergySpace("5B", 1));
 
         map[1][0].add(new Empty("A"));
-        map[1][1].add(new StartPoint());
+        map[1][1].add(new StartPoint("A"));
         map[1][2].add(new Empty("A"));
         map[1][3].add(new Empty("A"));
         map[1][4].add(new ConveyorBelt("5B",new String[]{"bottom","top","right"},2));
@@ -63,23 +63,23 @@ public class DizzyHighway extends Board {
         map[2][11].add(new ConveyorBelt("5B",new String[]{"top","bottom","right"},2));
         map[2][12].add(new ConveyorBelt("5B",new String[]{"right","left"},1));
 
-        map[3][0].add(new StartPoint());
+        map[3][0].add(new StartPoint("A"));
         map[3][1].add(new Empty("A"));
         map[3][2].add(new Empty("5B"));
         map[3][3].add(new Empty("5B"));
         map[3][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
         map[3][5].add(new Empty("5B"));
         map[3][6].add(new Wall("5B",new String[]{"top"}));
-        map[3][7].add(new RestartPoint());
+        map[3][7].add(new RestartPoint("5B"));
         map[3][8].add(new Wall("5B", new String[]{"left"}));
         map[3][8].add(new Laser("5B", new String[]{"left"},1));
         map[3][9].add(new Wall("5B", new String[]{"right"}));
         map[3][10].add(new Empty("5B"));
         map[3][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
-        map[3][12].add(new CheckPoint());
+        map[3][12].add(new CheckPoint("5B", 1));
 
-        map[4][0].add(new Antenna("A",new String[]{"left"}));
-        map[4][1].add(new StartPoint());
+        map[4][0].add(new Antenna("A",new String[]{"right"}));
+        map[4][1].add(new StartPoint("A"));
         map[4][2].add(new Wall("A",new String[]{"right"}));
         map[4][3].add(new Empty("5B"));
         map[4][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
@@ -94,7 +94,7 @@ public class DizzyHighway extends Board {
         map[4][12].add(new Empty("5B"));
 
         map[5][0].add(new Empty("A"));
-        map[5][1].add(new StartPoint());
+        map[5][1].add(new StartPoint("A"));
         map[5][2].add(new Wall("A",new String[]{"right"}));
         map[5][3].add(new Empty("5B"));
         map[5][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
@@ -108,7 +108,7 @@ public class DizzyHighway extends Board {
         map[5][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
         map[5][12].add(new Empty("5B"));
 
-        map[6][0].add(new StartPoint());
+        map[6][0].add(new StartPoint("A"));
         map[6][1].add(new Empty("A"));
         map[6][2].add(new Empty("A"));
         map[6][3].add(new Empty("5B"));
@@ -138,7 +138,7 @@ public class DizzyHighway extends Board {
         map[7][12].add(new Empty("5B"));
 
         map[8][0].add(new Empty("A"));
-        map[8][1].add(new StartPoint());
+        map[8][1].add(new StartPoint("A"));
         map[8][2].add(new Empty("A"));
         map[8][3].add(new ConveyorBelt("5B", new String[]{"right","left"},2));
         map[8][4].add(new ConveyorBelt("5B", new String[]{"right","top","left"},2));

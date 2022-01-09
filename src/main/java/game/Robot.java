@@ -45,8 +45,8 @@ public class Robot {
         this.direction = String.valueOf((Integer.parseInt(this.direction) + (angle / 90)) % 4);
     }
 
-    /**
-    public void moveTo(String Direction,String int step, ) {
+
+    public void moveTo(String newDirection, int step, boolean keepDirection) {
         String temp = this.direction;
         this.direction = newDirection;
         forward(step);

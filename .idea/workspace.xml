@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="@new Struktur von BoardElment class&#10;@1.map" />
+    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="@new Struktur von BoardElment class&#10;@1.map">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Maps/DeathTrap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Maps/ExtraCrispy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Maps/LostBearings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/ConveyorBelt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Pit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/Pit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/PushPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -255,7 +268,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641650008553</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="@new Struktur von BoardElment class&#10;@1.map">
+      <created>1641650669103</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650669104</updated>
+    </task>
+    <task id="LOCAL-00014" summary="@new Struktur von BoardElment class&#10;@1.map">
+      <created>1641651101075</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641651101075</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,5 +311,16 @@
     <MESSAGE value="@new" />
     <MESSAGE value="@new Struktur von BoardElment class&#10;@1.map" />
     <option name="LAST_COMMIT_MESSAGE" value="@new Struktur von BoardElment class&#10;@1.map" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/game/Board/Wall.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
