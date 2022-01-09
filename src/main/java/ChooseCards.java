@@ -1,3 +1,4 @@
+import game.Card.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -37,15 +38,74 @@ public class ChooseCards implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Card1.setImage(Move1);
-        Card2.setImage(Move2);
-        Card3.setImage(Move3);
-        Card4.setImage(PowerUp);
-        Card5.setImage(RightTurn);
-        Card6.setImage(UTurn);
-        Card7.setImage(LeftTurn);
-        Card8.setImage(Move1);
-        Card9.setImage(Move1);
+        Card1.setImage(getImageForCard(SaveClients.client.getHandcards().get(0).getName()));
+        Card2.setImage(getImageForCard(SaveClients.client.getHandcards().get(1).getName()));
+        Card3.setImage(getImageForCard(SaveClients.client.getHandcards().get(2).getName()));
+        Card4.setImage(getImageForCard(SaveClients.client.getHandcards().get(3).getName()));
+        Card5.setImage(getImageForCard(SaveClients.client.getHandcards().get(4).getName()));
+        Card6.setImage(getImageForCard(SaveClients.client.getHandcards().get(5).getName()));
+        Card7.setImage(getImageForCard(SaveClients.client.getHandcards().get(6).getName()));
+        Card8.setImage(getImageForCard(SaveClients.client.getHandcards().get(7).getName()));
+        Card9.setImage(getImageForCard(SaveClients.client.getHandcards().get(8).getName()));
 
     }
+
+    public Image getImageForCard(String cardName) {
+        switch (cardName) {
+            case "MoveI":
+                return Move1;
+            case "MoveII":
+                return Move2;
+            case "MoveIII":
+                return Move3;
+
+            case "TurnLeft":
+                return LeftTurn;
+
+            case "TurnRight":
+                return RightTurn;
+
+            case "UTurn":
+                return UTurn;
+
+            case "BackUp":
+                return Move1;
+            case "PowerUp":
+                return PowerUp;
+
+            case "Again":
+                return Move1;
+            default:
+                return Move1;
+        }
+    }
+
+    public void ChooseCard1(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(),0);
+    }
+    public void ChooseCard2(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(),1);
+    }
+    public void ChooseCard3(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(),2);
+    }
+    public void ChooseCard4(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(),3);
+    }
+    public void ChooseCard5(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(),4);
+    }
+    public void ChooseCard6(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(),5);
+    }
+    public void ChooseCard7(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(),6);
+    }
+    public void ChooseCard8(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(),7);
+    }
+    public void ChooseCard9(){
+        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(),8);
+    }
+
 }
