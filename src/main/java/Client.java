@@ -425,4 +425,8 @@ public class Client implements Runnable {
         return chatView1;
     }
 
+    public ArrayList<Cards> getHandcards(){
+       return figuren[player.get(ID).figur].getHandCards();
+    }
+
 }
