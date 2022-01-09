@@ -4,34 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: Added Cards to Branch Kommunikation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Gamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/AgainCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/AgainCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/BackUpCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/BackUpCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/CardUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/LeftTurnCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/LeftTurnCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move1Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Move1Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move2Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Move2Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move3Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Move3Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/PowerUpCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/PowerUpCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/RightTurnCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/RightTurnCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Spam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Spam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Trojan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Trojan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/UTurnCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/UTurnCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/VirusCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/VirusCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Worm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Card/Worm.class" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641725697502</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Bugfix">
+      <created>1641725926149</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1641725926149</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +384,6 @@
     <MESSAGE value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
     <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="updated git-ignore" />
     <MESSAGE value="Improved method generateMap()" />
     <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
@@ -415,7 +395,8 @@
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: Added Cards to Branch Kommunikation" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

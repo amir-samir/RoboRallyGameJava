@@ -78,13 +78,15 @@ public class Game {
     }
 
     public void setStartingPoint(int x, int y, ClientHandler clientHandler) {
+        if (!verbindungen.get(activePlayer).equals(clientHandler) || activePhase != 0){
+            sendError("Du kannst aktuell keine Startposition wählen.", clientHandler);
+            return;
+        }
         if (board.getMap()[x][y].get(0).getType() == "StartPoint") {
             for (int i = 0; i < figuren.length; i++) {
                 if (figuren[i] != null) {
                     if (feldBelegt(x, y, i)) {
-                        Error1 error1 = new Error1("Der gewählte Startpunkt ist ungültig.");
-                        error1.getMessageBody().setKeys(new String[]{"error"});
-                        SERVER.sendMessageForSingleClient(error1, clientHandler);
+                        sendError("Der gewählte Startpunkt ist ungültig.", clientHandler);
                         return;
                     }
                 }
@@ -92,12 +94,10 @@ public class Game {
             figuren[clientHandler.figure].setX(x);
             figuren[clientHandler.figure].setY(y);
             SERVER.validStartingPoint(x, y, clientHandler);
-            nextPlayer();
+            nextPlayerAufbauPhase();
             startGame();
         } else {
-            Error1 error1 = new Error1("Der gewählte Startpunkt ist ungültig.");
-            error1.getMessageBody().setKeys(new String[]{"error"});
-            SERVER.sendMessageForSingleClient(error1, clientHandler);
+            sendError("Der gewählte Startpunkt ist ungültig.", clientHandler);
         }
     }
 
@@ -122,11 +122,17 @@ public class Game {
         SERVER.sendMessageForAllUsers(currentPlayer);
     }
 
-    public void nextPlayer(){
+    public void nextPlayerAufbauPhase(){
         activePlayer += 1;
         if (verbindungen.size() == activePlayer){
             activePlayer = 0;
         }
+    }
+
+    public void sendError(String nachricht, ClientHandler clientHandler){
+        Error1 error1 = new Error1(nachricht);
+        error1.getMessageBody().setKeys(new String[]{"error"});
+        SERVER.sendMessageForSingleClient(error1, clientHandler);
     }
 
     public ClientHandler getFirstPlayer(){
