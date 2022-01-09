@@ -130,7 +130,7 @@ public class ChatViewModel {
      */
     public final void startingGame() {
         //client.printMessage("funktioniert");
-        client.setReady();
+        SaveClients.client.setReady();
     }
 
     /**

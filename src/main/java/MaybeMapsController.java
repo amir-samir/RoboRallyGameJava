@@ -175,11 +175,41 @@ public class MaybeMapsController implements Initializable {
     Image image89 = new Image("assets/DizzyHighwayMap88.png");
     Image image90 = new Image("assets/DizzyHighwayMap99.png");
     Image figureTest = new Image("assets/figureTest2.png");
-    Image Karte = new Image("assets/Karte.png");
-    //Image testImage = new Image("assets/MateoTry.jpeg");
 
-    // Array
-    //int[][] crispyMapArray = new int[10][10];
+    //Karten
+    Image Karte = new Image("assets/Karte.png");
+
+    // Figuren
+    //Hammer
+    Image HammerOben = new Image("assets/HammerOben.png");
+    Image HammerRechts = new Image("assets/HammerRechts.png");
+    Image HammerLinks = new Image("assets/HammerLinks.png");
+    Image HammerUnten = new Image("assets/HammerUnten.png");
+    //Twinky
+    Image TwinkyOben = new Image("assets/TwinkyOben.png");
+    Image TwinkyRechts = new Image("assets/TwinkyRechts.png");
+    Image TwinkyLinks = new Image("assets/TwinkyLinks.png");
+    Image TwinkyUnten = new Image("assets/TwinkyUnten.png");
+    //Zoom
+    Image ZoomOben = new Image("assets/ZoomOben.png");
+    Image ZoomRechts = new Image("assets/ZoomRechts.png");
+    Image ZoomLinks = new Image("assets/ZoomLinks.png");
+    Image ZoomUnten = new Image("assets/ZoomUnten.png");
+    //Smash
+    Image SmashOben = new Image("assets/SmashOben.png");
+    Image SmashRechts = new Image("assets/SmadhRechts.png");
+    Image SmashLinks = new Image("assets/SmashLinks.png");
+    Image SmashUnten = new Image("assets/SmashUnten.png");
+    //Spin
+    Image SpinOben = new Image("assets/SpinOben.png");
+    Image SpinRechts = new Image("assets/SpinRechts.png");
+    Image SpinLinks = new Image("assets/SpinLinks.png");
+    Image SpinUnten = new Image("assets/SpinUnten.png");
+    //Hulk
+    Image HulkOben = new Image("assets/HulkOben.png");
+    Image HulkRechts = new Image("assets/HulkRechts.png");
+    Image HulkLinks = new Image("assets/HulkLinks.png");
+    Image HulkUnten = new Image("assets/HulkUnten.png");
 
 
     @Override
@@ -463,87 +493,88 @@ public class MaybeMapsController implements Initializable {
     }
     public void setFigureOnMapNew(int figure,String direction, int x, int y){
         if (figure == 0){
-            if (direction == "Forward"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Up"){
+                gridpane1.add(new ImageView(TwinkyOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+                setDefaultMap();
+                gridpane1.add(new ImageView(TwinkyRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(TwinkyLinks),y,x);
             }
-            if (direction == "BackUp") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Down") {
+                gridpane1.add(new ImageView(TwinkyUnten),y,x);
             }
         }
         if (figure == 1){
-            if (direction == "Forward"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Up"){
+                gridpane1.add(new ImageView(SmashOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(SmashRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(SmashLinks),y,x);
             }
-            if (direction == "BackUp") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Down") {
+                gridpane1.add(new ImageView(SmashUnten),y,x);
             }
         }
         if (figure == 2){
-            if (direction == "Forward"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Up"){
+                gridpane1.add(new ImageView(HulkOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(HulkRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(HulkLinks),y,x);
             }
-            if (direction == "BackUp") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Down") {
+                gridpane1.add(new ImageView(HulkUnten),y,x);
             }
         }
         if (figure == 3){
-            if (direction == "Forward"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Up"){
+                gridpane1.add(new ImageView(ZoomOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(ZoomRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(ZoomLinks),y,x);
             }
-            if (direction == "BackUp") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Down") {
+                gridpane1.add(new ImageView(ZoomUnten),y,x);
             }
         }
         if (figure == 4){
-            if (direction == "Forward"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Up"){
+                gridpane1.add(new ImageView(SpinOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(SmashRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(SmashLinks),y,x);
             }
-            if (direction == "BackUp") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Down") {
+                gridpane1.add(new ImageView(SmashUnten),y,x);
             }
         }
         if (figure == 5){
-            if (direction == "Forward"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Up"){
+                gridpane1.add(new ImageView(HammerOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(HammerRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+                gridpane1.add(new ImageView(HammerLinks),y,x);
             }
-            if (direction == "BackUp") {
-                gridpane1.add(new ImageView(figureTest),y,x);
+            if (direction == "Down") {
+                gridpane1.add(new ImageView(HammerUnten),y,x);
             }
         }
     }
