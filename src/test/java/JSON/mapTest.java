@@ -91,4 +91,81 @@ public class mapTest {
 
         generateMap(m);
     }
+
+    public ArrayList<BoardElement>[][] generatesMap(Message m) {
+            ArrayList<BoardElement>[][] map = new ArrayList[13][10];
+            int i = 0;
+            while (i < map.length) {
+                int u = 0;
+                while (u < map[i].length) {
+                    map[i][u] = new ArrayList<BoardElement>();
+                    u++;
+                }
+                i++;
+            }
+
+            ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
+            int x = 0;
+            while (x < list.size()) {
+                ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
+                int y = 0;
+                while (y < y_list.size()) {
+                    ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
+                    int z = 0;
+                    while (z < field.size()) {
+                        LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
+                        if (typ == null) {
+                            //map[x][y].add(new Empty());
+                        } else {
+                            String zuPruefen = (String) typ.get("type");
+                            switch (zuPruefen) {
+                                case "Empty":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "StartPoint":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "ConveyorBelt":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "PushPanel":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "Gear":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "Pit":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "EnergySpace":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "Wall":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "Laser":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "Antenna":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "CheckPoint":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                case "RestartPoint":
+                                    map[x][y].add(new Empty("A"));
+                                    break;
+                                default:
+                            }
+                        }
+                        z += 1;
+                    }
+                    y += 1;
+                }
+                x += 1;
+            }
+
+            System.out.println("test");
+            return map;
+        }
 }

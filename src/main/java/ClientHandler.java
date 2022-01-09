@@ -112,6 +112,10 @@ public class ClientHandler implements Runnable {
                     int x = (int) (double) message.getMessageBody().getContent()[0];
                     int y = (int) (double) message.getMessageBody().getContent()[1];
                     SERVER.setStartingPoint(x, y, this);
+                } else if (message.getMessageType().equals("SelectedCard")){
+                    String card = (String) message.getMessageBody().getContent()[0];
+                    int register = (int)(double) message.getMessageBody().getContent()[1];
+                    SERVER.handleSelectedCard(card, register, this);
                 }
             } catch (Exception e){
                 e.printStackTrace();

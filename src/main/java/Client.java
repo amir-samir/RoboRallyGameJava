@@ -1,6 +1,8 @@
 import com.google.gson.internal.LinkedTreeMap;
 import game.Board.*;
+import game.Card.Cards;
 import game.Messages.*;
+import game.Messages.Phase.SelectedCard;
 import game.Messages.Phase.SetStartingPoint;
 import game.Robot;
 import javafx.application.Platform;
@@ -155,6 +157,12 @@ public class Client implements Runnable {
         bufferedWriter.println(S);
     }
 
+    public void sendCardToRegister(String card, int register){
+        SelectedCard selectedCard = new SelectedCard(card, register);
+        selectedCard.getMessageBody().setKeys(new String[]{"card", "register"});
+        bufferedWriter.println(Adopter.javabeanToJson(selectedCard));
+    }
+
     public void mapSelected(String map){
         MapSelected mapSelected = new MapSelected(map);
         String[] key = {"map"};
@@ -168,83 +176,6 @@ public class Client implements Runnable {
         playCard.getMessageBody().setKeys(key);
 
         bufferedWriter.println(Adopter.javabeanToJson(playCard));
-    }
-
-    public ArrayList<BoardElement>[][] generateMap(Message m) {
-        ArrayList<BoardElement>[][] map = new ArrayList[13][10];
-        int i = 0;
-        while (i < map.length) {
-            int u = 0;
-            while (u < map[i].length) {
-                map[i][u] = new ArrayList<BoardElement>();
-                u++;
-            }
-            i++;
-        }
-
-        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
-        int x = 0;
-        while (x < list.size()) {
-            ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
-            int y = 0;
-            while (y < y_list.size()) {
-                ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
-                int z = 0;
-                while (z < field.size()) {
-                    LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
-                    if (typ == null) {
-                        //map[x][y].add(new Empty());
-                    } else {
-                        String zuPruefen = (String) typ.get("type");
-                        switch (zuPruefen) {
-                            case "Empty":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "StartPoint":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "ConveyorBelt":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "PushPanel":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "Gear":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "Pit":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "EnergySpace":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "Wall":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "Laser":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "Antenna":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "CheckPoint":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            case "RestartPoint":
-                                map[x][y].add(new Empty("A"));
-                                break;
-                            default:
-                        }
-                    }
-                    z += 1;
-                }
-                y += 1;
-            }
-            x += 1;
-        }
-
-        System.out.println("test");
-        return map;
     }
 
     public void updateFigure(int x, int y, int ID){
@@ -370,7 +301,6 @@ public class Client implements Runnable {
                         toSend = name + " (" + activePlayer + ") " + "ist aktuell am Zug";
                     }
                 } else if (message.getMessageType().equals("GameStarted")){
-                    map = generateMap(message);
                     //HIER
                     Platform.runLater(new Runnable() {
                         @Override
@@ -382,7 +312,7 @@ public class Client implements Runnable {
                             }
                         }
                     });
-                    toSend = null;
+                    toSend = "Das Spiel wurde jetzt gestartet.";
                 }
                 else if (message.getMessageType().equals("StartingPointTaken")){
                     int x = (int) (double) message.getMessageBody().getContent()[0];
@@ -401,6 +331,18 @@ public class Client implements Runnable {
                             }
                         });
                     toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
+                } else if (message.getMessageType().equals("YourCards")){
+                    ArrayList<Cards> cards = (ArrayList<Cards>) message.getMessageBody().getContent()[0];
+                    figuren[player.get(this.ID).figur].setHandCards(cards);
+                    String senden = "Folgende Karten befinden sich auf deiner Hand: ";
+                    for (int i = 0; i < figuren[player.get(this.ID).figur].getHandCards().size(); i++){
+                        senden += figuren[player.get(this.ID).figur].getHandCards().get(i).getName() + " ";
+                    }
+                    toSend = senden;
+                } else if (message.getMessageType().equals("NotYourCards")){
+                    int ID = (int) (double) message.getMessageBody().getContent()[0];
+                    int cardsInHand = (int) (double) message.getMessageBody().getContent()[1];
+                    toSend = player.get(ID).name + " (" + ID + ") hat " + cardsInHand + " Karten auf der Hand";
                 }
                 else {
                     toSend = inputFromServer;

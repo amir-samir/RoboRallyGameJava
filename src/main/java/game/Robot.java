@@ -22,11 +22,13 @@ public class Robot {
 
     private ProgrammingCardsForPlayer deck;
     private ArrayList<Cards> handCards;
+    private Cards[] register;
 
 
     public Robot(int ID){
         deck = new ProgrammingCardsForPlayer();
         handCards = new ArrayList<Cards>();
+        register = new Cards[5];
 
         x = -1;
         y = -1;
@@ -34,7 +36,7 @@ public class Robot {
     }
 
     public void drawHandCards(){
-        for (int i = 0; i < handCards.size(); i++){
+        for (int i = handCards.size(); i < 9; i++){
             handCards.add(deck.getDeck().remove(i));
         }
     }
@@ -75,6 +77,10 @@ public class Robot {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public void setHandCards(ArrayList<Cards> handCards) {
+        this.handCards = handCards;
     }
 
     public int getX() {

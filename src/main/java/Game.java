@@ -141,6 +141,10 @@ public class Game {
         return true;
     }
 
+    public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
+
+    }
+
     public void sendActivePlayer(){
         CurrentPlayer currentPlayer = new CurrentPlayer(verbindungen.get(activePlayer).ID);
         currentPlayer.getMessageBody().setKeys(new String[]{"clientID"});

@@ -1,6 +1,9 @@
 package JSON;
 
+import game.Card.Cards;
 import game.Messages.*;
+import game.Messages.Phase.YourCards;
+import game.Robot;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
@@ -230,5 +233,31 @@ public class jsonTest {
         String[] keys = {"availableMaps"};
         selectMap.getMessageBody().setKeys(keys);
         System.out.println(Adopter.javabeanToJson(selectMap));
+    }
+
+    @Test
+    public void YourCards() {
+        Robot robot = new Robot(2010);
+        robot.drawHandCards();
+
+        robot.getHandCards();
+
+        String[] newCards = new String[robot.getHandCards().size()];
+        for (int i = 0; i < newCards.length; i++){
+            Cards card = (Cards) robot.getHandCards().get(i);
+            newCards[i] = card.getName();
+        }
+
+        for (String s: newCards){
+            System.out.println(s);
+        }
+
+        YourCards yourCards = new YourCards(newCards);
+        yourCards.getMessageBody().setKeys(new String[]{"cardsInHand"});
+        String string = Adopter.javabeanToJson(yourCards);
+        System.out.println(Adopter.javabeanToJson(yourCards));
+
+        Message m = Adopter.getMessage(string);
+        System.out.println();
     }
 }

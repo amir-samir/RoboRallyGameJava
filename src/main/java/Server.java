@@ -189,6 +189,10 @@ public class Server {
         }
     }
 
+    public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
+        game.handleSelectedCard(card, register, clientHandler);
+    }
+
     public boolean readyToStart(){
         int count = 0;
         for (ClientHandler clientHandler: users.values()){
