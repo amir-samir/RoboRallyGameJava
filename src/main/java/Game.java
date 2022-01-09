@@ -145,6 +145,7 @@ public class Game {
 
     public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
         if (figuren[clientHandler.figure].cardIntoRegister(card, register)){
+            System.out.println("Hier bin ich angekommen!!!");
             boolean filled = true;
             if(card == null) filled = false;
             CardSelected cardSelected = new CardSelected(clientHandler.ID, register, filled);

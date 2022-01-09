@@ -57,7 +57,7 @@ public class Robot {
                 return true;
             } else {
                 for (int i = 0; i < handCards.size(); i++) {
-                    if (handCards.get(i).equals(card)) {
+                    if (handCards.get(i).getName().equals(card)) {
                         this.register[register] = handCards.get(i);
                         handCards.remove(i);
                         return true;
