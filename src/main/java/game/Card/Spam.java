@@ -1,12 +1,10 @@
 package game.Card;
 
-import game.Gamer;
-
 public class Spam extends DamageCards{
     String name = "SPAM";
 
     @Override
-    public void effect (Gamer gamer) {
+    public void effect () {
         for (int i = 0 ; i < register.size() ; i++) {
             if (register.get(i).getName() .equals( "SPAM")) {
                 spamCards.add(Spam.this);
