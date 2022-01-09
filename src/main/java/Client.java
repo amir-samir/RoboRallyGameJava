@@ -382,6 +382,27 @@ public class Client implements Runnable {
                     int ID = (int) (double) message.getMessageBody().getContent()[0];
                     int cardsInHand = (int) (double) message.getMessageBody().getContent()[1];
                     toSend = player.get(ID).name + " (" + ID + ") hat " + cardsInHand + " Karten auf der Hand";
+                } else if (message.getMessageType().equals("CardSelected")){
+                    int ID = (int) (double) message.getMessageBody().getContent()[0];
+                    int register = (int) (double) message.getMessageBody().getContent()[1];
+                    boolean filled = (boolean) message.getMessageBody().getContent()[2];
+                    if (filled) {
+                        toSend = player.get(ID).name + " (" + ID + ") hat folgendes Register befüllt: " + register;
+                    } else {
+                        toSend = player.get(ID).name + " (" + ID + ") hat folgendes Register geleert: " + register;
+                    }
+                } else if (message.getMessageType().equals("TimerStarted")){
+                    toSend = "Der Timer wurde gestartet.";
+                } else if (message.getMessageType().equals("TimerEnded")){
+                    ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
+                    String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
+                    for (Double doubl: list){
+                        s += "(" + doubl + ") ";
+                    }
+                    toSend = s;
+                } else if (message.getMessageType().equals("SelectionFinished")){
+                    int ID = (int) (double) message.getMessageBody().getContent()[0];
+                    toSend = player.get(ID).name + " (" + ID + ") hat seine Auswahl erfolgreich beendet.";
                 }
                 else {
                     toSend = inputFromServer;

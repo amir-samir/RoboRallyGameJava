@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: New GUI features and new Logic">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OurTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OurTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/TimerEnded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/TimerEnded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TimerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TimerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -404,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641754004312</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Bugfix">
+      <created>1641755814685</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1641755814685</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +449,6 @@
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
     <MESSAGE value="Implemented message selectedCard" />
@@ -448,7 +457,8 @@
     <MESSAGE value="Improved connection to GUI" />
     <MESSAGE value="Finished ProgrammierPhase" />
     <MESSAGE value="Merge: New GUI features and new Logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: New GUI features and new Logic" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

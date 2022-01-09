@@ -3,13 +3,16 @@ import game.Card.Cards;
 import game.Card.DamageCards;
 import game.Maps.DizzyHighway;
 import game.Messages.ActivePhase;
+import game.Messages.Adopter;
 import game.Messages.CurrentPlayer;
 import game.Messages.Error1;
 import game.Messages.Phase.*;
 import game.Robot;
 
+import java.awt.*;
 import java.nio.file.AccessDeniedException;
 import java.util.*;
+import java.util.List;
 
 public class Game {
 
@@ -165,20 +168,22 @@ public class Game {
         TimerStarted timerStarted = new TimerStarted();
         SERVER.sendMessageForAllUsers(timerStarted);
 
-        OurTimer ourTimer = new OurTimer(30, this);
+        OurTimer ourTimer = new OurTimer(10, this);
     }
 
     public void timerEnded(){
         System.out.println("Timer Ended");
         ArrayList<Integer> schlafmützen = checkWhoIsntDone();
+        System.out.println("Position 1");
         Integer[] zuLangsameSpieler  = new Integer[schlafmützen.size()];
-        for (int i = 0; i < schlafmützen.size(); i++){
+        for (int i = 0; i < zuLangsameSpieler.length; i++){
             zuLangsameSpieler[i] = schlafmützen.get(i);
         }
 
         TimerEnded timerEnded = new TimerEnded(zuLangsameSpieler);
         timerEnded.getMessageBody().setKeys(new String[]{"clientIDs"});
         SERVER.sendMessageForAllUsers(timerEnded);
+        System.out.println(Adopter.javabeanToJson(timerEnded));
 
         fillRegisters(zuLangsameSpieler);
     }
@@ -208,12 +213,21 @@ public class Game {
 
     public ArrayList<Integer> checkWhoIsntDone(){
         ArrayList<Integer> schlafmützen = new ArrayList<Integer>();
-        for (Robot robot: figuren){
-            if (robot.getAbleToFillRegisters()){
-                schlafmützen.add(robot.getGamerID());
-                robot.setAbleToFillRegisters(false);
+        System.out.println("Position 9");
+        for (int i = 0; i < figuren.length; i++) {
+            if (figuren[i] != null) {
+                if (figuren[i].getAbleToFillRegisters()) {
+                    System.out.println("Position 9 3/4");
+                    schlafmützen.add(figuren[i].getGamerID());
+                    figuren[i].setAbleToFillRegisters(false);
+                    System.out.println("Position 9 4/4");
+                } else {
+                    System.out.println("Position 11");
+                }
+                System.out.println("Pos 12");
             }
         }
+        System.out.println("Position 10");
         return schlafmützen;
     }
 
