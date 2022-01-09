@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_23_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_23_08__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Messages/ActiveCards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Messages/CurrentCardDummy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/CurrentCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/CurrentCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CurrentCards.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CurrentCards.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="JSON_Chat" />
+        <entry key="$PROJECT_DIR$" value="Kommunikation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,13 +49,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -71,6 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -89,7 +89,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="JUnit.jsonTest.currentcard">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -123,6 +123,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jsonTest.currentcard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="innige-irrweg-hp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JSON.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JSON" />
+      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
+      <option name="METHOD_NAME" value="currentcard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="jsonTest.timerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="innige-irrweg-hp" />
       <extension name="coverage">
@@ -139,36 +155,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mapTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="innige-irrweg-hp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JSON.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="JSON" />
-      <option name="MAIN_CLASS_NAME" value="JSON.mapTest" />
-      <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
-      <item itemvalue="JUnit.mapTest.Test" />
       <item itemvalue="JUnit.jsonTest.YourCards" />
       <item itemvalue="JUnit.jsonTest.timerTest" />
+      <item itemvalue="JUnit.jsonTest.currentcard" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.jsonTest.currentcard" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.jsonTest.timerTest" />
         <item itemvalue="JUnit.jsonTest.YourCards" />
-        <item itemvalue="JUnit.mapTest.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -442,6 +442,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -481,20 +482,30 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
-          <line>263</line>
+          <line>282</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
-          <line>264</line>
+          <line>283</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
-          <line>265</line>
+          <line>284</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
+          <line>248</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="((com.google.gson.internal.LinkedTreeMap)((ArrayList)mes.messageBody.content[0]).get(0)).entrySet().toArray()[1]" custom="com.google.gson.internal.LinkedTreeMap,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
