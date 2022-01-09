@@ -1,8 +1,10 @@
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -130,6 +132,20 @@ public class ChatView {
         viewModel.sendMessage();
 
     }
+    public void ChooseCard() throws Exception{
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Sign In");
+            Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCards.fxml"));
+            Scene signInScene = new Scene(signIn);
+            stage.setScene(signInScene);
+            stage.show();
+            stage.setOnCloseRequest(e -> Platform.exit());
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
     public void selectMap() throws IOException {
         Stage stage1 = new Stage();
