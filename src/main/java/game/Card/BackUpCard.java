@@ -1,5 +1,6 @@
 package game.Card;
 
+import game.Gamer;
 import game.Robot;
 
 public class BackUpCard extends Cards {
@@ -7,8 +8,7 @@ public class BackUpCard extends Cards {
     final String name = "BackUp";
 
     @Override
-    public void effect(){
-        Robot robot = new Robot();
-        robot.forward(-1);
+    public void effect(Gamer gamer){
+       gamer.getRobot().forward(-1);
     }
 }

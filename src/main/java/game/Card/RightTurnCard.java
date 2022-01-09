@@ -1,5 +1,6 @@
 package game.Card;
 
+import game.Gamer;
 import game.Robot;
 
 public class RightTurnCard extends Cards {
@@ -7,9 +8,8 @@ public class RightTurnCard extends Cards {
     final String name = "RightTurn";
 
     @Override
-    public void effect(){
-        Robot robot = new Robot();
-        robot.rotate(90);
+    public void effect(Gamer gamer){
+      gamer.getRobot().rotate(90);
     }
 
     @Override
