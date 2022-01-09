@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Dairen, Amir Cards on Register legen">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_21_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_21_44__Changes_.xml" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Dairen, Amir Cards on Register legen" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -414,7 +412,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641761354602</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Dairen, Amir Cards on Register legen">
+      <created>1641762511199</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1641762511199</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Dairen, Amir Cards on Register legen">
+      <created>1641762523721</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1641762523721</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
