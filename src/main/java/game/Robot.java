@@ -50,17 +50,18 @@ public class Robot {
     public boolean cardIntoRegister(String card, int register){
         if(ableToFillRegisters) {
             if (card == null) {
-                if (this.register != null) {
+                if (this.register[register] != null) {
                     handCards.add(this.register[register]);
                 }
                 this.register[register] = null;
                 return true;
-            }
-            for (int i = 0; i < handCards.size(); i++) {
-                if (handCards.get(i).equals(card)) {
-                    this.register[register] = handCards.get(i);
-                    handCards.remove(i);
-                    return true;
+            } else {
+                for (int i = 0; i < handCards.size(); i++) {
+                    if (handCards.get(i).equals(card)) {
+                        this.register[register] = handCards.get(i);
+                        handCards.remove(i);
+                        return true;
+                    }
                 }
             }
         }

@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Improved connection to GUI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/OurTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TimerTest.java" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Finished ProgrammierPhase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCardsForPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCardsForPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +89,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OurTimer">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -150,24 +143,24 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
-      <item itemvalue="JUnit.jsonTest.timerTest" />
       <item itemvalue="Application.OurTimer" />
+      <item itemvalue="JUnit.jsonTest.timerTest" />
       <item itemvalue="JUnit.TimerTest.timerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.OurTimer" />
         <item itemvalue="JUnit.TimerTest.timerTest" />
         <item itemvalue="JUnit.jsonTest.timerTest" />
-        <item itemvalue="Application.GetID" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="New Board Structure" />
+      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Finished ProgrammierPhase" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -177,6 +170,7 @@
       <workItem from="1641417782506" duration="4801000" />
       <workItem from="1641471393977" duration="3082000" />
       <workItem from="1641496660465" duration="6722000" />
+      <workItem from="1641752031100" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -395,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641739522480</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Finished ProgrammierPhase">
+      <created>1641746318835</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1641746318835</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +415,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt" />
     <MESSAGE value="@yilu und chen Adopter" />
     <MESSAGE value="@yilu und dairen Adopte, Message" />
     <MESSAGE value="q" />
@@ -439,7 +439,8 @@
     <MESSAGE value="Improved programmierPhase" />
     <MESSAGE value="Merge: GUI: Karten in Kommunikation" />
     <MESSAGE value="Improved connection to GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved connection to GUI" />
+    <MESSAGE value="Finished ProgrammierPhase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished ProgrammierPhase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
