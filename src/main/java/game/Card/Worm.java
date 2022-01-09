@@ -1,8 +1,11 @@
 package game.Card;
 
-public class Worm extends DamageCards{
-    @Override
-    public void effect() {
+import game.Gamer;
 
+public class Worm extends DamageCards{
+    String name = "WORM";
+    @Override
+    public void effect(Gamer gamer) {
+      gamer.reboot();
     }
 }

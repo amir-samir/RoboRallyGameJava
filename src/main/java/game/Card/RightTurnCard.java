@@ -8,8 +8,7 @@ public class RightTurnCard extends Cards {
 
     @Override
     public void effect(){
-        //Robot robot = new Robot();
-        //robot.rotate(90);
+      //gamer.getRobot().rotate(90);
     }
 
     @Override

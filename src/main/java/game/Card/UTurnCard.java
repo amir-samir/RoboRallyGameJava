@@ -9,8 +9,7 @@ public class UTurnCard extends Cards {
 
     @Override
     public void effect(){
-        //Robot robot = new Robot();
-        //robot.rotate(180);
+       //gamer.getRobot().rotate(180);
     }
 
     @Override

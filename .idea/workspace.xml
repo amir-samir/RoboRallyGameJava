@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: New GUI &amp; New Logic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Robot.class" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: New GUI &amp; New Logic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

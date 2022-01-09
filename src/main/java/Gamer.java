@@ -1,6 +1,7 @@
 import game.Card.Cards;
 import game.Robot;
 import lombok.Data;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class Gamer {
     private List<Cards> playedCards;
     private List<Integer> points;
     private int energyCubes = 0;
+    ArrayList<Cards> programmingCardDeck = new ArrayList<>();
 
     public void reboot() {
         this.inRoboting = true;
@@ -34,6 +36,7 @@ public class Gamer {
     }
 
      */
+
 
     public void clearCards() {
         this.playedCards.addAll(this.handCards);
