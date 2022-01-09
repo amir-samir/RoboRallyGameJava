@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ChooseCards implements Initializable {
+    int RegisterPlatz = -1;
     @FXML
     ImageView Card1;
     @FXML
@@ -34,6 +35,8 @@ public class ChooseCards implements Initializable {
     Image RightTurn = new Image("assets/RightTurn.png");
     Image UTurn = new Image("assets/UTurn.png");
     Image LeftTurn = new Image ("assets/LeftTurn.png");
+
+
 
 
     @Override
@@ -81,31 +84,85 @@ public class ChooseCards implements Initializable {
     }
 
     public void ChooseCard1(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(),0);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard2(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(),1);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatz++);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard3(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(),2);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard4(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(),3);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard5(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(),4);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard6(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(),5);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard7(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(),6);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard8(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(),7);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
     public void ChooseCard9(){
-        SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(),8);
+        if (RegisterPlatz < 5) {
+            RegisterPlatz++;
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(), RegisterPlatz);
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
     }
 
 }

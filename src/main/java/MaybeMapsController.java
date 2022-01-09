@@ -176,8 +176,17 @@ public class MaybeMapsController implements Initializable {
     Image image90 = new Image("assets/DizzyHighwayMap99.png");
     Image figureTest = new Image("assets/figureTest2.png");
 
+
     //Karten
     Image Karte = new Image("assets/Karte.png");
+    @FXML
+    Image Move1 = new Image("assets/Move1.png");
+    Image Move2 = new Image("assets/Move2.jpg");
+    Image Move3 = new Image("assets/Move3.png");
+    Image PowerUp = new Image("assets/PowerUp.png");
+    Image RightTurn = new Image("assets/RightTurn.png");
+    Image UTurn = new Image("assets/UTurn.png");
+    Image LeftTurn = new Image ("assets/LeftTurn.png");
 
     // Figuren
     //Hammer
@@ -577,6 +586,64 @@ public class MaybeMapsController implements Initializable {
                 gridpane1.add(new ImageView(HammerUnten),y,x);
             }
         }
+    }
+
+    public Image getImageForRegisterCard(String cardName) {
+        switch (cardName) {
+            case "MoveI":
+                return Move1;
+            case "MoveII":
+                return Move2;
+            case "MoveIII":
+                return Move3;
+
+            case "TurnLeft":
+                return LeftTurn;
+
+            case "TurnRight":
+                return RightTurn;
+
+            case "UTurn":
+                return UTurn;
+
+            case "BackUp":
+                return Move1;
+            case "PowerUp":
+                return PowerUp;
+
+            case "Again":
+                return Move1;
+            default:
+                return Move1;
+        }
+    }
+
+        public void Choosecard1(){
+           Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        }
+        public void ChooseCard2(){
+            Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        }
+        public void ChooseCard3(){
+            Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        }
+        public void ChooseCard4(){
+
+        }
+        public void ChooseCard5(){
+
+        }
+        public void ChooseCard6(){
+
+        }
+        public void ChooseCard7(){
+
+        }
+        public void ChooseCard8(){
+
+        }
+        public void ChooseCard9(){
+
     }
 
 
