@@ -1,18 +1,13 @@
-import game.Board.Board;
-import game.Card.Cards;
-import game.Card.DamageCards;
-import game.Maps.DizzyHighway;
-import game.Messages.ActivePhase;
-import game.Messages.Adopter;
-import game.Messages.CurrentPlayer;
-import game.Messages.Error1;
-import game.Messages.Phase.*;
-import game.Robot;
+import Messages.ActivePhase;
+import Messages.Adopter;
+import Messages.CurrentPlayer;
+import Messages.Error1;
+import Messages.Phase.*;
 
-import java.awt.*;
-import java.nio.file.AccessDeniedException;
 import java.util.*;
 import java.util.List;
+
+import static java.lang.Math.abs;
 
 public class Game {
 
@@ -22,13 +17,15 @@ public class Game {
 
     int activePhase;
     int activePlayer;
+    int activeRegister;
     String activeMap;
     Robot[] figuren;
     boolean timerActivated;
+
     Board board = new DizzyHighway();
 
 
-    private List<DamageCards> damageCards;
+    private CardsForGame cardsForGame;
 
 
     public Game(Server server, HashMap<Integer, ClientHandler> hashMap, List<ClientHandler> verbindungen, String activeMap, Robot[] figuren){
@@ -37,9 +34,11 @@ public class Game {
         this.verbindungen = verbindungen;
         this.activePhase = 0;
         this.activePlayer = 0;
+        this.activeRegister = 0;
         this.activeMap = activeMap;
         this.figuren = figuren;
         this.timerActivated = false;
+        this.cardsForGame = new CardsForGame();
 
         initializeDeck();
         startGame();
@@ -103,6 +102,56 @@ public class Game {
 
     public void aktivierungsPhase(){
 
+        ArrayList<ClientHandler> reihenfolge = reihenfolgeBestimmen();
+
+        for (ClientHandler clientHandler: reihenfolge){
+            Robot robot = figuren[clientHandler.figure];
+            int robotX = robot.getX();
+            int robotY = robot.getY();
+
+            Cards card = robot.getRegister()[activeRegister];
+            card.effect(robot, SERVER);
+
+            //ArrayList<BoardElement> elements = board.getMap()[robotX][robotY];
+        }
+
+    }
+
+    public ArrayList<ClientHandler> reihenfolgeBestimmen(){
+        ArrayList<ClientHandler> reihenfolge = new ArrayList<ClientHandler>();
+        ArrayList<Robot> falscheReihenfolge = new ArrayList<Robot>();
+
+        int antennaX = board.searchX("Antenna");
+        int antennaY = board.searchY("Antenna");
+        for (Robot robot: figuren){
+            if (robot != null) {
+                int robotX = robot.getX();
+                int robotY = robot.getY();
+                int entfernungX = abs(robotX - antennaX);
+                int entfernungY = abs(robotY - antennaY);
+                int entfernungGesamt = entfernungX + entfernungY;
+                robot.setEntfernungZurAntenne(entfernungGesamt);
+                falscheReihenfolge.add(robot);
+            }
+        }
+
+        int zähler = falscheReihenfolge.size();
+        for (int i = 0; i < zähler; i++){
+            Robot niedrigsteEntfernung = falscheReihenfolge.get(0);
+            for (Robot robot : falscheReihenfolge) {
+                if (niedrigsteEntfernung.getEntfernungZurAntenne() > robot.getEntfernungZurAntenne()){
+                    niedrigsteEntfernung = robot;
+                }
+            }
+            for (int u = 0; u < falscheReihenfolge.size(); u++){
+                if (falscheReihenfolge.get(u).equals(niedrigsteEntfernung)){
+                    Robot r =  falscheReihenfolge.remove(u);
+                    reihenfolge.add(users.get(r.getGamerID()));
+                }
+            }
+        }
+
+        return reihenfolge;
     }
 
     public void setStartingPoint(int x, int y, ClientHandler clientHandler) {
@@ -121,6 +170,9 @@ public class Game {
             }
             figuren[clientHandler.figure].setX(x);
             figuren[clientHandler.figure].setY(y);
+            if (activeMap.equals("Death Trap")){
+                figuren[clientHandler.figure].setDirection("left");
+            } else figuren[clientHandler.figure].setDirection("right");
             SERVER.validStartingPoint(x, y, clientHandler);
             nextPlayerAufbauPhase();
             startGame();
@@ -148,7 +200,6 @@ public class Game {
 
     public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
         if (figuren[clientHandler.figure].cardIntoRegister(card, register)){
-            System.out.println("Hier bin ich angekommen!!!");
             boolean filled = true;
             if(card == null) filled = false;
             CardSelected cardSelected = new CardSelected(clientHandler.ID, register, filled);
@@ -168,13 +219,11 @@ public class Game {
         TimerStarted timerStarted = new TimerStarted();
         SERVER.sendMessageForAllUsers(timerStarted);
 
-        OurTimer ourTimer = new OurTimer(10, this);
+        OurTimer ourTimer = new OurTimer(30, this);
     }
 
     public void timerEnded(){
-        System.out.println("Timer Ended");
         ArrayList<Integer> schlafmützen = checkWhoIsntDone();
-        System.out.println("Position 1");
         Integer[] zuLangsameSpieler  = new Integer[schlafmützen.size()];
         for (int i = 0; i < zuLangsameSpieler.length; i++){
             zuLangsameSpieler[i] = schlafmützen.get(i);
@@ -216,21 +265,15 @@ public class Game {
 
     public ArrayList<Integer> checkWhoIsntDone(){
         ArrayList<Integer> schlafmützen = new ArrayList<Integer>();
-        System.out.println("Position 9");
         for (int i = 0; i < figuren.length; i++) {
             if (figuren[i] != null) {
                 if (figuren[i].getAbleToFillRegisters()) {
-                    System.out.println("Position 9 3/4");
                     schlafmützen.add(figuren[i].getGamerID());
                     figuren[i].setAbleToFillRegisters(false);
-                    System.out.println("Position 9 4/4");
                 } else {
-                    System.out.println("Position 11");
                 }
-                System.out.println("Pos 12");
             }
         }
-        System.out.println("Position 10");
         return schlafmützen;
     }
 

@@ -1,15 +1,10 @@
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image ;
-import javafx.scene.layout.RowConstraints;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -495,7 +490,7 @@ public class MaybeMapsController implements Initializable {
     public void ChangeImageTest(){
         Card1.setImage(image4);
     }
-    //TODO: Method for inserting ein Figure auf dem Map, wird von Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
+    //TODO: Method for inserting ein Figure auf dem Map, wird von game.Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
 
     public void setFigureOnMap(int x, int y){
         gridpane1.add(new ImageView(figureTest),y,x);

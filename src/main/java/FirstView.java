@@ -15,8 +15,6 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import lombok.Data;
 
@@ -290,7 +288,7 @@ public class FirstView implements Initializable {
          Stage stage = (Stage) signInButton.getScene().getWindow();
          viewModel.takeUsername(stage);
 
-         //Client-Constructor throws DuplicateNameException if name already taken
+         //game.Client-Constructor throws DuplicateNameException if name already taken
       } catch (IOException e) {
         e.printStackTrace();
       }

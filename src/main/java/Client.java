@@ -1,10 +1,6 @@
-import com.google.gson.internal.LinkedTreeMap;
-import game.Board.*;
-import game.Card.*;
-import game.Messages.*;
-import game.Messages.Phase.SelectedCard;
-import game.Messages.Phase.SetStartingPoint;
-import game.Robot;
+import Messages.*;
+import Messages.Phase.SelectedCard;
+import Messages.Phase.SetStartingPoint;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,7 +50,7 @@ public class Client implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
-        SOCKET = new Socket("localhost", 1523);
+        SOCKET = new Socket("localhost", 1524);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
@@ -94,7 +90,7 @@ public class Client implements Runnable {
     }
 
     /**
-     * A method that transfer the input to the Server.
+     * A method that transfer the input to the game.Server.
      * @param input The input from user.
      */
     public void printMessage(String input) {
@@ -132,7 +128,7 @@ public class Client implements Runnable {
     }
 
     /**
-     * A method that receive and returns information from the Server.
+     * A method that receive and returns information from the game.Server.
      * @throws IOException Throw this exception if the connection between server and client fails.
      */
     public String receiveFromServer() throws IOException {
@@ -251,7 +247,7 @@ public class Client implements Runnable {
         while (true) {
             try {
                 String toSend;
-                String inputFromServer = bufferedReader.readLine(); // Data read from the Server.
+                String inputFromServer = bufferedReader.readLine(); // Data read from the game.Server.
                 if (inputFromServer == null) {
                     break;
                 }
@@ -409,6 +405,41 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("SelectionFinished")){
                     int ID = (int) (double) message.getMessageBody().getContent()[0];
                     toSend = player.get(ID).name + " (" + ID + ") hat seine Auswahl erfolgreich beendet.";
+                } else if (message.getMessageType().equals("Movement")){
+                    int ID = (int) (double) message.getMessageBody().getContent()[0];
+                    int x = (int) (double) message.getMessageBody().getContent()[1];
+                    int y = (int) (double) message.getMessageBody().getContent()[2];
+                    Robot robot = figuren[player.get(ID).figur];
+                    robot.setX(x);
+                    robot.setY(y);
+                    toSend = player.get(ID).name + " (" + ID + ") hat seine Position verändert";
+                } else if (message.getMessageType().equals("PlayerTurning")){
+                    int ID = (int) (double) message.getMessageBody().getContent()[0];
+                    String direction = (String) message.getMessageBody().getContent()[1];
+                    Robot robot = figuren[player.get(ID).figur];
+                    switch (robot.getDirection()){
+                        case "top":
+                            if (direction.equals("clockwise")){
+                                robot.setDirection("right");
+                            } else robot.setDirection("left");
+                            break;
+                        case "bottom":
+                            if (direction.equals("clockwise")){
+                                robot.setDirection("left");
+                            } else robot.setDirection("right");
+                            break;
+                        case "left":
+                            if (direction.equals("clockwise")){
+                            robot.setDirection("top");
+                        } else robot.setDirection("bottom");
+                            break;
+                        case "right":
+                            if (direction.equals("clockwise")){
+                                robot.setDirection("bottom");
+                            } else robot.setDirection("top");
+                            break;
+                    }
+                    toSend = player.get(ID).name + " (" + ID + ") hat sich gedreht.";
                 }
                 else {
                     toSend = inputFromServer;

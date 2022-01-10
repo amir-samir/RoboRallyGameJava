@@ -3,14 +3,9 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class ChatViewModel {
-    // Properties corresponding to ChatView
+    // Properties corresponding to game.ChatView
     private StringProperty message = new SimpleStringProperty();
     private BooleanProperty sendButton = new SimpleBooleanProperty();
     private BooleanProperty startGame = new SimpleBooleanProperty();
@@ -26,7 +21,7 @@ public class ChatViewModel {
 
     /**
      * Sets and runs the current client, called from the View-Class
-     * param client The successfully constructed Client from Welcome-View
+     * param client The successfully constructed game.Client from Welcome-View
      *  clientHandler
      */
     public void setClient(Client client) {
@@ -40,7 +35,7 @@ public class ChatViewModel {
     }
 
     /**
-     * Get the current client. Accessed by the ChatView-Class to append incoming messages
+     * Get the current client. Accessed by the game.ChatView-Class to append incoming messages
      * @return The current client-object
      */
     public Client getClient() {
@@ -126,7 +121,7 @@ public class ChatViewModel {
 
     }
     /**
-     * set Ready for the Client
+     * set Ready for the game.Client
      */
     public final void startingGame() {
         //client.printMessage("funktioniert");
@@ -134,14 +129,14 @@ public class ChatViewModel {
     }
 
     /**
-     * set unready for Client
+     * set unready for game.Client
      */
     public final void exitingGame() {
         client.printMessage("set unready");
         client.setReady();
     }
     /**
-     * Fetch the current message from ChatView, pass it on to the server and
+     * Fetch the current message from game.ChatView, pass it on to the server and
      * empty the text field for the user.
      * Close the screen and shutdown client-side process if user enters "!BYE".
      */

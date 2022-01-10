@@ -1,4 +1,3 @@
-import game.Card.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;

@@ -40,7 +40,7 @@ Client client1;
 
 
     public void chooseUsername() throws IOException {
-        //Client client = new Client(getUsername());
+        //game.Client client = new game.Client(getUsername());
         //client1 = client;
     }
 
@@ -48,7 +48,7 @@ Client client1;
 
     public void takeUsername(Stage stage) throws IOException {
 
-        //Client client = new Client(getUsername());
+        //game.Client client = new game.Client(getUsername());
         //clientHandler.getUsername();
            stage.setTitle(getUsername());
 

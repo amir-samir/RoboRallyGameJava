@@ -5,7 +5,7 @@ public class TimerTest {
     @Test
     public void timerTest(){
 
-        //OurTimer ourTimer = new OurTimer(30);
+        //game.OurTimer ourTimer = new game.OurTimer(30);
 
     }
 }

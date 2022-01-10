@@ -85,9 +85,9 @@ public class ChatView {
         startGame.defaultButtonProperty().bindBidirectional(viewModel.startGameProperty());
         exitGame.defaultButtonProperty().bindBidirectional(viewModel.exitGameProperty());
         //createRoomGame.defaultButtonProperty().bindBidirectional(viewModel.createRoomGameProperty());
-        //ObservableList idsNamesList = (ObservableList) Client.ids;
+        //ObservableList idsNamesList = (ObservableList) game.Client.ids;
         //PrivateMessage.setItems(viewModel.getClient().usernamesGui);
-        // usernamesUpdated = Client.getUsernames();
+        // usernamesUpdated = game.Client.getUsernames();
         PrivateMessage.setItems(SaveClients.client.usernamesGui);
         privateMsgInput.textProperty().bindBidirectional(viewModel.privateMessageProperty());
 

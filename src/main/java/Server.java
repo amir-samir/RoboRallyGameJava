@@ -1,6 +1,5 @@
-import game.Messages.*;
-import game.Messages.Phase.StartingPointTaken;
-import game.Robot;
+import Messages.*;
+import Messages.Phase.StartingPointTaken;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -10,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Diese Klasse stellt den Server dar, auf welchem der Chat und das Spiel ausgeführt werden.
+ * Diese Klasse stellt den game.Server dar, auf welchem der Chat und das Spiel ausgeführt werden.
  * @author Luca, Dairen
  *
  */
@@ -37,19 +36,19 @@ public class Server {
     }
 
     /**
-     * Dies ist die Main-Methode. Sie instanziiert einen neuen Server und startet diesen.
+     * Dies ist die Main-Methode. Sie instanziiert einen neuen game.Server und startet diesen.
      * @param args Kommandozeilenparameter
      */
 
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(1523);
+            ServerSocket serverSocket = new ServerSocket(1524);
             Server server = new Server(serverSocket);
             server.protocol = "Version 1.0";
             server.startServer();
         } catch (Exception e){
             e.printStackTrace();
-            System.err.println("Fehler. Der Server konnte nicht gestartet werden.");
+            System.err.println("Fehler. Der game.Server konnte nicht gestartet werden.");
         }
     }
 
@@ -93,8 +92,8 @@ public class Server {
 
     /**
      * Diese Methode fügt neue Mitglieder des Chat-Raums in die HashMap aller Mitglieder hinzu.
-     * @param clientHandler Der ClientHandler, der in die HashMap eingefügt werden soll.
-     * @return Gibt zurück, ob der ClientHandler in die HashMap eingefügt werden konnte.
+     * @param clientHandler Der game.ClientHandler, der in die HashMap eingefügt werden soll.
+     * @return Gibt zurück, ob der game.ClientHandler in die HashMap eingefügt werden konnte.
      */
     public boolean addClient(ClientHandler clientHandler) {
         verbindungen.add(clientHandler);
@@ -225,7 +224,7 @@ public class Server {
     }
 
     /**
-     * Diese Methode startet den Server und baut die Verbindungen zu neuen Spielern auf.
+     * Diese Methode startet den game.Server und baut die Verbindungen zu neuen Spielern auf.
      * Hierfür werden neue Threads instanziiert, um mehrere Verbindungen gleichzeitig aufrechtzuerhalten.
      */
     public void startServer() {

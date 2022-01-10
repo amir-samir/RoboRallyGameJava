@@ -1,4 +1,7 @@
-import game.Messages.*;
+import Messages.Adopter;
+import Messages.Error1;
+import Messages.Message;
+import Messages.Welcome;
 
 import java.io.*;
 import java.net.Socket;
@@ -6,7 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Diese Klasse fungiert als Bindestück zwischen Client und Server. Sie sorgt für die richtige Verarbeitung der
+ * Diese Klasse fungiert als Bindestück zwischen game.Client und game.Server. Sie sorgt für die richtige Verarbeitung der
  * Nachrichten und Befehle, die von den Benutzern (Clients) gesendet werden.
  * @author Luca, Dairen
  */
@@ -30,7 +33,7 @@ public class ClientHandler implements Runnable {
      * Diese Methode stellt den Konstruktor dar. Sie initialisiert die globalen Variablen und fügt nach Überprüfung den
      * eingegebenen Namen als neuen Username hinzu.
      * @param socket Initialisiert die Globale Variable Socket.
-     * @param server Initialisiert die Globale Variable Server.
+     * @param server Initialisiert die Globale Variable game.Server.
      */
 
     public ClientHandler(Socket socket, Server server) {
@@ -136,7 +139,7 @@ public class ClientHandler implements Runnable {
     }
 
     /**
-     * Diese Methode schließt für ein ordnungsgemäßes Schließen der Verbindung zum Server alle zugehörigen Instanzen.
+     * Diese Methode schließt für ein ordnungsgemäßes Schließen der Verbindung zum game.Server alle zugehörigen Instanzen.
      * @param socket Der Socket, der geschlossen werden soll
      * @param bufferedReader Der BufferedReader, der geschlossen werden soll
      * @param bufferedWriter Der BufferedWriter, der geschlossen werden soll

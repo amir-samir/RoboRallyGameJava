@@ -5,10 +5,218 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_23_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_23_08__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/BackUpCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CardsForGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LeftTurnCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/CurrentCardObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Move1Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Move2Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Move3Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RightTurnCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SpamFolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Trojan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UTurnCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/VirusCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22,_22_17_[Changes]/Robot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22,_22_17_[Changes]/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22,_22_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_01_22__22_17__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_23_08__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChooseCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChooseCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FirstView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FirstView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GetID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OurTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OurTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SaveClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SaveClients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Antenna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Antenna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/EnergySpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EnergySpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Gear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Pit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Board/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/AgainCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AgainCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/BackUpCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Cards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/DamageCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DamageCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/LeftTurnCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move1Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move2Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Move3Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/PowerUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PowerUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/ProgrammingCardsForPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgrammingCardsForPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/RightTurnCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/SpamFolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Trojan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/UTurnCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/UpgradeCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UpgradeCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/VirusCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Card/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Worm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Maps/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/CheckPointReached.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckPointReached.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/Energy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/Energy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/GameFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/GameFinished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/Movement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/PlayerTurning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/PlayerTurning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/Reboot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/Reboot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Actions/RebootDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/RebootDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/ActivePhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ActivePhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Alive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Alive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/BackToJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/BackToJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/CardPlayed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/CardPlayed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/CurrentPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/CurrentPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Error1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Error1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/GameStarted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/GameStarted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/HelloClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/HelloClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/HelloServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/HelloServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/MapSelected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/MapSelected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/MessageBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/MessageBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/CardSelected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CardSelected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/CardsYouGotNow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CardsYouGotNow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/CurrentCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/NotYourCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/NotYourCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/ReplaceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ReplaceCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/SelectedCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/SelectedCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/SelectionFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/SelectionFinished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/SetStartingPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/SetStartingPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/ShuffleCoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ShuffleCoding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/StartingPointTaken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/StartingPointTaken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/TimerEnded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/TimerEnded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/TimerStarted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/TimerStarted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Phase/YourCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/YourCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerAdded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerAdded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerConfirmed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerConfirmed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerReady.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerReady.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PlayerValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PrivateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/PublicMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PublicMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/ReceivedChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ReceivedChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SelectMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SelectMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SendChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SendChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SetName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SetName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/SetStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SetStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Messages/Welcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Welcome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/TryingToMakeAMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TryingToMakeAMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JSON/jsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JSON/mapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TimerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TimerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FirstView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SaveClients.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SaveClients.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SignIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SignIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/Antenna.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/BoardElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/Empty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/RestartPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Board/StartPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/AgainCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/BackUpCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Cards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/DamageCards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/LeftTurnCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move1Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move2Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Move3Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/PowerUpCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/RightTurnCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Spam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Trojan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/UTurnCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/UpgradeCards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/VirusCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Card/Worm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Maps/DizzyHighway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Animation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/CheckPointReached.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Energy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/GameFinished.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Movement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/PlayerTurning.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/Reboot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Actions/RebootDirection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/ActivePhase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Adopter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Alive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/BackToJava.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/CardPlayed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/CurrentPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Error1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/GameStarted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/HelloClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/HelloServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/MapSelected.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/MessageBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CardSelected.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CardsYouGotNow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/CurrentCards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/NotYourCards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/ReplaceCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SelectedCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SelectionFinished.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/SetStartingPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/ShuffleCoding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/StartingPointTaken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/TimerEnded.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/TimerStarted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Phase/YourCards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PlayCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PlayerAdded.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PlayerConfirmed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PlayerReady.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PlayerStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PlayerValues.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PrivateMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/PublicMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/ReceivedChat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/SelectMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/SendChat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/SetName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/SetStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Messages/Welcome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Robot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/TryingToMakeAMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/jsonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JSON/mapTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,16 +282,18 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LuXusHD\IdeaProjects\Hauptprojekt\src\main\resources\fxml" />
+      <recent name="C:\Users\LuXusHD\IdeaProjects\Hauptprojekt\src\main\java" />
+      <recent name="C:\Users\LuXusHD\IdeaProjects\Hauptprojekt\src\main\java\game" />
       <recent name="$PROJECT_DIR$/src/main/resources/css" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -99,57 +309,23 @@
       </method>
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="16" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="innige-irrweg-hp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="jsonTest.YourCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="jsonTest.CurrentCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="innige-irrweg-hp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JSON.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="JSON" />
-      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
-      <option name="METHOD_NAME" value="YourCards" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="jsonTest.timerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="innige-irrweg-hp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JSON.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="JSON" />
-      <option name="MAIN_CLASS_NAME" value="JSON.jsonTest" />
-      <option name="METHOD_NAME" value="timerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mapTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="innige-irrweg-hp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JSON.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="JSON" />
-      <option name="MAIN_CLASS_NAME" value="JSON.mapTest" />
-      <option name="METHOD_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="jsonTest" />
+      <option name="METHOD_NAME" value="CurrentCardTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,17 +334,14 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
-      <item itemvalue="JUnit.mapTest.Test" />
-      <item itemvalue="JUnit.jsonTest.YourCards" />
-      <item itemvalue="JUnit.jsonTest.timerTest" />
+      <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.jsonTest.timerTest" />
-        <item itemvalue="JUnit.jsonTest.YourCards" />
-        <item itemvalue="JUnit.mapTest.Test" />
+        <item itemvalue="Application.GetID" />
+        <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +359,8 @@
       <workItem from="1641471393977" duration="3082000" />
       <workItem from="1641496660465" duration="6722000" />
       <workItem from="1641761985433" duration="196000" />
-      <workItem from="1641762196434" duration="746000" />
+      <workItem from="1641762196434" duration="9968000" />
+      <workItem from="1641772255784" duration="1918000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -426,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641761960368</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Bugfix">
+      <created>1641762957823</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1641762957823</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,21 +660,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
-          <line>263</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
-          <line>264</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/JSON/jsonTest.java</url>
-          <line>265</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
