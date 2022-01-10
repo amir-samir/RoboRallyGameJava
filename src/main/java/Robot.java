@@ -74,9 +74,12 @@ public class Robot {
     }
 
     public void fillRegisters(){
-        for (int i = 0; i < this.handCards.size(); i++){
-            Cards card = handCards.remove(0);
-            this.deck.getDiscard().add(card);
+        int zähler = this.handCards.size();
+        for (int i = 0; i < zähler; i++){
+            if (handCards.get(0) != null) {
+                Cards card = handCards.remove(0);
+                this.deck.getDiscard().add(card);
+            }
         }
         for (int i = 0; i < register.length; i++){
             if (register[i] == null){

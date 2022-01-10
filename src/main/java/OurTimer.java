@@ -13,7 +13,7 @@ public class OurTimer {
                 countdown = countdown - 5;
                 if (countdown < 0){
                     game.timerEnded();
-                    //scheduler.shutdown();
+                    scheduler.shutdown();
                 }
             }
         };

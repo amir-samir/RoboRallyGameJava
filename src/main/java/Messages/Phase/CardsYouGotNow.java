@@ -7,6 +7,6 @@ public class CardsYouGotNow extends Message {
 
     public CardsYouGotNow(String[] cards){
         setMessageType("CardsYouGotNow");
-        setMessageBody(new MessageBody(cards));
+        setMessageBody(new MessageBody(new Object[]{cards}));
     }
 }

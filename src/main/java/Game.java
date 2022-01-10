@@ -229,30 +229,42 @@ public class Game {
             zuLangsameSpieler[i] = schlafmützen.get(i);
         }
 
+
         TimerEnded timerEnded = new TimerEnded(zuLangsameSpieler);
         timerEnded.getMessageBody().setKeys(new String[]{"clientIDs"});
         SERVER.sendMessageForAllUsers(timerEnded);
         System.out.println(Adopter.javabeanToJson(timerEnded));
 
         fillRegisters(zuLangsameSpieler);
+
         activePhase = 3;
         startGame();
     }
 
     public void fillRegisters(Integer[] integers) {
         for (Integer integer : integers) {
-            for (int i = 0; i < figuren.length; i++) {
-                if (figuren[i] != null)
-                    if (figuren[i].getGamerID() == (int) integer) {
-                        figuren[i].fillRegisters();
-                        String[] karten = new String[5];
-                        for (int u = 0; u < karten.length; i++) {
-                            karten[u] = figuren[i].getRegister()[u].getName();
+            if (integer != null) {
+                System.out.println("Pos 1");
+                for (int i = 0; i < figuren.length; i++) {
+                    System.out.println("Pos 2");
+                    if (figuren[i] != null) {
+                        if (figuren[i].getGamerID() == integer) {
+                            System.out.println("Pos 3");
+                            figuren[i].fillRegisters();
+                            System.out.println("Pos 4");
+                            String[] karten = new String[5];
+                            for (int u = 0; u < karten.length; u++) {
+                                karten[u] = figuren[i].getRegister()[u].getName();
+                                System.out.println("Pos 5");
+                            }
+                            System.out.println("Pos 6");
+                            CardsYouGotNow cardsYouGotNow = new CardsYouGotNow(karten);
+                            cardsYouGotNow.getMessageBody().setKeys(new String[]{"cards"});
+                            System.out.println(Adopter.javabeanToJson(cardsYouGotNow));
+                            SERVER.sendMessageForSingleClient(cardsYouGotNow, users.get(integer));
                         }
-                        CardsYouGotNow cardsYouGotNow = new CardsYouGotNow(karten);
-                        cardsYouGotNow.getMessageBody().setKeys(new String[]{"cards"});
-                        SERVER.sendMessageForSingleClient(cardsYouGotNow, users.get(integer));
                     }
+                }
             }
         }
     }
