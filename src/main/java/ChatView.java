@@ -146,7 +146,9 @@ public class ChatView {
         }
     }
 
-
+    public void CallSelectMap() throws IOException {
+        selectMap();
+    }
     public void selectMap() throws IOException {
         Stage stage1 = new Stage();
         StageSaver.getStageSaver().setStageSaver(stage1);
