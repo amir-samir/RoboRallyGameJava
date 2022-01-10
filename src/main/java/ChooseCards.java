@@ -2,12 +2,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import lombok.ToString;
 
+import java.awt.*;
 import java.net.URL;
+import java.sql.Time;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class ChooseCards implements Initializable {
     int RegisterPlatz = -1;
+    @FXML
+    Label timelabel;
     @FXML
     ImageView Card1;
     @FXML
@@ -86,6 +94,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(0).getName());
         }
         else {
@@ -95,7 +104,8 @@ public class ChooseCards implements Initializable {
     public void ChooseCard2(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
-            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatz++);
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(1).getName());
         }
         else {
@@ -106,6 +116,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(2).getName());
         }
         else {
@@ -116,6 +127,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(3).getName());
         }
         else {
@@ -126,6 +138,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(4).getName());
         }
         else {
@@ -136,6 +149,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(5).getName());
         }
         else {
@@ -146,6 +160,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(6).getName());
         }
         else {
@@ -156,6 +171,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(7).getName());
         }
         else {
@@ -166,11 +182,29 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(), RegisterPlatz);
+            Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(8).getName());
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
+    }
+
+    public void OurTimer(){
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        Runnable runnable = new Runnable() {
+            int countdown = 30;
+            @Override
+            public void run() {
+                timelabel.setText(String.valueOf(countdown));
+                countdown = countdown - 1;
+                if (countdown < 0){
+
+                    countdown = 0;
+                }
+            }
+        };
+        scheduler.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.SECONDS);
     }
 
 }

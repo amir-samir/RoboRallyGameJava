@@ -1,10 +1,19 @@
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image ;
+import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -490,7 +499,7 @@ public class MaybeMapsController implements Initializable {
     public void ChangeImageTest(){
         Card1.setImage(image4);
     }
-    //TODO: Method for inserting ein Figure auf dem Map, wird von game.Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
+    //TODO: Method for inserting ein Figure auf dem Map, wird von Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
 
     public void setFigureOnMap(int x, int y){
         gridpane1.add(new ImageView(figureTest),y,x);
@@ -609,25 +618,46 @@ public class MaybeMapsController implements Initializable {
             case "Again":
                 return Move1;
             default:
-                return Move1;
+                return Karte;
         }
     }
 
         public void Choosecard1(){
            Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+           SaveClients.client.setCardOfGui("");
         }
         public void ChooseCard2(){
             Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            SaveClients.client.setCardOfGui("");
         }
         public void ChooseCard3(){
             Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            SaveClients.client.setCardOfGui("");
         }
         public void ChooseCard4(){
             Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            SaveClients.client.setCardOfGui("");
         }
         public void ChooseCard5(){
             Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            SaveClients.client.setCardOfGui("");
         }
+    public void RunMapNew() throws Exception{
+        Stage stage = new Stage();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/MaybeMap.fxml"));
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.show();
+
+        //Close if Bye
+        stage.setOnCloseRequest(e -> {
+            Platform.exit();
+            //clientHandler.writer.equals("bye");
+            stage.close();
+            System.exit(0);
+        });
+    }
 
 
 
