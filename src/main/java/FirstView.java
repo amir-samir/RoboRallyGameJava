@@ -270,8 +270,8 @@ public class FirstView implements Initializable {
 
    public void setClient(Client client){
       this.client = client;
-      this.clientThread = new Thread(client);
-      clientThread.start();
+      //this.clientThread = new Thread(client);
+      //clientThread.start();
    }
 
 

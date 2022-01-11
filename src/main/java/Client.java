@@ -23,6 +23,17 @@ public class Client implements Runnable {
     private int ID;
     private boolean ready = false;
     private int activePlayer;
+    private static Client client;
+    private static Thread thread;
+    static {
+        try {
+            client = new Client();
+            thread = new Thread(client);
+            thread.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private ArrayList<BoardElement>[][] map;
 
@@ -43,6 +54,7 @@ public class Client implements Runnable {
     public int figureForGui;
     public String CardOfGui = "SomeCard";
 
+
     /**
      * A Constructor that builds a connection between the client and the server and asks the server if
      * the username is not taken.
@@ -57,7 +69,12 @@ public class Client implements Runnable {
         chatMessages = FXCollections.observableArrayList();
         isAi = false;
     }
-
+    public static Client getClient(){
+        return client;
+    }
+    public static Thread getThread(){
+        return thread;
+    }
     public void setReady(){
         if(ready){
             ready = false;
@@ -66,7 +83,9 @@ public class Client implements Runnable {
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         } else if (!ready){
             ready = true;
-            player.get(ID).ready = true;
+            if (player.get(ID) != null) {
+                player.get(ID).ready = true;
+            }
             SetStatus setStatus = new SetStatus(true);
             bufferedWriter.println(Adopter.javabeanToJson(setStatus));
         }
@@ -102,7 +121,7 @@ public class Client implements Runnable {
     }
 
     public synchronized  ObservableList getUsernames(){
-       return usernamesGui;
+        return usernamesGui;
     }
 
     public Integer getFigur(){
@@ -114,7 +133,7 @@ public class Client implements Runnable {
         String[] keys = {"name", "figure"};
         message.getMessageBody().setKeys(keys);
         bufferedWriter.println(Adopter.javabeanToJson(message));
-       Platform.runLater(new Runnable(){
+        Platform.runLater(new Runnable(){
 
             @Override
             public void run() {
@@ -297,7 +316,15 @@ public class Client implements Runnable {
                         toSend = player.get(clientID).name + " ist nicht mehr bereit.";
                     }
                 } else if (message.getMessageType().equals("SelectMap")){
-                    Platform.runLater(new Runnable(){
+                    Platform.runLater(() -> {
+                        try {
+                            getChatView().selectMap();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+
+                    /*Platform.runLater(new Runnable(){
 
                         @Override
                         public void run() {
@@ -307,7 +334,7 @@ public class Client implements Runnable {
                                 e.printStackTrace();
                             }
                         }
-                    });
+                    });*/
 
 
                     toSend = "Bitte wähle die Map aus.";
@@ -324,6 +351,13 @@ public class Client implements Runnable {
                         //UpgradePhase? GUI
                         toSend = "Die UpgradePhase läuft aktuell.";
                     } else if (activePhase == 2){
+                        Platform.runLater(() -> {
+                            try {
+                                getChatView().ChooseCard();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
                         //ProgrammierPhase? GUI?
                         toSend = "Die Programmierphase läuft aktuell.";
                     } else if (activePhase == 3){
@@ -342,7 +376,15 @@ public class Client implements Runnable {
                     }
                 } else if (message.getMessageType().equals("GameStarted")){
                     //HIER
-                    Platform.runLater(new Runnable() {
+                    Platform.runLater(() -> {
+                        try {
+                            selectMapView.RunMap();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+
+                   /* Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
                             try {
@@ -351,7 +393,7 @@ public class Client implements Runnable {
                                 e.printStackTrace();
                             }
                         }
-                    });
+                    });*/
                     toSend = "Das Spiel wurde jetzt gestartet.";
                 }
                 else if (message.getMessageType().equals("StartingPointTaken")){
@@ -360,16 +402,16 @@ public class Client implements Runnable {
                     int clientID = (int) (double) message.getMessageBody().getContent()[2];
                     updateFigure(x, y, clientID);
 
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                for (int i = 0; i < figuren.length; i++) {
-                                    if (figuren[i] != null && figuren[i].getX() != -1) {
-                                        getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
-                                    }
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            for (int i = 0; i < figuren.length; i++) {
+                                if (figuren[i] != null && figuren[i].getX() != -1) {
+                                    getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
                                 }
                             }
-                        });
+                        }
+                    });
                     toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
                 } else if (message.getMessageType().equals("YourCards")){
                     ArrayList<String> cards = (ArrayList<String>) message.getMessageBody().getContent()[0];
@@ -412,6 +454,22 @@ public class Client implements Runnable {
                     Robot robot = figuren[player.get(ID).figur];
                     robot.setX(x);
                     robot.setY(y);
+                    Platform.runLater(() -> {
+                        for (int i = 0; i < figuren.length; i++) {
+                            if (figuren[i] != null && figuren[i].getX() != -1) {
+                                getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                        }
+                    }});
+                    /*Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            for (int i = 0; i < figuren.length; i++) {
+                                if (figuren[i] != null && figuren[i].getX() != -1) {
+                                    getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                                }
+                            }
+                        }
+                    });*/
                     toSend = player.get(ID).name + " (" + ID + ") hat seine Position verändert";
                 } else if (message.getMessageType().equals("PlayerTurning")){
                     int ID = (int) (double) message.getMessageBody().getContent()[0];
@@ -430,8 +488,8 @@ public class Client implements Runnable {
                             break;
                         case "left":
                             if (direction.equals("clockwise")){
-                            robot.setDirection("top");
-                        } else robot.setDirection("bottom");
+                                robot.setDirection("top");
+                            } else robot.setDirection("bottom");
                             break;
                         case "right":
                             if (direction.equals("clockwise")){
@@ -487,7 +545,7 @@ public class Client implements Runnable {
     }
 
     public ArrayList<Cards> getHandcards(){
-       return figuren[player.get(ID).figur].getHandCards();
+        return figuren[player.get(ID).figur].getHandCards();
     }
 
 }

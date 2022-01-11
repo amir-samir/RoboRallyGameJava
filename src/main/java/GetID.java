@@ -7,12 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class GetID extends Application {
     private Thread clientThread;
 
     public Client client2;
     public Stage stageGetID;
+
 
 
 
@@ -24,10 +27,10 @@ public class GetID extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            Client client = new Client();
-            this.clientThread = new Thread(client);
-            clientThread.start();
-            SaveClients.client = client;
+            //Client client = new Client();
+            //this.clientThread = new Thread(client);
+            //clientThread.start();
+            SaveClients.client = Client.getClient();
             stage.setTitle("Get Id");
             StageSaver.getStageSaver().setStageSaver(stage);
             Parent getID = FXMLLoader.load(getClass().getResource("fxml/GetID.fxml"));

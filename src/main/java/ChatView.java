@@ -67,13 +67,16 @@ public class ChatView {
     @FXML
     Image testImage = new Image("assets/LostBearingMap.png");
 
+    Client clientnew = Client.getClient();
+
     public ChatView(){
-        Client.setChatViewModel(this);
+        clientnew.setChatViewModel(this);
     }
     
     
     @FXML
     void initialize() {
+        FigureChat.setImage(testImage);
         writeField.setOnKeyPressed( event -> {
             if( event.getCode() == KeyCode.ENTER ) {
                 viewModel.sendMessage();
@@ -88,7 +91,7 @@ public class ChatView {
         //ObservableList idsNamesList = (ObservableList) game.Client.ids;
         //PrivateMessage.setItems(viewModel.getClient().usernamesGui);
         // usernamesUpdated = game.Client.getUsernames();
-        PrivateMessage.setItems(SaveClients.client.usernamesGui);
+        PrivateMessage.setItems(clientnew.usernamesGui);
         privateMsgInput.textProperty().bindBidirectional(viewModel.privateMessageProperty());
 
         //PrivateMessage.getSelectionModel().selectFirst();
@@ -100,7 +103,7 @@ public class ChatView {
         String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
         String msg = privateMsgInput.getText();
 
-        SaveClients.client.singleMessage(SaveClients.client.getID(), msg, selectedUser);
+        clientnew.singleMessage(clientnew.getID(), msg, selectedUser);
     }
     public void comboAction(ActionEvent event) {
         String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
@@ -110,7 +113,7 @@ public class ChatView {
     public void joinGame() {
         viewModel.joiningGame();
         joinGame.setDisable(true);
-        System.out.println(SaveClients.client.usernamesGui);
+        System.out.println(clientnew.usernamesGui);
 
 
     }
@@ -169,9 +172,9 @@ public class ChatView {
 
     public void setClient() {
 
-        viewModel.setClient(SaveClients.client);
-        chatBox.setItems(SaveClients.client.chatMessages);
-        PrivateMessage.setItems(SaveClients.client.usernamesGui);
+        viewModel.setClient(clientnew);
+        chatBox.setItems(clientnew.chatMessages);
+        PrivateMessage.setItems(clientnew.usernamesGui);
 
     }
     public void setScheissImage(){

@@ -26,8 +26,8 @@ public class ChatViewModel {
      */
     public void setClient(Client client) {
         this.client = client;
-        this.clientThread = new Thread(client);
-        clientThread.start();
+        //this.clientThread = new Thread(client);
+        //clientThread.start();
     }
 
     public void chooseBotClient() {
@@ -125,7 +125,7 @@ public class ChatViewModel {
      */
     public final void startingGame() {
         //client.printMessage("funktioniert");
-        SaveClients.client.setReady();
+        client.setReady();
     }
 
     /**
@@ -133,7 +133,7 @@ public class ChatViewModel {
      */
     public final void exitingGame() {
         client.printMessage("set unready");
-        client.setReady();
+        //client.setReady();
     }
     /**
      * Fetch the current message from game.ChatView, pass it on to the server and
