@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Antenna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Antenna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EnergySpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EnergySpace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Gear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move1Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +86,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -145,8 +125,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server" />
         <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
