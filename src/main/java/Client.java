@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public class Client implements Runnable {
@@ -457,6 +458,7 @@ public class Client implements Runnable {
                     Robot robot = figuren[player.get(ID).figur];
                     robot.setX(x);
                     robot.setY(y);
+                    TimeUnit. SECONDS. sleep(3);
                     Platform.runLater(() -> {
                         getMaybeMapsController().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
@@ -491,6 +493,7 @@ public class Client implements Runnable {
                             } else robot.setDirection("top");
                             break;
                     }
+                    TimeUnit. SECONDS. sleep(3);
                     Platform.runLater(() -> {
                         getMaybeMapsController().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
@@ -512,6 +515,8 @@ public class Client implements Runnable {
             } catch (IOException e) {
                 e.printStackTrace();
                 break;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
