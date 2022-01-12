@@ -230,6 +230,7 @@ public class Game {
         activePhase = 2;
         activeRegister = 0;
         startGame();
+
     }
 
     public void currentCardVerschicken(){
