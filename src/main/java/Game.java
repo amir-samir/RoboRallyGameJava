@@ -108,6 +108,7 @@ public class Game {
                 card.effect(robot, SERVER);
             }
             aktiviereMapElemente();
+            activeRegister += 1;
         }
         beendeAktivierungsPhase();
     }
@@ -215,6 +216,7 @@ public class Game {
             }
         }
         activePhase = 2;
+        activeRegister = 0;
         startGame();
     }
 

@@ -1,7 +1,8 @@
 public class RestartPoint extends BoardElement {
 
-    public RestartPoint(){
+    public RestartPoint(String isOnBoard){
         this.setType("RestartPoint");
+        this.setIsOnBoard(isOnBoard);
     }
 
     @Override
