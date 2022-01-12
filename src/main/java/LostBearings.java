@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class LostBearings {
+public class LostBearings extends Board{
     private String name = "DeathTrap";
     private int width = 10;
     private int height = 13;

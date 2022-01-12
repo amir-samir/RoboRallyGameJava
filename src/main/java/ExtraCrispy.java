@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ExtraCrispy {
+public class ExtraCrispy extends Board{
     private String name = "ExtraCrispy";
     private int width = 10;
     private int height = 13;

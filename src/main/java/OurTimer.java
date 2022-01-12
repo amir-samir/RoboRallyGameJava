@@ -9,7 +9,6 @@ public class OurTimer {
             int countdown = dauer;
             @Override
             public void run() {
-                System.out.println(countdown);
                 countdown = countdown - 5;
                 if (countdown < 0){
                     game.timerEnded();

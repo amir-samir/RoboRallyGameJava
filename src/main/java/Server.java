@@ -17,12 +17,14 @@ import java.util.List;
 public class Server {
 
     public static int laufendeID = 2000;
+    public static boolean mapSelected = false;
+    public static ClientHandler clientWhoSelectedMap;
     public List<ClientHandler> verbindungen = new ArrayList<ClientHandler>();
 
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public Robot[] figuren = new Robot[6];
-    public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "Death Trap"};
+    public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "DeathTrap"};
     String activeMap = null;
     Game game;
 
@@ -140,20 +142,35 @@ public class Server {
     }
 
     public void handleReady(ClientHandler cH){
-        int countReady = 0;
+       /* int countReady = 0;
         for (ClientHandler clientHandler: users.values()){
             if(clientHandler.isReady){
                 countReady += 1;
             }
         }
-
-        if (countReady == 1){
+        */
+        /*if (countReady == 1){
             if (cH.isReady){
                 SelectMap selectMap = new SelectMap(availableMaps);
                 String[] keys = {"availableMaps"};
                 selectMap.getMessageBody().setKeys(keys);
                 cH.writer.println(Adopter.javabeanToJson(selectMap));
                 System.out.println(Adopter.javabeanToJson(selectMap));
+            }
+        }
+         */
+        if (cH.isReady) {
+            if (!this.mapSelected && !cH.isAi) {
+                clientWhoSelectedMap = cH;
+                SelectMap selectMap = new SelectMap(availableMaps);
+                String[] keys = {"availableMaps"};
+                selectMap.getMessageBody().setKeys(keys);
+                cH.writer.println(Adopter.javabeanToJson(selectMap));
+            }
+        } else {
+            if (clientWhoSelectedMap.equals(cH)){
+                mapSelected = false;
+                clientWhoSelectedMap = null;
             }
         }
 
@@ -176,8 +193,13 @@ public class Server {
         String[] key = {"map"};
         mapToSend.getMessageBody().setKeys(key);
         activeMap = map;
+        mapSelected = true;
         for (ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(Adopter.javabeanToJson(mapToSend));
+        }
+        if (readyToStart()){
+            createGame();
+            generateMap();
         }
     }
 
@@ -200,8 +222,7 @@ public class Server {
                 return false;
             }
         }
-        if(count > 1){
-            System.out.println("Jetzt kann es losgehen");
+        if(count > 1 && mapSelected){
             return true;
         } else {
             return false;

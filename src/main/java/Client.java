@@ -200,11 +200,14 @@ public class Client implements Runnable {
     }
 
     public void updateFigure(int x, int y, int ID){
-        for (Robot robot: figuren){
+        for (Robot robot: figuren) {
             if (robot != null) {
                 if (robot.getGamerID() == ID) {
                     robot.setX(x);
                     robot.setY(y);
+                    if (selectedMap.equals("DeathTrap")) {
+                        robot.setDirection("left");
+                    } else robot.setDirection("right");
                 }
             }
         }
@@ -457,7 +460,7 @@ public class Client implements Runnable {
                     Platform.runLater(() -> {
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1) {
-                                getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                                getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                         }
                     }});
                     /*Platform.runLater(new Runnable() {

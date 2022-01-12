@@ -107,6 +107,13 @@ public class Robot {
         }
     }
 
+    public void clearHandcards(){
+        int zähler = handCards.size();
+        for (int i = 0; i < handCards.size(); i++){
+            this.deck.getDiscard().add(handCards.remove(0));
+        }
+    }
+
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
     public void forward(int step) {

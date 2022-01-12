@@ -19,7 +19,7 @@ public class Game {
     Robot[] figuren;
     boolean timerActivated;
 
-    Board board = new DizzyHighway();
+    Board board;
 
 
     private CardsForGame cardsForGame;
@@ -37,12 +37,21 @@ public class Game {
         this.timerActivated = false;
         this.cardsForGame = new CardsForGame();
 
-        initializeDeck();
+        switch (activeMap){
+            case "DizzyHighway":
+                board = new DizzyHighway();
+                break;
+            case "LostBearings":
+                board = new LostBearings();
+                break;
+            case "Extra Crispy":
+                board = new ExtraCrispy();
+                break;
+            case "DeathTrap":
+                board = new DeathTrap();
+                break;
+        }
         startGame();
-    }
-
-    public void initializeDeck(){
-
     }
 
     public void startGame(){
@@ -159,16 +168,6 @@ public class Game {
         activateBoardLaser();
         activateRobotLaser();
         activateCheckpoint();
-        while (i < board.getMap().length) {
-            int u = 0;
-            while (u < board.getMap()[i].length) {
-                for (BoardElement list: board.getMap()[i][u]){
-
-                }
-                u++;
-            }
-            i++;
-        }
     }
 
     public void activateBlueConveyor(){
@@ -186,7 +185,17 @@ public class Game {
     }
 
     public void activateGreenConveyor(){
-
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("ConveyorBelt")){
+                        if (list.getSpeed() == 1){
+                            list.effect(robot, SERVER);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void activatePushPanel(){
@@ -213,8 +222,11 @@ public class Game {
         for (Robot robot: figuren){
             if (robot != null){
                 robot.clearRegister();
+                robot.clearHandcards();
+                robot.setAbleToFillRegisters(true);
             }
         }
+        timerActivated = false;
         activePhase = 2;
         activeRegister = 0;
         startGame();
@@ -314,15 +326,10 @@ public class Game {
         for (int i = 0; i < zuLangsameSpieler.length; i++){
             zuLangsameSpieler[i] = schlafmützen.get(i);
         }
-
-
         TimerEnded timerEnded = new TimerEnded(zuLangsameSpieler);
         timerEnded.getMessageBody().setKeys(new String[]{"clientIDs"});
         SERVER.sendMessageForAllUsers(timerEnded);
-        System.out.println(Adopter.javabeanToJson(timerEnded));
-
         fillRegisters(zuLangsameSpieler);
-
         activePhase = 3;
         startGame();
     }
@@ -330,20 +337,14 @@ public class Game {
     public void fillRegisters(Integer[] integers) {
         for (Integer integer : integers) {
             if (integer != null) {
-                System.out.println("Pos 1");
                 for (int i = 0; i < figuren.length; i++) {
-                    System.out.println("Pos 2");
                     if (figuren[i] != null) {
                         if (figuren[i].getGamerID() == integer) {
-                            System.out.println("Pos 3");
                             figuren[i].fillRegisters();
-                            System.out.println("Pos 4");
                             String[] karten = new String[5];
                             for (int u = 0; u < karten.length; u++) {
                                 karten[u] = figuren[i].getRegister()[u].getName();
-                                System.out.println("Pos 5");
                             }
-                            System.out.println("Pos 6");
                             CardsYouGotNow cardsYouGotNow = new CardsYouGotNow(karten);
                             cardsYouGotNow.getMessageBody().setKeys(new String[]{"cards"});
                             System.out.println(Adopter.javabeanToJson(cardsYouGotNow));

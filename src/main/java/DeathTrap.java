@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class DeathTrap {
+public class DeathTrap extends Board {
     private String name = "DeathTrap";
     private int width = 10;
     private int height = 13;
