@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LostBearings.java" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Gui Bug fix">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_22__21_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_22__21_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_12_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_12_22__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_13_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_13_49__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MaybeMapsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MaybeMapsController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -32,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Unbekannt" />
+        <entry key="$PROJECT_DIR$" value="UpdateingGui2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -99,7 +103,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,7 +165,7 @@
       <workItem from="1641780578803" duration="385000" />
       <workItem from="1641787298540" duration="4165000" />
       <workItem from="1641819296248" duration="10923000" />
-      <workItem from="1641851286675" duration="11154000" />
+      <workItem from="1641851286675" duration="36344000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -408,14 +412,42 @@
       <option name="project" value="LOCAL" />
       <updated>1641762957823</updated>
     </task>
-    <task id="LOCAL-00036" summary="Bugfix">
-      <created>1641991945998</created>
+    <task id="LOCAL-00036" summary="Threads(Deadlocks/Race) Bugs fixed">
+      <created>1641905512881</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1641991945998</updated>
+      <updated>1641905512882</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Threads(Deadlocks/Race) Bugs fixed">
+      <created>1641905587151</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1641905587151</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Threads(Deadlocks/Race) Bugs fixed">
+      <created>1641906928111</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1641906928111</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Gui Bug fix">
+      <created>1641992607592</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1641992607592</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Gui Bug fix">
+      <created>1641993139482</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1641993139482</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,8 +466,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt" />
-    <MESSAGE value="@yilu und chen Adopter" />
     <MESSAGE value="@yilu und dairen Adopte, Message" />
     <MESSAGE value="q" />
     <MESSAGE value="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements" />
@@ -459,7 +489,9 @@
     <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Threads(Deadlocks/Race) Bugs fixed" />
+    <MESSAGE value="Gui Bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gui Bug fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
