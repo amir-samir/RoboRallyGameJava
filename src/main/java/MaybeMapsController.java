@@ -659,6 +659,14 @@ public class MaybeMapsController implements Initializable {
         });
     }
 
+    public void resetRegisterCard(){
+        Card1.setImage(Karte);
+        Card2.setImage(Karte);
+        Card3.setImage(Karte);
+        Card4.setImage(Karte);
+        Card5.setImage(Karte);
+    }
+
 
 
 

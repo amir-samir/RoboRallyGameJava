@@ -458,7 +458,7 @@ public class Client implements Runnable {
                     Robot robot = figuren[player.get(ID).figur];
                     robot.setX(x);
                     robot.setY(y);
-                    TimeUnit. SECONDS. sleep(3);
+                    TimeUnit. SECONDS.sleep(3);
                     Platform.runLater(() -> {
                         getMaybeMapsController().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
