@@ -1,5 +1,4 @@
 import Messages.*;
-import Messages.Phase.CurrentCards;
 import Messages.Phase.YourCards;
 import org.junit.Test;
 
@@ -219,10 +218,28 @@ public class jsonTest {
                     "\"isOnBoard\":\"4A\",\"orientations\":[\"top\",\"right\"]},{\"type\":\"Laser\"," +
                     "\"isOnBoard\":\"4A\",\"orientations\":[\"bottom\"],\"count\":2}],[null]]]}}";
         Message m = Adopter.getMessage(map);
-       // GameStarted gs = new GameStarted(map);
+        // GameStarted gs = new GameStarted(map);
 
         System.out.println(m.getMessageBody().getContent());
         //GameStarted message = new GameStarted();
+    }
+
+
+
+
+
+    @Test
+    public void currentcard() {
+        String currentCard = "{ \"messageType\": \"CurrentCards\",\"messageBody\": {\"activeCards\": [ { \"clientID\": 1, \"card\": \"MoveI\"}, " +
+                "{ \"clientID\": 2, \"card\": \"Spam\"}]}}";
+        Message mes = Adopter.getMessage(currentCard);
+        ActiveCards card = new ActiveCards(1, "MoveII");
+        ActiveCards card2 = new ActiveCards(4, "Spam");
+        ActiveCards[] cards = {card, card2};
+
+        CurrentCards currentCards = new CurrentCards(cards);
+        System.out.println(Adopter.javabeanToJson(currentCards));
+
     }
 
     @Test
