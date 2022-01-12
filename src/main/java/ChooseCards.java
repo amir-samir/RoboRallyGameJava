@@ -108,7 +108,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card2.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(1).getName());
             Card2.setDisable(true);
         }
@@ -120,7 +120,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card3.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(2).getName());
             Card3.setDisable(true);
         }
@@ -132,7 +132,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card4.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(3).getName());
             Card4.setDisable(true);
         }
@@ -144,7 +144,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card5.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(4).getName());
             Card5.setDisable(true);
         }
@@ -156,7 +156,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card6.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(5).getName());
             Card6.setDisable(true);
         }
@@ -168,7 +168,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card7.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(6).getName());
             Card7.setDisable(true);
         }
@@ -180,7 +180,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card8.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(7).getName());
             Card8.setDisable(true);
         }
@@ -192,7 +192,7 @@ public class ChooseCards implements Initializable {
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+            Card9.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(8).getName());
             Card9.setDisable(true);
         }

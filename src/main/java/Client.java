@@ -357,6 +357,7 @@ public class Client implements Runnable {
                     } else if (activePhase == 2){
                         Platform.runLater(() -> {
                             try {
+                                getMaybeMapsController().resetRegisterCard();
                                 getChatView().ChooseCard();
                             } catch (Exception e) {
                                 e.printStackTrace();
