@@ -57,7 +57,7 @@ Client client1;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/ChatView.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
-        scene.getStylesheets().add("fxml/SignInStyle.css");
+        //scene.getStylesheets().add("fxml/SignInStyle.css");
 
         ChatView chatView = loader.getController();
         chatView.setClient();
@@ -65,10 +65,10 @@ Client client1;
 
         //Close if Bye
         stage.setOnCloseRequest(e -> {
-            Platform.exit();
+            //Platform.exit();
             //clientHandler.writer.equals("bye");
             stage.close();
-            System.exit(0);
+            //System.exit(0);
         });
     }
 }

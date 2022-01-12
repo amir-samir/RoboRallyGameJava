@@ -14,13 +14,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 
 public class ChatView {
-
+    @FXML
+    Pane panetry;
     // Chat
     @FXML
     private AnchorPane rootPaneChat;
@@ -86,7 +88,6 @@ public class ChatView {
         sendButton.defaultButtonProperty().bindBidirectional(viewModel.sendButtonProperty());
         //joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
         startGame.defaultButtonProperty().bindBidirectional(viewModel.startGameProperty());
-        exitGame.defaultButtonProperty().bindBidirectional(viewModel.exitGameProperty());
         //createRoomGame.defaultButtonProperty().bindBidirectional(viewModel.createRoomGameProperty());
         //ObservableList idsNamesList = (ObservableList) game.Client.ids;
         //PrivateMessage.setItems(viewModel.getClient().usernamesGui);
@@ -177,9 +178,6 @@ public class ChatView {
         PrivateMessage.setItems(clientnew.usernamesGui);
 
     }
-    public void setScheissImage(){
-        FigureChat.setImage(figure2);
-    }
     public void setImageFromFigur(int figure){
         FigureChat.setImage(getImageForChatFigure(figure));
     }
@@ -203,5 +201,20 @@ public class ChatView {
 
 
     }
+    public void besmella() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Sign In");
+        Parent signIn = FXMLLoader.load(getClass().getResource("fxml/AllInOne.fxml"));
+        Scene signInScene = new Scene(signIn);
+        stage.setScene(signInScene);
+        stage.show();
+        stage.setOnCloseRequest(e -> Platform.exit());
+    }
+
+    public ListView<String> getChatBox(){
+        return chatBox;
+    }
+
+
 
 }

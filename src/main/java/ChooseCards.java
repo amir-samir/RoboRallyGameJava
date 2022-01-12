@@ -36,12 +36,14 @@ public class ChooseCards implements Initializable {
     ImageView Card9;
    @FXML
     Image Move1 = new Image("assets/Move1.png");
-    Image Move2 = new Image("assets/Move2.jpg");
-    Image Move3 = new Image("assets/Move3.png");
-    Image PowerUp = new Image("assets/PowerUp.png");
-    Image RightTurn = new Image("assets/RightTurn.png");
-    Image UTurn = new Image("assets/UTurn.png");
-    Image LeftTurn = new Image ("assets/LeftTurn.png");
+    Image Move2 = new Image("assets/Move2Blau.png");
+    Image Move3 = new Image("assets/Move3Blau.png");
+    Image PowerUp = new Image("assets/PowerUpBlau.png");
+    Image RightTurn = new Image("assets/RightTurnBlau.png");
+    Image UTurn = new Image("assets/UTurnBlau.png");
+    Image LeftTurn = new Image ("assets/LeftTurnBlau.png");
+    Image BackUp = new Image("assets/MoveBack.png");
+    Image Again = new Image("assets/Again.png");
 
 
 
@@ -79,12 +81,12 @@ public class ChooseCards implements Initializable {
                 return UTurn;
 
             case "BackUp":
-                return Move1;
+                return BackUp;
             case "PowerUp":
                 return PowerUp;
 
             case "Again":
-                return Move1;
+                return Again;
             default:
                 return Move1;
         }

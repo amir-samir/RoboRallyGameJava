@@ -185,12 +185,14 @@ public class MaybeMapsController implements Initializable {
     Image Karte = new Image("assets/Karte.png");
     @FXML
     Image Move1 = new Image("assets/Move1.png");
-    Image Move2 = new Image("assets/Move2.jpg");
-    Image Move3 = new Image("assets/Move3.png");
-    Image PowerUp = new Image("assets/PowerUp.png");
-    Image RightTurn = new Image("assets/RightTurn.png");
-    Image UTurn = new Image("assets/UTurn.png");
-    Image LeftTurn = new Image ("assets/LeftTurn.png");
+    Image Move2 = new Image("assets/Move2Blau.png");
+    Image Move3 = new Image("assets/Move3Blau.png");
+    Image PowerUp = new Image("assets/PowerUpBlau.png");
+    Image RightTurn = new Image("assets/RightTurnBlau.png");
+    Image UTurn = new Image("assets/UTurnBlau.png");
+    Image LeftTurn = new Image ("assets/LeftTurnBlau.png");
+    Image BackUp = new Image("assets/MoveBack.png");
+    Image Again = new Image("assets/Again.png");
 
     // Figuren
     //Hammer
@@ -567,13 +569,13 @@ public class MaybeMapsController implements Initializable {
                 gridpane1.add(new ImageView(SpinOben),y,x);
             }
             if (direction == "right"){
-                gridpane1.add(new ImageView(SmashRechts),y,x);
+                gridpane1.add(new ImageView(SpinRechts),y,x);
             }
             if (direction == "left") {
-                gridpane1.add(new ImageView(SmashLinks),y,x);
+                gridpane1.add(new ImageView(SpinLinks),y,x);
             }
             if (direction == "bottom") {
-                gridpane1.add(new ImageView(SmashUnten),y,x);
+                gridpane1.add(new ImageView(SpinUnten),y,x);
             }
         }
         if (figure == 5){
@@ -611,12 +613,12 @@ public class MaybeMapsController implements Initializable {
                 return UTurn;
 
             case "BackUp":
-                return Move1;
+                return BackUp;
             case "PowerUp":
                 return PowerUp;
 
             case "Again":
-                return Move1;
+                return Again;
             default:
                 return Karte;
         }
