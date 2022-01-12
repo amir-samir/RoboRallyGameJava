@@ -6,7 +6,7 @@ public class Empty extends BoardElement {
     }
 
     @Override
-    public void effect() {
+    public void effect(Robot robot, Server server) {
 
     }
 

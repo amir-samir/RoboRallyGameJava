@@ -1,7 +1,4 @@
-import Messages.ActivePhase;
-import Messages.Adopter;
-import Messages.CurrentPlayer;
-import Messages.Error1;
+import Messages.*;
 import Messages.Phase.*;
 
 import java.util.*;
@@ -101,20 +98,18 @@ public class Game {
     }
 
     public void aktivierungsPhase(){
-
         ArrayList<ClientHandler> reihenfolge = reihenfolgeBestimmen();
+        for (int i = 0; i < 5; i++) {
+            currentCardVerschicken();
+            for (ClientHandler clientHandler : reihenfolge) {
+                Robot robot = figuren[clientHandler.figure];
 
-        for (ClientHandler clientHandler: reihenfolge){
-            Robot robot = figuren[clientHandler.figure];
-            int robotX = robot.getX();
-            int robotY = robot.getY();
-
-            Cards card = robot.getRegister()[activeRegister];
-            card.effect(robot, SERVER);
-
-            //ArrayList<BoardElement> elements = board.getMap()[robotX][robotY];
+                Cards card = robot.getRegister()[activeRegister];
+                card.effect(robot, SERVER);
+            }
+            aktiviereMapElemente();
         }
-
+        beendeAktivierungsPhase();
     }
 
     public ArrayList<ClientHandler> reihenfolgeBestimmen(){
@@ -152,6 +147,95 @@ public class Game {
         }
 
         return reihenfolge;
+    }
+
+    public void aktiviereMapElemente(){
+        int i = 0;
+        activateBlueConveyor();
+        activateGreenConveyor();
+        activatePushPanel();
+        activateGear();
+        activateBoardLaser();
+        activateRobotLaser();
+        activateCheckpoint();
+        while (i < board.getMap().length) {
+            int u = 0;
+            while (u < board.getMap()[i].length) {
+                for (BoardElement list: board.getMap()[i][u]){
+
+                }
+                u++;
+            }
+            i++;
+        }
+    }
+
+    public void activateBlueConveyor(){
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("ConveyorBelt")){
+                        if (list.getSpeed() == 2){
+                            list.effect(robot, SERVER);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void activateGreenConveyor(){
+
+    }
+
+    public void activatePushPanel(){
+
+    }
+
+    public void activateGear(){
+
+    }
+
+    public void activateBoardLaser(){
+
+    }
+
+    public void activateRobotLaser(){
+
+    }
+
+    public void activateCheckpoint(){
+
+    }
+
+    public void beendeAktivierungsPhase(){
+        for (Robot robot: figuren){
+            if (robot != null){
+                robot.clearRegister();
+            }
+        }
+        activePhase = 2;
+        startGame();
+    }
+
+    public void currentCardVerschicken(){
+        int anzahlSpieler = 0;
+        for (Robot robot: figuren){
+            if (robot != null){
+                anzahlSpieler += 1;
+            }
+        }
+        ActiveCards[] activeCards = new ActiveCards[anzahlSpieler];
+        int u = 0;
+        for (int i = 0; i < figuren.length; i++){
+            if (figuren[i] != null){
+                activeCards[u] = new ActiveCards(figuren[i].getGamerID(), figuren[i].getRegister()[activeRegister].getName());
+                u++;
+            }
+        }
+        CurrentCards currentCards = new CurrentCards(activeCards);
+        currentCards.getMessageBody().setKeys(new String[]{"activeCards"});
+        SERVER.sendMessageForAllUsers(currentCards);
     }
 
     public void setStartingPoint(int x, int y, ClientHandler clientHandler) {

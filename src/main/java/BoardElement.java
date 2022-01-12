@@ -7,7 +7,8 @@ public abstract class BoardElement {
 
     private String type;
     private String isOnBoard;
-    public abstract void effect();
+
+    public abstract void effect(Robot robot, Server server);
 
     public void setType(String type){
         this.type = type;
@@ -25,4 +26,7 @@ public abstract class BoardElement {
         return type;
     }
 
+    public int getSpeed() {
+        return 0;
+    }
 }

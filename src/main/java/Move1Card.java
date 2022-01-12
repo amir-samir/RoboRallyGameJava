@@ -11,16 +11,16 @@ public class Move1Card extends Cards {
     public void effect(Robot robot, Server server) {
         switch (robot.getDirection()) {
             case "top":
-                robot.setY(robot.getY() - 1);
-                break;
-            case "bottom":
-                robot.setY(robot.getX() + 1);
-                break;
-            case "left":
                 robot.setX(robot.getX() - 1);
                 break;
-            case "right":
+            case "bottom":
                 robot.setX(robot.getX() + 1);
+                break;
+            case "left":
+                robot.setY(robot.getY() - 1);
+                break;
+            case "right":
+                robot.setY(robot.getY() + 1);
                 break;
         }
 

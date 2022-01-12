@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_22__21_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_22__21_34__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/jsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Antenna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Antenna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EnergySpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EnergySpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move1Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +106,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -134,8 +145,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.GetID" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
@@ -408,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641762957823</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Bugfix">
+      <created>1641991945998</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1641991945998</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,6 +479,76 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

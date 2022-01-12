@@ -100,6 +100,13 @@ public class Robot {
         deck.setDiscard(new ArrayList<Cards>());
     }
 
+    public void clearRegister(){
+        for (int i = 0; i < register.length; i++){
+            deck.getDiscard().add(register[i]);
+            register[i] = null;
+        }
+    }
+
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
     public void forward(int step) {

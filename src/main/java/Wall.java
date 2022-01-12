@@ -9,7 +9,7 @@ public class Wall extends BoardElement {
     }
 
     @Override
-    public void effect() {
+    public void effect(Robot robot, Server server) {
         //gamer.getRobot().forward(0);
     }
 }

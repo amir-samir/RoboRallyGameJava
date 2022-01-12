@@ -11,7 +11,7 @@ public class PushPanel extends BoardElement {
     }
 
     @Override
-    public void effect() {
+    public void effect(Robot robot, Server server) {
         /*if (Arrays.asList(registers).contains(gamer.getRegisterCount() + 1)) {
             gamer.getRobot().forward(1);
         }

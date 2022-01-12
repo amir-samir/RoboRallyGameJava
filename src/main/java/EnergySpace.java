@@ -10,12 +10,7 @@ public class EnergySpace extends BoardElement {
     }
 
     @Override
-    public void effect() {
-       /* if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == true) {
-            gamer.getNewEnergycube();
-        }  else if (gamer.getRobot().isOnEnergySpace() == true && isThereAnEnergyCube == false && gamer.getRegisterCount() == 5) {
-            gamer.getNewEnergycube();
-        }
-        */
+    public void effect(Robot robot, Server server) {
+
     }
 }

@@ -11,7 +11,7 @@ public class Laser extends BoardElement {
     }
 
     @Override
-    public void effect(){
+    public void effect(Robot robot, Server server){
         //gamer.pushCard(new Spam());
     }
 }
