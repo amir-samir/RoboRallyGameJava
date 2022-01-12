@@ -53,7 +53,7 @@ public SelectMapView(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/MaybeMap.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.show();
+        //stage.show();
 
         //Close if Bye
         stage.setOnCloseRequest(e -> {

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="allInOnePane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllInOneView">
+<children>
+<AnchorPane fx:id="chatWrite" layoutX="25.0" layoutY="541.0" prefHeight="45.0" prefWidth="450.0">
+    <children>
+        <Button fx:id="sendButton" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="30.0" prefWidth="75.0" text="Send" />
+        <TextField fx:id="writeField" layoutY="8.0" prefHeight="30.0" prefWidth="375.0" />
+    </children>
+</AnchorPane>
+<AnchorPane fx:id="chatPane" layoutX="25.0" layoutY="14.0" prefHeight="525.0" prefWidth="450.0">
+    <children>
+        <ListView id="chatBox" fx:id="chatBox" prefHeight="525.0" prefWidth="450.0" styleClass="loader" stylesheets="@SignInStyle.css" />
+    </children>
+</AnchorPane>
+<Button fx:id="startGame" layoutX="25.0" layoutY="586.0" mnemonicParsing="false" onAction="#setReady" prefHeight="45.0" prefWidth="450.0" style="-fx-background-color: green;" text="READY!" textAlignment="CENTER" textFill="WHITE">
+
+</Button>
+<Button fx:id="createRoomGame" layoutX="476.0" layoutY="196.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Select Map Test">
+
+</Button>
+<ImageView fx:id="FigureChat" fitHeight="168.0" fitWidth="172.0" layoutX="476.0" layoutY="248.0" pickOnBounds="true">
+    <image>
+        <Image url="@../assets/ChatViewPic.png" />
+    </image>
+</ImageView>
+<ComboBox fx:id="PrivateMessage" layoutX="476.0" layoutY="34.0" prefHeight="25.0" prefWidth="179.0" />
+<TextField fx:id="privateMsgInput" layoutX="476.0" layoutY="60.0" prefHeight="25.0" prefWidth="179.0" />
+<Button fx:id="sendPrivateMsg" layoutX="476.0" layoutY="85.0" mnemonicParsing="false" onAction="#sendPrivateMessage" prefHeight="25.0" prefWidth="179.0" text="SEND!Priavte" />
+      <Label layoutX="476.0" layoutY="4.0" prefHeight="37.0" prefWidth="179.0" text="Send a private message!">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+</children>
+</AnchorPane>

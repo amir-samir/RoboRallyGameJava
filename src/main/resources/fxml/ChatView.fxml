@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPaneChat" prefHeight="677.0" prefWidth="656.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
+<AnchorPane fx:id="rootPaneChat" prefHeight="637.0" prefWidth="862.0" styleClass="loader" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatView">
     <children>
         <AnchorPane fx:id="chatWrite" layoutX="25.0" layoutY="541.0" prefHeight="45.0" prefWidth="450.0">
             <children>
@@ -23,17 +23,12 @@
                 <Font name="System Bold" size="14.0" />
             </font>
         </Button>
-        <Button fx:id="exitGame" layoutX="25.0" layoutY="641.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="30.0" prefWidth="450.0" style="-fx-background-color: red;" text="Unready!" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </Button>
-        <Button fx:id="createRoomGame" layoutX="476.0" layoutY="196.0" mnemonicParsing="false" onAction="#ChooseCard" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Select Map Test">
+        <Button fx:id="createRoomGame" layoutX="476.0" layoutY="196.0" mnemonicParsing="false" onAction="#besmella" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Select Map Test">
             <font>
                 <Font name="System Bold" size="19.0" />
             </font>
         </Button>
-        <ImageView fx:id="FigureChat" fitHeight="337.0" fitWidth="172.0" layoutX="476.0" layoutY="248.0" pickOnBounds="true">
+        <ImageView fx:id="FigureChat" fitHeight="168.0" fitWidth="172.0" layoutX="476.0" layoutY="248.0" pickOnBounds="true">
             <image>
                 <Image url="@../assets/ChatViewPic.png" />
             </image>
@@ -46,5 +41,6 @@
                 <Font name="System Bold" size="16.0" />
             </font>
         </Label>
+      <Pane fx:id="panetry" layoutX="662.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" />
     </children>
 </AnchorPane>
