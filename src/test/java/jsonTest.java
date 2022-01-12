@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Phase.CurrentCards;
 import Messages.Phase.YourCards;
 import org.junit.Test;
 
@@ -280,9 +281,9 @@ public class jsonTest {
 
     @Test
     public void CurrentCardTest(){
-        Object[] daten = new Object[2];
-        daten[1] = new CurrentCardObject(30, "LeftTurn");
-        daten[0] = new CurrentCardObject(20, "MoveI");
+        ActiveCards[] daten = new ActiveCards[2];
+        daten[1] = new ActiveCards(30, "LeftTurn");
+        daten[0] = new ActiveCards(20, "MoveI");
         CurrentCards currentCards = new CurrentCards(daten);
         currentCards.getMessageBody().setKeys(new String[]{"activeCards"});
         System.out.println(Adopter.javabeanToJson(currentCards));

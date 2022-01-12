@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Threads(Deadlocks/Race) Bugs fixed">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_22__21_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_22__21_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jsonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +99,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,7 +161,7 @@
       <workItem from="1641780578803" duration="385000" />
       <workItem from="1641787298540" duration="4165000" />
       <workItem from="1641819296248" duration="10923000" />
-      <workItem from="1641851286675" duration="12479000" />
+      <workItem from="1641851286675" duration="11154000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -401,21 +408,7 @@
       <option name="project" value="LOCAL" />
       <updated>1641762957823</updated>
     </task>
-    <task id="LOCAL-00036" summary="Threads(Deadlocks/Race) Bugs fixed">
-      <created>1641905512881</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1641905512882</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Threads(Deadlocks/Race) Bugs fixed">
-      <created>1641905587151</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1641905587151</updated>
-    </task>
-    <option name="localTasksCounter" value="38" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +427,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt" />
     <MESSAGE value="@yilu und chen Adopter" />
     <MESSAGE value="@yilu und dairen Adopte, Message" />
     <MESSAGE value="q" />
@@ -458,8 +452,7 @@
     <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix" />
-    <MESSAGE value="Threads(Deadlocks/Race) Bugs fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Threads(Deadlocks/Race) Bugs fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
