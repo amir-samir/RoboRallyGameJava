@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public class Client implements Runnable {
@@ -200,7 +201,7 @@ public class Client implements Runnable {
     }
 
     public void updateFigure(int x, int y, int ID){
-        for (Robot robot: figuren) {
+        for (Robot robot: figuren){
             if (robot != null) {
                 if (robot.getGamerID() == ID) {
                     robot.setX(x);
@@ -457,22 +458,14 @@ public class Client implements Runnable {
                     Robot robot = figuren[player.get(ID).figur];
                     robot.setX(x);
                     robot.setY(y);
+                    TimeUnit. SECONDS. sleep(3);
                     Platform.runLater(() -> {
+                        getMaybeMapsController().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1) {
                                 getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                         }
                     }});
-                    /*Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            for (int i = 0; i < figuren.length; i++) {
-                                if (figuren[i] != null && figuren[i].getX() != -1) {
-                                    getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
-                                }
-                            }
-                        }
-                    });*/
                     toSend = player.get(ID).name + " (" + ID + ") hat seine Position verändert";
                 } else if (message.getMessageType().equals("PlayerTurning")){
                     int ID = (int) (double) message.getMessageBody().getContent()[0];
@@ -500,6 +493,14 @@ public class Client implements Runnable {
                             } else robot.setDirection("top");
                             break;
                     }
+                    TimeUnit. SECONDS. sleep(3);
+                    Platform.runLater(() -> {
+                        getMaybeMapsController().setDefaultMap();
+                        for (int i = 0; i < figuren.length; i++) {
+                            if (figuren[i] != null && figuren[i].getX() != -1 && figuren[i].getY() != -1) {
+                                getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                            }
+                        }});
                     toSend = player.get(ID).name + " (" + ID + ") hat sich gedreht.";
                 }
                 else {
@@ -514,6 +515,8 @@ public class Client implements Runnable {
             } catch (IOException e) {
                 e.printStackTrace();
                 break;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }

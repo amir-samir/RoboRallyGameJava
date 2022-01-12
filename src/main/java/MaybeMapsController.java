@@ -506,7 +506,7 @@ public class MaybeMapsController implements Initializable {
     }
     public void setFigureOnMapNew(int figure,String direction, int x, int y){
         if (figure == 0){
-            if (direction == "Up"){
+            if (direction == "top"){
                 gridpane1.add(new ImageView(TwinkyOben),y,x);
             }
             if (direction == "right"){
@@ -516,12 +516,12 @@ public class MaybeMapsController implements Initializable {
             if (direction == "left") {
                 gridpane1.add(new ImageView(TwinkyLinks),y,x);
             }
-            if (direction == "Down") {
+            if (direction == "bottom") {
                 gridpane1.add(new ImageView(TwinkyUnten),y,x);
             }
         }
         if (figure == 1){
-            if (direction == "Up"){
+            if (direction == "top"){
                 gridpane1.add(new ImageView(SmashOben),y,x);
             }
             if (direction == "right"){
@@ -530,12 +530,12 @@ public class MaybeMapsController implements Initializable {
             if (direction == "left") {
                 gridpane1.add(new ImageView(SmashLinks),y,x);
             }
-            if (direction == "Down") {
+            if (direction == "bottom") {
                 gridpane1.add(new ImageView(SmashUnten),y,x);
             }
         }
         if (figure == 2){
-            if (direction == "Up"){
+            if (direction == "top"){
                 gridpane1.add(new ImageView(HulkOben),y,x);
             }
             if (direction == "right"){
@@ -544,12 +544,12 @@ public class MaybeMapsController implements Initializable {
             if (direction == "left") {
                 gridpane1.add(new ImageView(HulkLinks),y,x);
             }
-            if (direction == "Down") {
+            if (direction == "bottom") {
                 gridpane1.add(new ImageView(HulkUnten),y,x);
             }
         }
         if (figure == 3){
-            if (direction == "Up"){
+            if (direction == "top"){
                 gridpane1.add(new ImageView(ZoomOben),y,x);
             }
             if (direction == "right"){
@@ -558,12 +558,12 @@ public class MaybeMapsController implements Initializable {
             if (direction == "left") {
                 gridpane1.add(new ImageView(ZoomLinks),y,x);
             }
-            if (direction == "Down") {
+            if (direction == "bottom") {
                 gridpane1.add(new ImageView(ZoomUnten),y,x);
             }
         }
         if (figure == 4){
-            if (direction == "Up"){
+            if (direction == "top"){
                 gridpane1.add(new ImageView(SpinOben),y,x);
             }
             if (direction == "right"){
@@ -572,12 +572,12 @@ public class MaybeMapsController implements Initializable {
             if (direction == "left") {
                 gridpane1.add(new ImageView(SmashLinks),y,x);
             }
-            if (direction == "Down") {
+            if (direction == "bottom") {
                 gridpane1.add(new ImageView(SmashUnten),y,x);
             }
         }
         if (figure == 5){
-            if (direction == "Up"){
+            if (direction == "top"){
                 gridpane1.add(new ImageView(HammerOben),y,x);
             }
             if (direction == "right"){
@@ -586,7 +586,7 @@ public class MaybeMapsController implements Initializable {
             if (direction == "left") {
                 gridpane1.add(new ImageView(HammerLinks),y,x);
             }
-            if (direction == "Down") {
+            if (direction == "bottom") {
                 gridpane1.add(new ImageView(HammerUnten),y,x);
             }
         }
