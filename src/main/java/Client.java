@@ -444,6 +444,9 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("TimerEnded")){
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
+                    Platform.runLater(() -> {
+                        StageSaver.getStageSaver().getChooseCardStage().close();
+                        });
                     for (Double doubl: list){
                         s += "(" + doubl + ") ";
                     }

@@ -3,6 +3,7 @@ import javafx.stage.Stage;
 public class StageSaver {
     private static StageSaver stageSaver = new StageSaver(new Stage());
     private Stage currentStage;
+    private Stage chooseCardStage;
 
     private StageSaver(Stage firstStage) {
         this.currentStage = firstStage;
@@ -17,5 +18,11 @@ public class StageSaver {
     }
     public Stage getCurrentStage(){
         return currentStage;
+    }
+    public Stage getChooseCardStage(){
+        return chooseCardStage;
+    }
+    public void setChooseCardStage(Stage chooseCardStage1){
+        this.chooseCardStage = chooseCardStage1;
     }
 }
