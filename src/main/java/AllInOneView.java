@@ -240,9 +240,8 @@ public class AllInOneView implements Initializable {
     Image HulkUnten = new Image("assets/HulkUnten.png");
 
 
-
-    public void besmella(){
-
+    public AllInOneView(){
+     Client.setAllInOneView(this);
     }
     public void sendMessage() {
 
@@ -254,12 +253,12 @@ public class AllInOneView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       setDefaultMap();
-       /* Card1.setImage(Karte);
+        setDefaultMap();
+        Card1.setImage(Karte);
         Card2.setImage(Karte);
         Card3.setImage(Karte);
         Card4.setImage(Karte);
-        Card5.setImage(Karte);*/
+        Card5.setImage(Karte);
 
         //chatBox = SaveClients.client.getChatView().getChatBox();
         PrivateMessage.setItems(SaveClients.client.usernamesGui);
@@ -653,7 +652,7 @@ public class AllInOneView implements Initializable {
         }
     }
 
-    public void Choosecard1(){
+    public void ChooseCard1(){
         Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
         SaveClients.client.setCardOfGui("");
     }

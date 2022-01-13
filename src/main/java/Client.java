@@ -51,6 +51,7 @@ public class Client implements Runnable {
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
     public static MaybeMapsController maybeMapsController;
+    public static AllInOneView allInOneView;
     private String selectedMap;
     public int figureForGui;
     public String CardOfGui = "SomeCard";
@@ -357,7 +358,7 @@ public class Client implements Runnable {
                     } else if (activePhase == 2){
                         Platform.runLater(() -> {
                             try {
-                                getMaybeMapsController().resetRegisterCard();
+                                getAllInOneView().resetRegisterCard();
                                 getChatView().ChooseCard();
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -383,7 +384,8 @@ public class Client implements Runnable {
                     //HIER
                     Platform.runLater(() -> {
                         try {
-                            selectMapView.RunMap();
+                            getChatView().runAllInOne();
+                            StageSaver.getStageSaver().getChatViewStage().close();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -412,7 +414,7 @@ public class Client implements Runnable {
                         public void run() {
                             for (int i = 0; i < figuren.length; i++) {
                                 if (figuren[i] != null && figuren[i].getX() != -1) {
-                                    getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                                   getAllInOneView().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
                                 }
                             }
                         }
@@ -462,12 +464,12 @@ public class Client implements Runnable {
                     Robot robot = figuren[player.get(ID).figur];
                     robot.setX(x);
                     robot.setY(y);
-                    TimeUnit. SECONDS.sleep(3);
+                    TimeUnit. SECONDS.sleep(1);
                     Platform.runLater(() -> {
-                        getMaybeMapsController().setDefaultMap();
+                       getAllInOneView().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1) {
-                                getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                                getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                         }
                     }});
                     toSend = player.get(ID).name + " (" + ID + ") hat seine Position verändert";
@@ -497,12 +499,12 @@ public class Client implements Runnable {
                             } else robot.setDirection("top");
                             break;
                     }
-                    TimeUnit. SECONDS. sleep(3);
+                    TimeUnit. SECONDS. sleep(1);
                     Platform.runLater(() -> {
-                        getMaybeMapsController().setDefaultMap();
+                        getAllInOneView().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1 && figuren[i].getY() != -1) {
-                                getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                                getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                             }
                         }});
                     toSend = player.get(ID).name + " (" + ID + ") hat sich gedreht.";
@@ -552,6 +554,13 @@ public class Client implements Runnable {
 
     public ChatView getChatView(){
         return chatView1;
+    }
+
+    public static void setAllInOneView(AllInOneView allInOneView1){
+        allInOneView = allInOneView1;
+    }
+    public AllInOneView getAllInOneView(){
+        return allInOneView;
     }
 
     public ArrayList<Cards> getHandcards(){
