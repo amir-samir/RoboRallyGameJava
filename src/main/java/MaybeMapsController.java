@@ -1,19 +1,14 @@
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image ;
-import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -185,12 +180,12 @@ public class MaybeMapsController implements Initializable {
     Image Karte = new Image("assets/Karte.png");
     @FXML
     Image Move1 = new Image("assets/Move1.png");
-    Image Move2 = new Image("assets/Move2Blau.png");
+    Image Move2 = new Image("assets/move2Blau.png");
     Image Move3 = new Image("assets/Move3Blau.png");
     Image PowerUp = new Image("assets/PowerUpBlau.png");
     Image RightTurn = new Image("assets/RightTurnBlau.png");
     Image UTurn = new Image("assets/UTurnBlau.png");
-    Image LeftTurn = new Image ("assets/LeftTurnBlau.png");
+    Image LeftTurn = new Image ("assets/leftTurnBlau.png");
     Image BackUp = new Image("assets/MoveBack.png");
     Image Again = new Image("assets/Again.png");
 

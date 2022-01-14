@@ -2,11 +2,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import lombok.ToString;
 
 import java.awt.*;
 import java.net.URL;
-import java.sql.Time;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -36,12 +34,12 @@ public class ChooseCards implements Initializable {
     ImageView Card9;
    @FXML
     Image Move1 = new Image("assets/Move1.png");
-    Image Move2 = new Image("assets/Move2Blau.png");
+    Image Move2 = new Image("assets/move2Blau.png");
     Image Move3 = new Image("assets/Move3Blau.png");
     Image PowerUp = new Image("assets/PowerUpBlau.png");
     Image RightTurn = new Image("assets/RightTurnBlau.png");
     Image UTurn = new Image("assets/UTurnBlau.png");
-    Image LeftTurn = new Image ("assets/LeftTurnBlau.png");
+    Image LeftTurn = new Image ("assets/leftTurnBlau.png");
     Image BackUp = new Image("assets/MoveBack.png");
     Image Again = new Image("assets/Again.png");
 
