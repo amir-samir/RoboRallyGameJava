@@ -1,21 +1,27 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import lombok.ToString;
 
-import java.awt.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
-import java.sql.Time;
+
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class ChooseCards implements Initializable {
     int RegisterPlatz = -1;
-    @FXML
-    Label timelabel;
     @FXML
     ImageView Card1;
     @FXML
@@ -44,6 +50,12 @@ public class ChooseCards implements Initializable {
     Image LeftTurn = new Image ("assets/LeftTurnBlau.png");
     Image BackUp = new Image("assets/MoveBack.png");
     Image Again = new Image("assets/Again.png");
+    @FXML
+    Label timerLabel;
+    int time = 30;
+
+
+
 
 
 
@@ -199,6 +211,30 @@ public class ChooseCards implements Initializable {
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
+    }
+
+    public void startTimer() {
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+
+                if(time > 0)
+                {
+                    Platform.runLater(() -> timerLabel.setText(Integer.toString(time)));
+                    time--;
+                    if(time < 6)
+                    {
+                        timerLabel.setTextFill(Color.web("red"));
+                    }
+                }
+                else
+                    timer.cancel();
+            }
+        }, 1000,1000);
+        time = 30;
+        timerLabel.setText("");
+        timerLabel.setTextFill(Color.web("black"));
     }
 
     public void OurTimer(){
