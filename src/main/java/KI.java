@@ -26,7 +26,7 @@ public class KI implements Runnable {
     private ArrayList<BoardElement>[][] map;
     private static Thread thread;
 
-    static {
+    /*static {
         try {
             KI ki = new KI();
             thread = new Thread(ki);
@@ -34,7 +34,7 @@ public class KI implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    } */
 
     private final BufferedReader bufferedReader;
     private final PrintWriter bufferedWriter;
@@ -397,7 +397,8 @@ public class KI implements Runnable {
 
     public static void main(String[] args) {
         try {
-            KI ki = new KI();
+            Thread t = new Thread(new KI());
+            t.start();
         } catch (Exception e){
 
         }
