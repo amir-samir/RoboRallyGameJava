@@ -1,6 +1,7 @@
 import Messages.*;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
+import com.google.gson.internal.LinkedTreeMap;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +13,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -63,7 +65,7 @@ public class Client implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
-        SOCKET = new Socket("localhost", 1524);
+        SOCKET = new Socket("localhost", 1525);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
@@ -502,6 +504,22 @@ public class Client implements Runnable {
                             }
                         }});
                     toSend = player.get(ID).name + " (" + ID + ") hat sich gedreht.";
+                } else if (message.getMessageType().equals("CurrentCards")){
+                    List<LinkedTreeMap> list = (List<LinkedTreeMap>) message.getMessageBody().getContent()[0];
+                    String s = "Folgende Karten wurden im aktuellen Register gelegt: ";
+                    for (LinkedTreeMap<String, Object> tree: list){
+                        int clientID = (int) (double) tree.get("clientID");
+                        String card = (String) tree.get("card");
+                        s += "\n" + "Von Spieler/in " + player.get(clientID).name + " (" + clientID + "): " + card;
+                    }
+                    toSend = s;
+                } else if (message.getMessageType().equals("CardsYouGotNow")){
+                    List<String> list = (List<String>) message.getMessageBody().getContent()[0];
+                    String s = "Weil du zu langsam gewesen bist, besitzt du jetzt folgende Karten: \n";
+                    for (String string: list){
+                        s += "| " + string + " |";
+                    }
+                    toSend = s;
                 }
                 else {
                     toSend = inputFromServer;

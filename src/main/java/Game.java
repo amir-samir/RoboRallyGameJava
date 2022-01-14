@@ -67,10 +67,8 @@ public class Game {
             sendActivePlayer();
             upgradePhase();
         } else if (this.activePhase == 2){
-            sendActivePlayer();
             programmierPhase();
         } else if (this.activePhase == 3){
-            sendActivePlayer();
             aktivierungsPhase();
         }
     }
@@ -317,7 +315,6 @@ public class Game {
     public void startTimer(){
         TimerStarted timerStarted = new TimerStarted();
         SERVER.sendMessageForAllUsers(timerStarted);
-
         OurTimer ourTimer = new OurTimer(30, this);
     }
 

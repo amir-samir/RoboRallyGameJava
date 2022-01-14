@@ -44,7 +44,7 @@ public class Server {
 
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(1524);
+            ServerSocket serverSocket = new ServerSocket(1525);
             Server server = new Server(serverSocket);
             server.protocol = "Version 1.0";
             server.startServer();

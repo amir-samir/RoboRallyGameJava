@@ -10,7 +10,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public class KI implements Runnable {
@@ -20,8 +22,6 @@ public class KI implements Runnable {
     private final boolean isAi;
     private boolean connected;
     private int ID;
-    private boolean ready = false;
-    private int activePlayer;
     private static int countKI = 1;
     private ArrayList<BoardElement>[][] map;
     private static Thread thread;
@@ -45,6 +45,7 @@ public class KI implements Runnable {
     public Robot[] figuren = new Robot[6];
     private String selectedMap;
     public int figureForGui;
+    public boolean figurSelected = false;
 
 
     /**
@@ -54,14 +55,13 @@ public class KI implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public KI() throws IOException {
-        SOCKET = new Socket("localhost", 1524);
+        SOCKET = new Socket("localhost", 1525);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         isAi = true;
     }
 
     public void setReady(){
-        ready = true;
         if (player.get(ID) != null) {
             player.get(ID).ready = true;
         }
@@ -75,7 +75,7 @@ public class KI implements Runnable {
 
     public void configuration(){
         String name;
-        int figur = -1;
+        int figur = (int) Math.floor(Math.random() * 6);
         if (countKI == 1){
             name = "BummBot";
         } else if (countKI == 2){
@@ -90,13 +90,6 @@ public class KI implements Runnable {
             name = "CrashBot";
         }
         countKI += 1;
-
-        for (int i = 0; i < figuren.length; i++){
-            if (figuren[i] == null){
-                figur = i;
-                break;
-            }
-        }
 
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
@@ -141,6 +134,7 @@ public class KI implements Runnable {
             list.add(new Integer[]{6, 0});
             list.add(new Integer[]{8, 1});
         }
+        Collections.shuffle(list);
 
         for (int i = 0; i < list.size(); i++){
             boolean free = true;
@@ -252,11 +246,22 @@ public class KI implements Runnable {
     }
 
     public void playCards(ArrayList<String> list){
-        sendCardToRegister(list.get(0), 0);
-        sendCardToRegister(list.get(1), 1);
-        sendCardToRegister(list.get(2), 2);
-        sendCardToRegister(list.get(3), 3);
-        sendCardToRegister(list.get(4), 4);
+        Collections.shuffle(list);
+        try {
+            TimeUnit.SECONDS.sleep(2);
+            sendCardToRegister(list.get(0), 0);
+            TimeUnit.SECONDS.sleep(2);
+            sendCardToRegister(list.get(1), 1);
+            TimeUnit.SECONDS.sleep(2);
+            sendCardToRegister(list.get(2), 2);
+            TimeUnit.SECONDS.sleep(2);
+            sendCardToRegister(list.get(3), 3);
+            TimeUnit.SECONDS.sleep(2);
+            sendCardToRegister(list.get(4), 4);
+            TimeUnit.SECONDS.sleep(2);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -275,7 +280,10 @@ public class KI implements Runnable {
                 if(message.getMessageType().equals("HelloClient")){
                     sendHelloServer(message);
                 } else if (message.getMessageType().equals("Error1")) {
-
+                    if (!figurSelected) {
+                        countKI -= 1;
+                        configuration();
+                    }
                 } else if (message.getMessageType().equals("Welcome")){
                     double wert = (double) message.getMessageBody().getContent()[0];
                     ID = (int) wert;
@@ -289,6 +297,7 @@ public class KI implements Runnable {
                     int newFigure = (int)(double) message.getMessageBody().getContent()[2];
                     int clientID = (int)(double) message.getMessageBody().getContent()[0];
                     String username = (String) message.getMessageBody().getContent()[1];
+                    if (clientID == this.ID) figurSelected = true;
                     if (ids.get(username) == null) {
                         ids.put(username, clientID);
                         figuren[newFigure] = new Robot(clientID);

@@ -1,9 +1,11 @@
 import Messages.*;
 import Messages.Phase.CurrentCards;
 import Messages.Phase.YourCards;
+import com.google.gson.internal.LinkedTreeMap;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -287,5 +289,9 @@ public class jsonTest {
         CurrentCards currentCards = new CurrentCards(daten);
         currentCards.getMessageBody().setKeys(new String[]{"activeCards"});
         System.out.println(Adopter.javabeanToJson(currentCards));
+
+        Message m = Adopter.getMessage(Adopter.javabeanToJson(currentCards));
+        List<LinkedTreeMap> list = (List<LinkedTreeMap>) m.getMessageBody().getContent()[0];
+        System.out.println();
     }
 }
