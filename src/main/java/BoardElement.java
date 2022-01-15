@@ -29,4 +29,8 @@ public abstract class BoardElement {
     public int getSpeed() {
         return 0;
     }
+
+    public int[] getRegisters() {
+        return null;
+    }
 }

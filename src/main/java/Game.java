@@ -158,7 +158,6 @@ public class Game {
     }
 
     public void aktiviereMapElemente(){
-        int i = 0;
         activateBlueConveyor();
         activateGreenConveyor();
         activatePushPanel();
@@ -197,24 +196,65 @@ public class Game {
     }
 
     public void activatePushPanel(){
-
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("PushPanel")){
+                        for (int register: list.getRegisters()){
+                            if (register == this.activeRegister){
+                                list.effect(robot, SERVER);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void activateGear(){
-
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("Gear")){
+                        list.effect(robot, SERVER);
+                    }
+                }
+            }
+        }
     }
 
     public void activateBoardLaser(){
-
+        for (int i = 0; i < board.getMap().length; i++) {
+            for (int u = 0; u < board.getMap()[i].length; u++) {
+                for (BoardElement boardElement: board.getMap()[i][u]) {
+                    if (boardElement.getType().equals("Laser")){
+                        boardElement.effect(figuren[0],SERVER);
+                    }
+                }
+            }
+        }
     }
 
     public void activateRobotLaser(){
-
+        for (Robot robot: figuren){
+            if (robot != null){
+                robot.shoot();
+            }
+        }
     }
 
     public void activateCheckpoint(){
-
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("Checkpoint")){
+                        list.effect(robot, SERVER);
+                    }
+                }
+            }
+        }
     }
+
 
     public void beendeAktivierungsPhase(){
         for (Robot robot: figuren){

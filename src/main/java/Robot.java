@@ -114,6 +114,10 @@ public class Robot {
         }
     }
 
+    public void shoot(){
+
+    }
+
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
     public void forward(int step) {

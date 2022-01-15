@@ -17,4 +17,9 @@ public class PushPanel extends BoardElement {
         }
         */
     }
+
+    @Override
+    public int[] getRegisters() {
+        return registers;
+    }
 }
