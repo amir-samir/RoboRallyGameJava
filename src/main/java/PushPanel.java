@@ -1,7 +1,7 @@
 public class PushPanel extends BoardElement {
 
-    String[] orientations;
-    int[] registers;
+    private String[] orientations;
+    private int[] registers;
 
     public PushPanel(String isOnBoard, String[] orientations, int[] registers) {
         this.setType("PushPanel");

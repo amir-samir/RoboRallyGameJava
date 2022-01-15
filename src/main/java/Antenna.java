@@ -1,6 +1,6 @@
 public class Antenna extends BoardElement {
 
-    String[] orientations;
+    private String[] orientations;
 
     public Antenna(String isOnBoard, String[] orientations){
         this.setType("Antenna");

@@ -263,6 +263,92 @@ public class Client implements Runnable {
         return handcards;
     }
 
+    public void generateMap(Message m){
+        ArrayList<BoardElement>[][] map = new ArrayList[10][13];
+        int i = 0;
+        while (i < map.length){
+            int u = 0;
+            while (u < map[i].length){
+                map[i][u] = new ArrayList<BoardElement>();
+                u++;
+            }
+            i++;
+        }
+        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
+        int x = 0;
+        while (x < list.size()){
+            ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
+            int y = 0;
+            while (y < y_list.size()){
+                ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
+                int z = 0;
+                while (z < field.size()){
+                    LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
+                    if (typ == null){
+                        map[y][x].add(new Empty("A"));
+                    } else {
+                        String zuPrüfen = (String) typ.get("type");
+                        String[] orientations;
+                        switch (zuPrüfen) {
+                            case "StartPoint":
+                                map[y][x].add(new StartPoint((String) typ.get("isOnBoard")));
+                                break;
+                            case "ConveyorBelt":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new ConveyorBelt((String) typ.get("isOnBoard"), orientations, (int) (double) typ.get("speed")));
+                                break;
+                            case "PushPanel":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, (int[]) typ.get("registers")));
+                                break;
+                            case "Gear":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Gear((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "Pit":
+                                map[y][x].add(new Pit((String) typ.get("isOnBoard")));
+                                break;
+                            case "EnergySpace":
+                                map[y][x].add(new EnergySpace((String) typ.get("isOnBoard"), (int)(double) typ.get("count")));
+                                break;
+                            case "Wall":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Wall((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "Laser":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
+                                break;
+                            case "Antenna":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Antenna((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "CheckPoint":
+                                map[y][x].add(new CheckPoint((String) typ.get("isOnBoard"), (int)(double) typ.get("order")));
+                                break;
+                            case "RestartPoint":
+                                map[y][x].add(new RestartPoint((String) typ.get("isOnBoard")));
+                                break;
+                            default:
+                        }
+                    }
+                    z += 1;
+                }
+                y += 1;
+            }
+            x += 1;
+        }
+        this.map = map;
+    }
+
+    public String[] changeListIntoArray(ArrayList<String> list){
+        String[] orientations = new String[list.size()];
+        for(int i = 0; i < list.size(); i++){
+            orientations[i] = list.get(i);
+        }
+        return orientations;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -381,7 +467,7 @@ public class Client implements Runnable {
                         toSend = name + " (" + activePlayer + ") " + "ist aktuell am Zug";
                     }
                 } else if (message.getMessageType().equals("GameStarted")){
-                    //HIER
+                    generateMap(message);
                     Platform.runLater(() -> {
                         try {
                             selectMapView.RunMap();
@@ -389,17 +475,6 @@ public class Client implements Runnable {
                             e.printStackTrace();
                         }
                     });
-
-                   /* Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                selectMapView.RunMap();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });*/
                     toSend = "Das Spiel wurde jetzt gestartet.";
                 }
                 else if (message.getMessageType().equals("StartingPointTaken")){

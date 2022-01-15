@@ -258,7 +258,6 @@ public class KI implements Runnable {
             sendCardToRegister(list.get(3), 3);
             TimeUnit.SECONDS.sleep(2);
             sendCardToRegister(list.get(4), 4);
-            TimeUnit.SECONDS.sleep(2);
         } catch (Exception e){
             e.printStackTrace();
         }

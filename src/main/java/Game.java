@@ -355,7 +355,7 @@ public class Game {
     public void startTimer(){
         TimerStarted timerStarted = new TimerStarted();
         SERVER.sendMessageForAllUsers(timerStarted);
-        OurTimer ourTimer = new OurTimer(30, this);
+        OurTimer ourTimer = new OurTimer(10, this);
     }
 
     public void timerEnded(){

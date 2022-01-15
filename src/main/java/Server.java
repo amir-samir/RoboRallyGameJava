@@ -204,9 +204,32 @@ public class Server {
     }
 
     public void generateMap(){
-        TestMap testMap = new TestMap();
+        Board board;
+        String s;
+
+        switch (activeMap){
+            case "DizzyHighway":
+                board = new DizzyHighway();
+                s = board.json;
+                break;
+            case "DeathTrap":
+                board = new DeathTrap();
+                s = board.json;
+                break;
+            case "ExtraCrispy":
+                board = new ExtraCrispy();
+                s = board.json;
+                break;
+            case "LostBearings":
+                board = new LostBearings();
+                s = board.json;
+                break;
+            default:
+                s = null;
+        }
+
         for (ClientHandler clientHandler: users.values()){
-            clientHandler.writer.println(testMap.json);
+            clientHandler.writer.println(s);
         }
     }
 
