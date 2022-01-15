@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="AllInOne Design">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Client mit dem Neuen Gui verbinden">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_22,_19_40_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_22__19_40__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FirstViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StageSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StageSaver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChooseCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChooseCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TryingToMakeAMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCards.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCards.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FirstViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/StageSaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StageSaver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,8 +156,8 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
-      <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       <item itemvalue="Application.KI" />
+      <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
     </list>
     <recent_temporary>
       <list>
@@ -188,7 +189,9 @@
       <workItem from="1641787298540" duration="4165000" />
       <workItem from="1641819296248" duration="10923000" />
       <workItem from="1641851286675" duration="43120000" />
-      <workItem from="1642104216859" duration="6304000" />
+      <workItem from="1642104216859" duration="10145000" />
+      <workItem from="1642158306683" duration="902000" />
+      <workItem from="1642198371512" duration="7003000" />
     </task>
     <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
       <created>1638753613056</created>
@@ -498,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642104129590</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Client mit dem Neuen Gui verbinden">
+      <created>1642111031601</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642111031602</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
     <MESSAGE value="updated git-ignore" />
     <MESSAGE value="Improved method generateMap()" />
@@ -542,7 +551,8 @@
     <MESSAGE value="Gui update" />
     <MESSAGE value="Time Delay erstellt" />
     <MESSAGE value="AllInOne Design" />
-    <option name="LAST_COMMIT_MESSAGE" value="AllInOne Design" />
+    <MESSAGE value="Client mit dem Neuen Gui verbinden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Client mit dem Neuen Gui verbinden" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

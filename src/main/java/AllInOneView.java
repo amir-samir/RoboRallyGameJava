@@ -12,9 +12,11 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class AllInOneView implements Initializable {
+    Boolean[] isFilled = new Boolean[5];
     @FXML
     ImageView FigureChat;
     @FXML
@@ -253,6 +255,7 @@ public class AllInOneView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Arrays.fill(isFilled,false);
         setDefaultMap();
         Card1.setImage(Karte);
         Card2.setImage(Karte);
@@ -654,22 +657,27 @@ public class AllInOneView implements Initializable {
 
     public void ChooseCard1(){
         Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        isFilled[0] = true;
         SaveClients.client.setCardOfGui("");
     }
     public void ChooseCard2(){
         Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        isFilled[1] = true;
         SaveClients.client.setCardOfGui("");
     }
     public void ChooseCard3(){
         Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        isFilled[2] = true;
         SaveClients.client.setCardOfGui("");
     }
     public void ChooseCard4(){
         Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        isFilled[3] = true;
         SaveClients.client.setCardOfGui("");
     }
     public void ChooseCard5(){
         Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        isFilled[4] = true;
         SaveClients.client.setCardOfGui("");
     }
     public void RunMapNew() throws Exception{

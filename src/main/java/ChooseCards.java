@@ -1,12 +1,22 @@
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
+import javafx.util.Duration;
 import lombok.ToString;
 
 import java.awt.*;
 import java.net.URL;
+import java.sql.Array;
 import java.sql.Time;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -14,8 +24,18 @@ import java.util.concurrent.TimeUnit;
 
 public class ChooseCards implements Initializable {
     int RegisterPlatz = -1;
+    boolean[] nullCard = new boolean[9];
+    String[] CardsNames = new String[9];
+
+    private static final Integer BeginTimerSeconds = 30;
+    //private Timeline timeline = new Timeline();
+    private Integer currentSeconds = BeginTimerSeconds;
     @FXML
-    Label timelabel;
+    Label TimerLabelFx;
+    @FXML
+    VBox TimerBox;
+    @FXML
+    TextFlow timerText;
     @FXML
     ImageView Card1;
     @FXML
@@ -59,6 +79,11 @@ public class ChooseCards implements Initializable {
         Card7.setImage(getImageForCard(SaveClients.client.getHandcards().get(6).getName()));
         Card8.setImage(getImageForCard(SaveClients.client.getHandcards().get(7).getName()));
         Card9.setImage(getImageForCard(SaveClients.client.getHandcards().get(8).getName()));
+        Arrays.fill(nullCard,false);
+
+
+        //timerText.setText(currentSeconds.toString());
+        //timerText.setBackground(Color.BLUE);
 
     }
 
@@ -98,7 +123,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
             Card1.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(0).getName());
-            Card1.setDisable(true);
+            nullCard[0] = true;
+            CardsNames[0] = SaveClients.client.getHandcards().get(0).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -110,7 +136,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatz);
             Card2.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(1).getName());
-            Card2.setDisable(true);
+            nullCard[1] = true;
+            CardsNames[1] = SaveClients.client.getHandcards().get(1).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -122,7 +149,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(), RegisterPlatz);
             Card3.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(2).getName());
-            Card3.setDisable(true);
+            nullCard[2] = true;
+            CardsNames[2] = SaveClients.client.getHandcards().get(2).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -134,7 +162,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatz);
             Card4.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(3).getName());
-            Card4.setDisable(true);
+            nullCard[3] = true;
+            CardsNames[3] = SaveClients.client.getHandcards().get(3).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -146,7 +175,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(), RegisterPlatz);
             Card5.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(4).getName());
-            Card5.setDisable(true);
+            nullCard[4] = true;
+            CardsNames[4] = SaveClients.client.getHandcards().get(4).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -158,7 +188,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(), RegisterPlatz);
             Card6.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(5).getName());
-            Card6.setDisable(true);
+            nullCard[5] = true;
+            CardsNames[5] = SaveClients.client.getHandcards().get(5).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -170,7 +201,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(), RegisterPlatz);
             Card7.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(6).getName());
-            Card7.setDisable(true);
+            nullCard[6] = true;
+            CardsNames[6] = SaveClients.client.getHandcards().get(6).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -182,7 +214,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(), RegisterPlatz);
             Card8.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(7).getName());
-            Card8.setDisable(true);
+            nullCard[7] = true;
+            CardsNames[7] = SaveClients.client.getHandcards().get(7).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -194,7 +227,8 @@ public class ChooseCards implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(), RegisterPlatz);
             Card9.setDisable(true);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(8).getName());
-            Card9.setDisable(true);
+            nullCard[8] = true;
+            CardsNames[8] = SaveClients.client.getHandcards().get(8).getName();
         }
         else {
             SaveClients.client.printMessage("Dein Register ist voll!");
@@ -207,7 +241,7 @@ public class ChooseCards implements Initializable {
             int countdown = 30;
             @Override
             public void run() {
-                timelabel.setText(String.valueOf(countdown));
+                TimerLabelFx.setText(String.valueOf(countdown));
                 countdown = countdown - 1;
                 if (countdown < 0){
 
@@ -217,5 +251,25 @@ public class ChooseCards implements Initializable {
         };
         scheduler.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.SECONDS);
     }
+
+    public void startTimer(ActionEvent event){
+        Timeline timeline = new Timeline();
+        timeline.setCycleCount(1);
+        timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                currentSeconds--;
+                TimerLabelFx.setText(currentSeconds.toString());
+
+                        //(currentSeconds.toString());
+
+                if (currentSeconds <= 0) {
+                    timeline.stop();
+                }
+            }
+        }));
+    }
+
+
 
 }
