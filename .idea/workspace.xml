@@ -4,31 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Encoding GameStarted-Message">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34_[Changes]/Client$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34_[Changes]/Client$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34_[Changes]/Client$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34_[Changes]/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34_[Changes]/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_20_34__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57_[Changes]/Client$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57_[Changes]/Client$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57_[Changes]/Client$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57_[Changes]/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57_[Changes]/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_2022_21_57__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_01_22__16_54__Changes_.xml" beforeDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge:&#10;- new GUI&#10;- new Bugfixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackUpCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DeathTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move1Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move2Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move3Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LostBearings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LostBearings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SelectMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SelectMapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SelectMapView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +89,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -127,7 +117,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.KI">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -185,9 +175,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.KI" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       </list>
@@ -529,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642265125910</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Merge:&#10;- new GUI&#10;- new Bugfixes">
+      <created>1642335511669</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642335511669</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: BoardElements &amp; JSON_Chat" />
     <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
     <MESSAGE value="updated git-ignore" />
     <MESSAGE value="Improved method generateMap()" />
@@ -573,7 +569,8 @@
     <MESSAGE value="Bugfix:&#10;- Improved random AI&#10;- Improved Messages" />
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
     <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Encoding GameStarted-Message" />
+    <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -593,7 +590,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>439</line>
+          <line>451</line>
           <properties class="Game" method="checkMovement">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -601,18 +598,32 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Move1Card.java</url>
-          <line>10</line>
-          <properties class="Move1Card" method="effect">
+          <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
+          <line>94</line>
+          <properties class="Robot" method="mischen">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
+          <line>35</line>
+          <properties class="Robot" method="drawHandCards">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
-          <line>112</line>
+          <line>115</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

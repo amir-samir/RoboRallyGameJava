@@ -300,7 +300,12 @@ public class Client implements Runnable {
                                 break;
                             case "PushPanel":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
-                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, (int[]) typ.get("registers")));
+                                ArrayList<Double> list1 = (ArrayList<Double>) typ.get("registers");
+                                int[] register = new int[list1.size()];
+                                for (int p = 0; p < register.length; p++){
+                                    register[p] = (int) (double) list1.remove(0);
+                                }
+                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
                                 break;
                             case "Gear":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));

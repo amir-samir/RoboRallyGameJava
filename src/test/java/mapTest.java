@@ -110,6 +110,9 @@ public class mapTest {
 
         Message m = Adopter.getMessage(map);
         Message i = Adopter.getMessage(json);
+
+        Board board = new DeathTrap();
+        Message death = Adopter.getMessage(board.json);
         System.out.println(m.getMessageBody().getContent());
 
         generateMap(m);

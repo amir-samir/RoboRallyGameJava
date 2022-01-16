@@ -315,7 +315,7 @@ public class AllInOneView implements Initializable {
                 }
             }
         }
-        if (SaveClients.client.getSelectedMap().equals("LostBearing")){
+        if (SaveClients.client.getSelectedMap().equals("LostBearings")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
                 for (int j = 0; j < gridpane1.getColumnCount(); j++){
                     gridpane1.setHgap(-80);
