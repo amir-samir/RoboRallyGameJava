@@ -300,12 +300,16 @@ public class AllInOneView implements Initializable {
                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
                            case "bottom":
                                gridpane1.add(new ImageView(image49),y,x);
+                               break;
                            case "top":
                                gridpane1.add(new ImageView(image56),y,x);
+                               break;
                            case "right":
                                gridpane1.add(new ImageView(image51),y,x);
+                               break;
                            case "left":
                                gridpane1.add(new ImageView(image66),y,x);
+                               break;
 
                        }
 
@@ -316,12 +320,16 @@ public class AllInOneView implements Initializable {
                         switch (mapGui[x][y].get(0).getOrientations()[0]) {
                             case "bottom":
                                 gridpane1.add(new ImageView(image50),y,x);
+                                break;
                             case "top":
                                 gridpane1.add(new ImageView(image12),y,x);
+                                break;
                             case "right":
-                                gridpane1.add(new ImageView(image51),y,x);
-                            case "left":
                                 gridpane1.add(new ImageView(image21),y,x);
+                                break;
+                            case "left":
+                                gridpane1.add(new ImageView(image57),y,x);
+                                break;
 
                         }
 
@@ -431,10 +439,10 @@ public class AllInOneView implements Initializable {
                         } if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"bottom")) {
                             if (mapGui[x][y].get(0).getSpeed() == 1) {
                                 gridpane1.add(new ImageView(image47), y, x);
-                            } else {
+                            } /*else {
                                 //was wenn es blau ist!!!!
                                 gridpane1.add(new ImageView(image0),y,x);
-                            }
+                            }*/
                         } if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"top")) {
                             if (mapGui[x][y].get(0).getSpeed() == 1) {
                                 gridpane1.add(new ImageView(image60), y, x);
@@ -442,27 +450,29 @@ public class AllInOneView implements Initializable {
                                 gridpane1.add(new ImageView(image19),y,x);
                             }
                         }
-                        else {
+                        /*else {
                             gridpane1.add(new ImageView(image0),y,x);
-                        }
+                        }*/
 
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "CheckPoint")){
                         switch (mapGui[x][y].get(0).getCount()){
                             case 0:
                                 gridpane1.add(new ImageView(image61),y,x);
+                                break;
                             case 1:
                                 gridpane1.add(new ImageView(image65),y,x);
+                                break;
                             case 2:
                                 gridpane1.add(new ImageView(image62),y,x);
+                                break;
                             case 3:
                                 gridpane1.add(new ImageView(image54),y,x);
+                                break;
                             case 4:
                                 gridpane1.add(new ImageView(image48),y,x);
+                                break;
                         }
-                    }
-                else {
-                    gridpane1.add(new ImageView(image0),y,x);
                     }
                 }
 

@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bug fix">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Changing Gui Map">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DeathTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LostBearings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LostBearings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +107,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.mapTest">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -165,9 +158,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.mapTest" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="Application.KI" />
       </list>
@@ -506,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642340548990</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Changing Gui Map">
+      <created>1642351493975</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642351493975</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: JSON_Chat -&gt; BoardElements" />
     <MESSAGE value="updated git-ignore" />
     <MESSAGE value="Improved method generateMap()" />
     <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
@@ -550,7 +549,8 @@
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
     <MESSAGE value="Working on Cards Futeres" />
     <MESSAGE value="Bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix" />
+    <MESSAGE value="Changing Gui Map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing Gui Map" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

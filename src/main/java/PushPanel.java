@@ -22,4 +22,9 @@ public class PushPanel extends BoardElement {
     public int[] getRegisters() {
         return registers;
     }
+
+    @Override
+    public String[] getOrientations() {
+        return orientations;
+    }
 }
