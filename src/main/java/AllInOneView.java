@@ -76,6 +76,7 @@ public class AllInOneView implements Initializable {
             { 45, 1, 2, 46, 36, 1, 1, 1, 1, 1, 1, 37, 1}
 
     };
+    //daaaaaa
     int[][] DeathTrapMap = new int[][]{
             { 1, 1, 11, 11, 47, 1, 1, 1, 1, 1, 11, 1, 45},
             { 48, 49, 1, 50, 39, 11, 1, 14, 66, 37, 1, 9, 1},
@@ -296,31 +297,149 @@ public class AllInOneView implements Initializable {
                 }
                 else if (mapGui[x][y].size() == 2){
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "PushPanel")){
-                       switch (mapGui[x][y].get(0).getOrientations()[0]){
+                       switch (mapGui[x][y].get(0).getOrientations()[0]) {
                            case "bottom":
                                gridpane1.add(new ImageView(image49),y,x);
                            case "top":
                                gridpane1.add(new ImageView(image56),y,x);
                            case "right":
+                               gridpane1.add(new ImageView(image51),y,x);
+                           case "left":
+                               gridpane1.add(new ImageView(image66),y,x);
 
                        }
 
                     }
                 }
                 else{
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "Wall")) {
+                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
+                            case "bottom":
+                                gridpane1.add(new ImageView(image50),y,x);
+                            case "top":
+                                gridpane1.add(new ImageView(image12),y,x);
+                            case "right":
+                                gridpane1.add(new ImageView(image51),y,x);
+                            case "left":
+                                gridpane1.add(new ImageView(image21),y,x);
+
+                        }
+
+                    }
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "Antenna")) {
+                        // Muss evtl. noch weiter angepasst werden
+                        gridpane1.add(new ImageView(image20),y,x);
+                    }
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "EnergySpace")) {
+                        // Muss evtl. noch weiter angepasst werden
+                        gridpane1.add(new ImageView(image52),y,x);
+                    }
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "StartPoint")) {
+                        gridpane1.add(new ImageView(image9),y,x);
+                    }
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "Pit")) {
+                        gridpane1.add(new ImageView(image14),y,x);
+                    }
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "RestartPoint")) {
+                        if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DeathTrap")) {
+                            gridpane1.add(new ImageView(image91),y,x);
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DizzyHighway")) {
+                            gridpane1.add(new ImageView(image75),y,x);
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "ExtraCrispy")) {
+                            gridpane1.add(new ImageView(image75),y,x);
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "LostBearings")) {
+                            gridpane1.add(new ImageView(image75),y,x);
+                        }
+                    }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "ConveyorBelt")){
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"right")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image39), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image16), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"bottom")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image44), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image29), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"left")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image2), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image85), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"top")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image64), y, x);
+                            } else {
+                                // wurde noch nicht bearbeitet, wird wahrscheinlich auch nicht benutzt
+                                gridpane1.add(new ImageView(image85), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"left")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image43), y, x);
+                            } else {
+                                // wurde noch nicht bearbeitet, wird wahrscheinlich auch nicht benutzt
+                                gridpane1.add(new ImageView(image4), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"top")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image36), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image4), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"right")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image59), y, x);
+                            } else {
+                                // wurde noch nicht bearbeitet, wird wahrscheinlich auch nicht benutzt
+                                gridpane1.add(new ImageView(image4), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"bottom")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image37), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image31), y, x);
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"left")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image58), y, x);
+                            } else {
+                                // wurde noch nicht bearbeitet, wird wahrscheinlich auch nicht benutzt
+                                gridpane1.add(new ImageView(image31), y, x);
+                            }
+                        }
                         if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"right")){
                             if (mapGui[x][y].get(0).getSpeed() == 1) {
                                 gridpane1.add(new ImageView(image11), y, x);
                             } else {
                                 gridpane1.add(new ImageView(image71),y,x);
                             }
-                        }if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"bottom")){
+                        } if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"bottom")) {
                             if (mapGui[x][y].get(0).getSpeed() == 1) {
                                 gridpane1.add(new ImageView(image47), y, x);
                             } else {
                                 //was wenn es blau ist!!!!
                                 gridpane1.add(new ImageView(image0),y,x);
+                            }
+                        } if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"top")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image60), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image19),y,x);
                             }
                         }
                         else {
@@ -331,13 +450,13 @@ public class AllInOneView implements Initializable {
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "CheckPoint")){
                         switch (mapGui[x][y].get(0).getCount()){
                             case 0:
-                                gridpane1.add(new ImageView(image48),y,x);
+                                gridpane1.add(new ImageView(image61),y,x);
                             case 1:
-                                gridpane1.add(new ImageView(image32),y,x);
+                                gridpane1.add(new ImageView(image65),y,x);
                             case 2:
-                                gridpane1.add(new ImageView(image33),y,x);
+                                gridpane1.add(new ImageView(image62),y,x);
                             case 3:
-                                gridpane1.add(new ImageView(image13),y,x);
+                                gridpane1.add(new ImageView(image54),y,x);
                             case 4:
                                 gridpane1.add(new ImageView(image48),y,x);
                         }
