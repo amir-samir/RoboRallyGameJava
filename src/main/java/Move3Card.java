@@ -11,23 +11,8 @@ public class Move3Card extends Cards {
 
     @Override
     public void effect(Robot robot, Server server) {
-        switch (robot.getDirection()){
-            case "top":
-                robot.setX(robot.getX() - 3);
-                break;
-            case "bottom":
-                robot.setX(robot.getX() + 3);
-                break;
-            case "left":
-                robot.setY(robot.getY() - 3);
-                break;
-            case "right":
-                robot.setY(robot.getY() + 3);
-                break;
-        }
-        Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
-        movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
-        server.sendMessageForAllUsers(movement);
+        server.game.checkMovement(robot, robot.getDirection());
+        server.game.checkMovement(robot, robot.getDirection());
+        server.game.checkMovement(robot, robot.getDirection());
     }
-
 }

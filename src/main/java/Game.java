@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Actions.Movement;
 import Messages.Phase.*;
 
 import java.util.*;
@@ -434,6 +435,146 @@ public class Game {
             newCards[i] = card.getName();
         }
         return newCards;
+    }
+
+    public boolean checkMovement(Robot robot, String direction){
+        Movement movement;
+        switch (direction) {
+            case "top":
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("Wall")){
+                        for (String s: list.getOrientations()){
+                            if (s.equals("top")) return false;
+                        }
+                    }
+                }
+                for (BoardElement element: board.getMap()[robot.getX()-1][robot.getY()]){
+                    if (element.getType().equals("Wall")){
+                        for (String s: element.getOrientations()){
+                            if (s.equals("bottom")) return false;
+                        }
+                    } else if (element.getType().equals("Antenna")) return false;
+                }
+                if (robot.getX() - 1 < 0){
+                    //reboot
+                    return true;
+                }
+                for (Robot r: figuren){
+                    if (r != null && !r.equals(robot)) {
+                        if (r.getX() == robot.getX()-1 && r.getY() == robot.getY()){
+                            if (!checkMovement(r, direction)){
+                                return false;
+                            }
+                        }
+                    }
+                }
+                robot.setX(robot.getX() - 1);
+                movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+                movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+                SERVER.sendMessageForAllUsers(movement);
+                return true;
+            case "bottom":
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("Wall")){
+                        for (String s: list.getOrientations()){
+                            if (s.equals("bottom")) return false;
+                        }
+                    }
+                }
+                if (robot.getX() + 1 >= board.getHeight()){
+                    //reboot
+                    return true;
+                }
+                for (BoardElement element: board.getMap()[robot.getX()+1][robot.getY()]){
+                    if (element.getType().equals("Wall")){
+                        for (String s: element.getOrientations()){
+                            if (s.equals("top")) return false;
+                        }
+                    } else if (element.getType().equals("Antenna")) return false;
+                }
+                for (Robot r: figuren){
+                    if (r != null && !r.equals(robot)) {
+                        if (r.getX() == robot.getX()+1 && r.getY() == robot.getY()){
+                            if (!checkMovement(r, direction)){
+                                return false;
+                            }
+                        }
+                    }
+                }
+                robot.setX(robot.getX() + 1);
+                movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+                movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+                SERVER.sendMessageForAllUsers(movement);
+                return true;
+            case "left":
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("Wall")){
+                        for (String s: list.getOrientations()){
+                            if (s.equals("left")) return false;
+                        }
+                    }
+                }
+                if (robot.getY() - 1 < 0){
+                    //reboot
+                    return true;
+                }
+                for (BoardElement element: board.getMap()[robot.getX()][robot.getY()-1]){
+                    if (element.getType().equals("Wall")){
+                        for (String s: element.getOrientations()){
+                            if (s.equals("right")) return false;
+                        }
+                    } else if (element.getType().equals("Antenna")) return false;
+                }
+                for (Robot r: figuren){
+                    if (r != null && !r.equals(robot)) {
+                        if (r.getX() == robot.getX() && r.getY() == robot.getY()-1){
+                            if (!checkMovement(r, direction)){
+                                return false;
+                            }
+                        }
+                    }
+                }
+                robot.setY(robot.getY() - 1);
+                movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+                movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+                SERVER.sendMessageForAllUsers(movement);
+                return true;
+            case "right":
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("Wall")){
+                        for (String s: list.getOrientations()){
+                            if (s.equals("right")) return false;
+                        }
+                    }
+                }
+                if (robot.getY() + 1 >= board.getWidth()){
+                    //reboot
+                    return true;
+                }
+                for (BoardElement element: board.getMap()[robot.getX()][robot.getY()+1]){
+                    if (element.getType().equals("Wall")){
+                        for (String s: element.getOrientations()){
+                            if (s.equals("left")) return false;
+                        }
+                    } else if (element.getType().equals("Antenna")) return false;
+                }
+                for (Robot r: figuren){
+                    if (r != null && !r.equals(robot)) {
+                        if (r.getX() == robot.getX() && r.getY() == robot.getY()+1){
+                            if (!checkMovement(r, direction)){
+                                return false;
+                            }
+                        }
+                    }
+                }
+                robot.setY(robot.getY() + 1);
+                movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+                movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+                SERVER.sendMessageForAllUsers(movement);
+                return true;
+            default:
+                return false;
+        }
     }
 
     public void sendError(String nachricht, ClientHandler clientHandler){

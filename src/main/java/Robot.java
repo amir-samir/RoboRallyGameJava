@@ -118,6 +118,23 @@ public class Robot {
 
     }
 
+    public void checkMovement(Robot[] robots){
+        switch (this.getDirection()) {
+            case "top":
+                this.setX(this.getX() - 1);
+                break;
+            case "bottom":
+                this.setX(this.getX() + 1);
+                break;
+            case "left":
+                this.setY(this.getY() - 1);
+                break;
+            case "right":
+                this.setY(this.getY() + 1);
+                break;
+        }
+    }
+
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
     public void forward(int step) {
