@@ -65,6 +65,13 @@ public class ChooseCards implements Initializable {
     Image BackUp = new Image("assets/MoveBack.png");
     Image Again = new Image("assets/Again.png");
 
+    // Spam Cards
+    @FXML
+    Image spam = new Image("assets/spam.png");
+    Image trojanHorse = new Image("assets/trojanHorse.png");
+    Image virus = new Image("assets/virus.png");
+    Image worm = new Image("assets/worm.png");
+
 
 
 
@@ -107,11 +114,24 @@ public class ChooseCards implements Initializable {
 
             case "BackUp":
                 return BackUp;
+
             case "PowerUp":
                 return PowerUp;
 
             case "Again":
                 return Again;
+
+            case "Spam":
+                return spam;
+
+            case "Worm":
+                return worm;
+
+            case "Virus":
+                return virus;
+
+            case "Trojan":
+                return trojanHorse;
             default:
                 return Move1;
         }

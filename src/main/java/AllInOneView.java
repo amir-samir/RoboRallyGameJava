@@ -241,6 +241,13 @@ public class AllInOneView implements Initializable {
     Image HulkLinks = new Image("assets/HulkLinks.png");
     Image HulkUnten = new Image("assets/HulkUnten.png");
 
+    // Spam Cards
+    @FXML
+    Image spam = new Image("assets/spam.png");
+    Image trojanHorse = new Image("assets/trojanHorse.png");
+    Image virus = new Image("assets/virus.png");
+    Image worm = new Image("assets/worm.png");
+
 
     public AllInOneView(){
      Client.setAllInOneView(this);
@@ -650,6 +657,19 @@ public class AllInOneView implements Initializable {
 
             case "Again":
                 return Again;
+
+            case "Spam":
+                return spam;
+
+            case "Virus":
+                return virus;
+
+            case "Worm":
+                return worm;
+
+            case "Trojan":
+                return trojanHorse;
+
             default:
                 return Karte;
         }
