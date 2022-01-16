@@ -118,6 +118,7 @@ public class Game {
     public void aktivierungsPhase(){
         ArrayList<ClientHandler> reihenfolge = reihenfolgeBestimmen();
         for (int i = 0; i < 5; i++) {
+            System.out.println(i + " active Register: " + activeRegister);
             currentCardVerschicken();
             for (ClientHandler clientHandler : reihenfolge) {
                 Robot robot = figuren[clientHandler.figure];
@@ -270,19 +271,22 @@ public class Game {
 
 
     public void beendeAktivierungsPhase(){
-        for (Robot robot: figuren){
-            if (robot != null){
-                robot.clearRegister();
-                robot.clearHandcards();
-                robot.setAbleToFillRegisters(true);
-                robot.setDead(false);
+        try {
+            for (Robot robot : figuren) {
+                if (robot != null) {
+                    robot.clearRegister();
+                    robot.clearHandcards();
+                    robot.setAbleToFillRegisters(true);
+                    robot.setDead(false);
+                }
             }
+            timerActivated = false;
+            activePhase = 2;
+            activeRegister = 0;
+            startGame();
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        timerActivated = false;
-        activePhase = 2;
-        activeRegister = 0;
-        startGame();
-
     }
 
     public void currentCardVerschicken(){
@@ -374,7 +378,7 @@ public class Game {
         try {
             TimerStarted timerStarted = new TimerStarted();
             SERVER.sendMessageForAllUsers(timerStarted);
-            OurTimer ourTimer = new OurTimer(10, this);
+            OurTimer ourTimer = new OurTimer(30, this);
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -473,6 +477,10 @@ public class Game {
                         }
                     }
                 }
+                if (robot.getX() - 1 < 0){
+                    reboot(robot);
+                    return true;
+                }
                 for (BoardElement element: board.getMap()[robot.getX()-1][robot.getY()]){
                     if (element.getType().equals("Wall")){
                         for (String s: element.getOrientations()){
@@ -483,10 +491,6 @@ public class Game {
                         reboot(robot);
                         return true;
                     }
-                }
-                if (robot.getX() - 1 < 0){
-                    reboot(robot);
-                    return true;
                 }
                 for (Robot r: figuren){
                     if (r != null && !r.equals(robot)) {
@@ -630,23 +634,22 @@ public class Game {
 
         for (Robot r: figuren){
             if (r != null && !r.equals(robot)){
-                if (r.getX() == robot.getX() && r.getY() == robot.getY()){
-                    if (checkMovement(r, r.getDirection())){
-                        robot.setX(rebootX);
-                        robot.setY(rebootY);
-                        robot.setDirection("top");
-
-                        Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
-                        movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
-                        SERVER.sendMessageForAllUsers(movement);
-
-                        Reboot reboot = new Reboot(robot.getGamerID());
-                        reboot.getMessageBody().setKeys(new String[]{"clientID"});
-                        SERVER.sendMessageForSingleClient(reboot, users.get(robot.getGamerID()));
-                    }
+                if (r.getX() == rebootX && r.getY() == rebootY){
+                    checkMovement(r, r.getDirection());
                 }
             }
         }
+        robot.setX(rebootX);
+        robot.setY(rebootY);
+        robot.setDirection("top");
+
+        Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+        movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+        SERVER.sendMessageForAllUsers(movement);
+
+        Reboot reboot = new Reboot(robot.getGamerID());
+        reboot.getMessageBody().setKeys(new String[]{"clientID"});
+        SERVER.sendMessageForSingleClient(reboot, users.get(robot.getGamerID()));
     }
 
     public void sendError(String nachricht, ClientHandler clientHandler){

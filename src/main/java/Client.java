@@ -450,14 +450,6 @@ public class Client implements Runnable {
                         //UpgradePhase? GUI
                         toSend = "Die UpgradePhase läuft aktuell.";
                     } else if (activePhase == 2){
-                        Platform.runLater(() -> {
-                            try {
-                                getAllInOneView().resetRegisterCard();
-                                getChatView().ChooseCard();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        });
                         //ProgrammierPhase? GUI?
                         toSend = "Die Programmierphase läuft aktuell.";
                     } else if (activePhase == 3){
@@ -497,7 +489,7 @@ public class Client implements Runnable {
                         public void run() {
                             for (int i = 0; i < figuren.length; i++) {
                                 if (figuren[i] != null && figuren[i].getX() != -1) {
-                                   getAllInOneView().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                                   getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                                 }
                             }
                         }
@@ -511,6 +503,14 @@ public class Client implements Runnable {
                     for (int i = 0; i < figuren[player.get(this.ID).figur].getHandCards().size(); i++){
                         senden += figuren[player.get(this.ID).figur].getHandCards().get(i).getName() + " ";
                     }
+                    Platform.runLater(() -> {
+                        try {
+                            getAllInOneView().resetRegisterCard();
+                            getChatView().ChooseCard();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
                     toSend = senden;
                 } else if (message.getMessageType().equals("NotYourCards")){
                     int ID = (int) (double) message.getMessageBody().getContent()[0];
@@ -607,6 +607,17 @@ public class Client implements Runnable {
                         s += "| " + string + " |";
                     }
                     toSend = s;
+                } else if (message.getMessageType().equals("Reboot")){
+                    int clientID = (int) (double) message.getMessageBody().getContent()[0];
+                    figuren[player.get(clientID).figur].setDirection("top");
+                    Platform.runLater(() -> {
+                        getAllInOneView().setDefaultMap();
+                        for (int i = 0; i < figuren.length; i++) {
+                            if (figuren[i] != null && figuren[i].getX() != -1 && figuren[i].getY() != -1) {
+                                getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                            }
+                        }});
+                    toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
                 }
                 else {
                     toSend = inputFromServer;

@@ -41,7 +41,7 @@ public class Robot {
 
     public void drawHandCards(){
         for (int i = 0; i < 9; i++){
-            if (deck.getDeck().get(0) == null){
+            if (deck.getDeck().size() == 0){
                 mischen();
             }
             handCards.add(deck.getDeck().remove(0));
@@ -83,14 +83,14 @@ public class Robot {
     public void fillRegisters(){
         int zähler = this.handCards.size();
         for (int i = 0; i < zähler; i++){
-            if (handCards.get(0) != null) {
+            if (handCards.size() > 0) {
                 Cards card = handCards.remove(0);
                 this.deck.getDiscard().add(card);
             }
         }
         for (int i = 0; i < register.length; i++){
             if (register[i] == null){
-                if (deck.getDeck().get(0) == null) {
+                if (deck.getDeck().size() == 0) {
                     mischen();
                 }
                 register[i] = deck.getDeck().remove(0);
@@ -116,7 +116,7 @@ public class Robot {
 
     public void clearHandcards(){
         int zähler = handCards.size();
-        for (int i = 0; i < handCards.size(); i++){
+        for (int i = 0; i < zähler; i++){
             this.deck.getDiscard().add(handCards.remove(0));
         }
     }
