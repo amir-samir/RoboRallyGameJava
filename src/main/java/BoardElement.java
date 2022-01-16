@@ -33,4 +33,8 @@ public abstract class BoardElement {
     public int[] getRegisters() {
         return null;
     }
+
+    public String[] getOrientations(){
+        return null;
+    }
 }

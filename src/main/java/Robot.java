@@ -34,7 +34,7 @@ public class Robot {
     }
 
     public void drawHandCards(){
-        for (int i = handCards.size(); i < 9; i++){
+        for (int i = 0; i < 9; i++){
             if (deck.getDeck().get(0) == null){
                 mischen();
             }
@@ -51,7 +51,8 @@ public class Robot {
                 this.register[register] = null;
                 return true;
             } else {
-                for (int i = 0; i < handCards.size(); i++) {
+                int zähler = handCards.size();
+                for (int i = 0; i < zähler; i++) {
                     if (handCards.get(i).getName().equals(card)) {
                         this.register[register] = handCards.get(i);
                         handCards.remove(i);
@@ -135,12 +136,6 @@ public class Robot {
                 y -= step;
                 break;
         }
-    }
-
-    //rotate
-    // @param: right rotate angle
-    public void rotate(int angle) {
-        this.direction = String.valueOf((Integer.parseInt(this.direction) + (angle / 90)) % 4);
     }
 
     public void setDirection(String direction) {

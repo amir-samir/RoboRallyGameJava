@@ -53,6 +53,7 @@ public class Client implements Runnable {
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
     public static MaybeMapsController maybeMapsController;
+    public static AllInOneView allInOneView;
     private String selectedMap;
     public int figureForGui;
     public String CardOfGui = "SomeCard";
@@ -299,7 +300,12 @@ public class Client implements Runnable {
                                 break;
                             case "PushPanel":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
-                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, (int[]) typ.get("registers")));
+                                ArrayList<Double> list1 = (ArrayList<Double>) typ.get("registers");
+                                int[] register = new int[list1.size()];
+                                for (int p = 0; p < register.length; p++){
+                                    register[p] = (int) (double) list1.remove(0);
+                                }
+                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
                                 break;
                             case "Gear":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
@@ -445,6 +451,7 @@ public class Client implements Runnable {
                     } else if (activePhase == 2){
                         Platform.runLater(() -> {
                             try {
+                                getAllInOneView().resetRegisterCard();
                                 getChatView().ChooseCard();
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -470,7 +477,8 @@ public class Client implements Runnable {
                     generateMap(message);
                     Platform.runLater(() -> {
                         try {
-                            selectMapView.RunMap();
+                            getChatView().runAllInOne();
+                            StageSaver.getStageSaver().getChatViewStage().close();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -488,7 +496,7 @@ public class Client implements Runnable {
                         public void run() {
                             for (int i = 0; i < figuren.length; i++) {
                                 if (figuren[i] != null && figuren[i].getX() != -1) {
-                                    getMaybeMapsController().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
+                                   getAllInOneView().setFigureOnMapNew(i, "right", figuren[i].getX(), figuren[i].getY());
                                 }
                             }
                         }
@@ -521,6 +529,9 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("TimerEnded")){
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
+                    Platform.runLater(() -> {
+                        StageSaver.getStageSaver().getChooseCardStage().close();
+                        });
                     for (Double doubl: list){
                         s += "(" + doubl + ") ";
                     }
@@ -535,12 +546,12 @@ public class Client implements Runnable {
                     Robot robot = figuren[player.get(ID).figur];
                     robot.setX(x);
                     robot.setY(y);
-                    TimeUnit. SECONDS.sleep(3);
+                    TimeUnit. SECONDS.sleep(1);
                     Platform.runLater(() -> {
-                        getMaybeMapsController().setDefaultMap();
+                       getAllInOneView().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1) {
-                                getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                                getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                         }
                     }});
                     toSend = player.get(ID).name + " (" + ID + ") hat seine Position verändert";
@@ -570,12 +581,12 @@ public class Client implements Runnable {
                             } else robot.setDirection("top");
                             break;
                     }
-                    TimeUnit. SECONDS. sleep(3);
+                    TimeUnit. SECONDS. sleep(1);
                     Platform.runLater(() -> {
-                        getMaybeMapsController().setDefaultMap();
+                        getAllInOneView().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1 && figuren[i].getY() != -1) {
-                                getMaybeMapsController().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                                getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                             }
                         }});
                     toSend = player.get(ID).name + " (" + ID + ") hat sich gedreht.";
@@ -641,6 +652,13 @@ public class Client implements Runnable {
 
     public ChatView getChatView(){
         return chatView1;
+    }
+
+    public static void setAllInOneView(AllInOneView allInOneView1){
+        allInOneView = allInOneView1;
+    }
+    public AllInOneView getAllInOneView(){
+        return allInOneView;
     }
 
     public ArrayList<Cards> getHandcards(){

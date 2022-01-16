@@ -12,5 +12,9 @@ public class Wall extends BoardElement {
     public void effect(Robot robot, Server server) {
         //gamer.getRobot().forward(0);
     }
+
+    public String[] getOrientations() {
+        return orientations;
+    }
 }
 

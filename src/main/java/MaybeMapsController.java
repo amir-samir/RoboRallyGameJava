@@ -224,17 +224,8 @@ public class MaybeMapsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image image = new Image("assets/ExtraCrispyMap27.png");
-        ImageView imageViewForAll = new ImageView();
+
         setDefaultMap();
-        /*for (int i = 0; i < gridpane1.getRowCount(); i++){
-            for (int j = 0; j < gridpane1.getColumnCount(); j++){
-                gridpane1.setHgap(-80);
-                //gridpane1.setVgap(10);
-                gridpane1.add(new ImageView(getImageForMap(DizzyHighwayMap[i][j])),j,i);
-                //gridpane1.add(new ImageView(testImage),j,i);
-            }
-        }*/
       Card1.setImage(Karte);
       Card2.setImage(Karte);
       Card3.setImage(Karte);

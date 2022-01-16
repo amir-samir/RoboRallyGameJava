@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class mapTest {
 
+    private ArrayList<BoardElement>[][] map;
+
     public void generateMap(Message m){
         ArrayList<BoardElement>[][] map = new ArrayList[5][5];
         int i = 0;
@@ -110,9 +112,12 @@ public class mapTest {
 
         Message m = Adopter.getMessage(map);
         Message i = Adopter.getMessage(json);
+
+        Board board = new DeathTrap();
+        Message death = Adopter.getMessage(board.json);
+        generatingMap(death);
         System.out.println(m.getMessageBody().getContent());
 
-        generateMap(m);
     }
 
     public ArrayList<BoardElement>[][] generatesMap(Message m) {
@@ -191,4 +196,95 @@ public class mapTest {
             System.out.println("test");
             return map;
         }
+
+    public void generatingMap(Message m){
+        ArrayList<BoardElement>[][] map = new ArrayList[10][13];
+        int i = 0;
+        while (i < map.length){
+            int u = 0;
+            while (u < map[i].length){
+                map[i][u] = new ArrayList<BoardElement>();
+                u++;
+            }
+            i++;
+        }
+        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
+        int x = 0;
+        while (x < list.size()){
+            ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
+            int y = 0;
+            while (y < y_list.size()){
+                ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
+                int z = 0;
+                while (z < field.size()){
+                    LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
+                    if (typ == null){
+                        map[y][x].add(new Empty("A"));
+                    } else {
+                        String zuPrüfen = (String) typ.get("type");
+                        String[] orientations;
+                        switch (zuPrüfen) {
+                            case "StartPoint":
+                                map[y][x].add(new StartPoint((String) typ.get("isOnBoard")));
+                                break;
+                            case "ConveyorBelt":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new ConveyorBelt((String) typ.get("isOnBoard"), orientations, (int) (double) typ.get("speed")));
+                                break;
+                            case "PushPanel":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                ArrayList<Double> list1 = (ArrayList<Double>) typ.get("registers");
+                                int[] register = new int[list1.size()];
+                                for (int p = 0; p < register.length; p++){
+                                    register[p] = (int) (double) list1.remove(0);
+                                }
+                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
+                                break;
+                            case "Gear":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Gear((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "Pit":
+                                map[y][x].add(new Pit((String) typ.get("isOnBoard")));
+                                break;
+                            case "EnergySpace":
+                                map[y][x].add(new EnergySpace((String) typ.get("isOnBoard"), (int)(double) typ.get("count")));
+                                break;
+                            case "Wall":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Wall((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "Laser":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
+                                break;
+                            case "Antenna":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Antenna((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "CheckPoint":
+                                map[y][x].add(new CheckPoint((String) typ.get("isOnBoard"), (int)(double) typ.get("order")));
+                                break;
+                            case "RestartPoint":
+                                map[y][x].add(new RestartPoint((String) typ.get("isOnBoard")));
+                                break;
+                            default:
+                        }
+                    }
+                    z += 1;
+                }
+                y += 1;
+            }
+            x += 1;
+        }
+        this.map = map;
+    }
+
+    public String[] changeListIntoArray(ArrayList<String> list){
+        String[] orientations = new String[list.size()];
+        for(int i = 0; i < list.size(); i++){
+            orientations[i] = list.get(i);
+        }
+        return orientations;
+    }
 }

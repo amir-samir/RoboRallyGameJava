@@ -8,19 +8,27 @@ public class BackUpCard extends Cards {
 
     @Override
     public void effect(Robot robot, Server server){
-       switch (robot.getDirection()){
-           case "top":
-               robot.setY(robot.getY() + 1);
-               break;
-           case "bottom":
-               robot.setY(robot.getX() - 1);
-               break;
-           case "left":
-               robot.setX(robot.getX() + 1);
-               break;
-           case "right":
-               robot.setX(robot.getX() - 1);
-               break;
-       }
+        try {
+            String richtung;
+            switch (robot.getDirection()){
+                case "top":
+                    richtung = "bottom";
+                    break;
+                case "bottom":
+                    richtung = "top";
+                    break;
+                case "right":
+                    richtung = "left";
+                    break;
+                case "left":
+                    richtung = "right";
+                default:
+                    richtung = null;
+                    break;
+            }
+            server.game.checkMovement(robot, richtung);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

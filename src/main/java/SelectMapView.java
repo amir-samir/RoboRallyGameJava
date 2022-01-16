@@ -24,7 +24,7 @@ public SelectMapView(){
         StageSaver.getStageSaver().getCurrentStage().close();
     }
     public void ChooseLostBearingMap(){
-        SaveClients.client.mapSelected("LostBearing");
+        SaveClients.client.mapSelected("LostBearings");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
 
