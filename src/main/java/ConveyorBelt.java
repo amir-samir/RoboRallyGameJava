@@ -19,4 +19,9 @@ public class ConveyorBelt extends BoardElement {
     public int getSpeed() {
         return speed;
     }
+
+    @Override
+    public String[] getOrientations() {
+        return orientations;
+    }
 }

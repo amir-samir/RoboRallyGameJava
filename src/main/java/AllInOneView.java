@@ -12,10 +12,13 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AllInOneView implements Initializable {
+    ArrayList<BoardElement>[][] mapGui = SaveClients.client.getMap();
     Boolean[] isFilled = new Boolean[5];
     @FXML
     ImageView FigureChat;
@@ -285,7 +288,68 @@ public class AllInOneView implements Initializable {
     }
 
     public void setDefaultMap(){
-        if (SaveClients.client.getSelectedMap().equals("DizzyHighway")){
+
+        for (int x = 0; x < gridpane1.getRowCount(); x++){
+            for (int y = 0; y < gridpane1.getColumnCount(); y++){
+                if (mapGui[x][y].size() == 0){
+                    gridpane1.add(new ImageView(image1),y,x);
+                }
+                else if (mapGui[x][y].size() == 2){
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "PushPanel")){
+                       switch (mapGui[x][y].get(0).getOrientations()[0]){
+                           case "bottom":
+                               gridpane1.add(new ImageView(image49),y,x);
+                           case "top":
+                               gridpane1.add(new ImageView(image56),y,x);
+                           case "right":
+
+                       }
+
+                    }
+                }
+                else{
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "ConveyorBelt")){
+                        if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"right")){
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image11), y, x);
+                            } else {
+                                gridpane1.add(new ImageView(image71),y,x);
+                            }
+                        }if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1],"bottom")){
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image47), y, x);
+                            } else {
+                                //was wenn es blau ist!!!!
+                                gridpane1.add(new ImageView(image0),y,x);
+                            }
+                        }
+                        else {
+                            gridpane1.add(new ImageView(image0),y,x);
+                        }
+
+                    }
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "CheckPoint")){
+                        switch (mapGui[x][y].get(0).getCount()){
+                            case 0:
+                                gridpane1.add(new ImageView(image48),y,x);
+                            case 1:
+                                gridpane1.add(new ImageView(image32),y,x);
+                            case 2:
+                                gridpane1.add(new ImageView(image33),y,x);
+                            case 3:
+                                gridpane1.add(new ImageView(image13),y,x);
+                            case 4:
+                                gridpane1.add(new ImageView(image48),y,x);
+                        }
+                    }
+                else {
+                    gridpane1.add(new ImageView(image0),y,x);
+                    }
+                }
+
+            }
+        }
+       /* if (SaveClients.client.getSelectedMap().equals("DizzyHighway")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
                 for (int j = 0; j < gridpane1.getColumnCount(); j++){
                     gridpane1.setHgap(-80);
@@ -324,7 +388,7 @@ public class AllInOneView implements Initializable {
                     //gridpane1.add(new ImageView(testImage),j,i);
                 }
             }
-        }
+        }*/
     }
 
     public Image getImageForMap(int image){

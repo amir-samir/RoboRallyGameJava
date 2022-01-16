@@ -665,4 +665,8 @@ public class Client implements Runnable {
         return figuren[player.get(ID).figur].getHandCards();
     }
 
+    public ArrayList<BoardElement>[][] getMap(){
+        return map;
+    }
+
 }

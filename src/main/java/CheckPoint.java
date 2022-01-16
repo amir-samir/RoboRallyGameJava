@@ -13,5 +13,9 @@ public class CheckPoint extends BoardElement {
 
     }
 
+    @Override
+    public int getCount() {
+        return count;
+    }
 }
 

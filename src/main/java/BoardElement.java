@@ -37,4 +37,8 @@ public abstract class BoardElement {
     public String[] getOrientations(){
         return null;
     }
+
+    public int getCount(){
+        return 0;
+    }
 }

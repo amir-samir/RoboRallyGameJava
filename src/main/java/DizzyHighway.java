@@ -101,7 +101,7 @@ public class DizzyHighway extends Board {
         map[3][9].add(new Wall("5B", new String[]{"right"}));
         map[3][10].add(new Empty("5B"));
         map[3][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
-        map[3][12].add(new CheckPoint("5B", 1));
+        map[3][12].add(new CheckPoint("5B", 0));
 
         map[4][0].add(new Antenna("A",new String[]{"left"}));
         map[4][1].add(new StartPoint("A"));
