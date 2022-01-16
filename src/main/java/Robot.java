@@ -20,6 +20,9 @@ public class Robot {
     private ArrayList<Cards> handCards;
     private Cards[] register;
     private boolean ableToFillRegisters;
+    private boolean isDead;
+    private int energyCube;
+    private int collectedCheckpoints;
 
 
     public Robot(int ID){
@@ -27,6 +30,9 @@ public class Robot {
         handCards = new ArrayList<Cards>();
         register = new Cards[5];
         ableToFillRegisters = true;
+        isDead = false;
+        energyCube = 0;
+        collectedCheckpoints = -1;
 
         x = -1;
         y = -1;
@@ -150,6 +156,10 @@ public class Robot {
         this.y = y;
     }
 
+    public void setDead(boolean dead) {
+        isDead = dead;
+    }
+
     public void setHandCards(ArrayList<Cards> handCards) {
         this.handCards = handCards;
     }
@@ -168,6 +178,14 @@ public class Robot {
 
     public int getY() {
         return y;
+    }
+
+    public void setEnergyCube(int energyCube) {
+        this.energyCube = energyCube;
+    }
+
+    public void setCollectedCheckpoints(int collectedCheckpoints) {
+        this.collectedCheckpoints = collectedCheckpoints;
     }
 
     public int getGamerID() {
@@ -192,6 +210,22 @@ public class Robot {
 
     public String getDirection() {
         return direction;
+    }
+
+    public boolean getDead(){
+        return isDead;
+    }
+
+    public ProgrammingCardsForPlayer getDeck() {
+        return deck;
+    }
+
+    public int getEnergyCube() {
+        return energyCube;
+    }
+
+    public int getCollectedCheckpoints() {
+        return collectedCheckpoints;
     }
 
     /**

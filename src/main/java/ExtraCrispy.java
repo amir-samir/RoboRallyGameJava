@@ -20,7 +20,7 @@ public class ExtraCrispy extends Board{
         this.setHeight(10);
         this.setWidth(13);
 
-        map[0][0].add(new RestartPoint("A"));
+        map[0][0].add(new RestartPoint("A", new String[]{"right"}));
         map[0][1].add(new Empty("A"));
         map[0][2].add(new ConveyorBelt("A", new String[]{"right", "left"}, 1));
         map[0][3].add(new Empty("4A"));
@@ -72,7 +72,7 @@ public class ExtraCrispy extends Board{
         map[3][1].add(new Empty("A"));
         map[3][2].add(new Empty("A"));
         map[3][3].add(new Empty("4A"));
-        map[3][4].add(new ConveyorBelt("4A", new String[]{"right", "top"},2));
+        map[3][4].add(new ConveyorBelt("4A", new String[]{"top", "right"},2));
         map[3][5].add(new ConveyorBelt("4A", new String[]{"right", "left"},2));
         map[3][6].add(new Pit("4A"));
         map[3][7].add(new Wall("4A", new String[]{"left"}));
@@ -85,7 +85,7 @@ public class ExtraCrispy extends Board{
         map[3][12].add(new Empty("4A"));
 
         map[4][0].add(new Antenna("A", new String[]{"right"}));
-        map[4][1].add(new RestartPoint("A"));
+        map[4][1].add(new StartPoint("A"));
         map[4][2].add(new Wall("A", new String[]{"right"}));
         map[4][3].add(new EnergySpace("4A", 1));
         map[4][3].add(new Wall("4A", new String[]{"top"}));

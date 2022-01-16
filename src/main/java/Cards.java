@@ -5,8 +5,6 @@ public abstract class Cards {
     public String name;
 
 
-
-
     /* public void drawCard() {
          if (programmingCardDeck.size() < 9) {
              for (int i = 0; i < programmingCardDeck.size(); i++) {

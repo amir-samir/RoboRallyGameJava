@@ -1,5 +1,6 @@
 import Messages.*;
 import Messages.Actions.Movement;
+import Messages.Actions.Reboot;
 import Messages.Phase.*;
 
 import java.util.*;
@@ -19,6 +20,7 @@ public class Game {
     String activeMap;
     Robot[] figuren;
     boolean timerActivated;
+    int neededCheckpoints;
 
     Board board;
 
@@ -37,6 +39,14 @@ public class Game {
         this.figuren = figuren;
         this.timerActivated = false;
         this.cardsForGame = new CardsForGame();
+
+        if (activeMap.equals("DizzyHighway")){
+            neededCheckpoints = 1;
+        } else if (activeMap.equals("LostBearings") || activeMap.equals("ExtraCrispy")){
+            neededCheckpoints = 4;
+        } else if (activeMap.equals("DeathTrap")){
+            neededCheckpoints = 5;
+        }
 
         switch (activeMap){
             case "DizzyHighway":
@@ -112,8 +122,10 @@ public class Game {
             for (ClientHandler clientHandler : reihenfolge) {
                 Robot robot = figuren[clientHandler.figure];
 
-                Cards card = robot.getRegister()[activeRegister];
-                card.effect(robot, SERVER);
+                if (!robot.getDead()) {
+                    Cards card = robot.getRegister()[activeRegister];
+                    card.effect(robot, SERVER);
+                }
             }
             aktiviereMapElemente();
             activeRegister += 1;
@@ -263,6 +275,7 @@ public class Game {
                 robot.clearRegister();
                 robot.clearHandcards();
                 robot.setAbleToFillRegisters(true);
+                robot.setDead(false);
             }
         }
         timerActivated = false;
@@ -466,9 +479,13 @@ public class Game {
                             if (s.equals("bottom")) return false;
                         }
                     } else if (element.getType().equals("Antenna")) return false;
+                    else if (element.getType().equals("Pit")){
+                        reboot(robot);
+                        return true;
+                    }
                 }
                 if (robot.getX() - 1 < 0){
-                    //reboot
+                    reboot(robot);
                     return true;
                 }
                 for (Robot r: figuren){
@@ -494,7 +511,7 @@ public class Game {
                     }
                 }
                 if (robot.getX() + 1 >= board.getHeight()){
-                    //reboot
+                    reboot(robot);
                     return true;
                 }
                 for (BoardElement element: board.getMap()[robot.getX()+1][robot.getY()]){
@@ -503,6 +520,10 @@ public class Game {
                             if (s.equals("top")) return false;
                         }
                     } else if (element.getType().equals("Antenna")) return false;
+                    else if (element.getType().equals("Pit")){
+                        reboot(robot);
+                        return true;
+                    }
                 }
                 for (Robot r: figuren){
                     if (r != null && !r.equals(robot)) {
@@ -527,7 +548,7 @@ public class Game {
                     }
                 }
                 if (robot.getY() - 1 < 0){
-                    //reboot
+                    reboot(robot);
                     return true;
                 }
                 for (BoardElement element: board.getMap()[robot.getX()][robot.getY()-1]){
@@ -536,6 +557,10 @@ public class Game {
                             if (s.equals("right")) return false;
                         }
                     } else if (element.getType().equals("Antenna")) return false;
+                    else if (element.getType().equals("Pit")){
+                        reboot(robot);
+                        return true;
+                    }
                 }
                 for (Robot r: figuren){
                     if (r != null && !r.equals(robot)) {
@@ -560,7 +585,7 @@ public class Game {
                     }
                 }
                 if (robot.getY() + 1 >= board.getWidth()){
-                    //reboot
+                    reboot(robot);
                     return true;
                 }
                 for (BoardElement element: board.getMap()[robot.getX()][robot.getY()+1]){
@@ -569,6 +594,10 @@ public class Game {
                             if (s.equals("left")) return false;
                         }
                     } else if (element.getType().equals("Antenna")) return false;
+                    else if (element.getType().equals("Pit")){
+                        reboot(robot);
+                        return true;
+                    }
                 }
                 for (Robot r: figuren){
                     if (r != null && !r.equals(robot)) {
@@ -589,6 +618,37 @@ public class Game {
         }
     }
 
+    public void reboot(Robot robot){
+        Cards card1 = cardsForGame.spamCards.remove(0);
+        Cards card2 = cardsForGame.spamCards.remove(0);
+        robot.getDeck().getDiscard().add(card1);
+        robot.getDeck().getDiscard().add(card2);
+        robot.setDead(true);
+
+        int rebootX = board.searchX("RestartPoint");
+        int rebootY = board.searchY("RestartPoint");
+
+        for (Robot r: figuren){
+            if (r != null && !r.equals(robot)){
+                if (r.getX() == robot.getX() && r.getY() == robot.getY()){
+                    if (checkMovement(r, r.getDirection())){
+                        robot.setX(rebootX);
+                        robot.setY(rebootY);
+                        robot.setDirection("top");
+
+                        Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+                        movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+                        SERVER.sendMessageForAllUsers(movement);
+
+                        Reboot reboot = new Reboot(robot.getGamerID());
+                        reboot.getMessageBody().setKeys(new String[]{"clientID"});
+                        SERVER.sendMessageForSingleClient(reboot, users.get(robot.getGamerID()));
+                    }
+                }
+            }
+        }
+    }
+
     public void sendError(String nachricht, ClientHandler clientHandler){
         Error1 error1 = new Error1(nachricht);
         error1.getMessageBody().setKeys(new String[]{"error"});
@@ -602,6 +662,14 @@ public class Game {
     public List<DamageCards> getTwoDamageCards() {
         List<DamageCards> damageCards = new ArrayList<>();
         return damageCards;
+    }
+
+    public int getActiveRegister() {
+        return activeRegister;
+    }
+
+    public int getNeededCheckpoints() {
+        return neededCheckpoints;
     }
 }
 

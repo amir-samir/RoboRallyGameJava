@@ -95,7 +95,7 @@ public class DizzyHighway extends Board {
         map[3][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
         map[3][5].add(new Empty("5B"));
         map[3][6].add(new Wall("5B",new String[]{"top"}));
-        map[3][7].add(new RestartPoint("5B"));
+        map[3][7].add(new RestartPoint("5B", new String[]{"bottom"}));
         map[3][8].add(new Wall("5B", new String[]{"left"}));
         map[3][8].add(new Laser("5B", new String[]{"left"},1));
         map[3][9].add(new Wall("5B", new String[]{"right"}));

@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Actions.GameFinished;
 import Messages.Phase.StartingPointTaken;
 
 import java.io.IOException;
@@ -312,5 +313,11 @@ public class Server {
         int ID = Server.laufendeID;
         laufendeID++;
         return ID;
+    }
+
+    public void endGame(Robot robot){
+        GameFinished gameFinished = new GameFinished(robot.getGamerID());
+        gameFinished.getMessageBody().setKeys(new String[]{"clientID"});
+        sendMessageForAllUsers(gameFinished);
     }
 }

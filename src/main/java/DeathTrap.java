@@ -157,7 +157,7 @@ public class DeathTrap extends Board {
         map[9][9].add(new Empty("2A"));
         map[9][10].add(new ConveyorBelt("A", new String[]{"left", "right"}, 1));
         map[9][11].add(new Empty("2A"));
-        map[9][12].add(new RestartPoint("A"));
+        map[9][12].add(new RestartPoint("A", new String[]{"left"}));
 
         this.setMap(map);
     }

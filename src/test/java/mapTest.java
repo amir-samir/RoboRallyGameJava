@@ -266,7 +266,8 @@ public class mapTest {
                                 map[y][x].add(new CheckPoint((String) typ.get("isOnBoard"), (int)(double) typ.get("order")));
                                 break;
                             case "RestartPoint":
-                                map[y][x].add(new RestartPoint((String) typ.get("isOnBoard")));
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new RestartPoint((String) typ.get("isOnBoard"), orientations));
                                 break;
                             default:
                         }
