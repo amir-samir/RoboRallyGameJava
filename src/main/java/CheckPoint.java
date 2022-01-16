@@ -17,7 +17,7 @@ public class CheckPoint extends BoardElement {
             CheckPointReached checkPointReached = new CheckPointReached(robot.getGamerID(), this.count);
             checkPointReached.getMessageBody().setKeys(new String[]{"clientID", "number"});
             server.sendMessageForAllUsers(checkPointReached);
-            if (server.game.getNeededCheckpoints() == count){
+            if (server.game.getNeededCheckpoints() == count-1){
                 server.endGame(robot);
             }
         }

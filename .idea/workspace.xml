@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix&#10;- Game Logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trojan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VirusCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Worm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -541,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642359134106</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Bugfix&#10;- Game Logic">
+      <created>1642366315211</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1642366315211</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="updated git-ignore" />
     <MESSAGE value="Improved method generateMap()" />
     <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
     <MESSAGE value="Merge: GUI &amp; Kommunikation" />
@@ -585,7 +591,8 @@
     <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
+    <MESSAGE value="Bugfix&#10;- Game Logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix&#10;- Game Logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -614,12 +621,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>624</line>
-          <properties class="Game" method="reboot">
+          <line>259</line>
+          <properties class="Game" method="activateCheckpoint">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/CheckPoint.java</url>
+          <line>13</line>
+          <properties class="CheckPoint" method="effect">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

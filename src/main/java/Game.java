@@ -261,7 +261,7 @@ public class Game {
         for (Robot robot: figuren){
             if (robot != null){
                 for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
-                    if (list.getType().equals("Checkpoint")){
+                    if (list.getType().equals("CheckPoint")){
                         list.effect(robot, SERVER);
                     }
                 }
