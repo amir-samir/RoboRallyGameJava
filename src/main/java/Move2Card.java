@@ -10,7 +10,11 @@ public class Move2Card extends Cards {
 
     @Override
     public void effect(Robot robot, Server server) {
-        server.game.checkMovement(robot, robot.getDirection());
-        server.game.checkMovement(robot, robot.getDirection());
+        try {
+            server.game.checkMovement(robot, robot.getDirection());
+            server.game.checkMovement(robot, robot.getDirection());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

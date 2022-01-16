@@ -139,6 +139,7 @@ public class ChatView {
     public void ChooseCard() throws Exception{
         try {
             Stage stage = new Stage();
+            StageSaver.getStageSaver().setChooseCardStage(stage);
             stage.setTitle("Sign In");
             Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCards.fxml"));
             Scene signInScene = new Scene(signIn);
@@ -201,7 +202,7 @@ public class ChatView {
 
 
     }
-    public void besmella() throws IOException {
+    public void runAllInOne() throws IOException {
         Stage stage = new Stage();
         stage.setTitle("Sign In");
         Parent signIn = FXMLLoader.load(getClass().getResource("fxml/AllInOne.fxml"));
