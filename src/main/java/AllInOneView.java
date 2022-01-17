@@ -539,7 +539,6 @@ public class AllInOneView implements Initializable {
     public void ChangeImageTest(){
         Card1.setImage(image4);
     }
-    //TODO: Method for inserting ein Figure auf dem Map, wird von Client gerufen, und nimmt 4 Parametern(Figure, Direction, X, Y)
 
     public void setFigureOnMap(int x, int y){
         gridpane1.add(new ImageView(figureTest),y,x);

@@ -1,16 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * @author: yilu ,chen
- * @Date: 2021/12/29
- */
-
 public class Robot {
 
-    private String name;
-    private int gamerID;
 
+    private int gamerID;
     private String direction;
     private int x;
     private int y;

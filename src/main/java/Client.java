@@ -257,6 +257,18 @@ public class Client implements Runnable {
                 case "Again":
                     handcards.add(new AgainCard());
                     break;
+                case "Spam":
+                    handcards.add(new Spam());
+                    break;
+                case "Trojan":
+                    handcards.add(new Trojan());
+                    break;
+                case "Worm":
+                    handcards.add(new Worm());
+                    break;
+                case "Virus":
+                    handcards.add(new VirusCard());
+                    break;
                 default:
                     break;
             }

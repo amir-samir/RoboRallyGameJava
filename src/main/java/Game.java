@@ -635,7 +635,11 @@ public class Game {
         for (Robot r: figuren){
             if (r != null && !r.equals(robot)){
                 if (r.getX() == rebootX && r.getY() == rebootY){
-                    checkMovement(r, r.getDirection());
+                    for (BoardElement element: board.getMap()[rebootX][rebootY]) {
+                        if (element.getType().equals("RestartPoint")) {
+                            checkMovement(r, element.getOrientations()[0]);
+                        }
+                    }
                 }
             }
         }
