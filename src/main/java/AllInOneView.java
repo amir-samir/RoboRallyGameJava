@@ -12,14 +12,13 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class AllInOneView implements Initializable {
     ArrayList<BoardElement>[][] mapGui = SaveClients.client.getMap();
     Boolean[] isFilled = new Boolean[5];
+    List laserList = new ArrayList<>();
+    List wallList = new ArrayList<>();
     @FXML
     ImageView FigureChat;
     @FXML
@@ -254,6 +253,9 @@ public class AllInOneView implements Initializable {
         SaveClients.client.printMessage(writeField.textProperty().get());
         writeField.clear();
 
+    }
+
+    public void getLaserOnMaps() {
 
     }
 
@@ -314,6 +316,34 @@ public class AllInOneView implements Initializable {
                        }
 
                     }
+                    //hiiii
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "Laser") && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")) {
+                        List<Integer> laserPositon = new ArrayList<>();
+                        laserPositon.add(x);
+                        laserPositon.add(y);
+                        List laserOrientation = new ArrayList<>();
+                        laserOrientation.add(laserPositon);
+
+                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
+                            case "bottom":
+                                gridpane1.add(new ImageView(image81),y,x);
+                                laserOrientation.add("bottom");
+                                break;
+                            case "top":
+                                gridpane1.add(new ImageView(image80),y,x);
+                                laserOrientation.add("top");
+                                break;
+                            case "right":
+                                gridpane1.add(new ImageView(image41),y,x);
+                                laserOrientation.add("right");
+                                break;
+                            case "left":
+                                gridpane1.add(new ImageView(image8),y,x);
+                                laserOrientation.add("left");
+                                break;
+                        }
+                        laserList.add(laserOrientation);
+                    }
                 }
                 else{
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "Wall")) {
@@ -353,13 +383,13 @@ public class AllInOneView implements Initializable {
                             gridpane1.add(new ImageView(image91),y,x);
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DizzyHighway")) {
-                            gridpane1.add(new ImageView(image75),y,x);
+                            gridpane1.add(new ImageView(image0),y,x);
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "ExtraCrispy")) {
-                            gridpane1.add(new ImageView(image75),y,x);
+                            gridpane1.add(new ImageView(image0),y,x);
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "LostBearings")) {
-                            gridpane1.add(new ImageView(image75),y,x);
+                            gridpane1.add(new ImageView(image0),y,x);
                         }
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "ConveyorBelt")){

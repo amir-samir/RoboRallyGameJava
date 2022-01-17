@@ -14,4 +14,10 @@ public class Laser extends BoardElement {
     public void effect(Robot robot, Server server){
         //gamer.pushCard(new Spam());
     }
+
+    @Override
+    public String[] getOrientations() {
+        return orientations;
+    }
+
 }
