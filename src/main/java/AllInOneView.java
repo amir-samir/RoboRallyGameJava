@@ -1,3 +1,4 @@
+import com.sun.javafx.collections.MappingChange;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,7 @@ import java.util.*;
 public class AllInOneView implements Initializable {
     ArrayList<BoardElement>[][] mapGui = SaveClients.client.getMap();
     Boolean[] isFilled = new Boolean[5];
-    List laserList = new ArrayList<>();
+    List<HashMap<String,Object>> laserList = new ArrayList<HashMap<String,Object>>();
     List wallList = new ArrayList<>();
     @FXML
     ImageView FigureChat;
@@ -318,31 +319,43 @@ public class AllInOneView implements Initializable {
                     }
                     //hiiii
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "Laser") && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")) {
-                        List<Integer> laserPositon = new ArrayList<>();
+                        HashMap<String,Object> laserPosition = new HashMap();
+                        laserPosition.put("x",x);
+                        laserPosition.put("y",y);
+
+
+                        /*List<Integer> laserPositon = new ArrayList<>();
                         laserPositon.add(x);
                         laserPositon.add(y);
                         List laserOrientation = new ArrayList<>();
-                        laserOrientation.add(laserPositon);
+                        laserOrientation.add(laserPositon);*/
 
                         switch (mapGui[x][y].get(0).getOrientations()[0]) {
                             case "bottom":
                                 gridpane1.add(new ImageView(image81),y,x);
-                                laserOrientation.add("bottom");
+                                laserPosition.put("Orientation","bottom");
                                 break;
                             case "top":
                                 gridpane1.add(new ImageView(image80),y,x);
-                                laserOrientation.add("top");
+                                while (true) {
+                                    gridpane1.add(new ImageView(image74), y, x - 1);
+                                    if(mapGui[x-1][y].get(0).getType().equals("Wall") && (mapGui[x-1][y].get(0).getOrientations()[0].equals("top") || mapGui[x-1][y].get(0).getOrientations()[0].equals("bottom"))){
+                                        break;
+                                    }
+                                }
+
+                                laserPosition.put("Orientation","top");
                                 break;
                             case "right":
                                 gridpane1.add(new ImageView(image41),y,x);
-                                laserOrientation.add("right");
+                                laserPosition.put("Orientation","right");
                                 break;
                             case "left":
                                 gridpane1.add(new ImageView(image8),y,x);
-                                laserOrientation.add("left");
+                                laserPosition.put("Orientation","left");
                                 break;
                         }
-                        laserList.add(laserOrientation);
+                        laserList.add(laserPosition);
                     }
                 }
                 else{
