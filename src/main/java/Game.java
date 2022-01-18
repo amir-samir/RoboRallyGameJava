@@ -242,7 +242,10 @@ public class Game {
             for (int u = 0; u < board.getMap()[i].length; u++) {
                 for (BoardElement boardElement: board.getMap()[i][u]) {
                     if (boardElement.getType().equals("Laser")){
-                        boardElement.effect(figuren[0],SERVER);
+                        Robot hit = laserFired(i, u, boardElement.getOrientations()[0]);
+                        if (hit != null){
+                            boardElement.effect(hit, SERVER);
+                        }
                     }
                 }
             }
@@ -252,7 +255,10 @@ public class Game {
     public void activateRobotLaser(){
         for (Robot robot: figuren){
             if (robot != null){
-                robot.shoot();
+                Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection());
+                if (hit != null){
+                    //SCHADEN
+                }
             }
         }
     }
@@ -632,20 +638,137 @@ public class Game {
         }
     }
 
+    public Robot laserFired(int x, int y, String direction){
+        boolean stillFlying = true;
+        while (stillFlying) {
+            for (Robot robot : figuren) {
+                if (robot != null) {
+                    if (robot.getX() == x && robot.getY() == y) {
+                        stillFlying = false;
+                        return robot;
+                    }
+                }
+            }
+            switch (direction) {
+                case "top":
+                    for (BoardElement element: board.getMap()[x][y]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("top")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    if (x-1 < 0) return null;
+                    for (BoardElement element: board.getMap()[x-1][y]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("bottom")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    x -= 1;
+                    break;
+                case "bottom":
+                    for (BoardElement element: board.getMap()[x][y]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("bottom")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    if (x+1 >= board.getHeight()) return null;
+                    for (BoardElement element: board.getMap()[x+1][y]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("top")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    x += 1;
+                    break;
+                case "left":
+                    for (BoardElement element: board.getMap()[x][y]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("left")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    if (y-1 < 0) return null;
+                    for (BoardElement element: board.getMap()[x][y-1]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("right")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    y -= 1;
+                    break;
+                case "right":
+                    for (BoardElement element: board.getMap()[x][y]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("right")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    if (y+1 >= board.getWidth()) return null;
+                    for (BoardElement element: board.getMap()[x][y+1]){
+                        if (element.getType().equals("Wand")){
+                            for (String orientation: element.getOrientations()){
+                                if (orientation.equals("left")){
+                                    stillFlying = false;
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                    y += 1;
+                    break;
+                default:
+                    return null;
+            }
+        }
+        return null;
+    }
+
+    public void drawDamage(Robot robot, int count){
+        String[] karten = new String[count];
+        for (int i = 0; i < count; i++){
+            Cards card = cardsForGame.spamCards.remove(0);
+            robot.getDeck().getDiscard().add(card);
+            karten[i] = card.getName();
+        }
+        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+        SERVER.sendMessageForAllUsers(drawDamage);
+    }
+
     public void reboot(Robot robot, String isOnBoard){
         try {
-            String[] karten = new String[2];
-            Cards card1 = cardsForGame.spamCards.remove(0);
-            Cards card2 = cardsForGame.spamCards.remove(0);
-            robot.getDeck().getDiscard().add(card1);
-            robot.getDeck().getDiscard().add(card2);
+            drawDamage(robot, 2);
             robot.setDead(true);
-
-            karten[0] = card1.getName();
-            karten[1] = card2.getName();
-            DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
-            drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
-            SERVER.sendMessageForAllUsers(drawDamage);
 
             int rebootX = board.searchX("RestartPoint");
             int rebootY = board.searchY("RestartPoint");

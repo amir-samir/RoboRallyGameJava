@@ -117,10 +117,6 @@ public class Robot {
         }
     }
 
-    public void shoot(){
-
-    }
-
     public Cards getFirstCard(){
         if (this.getDeck().getDeck().size() == 0){
             mischen();
