@@ -121,6 +121,13 @@ public class Robot {
 
     }
 
+    public Cards getFirstCard(){
+        if (this.getDeck().getDeck().size() == 0){
+            mischen();
+        }
+        return this.getDeck().getDeck().remove(0);
+    }
+
     // 0 upward; 1 face to right; 2 face to down; 3 face to left;
     // forward(-1) = backup(1)
     public void forward(int step) {

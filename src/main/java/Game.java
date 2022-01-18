@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Actions.DrawDamage;
 import Messages.Actions.Movement;
 import Messages.Actions.Reboot;
 import Messages.Phase.*;
@@ -633,11 +634,18 @@ public class Game {
     }
 
     public void reboot(Robot robot, String isOnBoard){
+        String[] karten = new String[2];
         Cards card1 = cardsForGame.spamCards.remove(0);
         Cards card2 = cardsForGame.spamCards.remove(0);
         robot.getDeck().getDiscard().add(card1);
         robot.getDeck().getDiscard().add(card2);
         robot.setDead(true);
+
+        karten[0] = card1.getName();
+        karten[1] = card2.getName();
+        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+        SERVER.sendMessageForAllUsers(drawDamage);
 
         int rebootX = board.searchX("RestartPoint");
         int rebootY = board.searchY("RestartPoint");
@@ -737,6 +745,10 @@ public class Game {
 
     public int getNeededCheckpoints() {
         return neededCheckpoints;
+    }
+
+    public CardsForGame getCardsForGame() {
+        return cardsForGame;
     }
 }
 
