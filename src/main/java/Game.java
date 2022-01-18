@@ -257,7 +257,7 @@ public class Game {
             if (robot != null){
                 Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection());
                 if (hit != null){
-                    //SCHADEN
+                    drawDamage(hit, 1);
                 }
             }
         }
