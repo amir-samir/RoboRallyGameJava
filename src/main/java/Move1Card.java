@@ -10,7 +10,7 @@ public class Move1Card extends Cards {
     @Override
     public void effect(Robot robot, Server server) {
         try {
-            server.game.checkMovement(robot, robot.getDirection());
+            server.game.checkMovement(robot, robot.getDirection(), false);
         } catch (Exception e) {
             e.printStackTrace();
         }

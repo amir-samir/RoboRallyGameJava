@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: Added Damage-Cards">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/DrawDamage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_22_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_22_25__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackUpCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackUpCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Move1Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move1Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Move2Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move2Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Move3Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Move3Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,13 +207,6 @@
       <workItem from="1642415601082" duration="4357000" />
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
-    </task>
-    <task id="LOCAL-00002" summary="@yilu und chen Adopter">
-      <created>1639131037040</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1639131037040</updated>
     </task>
     <task id="LOCAL-00003" summary="@yilu und dairen Adopte, Message">
       <created>1639138075735</created>
@@ -552,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642367994242</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()">
+      <created>1642501683952</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1642501683952</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved method generateMap()" />
     <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
     <MESSAGE value="Merge: GUI &amp; Kommunikation" />
     <MESSAGE value="Support for SetStartingPoint" />
@@ -596,7 +594,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
     <MESSAGE value="Bugfix&#10;- Game Logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix&#10;- Game Logic" />
+    <MESSAGE value="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

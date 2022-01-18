@@ -469,11 +469,11 @@ public class Game {
         return newCards;
     }
 
-    public boolean checkMovement(Robot robot, String direction){
+    public boolean checkMovement(Robot robot, String direction, boolean necessary){
         Movement movement;
         switch (direction) {
             case "top":
-                if (!robot.getDead()) {
+                if (!robot.getDead() || necessary) {
                     for (BoardElement list : board.getMap()[robot.getX()][robot.getY()]) {
                         if (list.getType().equals("Wall")) {
                             for (String s : list.getOrientations()) {
@@ -499,7 +499,7 @@ public class Game {
                     for (Robot r : figuren) {
                         if (r != null && !r.equals(robot)) {
                             if (r.getX() == robot.getX() - 1 && r.getY() == robot.getY()) {
-                                if (!checkMovement(r, direction)) {
+                                if (!checkMovement(r, direction, true)) {
                                     return false;
                                 }
                             }
@@ -512,7 +512,7 @@ public class Game {
                     return true;
                 } else return false;
             case "bottom":
-                if (!robot.getDead()) {
+                if (!robot.getDead() || necessary) {
                     for (BoardElement list : board.getMap()[robot.getX()][robot.getY()]) {
                         if (list.getType().equals("Wall")) {
                             for (String s : list.getOrientations()) {
@@ -538,7 +538,7 @@ public class Game {
                     for (Robot r : figuren) {
                         if (r != null && !r.equals(robot)) {
                             if (r.getX() == robot.getX() + 1 && r.getY() == robot.getY()) {
-                                if (!checkMovement(r, direction)) {
+                                if (!checkMovement(r, direction, true)) {
                                     return false;
                                 }
                             }
@@ -551,7 +551,7 @@ public class Game {
                     return true;
                 } else return false;
             case "left":
-                if (!robot.getDead()) {
+                if (!robot.getDead() || necessary) {
                     for (BoardElement list : board.getMap()[robot.getX()][robot.getY()]) {
                         if (list.getType().equals("Wall")) {
                             for (String s : list.getOrientations()) {
@@ -577,7 +577,7 @@ public class Game {
                     for (Robot r : figuren) {
                         if (r != null && !r.equals(robot)) {
                             if (r.getX() == robot.getX() && r.getY() == robot.getY() - 1) {
-                                if (!checkMovement(r, direction)) {
+                                if (!checkMovement(r, direction, true)) {
                                     return false;
                                 }
                             }
@@ -590,7 +590,7 @@ public class Game {
                     return true;
                 } else return false;
             case "right":
-                if (!robot.getDead()) {
+                if (!robot.getDead() ||necessary) {
                     for (BoardElement list : board.getMap()[robot.getX()][robot.getY()]) {
                         if (list.getType().equals("Wall")) {
                             for (String s : list.getOrientations()) {
@@ -616,7 +616,7 @@ public class Game {
                     for (Robot r : figuren) {
                         if (r != null && !r.equals(robot)) {
                             if (r.getX() == robot.getX() && r.getY() == robot.getY() + 1) {
-                                if (!checkMovement(r, direction)) {
+                                if (!checkMovement(r, direction, true)) {
                                     return false;
                                 }
                             }
@@ -634,94 +634,98 @@ public class Game {
     }
 
     public void reboot(Robot robot, String isOnBoard){
-        String[] karten = new String[2];
-        Cards card1 = cardsForGame.spamCards.remove(0);
-        Cards card2 = cardsForGame.spamCards.remove(0);
-        robot.getDeck().getDiscard().add(card1);
-        robot.getDeck().getDiscard().add(card2);
-        robot.setDead(true);
+        try {
+            String[] karten = new String[2];
+            Cards card1 = cardsForGame.spamCards.remove(0);
+            Cards card2 = cardsForGame.spamCards.remove(0);
+            robot.getDeck().getDiscard().add(card1);
+            robot.getDeck().getDiscard().add(card2);
+            robot.setDead(true);
 
-        karten[0] = card1.getName();
-        karten[1] = card2.getName();
-        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
-        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
-        SERVER.sendMessageForAllUsers(drawDamage);
+            karten[0] = card1.getName();
+            karten[1] = card2.getName();
+            DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+            drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+            SERVER.sendMessageForAllUsers(drawDamage);
 
-        int rebootX = board.searchX("RestartPoint");
-        int rebootY = board.searchY("RestartPoint");
+            int rebootX = board.searchX("RestartPoint");
+            int rebootY = board.searchY("RestartPoint");
 
-        if (!isOnBoard.equals("A")) {
-            for (Robot r : figuren) {
-                if (r != null && !r.equals(robot)) {
-                    if (r.getX() == rebootX && r.getY() == rebootY) {
-                        for (BoardElement element : board.getMap()[rebootX][rebootY]) {
-                            if (element.getType().equals("RestartPoint")) {
-                                checkMovement(r, element.getOrientations()[0]);
+            if (!isOnBoard.equals("A")) {
+                for (Robot r : figuren) {
+                    if (r != null && !r.equals(robot)) {
+                        if (r.getX() == rebootX && r.getY() == rebootY) {
+                            for (BoardElement element : board.getMap()[rebootX][rebootY]) {
+                                if (element.getType().equals("RestartPoint")) {
+                                    checkMovement(r, element.getOrientations()[0], true);
+                                }
                             }
                         }
                     }
                 }
-            }
-            robot.setX(rebootX);
-            robot.setY(rebootY);
-        } else {
-            boolean startPointTaken = false;
-            for (Robot r : figuren) {
-                if (r != null && !r.equals(robot)) {
-                    if (r.getX() == robot.getStartPointX() && r.getY() == robot.getStartPointY()) {
-                        for (BoardElement element : board.getMap()[robot.getStartPointX()][robot.getStartPointY()]) {
-                            if (element.getType().equals("StartPoint")) {
-                                startPointTaken = true;
+                robot.setX(rebootX);
+                robot.setY(rebootY);
+            } else {
+                boolean startPointTaken = false;
+                for (Robot r : figuren) {
+                    if (r != null && !r.equals(robot)) {
+                        if (r.getX() == robot.getStartPointX() && r.getY() == robot.getStartPointY()) {
+                            for (BoardElement element : board.getMap()[robot.getStartPointX()][robot.getStartPointY()]) {
+                                if (element.getType().equals("StartPoint")) {
+                                    startPointTaken = true;
+                                }
                             }
                         }
                     }
                 }
-            }
-            if (startPointTaken){
-                boolean newStartPointFound = true;
-                int zufall = (int) Math.floor(Math.random() * 5);
-                while (newStartPointFound) {
-                    for (int i = 0; i < board.getMap().length; i++) {
-                        for (int u = 0; u < board.getMap()[i].length; u++) {
-                            for (BoardElement boardElement : board.getMap()[i][u]) {
-                                if (boardElement.getType().equals("StartPoint")) {
-                                    if (zufall >= 0) {
-                                        zufall -= 1;
-                                    } else {
-                                        newStartPointFound = false;
-                                        for (Robot rob : figuren) {
-                                            if (rob != null && !rob.equals(robot)) {
-                                                if (rob.getX() == i && rob.getY() == u){
-                                                    newStartPointFound = true;
+                if (startPointTaken) {
+                    boolean newStartPointFound = true;
+                    int zufall = (int) Math.floor(Math.random() * 5);
+                    while (newStartPointFound) {
+                        for (int i = 0; i < board.getMap().length; i++) {
+                            for (int u = 0; u < board.getMap()[i].length; u++) {
+                                for (BoardElement boardElement : board.getMap()[i][u]) {
+                                    if (boardElement.getType().equals("StartPoint")) {
+                                        if (zufall >= 0) {
+                                            zufall -= 1;
+                                        } else {
+                                            newStartPointFound = false;
+                                            for (Robot rob : figuren) {
+                                                if (rob != null && !rob.equals(robot)) {
+                                                    if (rob.getX() == i && rob.getY() == u) {
+                                                        newStartPointFound = true;
+                                                    }
                                                 }
                                             }
-                                        }
-                                        if (!newStartPointFound){
-                                            robot.setX(i);
-                                            robot.setY(u);
-                                            zufall = 1000;
-                                            break;
+                                            if (!newStartPointFound) {
+                                                robot.setX(i);
+                                                robot.setY(u);
+                                                zufall = 1000;
+                                                break;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                } else {
+                    robot.setX(robot.getStartPointX());
+                    robot.setY(robot.getStartPointY());
                 }
-            } else {
-                robot.setX(robot.getStartPointX());
-                robot.setY(robot.getStartPointY());
             }
+            robot.setDirection("top");
+
+            Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
+            movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+            SERVER.sendMessageForAllUsers(movement);
+
+            Reboot reboot = new Reboot(robot.getGamerID());
+            reboot.getMessageBody().setKeys(new String[]{"clientID"});
+            SERVER.sendMessageForSingleClient(reboot, users.get(robot.getGamerID()));
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        robot.setDirection("top");
-
-        Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
-        movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
-        SERVER.sendMessageForAllUsers(movement);
-
-        Reboot reboot = new Reboot(robot.getGamerID());
-        reboot.getMessageBody().setKeys(new String[]{"clientID"});
-        SERVER.sendMessageForSingleClient(reboot, users.get(robot.getGamerID()));
     }
 
     public void sendError(String nachricht, ClientHandler clientHandler){

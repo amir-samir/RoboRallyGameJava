@@ -26,7 +26,7 @@ public class BackUpCard extends Cards {
                     richtung = null;
                     break;
             }
-            server.game.checkMovement(robot, richtung);
+            server.game.checkMovement(robot, richtung, false);
         } catch (Exception e) {
             e.printStackTrace();
         }
