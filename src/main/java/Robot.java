@@ -17,6 +17,8 @@ public class Robot {
     private boolean isDead;
     private int energyCube;
     private int collectedCheckpoints;
+    private int startPointX;
+    private int startPointY;
 
 
     public Robot(int ID){
@@ -182,6 +184,14 @@ public class Robot {
         this.collectedCheckpoints = collectedCheckpoints;
     }
 
+    public void setStartPointX(int startPointX) {
+        this.startPointX = startPointX;
+    }
+
+    public void setStartPointY(int startPointY) {
+        this.startPointY = startPointY;
+    }
+
     public int getGamerID() {
         return gamerID;
     }
@@ -220,6 +230,14 @@ public class Robot {
 
     public int getCollectedCheckpoints() {
         return collectedCheckpoints;
+    }
+
+    public int getStartPointX() {
+        return startPointX;
+    }
+
+    public int getStartPointY() {
+        return startPointY;
     }
 
     /**
