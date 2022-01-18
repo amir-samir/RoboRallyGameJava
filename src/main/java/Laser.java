@@ -14,4 +14,9 @@ public class Laser extends BoardElement {
     public void effect(Robot robot, Server server){
         server.game.drawDamage(robot, count);
     }
+
+    @Override
+    public String[] getOrientations() {
+        return orientations;
+    }
 }

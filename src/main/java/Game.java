@@ -242,7 +242,7 @@ public class Game {
             for (int u = 0; u < board.getMap()[i].length; u++) {
                 for (BoardElement boardElement: board.getMap()[i][u]) {
                     if (boardElement.getType().equals("Laser")){
-                        Robot hit = laserFired(i, u, boardElement.getOrientations()[0]);
+                        Robot hit = laserFired(i, u, boardElement.getOrientations()[0], null);
                         if (hit != null){
                             boardElement.effect(hit, SERVER);
                         }
@@ -255,7 +255,7 @@ public class Game {
     public void activateRobotLaser(){
         for (Robot robot: figuren){
             if (robot != null){
-                Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection());
+                Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
                 if (hit != null){
                     drawDamage(hit, 1);
                 }
@@ -638,11 +638,11 @@ public class Game {
         }
     }
 
-    public Robot laserFired(int x, int y, String direction){
+    public Robot laserFired(int x, int y, String direction, Robot r){
         boolean stillFlying = true;
         while (stillFlying) {
             for (Robot robot : figuren) {
-                if (robot != null) {
+                if (robot != null && !robot.equals(r)) {
                     if (robot.getX() == x && robot.getY() == y) {
                         stillFlying = false;
                         return robot;

@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- reboot works">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +109,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KI">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -163,9 +167,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.KI" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       </list>
@@ -201,20 +205,6 @@
       <workItem from="1642415601082" duration="4357000" />
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
-    </task>
-    <task id="LOCAL-00004" summary="@yilu und dairen Adopte, Message">
-      <created>1639144711170</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1639144711170</updated>
-    </task>
-    <task id="LOCAL-00005" summary="q">
-      <created>1639338951559</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1639338951559</updated>
     </task>
     <task id="LOCAL-00006" summary="q">
       <created>1639339000736</created>
@@ -545,7 +535,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642503190509</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser">
+      <created>1642542246674</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1642542246674</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser">
+      <created>1642542755297</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1642542755297</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,8 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: GUI &amp; Kommunikation" />
-    <MESSAGE value="Support for SetStartingPoint" />
     <MESSAGE value="Changes by Amir" />
     <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
     <MESSAGE value="bugfix" />
@@ -589,7 +591,9 @@
     <MESSAGE value="Bugfix&#10;- Game Logic" />
     <MESSAGE value="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()" />
     <MESSAGE value="Bugfix:&#10;- reboot works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- reboot works" />
+    <MESSAGE value="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser" />
+    <MESSAGE value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,15 +621,6 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/CheckPoint.java</url>
-          <line>13</line>
-          <properties class="CheckPoint">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
           <line>37</line>
           <properties class="Robot">
@@ -636,12 +631,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>462</line>
-          <properties class="Game" method="convertListToArray">
+          <line>254</line>
+          <properties class="Game" method="activateRobotLaser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="46" />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>239</line>
+          <properties class="Game" method="activateBoardLaser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>640</line>
+          <properties class="Game" method="laserFired">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
