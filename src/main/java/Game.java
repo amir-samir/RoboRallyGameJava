@@ -117,9 +117,8 @@ public class Game {
     }
 
     public void aktivierungsPhase(){
-        ArrayList<ClientHandler> reihenfolge = reihenfolgeBestimmen();
         for (int i = 0; i < 5; i++) {
-            System.out.println(i + " active Register: " + activeRegister);
+            ArrayList<ClientHandler> reihenfolge = reihenfolgeBestimmen();
             currentCardVerschicken();
             for (ClientHandler clientHandler : reihenfolge) {
                 Robot robot = figuren[clientHandler.figure];
