@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;">
+      <change beforePath="$PROJECT_DIR$/src/main/java/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,14 +201,7 @@
       <workItem from="1642415601082" duration="4357000" />
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
-      <workItem from="1642593519711" duration="1398000" />
-    </task>
-    <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641139886511</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1641139886511</updated>
+      <workItem from="1642593519711" duration="1768000" />
     </task>
     <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
       <created>1641140977313</created>
@@ -544,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642595068961</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;">
+      <created>1642595328356</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1642595328356</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
@@ -588,7 +589,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Laser-Orientation in &quot;DizzyHighway&quot;&#10;- Method laserFired() -&gt; changed &quot;wand&quot; into &quot;Wall&quot;" />
     <MESSAGE value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
+    <MESSAGE value="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
