@@ -683,6 +683,30 @@ public class Game {
         }
     }
 
+    public boolean checkConveyor(Robot robot){
+        String robotDirection = robot.getDirection();
+        BoardElement conveyor = null;
+        for (BoardElement element: board.getMap()[robot.getX()][robot.getY()]){
+            if (element.getType().equals("ConveyorBelt")){
+                conveyor = element;
+            }
+        }
+        if (conveyor != null){
+            switch (conveyor.getOrientations()[0]){
+                case "top":
+                    break;
+                case "bottom":
+                    break;
+                case "left":
+                    break;
+                case "right":
+                    break;
+                default:
+                    return false;
+            }
+        } else return false;
+    }
+
     public Robot laserFired(int x, int y, String direction, Robot r){
         boolean stillFlying = true;
         while (stillFlying) {
