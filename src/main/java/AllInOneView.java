@@ -175,7 +175,7 @@ public class AllInOneView implements Initializable {
     Image image72 = new Image("assets/2EinleitungUnten.png");
     Image image73 = new Image("assets/2EinleitungRechts.png");
     Image image74 = new Image("assets/1LaserWandOben.png");
-    Image image75 = new Image("assets/GruenFeldUnten.png");
+    Image image75 = new Image("assets/Runtergreen.png");
     Image image76 = new Image("assets/1LaserWandLinks.png");
     Image image77 = new Image("assets/1LaserWandRechts.png");
     Image image78 = new Image("assets/2nachOben.png");
