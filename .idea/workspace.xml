@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Correct Effect in PushPanel">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VirusCard.java" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Effect of a VirusCard is now correct">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +107,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -164,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server" />
         <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.KI" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
@@ -203,13 +204,6 @@
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
       <workItem from="1642593519711" duration="2093000" />
-    </task>
-    <task id="LOCAL-00011" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641142068102</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1641142068102</updated>
     </task>
     <task id="LOCAL-00012" summary="Bugfix">
       <created>1641324232749</created>
@@ -547,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642595472045</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Bugfix:&#10;- Effect of a VirusCard is now correct">
+      <created>1642597177085</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1642597177085</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
@@ -591,7 +591,8 @@
     <MESSAGE value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
     <MESSAGE value="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;" />
     <MESSAGE value="Bugfix:&#10;- Correct Effect in PushPanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Correct Effect in PushPanel" />
+    <MESSAGE value="Bugfix:&#10;- Effect of a VirusCard is now correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Effect of a VirusCard is now correct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
