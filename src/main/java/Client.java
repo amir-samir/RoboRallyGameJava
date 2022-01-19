@@ -375,6 +375,36 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(rebootDirection));
     }
 
+    public String handleCheckPointReached(Message m){
+        int clientID = (int) (double) m.getMessageBody().getContent()[0];
+        int number = (int) (double) m.getMessageBody().getContent()[1];
+        String s;
+        if (clientID == this.ID){
+            s = "Du hast folgenden Checkpoint erreicht: " + number;
+        } else s = player.get(clientID).name + " (" + clientID + ") hat folgenden Checkpoint erreicht: " + number;
+        return s;
+    }
+
+    public String handleGameFinished(Message m){
+        int clientID = (int) (double) m.getMessageBody().getContent()[0];
+        String s;
+        if (clientID == this.ID){
+            s = "Du hast das Spiel gewonnen! Glückwunsch!";
+        } else s = player.get(clientID).name + " (" + clientID + ") hat das Spiel gewonnen. Nächstes mal klappts bestimmt...";
+        return s;
+    }
+
+    public String handleReplaceCard(Message m){
+        int clientID = (int) (double) m.getMessageBody().getContent()[2];
+        int register = (int) (double) m.getMessageBody().getContent()[0];
+        String newCard = (String) m.getMessageBody().getContent()[1];
+        String s;
+        if (clientID == this.ID){
+            s = "In deinem Register " + register + " wurde die Karte durch folgende Karte ersetzt: " + newCard;
+        } else s = player.get(clientID).name + " (" + clientID + ") hat in Register " + register + " jetzt folgende Karte: " + newCard;
+        return s;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -627,6 +657,14 @@ public class Client implements Runnable {
                         toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
                         //Richtung auswählen :)
                     } else toSend = player.get(clientID).name + " (" + clientID + ") ist gestorben";
+                } else if (message.getMessageType().equals("DrawDamage")){
+                    toSend = handleDamage(message);
+                } else if (message.getMessageType().equals("CheckPointReached")){
+                    toSend = handleCheckPointReached(message);
+                } else if (message.getMessageType().equals("GameFinished")){
+                    toSend = handleGameFinished(message);
+                } else if (message.getMessageType().equals("ReplaceCard")){
+                    toSend = handleReplaceCard(message);
                 }
                 else {
                     toSend = inputFromServer;
@@ -645,6 +683,21 @@ public class Client implements Runnable {
             }
         }
     }
+
+    public String handleDamage(Message m){
+        int clientID = (int) (double) m.getMessageBody().getContent()[0];
+        List<String> damageCards = (List<String>) m.getMessageBody().getContent()[1];
+        String s;
+        if (clientID == this.ID){
+            s = "Du musstest folgende Schadenskarten ziehen: " + "\n";
+        } else s = player.get(clientID).name + " (" + clientID + ") musste folgende Schadenskarten ziehen: " + "\n";
+        for (String card: damageCards){
+            s += "| " + card + " ";
+        }
+        s += "|";
+        return s;
+    }
+
 
     public String getSelectedMap(){
         return selectedMap;
