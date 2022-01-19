@@ -15,7 +15,8 @@ public class VirusCard extends DamageCards {
         replaceCard.getMessageBody().setKeys(new String[]{"register", "newCard", "clientID"});
         server.sendMessageForAllUsers(replaceCard);
 
+        server.game.sendVirus(robot);
         activateCard.effect(robot,server);
-        server.game.getCardsForGame().spamCards.add(new Spam());
+        server.game.getCardsForGame().virusCards.add(new VirusCard());
     }
 }

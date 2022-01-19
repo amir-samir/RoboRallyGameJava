@@ -257,7 +257,7 @@ public class Game {
             if (robot != null){
                 Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
                 if (hit != null){
-                    drawDamage(hit, 1);
+                    drawDamageSpam(hit, 1);
                 }
             }
         }
@@ -753,7 +753,7 @@ public class Game {
         return null;
     }
 
-    public void drawDamage(Robot robot, int count){
+    public void drawDamageSpam(Robot robot, int count){
         String[] karten = new String[count];
         for (int i = 0; i < count; i++){
             Cards card = cardsForGame.spamCards.remove(0);
@@ -765,9 +765,34 @@ public class Game {
         SERVER.sendMessageForAllUsers(drawDamage);
     }
 
+    public void drawDamageVirus(Robot robot, int count){
+        String[] karten = new String[count];
+        for (int i = 0; i < count; i++){
+            Cards card = cardsForGame.virusCards.remove(0);
+            robot.getDeck().getDiscard().add(card);
+            karten[i] = card.getName();
+        }
+        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+        SERVER.sendMessageForAllUsers(drawDamage);
+    }
+
+    public void sendVirus(Robot rob){
+        for (Robot robot: figuren){
+            if (robot != null && !robot.equals(rob)){
+                int entfernungX = Math.abs(robot.getX() - rob.getX());
+                int entfernungY = Math.abs(robot.getY() - rob.getY());
+                int entfernungGesamt = entfernungX + entfernungY;
+                if (entfernungGesamt <= 6){
+                    drawDamageVirus(robot, 1);
+                }
+            }
+        }
+    }
+
     public void reboot(Robot robot, String isOnBoard){
         try {
-            drawDamage(robot, 2);
+            drawDamageSpam(robot, 2);
             robot.setDead(true);
 
             int rebootX = board.searchX("RestartPoint");
