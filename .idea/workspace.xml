@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Change Direction function gui">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/35timer.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/othertimer.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/timer30.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChooseCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChooseCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCards.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCards.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Timer fertig Gui" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,13 +196,6 @@
       <workItem from="1642265081549" duration="212000" />
       <workItem from="1642278457933" duration="1317000" />
       <workItem from="1642326786929" duration="7643000" />
-    </task>
-    <task id="LOCAL-00003" summary="@yilu und dairen Adopte, Message">
-      <created>1639138075735</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1639138075738</updated>
     </task>
     <task id="LOCAL-00004" summary="@yilu und dairen Adopte, Message">
       <created>1639144711170</created>
@@ -550,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642623287470</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Timer fertig Gui">
+      <created>1642628081056</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642628081056</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Support for SetStartingPoint" />
     <MESSAGE value="Changes by Amir" />
     <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
     <MESSAGE value="bugfix" />
@@ -594,7 +583,8 @@
     <MESSAGE value="BugFix RestartPoint" />
     <MESSAGE value="Change Direction graphics" />
     <MESSAGE value="Change Direction function gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Direction function gui" />
+    <MESSAGE value="Timer fertig Gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer fertig Gui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
