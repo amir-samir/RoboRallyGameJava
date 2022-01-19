@@ -257,89 +257,7 @@ public class AllInOneView implements Initializable {
     }
 
     public void getLaserOnMaps() {
-        for (int x = 0; x < gridpane1.getRowCount(); x++) {
-            for (int y = 0; y < gridpane1.getColumnCount(); y++) {
-                if (mapGui[x][y].size() <= 2){
-                if (Objects.equals(mapGui[x][y].get(0).getType(), "Laser") && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")) {
-                    HashMap<String, Object> laserPosition = new HashMap();
-                    laserPosition.put("x", x);
-                    laserPosition.put("y", y);
-                    int counter = 0;
 
-
-                        /*List<Integer> laserPositon = new ArrayList<>();
-                        laserPositon.add(x);
-                        laserPositon.add(y);
-                        List laserOrientation = new ArrayList<>();
-                        laserOrientation.add(laserPositon);*/
-
-                    switch (mapGui[x][y].get(0).getOrientations()[0]) {
-                        case "bottom":
-                            gridpane1.add(new ImageView(image81), y, x);
-                            counter = 0;
-                            while (true) {
-                                counter++;
-                                if (mapGui[x + counter][y].size() == 0) {
-                                    gridpane1.add(new ImageView(image23), y, x + counter);
-                                }
-                                if (mapGui[x + counter][y].get(0).getType().equals("Wall") && (mapGui[x + counter][y].get(0).getOrientations()[0].equals("top") || mapGui[x + counter][y].get(0).getOrientations()[0].equals("bottom"))) {
-                                    gridpane1.add(new ImageView(image84), y, x + counter);
-                                    break;
-                                }
-                            }
-                            laserPosition.put("Orientation", "bottom");
-                            break;
-                        case "top":
-                            gridpane1.add(new ImageView(image80), y, x);
-                            counter = 0;
-                            while (true) {
-                                counter++;
-                                if (mapGui[x - counter][y].size() == 0) {
-                                    gridpane1.add(new ImageView(image23), y, x - counter);
-                                }
-                                if (mapGui[x - counter][y].get(0).getType().equals("Wall") && (mapGui[x - 1][y].get(0).getOrientations()[0].equals("top") || mapGui[x - 1][y].get(0).getOrientations()[0].equals("bottom"))) {
-                                    gridpane1.add(new ImageView(image74), y, x - counter);
-                                    break;
-                                }
-                            }
-                            laserPosition.put("Orientation", "top");
-                            break;
-                        case "right":
-                            gridpane1.add(new ImageView(image41), y, x);
-                            counter = 0;
-                            while (true) {
-                                counter++;
-                                if (mapGui[x][y + counter].size() == 0) {
-                                    gridpane1.add(new ImageView(image23), y + counter, x);
-                                }
-                                if ((mapGui[x][y + counter].get(0).getType().equals("Wall") || mapGui[x][y + counter].get(1).getType().equals("Wall"))&& (mapGui[x][y + counter].get(0).getOrientations()[0].equals("right") || mapGui[x][y + counter].get(0).getOrientations()[0].equals("left"))) {
-                                    gridpane1.add(new ImageView(image77), y + counter, x);
-                                    break;
-                                }
-                            }
-                            laserPosition.put("Orientation", "right");
-                            break;
-                        case "left":
-                            gridpane1.add(new ImageView(image8), y, x);
-                            counter = 0;
-                            while (true) {
-                                counter++;
-                                if (mapGui[x][y - counter].size() == 0) {
-                                    gridpane1.add(new ImageView(image23), y - counter, x);
-                                }
-                                if (mapGui[x][y - counter].get(0).getType().equals("Wall") && (mapGui[x][y - counter].get(0).getOrientations()[0].equals("right") || mapGui[x][y - counter].get(0).getOrientations()[0].equals("left"))) {
-                                    gridpane1.add(new ImageView(image82), y - counter, x);
-                                    break;
-                                }
-                            }
-                            laserPosition.put("Orientation", "left");
-                            break;
-                    }
-                    laserList.add(laserPosition);
-                }
-
-            }}
-        }
     }
 
     @Override
@@ -381,14 +299,6 @@ public class AllInOneView implements Initializable {
                     gridpane1.add(new ImageView(image1),y,x);
                 }
                 else if (mapGui[x][y].size() == 2){
-                    if (Objects.equals(mapGui[x][y].get(0).getType(), "EnergySpace")) {
-                        // Muss evtl. noch weiter angepasst werden
-                        gridpane1.add(new ImageView(image52),y,x);
-                        //hiiiiii
-                        if (mapGui[x][y].size() == 2 && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")){
-                            gridpane1.add(new ImageView(image22),y,x);
-                        }
-                    }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "PushPanel")){
                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
                            case "bottom":
@@ -406,6 +316,46 @@ public class AllInOneView implements Initializable {
 
                        }
 
+                    }
+                    //hiiii
+                    if (Objects.equals(mapGui[x][y].get(0).getType(), "Laser") && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")) {
+                        HashMap<String,Object> laserPosition = new HashMap();
+                        laserPosition.put("x",x);
+                        laserPosition.put("y",y);
+
+
+                        /*List<Integer> laserPositon = new ArrayList<>();
+                        laserPositon.add(x);
+                        laserPositon.add(y);
+                        List laserOrientation = new ArrayList<>();
+                        laserOrientation.add(laserPositon);*/
+
+                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
+                            case "bottom":
+                                gridpane1.add(new ImageView(image81),y,x);
+                                laserPosition.put("Orientation","bottom");
+                                break;
+                            case "top":
+                                gridpane1.add(new ImageView(image80),y,x);
+                                while (true) {
+                                    gridpane1.add(new ImageView(image74), y, x - 1);
+                                    if(mapGui[x-1][y].get(0).getType().equals("Wall") && (mapGui[x-1][y].get(0).getOrientations()[0].equals("top") || mapGui[x-1][y].get(0).getOrientations()[0].equals("bottom"))){
+                                        break;
+                                    }
+                                }
+
+                                laserPosition.put("Orientation","top");
+                                break;
+                            case "right":
+                                gridpane1.add(new ImageView(image41),y,x);
+                                laserPosition.put("Orientation","right");
+                                break;
+                            case "left":
+                                gridpane1.add(new ImageView(image8),y,x);
+                                laserPosition.put("Orientation","left");
+                                break;
+                        }
+                        laserList.add(laserPosition);
                     }
                 }
                 else{
@@ -427,14 +377,6 @@ public class AllInOneView implements Initializable {
                         }
 
                     }
-                    if (Objects.equals(mapGui[x][y].get(0).getType(), "Gear")) {
-                        if (mapGui[x][y].get(0).getOrientations()[0].equals("clockwise")) {
-                            gridpane1.add(new ImageView(image24), y, x);
-                        }
-                        else {
-                            gridpane1.add(new ImageView(image28), y, x);
-                        }
-                    }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "Antenna")) {
                         // Muss evtl. noch weiter angepasst werden
                         gridpane1.add(new ImageView(image20),y,x);
@@ -442,10 +384,6 @@ public class AllInOneView implements Initializable {
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "EnergySpace")) {
                         // Muss evtl. noch weiter angepasst werden
                         gridpane1.add(new ImageView(image52),y,x);
-                        //hiiiiii
-                        if (mapGui[x][y].size() == 2 && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")){
-                            gridpane1.add(new ImageView(image22),y,x);
-                        }
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "StartPoint")) {
                         gridpane1.add(new ImageView(image9),y,x);
@@ -580,8 +518,8 @@ public class AllInOneView implements Initializable {
                         }
                     }
                 }
+
             }
-           //getLaserOnMaps();
         }
        /* if (SaveClients.client.getSelectedMap().equals("DizzyHighway")){
             for (int i = 0; i < gridpane1.getRowCount(); i++){
