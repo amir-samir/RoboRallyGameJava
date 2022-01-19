@@ -18,11 +18,13 @@ import java.sql.Array;
 import java.sql.Time;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+import java.util.Timer;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class ChooseCards implements Initializable {
+
     int RegisterPlatz = -1;
     boolean[] nullCard = new boolean[9];
     String[] CardsNames = new String[9];
@@ -30,6 +32,9 @@ public class ChooseCards implements Initializable {
     private static final Integer BeginTimerSeconds = 30;
     //private Timeline timeline = new Timeline();
     private Integer currentSeconds = BeginTimerSeconds;
+
+    @FXML
+    ImageView TimerGif;
     @FXML
     Label TimerLabelFx;
     @FXML
@@ -54,6 +59,10 @@ public class ChooseCards implements Initializable {
     ImageView Card8;
     @FXML
     ImageView Card9;
+
+    @FXML
+    Image timergifImage = new Image("assets/35timer.gif");
+
    @FXML
     Image Move1 = new Image("assets/Move1.png");
     Image Move2 = new Image("assets/Move2Blau.png");
@@ -67,9 +76,12 @@ public class ChooseCards implements Initializable {
 
 
 
-
+    public ChooseCards(){
+        Client.setChooseCards(this);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //TimerGif.setVisible(false);
         Card1.setImage(getImageForCard(SaveClients.client.getHandcards().get(0).getName()));
         Card2.setImage(getImageForCard(SaveClients.client.getHandcards().get(1).getName()));
         Card3.setImage(getImageForCard(SaveClients.client.getHandcards().get(2).getName()));
@@ -268,6 +280,11 @@ public class ChooseCards implements Initializable {
                 }
             }
         }));
+    }
+
+    public void ShowTimer() throws InterruptedException {
+        TimeUnit. SECONDS.sleep(1);
+         TimerGif.setImage(timergifImage);
     }
 
 
