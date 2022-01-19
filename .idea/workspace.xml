@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Changing Gui Map">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="LaserDing">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_21_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_21_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_09_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_46_[Changes]/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_46_[Changes]/Client$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_46_[Changes]/Client$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_46_[Changes]/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_46_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48_[Changes]/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48_[Changes]/Client$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48_[Changes]/Client$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48_[Changes]/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48_[Changes]/MaybeMapsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2022_22_48_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00_[Changes]/ChatViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00_[Changes]/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00_[Changes]/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00_[Changes]/MaybeMapsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_01_2022_15_00_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DeathTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Kommunikation" />
+        <entry key="$PROJECT_DIR$" value="AddSpamCards" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,6 +96,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -160,8 +177,8 @@
       <list>
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
+        <item itemvalue="JUnit.mapTest" />
         <item itemvalue="Application.KI" />
       </list>
     </recent_temporary>
@@ -190,13 +207,9 @@
       <workItem from="1642067660304" duration="862000" />
       <workItem from="1642174534639" duration="2453000" />
       <workItem from="1642260347526" duration="852000" />
-    </task>
-    <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
-      <created>1638753613056</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1638753613057</updated>
+      <workItem from="1642265081549" duration="212000" />
+      <workItem from="1642278457933" duration="1317000" />
+      <workItem from="1642326786929" duration="7643000" />
     </task>
     <task id="LOCAL-00002" summary="@yilu und chen Adopter">
       <created>1639131037040</created>
@@ -492,21 +505,56 @@
       <option name="project" value="LOCAL" />
       <updated>1642244118609</updated>
     </task>
-    <task id="LOCAL-00044" summary="Working on Cards Futeres">
-      <created>1642340548990</created>
+    <task id="LOCAL-00044" summary="Bugfix:&#10;- Encoding GameStarted-Message">
+      <created>1642265125910</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1642340548990</updated>
+      <updated>1642265125910</updated>
     </task>
-    <task id="LOCAL-00045" summary="Changing Gui Map">
-      <created>1642351493975</created>
+    <task id="LOCAL-00045" summary="Merge:&#10;- new GUI&#10;- new Bugfixes">
+      <created>1642335511669</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1642351493975</updated>
+      <updated>1642335511669</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Bugfix">
+      <created>1642339658937</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1642339658937</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Bugfix">
+      <created>1642339927453</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1642339927453</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI">
+      <created>1642359134106</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1642359134106</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Adding Spam Cards">
+      <created>1642368434598</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1642368434598</updated>
+    </task>
+    <task id="LOCAL-00050" summary="LaserDing">
+      <created>1642436146609</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1642436146611</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,9 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="updated git-ignore" />
-    <MESSAGE value="Improved method generateMap()" />
-    <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
     <MESSAGE value="Merge: GUI &amp; Kommunikation" />
     <MESSAGE value="Support for SetStartingPoint" />
     <MESSAGE value="Changes by Amir" />
@@ -542,15 +587,18 @@
     <MESSAGE value="Improved programmierPhase" />
     <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
     <MESSAGE value="Bugfix:&#10;- Improved random AI&#10;- Improved Messages" />
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
-    <MESSAGE value="Working on Cards Futeres" />
-    <MESSAGE value="Bug fix" />
-    <MESSAGE value="Changing Gui Map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing Gui Map" />
+    <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
+    <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
+    <MESSAGE value="Bugfix" />
+    <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
+    <MESSAGE value="Bug Fix Gui" />
+    <MESSAGE value="Adding Spam Cards" />
+    <MESSAGE value="LaserDing" />
+    <option name="LAST_COMMIT_MESSAGE" value="LaserDing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -560,42 +608,6 @@
           <option name="timeStamp" value="8" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>107</line>
-          <properties class="Game" method="aktivierungsPhase">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>86</line>
-          <properties class="Game" method="programmierPhase">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>359</line>
-          <properties class="Game" method="startTimer">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>369</line>
-          <properties class="Game" method="timerEnded">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
           <line>247</line>
           <properties class="KI" method="playCards">
@@ -604,10 +616,28 @@
           </properties>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
+          <line>94</line>
+          <properties class="Robot" method="mischen">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>591</line>
+          <properties class="Game" method="sendError">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="24" />
+          <line>144</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
