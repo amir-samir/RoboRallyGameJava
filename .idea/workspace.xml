@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Energy Messages gets encoded correctly now">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: new Gui-Features &amp; Bugfixes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,13 +204,6 @@
       <workItem from="1642607742910" duration="73000" />
       <workItem from="1642607848843" duration="637000" />
       <workItem from="1642624188805" duration="4048000" />
-    </task>
-    <task id="LOCAL-00018" summary="Support for SetStartingPoint">
-      <created>1641650949015</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1641650949015</updated>
     </task>
     <task id="LOCAL-00019" summary="Changes by Amir">
       <created>1641650969450</created>
@@ -552,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642627552217</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Merge: new Gui-Features &amp; Bugfixes">
+      <created>1642628948631</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1642628948631</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
@@ -596,7 +591,8 @@
     <MESSAGE value="Bugfix:&#10;- Messages &quot;GameFinished&quot;, &quot;ReplaceCard&quot; &amp; &quot;CheckPointReached&quot; gets encoded correctly now" />
     <MESSAGE value="Bugfix:&#10;- Player is able to choose a direction after his reboot" />
     <MESSAGE value="Bugfix:&#10;- Energy Messages gets encoded correctly now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Energy Messages gets encoded correctly now" />
+    <MESSAGE value="Merge: new Gui-Features &amp; Bugfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge: new Gui-Features &amp; Bugfixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -608,7 +604,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
           <line>247</line>
-          <properties class="KI">
+          <properties class="KI" method="playCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
