@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_12_22_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_12_22__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,21 +199,7 @@
       <workItem from="1642415601082" duration="4357000" />
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
-      <workItem from="1642593519711" duration="678000" />
-    </task>
-    <task id="LOCAL-00007" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
-      <created>1640269448945</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1640269448946</updated>
-    </task>
-    <task id="LOCAL-00008" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
-      <created>1640779789267</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1640779789267</updated>
+      <workItem from="1642593519711" duration="1398000" />
     </task>
     <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
       <created>1641139886511</created>
@@ -550,7 +530,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642544383958</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Bugfix:&#10;- Laser-Orientation in &quot;DizzyHighway&quot;&#10;- Method laserFired() -&gt; changed &quot;wand&quot; into &quot;Wall&quot;">
+      <created>1642595024694</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1642595024695</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Bugfix:&#10;- Checkpoint-Count in DizzyHighway">
+      <created>1642595068961</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1642595068961</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes by Amir" />
-    <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
@@ -594,7 +586,9 @@
     <MESSAGE value="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser" />
     <MESSAGE value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Bugfix:&#10;- Laser-Orientation in &quot;DizzyHighway&quot;&#10;- Method laserFired() -&gt; changed &quot;wand&quot; into &quot;Wall&quot;" />
+    <MESSAGE value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
