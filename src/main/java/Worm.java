@@ -16,6 +16,7 @@ public class Worm extends DamageCards{
         server.sendMessageForAllUsers(replaceCard);
 
         server.game.reboot(robot, server.game.board.getMap()[robot.getX()][robot.getY()].get(0).getIsOnBoard());
+        server.game.getCardsForGame().wormCards.add(new Worm());
     }
 
 }
