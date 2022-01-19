@@ -14,5 +14,7 @@ public class EnergySpace extends BoardElement {
     public void effect(Robot robot, Server server) {
         robot.setEnergyCube(robot.getEnergyCube() + 1);
         Energy energy = new Energy(robot.getGamerID(), robot.getEnergyCube(), "EnergySpace");
+        energy.getMessageBody().setKeys(new String[] {"clientID", "count", "source"});
+        server.sendMessageForAllUsers(energy);
     }
 }

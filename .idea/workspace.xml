@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Messages &quot;GameFinished&quot;, &quot;ReplaceCard&quot; &amp; &quot;CheckPointReached&quot; gets encoded correctly now">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Player is able to choose a direction after his reboot" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,14 +203,7 @@
       <workItem from="1642605529045" duration="1819000" />
       <workItem from="1642607742910" duration="73000" />
       <workItem from="1642607848843" duration="637000" />
-      <workItem from="1642624188805" duration="2170000" />
-    </task>
-    <task id="LOCAL-00015" summary="Improved method generateMap()">
-      <created>1641421076965</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1641421076965</updated>
+      <workItem from="1642624188805" duration="2918000" />
     </task>
     <task id="LOCAL-00016" summary="SetStartingPoint &amp; ActivePhase support">
       <created>1641509218698</created>
@@ -553,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642625646574</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Bugfix:&#10;- Player is able to choose a direction after his reboot">
+      <created>1642627040536</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1642627040536</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented message selectedCard" />
     <MESSAGE value="Improved programmierPhase" />
     <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
@@ -597,7 +591,8 @@
     <MESSAGE value="Bugfix:&#10;- CheckPoint works properly now" />
     <MESSAGE value="Bugfix:&#10;- Robot-Direction after reboot correct" />
     <MESSAGE value="Bugfix:&#10;- Messages &quot;GameFinished&quot;, &quot;ReplaceCard&quot; &amp; &quot;CheckPointReached&quot; gets encoded correctly now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Messages &quot;GameFinished&quot;, &quot;ReplaceCard&quot; &amp; &quot;CheckPointReached&quot; gets encoded correctly now" />
+    <MESSAGE value="Bugfix:&#10;- Player is able to choose a direction after his reboot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Player is able to choose a direction after his reboot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,8 +612,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>96</line>
-          <properties class="Robot">
+          <line>98</line>
+          <properties class="Robot" method="mischen">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

@@ -12,5 +12,7 @@ public class PowerUpCard extends Cards {
     public void effect(Robot robot, Server server) {
         robot.setEnergyCube(robot.getEnergyCube() + 1);
         Energy energy = new Energy(robot.getGamerID(), robot.getEnergyCube(), "PowerUpCard");
+        energy.getMessageBody().setKeys(new String[] {"clientID", "count", "source"});
+        server.sendMessageForAllUsers(energy);
     }
 }
