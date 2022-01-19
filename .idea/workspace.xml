@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6aa4811-c32d-451c-adff-87681ee482a4" name="Changes" comment="Bugfix:&#10;- ConveyorBelt" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Timer fertig Gui" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Unbekannt" />
+        <entry key="$PROJECT_DIR$" value="Kommunikation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,20 +37,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,7 +107,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,14 +196,118 @@
       <workItem from="1642265081549" duration="212000" />
       <workItem from="1642278457933" duration="1317000" />
       <workItem from="1642326786929" duration="7643000" />
-      <workItem from="1642415601082" duration="4357000" />
-      <workItem from="1642496264084" duration="938000" />
-      <workItem from="1642497737177" duration="1918000" />
-      <workItem from="1642593519711" duration="2093000" />
-      <workItem from="1642605529045" duration="1819000" />
-      <workItem from="1642607742910" duration="73000" />
-      <workItem from="1642607848843" duration="637000" />
-      <workItem from="1642624188805" duration="4048000" />
+    </task>
+    <task id="LOCAL-00005" summary="q">
+      <created>1639338951559</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639338951559</updated>
+    </task>
+    <task id="LOCAL-00006" summary="q">
+      <created>1639339000736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639339000738</updated>
+    </task>
+    <task id="LOCAL-00007" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <created>1640269448945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640269448946</updated>
+    </task>
+    <task id="LOCAL-00008" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <created>1640779789267</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640779789267</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
+      <created>1641139886511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1641139886511</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
+      <created>1641140977313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641140977313</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge: JSON_Chat -&gt; BoardElements">
+      <created>1641142068102</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641142068102</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Bugfix">
+      <created>1641324232749</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641324232749</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Bugfix">
+      <created>1641328280070</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641328280070</updated>
+    </task>
+    <task id="LOCAL-00014" summary="updated git-ignore">
+      <created>1641328575276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641328575276</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Improved method generateMap()">
+      <created>1641421076965</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641421076965</updated>
+    </task>
+    <task id="LOCAL-00016" summary="SetStartingPoint &amp; ActivePhase support">
+      <created>1641509218698</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1641509218698</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Merge: GUI &amp; Kommunikation">
+      <created>1641640016711</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1641640016711</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Support for SetStartingPoint">
+      <created>1641650949015</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650949015</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Changes by Amir">
+      <created>1641650969450</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650969450</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
+      <created>1641652292871</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1641652292871</updated>
     </task>
     <task id="LOCAL-00021" summary="bugfix">
       <created>1641652477458</created>
@@ -401,154 +505,42 @@
       <option name="project" value="LOCAL" />
       <updated>1642359134106</updated>
     </task>
-    <task id="LOCAL-00049" summary="Bugfix&#10;- Game Logic">
-      <created>1642366315211</created>
+    <task id="LOCAL-00049" summary="BugFix RestartPoint">
+      <created>1642608690549</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1642366315211</updated>
+      <updated>1642608690549</updated>
     </task>
-    <task id="LOCAL-00050" summary="Bugfix&#10;- Game Logic">
-      <created>1642367994241</created>
+    <task id="LOCAL-00050" summary="Change Direction graphics">
+      <created>1642621946890</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1642367994242</updated>
+      <updated>1642621946890</updated>
     </task>
-    <task id="LOCAL-00051" summary="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()">
-      <created>1642501683952</created>
+    <task id="LOCAL-00051" summary="Change Direction function gui">
+      <created>1642623287470</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1642501683952</updated>
+      <updated>1642623287470</updated>
     </task>
-    <task id="LOCAL-00052" summary="Bugfix:&#10;- reboot works">
-      <created>1642503190509</created>
+    <task id="LOCAL-00052" summary="Timer fertig Gui">
+      <created>1642628081056</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1642503190509</updated>
+      <updated>1642628081056</updated>
     </task>
-    <task id="LOCAL-00053" summary="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser">
-      <created>1642542246674</created>
+    <task id="LOCAL-00053" summary="Timer fertig Gui">
+      <created>1642628531781</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1642542246674</updated>
+      <updated>1642628531781</updated>
     </task>
-    <task id="LOCAL-00054" summary="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser">
-      <created>1642542755297</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1642542755297</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Bugfix">
-      <created>1642544383958</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1642544383958</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Bugfix:&#10;- Laser-Orientation in &quot;DizzyHighway&quot;&#10;- Method laserFired() -&gt; changed &quot;wand&quot; into &quot;Wall&quot;">
-      <created>1642595024694</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1642595024695</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Bugfix:&#10;- Checkpoint-Count in DizzyHighway">
-      <created>1642595068961</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1642595068961</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;">
-      <created>1642595328356</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1642595328356</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Bugfix:&#10;- Correct Effect in PushPanel">
-      <created>1642595472045</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1642595472045</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Bugfix:&#10;- Effect of a VirusCard is now correct">
-      <created>1642597177085</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1642597177085</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Bugfix:&#10;- CheckPoint works properly now">
-      <created>1642599173184</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1642599173184</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Bugfix:&#10;- Robot-Direction after reboot correct">
-      <created>1642606945535</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1642606945536</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Bugfix:&#10;- Messages &quot;GameFinished&quot;, &quot;ReplaceCard&quot; &amp; &quot;CheckPointReached&quot; gets encoded correctly now">
-      <created>1642625646574</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1642625646574</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Bugfix:&#10;- Player is able to choose a direction after his reboot">
-      <created>1642627040536</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1642627040536</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Bugfix:&#10;- Energy Messages gets encoded correctly now">
-      <created>1642627288564</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1642627288564</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Bugfix:&#10;- Energy Messages gets encoded correctly now">
-      <created>1642627552217</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1642627552217</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Merge: new Gui-Features &amp; Bugfixes">
-      <created>1642628948631</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1642628948631</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Bugfix">
-      <created>1642629045619</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1642629045619</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Merge: Gui-Features &amp; Bugfix">
-      <created>1642629537940</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1642629537940</updated>
-    </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,32 +559,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Changes by Amir" />
+    <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
+    <MESSAGE value="bugfix" />
+    <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
+    <MESSAGE value="Initialisieren von Start Karten" />
+    <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
+    <MESSAGE value="Bugfix: Multiple Starting Points" />
+    <MESSAGE value="Started implementing ProgrammingPhase" />
+    <MESSAGE value="Implemented message selectedCard" />
+    <MESSAGE value="Improved programmierPhase" />
+    <MESSAGE value="Dairen, Amir Cards" />
+    <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
     <MESSAGE value="Bugfix:&#10;- Improved random AI&#10;- Improved Messages" />
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
     <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
     <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
-    <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
-    <MESSAGE value="Bugfix&#10;- Game Logic" />
-    <MESSAGE value="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()" />
-    <MESSAGE value="Bugfix:&#10;- reboot works" />
-    <MESSAGE value="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser" />
-    <MESSAGE value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
-    <MESSAGE value="Bugfix:&#10;- Laser-Orientation in &quot;DizzyHighway&quot;&#10;- Method laserFired() -&gt; changed &quot;wand&quot; into &quot;Wall&quot;" />
-    <MESSAGE value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
-    <MESSAGE value="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;" />
-    <MESSAGE value="Bugfix:&#10;- Correct Effect in PushPanel" />
-    <MESSAGE value="Bugfix:&#10;- Effect of a VirusCard is now correct" />
-    <MESSAGE value="Bugfix:&#10;- CheckPoint works properly now" />
-    <MESSAGE value="Bugfix:&#10;- Robot-Direction after reboot correct" />
-    <MESSAGE value="Bugfix:&#10;- Messages &quot;GameFinished&quot;, &quot;ReplaceCard&quot; &amp; &quot;CheckPointReached&quot; gets encoded correctly now" />
-    <MESSAGE value="Bugfix:&#10;- Player is able to choose a direction after his reboot" />
-    <MESSAGE value="Bugfix:&#10;- Energy Messages gets encoded correctly now" />
-    <MESSAGE value="Merge: new Gui-Features &amp; Bugfixes" />
     <MESSAGE value="Bugfix" />
-    <MESSAGE value="Merge: Gui-Features &amp; Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: Gui-Features &amp; Bugfix" />
+    <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
+    <MESSAGE value="BugFix" />
+    <MESSAGE value="BugFix RestartPoint" />
+    <MESSAGE value="Change Direction graphics" />
+    <MESSAGE value="Change Direction function gui" />
+    <MESSAGE value="Timer fertig Gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer fertig Gui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -604,7 +596,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
           <line>247</line>
-          <properties class="KI" method="playCards">
+          <properties class="KI">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -612,12 +604,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>98</line>
-          <properties class="Robot" method="mischen">
+          <line>100</line>
+          <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>624</line>
+          <properties class="Game">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
