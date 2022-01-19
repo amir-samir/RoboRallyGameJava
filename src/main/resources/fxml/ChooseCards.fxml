@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
@@ -51,7 +50,6 @@
             <Image url="@../assets/Karte.png" />
          </image>
       </ImageView>
-      <Button layoutX="481.0" layoutY="344.0" mnemonicParsing="false" onAction="#OurTimer" text="Button" />
-      <Label fx:id="TimerLabelFx" layoutX="173.0" layoutY="357.0" prefHeight="37.0" prefWidth="212.0" />
+      <ImageView fx:id="TimerGif" fitHeight="59.0" fitWidth="95.0" layoutX="247.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

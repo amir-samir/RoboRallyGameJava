@@ -55,6 +55,7 @@ public class Client implements Runnable {
     public static SelectMapView selectMapView = new SelectMapView();
     public static MaybeMapsController maybeMapsController;
     public static AllInOneView allInOneView;
+    public static ChooseCards chooseCards;
     private String selectedMap;
     public int figureForGui;
     public String CardOfGui = "SomeCard";
@@ -574,6 +575,13 @@ public class Client implements Runnable {
                     }
                 } else if (message.getMessageType().equals("TimerStarted")){
                     toSend = "Der Timer wurde gestartet.";
+                    Platform.runLater(() -> {
+                        try {
+                            getChooseCards().ShowTimer();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    });
                 } else if (message.getMessageType().equals("TimerEnded")){
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
@@ -752,6 +760,14 @@ public class Client implements Runnable {
 
     public ArrayList<Cards> getHandcards(){
         return figuren[player.get(ID).figur].getHandCards();
+    }
+
+    public static void setChooseCards(ChooseCards chooseCards1){
+        chooseCards = chooseCards1;
+    }
+
+    public ChooseCards getChooseCards(){
+        return chooseCards;
     }
 
 }
