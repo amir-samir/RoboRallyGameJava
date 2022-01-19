@@ -405,6 +405,17 @@ public class Client implements Runnable {
         return s;
     }
 
+    public String handleEnergy(Message m){
+        int clientID = (int) (double) m.getMessageBody().getContent()[0];
+        int number = (int) (double) m.getMessageBody().getContent()[1];
+        String source = (String) m.getMessageBody().getContent()[2];
+        String s;
+        if (clientID == this.ID){
+            s = "Du hast " + number + "Energie von folgender Quelle hinzugewonnen: " + source;
+        } else s = player.get(clientID).name + " (" + clientID + ") hat " + number + "Energie von folgender Quelle gewonnen: " + source;
+        return s;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -665,6 +676,8 @@ public class Client implements Runnable {
                     toSend = handleGameFinished(message);
                 } else if (message.getMessageType().equals("ReplaceCard")){
                     toSend = handleReplaceCard(message);
+                } else if (message.getMessageType().equals("Energy")){
+                    toSend = handleEnergy(message);
                 }
                 else {
                     toSend = inputFromServer;
