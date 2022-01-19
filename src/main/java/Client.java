@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Actions.RebootDirection;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
 import com.google.gson.internal.LinkedTreeMap;
@@ -368,6 +369,12 @@ public class Client implements Runnable {
         return orientations;
     }
 
+    public void setNewDirection(String direction){
+        RebootDirection rebootDirection = new RebootDirection(direction);
+        rebootDirection.getMessageBody().setKeys(new String[]{"direction"});
+        bufferedWriter.println(Adopter.javabeanToJson(rebootDirection));
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -616,7 +623,10 @@ public class Client implements Runnable {
                                 getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                             }
                         }});
-                    toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
+                    if (this.ID == clientID) {
+                        toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
+                        //Richtung auswählen :)
+                    } else toSend = player.get(clientID).name + " (" + clientID + ") ist gestorben";
                 }
                 else {
                     toSend = inputFromServer;

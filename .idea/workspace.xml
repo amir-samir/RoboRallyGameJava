@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Effect of a VirusCard is now correct">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Robot-Direction after reboot correct">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_01_2022_16_55_[Changes]/SelectMapView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_01_2022_16_55_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_01_2022_16_55__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_13_49_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_13_49__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_16_58_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_16_58__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,13 +213,7 @@
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
       <workItem from="1642593519711" duration="2093000" />
-    </task>
-    <task id="LOCAL-00012" summary="Bugfix">
-      <created>1641324232749</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1641324232749</updated>
+      <workItem from="1642605529045" duration="1268000" />
     </task>
     <task id="LOCAL-00013" summary="Bugfix">
       <created>1641328280070</created>
@@ -548,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642597177085</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Bugfix:&#10;- CheckPoint works properly now">
+      <created>1642599173184</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1642599173184</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,8 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
-    <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
     <MESSAGE value="Implemented message selectedCard" />
     <MESSAGE value="Improved programmierPhase" />
@@ -592,7 +600,9 @@
     <MESSAGE value="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;" />
     <MESSAGE value="Bugfix:&#10;- Correct Effect in PushPanel" />
     <MESSAGE value="Bugfix:&#10;- Effect of a VirusCard is now correct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Effect of a VirusCard is now correct" />
+    <MESSAGE value="Bugfix:&#10;- CheckPoint works properly now" />
+    <MESSAGE value="Bugfix:&#10;- Robot-Direction after reboot correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Robot-Direction after reboot correct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

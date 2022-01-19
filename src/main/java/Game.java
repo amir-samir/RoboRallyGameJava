@@ -869,7 +869,7 @@ public class Game {
 
             Reboot reboot = new Reboot(robot.getGamerID());
             reboot.getMessageBody().setKeys(new String[]{"clientID"});
-            SERVER.sendMessageForSingleClient(reboot, users.get(robot.getGamerID()));
+            SERVER.sendMessageForAllUsers(reboot);
         } catch (Exception e){
             e.printStackTrace();
         }
