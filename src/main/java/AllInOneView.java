@@ -18,6 +18,14 @@ import java.util.ResourceBundle;
 public class AllInOneView implements Initializable {
     Boolean[] isFilled = new Boolean[5];
     @FXML
+    ImageView DirectionOben;
+    @FXML
+    ImageView DirectionRechts;
+    @FXML
+    ImageView DirectionUnten;
+    @FXML
+    ImageView DirectionLinks;
+    @FXML
     ImageView FigureChat;
     @FXML
     TextField privateMsgInput;
@@ -255,6 +263,10 @@ public class AllInOneView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DirectionRechts.setVisible(false);
+        DirectionLinks.setVisible(false);
+        DirectionOben.setVisible(false);
+        DirectionUnten.setVisible(false);
         Arrays.fill(isFilled,false);
         setDefaultMap();
         Card1.setImage(Karte);
@@ -703,6 +715,13 @@ public class AllInOneView implements Initializable {
         Card3.setImage(Karte);
         Card4.setImage(Karte);
         Card5.setImage(Karte);
+    }
+
+    public void ChooseDirectionSetvisible(){
+        DirectionUnten.setVisible(true);
+        DirectionRechts.setVisible(true);
+        DirectionLinks.setVisible(true);
+        DirectionOben.setVisible(true);
     }
 
 }

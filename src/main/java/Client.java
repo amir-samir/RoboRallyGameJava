@@ -626,6 +626,10 @@ public class Client implements Runnable {
                         }});
                     toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
                     // Gui Method
+                    Platform.runLater(() -> {
+                       getAllInOneView().ChooseDirectionSetvisible();
+                        });
+
                 }
                 else {
                     toSend = inputFromServer;
