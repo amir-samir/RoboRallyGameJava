@@ -83,4 +83,24 @@
          <Image url="@../assets/Karte.png" />
       </image>
    </ImageView>
+   <ImageView fx:id="DirectionLinks" fitHeight="30.0" fitWidth="59.0" layoutX="661.0" layoutY="667.0" onMouseClicked="#pressLeftDirection" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/pfeilLinksChangeDirection.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="DirectionRechts" fitHeight="30.0" fitWidth="59.0" layoutX="725.0" layoutY="667.0" onMouseClicked="#pressRightDirection" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/pfeilRechtsChooseDirection.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="DirectionOben" fitHeight="30.0" fitWidth="59.0" layoutX="691.0" layoutY="642.0" onMouseClicked="#pressUpDirection" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/pfeilObenChangeDirection.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="DirectionUnten" fitHeight="30.0" fitWidth="59.0" layoutX="691.0" layoutY="684.0" onMouseClicked="#pressDownDirecton" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/pfeilUntenChangeDirection.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

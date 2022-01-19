@@ -579,7 +579,7 @@ public class Client implements Runnable {
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
                     Platform.runLater(() -> {
                         StageSaver.getStageSaver().getChooseCardStage().close();
-                        });
+                    });
                     for (Double doubl: list){
                         s += "(" + doubl + ") ";
                     }
@@ -666,7 +666,9 @@ public class Client implements Runnable {
                         }});
                     if (this.ID == clientID) {
                         toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
-                        //Richtung auswählen :)
+                        Platform.runLater(() -> {
+                            getAllInOneView().ChooseDirectionSetvisible();
+                        });
                     } else toSend = player.get(clientID).name + " (" + clientID + ") ist gestorben";
                 } else if (message.getMessageType().equals("DrawDamage")){
                     toSend = handleDamage(message);

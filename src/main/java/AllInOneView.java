@@ -18,6 +18,14 @@ import java.util.ResourceBundle;
 public class AllInOneView implements Initializable {
     Boolean[] isFilled = new Boolean[5];
     @FXML
+    ImageView DirectionOben;
+    @FXML
+    ImageView DirectionRechts;
+    @FXML
+    ImageView DirectionUnten;
+    @FXML
+    ImageView DirectionLinks;
+    @FXML
     ImageView FigureChat;
     @FXML
     TextField privateMsgInput;
@@ -175,7 +183,7 @@ public class AllInOneView implements Initializable {
     Image image72 = new Image("assets/2EinleitungUnten.png");
     Image image73 = new Image("assets/2EinleitungRechts.png");
     Image image74 = new Image("assets/1LaserWandOben.png");
-    Image image75 = new Image("assets/GruenFeldUnten.png");
+    Image image75 = new Image("assets/Runtergreen.png");
     Image image76 = new Image("assets/1LaserWandLinks.png");
     Image image77 = new Image("assets/1LaserWandRechts.png");
     Image image78 = new Image("assets/2nachOben.png");
@@ -262,6 +270,10 @@ public class AllInOneView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DirectionRechts.setVisible(false);
+        DirectionLinks.setVisible(false);
+        DirectionOben.setVisible(false);
+        DirectionUnten.setVisible(false);
         Arrays.fill(isFilled,false);
         setDefaultMap();
         Card1.setImage(Karte);
@@ -722,6 +734,29 @@ public class AllInOneView implements Initializable {
         Card3.setImage(Karte);
         Card4.setImage(Karte);
         Card5.setImage(Karte);
+    }
+
+    public void ChooseDirectionSetvisible(){
+        DirectionUnten.setVisible(true);
+        DirectionRechts.setVisible(true);
+        DirectionLinks.setVisible(true);
+        DirectionOben.setVisible(true);
+    }
+
+    public void pressRightDirection(){
+        SaveClients.client.setNewDirection("right");
+    }
+
+    public void pressDownDirecton(){
+        SaveClients.client.setNewDirection("bottom");
+    }
+
+    public void pressUpDirection(){
+        SaveClients.client.setNewDirection("top");
+    }
+
+    public void pressLeftDirection(){
+        SaveClients.client.setNewDirection("left");
     }
 
 }
