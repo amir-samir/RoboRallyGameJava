@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: Gui-Features &amp; Bugfix">
       <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,13 +206,6 @@
       <workItem from="1642607742910" duration="73000" />
       <workItem from="1642607848843" duration="637000" />
       <workItem from="1642624188805" duration="4048000" />
-    </task>
-    <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
-      <created>1641652292871</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1641652292871</updated>
     </task>
     <task id="LOCAL-00021" summary="bugfix">
       <created>1641652477458</created>
@@ -555,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642629045619</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Merge: Gui-Features &amp; Bugfix">
+      <created>1642629537940</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1642629537940</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
     <MESSAGE value="Bugfix:&#10;- Improved random AI&#10;- Improved Messages" />
@@ -599,7 +593,8 @@
     <MESSAGE value="Bugfix:&#10;- Energy Messages gets encoded correctly now" />
     <MESSAGE value="Merge: new Gui-Features &amp; Bugfixes" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Merge: Gui-Features &amp; Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge: Gui-Features &amp; Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
