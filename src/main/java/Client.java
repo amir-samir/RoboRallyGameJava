@@ -258,6 +258,18 @@ public class Client implements Runnable {
                 case "Again":
                     handcards.add(new AgainCard());
                     break;
+                case "Spam":
+                    handcards.add(new Spam());
+                    break;
+                case "Trojan":
+                    handcards.add(new Trojan());
+                    break;
+                case "Worm":
+                    handcards.add(new Worm());
+                    break;
+                case "Virus":
+                    handcards.add(new VirusCard());
+                    break;
                 default:
                     break;
             }
@@ -430,19 +442,6 @@ public class Client implements Runnable {
                         }
                     });
 
-                    /*Platform.runLater(new Runnable(){
-
-                        @Override
-                        public void run() {
-                            try {
-                                getChatView().selectMap();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });*/
-
-
                     toSend = "Bitte wähle die Map aus.";
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
@@ -496,7 +495,7 @@ public class Client implements Runnable {
                         public void run() {
                             for (int i = 0; i < figuren.length; i++) {
                                 if (figuren[i] != null && figuren[i].getX() != -1) {
-                                   getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                                    getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                                 }
                             }
                         }
@@ -539,7 +538,7 @@ public class Client implements Runnable {
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
                     Platform.runLater(() -> {
                         StageSaver.getStageSaver().getChooseCardStage().close();
-                        });
+                    });
                     for (Double doubl: list){
                         s += "(" + doubl + ") ";
                     }
@@ -556,12 +555,12 @@ public class Client implements Runnable {
                     robot.setY(y);
                     TimeUnit. SECONDS.sleep(1);
                     Platform.runLater(() -> {
-                       getAllInOneView().setDefaultMap();
+                        getAllInOneView().setDefaultMap();
                         for (int i = 0; i < figuren.length; i++) {
                             if (figuren[i] != null && figuren[i].getX() != -1) {
                                 getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
-                        }
-                    }});
+                            }
+                        }});
                     toSend = player.get(ID).name + " (" + ID + ") hat seine Position verändert";
                 } else if (message.getMessageType().equals("PlayerTurning")){
                     int ID = (int) (double) message.getMessageBody().getContent()[0];
@@ -624,12 +623,13 @@ public class Client implements Runnable {
                                 getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                             }
                         }});
-                    toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
-                    // Gui Method
-                    Platform.runLater(() -> {
-                       getAllInOneView().ChooseDirectionSetvisible();
-                        });
-
+                    if (this.ID == clientID) {
+                        toSend = "Du bist gestorben. Bitte wähle eine neue Richtung aus";
+                        Platform.runLater(() -> {
+                           getAllInOneView().ChooseDirectionSetvisible();
+                            });
+                        //Richtung auswählen :)
+                    } else toSend = player.get(clientID).name + " (" + clientID + ") ist gestorben";
                 }
                 else {
                     toSend = inputFromServer;

@@ -724,4 +724,20 @@ public class AllInOneView implements Initializable {
         DirectionOben.setVisible(true);
     }
 
+    public void pressRightDirection(){
+        SaveClients.client.setNewDirection("right");
+    }
+
+    public void pressDownDirecton(){
+        SaveClients.client.setNewDirection("bottom");
+    }
+
+    public void pressUpDirection(){
+        SaveClients.client.setNewDirection("top");
+    }
+
+    public void pressLeftDirection(){
+        SaveClients.client.setNewDirection("left");
+    }
+
 }

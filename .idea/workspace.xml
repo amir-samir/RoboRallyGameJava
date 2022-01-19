@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="BugFix RestartPoint">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/pfeilLinksChangeDirection.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/pfeilObenChangeDirection.png" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Change Direction graphics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
@@ -204,13 +202,6 @@
       <workItem from="1642265081549" duration="212000" />
       <workItem from="1642278457933" duration="1317000" />
       <workItem from="1642326786929" duration="7643000" />
-    </task>
-    <task id="LOCAL-00001" summary="@yilu und chen Adopter class(JsonToJavaObject,JavaObjectToJson) erfüllt">
-      <created>1638753613056</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1638753613057</updated>
     </task>
     <task id="LOCAL-00002" summary="@yilu und chen Adopter">
       <created>1639131037040</created>
@@ -548,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642608690549</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Change Direction graphics">
+      <created>1642621946890</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1642621946890</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="SetStartingPoint &amp; ActivePhase support" />
     <MESSAGE value="Merge: GUI &amp; Kommunikation" />
     <MESSAGE value="Support for SetStartingPoint" />
     <MESSAGE value="Changes by Amir" />
@@ -592,7 +589,8 @@
     <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
     <MESSAGE value="BugFix" />
     <MESSAGE value="BugFix RestartPoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="BugFix RestartPoint" />
+    <MESSAGE value="Change Direction graphics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Direction graphics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
