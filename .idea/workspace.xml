@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2022_18_48__Changes_.xml" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_12_22_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_12_22__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,13 +205,7 @@
       <workItem from="1642415601082" duration="4357000" />
       <workItem from="1642496264084" duration="938000" />
       <workItem from="1642497737177" duration="1918000" />
-    </task>
-    <task id="LOCAL-00006" summary="q">
-      <created>1639339000736</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1639339000738</updated>
+      <workItem from="1642593519711" duration="678000" />
     </task>
     <task id="LOCAL-00007" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
       <created>1640269448945</created>
@@ -549,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642542755297</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Bugfix">
+      <created>1642544383958</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1642544383958</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,14 +587,14 @@
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
     <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
     <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
     <MESSAGE value="Bugfix&#10;- Game Logic" />
     <MESSAGE value="Bugfix:&#10;- Message in case of drawing Damage Cards&#10;- effect([..]) in Spam()" />
     <MESSAGE value="Bugfix:&#10;- reboot works" />
     <MESSAGE value="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser" />
     <MESSAGE value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,7 +606,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
           <line>247</line>
-          <properties class="KI">
+          <properties class="KI" method="playCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -614,20 +615,11 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
           <line>96</line>
-          <properties class="Robot">
+          <properties class="Robot" method="mischen">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>37</line>
-          <properties class="Robot">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
@@ -658,8 +650,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="43" />
+          <line>244</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

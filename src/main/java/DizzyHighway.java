@@ -110,7 +110,7 @@ public class DizzyHighway extends Board {
         map[4][4].add(new ConveyorBelt("5B",new String[]{"bottom","top"},2));
         map[4][5].add(new Empty("5B"));
         map[4][6].add(new Wall("5B", new String[]{"bottom"}));
-        map[4][6].add(new Laser("5B", new String[]{"top"},1));
+        map[4][6].add(new Laser("5B", new String[]{"bottom"},1));
         map[4][7].add(new Empty("5B"));
         map[4][8].add(new EnergySpace("5B",1));
         map[4][9].add(new Empty("5B"));
@@ -128,7 +128,7 @@ public class DizzyHighway extends Board {
         map[5][7].add(new EnergySpace("5B",1));
         map[5][8].add(new Empty("5B"));
         map[5][9].add(new Wall("5B", new String[]{"top"}));
-        map[5][9].add(new Laser("5B", new String[]{"bottom"},1));
+        map[5][9].add(new Laser("5B", new String[]{"top"},1));
         map[5][10].add(new Empty("5B"));
         map[5][11].add(new ConveyorBelt("5B", new String[]{"top","bottom"},2));
         map[5][12].add(new Empty("5B"));

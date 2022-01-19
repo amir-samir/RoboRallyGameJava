@@ -652,7 +652,7 @@ public class Game {
             switch (direction) {
                 case "top":
                     for (BoardElement element: board.getMap()[x][y]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("top")){
                                     stillFlying = false;
@@ -663,7 +663,7 @@ public class Game {
                     }
                     if (x-1 < 0) return null;
                     for (BoardElement element: board.getMap()[x-1][y]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("bottom")){
                                     stillFlying = false;
@@ -676,7 +676,7 @@ public class Game {
                     break;
                 case "bottom":
                     for (BoardElement element: board.getMap()[x][y]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("bottom")){
                                     stillFlying = false;
@@ -687,7 +687,7 @@ public class Game {
                     }
                     if (x+1 >= board.getHeight()) return null;
                     for (BoardElement element: board.getMap()[x+1][y]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("top")){
                                     stillFlying = false;
@@ -700,7 +700,7 @@ public class Game {
                     break;
                 case "left":
                     for (BoardElement element: board.getMap()[x][y]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("left")){
                                     stillFlying = false;
@@ -711,7 +711,7 @@ public class Game {
                     }
                     if (y-1 < 0) return null;
                     for (BoardElement element: board.getMap()[x][y-1]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("right")){
                                     stillFlying = false;
@@ -724,7 +724,7 @@ public class Game {
                     break;
                 case "right":
                     for (BoardElement element: board.getMap()[x][y]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("right")){
                                     stillFlying = false;
@@ -735,7 +735,7 @@ public class Game {
                     }
                     if (y+1 >= board.getWidth()) return null;
                     for (BoardElement element: board.getMap()[x][y+1]){
-                        if (element.getType().equals("Wand")){
+                        if (element.getType().equals("Wall")){
                             for (String orientation: element.getOrientations()){
                                 if (orientation.equals("left")){
                                     stillFlying = false;
