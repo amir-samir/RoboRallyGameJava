@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge: new Gui-Features &amp; Bugfixes" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +110,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -161,8 +168,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server" />
         <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.KI" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
@@ -204,13 +211,6 @@
       <workItem from="1642607742910" duration="73000" />
       <workItem from="1642607848843" duration="637000" />
       <workItem from="1642624188805" duration="4048000" />
-    </task>
-    <task id="LOCAL-00019" summary="Changes by Amir">
-      <created>1641650969450</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1641650969450</updated>
     </task>
     <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
       <created>1641652292871</created>
@@ -548,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642628948631</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Bugfix">
+      <created>1642629045619</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1642629045619</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +587,6 @@
     <MESSAGE value="Bugfix:&#10;- reboot works" />
     <MESSAGE value="Bugfix:&#10;- activated Laser&#10;- activated RobotLaser" />
     <MESSAGE value="Bugfix:&#10;- Correct amount of DamageCards after a robot got hit by Laser" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Laser-Orientation in &quot;DizzyHighway&quot;&#10;- Method laserFired() -&gt; changed &quot;wand&quot; into &quot;Wall&quot;" />
     <MESSAGE value="Bugfix:&#10;- Checkpoint-Count in DizzyHighway" />
     <MESSAGE value="Bugfix:&#10;- Correct Order in &quot;ReplaceCard&quot;" />
@@ -592,7 +598,8 @@
     <MESSAGE value="Bugfix:&#10;- Player is able to choose a direction after his reboot" />
     <MESSAGE value="Bugfix:&#10;- Energy Messages gets encoded correctly now" />
     <MESSAGE value="Merge: new Gui-Features &amp; Bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge: new Gui-Features &amp; Bugfixes" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

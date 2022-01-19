@@ -705,6 +705,7 @@ public class Game {
                     return false;
             }
         } else return false;
+        return false;
     }
 
     public Robot laserFired(int x, int y, String direction, Robot r){
