@@ -14,6 +14,7 @@ public class Robot {
     private ArrayList<Cards> handCards;
     private Cards[] register;
     private boolean ableToFillRegisters;
+    private boolean ableToChooseRestartDirection;
     private boolean isDead;
     private int energyCube;
     private int collectedCheckpoints;
@@ -26,6 +27,7 @@ public class Robot {
         handCards = new ArrayList<Cards>();
         register = new Cards[5];
         ableToFillRegisters = true;
+        ableToChooseRestartDirection = false;
         isDead = false;
         energyCube = 0;
         collectedCheckpoints = -1;
@@ -195,6 +197,10 @@ public class Robot {
         this.startPointY = startPointY;
     }
 
+    public void setAbleToChooseRestartDirection(boolean ableToChooseRestartDirection) {
+        this.ableToChooseRestartDirection = ableToChooseRestartDirection;
+    }
+
     public int getGamerID() {
         return gamerID;
     }
@@ -241,6 +247,10 @@ public class Robot {
 
     public int getStartPointY() {
         return startPointY;
+    }
+
+    public boolean getAbleForRestart() {
+        return ableToChooseRestartDirection;
     }
 
     /**

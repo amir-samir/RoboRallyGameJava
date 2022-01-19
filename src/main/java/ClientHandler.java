@@ -119,6 +119,9 @@ public class ClientHandler implements Runnable {
                     String card = (String) message.getMessageBody().getContent()[0];
                     int register = (int)(double) message.getMessageBody().getContent()[1];
                     SERVER.handleSelectedCard(card, register, this);
+                } else if (message.getMessageType().equals("RebootDirection")){
+                    String direction = (String) message.getMessageBody().getContent()[0];
+                    SERVER.handleRebootDirection(direction, this);
                 }
             } catch (Exception e){
                 e.printStackTrace();

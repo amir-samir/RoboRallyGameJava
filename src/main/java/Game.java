@@ -1,6 +1,7 @@
 import Messages.*;
 import Messages.Actions.DrawDamage;
 import Messages.Actions.Movement;
+import Messages.Actions.PlayerTurning;
 import Messages.Actions.Reboot;
 import Messages.Phase.*;
 
@@ -255,9 +256,11 @@ public class Game {
     public void activateRobotLaser(){
         for (Robot robot: figuren){
             if (robot != null){
-                Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
-                if (hit != null){
-                    drawDamageSpam(hit, 1);
+                if (!robot.getDead()) {
+                    Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
+                    if (hit != null) {
+                        drawDamageSpam(hit, 1);
+                    }
                 }
             }
         }
@@ -284,6 +287,7 @@ public class Game {
                     robot.clearHandcards();
                     robot.setAbleToFillRegisters(true);
                     robot.setDead(false);
+                    robot.setAbleToChooseRestartDirection(false);
                 }
             }
             timerActivated = false;
@@ -292,6 +296,47 @@ public class Game {
             startGame();
         } catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    public void handleRebootDirection(String direction, ClientHandler clientHandler){
+        Robot rob = null;
+        for (Robot robot: figuren){
+            if (robot != null){
+                if (clientHandler.ID == robot.getGamerID()){
+                  rob = robot;
+                  break;
+                }
+            }
+        }
+        if (rob != null) {
+            if (rob.getAbleForRestart()) {
+                PlayerTurning playerTurning;
+                rob.setDirection(direction);
+                rob.setAbleToChooseRestartDirection(false);
+                switch (direction){
+                    case "top":
+                        break;
+                    case "bottom":
+                        playerTurning = new PlayerTurning(clientHandler.ID, "clockwise");
+                        PlayerTurning playerTurning2 = new PlayerTurning(clientHandler.ID, "clockwise");
+                        playerTurning2.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
+                        playerTurning.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
+                        SERVER.sendMessageForAllUsers(playerTurning2);
+                        SERVER.sendMessageForAllUsers(playerTurning);
+                        break;
+                    case "left":
+                        playerTurning = new PlayerTurning(clientHandler.ID, "counterclockwise");
+                        playerTurning.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
+                        SERVER.sendMessageForAllUsers(playerTurning);
+                        break;
+                    case "right":
+                        playerTurning = new PlayerTurning(clientHandler.ID, "clockwise");
+                        playerTurning.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
+                        SERVER.sendMessageForAllUsers(playerTurning);
+                        break;
+                }
+            }
         }
     }
 
@@ -862,7 +907,7 @@ public class Game {
                 }
             }
             robot.setDirection("top");
-
+            robot.setAbleToChooseRestartDirection(true);
             Movement movement = new Movement(robot.getGamerID(), robot.getX(), robot.getY());
             movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
             SERVER.sendMessageForAllUsers(movement);

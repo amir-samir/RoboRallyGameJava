@@ -238,6 +238,10 @@ public class Server {
         game.handleSelectedCard(card, register, clientHandler);
     }
 
+    public void handleRebootDirection(String string, ClientHandler clientHandler){
+        game.handleRebootDirection(string, clientHandler);
+    }
+
     public boolean readyToStart(){
         int count = 0;
         for (ClientHandler clientHandler: users.values()){
