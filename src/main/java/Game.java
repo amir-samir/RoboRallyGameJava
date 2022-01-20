@@ -691,21 +691,237 @@ public class Game {
                 conveyor = element;
             }
         }
+        BoardElement next = null;
         if (conveyor != null){
             switch (conveyor.getOrientations()[0]){
                 case "top":
+                    if (robot.getX() - 1 < 0){
+                        reboot(robot, conveyor.getIsOnBoard());
+                        return true;
+                    }
+                    for (BoardElement boardElement: board.getMap()[robot.getX()-1][robot.getY()]){
+                        if (boardElement.getType().equals("ConveyorBelt") || boardElement.getType().equals("Pit")){
+                            next = boardElement;
+                        }
+                    }
+                    if (next != null){
+                        if (next.getType().equals("Pit")){
+                            reboot(robot, next.getIsOnBoard());
+                            return true;
+                        } else {
+                            if (next.getOrientations()[0].equals("top")) {
+                                robot.setX(robot.getX() - 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                return true;
+                            } else if (next.getOrientations()[0].equals("left")) {
+                                robot.setX(robot.getX() - 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"counterclockwise");
+                                return true;
+                            } else if (next.getOrientations()[0].equals("right")) {
+                                robot.setX(robot.getX() - 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"clockwise");
+                                return true;
+                            } else {
+                                //Pfeile zueinander?! was passiert?
+                                //--> Simon!! Existiert der Fall überhaupt? Fehler in der Map?
+                            }
+                        }
+                    } else {
+                        for (Robot r: figuren){
+                            if (r != null && !r.equals(robot)){
+                                if (r.getX() == robot.getX()-1 && r.getY() == robot.getY()){
+                                    return false;
+                                }
+                            }
+                        }
+                        robot.setX(robot.getX() - 1);
+                        sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                        return true;
+                    }
                     break;
                 case "bottom":
+                    if (robot.getX() + 1 >= board.getHeight()){
+                        reboot(robot, conveyor.getIsOnBoard());
+                        return true;
+                    }
+                    for (BoardElement boardElement: board.getMap()[robot.getX()+1][robot.getY()]){
+                        if (boardElement.getType().equals("ConveyorBelt") || boardElement.getType().equals("Pit")){
+                            next = boardElement;
+                        }
+                    }
+                    if (next != null){
+                        if (next.getType().equals("Pit")){
+                            reboot(robot, next.getIsOnBoard());
+                            return true;
+                        } else {
+                            if (next.getOrientations()[0].equals("bottom")) {
+                                robot.setX(robot.getX() + 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                return true;
+                            } else if (next.getOrientations()[0].equals("right")) {
+                                robot.setX(robot.getX() + 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"counterclockwise");
+                                return true;
+                            } else if (next.getOrientations()[0].equals("left")) {
+                                robot.setX(robot.getX() + 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"clockwise");
+                                return true;
+                            } else {
+                                //Pfeile zueinander?! was passiert?
+                                //--> Simon!! Existiert der Fall überhaupt? Fehler in der Map?
+                            }
+                        }
+                    } else {
+                        for (Robot r: figuren){
+                            if (r != null && !r.equals(robot)){
+                                if (r.getX() == robot.getX()+1 && r.getY() == robot.getY()){
+                                    return false;
+                                }
+                            }
+                        }
+                        robot.setX(robot.getX() + 1);
+                        sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                        return true;
+                    }
                     break;
                 case "left":
+                    if (robot.getY() - 1 < 0){
+                        reboot(robot, conveyor.getIsOnBoard());
+                        return true;
+                    }
+                    for (BoardElement boardElement: board.getMap()[robot.getX()][robot.getY()-1]){
+                        if (boardElement.getType().equals("ConveyorBelt") || boardElement.getType().equals("Pit")){
+                            next = boardElement;
+                        }
+                    }
+                    if (next != null){
+                        if (next.getType().equals("Pit")){
+                            reboot(robot, next.getIsOnBoard());
+                            return true;
+                        } else {
+                            if (next.getOrientations()[0].equals("left")) {
+                                robot.setY(robot.getY() - 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                return true;
+                            } else if (next.getOrientations()[0].equals("bottom")) {
+                                robot.setY(robot.getY() - 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"counterclockwise");
+                                return true;
+                            } else if (next.getOrientations()[0].equals("top")) {
+                                robot.setY(robot.getX() - 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"clockwise");
+                                return true;
+                            } else {
+                                //Pfeile zueinander?! was passiert?
+                                //--> Simon!! Existiert der Fall überhaupt? Fehler in der Map?
+                            }
+                        }
+                    } else {
+                        for (Robot r: figuren){
+                            if (r != null && !r.equals(robot)){
+                                if (r.getX() == robot.getX() && r.getY() == robot.getY() - 1){
+                                    return false;
+                                }
+                            }
+                        }
+                        robot.setY(robot.getY() - 1);
+                        sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                        return true;
+                    }
                     break;
                 case "right":
+                    if (robot.getY() + 1 >= board.getWidth()){
+                        reboot(robot, conveyor.getIsOnBoard());
+                        return true;
+                    }
+                    for (BoardElement boardElement: board.getMap()[robot.getX()][robot.getY()+1]){
+                        if (boardElement.getType().equals("ConveyorBelt") || boardElement.getType().equals("Pit")){
+                            next = boardElement;
+                        }
+                    }
+                    if (next != null){
+                        if (next.getType().equals("Pit")){
+                            reboot(robot, next.getIsOnBoard());
+                            return true;
+                        } else {
+                            if (next.getOrientations()[0].equals("right")) {
+                                robot.setY(robot.getY() + 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                return true;
+                            } else if (next.getOrientations()[0].equals("top")) {
+                                robot.setY(robot.getY() + 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"counterclockwise");
+                                return true;
+                            } else if (next.getOrientations()[0].equals("bottom")) {
+                                robot.setY(robot.getX() + 1);
+                                sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                                sendRotation(robot,"clockwise");
+                                return true;
+                            } else {
+                                //Pfeile zueinander?! was passiert?
+                                //--> Simon!! Existiert der Fall überhaupt? Fehler in der Map?
+                            }
+                        }
+                    } else {
+                        for (Robot r: figuren){
+                            if (r != null && !r.equals(robot)){
+                                if (r.getX() == robot.getX() && r.getY() == robot.getY() + 1){
+                                    return false;
+                                }
+                            }
+                        }
+                        robot.setY(robot.getY() + 1);
+                        sendMovement(robot.getGamerID(), robot.getX(), robot.getY());
+                        return true;
+                    }
                     break;
                 default:
                     return false;
             }
         } else return false;
         return false;
+    }
+
+    public void sendMovement(int ID, int x, int y){
+        Movement movement = new Movement(ID, x, y);
+        movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
+        SERVER.sendMessageForAllUsers(movement);
+    }
+
+    public void sendRotation(Robot robot, String rotation){
+        switch (robot.getDirection()){
+            case "top":
+                if (rotation.equals("clockwise")){
+                    robot.setDirection("right");
+                } else robot.setDirection("left");
+                break;
+            case "bottom":
+                if (rotation.equals("clockwise")){
+                    robot.setDirection("left");
+                } else robot.setDirection("right");
+                break;
+            case "left":
+                if (rotation.equals("clockwise")){
+                    robot.setDirection("top");
+                } else robot.setDirection("bottom");
+                break;
+            case "right":
+                if (rotation.equals("clockwise")){
+                    robot.setDirection("bottom");
+                } else robot.setDirection("top");
+                break;
+        }
+
+        PlayerTurning playerTurning = new PlayerTurning(robot.getGamerID(), rotation);
+        playerTurning.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
+        SERVER.sendMessageForAllUsers(playerTurning);
     }
 
     public Robot laserFired(int x, int y, String direction, Robot r){
