@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Timer fertig Gui">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_16_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_16_48__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57_[Changes]/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57_[Changes]/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57_[Changes]/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_20_57__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_21_50_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_21_50__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_22_25_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_01_2022_22_25__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_22__14_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_22__14_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_22__15_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_22__15_06__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mapTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="map changing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,13 +190,6 @@
       <workItem from="1642278457933" duration="1317000" />
       <workItem from="1642326786929" duration="7643000" />
       <workItem from="1642607404678" duration="154000" />
-    </task>
-    <task id="LOCAL-00003" summary="@yilu und dairen Adopte, Message">
-      <created>1639138075735</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1639138075738</updated>
     </task>
     <task id="LOCAL-00004" summary="@yilu und dairen Adopte, Message">
       <created>1639144711170</created>
@@ -550,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642607501410</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="map changing">
+      <created>1642763972762</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642763972762</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: GUI &amp; Kommunikation" />
-    <MESSAGE value="Support for SetStartingPoint" />
     <MESSAGE value="Changes by Amir" />
     <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
     <MESSAGE value="bugfix" />
@@ -594,7 +576,9 @@
     <MESSAGE value="Bug Fix Gui" />
     <MESSAGE value="Adding Spam Cards" />
     <MESSAGE value="LaserDing" />
-    <option name="LAST_COMMIT_MESSAGE" value="LaserDing" />
+    <MESSAGE value="Timer fertig Gui" />
+    <MESSAGE value="map changing" />
+    <option name="LAST_COMMIT_MESSAGE" value="map changing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
