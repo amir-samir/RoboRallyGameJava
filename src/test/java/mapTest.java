@@ -145,7 +145,7 @@ public class mapTest {
 
         Board board = new DeathTrap();
         Message death = Adopter.getMessage(board.json);
-        generatingMap(dizzy);
+        generatingMap(crispy);
         System.out.println(m.getMessageBody().getContent());
 
     }
