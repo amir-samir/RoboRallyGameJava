@@ -2,6 +2,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -90,66 +91,6 @@ public class FirstView implements Initializable {
          }
       } );
 
-
-
-
-
-
-
-   }
-
-   public void TwinkyRoboterPressed(){
-      figure = 0;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
-   }
-   public void SmashRoboterPressed(){
-      figure = 1;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      smashBotImageView.setDisable(true);
-      smashBotImageView.setVisible(false);
-   }
-   public void HulkRoboterPressed(){
-      figure = 2;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      hulkBotImageView.setDisable(true);
-      hulkBotImageView.setVisible(false);
-   }
-   public void ZoomRoboterPressed(){
-      figure = 3;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      zoomBotImageView.setDisable(true);
-      zoomBotImageView.setVisible(false);
-   }
-   public void SpinRoboterPressed(){
-      figure = 4;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      spinBotImageView.setDisable(true);
-      spinBotImageView.setVisible(false);
-   }
-   public void HammerRoboterPressed(){
-      figure = 5;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      hammerBotImageView.setDisable(true);
-      hammerBotImageView.setVisible(false);
-   }
-   public int getFigure(){
-      return figure;
-   }
-
-
-
-
-   public void chooseUserName() throws IOException {
-      viewModel.chooseUsername();
-      // Fade: Hide and Show the Title Photo
       FadeTransition fade = new FadeTransition();
       fade.setNode(roboRallyImageView);
       fade.setDuration(Duration.millis(3000));
@@ -266,6 +207,78 @@ public class FirstView implements Initializable {
       rotate5.setInterpolator(Interpolator.LINEAR);
       rotate5.setByAngle(360);
       rotate5.play();
+
+      setunvisible(SaveClients.client.figurenForGui);
+
+
+
+
+
+   }
+
+   public FirstView(){
+      Client.setFirstView(this);
+   }
+
+   public void TwinkyRoboterPressed(){
+      figure = 0;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      twinkyImageView.setDisable(true);
+      twinkyImageView.setVisible(false);
+      SaveClients.client.figurenForGui.add(0);
+   }
+   public void SmashRoboterPressed(){
+      figure = 1;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      smashBotImageView.setDisable(true);
+      smashBotImageView.setVisible(false);
+      SaveClients.client.figurenForGui.add(1);
+   }
+   public void HulkRoboterPressed(){
+      figure = 2;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      hulkBotImageView.setDisable(true);
+      hulkBotImageView.setVisible(false);
+      SaveClients.client.figurenForGui.add(2);
+   }
+   public void ZoomRoboterPressed(){
+      figure = 3;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      zoomBotImageView.setDisable(true);
+      zoomBotImageView.setVisible(false);
+      SaveClients.client.figurenForGui.add(3);
+   }
+   public void SpinRoboterPressed(){
+      figure = 4;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      spinBotImageView.setDisable(true);
+      spinBotImageView.setVisible(false);
+      SaveClients.client.figurenForGui.add(4);
+   }
+   public void HammerRoboterPressed(){
+      figure = 5;
+      System.out.println("funktioniert");
+      System.out.println(figure);
+      hammerBotImageView.setDisable(true);
+      hammerBotImageView.setVisible(false);
+      SaveClients.client.figurenForGui.add(5);
+   }
+   public int getFigure(){
+      return figure;
+   }
+
+
+
+
+   public void chooseUserName() throws IOException {
+      viewModel.chooseUsername();
+      // Fade: Hide and Show the Title Photo
+
    }
 
    public void setClient(Client client){
@@ -291,6 +304,88 @@ public class FirstView implements Initializable {
          //game.Client-Constructor throws DuplicateNameException if name already taken
       } catch (IOException e) {
         e.printStackTrace();
+      }
+   }
+
+   public void setunvisible(ObservableList<Integer> figuren){
+      for (int i = 0; i < figuren.size(); i++){
+         switch (figuren.get(i)){
+            case 0:
+               twinkyImageView.setVisible(false);
+            case 1:
+               smashBotImageView.setVisible(false);
+            case 2:
+               hulkBotImageView.setVisible(false);
+            case 3:
+               zoomBotImageView.setVisible(false);
+            case 4:
+               spinBotImageView.setVisible(false);
+            case 5:
+               hammerBotImageView.setVisible(false);
+         }
+      }
+   }
+
+   public void showFigure(int[] figurList){
+      for (int i = 0; i < figurList.length; i++){
+         if (figurList[i] == 0){
+            TranslateTransition translate1 = new TranslateTransition();
+            translate1.setNode(twinkyImageView);
+            translate1.setDuration(Duration.millis(5000));
+            translate1.setCycleCount(1);
+            translate1.setByX(420);
+            translate1.setAutoReverse(true);
+            translate1.play();
+         }
+         if (figurList[i] == 1){
+            TranslateTransition translate1 = new TranslateTransition();
+            translate1.setNode(smashBotImageView);
+            translate1.setDuration(Duration.millis(5000));
+            translate1.setCycleCount(1);
+            translate1.setByX(420);
+            translate1.setAutoReverse(true);
+            translate1.play();
+         }
+         if (figurList[i] == 2){
+            TranslateTransition translate1 = new TranslateTransition();
+            translate1.setNode(hulkBotImageView);
+            translate1.setDuration(Duration.millis(5000));
+            translate1.setCycleCount(1);
+            translate1.setByX(420);
+            translate1.setAutoReverse(true);
+            translate1.play();
+         }
+         if (figurList[i] == 3){
+            TranslateTransition translate1 = new TranslateTransition();
+            translate1.setNode(zoomBotImageView);
+            translate1.setDuration(Duration.millis(5000));
+            translate1.setCycleCount(1);
+            translate1.setByX(420);
+            translate1.setAutoReverse(true);
+            translate1.play();
+         }
+         if (figurList[i] == 4){
+            TranslateTransition translate1 = new TranslateTransition();
+            translate1.setNode(spinBotImageView);
+            translate1.setDuration(Duration.millis(5000));
+            translate1.setCycleCount(1);
+            translate1.setByX(420);
+            translate1.setAutoReverse(true);
+            translate1.play();
+         }
+         if (figurList[i] == 5){
+            TranslateTransition translate1 = new TranslateTransition();
+            translate1.setNode(hammerBotImageView);
+            translate1.setDuration(Duration.millis(5000));
+            translate1.setCycleCount(1);
+            translate1.setByX(420);
+            translate1.setAutoReverse(true);
+            translate1.play();
+         }
+         if (figurList[i] == 6){
+            return;
+         }
+
       }
    }
 
