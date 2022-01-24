@@ -55,10 +55,12 @@ public class Client implements Runnable {
     public static SelectMapView selectMapView = new SelectMapView();
     public static MaybeMapsController maybeMapsController;
     public static AllInOneView allInOneView;
+    public static FirstView firstView;
     public static ChooseCards chooseCards;
     private String selectedMap;
     public int figureForGui;
     public String CardOfGui = "SomeCard";
+    public ObservableList<Integer> figurenForGui;
 
 
     /**
@@ -68,11 +70,12 @@ public class Client implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
-        SOCKET = new Socket("sep21.dbs.ifi.lmu.de", 52019);
+        SOCKET = new Socket("localhost", 1525);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
         chatMessages = FXCollections.observableArrayList();
+        figurenForGui = FXCollections.observableArrayList();
         isAi = false;
     }
     public static Client getClient(){
@@ -139,13 +142,17 @@ public class Client implements Runnable {
         String[] keys = {"name", "figure"};
         message.getMessageBody().setKeys(keys);
         bufferedWriter.println(Adopter.javabeanToJson(message));
+        figureForGui = figur;
         Platform.runLater(new Runnable(){
 
             @Override
             public void run() {
-                getChatView().setImageFromFigur(figur);
+                    getChatView().setImageFromFigur(figur);
+
             }
         });
+
+
     }
 
     public int getID(){
@@ -457,6 +464,7 @@ public class Client implements Runnable {
                         ids.put(username, clientID);
                         figuren[newFigure] = new Robot(clientID);
                         usernamesGui.add(clientID + "," + username);
+                        figurenForGui.add(figureForGui);
                         Player newPlayer = new Player(clientID, username, newFigure);
                         player.put(clientID, newPlayer);
                         toSend = username + " hat sich verbunden. Er/Sie spielt mit Figur: " + newFigure;
@@ -542,6 +550,7 @@ public class Client implements Runnable {
                             }
                         }
                     });
+
                     toSend = player.get(clientID).name + " (" + clientID + ") hat seine Startposition gewählt.";
                 } else if (message.getMessageType().equals("YourCards")){
                     ArrayList<String> cards = (ArrayList<String>) message.getMessageBody().getContent()[0];
@@ -758,6 +767,14 @@ public class Client implements Runnable {
         return allInOneView;
     }
 
+    public static void setFirstView(FirstView firstView1){
+        firstView = firstView1;
+    }
+
+    public FirstView getFirstView(){
+        return firstView;
+    }
+
     public ArrayList<Cards> getHandcards(){
         return figuren[player.get(ID).figur].getHandCards();
     }
@@ -768,6 +785,10 @@ public class Client implements Runnable {
 
     public ChooseCards getChooseCards(){
         return chooseCards;
+    }
+
+    public ArrayList<BoardElement>[][] getMap(){
+        return map;
     }
 
 }

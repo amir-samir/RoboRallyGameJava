@@ -19,4 +19,5 @@ public class Laser extends BoardElement {
     public String[] getOrientations() {
         return orientations;
     }
+
 }
