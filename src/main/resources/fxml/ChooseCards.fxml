@@ -4,6 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <AnchorPane prefHeight="391.0" prefWidth="600.0" styleClass="MapsBackground" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseCards">
    <children>
       <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="32.0" onMouseClicked="#ChooseCard1" pickOnBounds="true" preserveRatio="true">

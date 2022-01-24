@@ -54,7 +54,7 @@ public class ExtraCrispy extends Board{
         map[2][1].add(new Wall("A", new String[]{"top"}));
         map[2][2].add(new Empty("A"));
         map[2][3].add(new Empty("4A"));
-        map[2][4].add(new ConveyorBelt("4A", new String[]{"bottom", "top"}, 2));
+        map[2][4].add(new ConveyorBelt("4A", new String[]{"right", "top"}, 2));
         map[2][5].add(new CheckPoint("4A",3));
         map[2][5].add(new Wall("4A", new String[]{"top"}));
         map[2][5].add(new Laser("4A", new String[]{"bottom"},1));

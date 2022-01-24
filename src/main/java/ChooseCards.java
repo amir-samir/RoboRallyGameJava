@@ -15,9 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import lombok.ToString;
-
-
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.sql.Array;
@@ -323,7 +320,7 @@ public class ChooseCards implements Initializable {
         scheduler.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.SECONDS);
     }
 
-    public void startTimer(ActionEvent event){
+    /*public void startTimer(ActionEvent event){
         Timeline timeline = new Timeline();
         timeline.setCycleCount(1);
         timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
@@ -340,6 +337,8 @@ public class ChooseCards implements Initializable {
             }
         }));
     }
+
+     */
 
     public void ShowTimer() throws InterruptedException {
         TimeUnit. SECONDS.sleep(1);
