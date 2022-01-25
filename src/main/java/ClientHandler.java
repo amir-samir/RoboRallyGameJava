@@ -60,7 +60,6 @@ public class ClientHandler implements Runnable {
             @Override
             public void run() {
                 writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
-                //System.out.println("Timer aktiviert");
             }
         };
         t.schedule(timerTask, 0,5000);

@@ -431,6 +431,13 @@ public class Client implements Runnable {
         return s;
     }
 
+    public String handlePickDamage(Message m){
+        int count = (int)(double) m.getMessageBody().getContent()[0];
+        ArrayList<String> list = (ArrayList<String>) m.getMessageBody().getContent()[1];
+        //GUI: Neues Fenster: Karte wählen mit list
+        return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -704,6 +711,8 @@ public class Client implements Runnable {
                     toSend = handleReplaceCard(message);
                 } else if (message.getMessageType().equals("Energy")){
                     toSend = handleEnergy(message);
+                } else if (message.getMessageType().equals("PickDamage")){
+                    toSend = handlePickDamage(message);
                 }
                 else {
                     toSend = inputFromServer;

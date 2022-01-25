@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/PickDamage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/SelectedDamage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- ChooseDamageCard">
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpamFolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trojan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VirusCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Worm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +85,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="extract.method.default.visibility" value="public" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -215,21 +205,7 @@
       <workItem from="1642686104206" duration="866000" />
       <workItem from="1643023263621" duration="359000" />
       <workItem from="1643039275369" duration="2144000" />
-      <workItem from="1643136044824" duration="2640000" />
-    </task>
-    <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641140977313</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1641140977313</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641142068102</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1641142068102</updated>
+      <workItem from="1643136044824" duration="3348000" />
     </task>
     <task id="LOCAL-00012" summary="Bugfix">
       <created>1641324232749</created>
@@ -560,7 +536,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643039917948</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Bugfix:&#10;- ChooseDamageCard">
+      <created>1643138733885</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1643138733885</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Bugfix:&#10;- ChooseDamageCard">
+      <created>1643139022763</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1643139022763</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
@@ -604,7 +593,8 @@
     <MESSAGE value="Merge: Timer" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy" />
+    <MESSAGE value="Bugfix:&#10;- ChooseDamageCard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- ChooseDamageCard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
