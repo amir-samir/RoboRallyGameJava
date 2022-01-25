@@ -1,5 +1,6 @@
 import Messages.*;
 import Messages.Actions.RebootDirection;
+import Messages.Actions.SelectedDamage;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
 import com.google.gson.internal.LinkedTreeMap;
@@ -135,6 +136,12 @@ public class Client implements Runnable {
 
     public Integer getFigur(){
         return figureForGui;
+    }
+
+    public void sendSelectedDamage(String[] cards){
+        SelectedDamage selectedDamage = new SelectedDamage(cards);
+        selectedDamage.getMessageBody().setKeys(new String[]{"cards"});
+        bufferedWriter.println(Adopter.javabeanToJson(selectedDamage));
     }
 
     public void configuration(String name, int figur){

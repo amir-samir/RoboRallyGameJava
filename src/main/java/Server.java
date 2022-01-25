@@ -257,6 +257,11 @@ public class Server {
         }
     }
 
+    public void handleSelectDamage(ClientHandler clientHandler, ArrayList<String> card){
+        String karte = card.get(0);
+        game.chooseDamageCard(clientHandler, karte);
+    }
+
 
     public void createGame(){
         game = new Game(this, users, verbindungen, activeMap, figuren);

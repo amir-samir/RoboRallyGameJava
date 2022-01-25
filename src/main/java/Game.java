@@ -1,8 +1,5 @@
 import Messages.*;
-import Messages.Actions.DrawDamage;
-import Messages.Actions.Movement;
-import Messages.Actions.PlayerTurning;
-import Messages.Actions.Reboot;
+import Messages.Actions.*;
 import Messages.Phase.*;
 
 import java.util.*;
@@ -16,13 +13,16 @@ public class Game {
     private HashMap<Integer, ClientHandler> users;
     private List<ClientHandler> verbindungen;
 
-    int activePhase;
-    int activePlayer;
-    int activeRegister;
-    String activeMap;
-    Robot[] figuren;
-    boolean timerActivated;
-    int neededCheckpoints;
+    private int activePhase;
+    private int activePlayer;
+    private int activeRegister;
+    private String activeMap;
+    private Robot[] figuren;
+    private boolean timerActivated;
+    private int neededCheckpoints;
+
+    private String currentDamageCard = null;
+    private boolean chooseDamageCard = true;
 
     Board board;
 
@@ -1039,16 +1039,92 @@ public class Game {
         return null;
     }
 
-    public void drawDamageSpam(Robot robot, int count){
-        String[] karten = new String[count];
-        for (int i = 0; i < count; i++){
-            Cards card = cardsForGame.spamCards.remove(0);
-            robot.getDeck().getDiscard().add(card);
-            karten[i] = card.getName();
+    public void chooseDamageCard(ClientHandler clientHandler, String card){
+        Robot rob = null;
+        for (Robot robot: figuren){
+            if (robot != null) {
+                if (clientHandler.ID == robot.getGamerID()) {
+                    if (robot.isAbleToChooseDamageCard()){
+                        rob = robot;
+                    }
+                }
+            }
         }
-        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
-        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
-        SERVER.sendMessageForAllUsers(drawDamage);
+        if (chooseDamageCard && rob != null) {
+            this.currentDamageCard = card;
+            chooseDamageCard = false;
+        }
+
+    }
+
+    public void drawDamageSpam(Robot robot, int count){
+        try {
+            String[] karten = new String[count];
+            for (int i = 0; i < count; i++) {
+                if (cardsForGame.spamCards.size() != 0) {
+                    Cards card = cardsForGame.spamCards.remove(0);
+                    robot.getDeck().getDiscard().add(card);
+                    karten[i] = card.getName();
+                } else {
+                    chooseDamageCard = true;
+                    robot.setAbleToChooseDamageCard(true);
+                    int anzahl = 0;
+                    ArrayList<String> damage = new ArrayList<String>();
+                    if (cardsForGame.spamCards.size() != 0) {
+                        anzahl += 1;
+                        damage.add("Spam");
+                    }
+                    if (cardsForGame.virusCards.size() != 0) {
+                        anzahl += 1;
+                        damage.add("Virus");
+                    }
+                    if (cardsForGame.wormCards.size() != 0) {
+                        anzahl += 1;
+                        damage.add("Worm");
+                    }
+                    if (cardsForGame.trojanHorse.size() != 0) {
+                        anzahl += 1;
+                        damage.add("Trojan");
+                    }
+                    String[] piles = new String[anzahl];
+                    for (int p = 0; p < piles.length; p++) {
+                        piles[p] = damage.remove(0);
+                    }
+                    PickDamage pickDamage = new PickDamage(1, piles);
+                    pickDamage.getMessageBody().setKeys(new String[]{"count", "availablePiles"});
+                    SERVER.sendMessageForSingleClient(pickDamage, verbindungen.get(robot.getGamerID()));
+                    while (chooseDamageCard) {
+
+                    }
+                    Cards karte = null;
+                    switch (this.currentDamageCard){
+                        case "Spam":
+                            karte = cardsForGame.spamCards.remove(0);
+                            break;
+                        case "Virus":
+                            karte = cardsForGame.virusCards.remove(0);
+                            break;
+                        case "Worm":
+                            karte = cardsForGame.wormCards.remove(0);
+                            break;
+                        case "Trojan":
+                            karte = cardsForGame.trojanHorse.remove(0);
+                            break;
+                        default:
+                            currentDamageCard = null;
+                            break;
+                    }
+                    robot.getDeck().getDiscard().add(karte);
+                    karten[i] = karte.getName();
+                    robot.setAbleToChooseDamageCard(false);
+                }
+            }
+            DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+            drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+            SERVER.sendMessageForAllUsers(drawDamage);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void drawDamageVirus(Robot robot, int count){

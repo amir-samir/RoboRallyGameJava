@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_16_48_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_16_48__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_22,_14_02_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_22__14_02__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_01_2022_13_33__Changes_.xml" beforeDir="false" />
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/PickDamage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/SelectedDamage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpamFolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trojan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VirusCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VirusCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Worm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +117,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KI">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -169,9 +175,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
-        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       </list>
@@ -208,14 +214,8 @@
       <workItem from="1642676410276" duration="8802000" />
       <workItem from="1642686104206" duration="866000" />
       <workItem from="1643023263621" duration="359000" />
-      <workItem from="1643039275369" duration="438000" />
-    </task>
-    <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641139886511</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1641139886511</updated>
+      <workItem from="1643039275369" duration="2144000" />
+      <workItem from="1643136044824" duration="2640000" />
     </task>
     <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
       <created>1641140977313</created>
@@ -553,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643026797015</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy">
+      <created>1643039917948</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1643039917948</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
@@ -597,7 +603,8 @@
     <MESSAGE value="Bugfix:&#10;- ConveyorBelt" />
     <MESSAGE value="Merge: Timer" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,7 +624,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>100</line>
+          <line>102</line>
           <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -632,20 +639,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>685</line>
-          <properties class="Game" method="checkConveyor">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>693</line>
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

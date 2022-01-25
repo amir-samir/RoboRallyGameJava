@@ -5,6 +5,7 @@ import Messages.Welcome;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -121,11 +122,18 @@ public class ClientHandler implements Runnable {
                 } else if (message.getMessageType().equals("RebootDirection")){
                     String direction = (String) message.getMessageBody().getContent()[0];
                     SERVER.handleRebootDirection(direction, this);
+                } else if (message.getMessageType().equals("SelectedDamage")){
+                    handleSelectedDamage(message);
                 }
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
+    }
+
+    public void handleSelectedDamage(Message message){
+        ArrayList<String> list = (ArrayList<String>) message.getMessageBody().getContent()[0];
+        SERVER.handleSelectDamage(this, list);
     }
 
     public void sendWelcomeMessage(Message message){

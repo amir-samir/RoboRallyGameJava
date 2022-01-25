@@ -15,6 +15,7 @@ public class Robot {
     private Cards[] register;
     private boolean ableToFillRegisters;
     private boolean ableToChooseRestartDirection;
+    private boolean ableToChooseDamageCard;
     private boolean isDead;
     private int energyCube;
     private int collectedCheckpoints;
@@ -28,6 +29,7 @@ public class Robot {
         register = new Cards[5];
         ableToFillRegisters = true;
         ableToChooseRestartDirection = false;
+        ableToChooseDamageCard = false;
         isDead = false;
         energyCube = 0;
         collectedCheckpoints = -1;
@@ -201,6 +203,10 @@ public class Robot {
         this.ableToChooseRestartDirection = ableToChooseRestartDirection;
     }
 
+    public void setAbleToChooseDamageCard(boolean ableToChooseDamageCard) {
+        this.ableToChooseDamageCard = ableToChooseDamageCard;
+    }
+
     public int getGamerID() {
         return gamerID;
     }
@@ -251,6 +257,10 @@ public class Robot {
 
     public boolean getAbleForRestart() {
         return ableToChooseRestartDirection;
+    }
+
+    public boolean isAbleToChooseDamageCard() {
+        return ableToChooseDamageCard;
     }
 
     /**
