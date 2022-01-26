@@ -13,6 +13,8 @@ public class Robot {
     private ProgrammingCardsForPlayer deck;
     private ArrayList<Cards> handCards;
     private Cards[] register;
+    private UpgradeCards[] temporaryCards;
+    private UpgradeCards[] permanentCards;
     private boolean ableToFillRegisters;
     private boolean ableToChooseRestartDirection;
     private boolean ableToChooseDamageCard;
@@ -27,6 +29,8 @@ public class Robot {
         deck = new ProgrammingCardsForPlayer();
         handCards = new ArrayList<Cards>();
         register = new Cards[5];
+        temporaryCards = new UpgradeCards[3];
+        permanentCards = new UpgradeCards[3];
         ableToFillRegisters = true;
         ableToChooseRestartDirection = false;
         ableToChooseDamageCard = false;

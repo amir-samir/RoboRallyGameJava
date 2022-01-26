@@ -12,6 +12,7 @@ public class Game {
     private final Server SERVER;
     private HashMap<Integer, ClientHandler> users;
     private List<ClientHandler> verbindungen;
+    private List<ClientHandler> upgradeReihenfolge;
 
     private int activePhase;
     private int activePlayer;
@@ -34,6 +35,7 @@ public class Game {
         this.SERVER = server;
         this.users = hashMap;
         this.verbindungen = verbindungen;
+        this.upgradeReihenfolge = null;
         this.activePhase = 0;
         this.activePlayer = 0;
         this.activeRegister = 0;
@@ -77,7 +79,7 @@ public class Game {
                 startGame();
             }
         } else if (this.activePhase == 1){
-            sendActivePlayer();
+            this.upgradeReihenfolge = reihenfolgeBestimmen();
             upgradePhase();
         } else if (this.activePhase == 2){
             programmierPhase();
@@ -93,6 +95,22 @@ public class Game {
     }
 
     public void upgradePhase(){
+        if (this.upgradeReihenfolge.size() != 0){
+            ClientHandler activePlayer = upgradeReihenfolge.remove(0);
+            Robot activeRobot = figuren[activePlayer.figure];
+            if (activeRobot.getEnergyCube() == 0){
+                upgradePhase();
+            } else {
+                //Shop Handeln
+                //Nachricht verschicken
+            }
+        } else {
+            activePhase = 2;
+            startGame();
+        }
+    }
+
+    public void sendUpgradeShop(ArrayList<ClientHandler> list){
 
     }
 

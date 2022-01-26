@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Added new Messages from UpgradePhase">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AdminPrivilege.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RearLaser.java" afterDir="false" />
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Added Structure of UpgradeCards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UpgradeCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UpgradeCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,14 +207,7 @@
       <workItem from="1643023263621" duration="359000" />
       <workItem from="1643039275369" duration="2144000" />
       <workItem from="1643136044824" duration="3550000" />
-      <workItem from="1643224647295" duration="1653000" />
-    </task>
-    <task id="LOCAL-00014" summary="updated git-ignore">
-      <created>1641328575276</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1641328575276</updated>
+      <workItem from="1643224647295" duration="3852000" />
     </task>
     <task id="LOCAL-00015" summary="Improved method generateMap()">
       <created>1641421076965</created>
@@ -553,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643225050976</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Added Structure of UpgradeCards">
+      <created>1643226642585</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1643226642585</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
     <MESSAGE value="Implemented message selectedCard" />
     <MESSAGE value="Improved programmierPhase" />
@@ -597,7 +595,8 @@
     <MESSAGE value="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy" />
     <MESSAGE value="Bugfix:&#10;- ChooseDamageCard" />
     <MESSAGE value="Added new Messages from UpgradePhase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new Messages from UpgradePhase" />
+    <MESSAGE value="Added Structure of UpgradeCards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Structure of UpgradeCards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,7 +616,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>102</line>
+          <line>106</line>
           <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -626,7 +625,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>624</line>
+          <line>642</line>
           <properties class="Game">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
