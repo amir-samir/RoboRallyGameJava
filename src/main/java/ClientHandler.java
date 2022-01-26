@@ -123,11 +123,19 @@ public class ClientHandler implements Runnable {
                     SERVER.handleRebootDirection(direction, this);
                 } else if (message.getMessageType().equals("SelectedDamage")){
                     handleSelectedDamage(message);
+                } else if (message.getMessageType().equals("BuyUpgrade")){
+                    handleBuyUpgrade(message);
                 }
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
+    }
+
+    public void handleBuyUpgrade(Message message){
+        boolean isBuying = (boolean) message.getMessageBody().getContent()[0];
+        String card = (String) message.getMessageBody().getContent()[1];
+        SERVER.handleBuyUpgrade(isBuying, card, this);
     }
 
     public void handleSelectedDamage(Message message){

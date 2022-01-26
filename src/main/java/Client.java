@@ -1,6 +1,7 @@
 import Messages.*;
 import Messages.Actions.RebootDirection;
 import Messages.Actions.SelectedDamage;
+import Messages.Phase.BuyUpgrade;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
 import com.google.gson.internal.LinkedTreeMap;
@@ -245,6 +246,12 @@ public class Client implements Runnable {
             }
         }
         return -1;
+    }
+
+    public void buyUpgrade(boolean isBuying, String card){
+        BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
+        buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+        bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){

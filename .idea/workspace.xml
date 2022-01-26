@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Started upgradePhase with @Yilu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/UpgradeShop.java" afterDir="false" />
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="new maps&#10;new effect">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_22__15_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_22__15_06__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CardsForGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CardsForGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EnergySpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EnergySpace.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -609,7 +613,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
           <line>247</line>
-          <properties class="KI" method="playCards">
+          <properties class="KI">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -626,7 +630,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>679</line>
+          <line>721</line>
           <properties class="Game">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

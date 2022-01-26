@@ -262,6 +262,9 @@ public class Server {
         game.chooseDamageCard(clientHandler, karte);
     }
 
+    public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
+        game.handleBuyUpgrade(isBuying, card, clientHandler);
+    }
 
     public void createGame(){
         game = new Game(this, users, verbindungen, activeMap, figuren);

@@ -154,8 +154,37 @@ public class Game {
         }
     }
 
-    public void sendUpgradeShop(ArrayList<ClientHandler> list){
-
+    public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
+        if (this.activePhase == 1 && this.activePlayer == clientHandler.ID){
+            if (isBuying){
+                UpgradeCards karte = null;
+                for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()){
+                    if (upgradeCard.getName() == card){
+                        karte = upgradeCard;
+                        Robot robot = null;
+                        for (Robot rob: figuren){
+                            if (rob != null){
+                                if (rob.getGamerID() == clientHandler.ID){
+                                    robot = rob;
+                                    break;
+                                }
+                            }
+                        }
+                        if (robot.getEnergyCube() >= karte.getCost()){
+                            robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
+                            if (card.equals("AdminPrivilege") || card.equals("RearLaser")){
+                                robot.addPermUpgrade(upgradeCard);
+                            } else {
+                                robot.addTempUpgrade(upgradeCard);
+                            }
+                        }
+                    }
+                }
+                upgradePhase();
+            } else {
+                upgradePhase();
+            }
+        }
     }
 
     public void programmierPhase(){
@@ -241,6 +270,7 @@ public class Game {
         activateGear();
         activateBoardLaser();
         activateRobotLaser();
+        activateEnergySpace();
         activateCheckpoint();
     }
 
@@ -322,6 +352,18 @@ public class Game {
                     Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
                     if (hit != null) {
                         drawDamageSpam(hit, 1);
+                    }
+                }
+            }
+        }
+    }
+
+    public void activateEnergySpace(){
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("EnergySpace")){
+                        list.effect(robot, SERVER);
                     }
                 }
             }

@@ -118,6 +118,20 @@ public class Robot {
         }
     }
 
+    public void addPermUpgrade(UpgradeCards card){
+        for (int i = 0; i < permanentCards.length; i++){
+            if (permanentCards[i] == null){
+                permanentCards[i] = card;
+                return;
+            }
+        }
+
+    }
+
+    public void addTempUpgrade(UpgradeCards card){
+
+    }
+
     public void clearHandcards(){
         int zähler = handCards.size();
         for (int i = 0; i < zähler; i++){
