@@ -10,6 +10,7 @@ import static java.lang.Math.abs;
 public class Game {
 
     private final Server SERVER;
+    private UpgradeShop upgradeShop;
     private HashMap<Integer, ClientHandler> users;
     private List<ClientHandler> verbindungen;
     private List<ClientHandler> upgradeReihenfolge;
@@ -35,6 +36,7 @@ public class Game {
         this.SERVER = server;
         this.users = hashMap;
         this.verbindungen = verbindungen;
+        this.upgradeShop = new UpgradeShop(verbindungen.size());
         this.upgradeReihenfolge = null;
         this.activePhase = 0;
         this.activePlayer = 0;
@@ -46,7 +48,7 @@ public class Game {
 
         if (activeMap.equals("DizzyHighway")){
             neededCheckpoints = 1;
-        } else if (activeMap.equals("LostBearings") || activeMap.equals("ExtraCrispy")){
+        } else if (activeMap.equals("LostBearings") || activeMap.equals("ExtraCrispy") || activeMap.equals("Twister")){
             neededCheckpoints = 4;
         } else if (activeMap.equals("DeathTrap")){
             neededCheckpoints = 5;
@@ -65,6 +67,9 @@ public class Game {
             case "DeathTrap":
                 board = new DeathTrap();
                 break;
+            case "Twister":
+                //board = new Twister();
+                //break;
         }
         startGame();
     }
@@ -79,6 +84,8 @@ public class Game {
                 startGame();
             }
         } else if (this.activePhase == 1){
+            sendActivePhase();
+            prepareUpgradeShop();
             this.upgradeReihenfolge = reihenfolgeBestimmen();
             upgradePhase();
         } else if (this.activePhase == 2){
@@ -88,21 +95,58 @@ public class Game {
         }
     }
 
+    public void sendActivePhase(){
+        ActivePhase activePhase = new ActivePhase(this.activePhase);
+        activePhase.getMessageBody().setKeys(new String[]{"phase"});
+        SERVER.sendMessageForAllUsers(activePhase);
+    }
+
     public void aufbauPhase(){
         ActivePhase activePhase = new ActivePhase(this.activePhase);
         activePhase.getMessageBody().setKeys(new String[]{"phase"});
         SERVER.sendMessageForSingleClient(activePhase, verbindungen.get(activePlayer));
     }
 
+    public void prepareUpgradeShop(){
+        if (this.upgradeShop.isSomebodyBoughtOne()){
+            ArrayList<String> upgradeCards = new ArrayList<>();
+            String[] karten;
+            for (int i = 0; i < upgradeShop.getUpgradeCards().length; i++){
+                if (upgradeShop.getUpgradeCards()[i] == null){
+                     upgradeShop.getUpgradeCards()[i] = cardsForGame.upgradeCards.remove(0);
+                     upgradeCards.add(upgradeShop.getUpgradeCards()[i].getName());
+                }
+            }
+            karten = new String[upgradeCards.size()];
+            for (int i = 0; i < karten.length; i++){
+                karten[i] = upgradeCards.remove(0);
+            }
+            RefillShop refillShop = new RefillShop(karten);
+            refillShop.getMessageBody().setKeys(new String[]{"cards"});
+            SERVER.sendMessageForAllUsers(refillShop);
+        } else {
+            cardsForGame.upgradeCards = this.upgradeShop.exchangeShop(cardsForGame.upgradeCards);
+            String[] karten = new String[upgradeShop.getUpgradeCards().length];
+            for (int i = 0; i < karten.length; i++){
+                karten[i] = upgradeShop.getUpgradeCards()[i].getName();
+            }
+            ExchangeShop exchangeShop = new ExchangeShop(karten);
+            exchangeShop.getMessageBody().setKeys(new String[]{"cards"});
+            SERVER.sendMessageForAllUsers(exchangeShop);
+        }
+        upgradeShop.setSomebodyBoughtOne(false);
+    }
+
     public void upgradePhase(){
+        this.activePlayer = 0;
         if (this.upgradeReihenfolge.size() != 0){
             ClientHandler activePlayer = upgradeReihenfolge.remove(0);
             Robot activeRobot = figuren[activePlayer.figure];
             if (activeRobot.getEnergyCube() == 0){
                 upgradePhase();
             } else {
-                //Shop Handeln
-                //Nachricht verschicken
+                this.activePlayer = activePlayer.ID;
+                sendActivePlayer();
             }
         } else {
             activePhase = 2;

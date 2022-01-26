@@ -41,6 +41,7 @@ public class Client implements Runnable {
     }
 
     private ArrayList<BoardElement>[][] map;
+    private ArrayList<String> upgradeShop;
 
     private final BufferedReader bufferedReader;
     private final PrintWriter bufferedWriter;
@@ -77,14 +78,18 @@ public class Client implements Runnable {
         usernamesGui = FXCollections.observableArrayList();
         chatMessages = FXCollections.observableArrayList();
         figurenForGui = FXCollections.observableArrayList();
+        upgradeShop = new ArrayList<>();
         isAi = false;
     }
+
     public static Client getClient(){
         return client;
     }
+
     public static Thread getThread(){
         return thread;
     }
+
     public void setReady(){
         if(ready){
             ready = false;
@@ -438,6 +443,28 @@ public class Client implements Runnable {
         return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
     }
 
+    public String handleRefillShop(Message m){
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
+        for (String s: karten){
+            this.upgradeShop.add(s);
+        }
+        String toSend = "Der Shop wurde aufgefüllt. Folgende Karten befinden sich jetzt im Shop: " + "\n" + "| ";
+        for (String s: upgradeShop){
+            toSend += s + " |";
+        }
+        return toSend;
+    }
+
+    public String handleExchangeShop(Message m){
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
+        this.upgradeShop = karten;
+        String toSend = "Der Shop wurde erneuert. Folgende Karten befinden sich jetzt im Shop: " + "\n" + "| ";
+        for (String s: upgradeShop){
+            toSend += s + " |";
+        }
+        return toSend;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -713,6 +740,10 @@ public class Client implements Runnable {
                     toSend = handleEnergy(message);
                 } else if (message.getMessageType().equals("PickDamage")){
                     toSend = handlePickDamage(message);
+                } else if (message.getMessageType().equals("RefillShop")){
+                    toSend = handleRefillShop(message);
+                } else if (message.getMessageType().equals("ExchangeShop")){
+                    toSend = handleExchangeShop(message);
                 }
                 else {
                     toSend = inputFromServer;

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Added Structure of UpgradeCards">
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Started upgradePhase with @Yilu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/UpgradeShop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CardsForGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CardsForGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,14 +208,7 @@
       <workItem from="1643023263621" duration="359000" />
       <workItem from="1643039275369" duration="2144000" />
       <workItem from="1643136044824" duration="3550000" />
-      <workItem from="1643224647295" duration="3852000" />
-    </task>
-    <task id="LOCAL-00015" summary="Improved method generateMap()">
-      <created>1641421076965</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1641421076965</updated>
+      <workItem from="1643224647295" duration="6255000" />
     </task>
     <task id="LOCAL-00016" summary="SetStartingPoint &amp; ActivePhase support">
       <created>1641509218698</created>
@@ -552,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643226642585</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Started upgradePhase with @Yilu">
+      <created>1643229691013</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1643229691013</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Started implementing ProgrammingPhase" />
     <MESSAGE value="Implemented message selectedCard" />
     <MESSAGE value="Improved programmierPhase" />
     <MESSAGE value="Dairen, Amir Cards" />
@@ -596,7 +596,8 @@
     <MESSAGE value="Bugfix:&#10;- ChooseDamageCard" />
     <MESSAGE value="Added new Messages from UpgradePhase" />
     <MESSAGE value="Added Structure of UpgradeCards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Structure of UpgradeCards" />
+    <MESSAGE value="Started upgradePhase with @Yilu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started upgradePhase with @Yilu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,7 +626,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>642</line>
+          <line>679</line>
           <properties class="Game">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

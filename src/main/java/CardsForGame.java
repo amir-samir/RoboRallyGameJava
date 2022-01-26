@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CardsForGame {
 
@@ -6,12 +7,14 @@ public class CardsForGame {
     ArrayList<Cards> virusCards = new ArrayList<>();
     ArrayList<Cards> wormCards = new ArrayList<>();
     ArrayList<Cards> trojanHorse = new ArrayList<>();
+    ArrayList<UpgradeCards> upgradeCards = new ArrayList<>();
 
     public CardsForGame(){
         initSpamCard();
         initTrojanCard();
         initWormCard();
         initVirusCard();
+        initUpgradeCards();
     }
 
     public void initSpamCard() {
@@ -36,5 +39,17 @@ public class CardsForGame {
         for (int i = 0; i < 12; i++) {
             trojanHorse.add(new Trojan());
         }
+    }
+
+    public void initUpgradeCards(){
+        for (int i = 0; i < 10; i++){
+            upgradeCards.add(new AdminPrivilege());
+            upgradeCards.add(new RearLaser());
+            upgradeCards.add(new MemorySwap());
+            upgradeCards.add(new SpamBlocker());
+        }
+        Collections.shuffle(this.upgradeCards);
+        Collections.shuffle(this.upgradeCards);
+        Collections.shuffle(this.upgradeCards);
     }
 }
