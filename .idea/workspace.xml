@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- ChooseDamageCard">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-    </list>
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- ChooseDamageCard" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,14 +202,7 @@
       <workItem from="1642686104206" duration="866000" />
       <workItem from="1643023263621" duration="359000" />
       <workItem from="1643039275369" duration="2144000" />
-      <workItem from="1643136044824" duration="3348000" />
-    </task>
-    <task id="LOCAL-00012" summary="Bugfix">
-      <created>1641324232749</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1641324232749</updated>
+      <workItem from="1643136044824" duration="3550000" />
     </task>
     <task id="LOCAL-00013" summary="Bugfix">
       <created>1641328280070</created>
@@ -550,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643139022763</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Bugfix:&#10;- ChooseDamageCard">
+      <created>1643139566415</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1643139566415</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
