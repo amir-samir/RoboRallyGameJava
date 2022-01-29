@@ -13,8 +13,11 @@ public class Robot {
     private ProgrammingCardsForPlayer deck;
     private ArrayList<Cards> handCards;
     private Cards[] register;
+    private UpgradeCards[] temporaryCards;
+    private UpgradeCards[] permanentCards;
     private boolean ableToFillRegisters;
     private boolean ableToChooseRestartDirection;
+    private boolean ableToChooseDamageCard;
     private boolean isDead;
     private int energyCube;
     private int collectedCheckpoints;
@@ -26,8 +29,11 @@ public class Robot {
         deck = new ProgrammingCardsForPlayer();
         handCards = new ArrayList<Cards>();
         register = new Cards[5];
+        temporaryCards = new UpgradeCards[3];
+        permanentCards = new UpgradeCards[3];
         ableToFillRegisters = true;
         ableToChooseRestartDirection = false;
+        ableToChooseDamageCard = false;
         isDead = false;
         energyCube = 0;
         collectedCheckpoints = -1;
@@ -110,6 +116,20 @@ public class Robot {
             deck.getDiscard().add(register[i]);
             register[i] = null;
         }
+    }
+
+    public void addPermUpgrade(UpgradeCards card){
+        for (int i = 0; i < permanentCards.length; i++){
+            if (permanentCards[i] == null){
+                permanentCards[i] = card;
+                return;
+            }
+        }
+
+    }
+
+    public void addTempUpgrade(UpgradeCards card){
+
     }
 
     public void clearHandcards(){
@@ -201,6 +221,10 @@ public class Robot {
         this.ableToChooseRestartDirection = ableToChooseRestartDirection;
     }
 
+    public void setAbleToChooseDamageCard(boolean ableToChooseDamageCard) {
+        this.ableToChooseDamageCard = ableToChooseDamageCard;
+    }
+
     public int getGamerID() {
         return gamerID;
     }
@@ -251,6 +275,10 @@ public class Robot {
 
     public boolean getAbleForRestart() {
         return ableToChooseRestartDirection;
+    }
+
+    public boolean isAbleToChooseDamageCard() {
+        return ableToChooseDamageCard;
     }
 
     /**

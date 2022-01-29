@@ -1,8 +1,5 @@
 import Messages.*;
-import Messages.Actions.DrawDamage;
-import Messages.Actions.Movement;
-import Messages.Actions.PlayerTurning;
-import Messages.Actions.Reboot;
+import Messages.Actions.*;
 import Messages.Phase.*;
 
 import java.util.*;
@@ -13,16 +10,21 @@ import static java.lang.Math.abs;
 public class Game {
 
     private final Server SERVER;
+    private UpgradeShop upgradeShop;
     private HashMap<Integer, ClientHandler> users;
     private List<ClientHandler> verbindungen;
+    private List<ClientHandler> upgradeReihenfolge;
 
-    int activePhase;
-    int activePlayer;
-    int activeRegister;
-    String activeMap;
-    Robot[] figuren;
-    boolean timerActivated;
-    int neededCheckpoints;
+    private int activePhase;
+    private int activePlayer;
+    private int activeRegister;
+    private String activeMap;
+    private Robot[] figuren;
+    private boolean timerActivated;
+    private int neededCheckpoints;
+
+    private String currentDamageCard = null;
+    private boolean chooseDamageCard = true;
 
     Board board;
 
@@ -34,6 +36,8 @@ public class Game {
         this.SERVER = server;
         this.users = hashMap;
         this.verbindungen = verbindungen;
+        this.upgradeShop = new UpgradeShop(verbindungen.size());
+        this.upgradeReihenfolge = null;
         this.activePhase = 0;
         this.activePlayer = 0;
         this.activeRegister = 0;
@@ -44,7 +48,7 @@ public class Game {
 
         if (activeMap.equals("DizzyHighway")){
             neededCheckpoints = 1;
-        } else if (activeMap.equals("LostBearings") || activeMap.equals("ExtraCrispy")){
+        } else if (activeMap.equals("LostBearings") || activeMap.equals("ExtraCrispy") || activeMap.equals("Twister")){
             neededCheckpoints = 4;
         } else if (activeMap.equals("DeathTrap")){
             neededCheckpoints = 5;
@@ -63,6 +67,9 @@ public class Game {
             case "DeathTrap":
                 board = new DeathTrap();
                 break;
+            case "Twister":
+                //board = new Twister();
+                //break;
         }
         startGame();
     }
@@ -77,7 +84,9 @@ public class Game {
                 startGame();
             }
         } else if (this.activePhase == 1){
-            sendActivePlayer();
+            sendActivePhase();
+            prepareUpgradeShop();
+            this.upgradeReihenfolge = reihenfolgeBestimmen();
             upgradePhase();
         } else if (this.activePhase == 2){
             programmierPhase();
@@ -86,14 +95,96 @@ public class Game {
         }
     }
 
+    public void sendActivePhase(){
+        ActivePhase activePhase = new ActivePhase(this.activePhase);
+        activePhase.getMessageBody().setKeys(new String[]{"phase"});
+        SERVER.sendMessageForAllUsers(activePhase);
+    }
+
     public void aufbauPhase(){
         ActivePhase activePhase = new ActivePhase(this.activePhase);
         activePhase.getMessageBody().setKeys(new String[]{"phase"});
         SERVER.sendMessageForSingleClient(activePhase, verbindungen.get(activePlayer));
     }
 
-    public void upgradePhase(){
+    public void prepareUpgradeShop(){
+        if (this.upgradeShop.isSomebodyBoughtOne()){
+            ArrayList<String> upgradeCards = new ArrayList<>();
+            String[] karten;
+            for (int i = 0; i < upgradeShop.getUpgradeCards().length; i++){
+                if (upgradeShop.getUpgradeCards()[i] == null){
+                     upgradeShop.getUpgradeCards()[i] = cardsForGame.upgradeCards.remove(0);
+                     upgradeCards.add(upgradeShop.getUpgradeCards()[i].getName());
+                }
+            }
+            karten = new String[upgradeCards.size()];
+            for (int i = 0; i < karten.length; i++){
+                karten[i] = upgradeCards.remove(0);
+            }
+            RefillShop refillShop = new RefillShop(karten);
+            refillShop.getMessageBody().setKeys(new String[]{"cards"});
+            SERVER.sendMessageForAllUsers(refillShop);
+        } else {
+            cardsForGame.upgradeCards = this.upgradeShop.exchangeShop(cardsForGame.upgradeCards);
+            String[] karten = new String[upgradeShop.getUpgradeCards().length];
+            for (int i = 0; i < karten.length; i++){
+                karten[i] = upgradeShop.getUpgradeCards()[i].getName();
+            }
+            ExchangeShop exchangeShop = new ExchangeShop(karten);
+            exchangeShop.getMessageBody().setKeys(new String[]{"cards"});
+            SERVER.sendMessageForAllUsers(exchangeShop);
+        }
+        upgradeShop.setSomebodyBoughtOne(false);
+    }
 
+    public void upgradePhase(){
+        this.activePlayer = 0;
+        if (this.upgradeReihenfolge.size() != 0){
+            ClientHandler activePlayer = upgradeReihenfolge.remove(0);
+            Robot activeRobot = figuren[activePlayer.figure];
+            if (activeRobot.getEnergyCube() == 0){
+                upgradePhase();
+            } else {
+                this.activePlayer = activePlayer.ID;
+                sendActivePlayer();
+            }
+        } else {
+            activePhase = 2;
+            startGame();
+        }
+    }
+
+    public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
+        if (this.activePhase == 1 && this.activePlayer == clientHandler.ID){
+            if (isBuying){
+                UpgradeCards karte = null;
+                for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()){
+                    if (upgradeCard.getName() == card){
+                        karte = upgradeCard;
+                        Robot robot = null;
+                        for (Robot rob: figuren){
+                            if (rob != null){
+                                if (rob.getGamerID() == clientHandler.ID){
+                                    robot = rob;
+                                    break;
+                                }
+                            }
+                        }
+                        if (robot.getEnergyCube() >= karte.getCost()){
+                            robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
+                            if (card.equals("AdminPrivilege") || card.equals("RearLaser")){
+                                robot.addPermUpgrade(upgradeCard);
+                            } else {
+                                robot.addTempUpgrade(upgradeCard);
+                            }
+                        }
+                    }
+                }
+                upgradePhase();
+            } else {
+                upgradePhase();
+            }
+        }
     }
 
     public void programmierPhase(){
@@ -179,6 +270,7 @@ public class Game {
         activateGear();
         activateBoardLaser();
         activateRobotLaser();
+        activateEnergySpace();
         activateCheckpoint();
     }
 
@@ -260,6 +352,18 @@ public class Game {
                     Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
                     if (hit != null) {
                         drawDamageSpam(hit, 1);
+                    }
+                }
+            }
+        }
+    }
+
+    public void activateEnergySpace(){
+        for (Robot robot: figuren){
+            if (robot != null){
+                for (BoardElement list: board.getMap()[robot.getX()][robot.getY()]){
+                    if (list.getType().equals("EnergySpace")){
+                        list.effect(robot, SERVER);
                     }
                 }
             }
@@ -1039,28 +1143,122 @@ public class Game {
         return null;
     }
 
-    public void drawDamageSpam(Robot robot, int count){
-        String[] karten = new String[count];
-        for (int i = 0; i < count; i++){
-            Cards card = cardsForGame.spamCards.remove(0);
-            robot.getDeck().getDiscard().add(card);
-            karten[i] = card.getName();
+    public void chooseDamageCard(ClientHandler clientHandler, String card){
+        Robot rob = null;
+        for (Robot robot: figuren){
+            if (robot != null) {
+                if (clientHandler.ID == robot.getGamerID()) {
+                    if (robot.isAbleToChooseDamageCard()){
+                        rob = robot;
+                    }
+                }
+            }
         }
-        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
-        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
-        SERVER.sendMessageForAllUsers(drawDamage);
+        if (chooseDamageCard && rob != null) {
+            this.currentDamageCard = card;
+            chooseDamageCard = false;
+        }
+
+    }
+
+    public void drawDamageSpam(Robot robot, int count){
+        try {
+            String[] karten = new String[count];
+            for (int i = 0; i < count; i++) {
+                if (cardsForGame.spamCards.size() != 0) {
+                    Cards card = cardsForGame.spamCards.remove(0);
+                    robot.getDeck().getDiscard().add(card);
+                    karten[i] = card.getName();
+                } else {
+                   karten = chooseNewCard(robot, karten, i);
+                }
+            }
+            DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+            drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+            SERVER.sendMessageForAllUsers(drawDamage);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void drawDamageVirus(Robot robot, int count){
-        String[] karten = new String[count];
-        for (int i = 0; i < count; i++){
-            Cards card = cardsForGame.virusCards.remove(0);
-            robot.getDeck().getDiscard().add(card);
-            karten[i] = card.getName();
+        try {
+            String[] karten = new String[count];
+            for (int i = 0; i < count; i++) {
+                if (cardsForGame.virusCards.size() != 0) {
+                    Cards card = cardsForGame.virusCards.remove(0);
+                    robot.getDeck().getDiscard().add(card);
+                    karten[i] = card.getName();
+                } else {
+                    karten = chooseNewCard(robot, karten, i);
+                }
+            }
+            DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
+            drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
+            SERVER.sendMessageForAllUsers(drawDamage);
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        DrawDamage drawDamage = new DrawDamage(robot.getGamerID(), karten);
-        drawDamage.getMessageBody().setKeys(new String[]{"clientID", "cards"});
-        SERVER.sendMessageForAllUsers(drawDamage);
+    }
+
+    public String[] chooseNewCard(Robot robot, String[] karten, int i) {
+        chooseDamageCard = true;
+        robot.setAbleToChooseDamageCard(true);
+        int anzahl = 0;
+        ArrayList<String> damage = new ArrayList<String>();
+        if (cardsForGame.spamCards.size() != 0) {
+            anzahl += 1;
+            damage.add("Spam");
+        }
+        if (cardsForGame.virusCards.size() != 0) {
+            anzahl += 1;
+            damage.add("Virus");
+        }
+        if (cardsForGame.wormCards.size() != 0) {
+            anzahl += 1;
+            damage.add("Worm");
+        }
+        if (cardsForGame.trojanHorse.size() != 0) {
+            anzahl += 1;
+            damage.add("Trojan");
+        }
+        if (anzahl != 0) {
+            String[] piles = new String[anzahl];
+            for (int p = 0; p < piles.length; p++) {
+                piles[p] = damage.remove(0);
+            }
+            PickDamage pickDamage = new PickDamage(1, piles);
+            pickDamage.getMessageBody().setKeys(new String[]{"count", "availablePiles"});
+            SERVER.sendMessageForSingleClient(pickDamage, verbindungen.get(robot.getGamerID()));
+            while (chooseDamageCard) {
+
+            }
+            Cards karte = null;
+            switch (this.currentDamageCard) {
+                case "Spam":
+                    karte = cardsForGame.spamCards.remove(0);
+                    break;
+                case "Virus":
+                    karte = cardsForGame.virusCards.remove(0);
+                    break;
+                case "Worm":
+                    karte = cardsForGame.wormCards.remove(0);
+                    break;
+                case "Trojan":
+                    karte = cardsForGame.trojanHorse.remove(0);
+                    break;
+                default:
+                    currentDamageCard = null;
+                    break;
+            }
+            robot.getDeck().getDiscard().add(karte);
+            karten[i] = karte.getName();
+            robot.setAbleToChooseDamageCard(false);
+            return karten;
+        } else {
+            karten[i] = null;
+            return karten;
+        }
     }
 
     public void sendVirus(Robot rob){

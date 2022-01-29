@@ -9,9 +9,9 @@ public class Spam extends DamageCards{
     @Override
     public void effect (Robot robot, Server server) {
         Cards activateCard = robot.getFirstCard();
-        robot.getRegister()[server.game.activeRegister] = activateCard;
+        robot.getRegister()[server.game.getActiveRegister()] = activateCard;
 
-        ReplaceCard replaceCard = new ReplaceCard(server.game.activeRegister, activateCard.getName(), robot.getGamerID());
+        ReplaceCard replaceCard = new ReplaceCard(server.game.getActiveRegister(), activateCard.getName(), robot.getGamerID());
         replaceCard.getMessageBody().setKeys(new String[]{"register", "newCard", "clientID"});
         server.sendMessageForAllUsers(replaceCard);
 

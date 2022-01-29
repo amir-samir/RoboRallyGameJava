@@ -1,5 +1,7 @@
 import Messages.*;
 import Messages.Actions.RebootDirection;
+import Messages.Actions.SelectedDamage;
+import Messages.Phase.BuyUpgrade;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
 import com.google.gson.internal.LinkedTreeMap;
@@ -40,6 +42,7 @@ public class Client implements Runnable {
     }
 
     private ArrayList<BoardElement>[][] map;
+    private ArrayList<String> upgradeShop;
 
     private final BufferedReader bufferedReader;
     private final PrintWriter bufferedWriter;
@@ -76,14 +79,18 @@ public class Client implements Runnable {
         usernamesGui = FXCollections.observableArrayList();
         chatMessages = FXCollections.observableArrayList();
         figurenForGui = FXCollections.observableArrayList();
+        upgradeShop = new ArrayList<>();
         isAi = false;
     }
+
     public static Client getClient(){
         return client;
     }
+
     public static Thread getThread(){
         return thread;
     }
+
     public void setReady(){
         if(ready){
             ready = false;
@@ -135,6 +142,12 @@ public class Client implements Runnable {
 
     public Integer getFigur(){
         return figureForGui;
+    }
+
+    public void sendSelectedDamage(String[] cards){
+        SelectedDamage selectedDamage = new SelectedDamage(cards);
+        selectedDamage.getMessageBody().setKeys(new String[]{"cards"});
+        bufferedWriter.println(Adopter.javabeanToJson(selectedDamage));
     }
 
     public void configuration(String name, int figur){
@@ -233,6 +246,12 @@ public class Client implements Runnable {
             }
         }
         return -1;
+    }
+
+    public void buyUpgrade(boolean isBuying, String card){
+        BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
+        buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+        bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
@@ -422,6 +441,35 @@ public class Client implements Runnable {
             s = "Du hast " + number + "Energie von folgender Quelle hinzugewonnen: " + source;
         } else s = player.get(clientID).name + " (" + clientID + ") hat " + number + "Energie von folgender Quelle gewonnen: " + source;
         return s;
+    }
+
+    public String handlePickDamage(Message m){
+        int count = (int)(double) m.getMessageBody().getContent()[0];
+        ArrayList<String> list = (ArrayList<String>) m.getMessageBody().getContent()[1];
+        //GUI: Neues Fenster: Karte wählen mit list
+        return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
+    }
+
+    public String handleRefillShop(Message m){
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
+        for (String s: karten){
+            this.upgradeShop.add(s);
+        }
+        String toSend = "Der Shop wurde aufgefüllt. Folgende Karten befinden sich jetzt im Shop: " + "\n" + "| ";
+        for (String s: upgradeShop){
+            toSend += s + " |";
+        }
+        return toSend;
+    }
+
+    public String handleExchangeShop(Message m){
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
+        this.upgradeShop = karten;
+        String toSend = "Der Shop wurde erneuert. Folgende Karten befinden sich jetzt im Shop: " + "\n" + "| ";
+        for (String s: upgradeShop){
+            toSend += s + " |";
+        }
+        return toSend;
     }
 
     /**
@@ -697,6 +745,12 @@ public class Client implements Runnable {
                     toSend = handleReplaceCard(message);
                 } else if (message.getMessageType().equals("Energy")){
                     toSend = handleEnergy(message);
+                } else if (message.getMessageType().equals("PickDamage")){
+                    toSend = handlePickDamage(message);
+                } else if (message.getMessageType().equals("RefillShop")){
+                    toSend = handleRefillShop(message);
+                } else if (message.getMessageType().equals("ExchangeShop")){
+                    toSend = handleExchangeShop(message);
                 }
                 else {
                     toSend = inputFromServer;

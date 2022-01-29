@@ -5,6 +5,7 @@ import Messages.Welcome;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -59,7 +60,6 @@ public class ClientHandler implements Runnable {
             @Override
             public void run() {
                 writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
-                //System.out.println("Timer aktiviert");
             }
         };
         t.schedule(timerTask, 0,5000);
@@ -121,11 +121,26 @@ public class ClientHandler implements Runnable {
                 } else if (message.getMessageType().equals("RebootDirection")){
                     String direction = (String) message.getMessageBody().getContent()[0];
                     SERVER.handleRebootDirection(direction, this);
+                } else if (message.getMessageType().equals("SelectedDamage")){
+                    handleSelectedDamage(message);
+                } else if (message.getMessageType().equals("BuyUpgrade")){
+                    handleBuyUpgrade(message);
                 }
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
+    }
+
+    public void handleBuyUpgrade(Message message){
+        boolean isBuying = (boolean) message.getMessageBody().getContent()[0];
+        String card = (String) message.getMessageBody().getContent()[1];
+        SERVER.handleBuyUpgrade(isBuying, card, this);
+    }
+
+    public void handleSelectedDamage(Message message){
+        ArrayList<String> list = (ArrayList<String>) message.getMessageBody().getContent()[0];
+        SERVER.handleSelectDamage(this, list);
     }
 
     public void sendWelcomeMessage(Message message){
