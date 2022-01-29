@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Upgrade Cards">
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +89,7 @@
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="extract.method.default.visibility" value="public" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -167,11 +161,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="Application.KI" />
-        <item itemvalue="Application.GetID" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -208,62 +202,6 @@
       <workItem from="1643197311055" duration="366000" />
       <workItem from="1643381149929" duration="6582000" />
       <workItem from="1643468246620" duration="14838000" />
-    </task>
-    <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641140977313</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1641140977313</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641142068102</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1641142068102</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Bugfix">
-      <created>1641324232749</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1641324232749</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Bugfix">
-      <created>1641328280070</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1641328280070</updated>
-    </task>
-    <task id="LOCAL-00014" summary="updated git-ignore">
-      <created>1641328575276</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1641328575276</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Improved method generateMap()">
-      <created>1641421076965</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1641421076965</updated>
-    </task>
-    <task id="LOCAL-00016" summary="SetStartingPoint &amp; ActivePhase support">
-      <created>1641509218698</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1641509218698</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merge: GUI &amp; Kommunikation">
-      <created>1641640016711</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1641640016711</updated>
     </task>
     <task id="LOCAL-00018" summary="Support for SetStartingPoint">
       <created>1641650949015</created>
@@ -524,12 +462,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643024093495</updated>
     </task>
-    <task id="LOCAL-00058" summary="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy">
-      <created>1643039917948</created>
+    <task id="LOCAL-00058" summary="Upgrade Cards">
+      <created>1643490077595</created>
       <option name="number" value="00058" />
       <option name="presentableId" value="LOCAL-00058" />
       <option name="project" value="LOCAL" />
-      <updated>1643039917948</updated>
+      <updated>1643490077595</updated>
     </task>
     <task id="LOCAL-00059" summary="Bugfix:&#10;- ChooseDamageCard">
       <created>1643138733885</created>
@@ -608,13 +546,6 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <task id="LOCAL-00058" summary="Upgrade Cards">
-      <created>1643490077595</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1643490077595</updated>
-    </task>
     <option name="localTasksCounter" value="59" />
     <servers />
   </component>
@@ -679,7 +610,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
           <line>104</line>
-          <properties class="Robot" method="mischen">
+          <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

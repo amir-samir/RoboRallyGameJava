@@ -23,7 +23,6 @@ public class Game {
     private Robot[] figuren;
     private boolean timerActivated;
     private int neededCheckpoints;
-    private int activePlayerID;
     private String currentDamageCard = null;
     private boolean chooseDamageCard = true;
 
@@ -83,7 +82,7 @@ public class Game {
                     sendActivePlayer();
                     aufbauPhase();
                 } else {
-                    activePhase = 2;
+                    activePhase = 1;
                     startGame();
                 }
             } else if (this.activePhase == 1) {
