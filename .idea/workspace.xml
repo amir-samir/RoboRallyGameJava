@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="FirstView änderungen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpgradeCards.fxml" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Upgrade Cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +206,7 @@
       <workItem from="1643065378500" duration="175000" />
       <workItem from="1643197311055" duration="366000" />
       <workItem from="1643381149929" duration="6582000" />
-      <workItem from="1643468246620" duration="10946000" />
-    </task>
-    <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641139886511</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1641139886511</updated>
+      <workItem from="1643468246620" duration="14838000" />
     </task>
     <task id="LOCAL-00010" summary="Merge: JSON_Chat -&gt; BoardElements">
       <created>1641140977313</created>
@@ -546,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Upgrade Cards">
+      <created>1643490077595</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1643490077595</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
@@ -590,7 +594,8 @@
     <MESSAGE value="Timer fertig Gui" />
     <MESSAGE value="map changing" />
     <MESSAGE value="FirstView änderungen" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstView änderungen" />
+    <MESSAGE value="Upgrade Cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrade Cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -611,20 +616,20 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
           <line>104</line>
-          <properties class="Robot">
+          <properties class="Robot" method="mischen">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>1361</line>
-          <properties class="Game">
+          <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
+          <line>471</line>
+          <properties class="Client" method="handleExchangeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
@@ -632,9 +637,14 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FirstView.java</url>
-          <line>253</line>
-          <option name="timeStamp" value="41" />
+          <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
+          <line>765</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
+          <line>766</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

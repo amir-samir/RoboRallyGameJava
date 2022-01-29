@@ -30,12 +30,12 @@ public class UpgradeCardsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        setCards(SaveClients.client.getUpgradeShop());
     }
 
     public void setCards(ArrayList<String> upgradecards){
         for (int i = 0; i < upgradecards.size(); i++){
-
+            getCardView(i).setImage(getImageForCard(upgradecards.get(i)));
         }
     }
 
@@ -66,7 +66,7 @@ public class UpgradeCardsController implements Initializable {
                 return RearLaser;
             case "MemorySwap" :
                 return MemorySwap;
-            case  " SpamBlocker" :
+            case  "SpamBlocker" :
                 return SpamBlocker;
             default:
                 return SpamBlocker;

@@ -22,7 +22,7 @@ public class Game {
     private Robot[] figuren;
     private boolean timerActivated;
     private int neededCheckpoints;
-
+    private int activePlayerID;
     private String currentDamageCard = null;
     private boolean chooseDamageCard = true;
 
@@ -40,6 +40,7 @@ public class Game {
         this.upgradeReihenfolge = null;
         this.activePhase = 0;
         this.activePlayer = 0;
+        this.activePlayerID = 0;
         this.activeRegister = 0;
         this.activeMap = activeMap;
         this.figuren = figuren;
@@ -80,7 +81,7 @@ public class Game {
                 sendActivePlayer();
                 aufbauPhase();
             } else {
-                activePhase = 2;
+                activePhase = 1;
                 startGame();
             }
         } else if (this.activePhase == 1){
@@ -138,14 +139,14 @@ public class Game {
     }
 
     public void upgradePhase(){
-        this.activePlayer = 0;
+        this.activePlayerID = 0;
         if (this.upgradeReihenfolge.size() != 0){
             ClientHandler activePlayer = upgradeReihenfolge.remove(0);
             Robot activeRobot = figuren[activePlayer.figure];
             if (activeRobot.getEnergyCube() == 0){
                 upgradePhase();
             } else {
-                this.activePlayer = activePlayer.ID;
+                this.activePlayerID = activePlayer.ID;
                 sendActivePlayer();
             }
         } else {
@@ -155,7 +156,8 @@ public class Game {
     }
 
     public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
-        if (this.activePhase == 1 && this.activePlayer == clientHandler.ID){
+        boolean bought = false;
+        if (this.activePhase == 1 && this.activePlayerID == clientHandler.ID){
             if (isBuying){
                 UpgradeCards karte = null;
                 for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()){

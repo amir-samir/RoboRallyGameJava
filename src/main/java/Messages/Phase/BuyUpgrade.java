@@ -9,7 +9,7 @@ public class BuyUpgrade extends Message {
         daten[0] = isBuying;
         daten[1] = card;
 
-        setMessageType("ReplaceCard");
+        setMessageType("BuyUpgrade");
         setMessageBody(new MessageBody(daten));
     }
 }

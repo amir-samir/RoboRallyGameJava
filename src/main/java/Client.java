@@ -459,6 +459,13 @@ public class Client implements Runnable {
         for (String s: upgradeShop){
             toSend += s + " |";
         }
+        Platform.runLater(() -> {
+            try {
+                getAllInOneView().runUpgradeCards();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         return toSend;
     }
 
@@ -469,6 +476,13 @@ public class Client implements Runnable {
         for (String s: upgradeShop){
             toSend += s + " |";
         }
+        Platform.runLater(() -> {
+            try {
+                getAllInOneView().runUpgradeCards();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         return toSend;
     }
 
@@ -552,13 +566,6 @@ public class Client implements Runnable {
                         toSend = "Die Aufbauphase läuft aktuell. Bitte wähle deine Startposition";
                     } else if (activePhase == 1){
                         //UpgradePhase? GUI
-                        Platform.runLater(() -> {
-                            try {
-                                getAllInOneView().runUpgradeCards();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        });
                         toSend = "Die UpgradePhase läuft aktuell.";
                     } else if (activePhase == 2){
                         //ProgrammierPhase? GUI?
