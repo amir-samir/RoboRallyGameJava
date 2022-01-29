@@ -155,6 +155,7 @@ public class Game {
     }
 
     public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
+        boolean bought = false;
         if (this.activePhase == 1 && this.activePlayer == clientHandler.ID){
             if (isBuying){
                 UpgradeCards karte = null;
@@ -173,18 +174,36 @@ public class Game {
                         if (robot.getEnergyCube() >= karte.getCost()){
                             robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
                             if (card.equals("AdminPrivilege") || card.equals("RearLaser")){
-                                robot.addPermUpgrade(upgradeCard);
+                                bought = robot.addPermUpgrade(upgradeCard);
+                                break;
                             } else {
-                                robot.addTempUpgrade(upgradeCard);
+                                bought = robot.addTempUpgrade(upgradeCard);
+                                break;
                             }
                         }
                     }
                 }
-                upgradePhase();
             } else {
                 upgradePhase();
+                return;
             }
         }
+
+        if (bought){
+            sendUpgradeBought(clientHandler.ID, card);
+            upgradeShop.setSomebodyBoughtOne(true);
+            upgradePhase();
+        } else {
+            Error1 error1 = new Error1("Der Kauf konnte nicht getätigt werden");
+            error1.getMessageBody().setKeys(new String[]{"error"});
+            SERVER.sendMessageForSingleClient(error1, clientHandler);
+        }
+    }
+
+    public void sendUpgradeBought(int clientID, String card){
+        UpgradeBought upgradeBought = new UpgradeBought(clientID, card);
+        upgradeBought.getMessageBody().setKeys(new String[] {"clientID", "card"});
+        SERVER.sendMessageForAllUsers(upgradeBought);
     }
 
     public void programmierPhase(){

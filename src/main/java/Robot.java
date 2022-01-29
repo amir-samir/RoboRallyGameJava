@@ -118,18 +118,44 @@ public class Robot {
         }
     }
 
-    public void addPermUpgrade(UpgradeCards card){
+    public boolean addPermUpgrade(UpgradeCards card){
+        boolean doubleCard = false;
         for (int i = 0; i < permanentCards.length; i++){
-            if (permanentCards[i] == null){
-                permanentCards[i] = card;
-                return;
+            if (permanentCards[i] != null){
+                if (permanentCards[i].getName() == card.getName()){
+                    doubleCard = true;
+                }
             }
         }
-
+        if (!doubleCard) {
+            for (int i = 0; i < permanentCards.length; i++) {
+                if (permanentCards[i] == null) {
+                    permanentCards[i] = card;
+                    return true;
+                }
+            }
+        } else return false;
+        return true;
     }
 
-    public void addTempUpgrade(UpgradeCards card){
-
+    public boolean addTempUpgrade(UpgradeCards card){
+        boolean doubleCard = false;
+        for (int i = 0; i < temporaryCards.length; i++){
+            if (temporaryCards[i] != null){
+                if (temporaryCards[i].getName() == card.getName()){
+                    doubleCard = true;
+                }
+            }
+        }
+        if (!doubleCard) {
+            for (int i = 0; i < temporaryCards.length; i++) {
+                if (temporaryCards[i] == null) {
+                    temporaryCards[i] = card;
+                    return true;
+                }
+            }
+        } else return false;
+        return true;
     }
 
     public void clearHandcards(){
