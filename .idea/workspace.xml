@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Upgrade Cards" />
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckpointMoved.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2022_00_19__Changes_.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -465,12 +468,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643490077595</updated>
     </task>
-    <task id="LOCAL-00059" summary="Bugfix:&#10;- ChooseDamageCard">
-      <created>1643138733885</created>
+    <task id="LOCAL-00059" summary="Bugfix">
+      <created>1643495076167</created>
       <option name="number" value="00059" />
       <option name="presentableId" value="LOCAL-00059" />
       <option name="project" value="LOCAL" />
-      <updated>1643138733885</updated>
+      <updated>1643495076167</updated>
     </task>
     <task id="LOCAL-00060" summary="Bugfix:&#10;- ChooseDamageCard">
       <created>1643139022763</created>
@@ -542,7 +545,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +588,8 @@
     <MESSAGE value="map changing" />
     <MESSAGE value="FirstView änderungen" />
     <MESSAGE value="Upgrade Cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade Cards" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

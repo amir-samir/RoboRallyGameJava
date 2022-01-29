@@ -366,7 +366,9 @@ public class Game {
             }
         }
         board.getMap()[i][u].add(checkPoint);
-        //Mesage verschicken
+        CheckpointMoved checkpointMoved = new CheckpointMoved(checkPoint.getCount(), i, u);
+        checkpointMoved.getMessageBody().setKeys(new String[]{"checkpointID", "x", "y"});
+        SERVER.sendMessageForAllUsers(checkpointMoved);
     }
 
     public void activateGreenConveyor(){
