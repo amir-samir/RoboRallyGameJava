@@ -25,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Kommunikation" />
+        <entry key="$PROJECT_DIR$" value="MapGenerator" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,20 +39,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -110,7 +110,7 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,18 +129,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="jsonTest.CurrentCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="mapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="innige-irrweg-hp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="jsonTest" />
-      <option name="METHOD_NAME" value="CurrentCardTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="mapTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,8 +152,8 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
       <item itemvalue="Application.KI" />
-      <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       <item itemvalue="JUnit.mapTest.Test" />
+      <item itemvalue="JUnit.mapTest" />
     </list>
     <recent_temporary>
       <list>
@@ -168,14 +161,13 @@
         <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="JUnit.mapTest.Test" />
-        <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Merge: Bugfix" />
+      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -432,68 +424,47 @@
       <option name="project" value="LOCAL" />
       <updated>1642359134106</updated>
     </task>
-    <task id="LOCAL-00049" summary="BugFix RestartPoint">
-      <created>1642608690549</created>
+    <task id="LOCAL-00049" summary="Adding Spam Cards">
+      <created>1642368434598</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1642608690549</updated>
+      <updated>1642368434598</updated>
     </task>
-    <task id="LOCAL-00050" summary="Change Direction graphics">
-      <created>1642621946890</created>
+    <task id="LOCAL-00050" summary="LaserDing">
+      <created>1642436146609</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1642621946890</updated>
+      <updated>1642436146611</updated>
     </task>
-    <task id="LOCAL-00051" summary="Change Direction function gui">
-      <created>1642623287470</created>
+    <task id="LOCAL-00051" summary="LaserDing">
+      <created>1642607501410</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1642623287470</updated>
+      <updated>1642607501410</updated>
     </task>
-    <task id="LOCAL-00052" summary="Timer fertig Gui">
-      <created>1642628081056</created>
+    <task id="LOCAL-00052" summary="map changing">
+      <created>1642763972762</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1642628081056</updated>
+      <updated>1642763972762</updated>
     </task>
-    <task id="LOCAL-00053" summary="Timer fertig Gui">
-      <created>1642628531781</created>
+    <task id="LOCAL-00053" summary="map changing">
+      <created>1642764507624</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1642628531781</updated>
+      <updated>1642764507624</updated>
     </task>
-    <task id="LOCAL-00054" summary="Merge: Bugfix">
-      <created>1642630318536</created>
+    <task id="LOCAL-00054" summary="FirstView änderungen">
+      <created>1643024093494</created>
       <option name="number" value="00054" />
       <option name="presentableId" value="LOCAL-00054" />
       <option name="project" value="LOCAL" />
-      <updated>1642630318537</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Bugfix:&#10;- ConveyorBelt">
-      <created>1642683600503</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1642683600503</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Merge: Timer">
-      <created>1643025382583</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1643025382583</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Bugfix">
-      <created>1643026797015</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1643026797015</updated>
+      <updated>1643024093495</updated>
     </task>
     <task id="LOCAL-00058" summary="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy">
       <created>1643039917948</created>
@@ -580,11 +551,11 @@
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
     <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
     <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
+    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
-    <MESSAGE value="BugFix" />
-    <MESSAGE value="BugFix RestartPoint" />
-    <MESSAGE value="Change Direction graphics" />
-    <MESSAGE value="Change Direction function gui" />
+    <MESSAGE value="Bug Fix Gui" />
+    <MESSAGE value="Adding Spam Cards" />
+    <MESSAGE value="LaserDing" />
     <MESSAGE value="Timer fertig Gui" />
     <MESSAGE value="Merge: Bugfix" />
     <MESSAGE value="Bugfix:&#10;- ConveyorBelt" />
@@ -633,6 +604,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/innige_irrwege_hp9$Server.ic" NAME="Server Coverage Results" MODIFIED="1642029014960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
