@@ -307,6 +307,14 @@ public class Robot {
         return ableToChooseDamageCard;
     }
 
+    public UpgradeCards[] getPermanentCards() {
+        return permanentCards;
+    }
+
+    public UpgradeCards[] getTemporaryCards() {
+        return temporaryCards;
+    }
+
     /**
     public void moveTo(String Direction,String int step, ) {
         String temp = this.direction;
