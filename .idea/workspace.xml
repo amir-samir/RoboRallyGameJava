@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_16_48_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_16_48__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_22,_14_02_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_22__14_02__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_01_2022_13_33__Changes_.xml" beforeDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="FirstView änderungen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FirstView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FirstView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SaveClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SaveClients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FirstView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FirstView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FirstView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FirstView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Kommunikation" />
+        <entry key="$PROJECT_DIR$" value="MapGenerator" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,20 +45,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,7 +90,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -111,11 +111,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KI">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,18 +134,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="jsonTest.CurrentCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="mapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="innige-irrweg-hp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="jsonTest" />
-      <option name="METHOD_NAME" value="CurrentCardTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="mapTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,23 +157,23 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
       <item itemvalue="Application.KI" />
-      <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       <item itemvalue="JUnit.mapTest.Test" />
+      <item itemvalue="JUnit.mapTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.KI" />
+        <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
-        <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Merge: Bugfix" />
+      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -204,11 +197,33 @@
       <workItem from="1642265081549" duration="212000" />
       <workItem from="1642278457933" duration="1317000" />
       <workItem from="1642326786929" duration="7643000" />
-      <workItem from="1642630990866" duration="572000" />
-      <workItem from="1642676410276" duration="8802000" />
-      <workItem from="1642686104206" duration="866000" />
-      <workItem from="1643023263621" duration="359000" />
-      <workItem from="1643039275369" duration="438000" />
+      <workItem from="1642607404678" duration="154000" />
+      <workItem from="1642890276611" duration="4151000" />
+      <workItem from="1643065378500" duration="175000" />
+      <workItem from="1643197311055" duration="366000" />
+      <workItem from="1643381149929" duration="6582000" />
+      <workItem from="1643468246620" duration="4954000" />
+    </task>
+    <task id="LOCAL-00006" summary="q">
+      <created>1639339000736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639339000738</updated>
+    </task>
+    <task id="LOCAL-00007" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <created>1640269448945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640269448946</updated>
+    </task>
+    <task id="LOCAL-00008" summary="@neu struktur von dateien, problem mit maven java file geloest&#10;@add new board elements">
+      <created>1640779789267</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640779789267</updated>
     </task>
     <task id="LOCAL-00009" summary="Merge: JSON_Chat -&gt; BoardElements">
       <created>1641139886511</created>
@@ -490,70 +505,49 @@
       <option name="project" value="LOCAL" />
       <updated>1642359134106</updated>
     </task>
-    <task id="LOCAL-00049" summary="BugFix RestartPoint">
-      <created>1642608690549</created>
+    <task id="LOCAL-00049" summary="Adding Spam Cards">
+      <created>1642368434598</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1642608690549</updated>
+      <updated>1642368434598</updated>
     </task>
-    <task id="LOCAL-00050" summary="Change Direction graphics">
-      <created>1642621946890</created>
+    <task id="LOCAL-00050" summary="LaserDing">
+      <created>1642436146609</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1642621946890</updated>
+      <updated>1642436146611</updated>
     </task>
-    <task id="LOCAL-00051" summary="Change Direction function gui">
-      <created>1642623287470</created>
+    <task id="LOCAL-00051" summary="LaserDing">
+      <created>1642607501410</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1642623287470</updated>
+      <updated>1642607501410</updated>
     </task>
-    <task id="LOCAL-00052" summary="Timer fertig Gui">
-      <created>1642628081056</created>
+    <task id="LOCAL-00052" summary="map changing">
+      <created>1642763972762</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1642628081056</updated>
+      <updated>1642763972762</updated>
     </task>
-    <task id="LOCAL-00053" summary="Timer fertig Gui">
-      <created>1642628531781</created>
+    <task id="LOCAL-00053" summary="map changing">
+      <created>1642764507624</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1642628531781</updated>
+      <updated>1642764507624</updated>
     </task>
-    <task id="LOCAL-00054" summary="Merge: Bugfix">
-      <created>1642630318536</created>
+    <task id="LOCAL-00054" summary="FirstView änderungen">
+      <created>1643024093494</created>
       <option name="number" value="00054" />
       <option name="presentableId" value="LOCAL-00054" />
       <option name="project" value="LOCAL" />
-      <updated>1642630318537</updated>
+      <updated>1643024093495</updated>
     </task>
-    <task id="LOCAL-00055" summary="Bugfix:&#10;- ConveyorBelt">
-      <created>1642683600503</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1642683600503</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Merge: Timer">
-      <created>1643025382583</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1643025382583</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Bugfix">
-      <created>1643026797015</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1643026797015</updated>
-    </task>
-    <option name="localTasksCounter" value="58" />
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,6 +566,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Merge: BoardElement -&gt; JSON Chat" />
+    <MESSAGE value="bugfix" />
     <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
@@ -587,17 +583,15 @@
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
     <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
     <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
-    <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
-    <MESSAGE value="BugFix" />
-    <MESSAGE value="BugFix RestartPoint" />
-    <MESSAGE value="Change Direction graphics" />
-    <MESSAGE value="Change Direction function gui" />
-    <MESSAGE value="Timer fertig Gui" />
-    <MESSAGE value="Merge: Bugfix" />
-    <MESSAGE value="Bugfix:&#10;- ConveyorBelt" />
-    <MESSAGE value="Merge: Timer" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
+    <MESSAGE value="Bug Fix Gui" />
+    <MESSAGE value="Adding Spam Cards" />
+    <MESSAGE value="LaserDing" />
+    <MESSAGE value="Timer fertig Gui" />
+    <MESSAGE value="map changing" />
+    <MESSAGE value="FirstView änderungen" />
+    <option name="LAST_COMMIT_MESSAGE" value="FirstView änderungen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,8 +611,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>100</line>
-          <properties class="Robot">
+          <line>98</line>
+          <properties class="Robot" method="mischen">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -626,29 +620,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>624</line>
-          <properties class="Game">
+          <line>1163</line>
+          <properties class="Game" method="sendError">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>685</line>
-          <properties class="Game" method="checkConveyor">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="38" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>693</line>
-          <option name="timeStamp" value="39" />
+          <url>file://$PROJECT_DIR$/src/main/java/FirstView.java</url>
+          <line>253</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/innige_irrwege_hp9$Server.ic" NAME="Server Coverage Results" MODIFIED="1642029014960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

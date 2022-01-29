@@ -2,6 +2,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,12 +12,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import lombok.Data;
 
 @Data
@@ -25,7 +32,7 @@ public class FirstView implements Initializable {
    private Client client;
 
    Client client1;
-   private int figure;
+   private int figure = 100;
    @FXML
    private ImageView roboRallyImageView;
    @FXML
@@ -40,6 +47,10 @@ public class FirstView implements Initializable {
    private ImageView spinBotImageView;
    @FXML
    private ImageView zoomBotImageView;
+   @FXML
+   private Label errorLabel;
+
+   private int time = 30;
 
 
 
@@ -208,7 +219,20 @@ public class FirstView implements Initializable {
       rotate5.setByAngle(360);
       rotate5.play();
 
-      setunvisible(SaveClients.client.figurenForGui);
+     /* Timer timer = new Timer();
+      timer.scheduleAtFixedRate(new TimerTask() {
+         public void run() {
+
+            if(time > 0)
+            {
+               Platform.runLater(() -> setunvisible(SaveClients.ausgewaehlteRoboter) );
+               time--;
+            }
+            else
+               timer.cancel();
+         }
+      }, 1000,1000);
+      time = 30; */
 
 
 
@@ -227,6 +251,7 @@ public class FirstView implements Initializable {
       twinkyImageView.setDisable(true);
       twinkyImageView.setVisible(false);
       SaveClients.client.figurenForGui.add(0);
+      SaveClients.ausgewaehlteRoboter[0] = 0;
    }
    public void SmashRoboterPressed(){
       figure = 1;
@@ -235,6 +260,7 @@ public class FirstView implements Initializable {
       smashBotImageView.setDisable(true);
       smashBotImageView.setVisible(false);
       SaveClients.client.figurenForGui.add(1);
+      SaveClients.ausgewaehlteRoboter[1] = 1;
    }
    public void HulkRoboterPressed(){
       figure = 2;
@@ -243,6 +269,7 @@ public class FirstView implements Initializable {
       hulkBotImageView.setDisable(true);
       hulkBotImageView.setVisible(false);
       SaveClients.client.figurenForGui.add(2);
+      SaveClients.ausgewaehlteRoboter[2] = 2;
    }
    public void ZoomRoboterPressed(){
       figure = 3;
@@ -251,6 +278,7 @@ public class FirstView implements Initializable {
       zoomBotImageView.setDisable(true);
       zoomBotImageView.setVisible(false);
       SaveClients.client.figurenForGui.add(3);
+      SaveClients.ausgewaehlteRoboter[3] = 3;
    }
    public void SpinRoboterPressed(){
       figure = 4;
@@ -259,6 +287,7 @@ public class FirstView implements Initializable {
       spinBotImageView.setDisable(true);
       spinBotImageView.setVisible(false);
       SaveClients.client.figurenForGui.add(4);
+      SaveClients.ausgewaehlteRoboter[4] = 4;
    }
    public void HammerRoboterPressed(){
       figure = 5;
@@ -267,6 +296,7 @@ public class FirstView implements Initializable {
       hammerBotImageView.setDisable(true);
       hammerBotImageView.setVisible(false);
       SaveClients.client.figurenForGui.add(5);
+      SaveClients.ausgewaehlteRoboter[5] = 5;
    }
    public int getFigure(){
       return figure;
@@ -292,14 +322,18 @@ public class FirstView implements Initializable {
    public void submitUserName() {
 
       try {
-
-         setClient(SaveClients.client);
-         SaveClients.client.configuration(viewModel.getUsername(), getFigure());
-         //viewModel.client1.configuration(viewModel.getUsername(), getFigure());
-         System.out.println(viewModel.getUsername() + getFigure());
-         //Passing the current stage to the ViewModel
-         Stage stage = (Stage) signInButton.getScene().getWindow();
-         viewModel.takeUsername(stage);
+         if (viewModel.getUsername() != null && getFigure() != 100) {
+            setClient(SaveClients.client);
+            SaveClients.client.configuration(viewModel.getUsername(), getFigure());
+            //viewModel.client1.configuration(viewModel.getUsername(), getFigure());
+            System.out.println(viewModel.getUsername() + getFigure());
+            //Passing the current stage to the ViewModel
+            Stage stage = (Stage) signInButton.getScene().getWindow();
+            viewModel.takeUsername(stage);
+         } else {
+            errorLabel.setTextFill(Paint.valueOf("red"));
+            errorLabel.setText("Arschloch wähle ein Roboter und ein Username");
+         }
 
          //game.Client-Constructor throws DuplicateNameException if name already taken
       } catch (IOException e) {
@@ -307,87 +341,35 @@ public class FirstView implements Initializable {
       }
    }
 
-   public void setunvisible(ObservableList<Integer> figuren){
-      for (int i = 0; i < figuren.size(); i++){
-         switch (figuren.get(i)){
+   public void setunvisible(int[] figuren){
+      for (int i = 0; i < figuren.length; i++){
+         switch (figuren[i]){
             case 0:
                twinkyImageView.setVisible(false);
+               break;
             case 1:
                smashBotImageView.setVisible(false);
+               break;
             case 2:
                hulkBotImageView.setVisible(false);
+               break;
             case 3:
                zoomBotImageView.setVisible(false);
+               break;
             case 4:
                spinBotImageView.setVisible(false);
+               break;
             case 5:
                hammerBotImageView.setVisible(false);
+               break;
+            case 6:
+               return;
          }
       }
    }
 
-   public void showFigure(int[] figurList){
-      for (int i = 0; i < figurList.length; i++){
-         if (figurList[i] == 0){
-            TranslateTransition translate1 = new TranslateTransition();
-            translate1.setNode(twinkyImageView);
-            translate1.setDuration(Duration.millis(5000));
-            translate1.setCycleCount(1);
-            translate1.setByX(420);
-            translate1.setAutoReverse(true);
-            translate1.play();
-         }
-         if (figurList[i] == 1){
-            TranslateTransition translate1 = new TranslateTransition();
-            translate1.setNode(smashBotImageView);
-            translate1.setDuration(Duration.millis(5000));
-            translate1.setCycleCount(1);
-            translate1.setByX(420);
-            translate1.setAutoReverse(true);
-            translate1.play();
-         }
-         if (figurList[i] == 2){
-            TranslateTransition translate1 = new TranslateTransition();
-            translate1.setNode(hulkBotImageView);
-            translate1.setDuration(Duration.millis(5000));
-            translate1.setCycleCount(1);
-            translate1.setByX(420);
-            translate1.setAutoReverse(true);
-            translate1.play();
-         }
-         if (figurList[i] == 3){
-            TranslateTransition translate1 = new TranslateTransition();
-            translate1.setNode(zoomBotImageView);
-            translate1.setDuration(Duration.millis(5000));
-            translate1.setCycleCount(1);
-            translate1.setByX(420);
-            translate1.setAutoReverse(true);
-            translate1.play();
-         }
-         if (figurList[i] == 4){
-            TranslateTransition translate1 = new TranslateTransition();
-            translate1.setNode(spinBotImageView);
-            translate1.setDuration(Duration.millis(5000));
-            translate1.setCycleCount(1);
-            translate1.setByX(420);
-            translate1.setAutoReverse(true);
-            translate1.play();
-         }
-         if (figurList[i] == 5){
-            TranslateTransition translate1 = new TranslateTransition();
-            translate1.setNode(hammerBotImageView);
-            translate1.setDuration(Duration.millis(5000));
-            translate1.setCycleCount(1);
-            translate1.setByX(420);
-            translate1.setAutoReverse(true);
-            translate1.play();
-         }
-         if (figurList[i] == 6){
-            return;
-         }
 
-      }
-   }
+
 
 
 }

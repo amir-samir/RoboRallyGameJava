@@ -52,5 +52,9 @@
          </image>
       </ImageView>
       <Button layoutX="462.0" layoutY="125.0" mnemonicParsing="false" onAction="#chooseUserName" text="choose" />
+      <Label fx:id="errorLabel" layoutX="436.0" layoutY="721.0" prefHeight="43.0" prefWidth="240.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
     </children>
 </AnchorPane>

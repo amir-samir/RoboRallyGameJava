@@ -57,60 +57,7 @@ public class AllInOneView implements Initializable {
     private ImageView Card4;
     @FXML
     private ImageView Card5;
-    @FXML
-    int[][] crispyMapArray = new int[][]{
-            { 0, 1, 2 ,3 ,4 ,1 ,1, 1, 5, 6, 7, 8, 1},
-            { 1, 9, 1, 1, 4, 1, 10, 11, 1, 1, 1, 4, 1},
-            { 1, 12, 1, 1, 4, 13, 14, 1, 1, 14, 15, 4, 1},
-            { 9, 1, 1, 1, 16, 17, 14, 6, 8, 14, 18, 19, 1},
-            { 20, 9, 21, 22, 1, 23, 24, 1, 1, 21, 23, 5, 12},
-            { 1, 9, 21, 26, 1, 23, 27, 5, 1, 28, 23, 1, 26},
-            { 9, 1, 1, 1, 29, 17, 14, 6, 8, 14, 18, 30, 1},
-            { 1, 26, 1, 1, 31, 32, 14, 1, 1, 14, 33, 31, 1},
-            { 1, 9, 1, 1, 31, 1, 1, 1, 2, 34, 1, 31, 1},
-            { 35, 1, 2, 5, 6, 7, 8, 1, 1, 1, 1, 31, 1}
 
-    };
-    int[][] LostBearingArray = new int[][]{
-            { 0, 1, 2, 1, 36, 1, 1, 1, 1, 1, 1, 37, 1},
-            { 1, 9, 1, 11, 38, 1, 11, 11, 2, 2, 1, 39, 11},
-            { 1, 12, 1, 1, 1, 40, 14, 1, 33, 14, 40, 1, 1},
-            { 9, 1, 1, 1, 1, 4, 41, 7, 7, 8, 4, 1, 1},
-            { 20, 9, 21, 1, 1, 28, 1, 40, 28, 1, 24, 15, 1},
-            { 1, 9, 21, 1, 32, 24, 1, 24, 40, 1, 28, 1, 1},
-            { 9, 1, 1, 1, 1, 31, 6, 7, 7, 42, 31, 1, 1},
-            { 1, 26, 1, 1, 1, 40, 14, 1, 13, 14, 40, 1, 1},
-            { 1, 9, 1, 2, 43, 1, 1, 1, 1, 1, 1, 44, 2},
-            { 45, 1, 2, 46, 36, 1, 1, 1, 1, 1, 1, 37, 1}
-
-    };
-    //daaaaaa
-    int[][] DeathTrapMap = new int[][]{
-            { 1, 1, 11, 11, 47, 1, 1, 1, 1, 1, 11, 1, 45},
-            { 48, 49, 1, 50, 39, 11, 1, 14, 66, 37, 1, 9, 1},
-            { 1, 14, 51, 14, 52, 1, 53, 49, 54, 37, 1, 12, 1},
-            { 1, 1, 55, 1, 56, 1, 1, 14, 57, 37, 1, 1, 9},
-            { 1, 36, 1, 14, 65, 1, 49, 1, 44, 58, 57, 9, 1},
-            { 59, 60, 1, 56, 49, 26, 14, 1, 37, 1, 57, 9, 20},
-            { 36, 21, 14, 1, 52, 1, 1, 52, 1, 1, 1, 1, 9},
-            { 36, 61, 56, 53, 1, 1, 14, 66, 14, 1, 1, 26, 1},
-            { 36, 51, 14, 1, 2, 43, 12, 62, 56, 1, 1, 9, 1},
-            { 63, 1, 1, 1, 1, 64, 2, 2, 2, 1, 11, 1, 91}
-
-    };
-    int[][] DizzyHighwayMap = new int[][]{
-            { 1, 1, 2, 1, 67, 67, 1, 1, 1, 1, 1, 1, 68},
-            { 1, 9, 1, 1, 69, 70, 71, 71, 71, 71, 71, 72, 71},
-            { 1, 12, 1, 1, 67, 68, 1, 1, 1, 1, 1, 73, 71},
-            { 9, 1, 1, 1, 67, 1, 74, 75, 76, 77, 1, 78, 79},
-            { 20, 9, 21, 1, 67, 1, 80, 1, 68, 1, 1, 78, 1},
-            { 1, 9, 21, 1, 67, 1, 1, 68, 1, 81, 1, 78, 1},
-            { 9, 1, 1, 1, 67, 1, 82, 83, 1, 84, 1, 78, 1},
-            { 1, 26, 1, 85, 86, 1, 1, 1, 1, 1, 68, 78, 1},
-            { 1, 9, 1, 85, 87, 85, 85, 85, 85, 85, 88, 89, 1},
-            { 35, 1, 2, 68, 1, 1, 1, 1, 1, 1, 78, 78, 90}
-
-    };
     @FXML
     Image image0 = new Image("assets/GrünFeld.png");
     Image image1 = new Image("assets/Default51x51.png");
@@ -205,6 +152,13 @@ public class AllInOneView implements Initializable {
     Image image90 = new Image("assets/DizzyHighwayMap99.png");
     Image image91 = new Image("assets/GrünFeldLinks.png");
     Image figureTest = new Image("assets/GelbUnten.png");
+    Image image92 = new Image("assets/1LaserEndeWandUnten36.png");
+    Image image93 = new Image("assets/1LaserEndeWandRechts38.png");
+    Image image94 = new Image("assets/2EinleitungObennachlinks18.png");
+    Image image95 = new Image("assets/2EinleitungvonRechtsnachoben211.png");
+    Image image96 = new Image("assets/2EinleitungUntennachrechts810.png");
+    Image image97 = new Image("assets/2EinleitungLinksnachunten74.png");
+    Image image98 = new Image("assets/Runtergreen.png");
 
 
 
@@ -313,7 +267,7 @@ public class AllInOneView implements Initializable {
                                     gridpane1.add(new ImageView(image23), y, x - counter);
                                 }
                                 if ((mapGui[x-counter][y].size() != 0) && (mapGui[x - counter][y].get(0).getType().equals("Wall")  || (mapGui[x - counter][y].get(1).getType().equals("Wall"))) && (mapGui[x - 1][y].get(0).getOrientations()[0].equals("top") || mapGui[x - 1][y].get(0).getOrientations()[0].equals("bottom"))) {
-                                    gridpane1.add(new ImageView(image74), y, x - counter);
+                                    gridpane1.add(new ImageView(image92), y, x - counter);
                                     break;
                                 }
                             }
@@ -328,7 +282,7 @@ public class AllInOneView implements Initializable {
                                     gridpane1.add(new ImageView(image7), y + counter, x);
                                 }
                                 if ((mapGui[x][y + counter].size() != 0) && ((mapGui[x][y + counter].get(0).getType().equals("Wall") || (mapGui[x][y + counter].get(1).getType().equals("Wall"))) || mapGui[x][y + counter].get(1).getType().equals("Wall"))&& (mapGui[x][y + counter].get(0).getOrientations()[0].equals("right") || mapGui[x][y + counter].get(0).getOrientations()[0].equals("left"))) {
-                                    gridpane1.add(new ImageView(image42), y + counter, x);
+                                   gridpane1.add(new ImageView(image93), y + counter, x);
                                     if ((mapGui[x][y + counter].size() > 1) && mapGui[x][y + counter].get(1).getType().equals("Wall")) {
                                         //hii
                                         gridpane1.add(new ImageView(image6), y + counter, x);
@@ -468,6 +422,7 @@ public class AllInOneView implements Initializable {
         //chatBox.prefHeight(5.0);
         //chatPane.getChildren().add(SaveClients.client.getChatView().getChatBox());
         chatPane.setContent(SaveClients.client.getChatView().getChatBox());
+        gridpane1.setHgap(-80);
 
     }
 
@@ -568,7 +523,7 @@ public class AllInOneView implements Initializable {
                             gridpane1.add(new ImageView(image91),y,x);
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DizzyHighway")) {
-                            gridpane1.add(new ImageView(image0),y,x);
+                            gridpane1.add(new ImageView(image98),y,x);
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "ExtraCrispy")) {
                             gridpane1.add(new ImageView(image0),y,x);
@@ -580,7 +535,7 @@ public class AllInOneView implements Initializable {
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "ConveyorBelt")){
                         if (mapGui[x][y].get(0).getOrientations().length == 3){
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "right" ))){
-                                gridpane1.add(new ImageView(image70),y,x);
+                                gridpane1.add(new ImageView(image94),y,x);
                                 //falsches Bild [1][5] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "right" ))){
@@ -590,18 +545,18 @@ public class AllInOneView implements Initializable {
                                 gridpane1.add(new ImageView(image72),y,x);
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "right")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "bottom" ))){
-                                gridpane1.add(new ImageView(image73),y,x);
+                                gridpane1.add(new ImageView(image95),y,x);
                                 //Falsches Bild [2][11] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "top" ))){
-                                gridpane1.add(new ImageView(image86),y,x);
+                                gridpane1.add(new ImageView(image97),y,x);
                                 //Falsches Bild[7][4] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "top" ))){
                                 gridpane1.add(new ImageView(image87),y,x);
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "left" ))){
-                                gridpane1.add(new ImageView(image88),y,x);
+                                gridpane1.add(new ImageView(image96),y,x);
                                 //Falsches Bild [8][10] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "left" ))){
