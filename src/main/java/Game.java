@@ -23,7 +23,7 @@ public class Game {
     private Robot[] figuren;
     private boolean timerActivated;
     private int neededCheckpoints;
-
+    private int activePlayerID;
     private String currentDamageCard = null;
     private boolean chooseDamageCard = true;
 

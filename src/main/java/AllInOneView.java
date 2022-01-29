@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -12,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -681,239 +683,10 @@ public class AllInOneView implements Initializable {
             }
            getLaserOnMaps();
         }
-       /* if (SaveClients.client.getSelectedMap().equals("DizzyHighway")){
-            for (int i = 0; i < gridpane1.getRowCount(); i++){
-                for (int j = 0; j < gridpane1.getColumnCount(); j++){
-                    gridpane1.setHgap(-80);
-                    //gridpane1.setVgap(10);
-                    gridpane1.add(new ImageView(getImageForMap(DizzyHighwayMap[i][j])),j,i);
-                    //gridpane1.add(new ImageView(testImage),j,i);
-                }
-            }
-        }
-        if (SaveClients.client.getSelectedMap().equals("ExtraCrispy")){
-            for (int i = 0; i < gridpane1.getRowCount(); i++){
-                for (int j = 0; j < gridpane1.getColumnCount(); j++){
-                    gridpane1.setHgap(-80);
-                    //gridpane1.setVgap(10);
-                    gridpane1.add(new ImageView(getImageForMap(crispyMapArray[i][j])),j,i);
-                    //gridpane1.add(new ImageView(testImage),j,i);
-                }
-            }
-        }
-        if (SaveClients.client.getSelectedMap().equals("DeathTrap")){
-            for (int i = 0; i < gridpane1.getRowCount(); i++){
-                for (int j = 0; j < gridpane1.getColumnCount(); j++){
-                    gridpane1.setHgap(-80);
-                    //gridpane1.setVgap(10);
-                    gridpane1.add(new ImageView(getImageForMap(DeathTrapMap[i][j])),j,i);
-                    //gridpane1.add(new ImageView(testImage),j,i);
-                }
-            }
-        }
-        if (SaveClients.client.getSelectedMap().equals("LostBearings")){
-            for (int i = 0; i < gridpane1.getRowCount(); i++){
-                for (int j = 0; j < gridpane1.getColumnCount(); j++){
-                    gridpane1.setHgap(-80);
-                    //gridpane1.setVgap(10);
-                    gridpane1.add(new ImageView(getImageForMap(LostBearingArray[i][j])),j,i);
-                    //gridpane1.add(new ImageView(testImage),j,i);
-                }
-            }
-        }*/
+
     }
 
-    public Image getImageForMap(int image){
-        switch (image){
-            case 0:
-                return image0;
-            case 1:
-                return image1;
-            case 2:
-                return image2;
-            case 3:
-                return image3;
-            case 4:
-                return image4;
-            case 5:
-                return image5;
-            case 6:
-                return image6;
-            case 7:
-                return image7;
-            case 8:
-                return image8;
-            case 9:
-                return image9;
-            case 10:
-                return image10;
-            case 11:
-                return image11;
-            case 12:
-                return image12;
-            case 13:
-                return image13;
-            case 14:
-                return image14;
-            case 15:
-                return image15;
-            case 16:
-                return image16;
-            case 17:
-                return image17;
-            case 18:
-                return image18;
-            case 19:
-                return image19;
-            case 20:
-                return image20;
-            case 21:
-                return image21;
-            case 22:
-                return image22;
-            case 23:
-                return image23;
-            case 24:
-                return image24;
-            case 25:
-                return image25;
-            case 26:
-                return image26;
-            case 27:
-                return image27;
-            case 28:
-                return image28;
-            case 29:
-                return image29;
-            case 30:
-                return image30;
-            case 31:
-                return image31;
-            case 32:
-                return image32;
-            case 33:
-                return image33;
-            case 34:
-                return image34;
-            case 35:
-                return image35;
-            case 36:
-                return image36;
-            case 37:
-                return image37;
-            case 38:
-                return image38;
-            case 39:
-                return image39;
-            case 40:
-                return image40;
-            case 41:
-                return image41;
-            case 42:
-                return image42;
-            case 43:
-                return image43;
-            case 44:
-                return image44;
-            case 45:
-                return image45;
-            case 46:
-                return image46;
-            case 47:
-                return image47;
-            case 48:
-                return image48;
-            case 49:
-                return image49;
-            case 50:
-                return image50;
-            case 51:
-                return image51;
-            case 52:
-                return image52;
-            case 53:
-                return image53;
-            case 54:
-                return image54;
-            case 55:
-                return image55;
-            case 56:
-                return image56;
-            case 57:
-                return image57;
-            case 58:
-                return image58;
-            case 59:
-                return image59;
-            case 60:
-                return image60;
-            case 61:
-                return image61;
-            case 62:
-                return image62;
-            case 63:
-                return image63;
-            case 64:
-                return image64;
-            case 65:
-                return image65;
-            case 66:
-                return image66;
-            case 67:
-                return image67;
-            case 68:
-                return image68;
-            case 69:
-                return image69;
-            case 70:
-                return image70;
-            case 71:
-                return image71;
-            case 72:
-                return image72;
-            case 73:
-                return image73;
-            case 74:
-                return image74;
-            case 75:
-                return image75;
-            case 76:
-                return image76;
-            case 77:
-                return image77;
-            case 78:
-                return image78;
-            case 79:
-                return image79;
-            case 80:
-                return image80;
-            case 81:
-                return image81;
-            case 82:
-                return image82;
-            case 83:
-                return image83;
-            case 84:
-                return image84;
-            case 85:
-                return image85;
-            case 86:
-                return image86;
-            case 87:
-                return image87;
-            case 88:
-                return image88;
-            case 89:
-                return image89;
-            case 90:
-                return image90;
-            case 91:
-                return image91;
 
-            default:
-                return image4;
-        }
-    }
     public void clickGrid(javafx.scene.input.MouseEvent event) {
         Node clickedNode = event.getPickResult().getIntersectedNode();
         if (clickedNode != gridpane1) {
@@ -1134,6 +907,16 @@ public class AllInOneView implements Initializable {
 
     public void pressLeftDirection(){
         SaveClients.client.setNewDirection("left");
+    }
+
+    public void runUpgradeCards() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Upgrade cards");
+        Parent signIn = FXMLLoader.load(getClass().getResource("fxml/UpgradeCards.fxml"));
+        Scene signInScene = new Scene(signIn);
+        stage.setScene(signInScene);
+        stage.show();
+        stage.setOnCloseRequest(e -> Platform.exit());
     }
 
 }
