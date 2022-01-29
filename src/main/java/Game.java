@@ -17,6 +17,7 @@ public class Game {
 
     private int activePhase;
     private int activePlayer;
+    private int activePlayerID;
     private int activeRegister;
     private String activeMap;
     private Robot[] figuren;
@@ -40,6 +41,7 @@ public class Game {
         this.upgradeReihenfolge = null;
         this.activePhase = 0;
         this.activePlayer = 0;
+        this.activePlayerID = 0;
         this.activeRegister = 0;
         this.activeMap = activeMap;
         this.figuren = figuren;
@@ -138,14 +140,14 @@ public class Game {
     }
 
     public void upgradePhase(){
-        this.activePlayer = 0;
+        this.activePlayerID = 0;
         if (this.upgradeReihenfolge.size() != 0){
             ClientHandler activePlayer = upgradeReihenfolge.remove(0);
             Robot activeRobot = figuren[activePlayer.figure];
             if (activeRobot.getEnergyCube() == 0){
                 upgradePhase();
             } else {
-                this.activePlayer = activePlayer.ID;
+                this.activePlayerID = activePlayer.ID;
                 sendActivePlayer();
             }
         } else {
@@ -156,7 +158,7 @@ public class Game {
 
     public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
         boolean bought = false;
-        if (this.activePhase == 1 && this.activePlayer == clientHandler.ID){
+        if (this.activePhase == 1 && this.activePlayerID == clientHandler.ID){
             if (isBuying){
                 UpgradeCards karte = null;
                 for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()){
@@ -314,6 +316,52 @@ public class Game {
                 }
             }
         }
+        if (activeMap == "Twister"){
+            for (int i = 0; i < board.getMap().length; i++) {
+                for (int u = 0; u < board.getMap()[i].length; u++) {
+                    for (BoardElement boardElement : board.getMap()[i][u]) {
+                        if (boardElement.getType().equals("CheckPoint")) {
+                            moveCheckpoint(i, u);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveCheckpoint(int i, int u){
+        BoardElement conveyor = null;
+        BoardElement checkPoint = null;
+        for (int p = 0; p < board.getMap()[i][u].size(); p++){
+           if (board.getMap()[i][u].get(p).getType().equals("CheckPoint")){
+               checkPoint = board.getMap()[i][u].remove(p);
+               break;
+           }
+        }
+        for (int p = 0; p < board.getMap()[i][u].size(); p++){
+            if (board.getMap()[i][u].get(p).getType().equals("ConveyorBelt")){
+                conveyor = board.getMap()[i][u].get(p);
+                break;
+            }
+        }
+        for (int z = 0; z < 2; z++) {
+            switch (conveyor.getOrientations()[0]) {
+                case "top":
+                    i -= 1;
+                    break;
+                case "bottom":
+                    i += 1;
+                    break;
+                case "left":
+                    u -= 1;
+                    break;
+                case "right":
+                    u += 1;
+                    break;
+            }
+        }
+        board.getMap()[i][u].add(checkPoint);
+        //Mesage verschicken
     }
 
     public void activateGreenConveyor(){
