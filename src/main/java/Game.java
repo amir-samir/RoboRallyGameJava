@@ -17,6 +17,7 @@ public class Game {
 
     private int activePhase;
     private int activePlayer;
+    private int activePlayerID;
     private int activeRegister;
     private String activeMap;
     private Robot[] figuren;
@@ -76,23 +77,27 @@ public class Game {
     }
 
     public void startGame(){
-        if(this.activePhase == 0){
-            if (!aufbauPhaseFertig()) {
-                sendActivePlayer();
-                aufbauPhase();
-            } else {
-                activePhase = 1;
-                startGame();
+        try {
+            if (this.activePhase == 0) {
+                if (!aufbauPhaseFertig()) {
+                    sendActivePlayer();
+                    aufbauPhase();
+                } else {
+                    activePhase = 2;
+                    startGame();
+                }
+            } else if (this.activePhase == 1) {
+                sendActivePhase();
+                prepareUpgradeShop();
+                this.upgradeReihenfolge = reihenfolgeBestimmen();
+                upgradePhase();
+            } else if (this.activePhase == 2) {
+                programmierPhase();
+            } else if (this.activePhase == 3) {
+                aktivierungsPhase();
             }
-        } else if (this.activePhase == 1){
-            sendActivePhase();
-            prepareUpgradeShop();
-            this.upgradeReihenfolge = reihenfolgeBestimmen();
-            upgradePhase();
-        } else if (this.activePhase == 2){
-            programmierPhase();
-        } else if (this.activePhase == 3){
-            aktivierungsPhase();
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -147,7 +152,9 @@ public class Game {
                 upgradePhase();
             } else {
                 this.activePlayerID = activePlayer.ID;
-                sendActivePlayer();
+                CurrentPlayer currentPlayer = new CurrentPlayer(activePlayer.ID);
+                currentPlayer.getMessageBody().setKeys(new String[] {"clientID"});
+                SERVER.sendMessageForAllUsers(currentPlayer);
             }
         } else {
             activePhase = 2;
@@ -175,18 +182,36 @@ public class Game {
                         if (robot.getEnergyCube() >= karte.getCost()){
                             robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
                             if (card.equals("AdminPrivilege") || card.equals("RearLaser")){
-                                robot.addPermUpgrade(upgradeCard);
+                                bought = robot.addPermUpgrade(upgradeCard);
+                                break;
                             } else {
-                                robot.addTempUpgrade(upgradeCard);
+                                bought = robot.addTempUpgrade(upgradeCard);
+                                break;
                             }
                         }
                     }
                 }
-                upgradePhase();
             } else {
                 upgradePhase();
+                return;
             }
         }
+
+        if (bought){
+            sendUpgradeBought(clientHandler.ID, card);
+            upgradeShop.setSomebodyBoughtOne(true);
+            upgradePhase();
+        } else {
+            Error1 error1 = new Error1("Der Kauf konnte nicht getätigt werden");
+            error1.getMessageBody().setKeys(new String[]{"error"});
+            SERVER.sendMessageForSingleClient(error1, clientHandler);
+        }
+    }
+
+    public void sendUpgradeBought(int clientID, String card){
+        UpgradeBought upgradeBought = new UpgradeBought(clientID, card);
+        upgradeBought.getMessageBody().setKeys(new String[] {"clientID", "card"});
+        SERVER.sendMessageForAllUsers(upgradeBought);
     }
 
     public void programmierPhase(){
@@ -197,7 +222,7 @@ public class Game {
         for (Robot robot: figuren){
             if (robot != null) {
 
-                robot.drawHandCards();
+                int anzahlSpam = robot.drawHandCards();
 
                 YourCards yourCards = new YourCards(convertListToArray(robot.getHandCards()));
                 yourCards.getMessageBody().setKeys(new String[]{"cardsInHand"});
@@ -206,7 +231,16 @@ public class Game {
                 NotYourCards notYourCards = new NotYourCards(robot.getGamerID(), robot.getHandCards().size());
                 notYourCards.getMessageBody().setKeys(new String[]{"clientID", "cardsInHand"});
                 SERVER.sendMessageForAllUsers(notYourCards);
+
+                newSpamCards(anzahlSpam);
             }
+        }
+    }
+
+    public void newSpamCards(int i){
+        while (i > 0){
+            cardsForGame.spamCards.add(new Spam());
+            i--;
         }
     }
 
@@ -288,6 +322,52 @@ public class Game {
                 }
             }
         }
+        if (activeMap == "Twister"){
+            for (int i = 0; i < board.getMap().length; i++) {
+                for (int u = 0; u < board.getMap()[i].length; u++) {
+                    for (BoardElement boardElement : board.getMap()[i][u]) {
+                        if (boardElement.getType().equals("CheckPoint")) {
+                            moveCheckpoint(i, u);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveCheckpoint(int i, int u){
+        BoardElement conveyor = null;
+        BoardElement checkPoint = null;
+        for (int p = 0; p < board.getMap()[i][u].size(); p++){
+           if (board.getMap()[i][u].get(p).getType().equals("CheckPoint")){
+               checkPoint = board.getMap()[i][u].remove(p);
+               break;
+           }
+        }
+        for (int p = 0; p < board.getMap()[i][u].size(); p++){
+            if (board.getMap()[i][u].get(p).getType().equals("ConveyorBelt")){
+                conveyor = board.getMap()[i][u].get(p);
+                break;
+            }
+        }
+        for (int z = 0; z < 2; z++) {
+            switch (conveyor.getOrientations()[0]) {
+                case "top":
+                    i -= 1;
+                    break;
+                case "bottom":
+                    i += 1;
+                    break;
+                case "left":
+                    u -= 1;
+                    break;
+                case "right":
+                    u += 1;
+                    break;
+            }
+        }
+        board.getMap()[i][u].add(checkPoint);
+        //Mesage verschicken
     }
 
     public void activateGreenConveyor(){
@@ -354,6 +434,32 @@ public class Game {
                     Robot hit = laserFired(robot.getX(), robot.getY(), robot.getDirection(), robot);
                     if (hit != null) {
                         drawDamageSpam(hit, 1);
+                    }
+                    for (UpgradeCards card: robot.getPermanentCards()){
+                        if (card.getName() == "RearLaser"){
+                            String directionBack = null;
+                            switch (robot.getDirection()){
+                                case "top":
+                                    directionBack = "bottom";
+                                    break;
+                                case "bottom":
+                                    directionBack = "top";
+                                    break;
+                                case "right":
+                                    directionBack = "left";
+                                    break;
+                                case "left":
+                                    directionBack = "right";
+                                    break;
+                                default:
+                                    break;
+                            }
+                            Robot hit2 = laserFired(robot.getX(), robot.getY(), directionBack, robot);
+                            if (hit2 != null){
+                                drawDamageSpam(hit2, 1);
+                            }
+                            return;
+                        }
                     }
                 }
             }

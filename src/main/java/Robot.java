@@ -43,13 +43,33 @@ public class Robot {
         this.gamerID = ID;
     }
 
-    public void drawHandCards(){
+    public int drawHandCards(){
+        boolean spamBlocker = false;
+        for (int i = 0; i < temporaryCards.length; i++){
+            if (temporaryCards[i] != null){
+                if (temporaryCards[i].getName() == "SpamBlocker"){
+                    spamBlocker = true;
+                    temporaryCards[i] = null;
+                }
+            }
+        }
         for (int i = 0; i < 9; i++){
             if (deck.getDeck().size() == 0){
                 mischen();
             }
             handCards.add(deck.getDeck().remove(0));
         }
+        if (spamBlocker){
+            int counter = 0;
+            for (int i = 0; i < handCards.size(); i++){
+                if (handCards.get(i).getName() == "Spam"){
+                    counter += 1;
+                    handCards.remove(i);
+                    handCards.add(deck.getDeck().remove(0));
+                }
+            }
+            return counter;
+        } else return 0;
     }
 
     public boolean cardIntoRegister(String card, int register){
@@ -118,18 +138,44 @@ public class Robot {
         }
     }
 
-    public void addPermUpgrade(UpgradeCards card){
+    public boolean addPermUpgrade(UpgradeCards card){
+        boolean doubleCard = false;
         for (int i = 0; i < permanentCards.length; i++){
-            if (permanentCards[i] == null){
-                permanentCards[i] = card;
-                return;
+            if (permanentCards[i] != null){
+                if (permanentCards[i].getName() == card.getName()){
+                    doubleCard = true;
+                }
             }
         }
-
+        if (!doubleCard) {
+            for (int i = 0; i < permanentCards.length; i++) {
+                if (permanentCards[i] == null) {
+                    permanentCards[i] = card;
+                    return true;
+                }
+            }
+        } else return false;
+        return true;
     }
 
-    public void addTempUpgrade(UpgradeCards card){
-
+    public boolean addTempUpgrade(UpgradeCards card){
+        boolean doubleCard = false;
+        for (int i = 0; i < temporaryCards.length; i++){
+            if (temporaryCards[i] != null){
+                if (temporaryCards[i].getName() == card.getName()){
+                    doubleCard = true;
+                }
+            }
+        }
+        if (!doubleCard) {
+            for (int i = 0; i < temporaryCards.length; i++) {
+                if (temporaryCards[i] == null) {
+                    temporaryCards[i] = card;
+                    return true;
+                }
+            }
+        } else return false;
+        return true;
     }
 
     public void clearHandcards(){
@@ -279,6 +325,14 @@ public class Robot {
 
     public boolean isAbleToChooseDamageCard() {
         return ableToChooseDamageCard;
+    }
+
+    public UpgradeCards[] getPermanentCards() {
+        return permanentCards;
+    }
+
+    public UpgradeCards[] getTemporaryCards() {
+        return temporaryCards;
     }
 
     /**
