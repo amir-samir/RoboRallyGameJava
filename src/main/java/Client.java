@@ -459,6 +459,13 @@ public class Client implements Runnable {
         for (String s: upgradeShop){
             toSend += s + " |";
         }
+        Platform.runLater(() -> {
+            try {
+                getAllInOneView().runUpgradeCards();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         return toSend;
     }
 
@@ -469,6 +476,13 @@ public class Client implements Runnable {
         for (String s: upgradeShop){
             toSend += s + " |";
         }
+        Platform.runLater(() -> {
+            try {
+                getAllInOneView().runUpgradeCards();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         return toSend;
     }
 
@@ -843,6 +857,10 @@ public class Client implements Runnable {
 
     public ArrayList<BoardElement>[][] getMap(){
         return map;
+    }
+
+    public ArrayList<String> getUpgradeShop(){
+        return upgradeShop;
     }
 
 }
