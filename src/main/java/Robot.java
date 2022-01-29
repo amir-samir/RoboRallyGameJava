@@ -35,7 +35,7 @@ public class Robot {
         ableToChooseRestartDirection = false;
         ableToChooseDamageCard = false;
         isDead = false;
-        energyCube = 0;
+        energyCube = 5;
         collectedCheckpoints = -1;
 
         x = -1;
