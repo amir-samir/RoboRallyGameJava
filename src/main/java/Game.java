@@ -77,23 +77,27 @@ public class Game {
     }
 
     public void startGame(){
-        if(this.activePhase == 0){
-            if (!aufbauPhaseFertig()) {
-                sendActivePlayer();
-                aufbauPhase();
-            } else {
-                activePhase = 2;
-                startGame();
+        try {
+            if (this.activePhase == 0) {
+                if (!aufbauPhaseFertig()) {
+                    sendActivePlayer();
+                    aufbauPhase();
+                } else {
+                    activePhase = 2;
+                    startGame();
+                }
+            } else if (this.activePhase == 1) {
+                sendActivePhase();
+                prepareUpgradeShop();
+                this.upgradeReihenfolge = reihenfolgeBestimmen();
+                upgradePhase();
+            } else if (this.activePhase == 2) {
+                programmierPhase();
+            } else if (this.activePhase == 3) {
+                aktivierungsPhase();
             }
-        } else if (this.activePhase == 1){
-            sendActivePhase();
-            prepareUpgradeShop();
-            this.upgradeReihenfolge = reihenfolgeBestimmen();
-            upgradePhase();
-        } else if (this.activePhase == 2){
-            programmierPhase();
-        } else if (this.activePhase == 3){
-            aktivierungsPhase();
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -148,7 +152,9 @@ public class Game {
                 upgradePhase();
             } else {
                 this.activePlayerID = activePlayer.ID;
-                sendActivePlayer();
+                CurrentPlayer currentPlayer = new CurrentPlayer(activePlayer.ID);
+                currentPlayer.getMessageBody().setKeys(new String[] {"clientID"});
+                SERVER.sendMessageForAllUsers(currentPlayer);
             }
         } else {
             activePhase = 2;

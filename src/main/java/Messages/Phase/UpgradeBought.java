@@ -9,7 +9,7 @@ public class UpgradeBought extends Message {
         daten[0] = clientID;
         daten[1] = card;
 
-        setMessageType("ReplaceCard");
+        setMessageType("UpgradeBought");
         setMessageBody(new MessageBody(daten));
     }
 }

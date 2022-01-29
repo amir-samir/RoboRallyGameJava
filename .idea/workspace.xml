@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="SpamBlocker is fully implemented">
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- Moving CheckPoints&#10;- Upgrade-Phase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,13 +204,6 @@
       <workItem from="1643136044824" duration="3550000" />
       <workItem from="1643224647295" duration="6255000" />
       <workItem from="1643481890950" duration="1997000" />
-    </task>
-    <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
-      <created>1641652292871</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1641652292871</updated>
     </task>
     <task id="LOCAL-00021" summary="bugfix">
       <created>1641652477458</created>
@@ -544,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643488628906</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Bugfix:&#10;- Moving CheckPoints&#10;- Upgrade-Phase">
+      <created>1643491486677</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1643491486677</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
@@ -588,7 +591,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="RearLaser is fully implemented" />
     <MESSAGE value="SpamBlocker is fully implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="SpamBlocker is fully implemented" />
+    <MESSAGE value="Bugfix:&#10;- Moving CheckPoints&#10;- Upgrade-Phase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Moving CheckPoints&#10;- Upgrade-Phase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -608,7 +612,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>821</line>
+          <line>829</line>
           <properties class="Game">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -7,7 +7,7 @@ public class ExchangeShop extends Message {
     public ExchangeShop(String[] cards){
         Object[] daten = new Object[1];
         daten[0] = cards;
-        setMessageType("ReplaceCard");
+        setMessageType("ExchangeShop");
         setMessageBody(new MessageBody(daten));
     }
 }

@@ -8,7 +8,7 @@ public class RefillShop extends Message {
         Object[] daten = new Object[1];
         daten[0] = cards;
 
-        setMessageType("ReplaceCard");
+        setMessageType("RefillShop");
         setMessageBody(new MessageBody(daten));
     }
 }
