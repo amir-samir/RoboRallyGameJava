@@ -214,7 +214,7 @@ public class Game {
         for (Robot robot: figuren){
             if (robot != null) {
 
-                robot.drawHandCards();
+                int anzahlSpam = robot.drawHandCards();
 
                 YourCards yourCards = new YourCards(convertListToArray(robot.getHandCards()));
                 yourCards.getMessageBody().setKeys(new String[]{"cardsInHand"});
@@ -223,7 +223,16 @@ public class Game {
                 NotYourCards notYourCards = new NotYourCards(robot.getGamerID(), robot.getHandCards().size());
                 notYourCards.getMessageBody().setKeys(new String[]{"clientID", "cardsInHand"});
                 SERVER.sendMessageForAllUsers(notYourCards);
+
+                newSpamCards(anzahlSpam);
             }
+        }
+    }
+
+    public void newSpamCards(int i){
+        while (i > 0){
+            cardsForGame.spamCards.add(new Spam());
+            i--;
         }
     }
 

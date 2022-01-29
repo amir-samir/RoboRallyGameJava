@@ -43,13 +43,33 @@ public class Robot {
         this.gamerID = ID;
     }
 
-    public void drawHandCards(){
+    public int drawHandCards(){
+        boolean spamBlocker = false;
+        for (int i = 0; i < temporaryCards.length; i++){
+            if (temporaryCards[i] != null){
+                if (temporaryCards[i].getName() == "SpamBlocker"){
+                    spamBlocker = true;
+                    temporaryCards[i] = null;
+                }
+            }
+        }
         for (int i = 0; i < 9; i++){
             if (deck.getDeck().size() == 0){
                 mischen();
             }
             handCards.add(deck.getDeck().remove(0));
         }
+        if (spamBlocker){
+            int counter = 0;
+            for (int i = 0; i < handCards.size(); i++){
+                if (handCards.get(i).getName() == "Spam"){
+                    counter += 1;
+                    handCards.remove(i);
+                    handCards.add(deck.getDeck().remove(0));
+                }
+            }
+            return counter;
+        } else return 0;
     }
 
     public boolean cardIntoRegister(String card, int register){
