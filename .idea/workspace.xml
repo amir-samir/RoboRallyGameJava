@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckpointMoved.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2022_00_19__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RalleyLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trojan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Worm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +114,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.RalleyLogger">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -118,8 +123,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KI" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KI" />
+    <configuration name="RalleyLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RalleyLogger" />
       <module name="innige-irrweg-hp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,24 +159,24 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
-      <item itemvalue="Application.KI" />
       <item itemvalue="JUnit.mapTest.Test" />
       <item itemvalue="JUnit.mapTest" />
+      <item itemvalue="Application.RalleyLogger" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RalleyLogger" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
-        <item itemvalue="Application.KI" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix" />
+      <changelist id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -201,6 +206,7 @@
       <workItem from="1643197311055" duration="366000" />
       <workItem from="1643381149929" duration="6582000" />
       <workItem from="1643468246620" duration="14838000" />
+      <workItem from="1643569081662" duration="3292000" />
     </task>
     <task id="LOCAL-00018" summary="Support for SetStartingPoint">
       <created>1641650949015</created>
@@ -475,12 +481,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643495076167</updated>
     </task>
-    <task id="LOCAL-00060" summary="Bugfix:&#10;- ChooseDamageCard">
-      <created>1643139022763</created>
+    <task id="LOCAL-00060" summary="Bugfix">
+      <created>1643495638472</created>
       <option name="number" value="00060" />
       <option name="presentableId" value="LOCAL-00060" />
       <option name="project" value="LOCAL" />
-      <updated>1643139022763</updated>
+      <updated>1643495638472</updated>
     </task>
     <task id="LOCAL-00061" summary="Bugfix:&#10;- ChooseDamageCard">
       <created>1643139566415</created>
@@ -545,7 +551,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +625,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
           <line>471</line>
-          <properties class="Client">
+          <properties class="Client" method="handleExchangeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
