@@ -98,7 +98,7 @@
          <Image url="@../assets/pfeilUntenChangeDirection.png" />
       </image>
    </ImageView>
-   <ImageView fitHeight="51.0" fitWidth="74.0" layoutX="461.0" layoutY="666.0" pickOnBounds="true">
+   <ImageView fitHeight="37.0" fitWidth="74.0" layoutX="461.0" layoutY="680.0" pickOnBounds="true">
       <image>
          <Image url="@../assets/Wurfel.png" />
       </image>

@@ -335,7 +335,6 @@ public class FirstView implements Initializable {
             errorLabel.setText("Bitte wähle ein Roboter und ein Username");
          }
 
-         //game.Client-Constructor throws DuplicateNameException if name already taken
       } catch (IOException e) {
         e.printStackTrace();
       }
