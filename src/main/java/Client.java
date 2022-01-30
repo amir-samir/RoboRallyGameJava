@@ -777,9 +777,9 @@ public class Client implements Runnable {
                     toSend = handleRefillShop(message);
                 } else if (message.getMessageType().equals("ExchangeShop")){
                     toSend = handleExchangeShop(message);
-                } else if (message.getMessageType().equals("UpgradeBought"));
+                } else if (message.getMessageType().equals("UpgradeBought")) {
                     toSend = handleUpgradeBought(message);
-                else {
+                } else {
                     toSend = inputFromServer;
                 }
 
