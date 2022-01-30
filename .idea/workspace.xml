@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/RalleyLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_00_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Trojan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trojan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Worm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RearLaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RearLaser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UpgradeCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UpgradeCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FirstView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FirstView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +113,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RalleyLogger">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
@@ -165,9 +164,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RalleyLogger" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.RalleyLogger" />
         <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
       </list>
@@ -206,7 +205,7 @@
       <workItem from="1643197311055" duration="366000" />
       <workItem from="1643381149929" duration="6582000" />
       <workItem from="1643468246620" duration="14838000" />
-      <workItem from="1643569081662" duration="3292000" />
+      <workItem from="1643569081662" duration="4083000" />
     </task>
     <task id="LOCAL-00018" summary="Support for SetStartingPoint">
       <created>1641650949015</created>
@@ -488,12 +487,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643495638472</updated>
     </task>
-    <task id="LOCAL-00061" summary="Bugfix:&#10;- ChooseDamageCard">
-      <created>1643139566415</created>
+    <task id="LOCAL-00061" summary="Bugfix">
+      <created>1643572671939</created>
       <option name="number" value="00061" />
       <option name="presentableId" value="LOCAL-00061" />
       <option name="project" value="LOCAL" />
-      <updated>1643139566415</updated>
+      <updated>1643572671939</updated>
     </task>
     <task id="LOCAL-00062" summary="Added new Messages from UpgradePhase">
       <created>1643225050976</created>
@@ -551,7 +550,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +606,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
           <line>247</line>
-          <properties class="KI">
+          <properties class="KI" method="playCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -616,7 +615,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
           <line>104</line>
-          <properties class="Robot" method="shoot">
+          <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -624,12 +623,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
-          <line>471</line>
+          <line>473</line>
           <properties class="Client" method="handleExchangeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>163</line>
+          <properties class="Game" method="handleBuyUpgrade">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
@@ -638,12 +646,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
-          <line>765</line>
+          <line>767</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
-          <line>766</line>
+          <line>768</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>

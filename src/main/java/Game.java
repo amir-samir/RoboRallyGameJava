@@ -167,7 +167,7 @@ public class Game {
             if (isBuying){
                 UpgradeCards karte = null;
                 for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()){
-                    if (upgradeCard.getName() == card){
+                    if (upgradeCard.getName().equals(card)){
                         karte = upgradeCard;
                         Robot robot = null;
                         for (Robot rob: figuren){

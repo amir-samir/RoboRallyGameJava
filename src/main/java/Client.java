@@ -488,6 +488,16 @@ public class Client implements Runnable {
         return toSend;
     }
 
+    public String handleUpgradeBought(Message m){
+        int clientID = (int)(double)m.getMessageBody().getContent()[0];
+        String card = (String) m.getMessageBody().getContent()[1];
+        String s;
+        if (clientID == this.ID){
+            s = "Du hast folgende Karte gekauft: " + card;
+        } else s = player.get(clientID).name + " (" + clientID + ") hat folgende Karte gekauft: " + card;
+        return s;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -767,7 +777,8 @@ public class Client implements Runnable {
                     toSend = handleRefillShop(message);
                 } else if (message.getMessageType().equals("ExchangeShop")){
                     toSend = handleExchangeShop(message);
-                }
+                } else if (message.getMessageType().equals("UpgradeBought"));
+                    toSend = handleUpgradeBought(message);
                 else {
                     toSend = inputFromServer;
                 }

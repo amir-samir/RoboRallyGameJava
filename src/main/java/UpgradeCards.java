@@ -9,4 +9,9 @@ public abstract class UpgradeCards extends Cards {
     public void setCost(int cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
 }

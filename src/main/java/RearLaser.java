@@ -9,4 +9,9 @@ public class RearLaser extends UpgradeCards{
     public void effect(Robot robot, Server server) {
 
     }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
 }
