@@ -436,30 +436,32 @@ public class Game {
                     if (hit != null) {
                         drawDamageSpam(hit, 1);
                     }
-                    for (UpgradeCards card: robot.getPermanentCards()){
-                        if (card.getName() == "RearLaser"){
-                            String directionBack = null;
-                            switch (robot.getDirection()){
-                                case "top":
-                                    directionBack = "bottom";
-                                    break;
-                                case "bottom":
-                                    directionBack = "top";
-                                    break;
-                                case "right":
-                                    directionBack = "left";
-                                    break;
-                                case "left":
-                                    directionBack = "right";
-                                    break;
-                                default:
-                                    break;
+                    for (UpgradeCards card: robot.getPermanentCards()) {
+                        if (card != null) {
+                            if (card.getName() == "RearLaser") {
+                                String directionBack = null;
+                                switch (robot.getDirection()) {
+                                    case "top":
+                                        directionBack = "bottom";
+                                        break;
+                                    case "bottom":
+                                        directionBack = "top";
+                                        break;
+                                    case "right":
+                                        directionBack = "left";
+                                        break;
+                                    case "left":
+                                        directionBack = "right";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Robot hit2 = laserFired(robot.getX(), robot.getY(), directionBack, robot);
+                                if (hit2 != null) {
+                                    drawDamageSpam(hit2, 1);
+                                }
+                                return;
                             }
-                            Robot hit2 = laserFired(robot.getX(), robot.getY(), directionBack, robot);
-                            if (hit2 != null){
-                                drawDamageSpam(hit2, 1);
-                            }
-                            return;
                         }
                     }
                 }

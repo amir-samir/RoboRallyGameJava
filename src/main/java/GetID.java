@@ -20,16 +20,13 @@ public class GetID extends Application {
 
 
     public static void main(String[] args){
+
         Application.launch(args);
     }
-
 
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            //Client client = new Client();
-            //this.clientThread = new Thread(client);
-            //clientThread.start();
             SaveClients.client = Client.getClient();
             stage.setTitle("Get Id");
             StageSaver.getStageSaver().setStageSaver(stage);

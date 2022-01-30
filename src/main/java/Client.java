@@ -75,7 +75,7 @@ public class Client implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
-        SOCKET = new Socket("localhost", 1525);
+        SOCKET = new Socket("localhost", 1235);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
