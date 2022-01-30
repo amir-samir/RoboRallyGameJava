@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -21,6 +22,9 @@ public class UpgradeCardsController implements Initializable {
     ImageView Card5;
     @FXML
     ImageView Card6;
+    @FXML
+    Label CubesText;
+
 
 
     Image AdminPrivilege = new Image("assets/AdminPrivilege.png");
@@ -31,6 +35,7 @@ public class UpgradeCardsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCards(SaveClients.client.getUpgradeShop());
+        CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
     }
 
     public void setCards(ArrayList<String> upgradecards){
@@ -72,4 +77,33 @@ public class UpgradeCardsController implements Initializable {
                 return SpamBlocker;
         }
     }
+
+    public void Card1Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(0));
+    }
+
+    public void Card2Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(1));
+    }
+
+    public void Card3Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(2));
+    }
+
+    public void Card4Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(3));
+    }
+
+    public void Card5Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(4));
+    }
+
+    public void Card6Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(5));
+    }
+
+    public void NoCardChoossen(){
+        SaveClients.client.buyUpgrade(false, null);
+    }
+
 }

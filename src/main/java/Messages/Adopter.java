@@ -74,11 +74,18 @@ public class Adopter {
             return "MessageBody ist leer!";
         }
         for (int i = 0; i < keys.length; i++) {
+            if (values[i] == null){
+                values[i] = "null";
+            }
             Object value = values[i];
+
+
             String valueString = value.toString();
+
             if (value.getClass().isArray()) {
                 valueString = gson.toJson(values[i]);
             }
+
 
             String key = (String) keys[i];
             if (values[i].getClass().isArray() || value.toString().equals("true") || value.toString().equals("false") || !checkForLetter(value.toString())) {

@@ -332,10 +332,9 @@ public class FirstView implements Initializable {
             viewModel.takeUsername(stage);
          } else {
             errorLabel.setTextFill(Paint.valueOf("red"));
-            errorLabel.setText("Arschloch wähle ein Roboter und ein Username");
+            errorLabel.setText("Bitte wähle ein Roboter und ein Username");
          }
 
-         //game.Client-Constructor throws DuplicateNameException if name already taken
       } catch (IOException e) {
         e.printStackTrace();
       }

@@ -22,6 +22,9 @@ public class AllInOneView implements Initializable {
     Boolean[] isFilled = new Boolean[5];
     List<HashMap<String,Object>> laserList = new ArrayList<HashMap<String,Object>>();
     List wallList = new ArrayList<>();
+
+    @FXML
+    Label CubesText;
     @FXML
     ImageView DirectionOben;
     @FXML
@@ -406,6 +409,7 @@ public class AllInOneView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
         DirectionRechts.setVisible(false);
         DirectionLinks.setVisible(false);
         DirectionOben.setVisible(false);
