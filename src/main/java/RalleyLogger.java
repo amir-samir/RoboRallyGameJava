@@ -2,11 +2,10 @@ import java.util.logging.*;
 
 public class RalleyLogger {
 
-    private static Logger logger;
+    private static Logger logger = Logger.getLogger("");;
 
     public RalleyLogger(){
-        logger = Logger.getLogger("");
-        logger.setLevel(Level.ALL);
+        logger.setLevel(Level.INFO);
         FileHandler txt = null;
         try {
             txt = new FileHandler("log.txt");
@@ -32,6 +31,6 @@ public class RalleyLogger {
 
     public static void main(String[] args) {
         RalleyLogger ralleyLogger = new RalleyLogger();
-        ralleyLogger.getLogger().warning("Test Warnung");
+        ralleyLogger.getLogger().info("Test Info");
     }
 }

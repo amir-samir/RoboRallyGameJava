@@ -65,6 +65,7 @@ public class Client implements Runnable {
     public String CardOfGui = "SomeCard";
     public ObservableList<Integer> figurenForGui;
     private int CubesZahl = 5;
+    private RalleyLogger ralleyLogger = new RalleyLogger();
 
 
     /**
@@ -511,6 +512,7 @@ public class Client implements Runnable {
                 if (inputFromServer == null) {
                     break;
                 }
+                ralleyLogger.getLogger().info(inputFromServer);
                 Message message = Adopter.getMessage(inputFromServer);
                 if(message.getMessageType().equals("HelloClient")){
                     sendHelloServer(message);

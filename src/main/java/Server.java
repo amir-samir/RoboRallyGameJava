@@ -25,6 +25,7 @@ public class Server {
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public Robot[] figuren = new Robot[6];
+    RalleyLogger ralleyLogger = new RalleyLogger();
     public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "DeathTrap"};
     String activeMap = null;
     Game game;
@@ -67,10 +68,12 @@ public class Server {
         String nachricht = Adopter.javabeanToJson(toSend);
         ClientHandler c = users.get(to);
         c.writer.println(nachricht);
+        ralleyLogger.getLogger().info(nachricht);
     }
 
     public void sendMessageForSingleClient(Message m, ClientHandler clientHandler){
         clientHandler.writer.println(Adopter.javabeanToJson(m));
+        ralleyLogger.getLogger().info(Adopter.javabeanToJson(m));
     }
 
     /**
@@ -85,12 +88,14 @@ public class Server {
         for(ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(nachricht);
         }
+        ralleyLogger.getLogger().info(nachricht);
     }
 
     public void sendMessageForAllUsers(Message m){
         for (ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(Adopter.javabeanToJson(m));
         }
+        ralleyLogger.getLogger().info(Adopter.javabeanToJson(m));
     }
 
     /**
@@ -125,6 +130,7 @@ public class Server {
         for (ClientHandler clientHandler1 : users.values()) {
             clientHandler1.writer.println(Adopter.javabeanToJson(playerAdded));
         }
+        ralleyLogger.getLogger().info(Adopter.javabeanToJson(playerAdded));
         //Versendung aller anderen Spieler an den neuen
         for (ClientHandler clientHandler1 : users.values()) {
             if (clientHandler.ID != clientHandler1.ID) {
@@ -167,6 +173,7 @@ public class Server {
                 String[] keys = {"availableMaps"};
                 selectMap.getMessageBody().setKeys(keys);
                 cH.writer.println(Adopter.javabeanToJson(selectMap));
+                ralleyLogger.getLogger().info(Adopter.javabeanToJson(selectMap));
             }
         } else {
             if (clientWhoSelectedMap.equals(cH)){
@@ -182,7 +189,7 @@ public class Server {
         for (ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(Adopter.javabeanToJson(playerStatus));
         }
-
+        ralleyLogger.getLogger().info(Adopter.javabeanToJson(playerStatus));
         if(readyToStart()){
             createGame();
             generateMap();
@@ -198,6 +205,7 @@ public class Server {
         for (ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(Adopter.javabeanToJson(mapToSend));
         }
+        ralleyLogger.getLogger().info(Adopter.javabeanToJson(mapToSend));
         if (readyToStart()){
             createGame();
             generateMap();
@@ -232,6 +240,8 @@ public class Server {
         for (ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(s);
         }
+
+        ralleyLogger.getLogger().info(s);
     }
 
     public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
@@ -292,6 +302,7 @@ public class Server {
                 Thread thread = new Thread(clientHandler);
                 thread.start();
                 sendHelloClient(clientHandler);
+                ralleyLogger.getLogger().info("Server wurde gestartet.");
                 System.out.println("A new client has connected");
             }
         } catch (IOException e) {
@@ -304,6 +315,7 @@ public class Server {
         String[] key = {"protocol"};
         message.getMessageBody().setKeys(key);
         String toSend = Adopter.javabeanToJson(message);
+        ralleyLogger.getLogger().info(toSend);
         try {
             clientHandler.writer.println(toSend);
         } catch (Exception e){
@@ -318,7 +330,7 @@ public class Server {
         for(ClientHandler clientHandler: users.values()){
             clientHandler.writer.println(Adopter.javabeanToJson(cardPlayed));
         }
-
+        ralleyLogger.getLogger().info(Adopter.javabeanToJson(cardPlayed));
     }
 
     public int generateID(){
