@@ -64,6 +64,7 @@ public class Client implements Runnable {
     public int figureForGui;
     public String CardOfGui = "SomeCard";
     public ObservableList<Integer> figurenForGui;
+    private int CubesZahl = 5;
 
 
     /**
@@ -435,6 +436,7 @@ public class Client implements Runnable {
     public String handleEnergy(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
+        this.CubesZahl = number;
         String source = (String) m.getMessageBody().getContent()[2];
         String s;
         if (clientID == this.ID){
@@ -861,6 +863,10 @@ public class Client implements Runnable {
 
     public ArrayList<String> getUpgradeShop(){
         return upgradeShop;
+    }
+
+    public int getCubesZahl(){
+        return CubesZahl;
     }
 
 }

@@ -23,5 +23,6 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Label fx:id="CubesText" layoutX="7.0" layoutY="9.0" prefHeight="30.0" prefWidth="134.0" />
    </children>
 </AnchorPane>

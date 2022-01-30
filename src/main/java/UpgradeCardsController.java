@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -21,6 +22,9 @@ public class UpgradeCardsController implements Initializable {
     ImageView Card5;
     @FXML
     ImageView Card6;
+    @FXML
+    Label CubesText;
+
 
 
     Image AdminPrivilege = new Image("assets/AdminPrivilege.png");
@@ -31,6 +35,7 @@ public class UpgradeCardsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCards(SaveClients.client.getUpgradeShop());
+        CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
     }
 
     public void setCards(ArrayList<String> upgradecards){
