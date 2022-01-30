@@ -1,6 +1,6 @@
 import Messages.Phase.ReplaceCard;
 
-public class Trojan extends DamageCards{
+public class Trojan extends DamageCards {
 
     public Trojan(){
         this.setName("Trojan");

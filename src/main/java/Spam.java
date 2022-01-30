@@ -1,6 +1,6 @@
 import Messages.Phase.ReplaceCard;
 
-public class Spam extends DamageCards{
+public class Spam extends DamageCards {
 
     public Spam(){
         this.setName("Spam");

@@ -1,6 +1,6 @@
 import Messages.Phase.ReplaceCard;
 
-public class Worm extends DamageCards{
+public class Worm extends DamageCards {
 
     public Worm(){
         this.setName("Worm");
