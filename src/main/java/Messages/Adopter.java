@@ -75,9 +75,16 @@ public class Adopter {
         }
         for (int i = 0; i < keys.length; i++) {
             Object value = values[i];
-            String valueString = value.toString();
-            if (value.getClass().isArray()) {
-                valueString = gson.toJson(values[i]);
+            String valueString = "";
+            if (value == null){
+                valueString = "null";
+            }
+            else {
+                valueString = value.toString();
+
+                if (value.getClass().isArray()) {
+                    valueString = gson.toJson(values[i]);
+                }
             }
 
             String key = (String) keys[i];

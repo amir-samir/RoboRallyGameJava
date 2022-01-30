@@ -7,18 +7,18 @@
 
 <AnchorPane prefHeight="367.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UpgradeCardsController">
    <children>
-      <ImageView fx:id="Card1" fitHeight="158.0" fitWidth="126.0" layoutY="36.0" pickOnBounds="true" />
-      <ImageView fx:id="Card2" fitHeight="158.0" fitWidth="126.0" layoutX="107.0" layoutY="36.0" pickOnBounds="true" />
-      <ImageView fx:id="Card3" fitHeight="158.0" fitWidth="126.0" layoutX="213.0" layoutY="36.0" pickOnBounds="true" />
-      <ImageView fx:id="Card4" fitHeight="158.0" fitWidth="126.0" layoutX="313.0" layoutY="36.0" pickOnBounds="true" />
-      <ImageView fx:id="Card5" fitHeight="158.0" fitWidth="126.0" layoutX="107.0" layoutY="175.0" pickOnBounds="true" />
-      <ImageView fx:id="Card6" fitHeight="158.0" fitWidth="126.0" layoutX="213.0" layoutY="175.0" pickOnBounds="true" />
+      <ImageView fx:id="Card1" fitHeight="158.0" fitWidth="126.0" layoutY="36.0" onMouseClicked="#Card1Pressed" pickOnBounds="true" />
+      <ImageView fx:id="Card2" fitHeight="158.0" fitWidth="126.0" layoutX="107.0" layoutY="36.0" onMouseClicked="#Card2Pressed" pickOnBounds="true" />
+      <ImageView fx:id="Card3" fitHeight="158.0" fitWidth="126.0" layoutX="213.0" layoutY="36.0" onMouseClicked="#Card3Pressed" pickOnBounds="true" />
+      <ImageView fx:id="Card4" fitHeight="158.0" fitWidth="126.0" layoutX="313.0" layoutY="36.0" onMouseClicked="#Card4Pressed" pickOnBounds="true" />
+      <ImageView fx:id="Card5" fitHeight="158.0" fitWidth="126.0" layoutX="107.0" layoutY="175.0" onMouseClicked="#Card5Pressed" pickOnBounds="true" />
+      <ImageView fx:id="Card6" fitHeight="158.0" fitWidth="126.0" layoutX="213.0" layoutY="175.0" onMouseClicked="#Card6Pressed" pickOnBounds="true" />
       <Label layoutX="156.0" layoutY="14.0" prefHeight="27.0" prefWidth="126.0" text="Upgrade Cards" textFill="#f20303">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="126.0" layoutY="333.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Keine Karte auswählen" textFill="#e90404">
+      <Button layoutX="126.0" layoutY="333.0" mnemonicParsing="false" onAction="#NoCardChoossen" prefHeight="25.0" prefWidth="200.0" text="Keine Karte auswählen" textFill="#e90404">
          <font>
             <Font size="14.0" />
          </font>

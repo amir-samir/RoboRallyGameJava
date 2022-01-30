@@ -72,4 +72,33 @@ public class UpgradeCardsController implements Initializable {
                 return SpamBlocker;
         }
     }
+
+    public void Card1Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(0));
+    }
+
+    public void Card2Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(1));
+    }
+
+    public void Card3Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(2));
+    }
+
+    public void Card4Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(3));
+    }
+
+    public void Card5Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(4));
+    }
+
+    public void Card6Pressed(){
+        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(5));
+    }
+
+    public void NoCardChoossen(){
+        SaveClients.client.buyUpgrade(false, null);
+    }
+
 }

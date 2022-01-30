@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UpgradeCardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/UpgradeCards.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpgradeCards.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UpgradePhaseGui" />
+        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -157,11 +160,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="Application.KI" />
-        <item itemvalue="Application.GetID" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -197,21 +200,7 @@
       <workItem from="1643065378500" duration="175000" />
       <workItem from="1643197311055" duration="366000" />
       <workItem from="1643381149929" duration="6582000" />
-      <workItem from="1643468246620" duration="15813000" />
-    </task>
-    <task id="LOCAL-00011" summary="Merge: JSON_Chat -&gt; BoardElements">
-      <created>1641142068102</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1641142068102</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Bugfix">
-      <created>1641324232749</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1641324232749</updated>
+      <workItem from="1643468246620" duration="18107000" />
     </task>
     <task id="LOCAL-00013" summary="Bugfix">
       <created>1641328280070</created>
@@ -542,7 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643494077123</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Bug fix">
+      <created>1643494800511</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1643494800511</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Bug fix">
+      <created>1643495008531</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1643495008531</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,8 +609,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>104</line>
-          <properties class="Robot" method="mischen">
+          <line>124</line>
+          <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -615,7 +618,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>1361</line>
+          <line>1468</line>
           <properties class="Game">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
