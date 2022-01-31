@@ -75,7 +75,7 @@ public class Client implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
-        SOCKET = new Socket("localhost", 1235);
+        SOCKET = new Socket("localhost", 1237);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         usernamesGui = FXCollections.observableArrayList();
@@ -638,6 +638,7 @@ public class Client implements Runnable {
                     }
                     Platform.runLater(() -> {
                         try {
+                            StageSaver.getStageSaver().getUpgradeCardsStage().close();
                             getAllInOneView().resetRegisterCard();
                             getChatView().ChooseCard();
                         } catch (Exception e) {
@@ -661,11 +662,7 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("TimerStarted")){
                     toSend = "Der Timer wurde gestartet.";
                     Platform.runLater(() -> {
-                        try {
-                            getChooseCards().ShowTimer();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        getChooseCards().startTimer();
                     });
                 } else if (message.getMessageType().equals("TimerEnded")){
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
