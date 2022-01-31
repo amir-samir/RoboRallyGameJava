@@ -9,26 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Logging">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Spieler12345_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/innige_irrweg_hp_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2022_21_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2022_21_34__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_20_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_20_24__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_21_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_21_36__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_00_19__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChooseCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChooseCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StageSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StageSaver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StageSaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StageSaver.class" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bug Fix Jar File" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -550,12 +531,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643575493359</updated>
     </task>
-    <task id="LOCAL-00065" summary="Started upgradePhase with @Yilu">
-      <created>1643237585462</created>
+    <task id="LOCAL-00065" summary="Bug Fix Jar File">
+      <created>1643652136142</created>
       <option name="number" value="00065" />
       <option name="presentableId" value="LOCAL-00065" />
       <option name="project" value="LOCAL" />
-      <updated>1643237585462</updated>
+      <updated>1643652136142</updated>
     </task>
     <task id="LOCAL-00066" summary="Bugfix">
       <created>1643483886102</created>
@@ -585,7 +566,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +585,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
@@ -629,7 +609,8 @@
     <MESSAGE value="Upgrade Cards" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logging" />
+    <MESSAGE value="Bug Fix Jar File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix Jar File" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <AnchorPane prefHeight="391.0" prefWidth="600.0" styleClass="MapsBackground" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseCards">
    <children>
       <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="32.0" onMouseClicked="#ChooseCard1" pickOnBounds="true" preserveRatio="true">
@@ -53,7 +52,6 @@
             <Image url="@../assets/Karte.png" />
          </image>
       </ImageView>
-      <Button layoutX="481.0" layoutY="344.0" mnemonicParsing="false" onAction="#startTimer" text="Button" />
       <Label fx:id="timerLabel" layoutX="217.0" layoutY="331.0" prefHeight="74.0" prefWidth="115.0" text=" ">
          <font>
             <Font name="Arial Bold" size="64.0" />
