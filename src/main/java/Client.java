@@ -1,5 +1,6 @@
 import Messages.*;
 import Messages.Actions.RebootDirection;
+import Messages.Actions.ReturnCards;
 import Messages.Actions.SelectedDamage;
 import Messages.Phase.BuyUpgrade;
 import Messages.Phase.SelectedCard;
@@ -404,6 +405,12 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(rebootDirection));
     }
 
+    public void returnCards(String[] cards){
+        ReturnCards returnCards = new ReturnCards(cards);
+        returnCards.getMessageBody().setKeys(new String[]{"cards"});
+        bufferedWriter.println(Adopter.javabeanToJson(returnCards));
+    }
+
     public String handleCheckPointReached(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
@@ -636,15 +643,19 @@ public class Client implements Runnable {
                     for (int i = 0; i < figuren[player.get(this.ID).figur].getHandCards().size(); i++){
                         senden += figuren[player.get(this.ID).figur].getHandCards().get(i).getName() + " ";
                     }
-                    Platform.runLater(() -> {
-                        try {
-                            StageSaver.getStageSaver().getUpgradeCardsStage().close();
-                            getAllInOneView().resetRegisterCard();
-                            getChatView().ChooseCard();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    });
+                    if (figuren[player.get(this.ID).figur].getHandCards().size() == 12){
+                        //GUI --> Karten abgeben!!
+                    } else {
+                        Platform.runLater(() -> {
+                            try {
+                                StageSaver.getStageSaver().getUpgradeCardsStage().close();
+                                getAllInOneView().resetRegisterCard();
+                                getChatView().ChooseCard();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
+                    }
                     toSend = senden;
                 } else if (message.getMessageType().equals("NotYourCards")){
                     int ID = (int) (double) message.getMessageBody().getContent()[0];

@@ -580,7 +580,7 @@ public class Game {
             sendError("Du kannst aktuell keine Startposition wählen.", clientHandler);
             return;
         }
-        if (board.getMap()[x][y].get(0).getType() == "StartPoint") {
+        if (board.getMap()[x][y].get(0).getType().equals("StartPoint")) {
             for (int i = 0; i < figuren.length; i++) {
                 if (figuren[i] != null) {
                     if (feldBelegt(x, y, i)) {
@@ -593,7 +593,7 @@ public class Game {
             figuren[clientHandler.figure].setY(y);
             figuren[clientHandler.figure].setStartPointX(x);
             figuren[clientHandler.figure].setStartPointY(y);
-            if (activeMap.equals("Death Trap")){
+            if (activeMap.equals("DeathTrap")){
                 figuren[clientHandler.figure].setDirection("left");
             } else figuren[clientHandler.figure].setDirection("right");
             SERVER.validStartingPoint(x, y, clientHandler);
