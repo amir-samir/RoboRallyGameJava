@@ -923,4 +923,15 @@ public class AllInOneView implements Initializable {
         stage.setOnCloseRequest(e -> Platform.exit());
     }
 
+    public void runChooseCardsForSwap() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Choose Cards");
+        Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCardsForSwap.fxml"));
+        Scene signInScene = new Scene(signIn);
+        stage.setScene(signInScene);
+        stage.show();
+        StageSaver.getStageSaver().setUpgradeCardsStageForSwap(stage);
+        stage.setOnCloseRequest(e -> Platform.exit());
+    }
+
 }

@@ -58,6 +58,7 @@ public class Client implements Runnable {
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
     public static MaybeMapsController maybeMapsController;
+    public static ChooseCardsForSwap chooseCardsForSwap;
     public static AllInOneView allInOneView;
     public static FirstView firstView;
     public static ChooseCards chooseCards;
@@ -645,6 +646,16 @@ public class Client implements Runnable {
                     }
                     if (figuren[player.get(this.ID).figur].getHandCards().size() == 12){
                         //GUI --> Karten abgeben!!
+                        Platform.runLater(() -> {
+                            try {
+                                StageSaver.getStageSaver().getUpgradeCardsStage().close();
+                                getAllInOneView().resetRegisterCard();
+                                getAllInOneView().runChooseCardsForSwap();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
+
                     } else {
                         Platform.runLater(() -> {
                             try {
@@ -673,13 +684,23 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("TimerStarted")){
                     toSend = "Der Timer wurde gestartet.";
                     Platform.runLater(() -> {
-                        getChooseCards().startTimer();
+                        if (getChooseCards() != null) {
+                            getChooseCards().startTimer();
+                        }
+                        if (getChooseCardsForSwap() != null){
+                            getChooseCardsForSwap().startTimer();
+                        }
                     });
                 } else if (message.getMessageType().equals("TimerEnded")){
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
                     Platform.runLater(() -> {
-                        StageSaver.getStageSaver().getChooseCardStage().close();
+                        if (getChooseCards() != null) {
+                            StageSaver.getStageSaver().getChooseCardStage().close();
+                        }
+                        if (getChooseCardsForSwap() != null){
+                            StageSaver.getStageSaver().getUpgradeCardsForSwap().close();
+                        }
                     });
                     for (Double doubl: list){
                         s += "(" + doubl + ") ";
@@ -888,6 +909,14 @@ public class Client implements Runnable {
 
     public int getCubesZahl(){
         return CubesZahl;
+    }
+
+    public static void setChooseCardsForSwap(ChooseCardsForSwap chooseCardsForSwap1){
+        chooseCardsForSwap = chooseCardsForSwap1;
+    }
+
+    public ChooseCardsForSwap getChooseCardsForSwap(){
+        return chooseCardsForSwap;
     }
 
 }
