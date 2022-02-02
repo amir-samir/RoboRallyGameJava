@@ -125,11 +125,17 @@ public class ClientHandler implements Runnable {
                     handleSelectedDamage(message);
                 } else if (message.getMessageType().equals("BuyUpgrade")){
                     handleBuyUpgrade(message);
+                } else if (message.getMessageType().equals("ReturnCards")){
+                    handleReturnCards(message);
                 }
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
+    }
+
+    public void handleReturnCards(Message message){
+
     }
 
     public void handleBuyUpgrade(Message message){

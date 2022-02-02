@@ -18,6 +18,7 @@ public class Robot {
     private boolean ableToFillRegisters;
     private boolean ableToChooseRestartDirection;
     private boolean ableToChooseDamageCard;
+    private boolean ableToReturnCard;
     private boolean isDead;
     private int energyCube;
     private int collectedCheckpoints;
@@ -34,6 +35,7 @@ public class Robot {
         ableToFillRegisters = true;
         ableToChooseRestartDirection = false;
         ableToChooseDamageCard = false;
+        ableToReturnCard = false;
         isDead = false;
         energyCube = 5;
         collectedCheckpoints = -1;
@@ -45,24 +47,38 @@ public class Robot {
 
     public int drawHandCards(){
         boolean spamBlocker = false;
+        boolean memorySwap = false;
         for (int i = 0; i < temporaryCards.length; i++){
             if (temporaryCards[i] != null){
-                if (temporaryCards[i].getName() == "SpamBlocker"){
+                if (temporaryCards[i].getName().equals("SpamBlocker")){
                     spamBlocker = true;
+                    temporaryCards[i] = null;
+                } else if (temporaryCards[i].getName().equals("MemorySwap")){
+                    memorySwap = true;
+                    this.ableToReturnCard = true;
                     temporaryCards[i] = null;
                 }
             }
         }
-        for (int i = 0; i < 9; i++){
-            if (deck.getDeck().size() == 0){
-                mischen();
+        if (memorySwap){
+            for (int i = 0; i < 12; i++){
+                if (deck.getDeck().size() == 0) {
+                    mischen();
+                }
+                handCards.add(deck.getDeck().remove(0));
             }
-            handCards.add(deck.getDeck().remove(0));
+        } else {
+            for (int i = 0; i < 9; i++) {
+                if (deck.getDeck().size() == 0) {
+                    mischen();
+                }
+                handCards.add(deck.getDeck().remove(0));
+            }
         }
         if (spamBlocker){
             int counter = 0;
             for (int i = 0; i < handCards.size(); i++){
-                if (handCards.get(i).getName() == "Spam"){
+                if (handCards.get(i).getName().equals("Spam")){
                     counter += 1;
                     handCards.remove(i);
                     handCards.add(deck.getDeck().remove(0));
