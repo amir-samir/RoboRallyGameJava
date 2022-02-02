@@ -63,8 +63,7 @@ public class AllInOneView implements Initializable {
     @FXML
     private ImageView Card5;
 
-    @FXML
-    Image image0 = new Image("assets/GruenFeld.png");
+    Image image0 = new Image("assets/GrünFeld.png");
     Image image1 = new Image("assets/Default51x51.png");
     Image image2 = new Image("assets/1rechts.png");
     Image image3 = new Image("assets/ExtraCrispyMap00.png");
@@ -155,7 +154,7 @@ public class AllInOneView implements Initializable {
     Image image88 = new Image("assets/2EinleitungUnten.png");
     Image image89 = new Image("assets/2EinleitungLinks.png");
     Image image90 = new Image("assets/DizzyHighwayMap99.png");
-    Image image91 = new Image("assets/GruenFeldLinks.png");
+    Image image91 = new Image("assets/GrünFeldLinks.png");
     Image figureTest = new Image("assets/GelbUnten.png");
     Image image92 = new Image("assets/1LaserEndeWandUnten36.png");
     Image image93 = new Image("assets/1LaserEndeWandRechts38.png");
