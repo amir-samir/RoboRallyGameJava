@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="405.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseCardsForSwap">
+    <children>
+        <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card2" fitHeight="150.0" fitWidth="109.0" layoutX="126.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card3" fitHeight="150.0" fitWidth="109.0" layoutX="234.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card4" fitHeight="150.0" fitWidth="109.0" layoutX="343.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card5" fitHeight="150.0" fitWidth="109.0" layoutX="452.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card9" fitHeight="150.0" fitWidth="109.0" layoutX="234.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card10" fitHeight="150.0" fitWidth="109.0" layoutX="343.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card11" fitHeight="150.0" fitWidth="109.0" layoutX="452.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="Card8" fitHeight="150.0" fitWidth="109.0" layoutX="126.0" layoutY="182.0" pickOnBounds="true">
+            <image>
+                <Image url="@../assets/Karte.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="timerLabel" layoutX="217.0" layoutY="331.0" prefHeight="74.0" prefWidth="115.0" text=" ">
+            <font>
+                <Font name="Arial Bold" size="64.0" />
+            </font></Label>
+      <ImageView fx:id="Card7" fitHeight="150.0" fitWidth="109.0" layoutX="20.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Karte.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Card12" fitHeight="150.0" fitWidth="109.0" layoutX="561.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Karte.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Card6" fitHeight="150.0" fitWidth="109.0" layoutX="561.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Karte.png" />
+         </image>
+      </ImageView>
+    </children>
+
+</AnchorPane>

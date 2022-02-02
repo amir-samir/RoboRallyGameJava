@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Spieler12345:jar" />
+      <artifact name="Serverrrr:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bug Fix Jar File" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="managing windows and  Timer">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/innige_irrwegClient_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ChooseCardsForSwap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCardsForSwap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Spieler12345_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Serverrrr_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_01_2022_18_56_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_01_2022_18_56__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="neue_firts_view" />
+        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,7 +121,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="JAR Application.innige-irrweg-hp.jar (1)">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="innige-irrweg-hp" />
@@ -135,15 +145,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="innige-irrweg-hp" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="mapTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Client" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Client/innige-irrweg-hp.jar" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
@@ -161,6 +162,10 @@
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Serverr_jar/Serverrrr.jar" />
       <method v="2" />
     </configuration>
+    <configuration name="innige-irrweg-hp.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Serverrrr_jar/innige-irrweg-hp.jar" />
+      <method v="2" />
+    </configuration>
     <configuration name="innige-irrweg-hp.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Serverr_jar/innige-irrweg-hp.jar" />
       <method v="2" />
@@ -173,22 +178,22 @@
       <item itemvalue="JAR Application.Client" />
       <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
       <item itemvalue="JAR Application.Serverrrr.jar" />
-      <item itemvalue="JUnit.mapTest" />
+      <item itemvalue="JAR Application.innige-irrweg-hp.jar (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.innige-irrweg-hp.jar (1)" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
         <item itemvalue="JAR Application.Serverrrr.jar" />
         <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
-        <item itemvalue="JUnit.mapTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix" />
+      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="managing windows and  Timer" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -222,6 +227,8 @@
       <workItem from="1643577047269" duration="1453000" />
       <workItem from="1643578526261" duration="2980000" />
       <workItem from="1643581896204" duration="2453000" />
+      <workItem from="1643815186637" duration="1052000" />
+      <workItem from="1643816360085" duration="1881000" />
     </task>
     <task id="LOCAL-00018" summary="Support for SetStartingPoint">
       <created>1641650949015</created>
@@ -538,12 +545,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643652136142</updated>
     </task>
-    <task id="LOCAL-00066" summary="Bugfix">
-      <created>1643483886102</created>
+    <task id="LOCAL-00066" summary="managing windows and  Timer">
+      <created>1643653770167</created>
       <option name="number" value="00066" />
       <option name="presentableId" value="LOCAL-00066" />
       <option name="project" value="LOCAL" />
-      <updated>1643483886102</updated>
+      <updated>1643653770167</updated>
     </task>
     <task id="LOCAL-00067" summary="Bugfix">
       <created>1643484945660</created>
@@ -566,7 +573,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
@@ -610,7 +616,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Logging" />
     <MESSAGE value="Bug Fix Jar File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix Jar File" />
+    <MESSAGE value="managing windows and  Timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="managing windows and  Timer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
