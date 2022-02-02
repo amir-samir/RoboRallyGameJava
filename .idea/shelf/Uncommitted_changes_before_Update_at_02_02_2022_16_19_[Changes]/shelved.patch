@@ -1,0 +1,30 @@
+Index: .idea/artifacts/innige_irrweg_hp_jar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ArtifactManager\">\r\n  <artifact type=\"jar\" name=\"innige-irrweg-hp:jar\">\r\n    <output-path>$PROJECT_DIR$/out/artifacts/innige_irrweg_hp_jar</output-path>\r\n    <root id=\"archive\" name=\"innige-irrweg-hp.jar\">\r\n      <element id=\"module-output\" name=\"innige-irrweg-hp\" />\r\n      <element id=\"extracted-dir\" path=\"$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/src.zip\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx-swt.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.web.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.base.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.fxml.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.media.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.swing.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.controls.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.graphics.jar\" path-in-jar=\"/\" />\r\n      <element id=\"extracted-dir\" path=\"$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar\" path-in-jar=\"/\" />\r\n      <element id=\"library\" level=\"project\" name=\"javafx-swt\" />\r\n    </root>\r\n  </artifact>\r\n</component>
+===================================================================
+diff --git a/.idea/artifacts/innige_irrweg_hp_jar.xml b/.idea/artifacts/innige_irrweg_hp_jar.xml
+--- a/.idea/artifacts/innige_irrweg_hp_jar.xml	
++++ b/.idea/artifacts/innige_irrweg_hp_jar.xml	
+@@ -1,9 +1,9 @@
+ <component name="ArtifactManager">
+-  <artifact type="jar" name="innige-irrweg-hp:jar">
++  <artifact type="jar" build-on-make="true" name="innige-irrweg-hp:jar">
+     <output-path>$PROJECT_DIR$/out/artifacts/innige_irrweg_hp_jar</output-path>
+     <root id="archive" name="innige-irrweg-hp.jar">
+       <element id="module-output" name="innige-irrweg-hp" />
+-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" path-in-jar="/" />
++      <element id="library" level="project" name="javafx-swt" />
+       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/src.zip" path-in-jar="/" />
+       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx-swt.jar" path-in-jar="/" />
+       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.web.jar" path-in-jar="/" />
+@@ -14,7 +14,7 @@
+       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.controls.jar" path-in-jar="/" />
+       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/Java/javafx-sdk-16/lib/javafx.graphics.jar" path-in-jar="/" />
+       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar" path-in-jar="/" />
+-      <element id="library" level="project" name="javafx-swt" />
++      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" path-in-jar="/" />
+     </root>
+   </artifact>
+ </component>
+\ No newline at end of file
