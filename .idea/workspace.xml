@@ -2,14 +2,33 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Spieler12345:jar" />
+      <artifact name="innige-irrweg-hp:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bug Fix Jar File" />
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Logging">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/innige_irrweg_hp_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/innige_irrweg_hp_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2022_22_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2022_22_15__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2021_14_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2021_14_23__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2022_22_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2022_22_31__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_22__21_52__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_01_2022_18_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_01_2022_18_56__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2022_21_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2022_21_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_01_2022_20_32__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_22__15_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_22__15_06__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_20_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_20_24__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_21_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_21_36__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21__15_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_12_21__15_19__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_00_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_00_19__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="neue_firts_view" />
+        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,20 +62,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -111,7 +130,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="JAR Application.Server">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="innige-irrweg-hp" />
@@ -123,7 +142,14 @@
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\jonci\Downloads\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RalleyLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RalleyLogger" />
+      <module name="innige-irrweg-hp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,6 +157,7 @@
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="innige-irrweg-hp" />
+      <option name="PROGRAM_PARAMETERS" value="1235" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,30 +184,27 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
-    <configuration name="Serverrrr.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Serverr_jar/Serverrrr.jar" />
-      <method v="2" />
-    </configuration>
     <configuration name="innige-irrweg-hp.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Serverr_jar/innige-irrweg-hp.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/innige_irrweg_hp_jar/innige-irrweg-hp.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
+      <item itemvalue="Application.RalleyLogger" />
       <item itemvalue="JAR Application.Server" />
       <item itemvalue="JAR Application.Client" />
       <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
-      <item itemvalue="JAR Application.Serverrrr.jar" />
       <item itemvalue="JUnit.mapTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="JAR Application.Serverrrr.jar" />
         <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
+        <item itemvalue="Application.RalleyLogger" />
         <item itemvalue="JUnit.mapTest" />
       </list>
     </recent_temporary>
@@ -222,6 +246,7 @@
       <workItem from="1643577047269" duration="1453000" />
       <workItem from="1643578526261" duration="2980000" />
       <workItem from="1643581896204" duration="2453000" />
+      <workItem from="1643631145079" duration="1363000" />
     </task>
     <task id="LOCAL-00018" summary="Support for SetStartingPoint">
       <created>1641650949015</created>
@@ -531,12 +556,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643575493359</updated>
     </task>
-    <task id="LOCAL-00065" summary="Bug Fix Jar File">
-      <created>1643652136142</created>
+    <task id="LOCAL-00065" summary="Started upgradePhase with @Yilu">
+      <created>1643237585462</created>
       <option name="number" value="00065" />
       <option name="presentableId" value="LOCAL-00065" />
       <option name="project" value="LOCAL" />
-      <updated>1643652136142</updated>
+      <updated>1643237585462</updated>
     </task>
     <task id="LOCAL-00066" summary="Bugfix">
       <created>1643483886102</created>
@@ -566,7 +591,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,6 +610,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Merge: New Gui -&gt; Kommunikation" />
     <MESSAGE value="Initialisieren von Start Karten" />
     <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
@@ -609,8 +635,7 @@
     <MESSAGE value="Upgrade Cards" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Logging" />
-    <MESSAGE value="Bug Fix Jar File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix Jar File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,7 +655,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>124</line>
+          <line>104</line>
           <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -638,13 +663,22 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
+          <line>474</line>
+          <properties class="Client">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>1472</line>
+          <line>163</line>
           <properties class="Game">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
