@@ -333,6 +333,10 @@ public class Server {
         ralleyLogger.getLogger().info(Adopter.javabeanToJson(cardPlayed));
     }
 
+    public void handleReturnCards(ArrayList<String> cards, ClientHandler clientHandler){
+        game.handleReturnCards(cards, clientHandler);
+    }
+
     public int generateID(){
         int ID = Server.laufendeID;
         laufendeID++;

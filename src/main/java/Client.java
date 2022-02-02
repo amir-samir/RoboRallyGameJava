@@ -409,6 +409,8 @@ public class Client implements Runnable {
         ReturnCards returnCards = new ReturnCards(cards);
         returnCards.getMessageBody().setKeys(new String[]{"cards"});
         bufferedWriter.println(Adopter.javabeanToJson(returnCards));
+
+        //programming
     }
 
     public String handleCheckPointReached(Message m){

@@ -236,6 +236,74 @@ public class Game {
         }
     }
 
+    public void handleReturnCards(ArrayList<String> cards, ClientHandler clientHandler) {
+        ArrayList<Cards> newDeck = arrayToList(cards);
+        Robot robot = figuren[clientHandler.figure];
+        if (robot.isAbleToReturnCard()) {
+            int zähler = robot.getHandCards().size();
+            while (robot.getHandCards().size() != 0) {
+                Cards karte = robot.getHandCards().remove(0);
+                newDeck.add(karte);
+            }
+            robot.setAbleToReturnCard(false);
+            robot.setHandCards(newDeck);
+        } else {
+            Error1 error1 = new Error1("Du kannst aktuell keine Karten zurücklegen");
+            error1.getMessageBody().setKeys(new String[]{"error"});
+            SERVER.sendMessageForSingleClient(error1, clientHandler);
+        }
+    }
+
+    public ArrayList<Cards> arrayToList (ArrayList<String> array){
+        ArrayList<Cards> handcards= new ArrayList<Cards>();
+        for (String s: array) {
+            switch (s){
+                case "MoveI":
+                    handcards.add(new Move1Card());
+                    break;
+                case "MoveII":
+                    handcards.add(new Move2Card());
+                    break;
+                case "MoveIII":
+                    handcards.add(new Move3Card());
+                    break;
+                case "TurnLeft":
+                    handcards.add(new LeftTurnCard());
+                    break;
+                case "TurnRight":
+                    handcards.add(new RightTurnCard());
+                    break;
+                case "UTurn":
+                    handcards.add(new UTurnCard());
+                    break;
+                case "BackUp":
+                    handcards.add(new BackUpCard());
+                    break;
+                case "PowerUp":
+                    handcards.add(new PowerUpCard());
+                    break;
+                case "Again":
+                    handcards.add(new AgainCard());
+                    break;
+                case "Spam":
+                    handcards.add(new Spam());
+                    break;
+                case "Trojan":
+                    handcards.add(new Trojan());
+                    break;
+                case "Worm":
+                    handcards.add(new Worm());
+                    break;
+                case "Virus":
+                    handcards.add(new VirusCard());
+                    break;
+                default:
+                    break;
+            }
+        }
+        return handcards;
+    }
+
     public void newSpamCards(int i){
         while (i > 0){
             cardsForGame.spamCards.add(new Spam());
@@ -1496,5 +1564,6 @@ public class Game {
     public CardsForGame getCardsForGame() {
         return cardsForGame;
     }
+
 }
 

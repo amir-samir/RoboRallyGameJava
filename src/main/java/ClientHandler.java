@@ -135,7 +135,8 @@ public class ClientHandler implements Runnable {
     }
 
     public void handleReturnCards(Message message){
-
+        ArrayList<String> cards = (ArrayList<String>) message.getMessageBody().getContent()[0];
+        SERVER.handleReturnCards(cards, this);
     }
 
     public void handleBuyUpgrade(Message message){
