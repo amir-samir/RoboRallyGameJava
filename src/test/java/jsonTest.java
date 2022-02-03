@@ -1,4 +1,6 @@
 import Messages.*;
+import Messages.Actions.PlayerTurning;
+import Messages.Actions.RebootDirection;
 import Messages.Phase.CurrentCards;
 import Messages.Phase.YourCards;
 import com.google.gson.internal.LinkedTreeMap;
@@ -293,5 +295,16 @@ public class jsonTest {
         Message m = Adopter.getMessage(Adopter.javabeanToJson(currentCards));
         List<LinkedTreeMap> list = (List<LinkedTreeMap>) m.getMessageBody().getContent()[0];
         System.out.println();
+    }
+    @Test
+    public void PlayerTurning(){
+        RebootDirection rebootDirection = new RebootDirection("right");
+        rebootDirection.getMessageBody().setKeys(new String[]{"Direction"});
+        String json1 = Adopter.javabeanToJson(rebootDirection);
+        System.out.println(json1);
+       PlayerTurning playerTurning = new PlayerTurning(2000, "counterclockwise");
+        playerTurning.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
+        String json = Adopter.javabeanToJson(playerTurning);
+        System.out.println(json);
     }
 }
