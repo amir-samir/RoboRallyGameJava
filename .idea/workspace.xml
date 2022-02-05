@@ -9,12 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- FXML">
+    <list default="true" id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Bugfix:&#10;- MemorySwap">
+      <change afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log.txt.3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/ChooseRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +148,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="KI" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KI" />
       <module name="innige-irrweg-hp" />
       <method v="2">
@@ -179,10 +193,10 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
       <item itemvalue="Application.RalleyLogger" />
+      <item itemvalue="Application.KI" />
       <item itemvalue="JAR Application.Server" />
       <item itemvalue="JAR Application.Client" />
       <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
-      <item itemvalue="Application.KI" />
     </list>
     <recent_temporary>
       <list>
@@ -233,14 +247,9 @@
       <workItem from="1643581896204" duration="2453000" />
       <workItem from="1643631145079" duration="1363000" />
       <workItem from="1643815073607" duration="3185000" />
-      <workItem from="1643827144677" duration="2092000" />
-    </task>
-    <task id="LOCAL-00018" summary="Support for SetStartingPoint">
-      <created>1641650949015</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1641650949015</updated>
+      <workItem from="1643827144677" duration="3546000" />
+      <workItem from="1643832902929" duration="178000" />
+      <workItem from="1644066529004" duration="8542000" />
     </task>
     <task id="LOCAL-00019" summary="Changes by Amir">
       <created>1641650969450</created>
@@ -578,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Bugfix:&#10;- MemorySwap">
+      <created>1643829446714</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1643829446715</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,9 +636,9 @@
     <MESSAGE value="Upgrade Cards" />
     <MESSAGE value="Logging" />
     <MESSAGE value="Bugfix" />
-    <MESSAGE value="Bugfix:&#10;- MemorySwap" />
     <MESSAGE value="Bugfix:&#10;- FXML" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- FXML" />
+    <MESSAGE value="Bugfix:&#10;- MemorySwap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- MemorySwap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,8 +649,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
-          <line>247</line>
-          <properties class="KI">
+          <line>248</line>
+          <properties class="KI" method="playCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -650,18 +666,89 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Client.java</url>
-          <line>481</line>
-          <properties class="Client" method="handleExchangeShop">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>968</line>
+          <properties class="Game" method="checkConveyor">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="43" />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>1185</line>
+          <properties class="Game" method="sendRotation">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
+          <line>410</line>
+          <properties class="KI" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Server.java</url>
+          <line>128</line>
+          <properties class="Server" method="playerAdded">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Server.java</url>
+          <line>105</line>
+          <properties class="Server" method="addClient">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
           <line>148</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>977</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>1131</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>1037</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ClientHandler.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ClientHandler.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ClientHandler.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ClientHandler.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

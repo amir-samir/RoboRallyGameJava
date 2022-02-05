@@ -432,10 +432,10 @@ public class AllInOneView implements Initializable {
     }
 
     public void sendPrivateMessage(){
-        String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
+        String selectedUser = PrivateMessage.getValue().toString().split(",")[0];
         String msg = privateMsgInput.getText();
 
-        SaveClients.client.singleMessage(SaveClients.client.getID(), msg, selectedUser);
+        SaveClients.client.singleMessage(SaveClients.client.getID(), msg, Integer.parseInt(selectedUser));
         privateMsgInput.clear();
     }
 

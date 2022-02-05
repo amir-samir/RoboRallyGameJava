@@ -23,7 +23,7 @@ public class Server {
     public List<ClientHandler> verbindungen = new ArrayList<ClientHandler>();
 
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
-    public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    //public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public Robot[] figuren = new Robot[6];
     RalleyLogger ralleyLogger = new RalleyLogger();
     public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "DeathTrap"};
@@ -110,7 +110,7 @@ public class Server {
     }
 
     public void addUsername(ClientHandler clientHandler){
-        ids.put(clientHandler.username, clientHandler.ID);
+        //ids.put(clientHandler.username, clientHandler.ID);
     }
 
     public boolean checkFigure(int figur, ClientHandler clientHandler){
@@ -120,6 +120,10 @@ public class Server {
         } else {
             return false;
         }
+    }
+
+    public void exitPlayer(ClientHandler clientHandler){
+
     }
 
     public void playerAdded(ClientHandler clientHandler) {

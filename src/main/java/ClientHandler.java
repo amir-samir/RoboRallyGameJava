@@ -55,80 +55,90 @@ public class ClientHandler implements Runnable {
      */
     @Override
     public void run() {
-        Timer t = new Timer();
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
+        if (SOCKET.isConnected() && !SOCKET.isClosed()) {
+            Timer t = new Timer();
+            TimerTask timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
+                }
+            };
+            t.schedule(timerTask, 0, 5000);
+            while (SOCKET.isConnected()) {
+                try {
+                    String input = reader.
+                            readLine();
+                    Message message = Adopter.getMessage(input);
+                    if (message.getMessageType().equals("HelloServer")) {
+                        if (!SERVER.protocol.equals((String) message.getMessageBody().getContent()[2])) {
+                            Error1 error = new Error1("Das verwendete Protokoll wird nicht unterstützt. Das Programm wird jetzt beendet.");
+                            String[] key = {"error"};
+                            error.getMessageBody().setKeys(key);
+                            writer.println(Adopter.javabeanToJson(error));
+                        } else {
+                            sendWelcomeMessage(message);
+                        }
+                    } else if (message.getMessageType().equals("SendChat")) {
+                        String toSend = (String) message.getMessageBody().getContent()[0];
+                        int to = (int) (double) message.getMessageBody().getContent()[1];
+                        if (to == -1) {
+                            SERVER.messageForAllUsers(toSend, this.ID);
+                        } else {
+                            SERVER.singleMessage(this.ID, toSend, to);
+                        }
+                    } else if (message.getMessageType().equals("PlayerValues")) {
+                        int figure = (int) (double) message.getMessageBody().getContent()[1];
+                        String name = (String) message.getMessageBody().getContent()[0];
+                        username = name;
+                        SERVER.addUsername(this);
+                        if (SERVER.checkFigure(figure, this)) {
+                            this.figure = figure;
+                            SERVER.playerAdded(this);
+                        } else {
+                            Error1 error = new Error1("Diese Figur wurde bereits von einem anderem Spieler gewählt.");
+                            String[] keys = {"error"};
+                            error.getMessageBody().setKeys(keys);
+                            writer.println(Adopter.javabeanToJson(error));
+                        }
+                    } else if (message.getMessageType().equals("SetStatus")) {
+                        boolean ready = (boolean) message.getMessageBody().getContent()[0];
+                        this.isReady = ready;
+                        SERVER.handleReady(this);
+                    } else if (message.getMessageType().equals("MapSelected")) {
+                        String map = (String) message.getMessageBody().getContent()[0];
+                        SERVER.handleMapSelected(map);
+                    } else if (message.getMessageType().equals("PlayCard")) {
+                        String card = (String) message.getMessageBody().getContent()[0];
+                        SERVER.handlePlayCard(card, ID);
+                    } else if (message.getMessageType().equals("SetStartingPoint")) {
+                        int x = (int) (double) message.getMessageBody().getContent()[0];
+                        int y = (int) (double) message.getMessageBody().getContent()[1];
+                        SERVER.setStartingPoint(x, y, this);
+                    } else if (message.getMessageType().equals("SelectedCard")) {
+                        String card = (String) message.getMessageBody().getContent()[0];
+                        int register = (int) (double) message.getMessageBody().getContent()[1];
+                        SERVER.handleSelectedCard(card, register, this);
+                    } else if (message.getMessageType().equals("RebootDirection")) {
+                        String direction = (String) message.getMessageBody().getContent()[0];
+                        SERVER.handleRebootDirection(direction, this);
+                    } else if (message.getMessageType().equals("SelectedDamage")) {
+                        handleSelectedDamage(message);
+                    } else if (message.getMessageType().equals("BuyUpgrade")) {
+                        handleBuyUpgrade(message);
+                    } else if (message.getMessageType().equals("ReturnCards")) {
+                        handleReturnCards(message);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        };
-        t.schedule(timerTask, 0,5000);
-        while (SOCKET.isConnected()) {
-            try{
-                String input = reader.
-                        readLine();
-                Message message = Adopter.getMessage(input);
-                if (message.getMessageType().equals("HelloServer")){
-                    if(!SERVER.protocol.equals((String) message.getMessageBody().getContent()[2])){
-                        Error1 error = new Error1("Das verwendete Protokoll wird nicht unterstützt. Das Programm wird jetzt beendet.");
-                        String[] key = {"error"};
-                        error.getMessageBody().setKeys(key);
-                        writer.println(Adopter.javabeanToJson(error));
-                    } else {
-                        sendWelcomeMessage(message);
-                    }
-                } else if (message.getMessageType().equals("SendChat")){
-                    String toSend = (String) message.getMessageBody().getContent()[0];
-                    int to = (int)(double) message.getMessageBody().getContent()[1];
-                    if (to == -1){
-                        SERVER.messageForAllUsers(toSend, this.ID);
-                    } else {
-                        SERVER.singleMessage(this.ID, toSend, to);
-                    }
-                } else if (message.getMessageType().equals("PlayerValues")){
-                    int figure = (int) (double) message.getMessageBody().getContent()[1];
-                    String name = (String) message.getMessageBody().getContent()[0];
-                    username = name;
-                    SERVER.addUsername(this);
-                    if(SERVER.checkFigure(figure, this)){
-                        this.figure = figure;
-                        SERVER.playerAdded(this);
-                    } else {
-                        Error1 error = new Error1("Diese Figur wurde bereits von einem anderem Spieler gewählt.");
-                        String[] keys = {"error"};
-                        error.getMessageBody().setKeys(keys);
-                        writer.println(Adopter.javabeanToJson(error));
-                    }
-                } else if (message.getMessageType().equals("SetStatus")){
-                    boolean ready = (boolean) message.getMessageBody().getContent()[0];
-                    this.isReady = ready;
-                    SERVER.handleReady(this);
-                }
-                else if(message.getMessageType().equals("MapSelected")){
-                    String map = (String) message.getMessageBody().getContent()[0];
-                    SERVER.handleMapSelected(map);
-                } else if(message.getMessageType().equals("PlayCard")){
-                    String card = (String) message.getMessageBody().getContent()[0];
-                    SERVER.handlePlayCard(card, ID);
-                } else if (message.getMessageType().equals("SetStartingPoint")){
-                    int x = (int) (double) message.getMessageBody().getContent()[0];
-                    int y = (int) (double) message.getMessageBody().getContent()[1];
-                    SERVER.setStartingPoint(x, y, this);
-                } else if (message.getMessageType().equals("SelectedCard")){
-                    String card = (String) message.getMessageBody().getContent()[0];
-                    int register = (int)(double) message.getMessageBody().getContent()[1];
-                    SERVER.handleSelectedCard(card, register, this);
-                } else if (message.getMessageType().equals("RebootDirection")){
-                    String direction = (String) message.getMessageBody().getContent()[0];
-                    SERVER.handleRebootDirection(direction, this);
-                } else if (message.getMessageType().equals("SelectedDamage")){
-                    handleSelectedDamage(message);
-                } else if (message.getMessageType().equals("BuyUpgrade")){
-                    handleBuyUpgrade(message);
-                } else if (message.getMessageType().equals("ReturnCards")){
-                    handleReturnCards(message);
-                }
-            } catch (Exception e){
+        } else {
+            SERVER.exitPlayer(this);
+            try {
+                SOCKET.close();
+                writer.close();
+                reader.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

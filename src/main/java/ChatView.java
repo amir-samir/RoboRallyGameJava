@@ -101,10 +101,10 @@ public class ChatView {
     }
 
     public void sendPrivateMsgFun() {
-        String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
+        String selectedUser = PrivateMessage.getValue().toString().split(",")[0];
         String msg = privateMsgInput.getText();
 
-        clientnew.singleMessage(clientnew.getID(), msg, selectedUser);
+        clientnew.singleMessage(clientnew.getID(), msg, Integer.parseInt(selectedUser));
     }
     public void comboAction(ActionEvent event) {
         String selectedUser = PrivateMessage.getValue().toString().split(",")[1];

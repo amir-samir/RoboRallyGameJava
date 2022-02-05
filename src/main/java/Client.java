@@ -51,7 +51,7 @@ public class Client implements Runnable {
     public String protocol;
     public ObservableList<String> chatMessages;
     public ObservableList<String> usernamesGui;
-    public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    //public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public Robot[] figuren = new Robot[6];
     ChatView chatView = new ChatView();
@@ -115,10 +115,11 @@ public class Client implements Runnable {
     public String getCardOfGui(){
         return CardOfGui;
     }
-    public void singleMessage(int senderId, String message, String userName){
-        int empfaenger = ids.get(userName);
+
+    public void singleMessage(int senderId, String message, int userName){
+        //int empfaenger = ids.get(userName);
         String[] keys = {"message", "to"};
-        SendChat sendChat = new SendChat(message, empfaenger);
+        SendChat sendChat = new SendChat(message, userName);
         sendChat.getMessageBody().setKeys(keys);
         bufferedWriter.println(Adopter.javabeanToJson(sendChat));
 
@@ -255,6 +256,10 @@ public class Client implements Runnable {
         BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
         buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
         bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+    }
+
+    public void chooseRegister(int register){
+
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
@@ -462,6 +467,7 @@ public class Client implements Runnable {
         return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
     }
 
+
     public String handleRefillShop(Message m){
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         for (String s: karten){
@@ -545,8 +551,7 @@ public class Client implements Runnable {
                     int newFigure = (int)(double) message.getMessageBody().getContent()[2];
                     int clientID = (int)(double) message.getMessageBody().getContent()[0];
                     String username = (String) message.getMessageBody().getContent()[1];
-                    if (ids.get(username) == null) {
-                        ids.put(username, clientID);
+                    if (username != null && !username.equals("null")) {
                         figuren[newFigure] = new Robot(clientID);
                         usernamesGui.add(clientID + "," + username);
                         figurenForGui.add(figureForGui);

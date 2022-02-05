@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Phase.BuyUpgrade;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
 import javafx.collections.FXCollections;
@@ -24,9 +25,9 @@ public class KI implements Runnable {
     private int ID;
     private static int countKI = 1;
     private ArrayList<BoardElement>[][] map;
-    private static Thread thread;
+    private Thread thread;
 
-    /*static {
+   /* static {
         try {
             KI ki = new KI();
             thread = new Thread(ki);
@@ -34,13 +35,13 @@ public class KI implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    } */
+    }*/
 
     private final BufferedReader bufferedReader;
     private final PrintWriter bufferedWriter;
 
     public String protocol;
-    public HashMap<String, Integer> ids = new HashMap<String, Integer>();
+    //public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public Robot[] figuren = new Robot[6];
     private String selectedMap;
@@ -55,7 +56,7 @@ public class KI implements Runnable {
      * @throws IOException            Throw this exception if the connection between server and client fails.
      */
     public KI() throws IOException {
-        SOCKET = new Socket("localhost", 1525);
+        SOCKET = new Socket("localhost", 1237);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
         isAi = true;
@@ -297,12 +298,9 @@ public class KI implements Runnable {
                     int clientID = (int)(double) message.getMessageBody().getContent()[0];
                     String username = (String) message.getMessageBody().getContent()[1];
                     if (clientID == this.ID) figurSelected = true;
-                    if (ids.get(username) == null) {
-                        ids.put(username, clientID);
-                        figuren[newFigure] = new Robot(clientID);
-                        Player newPlayer = new Player(clientID, username, newFigure);
-                        player.put(clientID, newPlayer);
-                    }
+                    figuren[newFigure] = new Robot(clientID);
+                    Player newPlayer = new Player(clientID, username, newFigure);
+                    player.put(clientID, newPlayer);
                     if (clientID == ID) setReady();
                 } else if(message.getMessageType().equals("PlayerStatus")){
                     boolean isReady = (boolean) message.getMessageBody().getContent()[1];
@@ -355,31 +353,47 @@ public class KI implements Runnable {
                     robot.setX(x);
                     robot.setY(y);
                 } else if (message.getMessageType().equals("PlayerTurning")){
-                    int ID = (int) (double) message.getMessageBody().getContent()[0];
-                    String direction = (String) message.getMessageBody().getContent()[1];
-                    Robot robot = figuren[player.get(ID).figur];
-                    switch (robot.getDirection()){
+                    try {
+                        int ID = (int) (double) message.getMessageBody().getContent()[0];
+                        String direction = (String) message.getMessageBody().getContent()[1];
+                        Robot robot = figuren[player.get(ID).figur];
+                    switch (robot.getDirection()) {
                         case "top":
-                            if (direction.equals("clockwise")){
+                            if (direction.equals("clockwise")) {
                                 robot.setDirection("right");
                             } else robot.setDirection("left");
                             break;
                         case "bottom":
-                            if (direction.equals("clockwise")){
+                            if (direction.equals("clockwise")) {
                                 robot.setDirection("left");
                             } else robot.setDirection("right");
                             break;
                         case "left":
-                            if (direction.equals("clockwise")){
+                            if (direction.equals("clockwise")) {
                                 robot.setDirection("top");
                             } else robot.setDirection("bottom");
                             break;
                         case "right":
-                            if (direction.equals("clockwise")){
+                            if (direction.equals("clockwise")) {
                                 robot.setDirection("bottom");
                             } else robot.setDirection("top");
                             break;
                     }
+                    } catch (Exception e){
+                        e.printStackTrace();
+                    }
+                } else if (message.getMessageType().equals("ExchangeShop")){
+                    BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
+                    buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+                } else if (message.getMessageType().equals("RefillShop")){
+                    BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
+                    buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+                } else if (message.getMessageType().equals("UpgradeBought")){
+                    BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
+                    buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
                 }
                 else {
                 }
@@ -394,13 +408,10 @@ public class KI implements Runnable {
         return figuren[player.get(ID).figur].getHandCards();
     }
 
-    public static void main(String[] args) {
-        try {
-            Thread t = new Thread(new KI());
-            t.start();
-        } catch (Exception e){
-
-        }
+    public static void main(String[] args) throws IOException {
+        KI ki = new KI();
+        Thread thread = new Thread(ki);
+        thread.start();
     }
 
 }
