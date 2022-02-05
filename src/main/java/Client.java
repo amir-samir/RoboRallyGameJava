@@ -68,6 +68,7 @@ public class Client implements Runnable {
     public ObservableList<Integer> figurenForGui;
     private int CubesZahl = 5;
     private RalleyLogger ralleyLogger = new RalleyLogger();
+    private String UpgradeCardName;
 
 
     /**
@@ -256,6 +257,10 @@ public class Client implements Runnable {
         BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
         buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
         bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+        Platform.runLater(() -> {
+         getAllInOneView().setImageForUpgradeCard(card);
+        });
+
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
@@ -917,6 +922,14 @@ public class Client implements Runnable {
 
     public ChooseCardsForSwap getChooseCardsForSwap(){
         return chooseCardsForSwap;
+    }
+
+    public void setUpgradeCardName(String name){
+        this.UpgradeCardName = name;
+    }
+
+    public String getUpgradeCardName(){
+        return UpgradeCardName;
     }
 
 }

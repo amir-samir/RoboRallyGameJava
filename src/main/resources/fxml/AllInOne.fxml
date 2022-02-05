@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="721.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllInOneView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllInOneView">
     <ComboBox fx:id="PrivateMessage" layoutX="461.0" layoutY="558.0" prefHeight="30.0" prefWidth="179.0" />
     <TextField fx:id="privateMsgInput" layoutX="461.0" layoutY="592.0" prefHeight="45.0" prefWidth="179.0" />
     <Button fx:id="sendPrivateMsg" layoutX="461.0" layoutY="644.0" mnemonicParsing="false" onAction="#sendPrivateMessage" prefHeight="19.0" prefWidth="179.0" text="SEND!Priavte" />
@@ -107,4 +107,5 @@
       <font>
          <Font name="System Bold" size="14.0" />
       </font></Label>
+   <ImageView fx:id="UpgradeCard" fitHeight="111.0" fitWidth="89.0" layoutX="816.0" layoutY="19.0" pickOnBounds="true" />
 </AnchorPane>

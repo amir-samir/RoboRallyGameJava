@@ -9,14 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Memory swap fertig und mit Client verbinden">
-      <change afterPath="$PROJECT_DIR$/log.txt.1.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log.txt.lck" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Searching Bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/jsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GetID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GetID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GetID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GetID.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +236,9 @@
       <workItem from="1643577047269" duration="1453000" />
       <workItem from="1643578526261" duration="2980000" />
       <workItem from="1643581896204" duration="2453000" />
-      <workItem from="1643896428814" duration="5084000" />
+      <workItem from="1643896428814" duration="8155000" />
+      <workItem from="1643916047805" duration="730000" />
+      <workItem from="1644063796467" duration="5742000" />
     </task>
     <task id="LOCAL-00018" summary="Support for SetStartingPoint">
       <created>1641650949015</created>
@@ -555,12 +562,12 @@
       <option name="project" value="LOCAL" />
       <updated>1643836188137</updated>
     </task>
-    <task id="LOCAL-00067" summary="Bugfix">
-      <created>1643484945660</created>
+    <task id="LOCAL-00067" summary="Searching Bugs">
+      <created>1643901698548</created>
       <option name="number" value="00067" />
       <option name="presentableId" value="LOCAL-00067" />
       <option name="project" value="LOCAL" />
-      <updated>1643484945660</updated>
+      <updated>1643901698548</updated>
     </task>
     <task id="LOCAL-00068" summary="Bugfix">
       <created>1643487060514</created>
@@ -576,7 +583,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643484982772</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
     <MESSAGE value="Bugfix: Multiple Starting Points" />
     <MESSAGE value="Started implementing ProgrammingPhase" />
     <MESSAGE value="Implemented message selectedCard" />
@@ -620,7 +626,8 @@
     <MESSAGE value="Logging" />
     <MESSAGE value="Bug Fix Jar File" />
     <MESSAGE value="Memory swap fertig und mit Client verbinden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Memory swap fertig und mit Client verbinden" />
+    <MESSAGE value="Searching Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Searching Bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -641,7 +648,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
           <line>140</line>
-          <properties class="Robot">
+          <properties class="Robot" method="mischen">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -656,10 +663,39 @@
           </properties>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>900</line>
+          <properties class="Game" method="checkConveyor">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
           <line>148</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>945</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>901</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>902</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>903</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
