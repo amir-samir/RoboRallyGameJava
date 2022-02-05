@@ -24,6 +24,8 @@ public class AllInOneView implements Initializable {
     List wallList = new ArrayList<>();
 
     @FXML
+    ImageView UpdateCard;
+    @FXML
     Label CubesText;
     @FXML
     ImageView DirectionOben;
@@ -165,6 +167,12 @@ public class AllInOneView implements Initializable {
     Image image98 = new Image("assets/Runtergreen.png");
 
 
+
+    // Upgrade Cards
+    Image AdminPrivilege = new Image("assets/AdminPrivilege.png");
+    Image RearLaser = new Image("assets/RearLaser.png");
+    Image MemorySwap = new Image("assets/MemorySwap.png");
+    Image SpamBlocker = new Image("assets/SpamBlocker.png");
 
     //Karten
     Image Karte = new Image("assets/Karte.png");
@@ -921,6 +929,32 @@ public class AllInOneView implements Initializable {
         stage.show();
         StageSaver.getStageSaver().setUpgradeCardsStage(stage);
         stage.setOnCloseRequest(e -> Platform.exit());
+    }
+
+    public void runChooseCardsForSwap() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Choose Cards");
+        Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCardsForSwap.fxml"));
+        Scene signInScene = new Scene(signIn);
+        stage.setScene(signInScene);
+        stage.show();
+        StageSaver.getStageSaver().setUpgradeCardsStageForSwap(stage);
+        stage.setOnCloseRequest(e -> Platform.exit());
+    }
+
+    public void setImageForUpgradeCard(String cardname){
+        switch (cardname){
+            case "AdminPrivilege" :
+                UpdateCard.setImage(AdminPrivilege);
+            case "RearLaser" :
+                UpdateCard.setImage(RearLaser);
+            case "MemorySwap" :
+                UpdateCard.setImage(MemorySwap);
+            case  "SpamBlocker" :
+                UpdateCard.setImage(SpamBlocker);
+            default:
+                UpdateCard.setImage(SpamBlocker);
+        }
     }
 
 }

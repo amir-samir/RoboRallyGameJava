@@ -6,6 +6,7 @@ public class StageSaver {
     private Stage chooseCardStage;
     private Stage chatViewStage;
     private Stage upgradeCardsStage;
+    private Stage upgradeCardsForSwap;
 
     private StageSaver(Stage firstStage) {
         this.currentStage = firstStage;
@@ -32,6 +33,12 @@ public class StageSaver {
     }
     public void setUpgradeCardsStage(Stage upgradeCardsStage1){
         this.upgradeCardsStage = upgradeCardsStage1;
+    }
+    public void setUpgradeCardsStageForSwap(Stage upgradeCardsStage1){
+        this.upgradeCardsForSwap = upgradeCardsStage1;
+    }
+    public Stage getUpgradeCardsForSwap(){
+        return this.upgradeCardsForSwap;
     }
     public Stage getChatViewStage(){
         return chatViewStage;

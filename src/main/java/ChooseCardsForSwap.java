@@ -1,10 +1,15 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ChooseCardsForSwap implements Initializable {
     @FXML
@@ -50,7 +55,18 @@ public class ChooseCardsForSwap implements Initializable {
     Image virus = new Image("assets/virus.png");
     Image worm = new Image("assets/worm.png");
 
+    boolean istSchonverschickt = false;
     int RegisterPlatz = 0;
+    String[] cards = new String[3];
+    int RegisterPlatzFor9 = 0;
+
+    @FXML
+    Label timerLabel;
+    int time = 30;
+
+    public ChooseCardsForSwap(){
+        Client.setChooseCardsForSwap(this);
+    }
 
 
     @Override
@@ -112,17 +128,280 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
-   /* public void ChooseCard1(){
-        if (RegisterPlatz < 3) {
-            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
-            Card1.setDisable(true);
+   public void ChooseCard1(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatzFor9);
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(0).getName());
-            nullCard[0] = true;
-            CardsNames[0] = SaveClients.client.getHandcards().get(0).getName();
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(0).getName();
+            RegisterPlatz++;
+            Card1.setDisable(true);
+            Card1.setVisible(false);
         }
         else {
-            SaveClients.client.printMessage("Dein Register ist voll!");
+            if (!istSchonverschickt){
+             SaveClients.client.returnCards(cards);
+             istSchonverschickt = true;
+            }
         }
-    } */
+    }
+
+    public void ChooseCard2(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(1).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(1).getName();
+            RegisterPlatz++;
+            Card2.setDisable(true);
+            Card2.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard3(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(2).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(2).getName();
+            RegisterPlatz++;
+            Card3.setDisable(true);
+            Card3.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard4(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(3).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(3).getName();
+            RegisterPlatz++;
+            Card4.setDisable(true);
+            Card4.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard5(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(4).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(4).getName();
+            RegisterPlatz++;
+            Card5.setDisable(true);
+            Card5.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard6(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(5).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(5).getName();
+            RegisterPlatz++;
+            Card6.setDisable(true);
+            Card6.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard7(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(6).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(6).getName();
+            RegisterPlatz++;
+            Card7.setDisable(true);
+            Card7.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard8(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(7).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(7).getName();
+            RegisterPlatz++;
+            Card8.setDisable(true);
+            Card8.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard9(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(8).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(8).getName();
+            RegisterPlatz++;
+            Card9.setDisable(true);
+            Card9.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard10(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(9).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(9).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(9).getName();
+            RegisterPlatz++;
+            Card10.setDisable(true);
+            Card10.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard11(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(10).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(10).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(10).getName();
+            RegisterPlatz++;
+            Card11.setDisable(true);
+            Card11.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void ChooseCard12(){
+        if (istSchonverschickt && RegisterPlatzFor9 < 5){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(11).getName(), RegisterPlatzFor9);
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(11).getName());
+            RegisterPlatzFor9++;
+        }
+        if (RegisterPlatz < 3) {
+            //SaveClients.client.returnCards(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatz);
+            cards[RegisterPlatz] = SaveClients.client.getHandcards().get(11).getName();
+            RegisterPlatz++;
+            Card12.setDisable(true);
+            Card12.setVisible(false);
+        }
+        else {
+            if (!istSchonverschickt){
+                SaveClients.client.returnCards(cards);
+                istSchonverschickt = true;
+            }
+        }
+    }
+
+    public void startTimer() {
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+
+                if(time > 0)
+                {
+                    Platform.runLater(() -> timerLabel.setText(Integer.toString(time)));
+                    time--;
+                    if(time < 6)
+                    {
+                        timerLabel.setTextFill(Color.web("red"));
+                    }
+                }
+                else
+                    timer.cancel();
+            }
+        }, 1000,1000);
+        time = 30;
+        timerLabel.setText("");
+        timerLabel.setTextFill(Color.web("black"));
+    }
 
 }

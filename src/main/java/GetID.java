@@ -47,7 +47,6 @@ public class GetID extends Application {
         Scene scene = new Scene(loader.load());
         Stage stage1 = new Stage();
         stage1.setScene(scene);
-        scene.getStylesheets().add("fxml/SignInStyle.css");
 
         FirstView chatView = loader.getController();
         //chatView.setClient(client1);
