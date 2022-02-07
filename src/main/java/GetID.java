@@ -16,9 +16,6 @@ public class GetID extends Application {
     public Client client2;
     public Stage stageGetID;
 
-
-
-
     public static void main(String[] args){
 
         Application.launch(args);

@@ -51,9 +51,6 @@ Client client1;
         //game.Client client = new game.Client(getUsername());
         //clientHandler.getUsername();
            stage.setTitle(getUsername());
-
-
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/ChatView.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
