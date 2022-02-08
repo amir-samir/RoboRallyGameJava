@@ -107,5 +107,5 @@
       <font>
          <Font name="System Bold" size="14.0" />
       </font></Label>
-   <ImageView fx:id="UpgradeCard" fitHeight="111.0" fitWidth="89.0" layoutX="816.0" layoutY="19.0" pickOnBounds="true" />
+   <ImageView fx:id="UpgradeCard" fitHeight="111.0" fitWidth="89.0" layoutX="816.0" layoutY="19.0" onMouseClicked="#upgradeCardPressed" pickOnBounds="true" />
 </AnchorPane>

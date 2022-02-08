@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -244,10 +245,9 @@ public class FirstView implements Initializable {
 
    public void TwinkyRoboterPressed(){
 
-      List<Integer> figurenListe = Server.getChoosenBots();
       readFile();
       if (choosenBots.contains(48)){
-         System.out.println("Figur ist vergeben");
+         Warning();
       }
       else {
          figure = 0;
@@ -269,25 +269,32 @@ public class FirstView implements Initializable {
       }
    }
    public void SmashRoboterPressed(){
-      figure = 1;
-      smashBotImageView.setDisable(true);
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
-      hulkBotImageView.setDisable(true);
-      hulkBotImageView.setVisible(false);
-      zoomBotImageView.setDisable(true);
-      zoomBotImageView.setVisible(false);
-      spinBotImageView.setDisable(true);
-      spinBotImageView.setVisible(false);
-      hammerBotImageView.setDisable(true);
-      hammerBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(1);
-      SaveClients.ausgewaehlteRoboter[1] = 1;
+      readFile();
+      if (choosenBots.contains(49)){
+         Warning();
+      }
+      else {
+         figure = 1;
+         writeFile(figure);
+         smashBotImageView.setDisable(true);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(1);
+         SaveClients.ausgewaehlteRoboter[1] = 1;
+      }
    }
    public void HulkRoboterPressed(){
       readFile();
       if (choosenBots.contains(50)){
-         System.out.println("Figur ist vergeben");
+         Warning();
       }
       else {
          figure = 2;
@@ -307,53 +314,71 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[2] = 2;
       }
    }
-   public void ZoomRoboterPressed(){
-      figure = 3;
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
-      smashBotImageView.setDisable(true);
-      smashBotImageView.setVisible(false);
-      hulkBotImageView.setDisable(true);
-      hulkBotImageView.setVisible(false);
-      zoomBotImageView.setDisable(true);
-      spinBotImageView.setDisable(true);
-      spinBotImageView.setVisible(false);
-      hammerBotImageView.setDisable(true);
-      hammerBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(3);
-      SaveClients.ausgewaehlteRoboter[3] = 3;
+   public void ZoomRoboterPressed() {
+      readFile();
+      if (choosenBots.contains(51)) {
+         Warning();
+      } else {
+         figure = 3;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(3);
+         SaveClients.ausgewaehlteRoboter[3] = 3;
+      }
    }
-   public void SpinRoboterPressed(){
-      figure = 4;
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
-      smashBotImageView.setDisable(true);
-      smashBotImageView.setVisible(false);
-      hulkBotImageView.setDisable(true);
-      hulkBotImageView.setVisible(false);
-      zoomBotImageView.setDisable(true);
-      zoomBotImageView.setVisible(false);
-      spinBotImageView.setDisable(true);
-      hammerBotImageView.setDisable(true);
-      hammerBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(4);
-      SaveClients.ausgewaehlteRoboter[4] = 4;
+   public void SpinRoboterPressed() {
+      readFile();
+      if (choosenBots.contains(52)) {
+         Warning();
+      } else {
+         figure = 4;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(4);
+         SaveClients.ausgewaehlteRoboter[4] = 4;
+      }
    }
-   public void HammerRoboterPressed(){
-      figure = 5;
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
-      smashBotImageView.setDisable(true);
-      smashBotImageView.setVisible(false);
-      hulkBotImageView.setDisable(true);
-      zoomBotImageView.setDisable(true);
-      zoomBotImageView.setVisible(false);
-      spinBotImageView.setDisable(true);
-      spinBotImageView.setVisible(false);
-      hammerBotImageView.setDisable(true);
-      hammerBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(5);
-      SaveClients.ausgewaehlteRoboter[5] = 5;
+   public void HammerRoboterPressed() {
+      readFile();
+      if (choosenBots.contains(53)) {
+         Warning();
+      } else {
+         figure = 5;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(5);
+         SaveClients.ausgewaehlteRoboter[5] = 5;
+      }
    }
    public int getFigure(){
       return figure;
@@ -388,8 +413,7 @@ public class FirstView implements Initializable {
             Stage stage = (Stage) signInButton.getScene().getWindow();
             viewModel.takeUsername(stage);
          } else {
-            errorLabel.setTextFill(Paint.valueOf("red"));
-            errorLabel.setText("Bitte wähle ein Roboter und ein Username");
+            WarningUserName();
          }
 
       } catch (IOException e) {
@@ -422,6 +446,23 @@ public class FirstView implements Initializable {
                return;
          }
       }
+   }
+
+   @FXML
+   private void Warning(){
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Fehler bei der Roboter Auswahl");
+      alert.setContentText("Wähle bitte einen anderen Roboter aus.");
+      alert.setHeaderText("Roboter ist vergeben!");
+      alert.showAndWait();
+   }
+   @FXML
+   private void WarningUserName(){
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Nicht alle Pflichtfelder wurden ausgefüllt");
+      alert.setContentText("Bitte wähle einen Roboter und einen Username.");
+      alert.setHeaderText("Roboter oder Username fehlt");
+      alert.showAndWait();
    }
 
 

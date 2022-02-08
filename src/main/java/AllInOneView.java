@@ -23,8 +23,10 @@ public class AllInOneView implements Initializable {
     List<HashMap<String,Object>> laserList = new ArrayList<HashMap<String,Object>>();
     List wallList = new ArrayList<>();
 
+    Boolean adminPrivaPressed = false;
+
     @FXML
-    ImageView UpdateCard;
+    ImageView UpgradeCard;
     @FXML
     Label CubesText;
     @FXML
@@ -848,9 +850,14 @@ public class AllInOneView implements Initializable {
     }
 
     public void ChooseCard1(){
-        Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
-        isFilled[0] = true;
-        SaveClients.client.setCardOfGui("");
+        if (!adminPrivaPressed) {
+            Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            isFilled[0] = true;
+            SaveClients.client.setCardOfGui("");
+        }
+        else {
+          // Function in Client fehlt
+        }
     }
     public void ChooseCard2(){
         Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
@@ -945,15 +952,25 @@ public class AllInOneView implements Initializable {
     public void setImageForUpgradeCard(String cardname){
         switch (cardname){
             case "AdminPrivilege" :
-                UpdateCard.setImage(AdminPrivilege);
+               UpgradeCard.setImage(AdminPrivilege);
+               break;
             case "RearLaser" :
-                UpdateCard.setImage(RearLaser);
+                UpgradeCard.setImage(RearLaser);
+                break;
             case "MemorySwap" :
-                UpdateCard.setImage(MemorySwap);
+                UpgradeCard.setImage(MemorySwap);
+                break;
             case  "SpamBlocker" :
-                UpdateCard.setImage(SpamBlocker);
+                UpgradeCard.setImage(SpamBlocker);
+                break;
             default:
-                UpdateCard.setImage(SpamBlocker);
+                UpgradeCard.setImage(SpamBlocker);
+        }
+    }
+
+    public void upgradeCardPressed(){
+        if (SaveClients.client.getUpgradeCardName().equals("AdminPrivilege")){
+            adminPrivaPressed = true;
         }
     }
 

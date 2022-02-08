@@ -140,7 +140,7 @@ public class ChatView {
         try {
             Stage stage = new Stage();
             StageSaver.getStageSaver().setChooseCardStage(stage);
-            stage.setTitle("Sign In");
+            stage.setTitle(SaveClients.client.getTitleUserName());
             Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCards.fxml"));
             Scene signInScene = new Scene(signIn);
             stage.setScene(signInScene);
@@ -160,7 +160,6 @@ public class ChatView {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SelectMap.fxml"));
         Scene scene = new Scene(loader.load());
         stage1.setScene(scene);
-        scene.getStylesheets().add("SignInStyle.css");
         stage1.show();
 
         //Close if Bye
@@ -204,7 +203,7 @@ public class ChatView {
     }
     public void runAllInOne() throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Sign In");
+        stage.setTitle(SaveClients.client.getTitleUserName());
         Parent signIn = FXMLLoader.load(getClass().getResource("fxml/AllInOne.fxml"));
         Scene signInScene = new Scene(signIn);
         stage.setScene(signInScene);
