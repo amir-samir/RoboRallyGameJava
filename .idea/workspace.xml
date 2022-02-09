@@ -9,8 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="updates">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="New Branch">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UpgradeCardsConnectingToClient" />
+        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -188,11 +201,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="Application.KI" />
-        <item itemvalue="Application.GetID" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -238,13 +251,7 @@
       <workItem from="1644063796467" duration="6412000" />
       <workItem from="1644237281109" duration="7849000" />
       <workItem from="1644318449449" duration="296000" />
-    </task>
-    <task id="LOCAL-00019" summary="Changes by Amir">
-      <created>1641650969450</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1641650969450</updated>
+      <workItem from="1644406025254" duration="8850000" />
     </task>
     <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
       <created>1641652292871</created>
@@ -582,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644318637913</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="New Branch">
+      <created>1644406302542</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1644406302543</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +615,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented message selectedCard" />
     <MESSAGE value="Improved programmierPhase" />
     <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
@@ -626,7 +639,8 @@
     <MESSAGE value="Searching Bugs" />
     <MESSAGE value="Adminprivilage" />
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="New Branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

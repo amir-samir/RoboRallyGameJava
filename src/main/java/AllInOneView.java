@@ -22,11 +22,23 @@ public class AllInOneView implements Initializable {
     Boolean[] isFilled = new Boolean[5];
     List<HashMap<String,Object>> laserList = new ArrayList<HashMap<String,Object>>();
     List wallList = new ArrayList<>();
+    Boolean[] upgradeCardsFilled = new Boolean[3];
+
 
     Boolean adminPrivaPressed = false;
 
     @FXML
-    ImageView UpgradeCard;
+    Label passivCardLabel;
+    @FXML
+    Label temporCardsLabel;
+    @FXML
+    ImageView UpgradeCard1;
+    @FXML
+    ImageView UpgradeCard2;
+    @FXML
+    ImageView UpgradeCard3;
+    @FXML
+    ImageView UpgradeCard4;
     @FXML
     Label CubesText;
     @FXML
@@ -424,6 +436,7 @@ public class AllInOneView implements Initializable {
         DirectionOben.setVisible(false);
         DirectionUnten.setVisible(false);
         Arrays.fill(isFilled,false);
+        Arrays.fill(upgradeCardsFilled,false);
         setDefaultMap();
         Card1.setImage(Karte);
         Card2.setImage(Karte);
@@ -856,28 +869,54 @@ public class AllInOneView implements Initializable {
             SaveClients.client.setCardOfGui("");
         }
         else {
-          // Function in Client fehlt
+          SaveClients.client.chooseRegister(0);
+            adminPrivaPressed = false;
         }
     }
     public void ChooseCard2(){
+        if (!adminPrivaPressed){
         Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
         isFilled[1] = true;
         SaveClients.client.setCardOfGui("");
+        }
+        else {
+            SaveClients.client.chooseRegister(1);
+            adminPrivaPressed = false;
+        }
+
     }
     public void ChooseCard3(){
-        Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
-        isFilled[2] = true;
-        SaveClients.client.setCardOfGui("");
+        if (!adminPrivaPressed) {
+            Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            isFilled[2] = true;
+            SaveClients.client.setCardOfGui("");
+        }
+        else {
+            SaveClients.client.chooseRegister(2);
+            adminPrivaPressed = false;
+        }
     }
     public void ChooseCard4(){
-        Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
-        isFilled[3] = true;
-        SaveClients.client.setCardOfGui("");
+        if (!adminPrivaPressed) {
+            Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            isFilled[3] = true;
+            SaveClients.client.setCardOfGui("");
+        }
+        else {
+            SaveClients.client.chooseRegister(3);
+            adminPrivaPressed = false;
+        }
     }
     public void ChooseCard5(){
-        Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
-        isFilled[4] = true;
-        SaveClients.client.setCardOfGui("");
+        if (!adminPrivaPressed) {
+            Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            isFilled[4] = true;
+            SaveClients.client.setCardOfGui("");
+        }
+        else {
+            SaveClients.client.chooseRegister(4);
+            adminPrivaPressed = false;
+        }
     }
     public void RunMapNew() throws Exception{
         Stage stage = new Stage();
@@ -952,19 +991,48 @@ public class AllInOneView implements Initializable {
     public void setImageForUpgradeCard(String cardname){
         switch (cardname){
             case "AdminPrivilege" :
-               UpgradeCard.setImage(AdminPrivilege);
+                if (!upgradeCardsFilled[0]) {
+                    UpgradeCard1.setImage(AdminPrivilege);
+                    upgradeCardsFilled[0] = true;
+                }
+                else {
+                    UpgradeCard2.setImage(AdminPrivilege);
+                    upgradeCardsFilled[1] = true;
+                }
                break;
             case "RearLaser" :
-                UpgradeCard.setImage(RearLaser);
+                if (!upgradeCardsFilled[0]){
+                    UpgradeCard1.setImage(RearLaser);
+                    upgradeCardsFilled[0] = true;
+                }
+                else {
+                    UpgradeCard2.setImage(RearLaser);
+                    upgradeCardsFilled[1] = true;
+                }
+
                 break;
             case "MemorySwap" :
-                UpgradeCard.setImage(MemorySwap);
+                if (!upgradeCardsFilled[2]) {
+                    UpgradeCard3.setImage(MemorySwap);
+                    upgradeCardsFilled[2] = true;
+                }
+                else {
+                    UpgradeCard4.setImage(MemorySwap);
+                    upgradeCardsFilled[3] = true;
+                }
                 break;
             case  "SpamBlocker" :
-                UpgradeCard.setImage(SpamBlocker);
+                if (!upgradeCardsFilled[2]){
+                    UpgradeCard3.setImage(SpamBlocker);
+                    upgradeCardsFilled[2] = true;
+                }
+                else {
+                    UpgradeCard4.setImage(SpamBlocker);
+                    upgradeCardsFilled[3] = true;
+                }
                 break;
             default:
-                UpgradeCard.setImage(SpamBlocker);
+                UpgradeCard1.setImage(SpamBlocker);
         }
     }
 

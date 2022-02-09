@@ -21,9 +21,7 @@ import java.io.IOException;
 
 
 public class ChatView {
-    @FXML
-    Pane panetry;
-    // Chat
+
     @FXML
     private AnchorPane rootPaneChat;
     @FXML
@@ -34,8 +32,6 @@ public class ChatView {
     private TextField writeField;
     @FXML
     private Button sendButton;
-    @FXML
-    private Button joinGame;
     @FXML
     private Button startGame;
     @FXML
@@ -86,16 +82,9 @@ public class ChatView {
         } );
         writeField.textProperty().bindBidirectional(viewModel.messageProperty());
         sendButton.defaultButtonProperty().bindBidirectional(viewModel.sendButtonProperty());
-        //joinGame.defaultButtonProperty().bindBidirectional(viewModel.joinGameProperty());
         startGame.defaultButtonProperty().bindBidirectional(viewModel.startGameProperty());
-        //createRoomGame.defaultButtonProperty().bindBidirectional(viewModel.createRoomGameProperty());
-        //ObservableList idsNamesList = (ObservableList) game.Client.ids;
-        //PrivateMessage.setItems(viewModel.getClient().usernamesGui);
-        // usernamesUpdated = game.Client.getUsernames();
         PrivateMessage.setItems(clientnew.usernamesGui);
         privateMsgInput.textProperty().bindBidirectional(viewModel.privateMessageProperty());
-
-        //PrivateMessage.getSelectionModel().selectFirst();
 
 
     }
@@ -111,24 +100,12 @@ public class ChatView {
         System.out.println(privateMsgInput.getText());
 
     }
-    public void joinGame() {
-        viewModel.joiningGame();
-        joinGame.setDisable(true);
-        System.out.println(clientnew.usernamesGui);
 
-
-    }
     public void startGame() {
         System.out.println(PrivateMessage);
         viewModel.startingGame();
     }
 
-    public void exitGame() {
-        viewModel.exitingGame();
-    }
-    public void createRoomGame() throws IOException {
-        viewModel.createRoomGame();
-    }
 
 
     public void sendMessage() {
@@ -151,9 +128,6 @@ public class ChatView {
         }
     }
 
-    public void CallSelectMap() throws IOException {
-        selectMap();
-    }
     public void selectMap() throws IOException {
         Stage stage1 = new Stage();
         StageSaver.getStageSaver().setStageSaver(stage1);
@@ -162,9 +136,7 @@ public class ChatView {
         stage1.setScene(scene);
         stage1.show();
 
-        //Close if Bye
         stage1.setOnCloseRequest(e -> {
-            //clientHandler.writer.equals("bye");
             stage1.close();
         });
     }
