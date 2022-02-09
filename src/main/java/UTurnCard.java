@@ -26,7 +26,7 @@ public class UTurnCard extends Cards {
         }
 
         PlayerTurning playerTurning = new PlayerTurning(robot.getGamerID(), "clockwise");
-        playerTurning.getMessageBody().setKeys(new String[]{"direction"});
+        playerTurning.getMessageBody().setKeys(new String[]{"clientID", "direction"});
         server.sendMessageForAllUsers(playerTurning);
         server.sendMessageForAllUsers(playerTurning);
     }

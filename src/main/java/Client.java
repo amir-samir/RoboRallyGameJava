@@ -261,12 +261,6 @@ public class Client implements Runnable {
         BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
         buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
         bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
-        if (isBuying) {
-            Platform.runLater(() -> {
-                getAllInOneView().setImageForUpgradeCard(card);
-            });
-        }
-
     }
 
     public void chooseRegister(int register){
@@ -522,6 +516,9 @@ public class Client implements Runnable {
         String card = (String) m.getMessageBody().getContent()[1];
         String s;
         if (clientID == this.ID){
+            Platform.runLater(() -> {
+                getAllInOneView().setImageForUpgradeCard(card);
+            });
             s = "Du hast folgende Karte gekauft: " + card;
         } else s = player.get(clientID).name + " (" + clientID + ") hat folgende Karte gekauft: " + card;
         return s;
