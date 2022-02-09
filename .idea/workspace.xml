@@ -9,8 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix, Improved AI">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Improved AI">
+      <change afterPath="$PROJECT_DIR$/log.txt.1.lck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log.txt.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Spielwiese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spielwiese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +123,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.KI">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="innige-irrweg-hp" />
@@ -182,9 +192,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.KI" />
         <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
         <item itemvalue="Application.RalleyLogger" />
       </list>
@@ -234,14 +244,7 @@
       <workItem from="1644066529004" duration="8542000" />
       <workItem from="1644398868710" duration="952000" />
       <workItem from="1644419282488" duration="935000" />
-      <workItem from="1644431471457" duration="2572000" />
-    </task>
-    <task id="LOCAL-00030" summary="Dairen, Amir Cards">
-      <created>1641753701663</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1641753701663</updated>
+      <workItem from="1644431471457" duration="14843000" />
     </task>
     <task id="LOCAL-00031" summary="Dairen, Amir Cards">
       <created>1641753782313</created>
@@ -579,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644433928052</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Improved AI">
+      <created>1644434235225</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1644434235225</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +608,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
     <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
     <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
     <MESSAGE value="Bug Fix Gui" />
@@ -623,7 +632,8 @@
     <MESSAGE value="Merge:&#10;- Bugfix" />
     <MESSAGE value="Bugfix:&#10;- ConnectionUpdate: Remove" />
     <MESSAGE value="Bugfix, Improved AI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix, Improved AI" />
+    <MESSAGE value="Improved AI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved AI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -634,7 +644,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>120</line>
+          <line>122</line>
           <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -649,6 +659,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
+          <line>18</line>
+          <properties class="Spielwiese" method="simulate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
+          <line>85</line>
+          <properties class="Spielwiese" method="manageCard">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>

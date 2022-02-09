@@ -349,6 +349,7 @@ public class Client implements Runnable {
                                 break;
                             case "ConveyorBelt":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                ArrayList<BoardElement> neu = new ArrayList<>();
                                 map[y][x].add(new ConveyorBelt((String) typ.get("isOnBoard"), orientations, (int) (double) typ.get("speed")));
                                 break;
                             case "PushPanel":

@@ -20,6 +20,7 @@ public class Robot {
     private boolean ableToChooseDamageCard;
     private boolean ableToReturnCard;
     private boolean isDead;
+    private boolean receivedPunishment;
     private int energyCube;
     private int collectedCheckpoints;
     private int startPointX;
@@ -37,6 +38,7 @@ public class Robot {
         ableToChooseDamageCard = false;
         ableToReturnCard = false;
         isDead = false;
+        receivedPunishment = false;
         energyCube = 5;
         collectedCheckpoints = -1;
 
@@ -260,6 +262,10 @@ public class Robot {
         this.startPointY = startPointY;
     }
 
+    public void setReceivedPunishment(boolean receivedPunishment) {
+        this.receivedPunishment = receivedPunishment;
+    }
+
     public void setAbleToChooseRestartDirection(boolean ableToChooseRestartDirection) {
         this.ableToChooseRestartDirection = ableToChooseRestartDirection;
     }
@@ -338,5 +344,9 @@ public class Robot {
 
     public boolean isAbleToReturnCard() {
         return ableToReturnCard;
+    }
+
+    public boolean isReceivedPunishment() {
+        return receivedPunishment;
     }
 }

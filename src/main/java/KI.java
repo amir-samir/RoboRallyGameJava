@@ -235,8 +235,7 @@ public class KI implements Runnable {
 
     public void playCards(ArrayList<String> list){
         Spielwiese spielwiese = new Spielwiese(this.map, list);
-        spielwiese.simulate(figuren[player.get(this.ID).figur]);
-        Collections.shuffle(list);
+        list = spielwiese.simulate(figuren[player.get(this.ID).figur], 0);
         try {
             TimeUnit.SECONDS.sleep(2);
             sendCardToRegister(list.get(0), 0);
@@ -468,14 +467,23 @@ public class KI implements Runnable {
                     BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
                     buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
                     bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+                    BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
+                    buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
                 } else if (message.getMessageType().equals("RefillShop")){
                     BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
                     buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
                     bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+                    BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
+                    buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
                 } else if (message.getMessageType().equals("UpgradeBought")){
                     BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
                     buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
                     bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
+                    BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
+                    buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
                 }
                 else {
                 }
