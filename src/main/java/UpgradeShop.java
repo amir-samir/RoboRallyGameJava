@@ -17,6 +17,16 @@ public class UpgradeShop {
         return listWithCards;
     }
 
+    public boolean remove(UpgradeCards card){
+        for (int i = 0; i < upgradeCards.length; i++){
+            if (upgradeCards[i].getName() == card.getName()){
+                upgradeCards[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean isSomebodyBoughtOne() {
         return somebodyBoughtOne;
     }

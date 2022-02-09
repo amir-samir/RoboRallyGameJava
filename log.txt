@@ -1,138 +1,281 @@
 INFO: { "messageType": "HelloClient", "messageBody": { "protocol": "Version 1.0" }}
 INFO: Server wurde gestartet.
-INFO: { "messageType": "PlayerAdded", "messageBody": { "clientID": 2000, "name": "Oma Manfred", "figure": 2 }}
+INFO: { "messageType": "PlayerAdded", "messageBody": { "clientID": 2000, "name": "est", "figure": 3 }}
 INFO: { "messageType": "HelloClient", "messageBody": { "protocol": "Version 1.0" }}
 INFO: Server wurde gestartet.
-INFO: { "messageType": "PlayerAdded", "messageBody": { "clientID": 2001, "name": "Opa G", "figure": 5 }}
+INFO: { "messageType": "PlayerAdded", "messageBody": { "clientID": 2001, "name": "BummBot", "figure": 0 }}
+INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2001, "ready": true }}
 INFO: { "messageType": "SelectMap", "messageBody": { "availableMaps": ["DizzyHighway","ExtraCrispy","LostBearings","DeathTrap"] }}
 INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2000, "ready": true }}
 INFO: { "messageType": "MapSelected", "messageBody": { "map": "DizzyHighway" }}
-INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2001, "ready": true }}
 INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
 INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 0 }}
 INFO: {"messageType":"GameStarted","messageBody":{"gameMap":[[[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"StartPoint"}],[{"orientations":["right"],"isOnBoard":"Start A","type":"Antenna"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"StartPoint"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}]],[[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"StartPoint"}],[{"orientations":["top"],"isOnBoard":"Start A","type":"Wall"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"StartPoint"}],[{"isOnBoard":"Start A","type":"StartPoint"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"orientations":["bottom"],"isOnBoard":"Start A","type":"Wall"}],[{"isOnBoard":"Start A","type":"StartPoint"}],[{"isOnBoard":"Start A","type":"Empty"}]],[[{"speed":1,"orientations":["right","left"],"isOnBoard":"Start A","type":"ConveyorBelt"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"orientations":["right"],"isOnBoard":"Start A","type":"Wall"}],[{"orientations":["right"],"isOnBoard":"Start A","type":"Wall"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"isOnBoard":"Start A","type":"Empty"}],[{"speed":1,"orientations":["right","left"],"isOnBoard":"Start A","type":"ConveyorBelt"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"count":1,"isOnBoard":"5B","type":"EnergySpace"}]],[[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","top","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["bottom","left","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["right","left","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}]],[[{"speed":2,"orientations":["bottom","top"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["left","top","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"count":1,"isOnBoard":"5B","type":"EnergySpace"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}],[{"orientations":["top"],"isOnBoard":"5B","type":"Wall"}],[{"count":1,"orientations":["top"],"isOnBoard":"5B","type":"Laser"},{"orientations":["bottom"],"isOnBoard":"5B","type":"Wall"}],[{"isOnBoard":"5B","type":"Empty"}],[{"orientations":["left"],"isOnBoard":"5B","type":"Wall"}],[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"},{"orientations":["bottom"],"isOnBoard":"DizzyHighway","type":"RestartPoint"}],[{"isOnBoard":"5B","type":"Empty"}],[{"count":1,"isOnBoard":"5B","type":"EnergySpace"}],[{"count":1,"orientations":["left"],"isOnBoard":"5B","type":"Laser"},{"orientations":["right"],"isOnBoard":"5B","type":"Wall"}],[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}],[{"count":1,"orientations":["right"],"isOnBoard":"5B","type":"Laser"},{"orientations":["left"],"isOnBoard":"5B","type":"Wall"}],[{"count":1,"isOnBoard":"5B","type":"EnergySpace"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}],[{"orientations":["right"],"isOnBoard":"5B","type":"Wall"}],[{"isOnBoard":"5B","type":"Empty"}],[{"count":1,"orientations":["bottom"],"isOnBoard":"5B","type":"Laser"},{"orientations":["top"],"isOnBoard":"5B","type":"Wall"}],[{"orientations":["bottom"],"isOnBoard":"5B","type":"Wall"}],[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["right","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"count":1,"isOnBoard":"5B","type":"EnergySpace"}],[{"speed":2,"orientations":["right","bottom","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}]],[[{"isOnBoard":"5B","type":"Empty"}],[{"speed":2,"orientations":["left","right","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","right","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom","left"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["top","bottom"],"isOnBoard":"5B","type":"ConveyorBelt"}]],[[{"count":1,"isOnBoard":"5B","type":"EnergySpace"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"speed":2,"orientations":["left","right"],"isOnBoard":"5B","type":"ConveyorBelt"}],[{"isOnBoard":"5B","type":"Empty"},{"order":0,"isOnBoard":"DizzyHighway","type":"CheckPoint"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}],[{"isOnBoard":"5B","type":"Empty"}]]]}}
 INFO: { "messageType": "StartingPointTaken", "messageBody": { "x": 8, "y": 1, "clientID": 2000 }}
 INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
 INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 0 }}
-INFO: { "messageType": "StartingPointTaken", "messageBody": { "x": 1, "y": 1, "clientID": 2001 }}
+INFO: { "messageType": "StartingPointTaken", "messageBody": { "x": 5, "y": 1, "clientID": 2001 }}
 INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
-INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["RearLaser","MemorySwap"] }}
+INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["SpamBlocker","MemorySwap"] }}
 INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
 INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}
 INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
-INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveII","TurnLeft","MoveI","MoveI","MoveII","BackUp","TurnRight","Again","PowerUp"] }}
-INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
-INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["TurnLeft","MoveI","TurnRight","MoveI","TurnLeft","BackUp","MoveI","TurnLeft","PowerUp"] }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveI","MoveI","TurnLeft","TurnRight","MoveI","TurnRight","MoveII","BackUp","TurnLeft"] }}
 INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["TurnRight","MoveIII","TurnLeft","BackUp","UTurn","TurnRight","Again","MoveI","MoveII"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 0, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 4, "filled": true }}
+INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "TimerStarted", "messageBody": { }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 4, "filled": true }}
+INFO: { "messageType": "ReceivedChat", "messageBody": { "message": "Dein Register ist voll!", "from": 2000, "isPrivate": false }}
+INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [] }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"MoveIII"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 2 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 3 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 4 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 5 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 6 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveI"},{"clientID":2000,"card":"MoveII"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 7 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 8 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 9 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 10 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"BackUp"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 5, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 11 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 7, "y": 11 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 6, "y": 11 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveI"},{"clientID":2000,"card":"BackUp"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 6, "y": 10 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnRight"},{"clientID":2000,"card":"TurnRight"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
+INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["AdminPrivilege","RearLaser"] }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}
+INFO: { "messageType": "UpgradeBought", "messageBody": { "clientID": 2000, "card": "RearLaser" }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Der Kauf konnte nicht getätigt werden" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["Again","MoveII","PowerUp","MoveI","TurnLeft","MoveIII","UTurn","MoveI","Again"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["Again","PowerUp","MoveI","TurnLeft","MoveI","MoveI","MoveII","TurnRight","MoveII"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 4, "filled": true }}
+INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "TimerStarted", "messageBody": { }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 4, "filled": true }}
+INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [] }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveII"},{"clientID":2000,"card":"TurnRight"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 2 }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveI"},{"clientID":2000,"card":"Again"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"MoveII"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 5, "y": 10 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 4, "y": 10 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"Again"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 10 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveIII"},{"clientID":2000,"card":"PowerUp"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 1 }}
+INFO: { "messageType": "Energy", "messageBody": { "clientID": 2000, "count": 4, "source": "PowerUpCard" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
+INFO: { "messageType": "RefillShop", "messageBody": { "cards": ["MemorySwap"] }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Der Kauf konnte nicht getätigt werden" }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Der Kauf konnte nicht getätigt werden" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["TurnRight","MoveII","Again","TurnRight","MoveII","TurnLeft","MoveII","BackUp","MoveI"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveI","TurnLeft","TurnRight","Again","MoveI","PowerUp","TurnLeft","TurnRight","MoveIII"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 4, "filled": true }}
+INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "TimerStarted", "messageBody": { }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 1, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 2, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 3, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 4, "filled": true }}
-INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "ReceivedChat", "messageBody": { "message": "Dein Register ist voll!", "from": 2000, "isPrivate": false }}
+INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [] }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnRight"},{"clientID":2000,"card":"TurnRight"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"BackUp"},{"clientID":2000,"card":"MoveIII"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 5, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 11 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 12 }}
+INFO: { "messageType": "DrawDamage", "messageBody": { "clientID": 2000, "cards": ["Spam","Spam"] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 7 }}
+INFO: { "messageType": "Reboot", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveII"},{"clientID":2000,"card":"PowerUp"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 3, "y": 1 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"Again"},{"clientID":2000,"card":"TurnLeft"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 2, "y": 1 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"TurnLeft"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
+INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["SpamBlocker","AdminPrivilege"] }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveI","Again","PowerUp","TurnLeft","UTurn","TurnLeft","MoveI","MoveI","MoveIII"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveII","TurnLeft","UTurn","MoveII","Again","BackUp","MoveI","MoveI","TurnRight"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 4, "filled": true }}
+INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2001 }}
 INFO: { "messageType": "TimerStarted", "messageBody": { }}
+INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [2000] }}
+INFO: { "messageType": "CardsYouGotNow", "messageBody": { "cards": ["MoveII","MoveII","MoveI","MoveI","MoveI"] }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"MoveII"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 7 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 7 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 6 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 5 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveI"},{"clientID":2000,"card":"MoveII"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 3, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 0, "y": 5 }}
+INFO: { "messageType": "DrawDamage", "messageBody": { "clientID": 2000, "cards": ["Spam","Spam"] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 7 }}
+INFO: { "messageType": "Reboot", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveI"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 1 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveIII"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 5, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 6, "y": 1 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 1 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
+INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["SpamBlocker","RearLaser"] }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Der Kauf konnte nicht getätigt werden" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveI","TurnRight","UTurn","MoveII","BackUp","MoveI","TurnRight","TurnRight","TurnLeft"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveII","TurnRight","MoveI","Again","MoveI","MoveII","BackUp","PowerUp","MoveII"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 0, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 1, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 2, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 3, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 4, "filled": true }}
-INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [] }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"MoveII"},{"clientID":2001,"card":"MoveI"}] }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 1, "y": 2 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 2 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 3 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 4 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 5 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"MoveII"},{"clientID":2001,"card":"MoveI"}] }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 1, "y": 3 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 6 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 7 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 8 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 9 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"PowerUp"},{"clientID":2001,"card":"MoveI"}] }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 1, "y": 4 }}
-INFO: { "messageType": "Energy", "messageBody": { "clientID": 2000, "count": 6, "source": "PowerUpCard" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 10 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 8, "y": 11 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 2, "y": 4 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 3, "y": 4 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"Again"},{"clientID":2001,"card":"TurnLeft"}] }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Energy", "messageBody": { "clientID": 2000, "count": 7, "source": "PowerUpCard" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 7, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 6, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 4, "y": 4 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 5, "y": 4 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"MoveI"},{"clientID":2001,"card":"TurnRight"}] }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 5, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 4, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 6, "y": 4 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 4 }}
-INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
-INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["RearLaser","RearLaser"] }}
-INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
-INFO: { "messageType": "UpgradeBought", "messageBody": { "clientID": 2001, "card": "RearLaser" }}
-INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
-INFO: { "messageType": "UpgradeBought", "messageBody": { "clientID": 2000, "card": "RearLaser" }}
-INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
-INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["TurnRight","MoveII","TurnRight","MoveIII","MoveI","TurnLeft","Again","MoveI","UTurn"] }}
-INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
-INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveII","MoveIII","MoveII","MoveI","Again","MoveI","MoveII","Again","TurnRight"] }}
-INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "TimerStarted", "messageBody": { }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 0, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 1, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 2, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 3, "filled": true }}
 INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 4, "filled": true }}
-INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2000 }}
-INFO: { "messageType": "TimerStarted", "messageBody": { }}
-INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [2001] }}
-INFO: { "messageType": "CardsYouGotNow", "messageBody": { "cards": ["UTurn","TurnRight","TurnLeft","Again","TurnRight"] }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"TurnLeft"},{"clientID":2001,"card":"UTurn"}] }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "direction": 2001 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "direction": 2001 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 11 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 4 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 5 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"MoveII"},{"clientID":2001,"card":"TurnRight"}] }}
+INFO: { "messageType": "ReceivedChat", "messageBody": { "message": "Dein Register ist voll!", "from": 2000, "isPrivate": false }}
+INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [] }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnRight"},{"clientID":2000,"card":"MoveII"}] }}
 INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 11 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 6 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 7 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"UTurn"},{"clientID":2001,"card":"TurnLeft"}] }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "direction": 2000 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "direction": 2000 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 10 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 9 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 8 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 9 }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"TurnRight"},{"clientID":2001,"card":"Again"}] }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 8 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 7 }}
 INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 7 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 10 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 8, "y": 11 }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
-INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2000,"card":"Again"},{"clientID":2001,"card":"TurnRight"}] }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
-INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
 INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 6 }}
 INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 1, "y": 5 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 11 }}
-INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 6, "y": 11 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"MoveII"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 0, "y": 5 }}
+INFO: { "messageType": "DrawDamage", "messageBody": { "clientID": 2000, "cards": ["Spam","Spam"] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 3, "y": 7 }}
+INFO: { "messageType": "Reboot", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"UTurn"},{"clientID":2000,"card":"MoveII"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "direction": "clockwise" }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "direction": "clockwise" }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnRight"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnRight"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "clockwise" }}
 INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
-INFO: { "messageType": "RefillShop", "messageBody": { "cards": [] }}
+INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["AdminPrivilege","SpamBlocker"] }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
 INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 2 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveIII","MoveI","TurnLeft","MoveII","MoveI","Again","TurnLeft","Again","MoveII"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2001, "cardsInHand": 9 }}
+INFO: { "messageType": "YourCards", "messageBody": { "cardsInHand": ["MoveI","Spam","TurnRight","MoveI","MoveI","Spam","Spam","TurnRight","TurnLeft"] }}
+INFO: { "messageType": "NotYourCards", "messageBody": { "clientID": 2000, "cardsInHand": 9 }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 0, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 1, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 2, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 3, "filled": true }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2001, "register": 4, "filled": true }}
+INFO: { "messageType": "SelectionFinished", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "TimerStarted", "messageBody": { }}
+INFO: { "messageType": "CardSelected", "messageBody": { "clientID": 2000, "register": 4, "filled": true }}
+INFO: { "messageType": "TimerEnded", "messageBody": { "clientIDs": [] }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveI"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 2 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 7 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveIII"},{"clientID":2000,"card":"TurnRight"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 3 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 4 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 5 }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"MoveII"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 6 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2001, "x": 7, "y": 7 }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 8 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"TurnLeft"},{"clientID":2000,"card":"MoveI"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "Movement", "messageBody": { "clientID": 2000, "x": 2, "y": 9 }}
+INFO: { "messageType": "CurrentCards", "messageBody": { "activeCards": [{"clientID":2001,"card":"Again"},{"clientID":2000,"card":"TurnRight"}] }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2001, "rotation": "counterclockwise" }}
+INFO: { "messageType": "PlayerTurning", "messageBody": { "clientID": 2000, "rotation": "clockwise" }}
+INFO: { "messageType": "ActivePhase", "messageBody": { "phase": 1 }}
+INFO: { "messageType": "ExchangeShop", "messageBody": { "cards": ["RearLaser","RearLaser"] }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2001 }}
+INFO: { "messageType": "CurrentPlayer", "messageBody": { "clientID": 2000 }}
+INFO: { "messageType": "Error1", "messageBody": { "error": "Du kannst aktuell keine Startposition wählen." }}

@@ -168,29 +168,34 @@ public class Game {
         if (this.activePhase == 1 && this.activePlayerID == clientHandler.ID){
             if (isBuying){
                 UpgradeCards karte = null;
-                for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()){
-                    if (upgradeCard.getName().equals(card)){
-                        karte = upgradeCard;
-                        Robot robot = null;
-                        for (Robot rob: figuren){
-                            if (rob != null){
-                                if (rob.getGamerID() == clientHandler.ID){
-                                    robot = rob;
-                                    break;
+                for (UpgradeCards upgradeCard: upgradeShop.getUpgradeCards()) {
+                    if (upgradeCard != null && upgradeCard.getName().equals(card)) {
+                            karte = upgradeCard;
+                            Robot robot = null;
+                            for (Robot rob : figuren) {
+                                if (rob != null) {
+                                    if (rob.getGamerID() == clientHandler.ID) {
+                                        robot = rob;
+                                        break;
+                                    }
                                 }
                             }
-                        }
-                        if (robot.getEnergyCube() >= karte.getCost()){
-                            robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
-                            if (card.equals("AdminPrivilege") || card.equals("RearLaser")){
-                                bought = robot.addPermUpgrade(upgradeCard);
+                        if (robot.getEnergyCube() >= karte.getCost()) {
+                            if (card.equals("AdminPrivilege") || card.equals("RearLaser")) {
+                                if (bought = robot.addPermUpgrade(upgradeCard)) {
+                                    robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
+                                    upgradeShop.remove(karte);
+                                }
                                 break;
                             } else {
-                                bought = robot.addTempUpgrade(upgradeCard);
+                                if (bought = robot.addTempUpgrade(upgradeCard)) {
+                                    robot.setEnergyCube(robot.getEnergyCube() - karte.getCost());
+                                    upgradeShop.remove(karte);
+                                }
                                 break;
                             }
                         }
-                    }
+                }
                 }
             } else {
                 upgradePhase();
