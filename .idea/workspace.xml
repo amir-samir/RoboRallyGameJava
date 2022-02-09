@@ -9,14 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- UpgradeShop">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Activation starts when all Players have chosen all cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OurTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OurTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,13 +239,6 @@
       <workItem from="1643832902929" duration="178000" />
       <workItem from="1644066529004" duration="8542000" />
       <workItem from="1644398868710" duration="952000" />
-    </task>
-    <task id="LOCAL-00024" summary="Merge: Added Cards to Branch Kommunikation">
-      <created>1641725697502</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1641725697502</updated>
     </task>
     <task id="LOCAL-00025" summary="Bugfix">
       <created>1641725926149</created>
@@ -584,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644409339000</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Bugfix:&#10;- Activation starts when all Players have chosen all cards">
+      <created>1644410476826</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1644410476826</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,8 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved programmierPhase" />
-    <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
@@ -628,7 +625,9 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- UTurn" />
     <MESSAGE value="Bugfix:&#10;- UpgradeShop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- UpgradeShop" />
+    <MESSAGE value="Bugfix:&#10;- ProgrammingPhase starts when all Players have chosen all cards" />
+    <MESSAGE value="Bugfix:&#10;- Activation starts when all Players have chosen all cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Activation starts when all Players have chosen all cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

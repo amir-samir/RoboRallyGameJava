@@ -122,8 +122,8 @@ public class Game {
             String[] karten;
             for (int i = 0; i < upgradeShop.getUpgradeCards().length; i++){
                 if (upgradeShop.getUpgradeCards()[i] == null){
-                     upgradeShop.getUpgradeCards()[i] = cardsForGame.upgradeCards.remove(0);
-                     upgradeCards.add(upgradeShop.getUpgradeCards()[i].getName());
+                    upgradeShop.getUpgradeCards()[i] = cardsForGame.upgradeCards.remove(0);
+                    upgradeCards.add(upgradeShop.getUpgradeCards()[i].getName());
                 }
             }
             karten = new String[upgradeCards.size()];

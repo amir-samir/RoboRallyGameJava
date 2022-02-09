@@ -266,7 +266,7 @@ public class Client implements Runnable {
     public void chooseRegister(int register){
         ChooseRegister chooseRegister = new ChooseRegister(register);
         chooseRegister.getMessageBody().setKeys(new String[]{"register"});
-        bufferedWriter.println(chooseRegister);
+        bufferedWriter.println(Adopter.javabeanToJson(chooseRegister));
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
@@ -521,6 +521,7 @@ public class Client implements Runnable {
             });
             s = "Du hast folgende Karte gekauft: " + card;
         } else s = player.get(clientID).name + " (" + clientID + ") hat folgende Karte gekauft: " + card;
+        this.upgradeShop.remove(card);
         return s;
     }
 
