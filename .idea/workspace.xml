@@ -9,8 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="BugFix">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="New GUI Branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MoreFeaturesAndBugFixing" />
+        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -188,11 +194,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GetID" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.mapTest" />
         <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="Application.KI" />
-        <item itemvalue="Application.GetID" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -238,14 +244,7 @@
       <workItem from="1644063796467" duration="6412000" />
       <workItem from="1644237281109" duration="7849000" />
       <workItem from="1644318449449" duration="296000" />
-      <workItem from="1644406025254" duration="9900000" />
-    </task>
-    <task id="LOCAL-00021" summary="bugfix">
-      <created>1641652477458</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1641652477458</updated>
+      <workItem from="1644406025254" duration="19419000" />
     </task>
     <task id="LOCAL-00022" summary="Merge: New Gui -&gt; Kommunikation">
       <created>1641653276592</created>
@@ -583,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644420139087</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="New GUI Branch">
+      <created>1644428108758</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1644428108759</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +608,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dairen, Amir Cards" />
     <MESSAGE value="Dairen, Amir ChooseCards" />
     <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
@@ -627,7 +632,8 @@
     <MESSAGE value="updates" />
     <MESSAGE value="New Branch" />
     <MESSAGE value="BugFix" />
-    <option name="LAST_COMMIT_MESSAGE" value="BugFix" />
+    <MESSAGE value="New GUI Branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="New GUI Branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -656,7 +662,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>1563</line>
+          <line>1587</line>
           <properties class="Game" method="sendError">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -667,6 +673,16 @@
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
           <line>148</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/AllInOneView.java</url>
+          <line>798</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/AllInOneView.java</url>
+          <line>799</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
