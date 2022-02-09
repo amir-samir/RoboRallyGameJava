@@ -30,7 +30,6 @@ public class Client implements Runnable {
     private boolean connected;
     private int ID;
     private boolean ready = false;
-    private int activePlayer;
     private static Client client;
     private static Thread thread;
     static {
@@ -52,7 +51,6 @@ public class Client implements Runnable {
     public String protocol;
     public ObservableList<String> chatMessages;
     public ObservableList<String> usernamesGui;
-    //public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public Robot[] figuren = new Robot[6];
     ChatView chatView = new ChatView();
@@ -538,8 +536,23 @@ public class Client implements Runnable {
 
     public String handleConnectionUpdate(Message m){
         int clientID = (int)(double) m.getMessageBody().getContent()[0];
-        //GUI --> Roboter entfernen!!
-        return player.get(clientID).name + " (" + clientID + ") hat die Verbindung verloren und wurde entfernt.";
+        Player player = this.player.remove(clientID);
+        usernamesGui.remove(clientID + "," + player.name);
+        figuren[player.figur] = null;
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                getAllInOneView().setDefaultMap();
+                for (int i = 0; i < figuren.length; i++) {
+                    if (figuren[i] != null && figuren[i].getX() != -1) {
+                        getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                    }
+                }
+            }
+        });
+
+        return player.name + " (" + clientID + ") hat die Verbindung verloren und wurde entfernt.";
     }
 
     /**
@@ -632,7 +645,7 @@ public class Client implements Runnable {
                     } else toSend = null;
                 } else if (message.getMessageType().equals("CurrentPlayer")){
                     int activePlayer = (int)(double)message.getMessageBody().getContent()[0];
-                    if (this.ID == this.activePlayer){
+                    if (this.ID == activePlayer){
                         //GUI?
                         toSend = "Du bist am Zug.";
                     } else {
@@ -969,4 +982,7 @@ public class Client implements Runnable {
         return titleUserName;
     }
 
+    public Socket getSOCKET() {
+        return SOCKET;
+    }
 }

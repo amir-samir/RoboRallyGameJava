@@ -57,16 +57,16 @@ public class ClientHandler implements Runnable {
      */
     @Override
     public void run() {
-        if (SOCKET.isConnected() && !SOCKET.isClosed()) {
-            Timer t = new Timer();
-            TimerTask timerTask = new TimerTask() {
-                @Override
-                public void run() {
-                    writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
-                }
-            };
-            t.schedule(timerTask, 0, 5000);
-            while (SOCKET.isConnected()) {
+        Timer t = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                writer.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
+            }
+        };
+        t.schedule(timerTask, 0, 5000);
+        while (SOCKET.isConnected() && !SOCKET.isClosed()) {
+            if (SOCKET.isConnected() && !SOCKET.isClosed()) {
                 try {
                     String input = reader.
                             readLine();
@@ -129,23 +129,25 @@ public class ClientHandler implements Runnable {
                         handleBuyUpgrade(message);
                     } else if (message.getMessageType().equals("ReturnCards")) {
                         handleReturnCards(message);
-                    } else if (message.getMessageType().equals("ChooseRegister")){
+                    } else if (message.getMessageType().equals("ChooseRegister")) {
                         handleChooseRegister(message);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
+                    SERVER.exitPlayer(this);
+                    try {
+                        SOCKET.close();
+                        writer.close();
+                        reader.close();
+                    } catch (IOException f) {
+                        f.printStackTrace();
+                    }
                 }
-            }
-        } else {
-            try {
-                SOCKET.close();
-                writer.close();
-                reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            } else {
             }
         }
     }
+
 
     public void handleChooseRegister(Message m){
         int register = (int) (double) m.getMessageBody().getContent()[0];

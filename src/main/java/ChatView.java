@@ -180,7 +180,16 @@ public class ChatView {
         Scene signInScene = new Scene(signIn);
         stage.setScene(signInScene);
         stage.show();
-        stage.setOnCloseRequest(e -> Platform.exit());
+        stage.setOnCloseRequest(e -> close());
+    }
+
+    public void close() {
+        try {
+            SaveClients.client.getSOCKET().close();
+            Platform.exit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public ListView<String> getChatBox(){
