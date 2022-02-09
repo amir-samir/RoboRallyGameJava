@@ -515,6 +515,7 @@ public class Client implements Runnable {
         int clientID = (int)(double)m.getMessageBody().getContent()[0];
         String card = (String) m.getMessageBody().getContent()[1];
         String s;
+        setUpgradeCardName(card);
         if (clientID == this.ID){
             Platform.runLater(() -> {
                 getAllInOneView().setImageForUpgradeCard(card);
