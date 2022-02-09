@@ -591,8 +591,9 @@ public class Game {
                 }
             }
             timerActivated = false;
-            activePhase = 2;
+            activePhase = 1;
             activeRegister = 0;
+            adminPrivilege = new ArrayList<>();
             startGame();
         } catch (Exception e){
             e.printStackTrace();
