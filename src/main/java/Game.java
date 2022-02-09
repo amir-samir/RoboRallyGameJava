@@ -15,6 +15,7 @@ public class Game {
     private List<ClientHandler> verbindungen;
     private List<ClientHandler> upgradeReihenfolge;
     private List<ClientHandler> adminPrivilege;
+    private OurTimer ourTimer;
 
     private int activePhase;
     private int activePlayer;
@@ -44,6 +45,7 @@ public class Game {
         this.activePlayer = 0;
         this.activePlayerID = 0;
         this.activeRegister = 0;
+        this.ourTimer = null;
         this.activeMap = activeMap;
         this.figuren = figuren;
         this.timerActivated = false;
@@ -722,8 +724,12 @@ public class Game {
                SERVER.sendMessageForAllUsers(cardSelected);
                if (figuren[clientHandler.figure].allRegistersFilled() && !timerActivated) {
                    sendSelectionFinished(clientHandler);
-                   startTimer();
+                   this.ourTimer = startTimer();
                    timerActivated = true;
+               }
+               if (allPlayerReady()){
+                   ourTimer.setNecessary(false);
+                   timerEnded();
                }
            } else {
                sendError("Dies ist nicht möglich.", clientHandler);
@@ -733,14 +739,27 @@ public class Game {
        }
     }
 
-    public void startTimer(){
+    public boolean allPlayerReady(){
+        for (Robot robot: figuren){
+            if (robot != null) {
+                if (robot.getAbleToFillRegisters()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public OurTimer startTimer(){
         try {
             TimerStarted timerStarted = new TimerStarted();
             SERVER.sendMessageForAllUsers(timerStarted);
-            OurTimer ourTimer = new OurTimer(30, this);
+            OurTimer ourTimer;
+            return ourTimer = new OurTimer(30, this);
         } catch (Exception e){
             e.printStackTrace();
         }
+        return null;
     }
 
     public void timerEnded(){
