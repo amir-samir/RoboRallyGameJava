@@ -14,7 +14,15 @@ public class Spielwiese {
     public ArrayList<String> simulate(Robot robot){
         Robot TestRoboter = robot;
         ArrayList<ArrayList<Cards>> possibilities = generatePossibilities();
+        ArrayList<Robot> robotResults = new ArrayList<>();
+        for (ArrayList<Cards> list: possibilities){
+            robotResults.add(testMoveRobot(list, TestRoboter));
+        }
 
+        return null;
+    }
+
+    public Robot testMoveRobot(ArrayList<Cards> procedure, Robot robot){
         return null;
     }
 
