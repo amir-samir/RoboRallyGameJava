@@ -141,7 +141,16 @@ public class Server {
     }
 
     public void exitPlayer(ClientHandler clientHandler){
-
+        users.remove(clientHandler.ID);
+        verbindungen.remove(clientHandler);
+        figuren[clientHandler.figure] = null;
+        ConnectionUpdate connectionUpdate = new ConnectionUpdate(clientHandler.ID, false, "Remove");
+        connectionUpdate.getMessageBody().setKeys(new String[]{"clientID", "isConnected", "action"});
+        game.exitPlayer(clientHandler);
+        for (ClientHandler cH: verbindungen){
+            cH.writer.println(Adopter.javabeanToJson(connectionUpdate));
+            RalleyLogger.getLogger().info(Adopter.javabeanToJson(connectionUpdate));
+        }
     }
 
     public void handleChooseRegister(ClientHandler clientHandler){

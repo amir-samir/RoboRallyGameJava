@@ -535,6 +535,12 @@ public class Client implements Runnable {
         return s;
     }
 
+    public String handleConnectionUpdate(Message m){
+        int clientID = (int)(double) m.getMessageBody().getContent()[0];
+        //GUI --> Roboter entfernen!!
+        return player.get(clientID).name + " (" + clientID + ") hat die Verbindung verloren und wurde entfernt.";
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -839,6 +845,8 @@ public class Client implements Runnable {
                     toSend = handleUpgradeBought(message);
                 } else if (message.getMessageType().equals("RegisterChosen")){
                     toSend = handleRegisterChosen(message);
+                } else if (message.getMessageType().equals("ConnectionUpdate")) {
+                    toSend = handleConnectionUpdate(message);
                 } else {
                     toSend = inputFromServer;
                 }

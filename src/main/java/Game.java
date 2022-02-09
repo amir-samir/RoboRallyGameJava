@@ -1591,6 +1591,27 @@ public class Game {
         SERVER.sendMessageForSingleClient(error1, clientHandler);
     }
 
+    public void exitPlayer(ClientHandler clientHandler){
+        users.remove(clientHandler.ID);
+        verbindungen.remove(clientHandler);
+        figuren[clientHandler.figure] = null;
+
+        int zähler = 0;
+        Robot lastOne = null;
+        for (Robot robot: figuren){
+            if (robot != null){
+                zähler += 1;
+                lastOne = robot;
+            }
+        }
+
+        if (zähler <= 1){
+            GameFinished gameFinished = new GameFinished(lastOne.getGamerID());
+            gameFinished.getMessageBody().setKeys(new String[]{"clientID"});
+            SERVER.sendMessageForAllUsers(gameFinished);
+        }
+    }
+
     public ClientHandler getFirstPlayer(){
         return verbindungen.get(0);
     }
