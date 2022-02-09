@@ -242,7 +242,7 @@ public class AllInOneView implements Initializable {
     Image virus = new Image("assets/virus.png");
     Image worm = new Image("assets/worm.png");
 
-    Image[][] saveMap = new Image[9][12];
+    Image[][] saveMap = new Image[10][13];
 
 
     public AllInOneView(){
@@ -1113,7 +1113,11 @@ public class AllInOneView implements Initializable {
     }
 
     public void setDefaultMap(){
-
+        for (int i = 0; i < 9; i++){
+            for (int j = 0; j < 12; j++){
+                gridpane1.add(new ImageView(saveMap[i][j]), j, i);
+            }
+        }
     }
 
 }
