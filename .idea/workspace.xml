@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- ConnectionUpdate: Remove Player">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +195,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4f411ac9-da52-4ecf-8333-0a967cced909" name="Changes" comment="Merge" />
+      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -235,13 +235,7 @@
       <workItem from="1643832902929" duration="178000" />
       <workItem from="1644066529004" duration="8542000" />
       <workItem from="1644398868710" duration="952000" />
-    </task>
-    <task id="LOCAL-00026" summary="Bugfix: Multiple Starting Points">
-      <created>1641726303054</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1641726303054</updated>
+      <workItem from="1644419282488" duration="935000" />
     </task>
     <task id="LOCAL-00027" summary="Started implementing ProgrammingPhase">
       <created>1641729136724</created>
@@ -579,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644412788918</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Bugfix:&#10;- ConnectionUpdate: Remove Player">
+      <created>1644413770159</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1644413770159</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +599,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
     <MESSAGE value="Merge: new Images" />
     <MESSAGE value="Bugfix:&#10;- Improved random AI&#10;- Improved Messages" />
     <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
@@ -623,7 +623,8 @@
     <MESSAGE value="Bugfix:&#10;- ProgrammingPhase starts when all Players have chosen all cards" />
     <MESSAGE value="Bugfix:&#10;- Activation starts when all Players have chosen all cards" />
     <MESSAGE value="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter" />
+    <MESSAGE value="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -649,15 +650,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Server.java</url>
-          <line>128</line>
-          <properties class="Server">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>

@@ -51,7 +51,7 @@ public class Server {
             clearTxt();
             ServerSocket serverSocket = new ServerSocket(1237);
             Server server = new Server(serverSocket);
-            server.protocol = "Version 1.0";
+            server.protocol = "Version 2.1";
             server.startServer();
         } catch (Exception e){
             e.printStackTrace();

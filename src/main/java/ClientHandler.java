@@ -137,7 +137,6 @@ public class ClientHandler implements Runnable {
                 }
             }
         } else {
-            SERVER.exitPlayer(this);
             try {
                 SOCKET.close();
                 writer.close();
