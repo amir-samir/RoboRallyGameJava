@@ -67,6 +67,8 @@ public class AllInOneView implements Initializable {
     SplitPane SplitPaneee;
 
     @FXML
+    private GridPane gridpaneDefault;
+    @FXML
     private GridPane gridpane1;
     @FXML
     private ImageView Card1;
@@ -240,6 +242,8 @@ public class AllInOneView implements Initializable {
     Image virus = new Image("assets/virus.png");
     Image worm = new Image("assets/worm.png");
 
+    Image[][] saveMap = new Image[10][13];
+
 
     public AllInOneView(){
      Client.setAllInOneView(this);
@@ -271,14 +275,17 @@ public class AllInOneView implements Initializable {
                     switch (mapGui[x][y].get(0).getOrientations()[0]) {
                         case "bottom":
                             gridpane1.add(new ImageView(image81), y, x);
+                            saveMap[x][y] = image81;
                             counter = 0;
                             while (true) {
                                 counter++;
                                 if (mapGui[x + counter][y].size() == 0) {
                                     gridpane1.add(new ImageView(image23), y, x + counter);
+                                    saveMap[x + counter][y] = image23;
                                 }
                                 if ((mapGui[x + counter][y].size() != 0) && (mapGui[x + counter][y].get(0).getType().equals("Wall") || (mapGui[x + counter][y].get(1).getType().equals("Wall"))) && (mapGui[x + counter][y].get(0).getOrientations()[0].equals("top") || mapGui[x + counter][y].get(0).getOrientations()[0].equals("bottom"))) {
                                     gridpane1.add(new ImageView(image84), y, x + counter);
+                                    saveMap[x + counter][y] = image84;
                                     break;
                                 }
                             }
@@ -286,14 +293,17 @@ public class AllInOneView implements Initializable {
                             break;
                         case "top":
                             gridpane1.add(new ImageView(image80), y, x);
+                            saveMap[x][y] = image80;
                             counter = 0;
                             while (true) {
                                 counter++;
                                 if (mapGui[x - counter][y].size() == 0) {
                                     gridpane1.add(new ImageView(image23), y, x - counter);
+                                    saveMap[x - counter][y] = image23;
                                 }
                                 if ((mapGui[x-counter][y].size() != 0) && (mapGui[x - counter][y].get(0).getType().equals("Wall")  || (mapGui[x - counter][y].get(1).getType().equals("Wall"))) && (mapGui[x - 1][y].get(0).getOrientations()[0].equals("top") || mapGui[x - 1][y].get(0).getOrientations()[0].equals("bottom"))) {
                                     gridpane1.add(new ImageView(image92), y, x - counter);
+                                    saveMap[x - counter][y] = image92;
                                     break;
                                 }
                             }
@@ -301,17 +311,21 @@ public class AllInOneView implements Initializable {
                             break;
                         case "right":
                             gridpane1.add(new ImageView(image41), y, x);
+                            saveMap[x][y] = image41;
                             counter = 0;
                             while (true) {
                                 counter++;
                                 if (mapGui[x][y + counter].size() == 0) {
                                     gridpane1.add(new ImageView(image7), y + counter, x);
+                                    saveMap[x][y + counter] = image7;
                                 }
                                 if ((mapGui[x][y + counter].size() != 0) && ((mapGui[x][y + counter].get(0).getType().equals("Wall") || (mapGui[x][y + counter].get(1).getType().equals("Wall"))) || mapGui[x][y + counter].get(1).getType().equals("Wall"))&& (mapGui[x][y + counter].get(0).getOrientations()[0].equals("right") || mapGui[x][y + counter].get(0).getOrientations()[0].equals("left"))) {
                                    gridpane1.add(new ImageView(image93), y + counter, x);
+                                    saveMap[x][y + counter] = image93;
                                     if ((mapGui[x][y + counter].size() > 1) && mapGui[x][y + counter].get(1).getType().equals("Wall")) {
                                         //hii
                                         gridpane1.add(new ImageView(image6), y + counter, x);
+                                        saveMap[x][y + counter] = image6;
                                     }
                                     break;
                                 }
@@ -320,17 +334,21 @@ public class AllInOneView implements Initializable {
                             break;
                         case "left":
                             gridpane1.add(new ImageView(image8), y, x);
+                            saveMap[x][y] = image8;
                             counter = 0;
                             while (true) {
                                 counter++;
                                 if (mapGui[x][y - counter].size() == 0) {
                                     gridpane1.add(new ImageView(image7), y - counter, x);
+                                    saveMap[x][y - counter] = image7;
                                 }
                                 if ((mapGui[x][y - counter].size() != 0) && ((mapGui[x][y - counter].get(0).getType().equals("Wall")) || (mapGui[x][y - counter].get(1).getType().equals("Wall"))) && (mapGui[x][y - counter].get(0).getOrientations()[0].equals("right") || mapGui[x][y - counter].get(0).getOrientations()[0].equals("left"))) {
                                     gridpane1.add(new ImageView(image82), y - counter, x);
+                                    saveMap[x][y - counter] = image82;
                                         if ((mapGui[x][y - counter].size() > 1) && mapGui[x][y - counter].get(1).getType().equals("Wall")) {
                                             //hii
                                             gridpane1.add(new ImageView(image6), y - counter, x);
+                                            saveMap[x][y - counter] = image6;
                                             break;
                                 }
                                     break;
@@ -352,31 +370,38 @@ public class AllInOneView implements Initializable {
                             counter++;
                             if (mapGui[x + counter][y].size() == 0) {
                                 gridpane1.add(new ImageView(image23), y, x + counter);
+                                saveMap[x + counter][y] = image23;
                             }
                             //luuu
                             if (mapGui[x + counter][y].size() != 0 && Objects.equals(mapGui[x + counter][y].get(0).getType(), "ConveyorBelt")) {
                                 if (Objects.equals(mapGui[x + counter][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x + counter][y].get(0).getOrientations()[1], "right")) {
                                     gridpane1.add(new ImageView(image18), y, x + counter);
+                                    saveMap[x + counter][y] = image18;
                                 }
 
                                 if (Objects.equals(mapGui[x + counter][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x + counter][y].get(0).getOrientations()[1], "left")) {
                                     gridpane1.add(new ImageView(image17), y, x + counter);
+                                    saveMap[x + counter][y] = image17;
                                 }
                             }
                         if (mapGui[x + counter][y].size() == 3 && mapGui[x + counter][y].get(2).getCount() == 3) {
                             gridpane1.add(new ImageView(image13), y, x + counter);
+                            saveMap[x + counter][y] = image13;
                             break;
                         }
                         if (mapGui[x + counter][y].size() == 3 && mapGui[x + counter][y].get(2).getCount() == 0){
                             gridpane1.add(new ImageView(image15), y, x + counter);
+                            saveMap[x + counter][y] = image15;
                             break;
                         }
                             if (mapGui[x + counter][y].size() == 3 && mapGui[x + counter][y].get(2).getCount() == 1) {
                                 gridpane1.add(new ImageView(image32), y, x + counter);
+                                saveMap[x + counter][y] = image32;
                                 break;
                             }
                             if (mapGui[x + counter][y].size() == 3 && mapGui[x + counter][y].get(2).getCount() == 2){
                                 gridpane1.add(new ImageView(image33), y, x + counter);
+                                saveMap[x + counter][y] = image33;
                                 break;
                             }
                         if (mapGui[x + counter][y].size() == 3) {
@@ -390,31 +415,38 @@ public class AllInOneView implements Initializable {
                             counter++;
                             if (mapGui[x - counter][y].size() == 0) {
                                 gridpane1.add(new ImageView(image23), y, x - counter);
+                                saveMap[x - counter][y] = image23;
                             }
                             //luuu
                             if (mapGui[x - counter][y].size() != 0 && Objects.equals(mapGui[x - counter][y].get(0).getType(), "ConveyorBelt")) {
                                 gridpane1.add(new ImageView(image18), y, x - counter);
                                 if (Objects.equals(mapGui[x - counter][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x - counter][y].get(0).getOrientations()[1], "right")) {
                                     gridpane1.add(new ImageView(image18), y, x - counter);
+                                    saveMap[x - counter][y] = image18;
                                 }
                                 if (Objects.equals(mapGui[x - counter][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x - counter][y].get(0).getOrientations()[1], "left")) {
                                     gridpane1.add(new ImageView(image17), y, x - counter);
+                                    saveMap[x - counter][y] = image17;
                                 }
                             }
                             if (mapGui[x - counter][y].size() == 3 && mapGui[x -counter][y].get(2).getCount() == 1) {
                                 gridpane1.add(new ImageView(image32), y, x - counter);
+                                saveMap[x - counter][y] = image32;
                                 break;
                             }
                             if (mapGui[x - counter][y].size() == 3 && mapGui[x - counter][y].get(2).getCount() == 2){
                                 gridpane1.add(new ImageView(image33), y, x - counter);
+                                saveMap[x - counter][y] = image33;
                                 break;
                             }
                             if (mapGui[x - counter][y].size() == 3 && mapGui[x - counter][y].get(2).getCount() == 3) {
                                 gridpane1.add(new ImageView(image13), y, x - counter);
+                                saveMap[x - counter][y] = image13;
                                 break;
                             }
                             if (mapGui[x - counter][y].size() == 3 && mapGui[x - counter][y].get(2).getCount() == 0){
                                 gridpane1.add(new ImageView(image15), y, x - counter);
+                                saveMap[x - counter][y] = image15;
                                 break;
                             }
                             if (mapGui[x - counter][y].size() == 3) {
@@ -437,7 +469,8 @@ public class AllInOneView implements Initializable {
         DirectionUnten.setVisible(false);
         Arrays.fill(isFilled,false);
         Arrays.fill(upgradeCardsFilled,false);
-        setDefaultMap();
+        generateMap();
+        gridpaneDefault = gridpane1;
         Card1.setImage(Karte);
         Card2.setImage(Karte);
         Card3.setImage(Karte);
@@ -466,35 +499,43 @@ public class AllInOneView implements Initializable {
         SaveClients.client.setReady();
     }
 
-    public void setDefaultMap(){
+    public void generateMap(){
 
         for (int x = 0; x < gridpane1.getRowCount(); x++){
             for (int y = 0; y < gridpane1.getColumnCount(); y++){
                 if (mapGui[x][y].size() == 0){
                     gridpane1.add(new ImageView(image1),y,x);
+                    saveMap[x][y] = image1;
+
                 }
                 else if (mapGui[x][y].size() == 2){
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "EnergySpace")) {
                         // Muss evtl. noch weiter angepasst werden
                         gridpane1.add(new ImageView(image52),y,x);
+                        saveMap[x][y] = image52;
                         //hiiiiii
                         if (mapGui[x][y].size() == 2 && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")){
                             gridpane1.add(new ImageView(image22),y,x);
+                            saveMap[x][y] = image22;
                         }
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "PushPanel")){
                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
                            case "bottom":
                                gridpane1.add(new ImageView(image49),y,x);
+                               saveMap[x][y] = image49;
                                break;
                            case "top":
                                gridpane1.add(new ImageView(image56),y,x);
+                               saveMap[x][y] = image56;
                                break;
                            case "right":
                                gridpane1.add(new ImageView(image51),y,x);
+                               saveMap[x][y] = image51;
                                break;
                            case "left":
                                gridpane1.add(new ImageView(image66),y,x);
+                               saveMap[x][y] = image66;
                                break;
 
                        }
@@ -506,15 +547,19 @@ public class AllInOneView implements Initializable {
                         switch (mapGui[x][y].get(0).getOrientations()[0]) {
                             case "bottom":
                                 gridpane1.add(new ImageView(image50),y,x);
+                                saveMap[x][y] = image50;
                                 break;
                             case "top":
                                 gridpane1.add(new ImageView(image12),y,x);
+                                saveMap[x][y] = image12;
                                 break;
                             case "right":
                                 gridpane1.add(new ImageView(image21),y,x);
+                                saveMap[x][y] = image21;
                                 break;
                             case "left":
                                 gridpane1.add(new ImageView(image57),y,x);
+                                saveMap[x][y] = image57;
                                 break;
 
                         }
@@ -523,85 +568,107 @@ public class AllInOneView implements Initializable {
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "Gear")) {
                         if (mapGui[x][y].get(0).getOrientations()[0].equals("clockwise")) {
                             gridpane1.add(new ImageView(image24), y, x);
+                            saveMap[x][y] = image24;
                         }
                         else {
                             gridpane1.add(new ImageView(image28), y, x);
+                            saveMap[x][y] = image28;
                         }
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "Antenna")) {
                         // Muss evtl. noch weiter angepasst werden
                         gridpane1.add(new ImageView(image20),y,x);
+                        saveMap[x][y] = image20;
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "EnergySpace")) {
                         // Muss evtl. noch weiter angepasst werden
                         gridpane1.add(new ImageView(image52),y,x);
+                        saveMap[x][y] = image52;
                         //hiiiiii
                         if (mapGui[x][y].size() == 2 && Objects.equals(mapGui[x][y].get(1).getType(), "Wall")){
                             gridpane1.add(new ImageView(image22),y,x);
+                            saveMap[x][y] = image22;
                         }
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "StartPoint")) {
                         gridpane1.add(new ImageView(image9),y,x);
+                        saveMap[x][y] = image9;
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "Pit")) {
                         gridpane1.add(new ImageView(image14),y,x);
+                        saveMap[x][y] = image14;
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "RestartPoint")) {
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DeathTrap")) {
                             gridpane1.add(new ImageView(image91),y,x);
+                            saveMap[x][y] = image91;
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DizzyHighway")) {
                             gridpane1.add(new ImageView(image98),y,x);
+                            saveMap[x][y] = image98;
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "ExtraCrispy")) {
                             gridpane1.add(new ImageView(image0),y,x);
+                            saveMap[x][y] = image0;
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "LostBearings")) {
                             gridpane1.add(new ImageView(image0),y,x);
+                            saveMap[x][y] = image0;
                         }
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "ConveyorBelt")){
                         if (mapGui[x][y].get(0).getOrientations().length == 3){
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "right" ))){
                                 gridpane1.add(new ImageView(image94),y,x);
+                                saveMap[x][y] = image94;
                                 //falsches Bild [1][5] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "right" ))){
                                 gridpane1.add(new ImageView(image69),y,x);
+                                saveMap[x][y] = image69;
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "right")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "bottom" ))){
                                 gridpane1.add(new ImageView(image72),y,x);
+                                saveMap[x][y] = image72;
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "right")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "bottom" ))){
                                 gridpane1.add(new ImageView(image95),y,x);
+                                saveMap[x][y] = image95;
                                 //Falsches Bild [2][11] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "top" ))){
                                 gridpane1.add(new ImageView(image97),y,x);
+                                saveMap[x][y] = image97;
                                 //Falsches Bild[7][4] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "top" ))){
                                 gridpane1.add(new ImageView(image87),y,x);
+                                saveMap[x][y] = image87;
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "left" ))){
                                 gridpane1.add(new ImageView(image96),y,x);
+                                saveMap[x][y] = image96;
                                 //Falsches Bild [8][10] (DizzyHighway)
                             }
                             if ((Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top" )) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) && (Objects.equals(mapGui[x][y].get(0).getOrientations()[2], "left" ))){
                                 gridpane1.add(new ImageView(image89),y,x);
+                                saveMap[x][y] = image89;
                             }
                         }
                         else {
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "right")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image39), y, x);
+                                    saveMap[x][y] = image39;
                                 } else {
                                     gridpane1.add(new ImageView(image16), y, x);
+                                    saveMap[x][y] = image16;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image44), y, x);
+                                    saveMap[x][y] = image44;
                                 } else {
                                     gridpane1.add(new ImageView(image29), y, x);
                                 }
@@ -609,65 +676,82 @@ public class AllInOneView implements Initializable {
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image2), y, x);
+                                    saveMap[x][y] = image2;
                                 } else {
                                     gridpane1.add(new ImageView(image85), y, x);
+                                    saveMap[x][y] = image85;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image64), y, x);
+                                    saveMap[x][y] = image64;
                                 } else {
                                     gridpane1.add(new ImageView(image16), y, x);
+                                    saveMap[x][y] = image16;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image43), y, x);
+                                    saveMap[x][y] = image43;
                                 } else {
                                     // kaaa
                                     gridpane1.add(new ImageView(image30), y, x);
+                                    saveMap[x][y] = image30;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image36), y, x);
+                                    saveMap[x][y] = image36;
                                 } else {
                                     gridpane1.add(new ImageView(image4), y, x);
+                                    saveMap[x][y] = image4;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "right")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image59), y, x);
+                                    saveMap[x][y] = image59;
                                 } else {
                                     // wurde noch nicht bearbeitet, wird wahrscheinlich auch nicht benutzt
                                     gridpane1.add(new ImageView(image4), y, x);
+                                    saveMap[x][y] = image4;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image37), y, x);
+                                    saveMap[x][y] = image37;
                                 } else {
                                     gridpane1.add(new ImageView(image31), y, x);
+                                    saveMap[x][y] = image31;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image58), y, x);
+                                    saveMap[x][y] = image58;
                                 } else {
                                     // wurde noch nicht bearbeitet, wird wahrscheinlich auch nicht benutzt
                                     gridpane1.add(new ImageView(image31), y, x);
+                                    saveMap[x][y] = image31;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "right")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image11), y, x);
+                                    saveMap[x][y] = image11;
                                 } else {
                                     gridpane1.add(new ImageView(image71), y, x);
+                                    saveMap[x][y] = image71;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "bottom")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image47), y, x);
+                                    saveMap[x][y] = image47;
                                 } /*else {
                                 //was wenn es blau ist!!!!
                                 gridpane1.add(new ImageView(image0),y,x);
@@ -676,8 +760,10 @@ public class AllInOneView implements Initializable {
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) {
                                 if (mapGui[x][y].get(0).getSpeed() == 1) {
                                     gridpane1.add(new ImageView(image60), y, x);
+                                    saveMap[x][y] = image60;
                                 } else {
                                     gridpane1.add(new ImageView(image19), y, x);
+                                    saveMap[x][y] = image19;
                                 }
                             }
                         }
@@ -690,18 +776,23 @@ public class AllInOneView implements Initializable {
                         switch (mapGui[x][y].get(0).getCount()){
                             case 0:
                                 gridpane1.add(new ImageView(image61),y,x);
+                                saveMap[x][y] = image61;
                                 break;
                             case 1:
                                 gridpane1.add(new ImageView(image65),y,x);
+                                saveMap[x][y] = image65;
                                 break;
                             case 2:
                                 gridpane1.add(new ImageView(image62),y,x);
+                                saveMap[x][y] = image62;
                                 break;
                             case 3:
                                 gridpane1.add(new ImageView(image54),y,x);
+                                saveMap[x][y] = image1;
                                 break;
                             case 4:
                                 gridpane1.add(new ImageView(image48),y,x);
+                                saveMap[x][y] = image48;
                                 break;
                         }
                     }
@@ -709,7 +800,6 @@ public class AllInOneView implements Initializable {
             }
            getLaserOnMaps();
         }
-
     }
 
 
@@ -737,7 +827,6 @@ public class AllInOneView implements Initializable {
                 gridpane1.add(new ImageView(TwinkyOben),y,x);
             }
             if (direction == "right"){
-                setDefaultMap();
                 gridpane1.add(new ImageView(TwinkyRechts),y,x);
             }
             if (direction == "left") {
@@ -918,22 +1007,6 @@ public class AllInOneView implements Initializable {
             adminPrivaPressed = false;
         }
     }
-    public void RunMapNew() throws Exception{
-        Stage stage = new Stage();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/MaybeMap.fxml"));
-        Scene scene = new Scene(loader.load());
-        stage.setScene(scene);
-        stage.show();
-
-        //Close if Bye
-        stage.setOnCloseRequest(e -> {
-            Platform.exit();
-            //clientHandler.writer.equals("bye");
-            stage.close();
-            System.exit(0);
-        });
-    }
 
     public void resetRegisterCard(){
         Card1.setImage(Karte);
@@ -992,20 +1065,24 @@ public class AllInOneView implements Initializable {
         switch (cardname){
             case "AdminPrivilege" :
                 if (!upgradeCardsFilled[0]) {
+                    UpgradeCard1.setVisible(true);
                     UpgradeCard1.setImage(AdminPrivilege);
                     upgradeCardsFilled[0] = true;
                 }
                 else {
+                    UpgradeCard2.setVisible(true);
                     UpgradeCard2.setImage(AdminPrivilege);
                     upgradeCardsFilled[1] = true;
                 }
                break;
             case "RearLaser" :
                 if (!upgradeCardsFilled[0]){
+                    UpgradeCard1.setVisible(true);
                     UpgradeCard1.setImage(RearLaser);
                     upgradeCardsFilled[0] = true;
                 }
                 else {
+                    UpgradeCard2.setVisible(true);
                     UpgradeCard2.setImage(RearLaser);
                     upgradeCardsFilled[1] = true;
                 }
@@ -1013,20 +1090,24 @@ public class AllInOneView implements Initializable {
                 break;
             case "MemorySwap" :
                 if (!upgradeCardsFilled[2]) {
+                    UpgradeCard3.setVisible(true);
                     UpgradeCard3.setImage(MemorySwap);
                     upgradeCardsFilled[2] = true;
                 }
                 else {
+                    UpgradeCard4.setVisible(true);
                     UpgradeCard4.setImage(MemorySwap);
                     upgradeCardsFilled[3] = true;
                 }
                 break;
             case  "SpamBlocker" :
                 if (!upgradeCardsFilled[2]){
+                    UpgradeCard3.setVisible(true);
                     UpgradeCard3.setImage(SpamBlocker);
                     upgradeCardsFilled[2] = true;
                 }
                 else {
+                    UpgradeCard4.setVisible(true);
                     UpgradeCard4.setImage(SpamBlocker);
                     upgradeCardsFilled[3] = true;
                 }
@@ -1040,6 +1121,22 @@ public class AllInOneView implements Initializable {
         if (SaveClients.client.getUpgradeCardName().equals("AdminPrivilege")){
             adminPrivaPressed = true;
         }
+    }
+
+    public void setDefaultMap(){
+        for (int i = 0; i < 10; i++){
+            for (int j = 0; j < 13; j++){
+                gridpane1.add(new ImageView(saveMap[i][j]), j, i);
+            }
+        }
+    }
+
+    public void setUnvisibleUpGradeCards(){
+        UpgradeCard3.setDisable(true);
+        UpgradeCard3.setVisible(false);
+        UpgradeCard4.setDisable(true);
+        UpgradeCard4.setVisible(false);
+
     }
 
 }

@@ -32,14 +32,21 @@ public class UpgradeCardsController implements Initializable {
     Image MemorySwap = new Image("assets/MemorySwap.png");
     Image SpamBlocker = new Image("assets/SpamBlocker.png");
 
+    String[] upgradeCardsName = new String[6];
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        for (int i = 0; i < SaveClients.client.getUpgradeShop().size(); i++){
+            upgradeCardsName[i] = SaveClients.client.getUpgradeShop().get(i);
+        }
+        setDisabled();
         setCards(SaveClients.client.getUpgradeShop());
         CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
     }
 
     public void setCards(ArrayList<String> upgradecards){
         for (int i = 0; i < upgradecards.size(); i++){
+            getCardView(i).setDisable(false);
             getCardView(i).setImage(getImageForCard(upgradecards.get(i)));
         }
     }
@@ -79,31 +86,41 @@ public class UpgradeCardsController implements Initializable {
     }
 
     public void Card1Pressed(){
-        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(0));
+        SaveClients.client.buyUpgrade(true, upgradeCardsName[0]);
     }
 
     public void Card2Pressed(){
-        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(1));
+        SaveClients.client.buyUpgrade(true, upgradeCardsName[1]);
     }
 
     public void Card3Pressed(){
-        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(2));
+        SaveClients.client.buyUpgrade(true,  upgradeCardsName[2]);
     }
 
     public void Card4Pressed(){
-        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(3));
+        SaveClients.client.buyUpgrade(true, upgradeCardsName[3]);
     }
 
     public void Card5Pressed(){
-        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(4));
+        SaveClients.client.buyUpgrade(true, upgradeCardsName[4]);
     }
 
     public void Card6Pressed(){
-        SaveClients.client.buyUpgrade(true, SaveClients.client.getUpgradeShop().get(5));
+        SaveClients.client.buyUpgrade(true, upgradeCardsName[5]);
     }
 
     public void NoCardChoossen(){
         SaveClients.client.buyUpgrade(false, null);
+    }
+
+    public void setDisabled(){
+        Card1.setDisable(true);
+        Card2.setDisable(true);
+        Card3.setDisable(true);
+        Card4.setDisable(true);
+        Card5.setDisable(true);
+        Card6.setDisable(true);
+
     }
 
 }
