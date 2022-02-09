@@ -2,6 +2,7 @@ import Messages.*;
 import Messages.Phase.BuyUpgrade;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
+import com.google.gson.internal.LinkedTreeMap;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -23,25 +24,12 @@ public class KI implements Runnable {
     private final boolean isAi;
     private boolean connected;
     private int ID;
-    private static int countKI = 1;
     private ArrayList<BoardElement>[][] map;
-    private Thread thread;
-
-   /* static {
-        try {
-            KI ki = new KI();
-            thread = new Thread(ki);
-            thread.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 
     private final BufferedReader bufferedReader;
     private final PrintWriter bufferedWriter;
 
     public String protocol;
-    //public HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
     public Robot[] figuren = new Robot[6];
     private String selectedMap;
@@ -77,20 +65,19 @@ public class KI implements Runnable {
     public void configuration(){
         String name;
         int figur = (int) Math.floor(Math.random() * 6);
-        if (countKI == 1){
+        if (figur == 1){
             name = "BummBot";
-        } else if (countKI == 2){
-            name = "Robot annihilator 3000";
-        } else if (countKI == 3){
-            name = "Viiiiktoooor";
-        } else if (countKI == 4){
-            name = "ich bin zu unkreativ";
-        } else if (countKI == 5){
-            name = "Ich bin ein Roboter";
+        } else if (figur == 2){
+            name = "Annihilator 3000";
+        } else if (figur == 3){
+            name = "Oma Manfred";
+        } else if (figur == 4){
+            name = "MONSTER_Garry";
+        } else if (figur == 5){
+            name = "RobotKarol";
         } else {
             name = "CrashBot";
         }
-        countKI += 1;
 
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
@@ -247,6 +234,8 @@ public class KI implements Runnable {
     }
 
     public void playCards(ArrayList<String> list){
+        Spielwiese spielwiese = new Spielwiese(this.map, list);
+        spielwiese.simulate(figuren[player.get(this.ID).figur]);
         Collections.shuffle(list);
         try {
             TimeUnit.SECONDS.sleep(2);
@@ -262,6 +251,98 @@ public class KI implements Runnable {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public String[] changeListIntoArray(ArrayList<String> list){
+        String[] orientations = new String[list.size()];
+        for(int i = 0; i < list.size(); i++){
+            orientations[i] = list.get(i);
+        }
+        return orientations;
+    }
+
+    public void generateMap(Message m){
+        ArrayList<BoardElement>[][] map = new ArrayList[10][13];
+        int i = 0;
+        while (i < map.length){
+            int u = 0;
+            while (u < map[i].length){
+                map[i][u] = new ArrayList<BoardElement>();
+                u++;
+            }
+            i++;
+        }
+        ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
+        int x = 0;
+        while (x < list.size()){
+            ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
+            int y = 0;
+            while (y < y_list.size()){
+                ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
+                int z = 0;
+                while (z < field.size()){
+                    LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
+                    if (typ == null){
+                        map[y][x].add(new Empty("A"));
+                    } else {
+                        String zuPrüfen = (String) typ.get("type");
+                        String[] orientations;
+                        switch (zuPrüfen) {
+                            case "StartPoint":
+                                map[y][x].add(new StartPoint((String) typ.get("isOnBoard")));
+                                break;
+                            case "ConveyorBelt":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new ConveyorBelt((String) typ.get("isOnBoard"), orientations, (int) (double) typ.get("speed")));
+                                break;
+                            case "PushPanel":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                ArrayList<Double> list1 = (ArrayList<Double>) typ.get("registers");
+                                int[] register = new int[list1.size()];
+                                for (int p = 0; p < register.length; p++){
+                                    register[p] = (int) (double) list1.remove(0);
+                                }
+                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
+                                break;
+                            case "Gear":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Gear((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "Pit":
+                                map[y][x].add(new Pit((String) typ.get("isOnBoard")));
+                                break;
+                            case "EnergySpace":
+                                map[y][x].add(new EnergySpace((String) typ.get("isOnBoard"), (int)(double) typ.get("count")));
+                                break;
+                            case "Wall":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Wall((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "Laser":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
+                                break;
+                            case "Antenna":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new Antenna((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            case "CheckPoint":
+                                map[y][x].add(new CheckPoint((String) typ.get("isOnBoard"), (int)(double) typ.get("order")));
+                                break;
+                            case "RestartPoint":
+                                orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
+                                map[y][x].add(new RestartPoint((String) typ.get("isOnBoard"), orientations));
+                                break;
+                            default:
+                        }
+                    }
+                    z += 1;
+                }
+                y += 1;
+            }
+            x += 1;
+        }
+        this.map = map;
     }
 
     /**
@@ -281,7 +362,6 @@ public class KI implements Runnable {
                     sendHelloServer(message);
                 } else if (message.getMessageType().equals("Error1")) {
                     if (!figurSelected) {
-                        countKI -= 1;
                         configuration();
                     }
                 } else if (message.getMessageType().equals("Welcome")){
@@ -311,7 +391,9 @@ public class KI implements Runnable {
                         }
                     }
                 } else if (message.getMessageType().equals("SelectMap")){
-                    mapSelected("DizzyHighway");
+                    ArrayList<String> names = (ArrayList<String>) message.getMessageBody().getContent()[0];
+                    Collections.shuffle(names);
+                    mapSelected(names.get(0));
                 } else if (message.getMessageType().equals("MapSelected")){
                     String map = (String) message.getMessageBody().getContent()[0];
                     selectedMap = map;
@@ -322,10 +404,10 @@ public class KI implements Runnable {
                     if (this.ID == activePlayer){
                         setStartingPoint();
                     } else {
-                        String name = player.get(activePlayer).name;
+
                     }
                 } else if (message.getMessageType().equals("GameStarted")){
-
+                    generateMap(message);
                 }
                 else if (message.getMessageType().equals("StartingPointTaken")){
                     int x = (int) (double) message.getMessageBody().getContent()[0];
