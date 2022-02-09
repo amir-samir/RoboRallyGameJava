@@ -293,6 +293,7 @@ public class AllInOneView implements Initializable {
                             break;
                         case "top":
                             gridpane1.add(new ImageView(image80), y, x);
+                            saveMap[x][y] = image80;
                             counter = 0;
                             while (true) {
                                 counter++;
@@ -310,6 +311,7 @@ public class AllInOneView implements Initializable {
                             break;
                         case "right":
                             gridpane1.add(new ImageView(image41), y, x);
+                            saveMap[x][y] = image41;
                             counter = 0;
                             while (true) {
                                 counter++;
@@ -332,6 +334,7 @@ public class AllInOneView implements Initializable {
                             break;
                         case "left":
                             gridpane1.add(new ImageView(image8), y, x);
+                            saveMap[x][y] = image8;
                             counter = 0;
                             while (true) {
                                 counter++;
@@ -1062,20 +1065,24 @@ public class AllInOneView implements Initializable {
         switch (cardname){
             case "AdminPrivilege" :
                 if (!upgradeCardsFilled[0]) {
+                    UpgradeCard1.setVisible(true);
                     UpgradeCard1.setImage(AdminPrivilege);
                     upgradeCardsFilled[0] = true;
                 }
                 else {
+                    UpgradeCard2.setVisible(true);
                     UpgradeCard2.setImage(AdminPrivilege);
                     upgradeCardsFilled[1] = true;
                 }
                break;
             case "RearLaser" :
                 if (!upgradeCardsFilled[0]){
+                    UpgradeCard1.setVisible(true);
                     UpgradeCard1.setImage(RearLaser);
                     upgradeCardsFilled[0] = true;
                 }
                 else {
+                    UpgradeCard2.setVisible(true);
                     UpgradeCard2.setImage(RearLaser);
                     upgradeCardsFilled[1] = true;
                 }
@@ -1083,20 +1090,24 @@ public class AllInOneView implements Initializable {
                 break;
             case "MemorySwap" :
                 if (!upgradeCardsFilled[2]) {
+                    UpgradeCard3.setVisible(true);
                     UpgradeCard3.setImage(MemorySwap);
                     upgradeCardsFilled[2] = true;
                 }
                 else {
+                    UpgradeCard4.setVisible(true);
                     UpgradeCard4.setImage(MemorySwap);
                     upgradeCardsFilled[3] = true;
                 }
                 break;
             case  "SpamBlocker" :
                 if (!upgradeCardsFilled[2]){
+                    UpgradeCard3.setVisible(true);
                     UpgradeCard3.setImage(SpamBlocker);
                     upgradeCardsFilled[2] = true;
                 }
                 else {
+                    UpgradeCard4.setVisible(true);
                     UpgradeCard4.setImage(SpamBlocker);
                     upgradeCardsFilled[3] = true;
                 }
@@ -1113,11 +1124,19 @@ public class AllInOneView implements Initializable {
     }
 
     public void setDefaultMap(){
-        for (int i = 0; i < 9; i++){
-            for (int j = 0; j < 12; j++){
+        for (int i = 0; i < 10; i++){
+            for (int j = 0; j < 13; j++){
                 gridpane1.add(new ImageView(saveMap[i][j]), j, i);
             }
         }
+    }
+
+    public void setUnvisibleUpGradeCards(){
+        UpgradeCard3.setDisable(true);
+        UpgradeCard3.setVisible(false);
+        UpgradeCard4.setDisable(true);
+        UpgradeCard4.setVisible(false);
+
     }
 
 }

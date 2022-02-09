@@ -501,6 +501,7 @@ public class Client implements Runnable {
         }
         Platform.runLater(() -> {
             try {
+                getAllInOneView().setUnvisibleUpGradeCards();
                 getAllInOneView().runUpgradeCards();
             } catch (IOException e) {
                 e.printStackTrace();
