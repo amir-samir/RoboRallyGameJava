@@ -1,4 +1,5 @@
 import Messages.*;
+import Messages.Actions.ChooseRegister;
 import Messages.Actions.RebootDirection;
 import Messages.Actions.ReturnCards;
 import Messages.Actions.SelectedDamage;
@@ -265,7 +266,9 @@ public class Client implements Runnable {
     }
 
     public void chooseRegister(int register){
-
+        ChooseRegister chooseRegister = new ChooseRegister(register);
+        chooseRegister.getMessageBody().setKeys(new String[]{"register"});
+        bufferedWriter.println(chooseRegister);
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
@@ -520,6 +523,16 @@ public class Client implements Runnable {
         return s;
     }
 
+    public String handleRegisterChosen(Message m){
+        int clientID = (int)(double)m.getMessageBody().getContent()[0];
+        int register = (int)(double)m.getMessageBody().getContent()[1];
+        String s;
+        if (clientID == this.ID){
+            s = "Du hast folgendes Register gewählt: " + register;
+        } else s = player.get(clientID).name + " (" + clientID + ") hat folgendes Register (mit AdminPrivilege) gewählt: " + register;
+        return s;
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -549,7 +562,7 @@ public class Client implements Runnable {
                     int from = (int)(double)message.getMessageBody().getContent()[1];
                     boolean isPrivate = (boolean) message.getMessageBody().getContent()[2];
                     String nachricht = (String) message.getMessageBody().getContent()[0];
-                    toSend = from + ": " + nachricht;
+                    toSend = player.get(from).name + " (" + from + "): " + nachricht;
                 } else if(message.getMessageType().equals("Alive")){
                     bufferedWriter.println("{\"messageType\": \"Alive\", \"messageBody\": {}}");
                     toSend = null;
@@ -822,6 +835,8 @@ public class Client implements Runnable {
                     toSend = handleExchangeShop(message);
                 } else if (message.getMessageType().equals("UpgradeBought")) {
                     toSend = handleUpgradeBought(message);
+                } else if (message.getMessageType().equals("RegisterChosen")){
+                    toSend = handleRegisterChosen(message);
                 } else {
                     toSend = inputFromServer;
                 }

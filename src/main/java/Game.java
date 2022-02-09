@@ -14,6 +14,7 @@ public class Game {
     private HashMap<Integer, ClientHandler> users;
     private List<ClientHandler> verbindungen;
     private List<ClientHandler> upgradeReihenfolge;
+    private List<ClientHandler> adminPrivilege;
 
     private int activePhase;
     private int activePlayer;
@@ -37,6 +38,7 @@ public class Game {
         this.users = hashMap;
         this.verbindungen = verbindungen;
         this.upgradeShop = new UpgradeShop(verbindungen.size());
+        this.adminPrivilege = new ArrayList<>();
         this.upgradeReihenfolge = null;
         this.activePhase = 0;
         this.activePlayer = 0;
@@ -329,12 +331,20 @@ public class Game {
         beendeAktivierungsPhase();
     }
 
+    public void handleChooseRegister(ClientHandler clientHandler){
+        adminPrivilege.add(clientHandler);
+        RegisterChosen registerChosen = new RegisterChosen(clientHandler.ID, clientHandler.chosenRegister);
+        registerChosen.getMessageBody().setKeys(new String[]{"clientID", "register"});
+        SERVER.sendMessageForAllUsers(registerChosen);
+    }
+
     public ArrayList<ClientHandler> reihenfolgeBestimmen(){
         ArrayList<ClientHandler> reihenfolge = new ArrayList<ClientHandler>();
         ArrayList<Robot> falscheReihenfolge = new ArrayList<Robot>();
 
         int antennaX = board.searchX("Antenna");
         int antennaY = board.searchY("Antenna");
+
         for (Robot robot: figuren){
             if (robot != null) {
                 int robotX = robot.getX();
@@ -344,6 +354,14 @@ public class Game {
                 int entfernungGesamt = entfernungX + entfernungY;
                 robot.setEntfernungZurAntenne(entfernungGesamt);
                 falscheReihenfolge.add(robot);
+            }
+        }
+
+        for(ClientHandler clientHandler: adminPrivilege){
+            if (clientHandler.chosenRegister == activeRegister){
+                reihenfolge.add(clientHandler);
+                falscheReihenfolge.remove(figuren[clientHandler.figure]);
+                adminPrivilege.remove(clientHandler);
             }
         }
 
@@ -362,7 +380,6 @@ public class Game {
                 }
             }
         }
-
         return reihenfolge;
     }
 

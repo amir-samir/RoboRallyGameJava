@@ -23,6 +23,7 @@ public class ClientHandler implements Runnable {
 
     public String username;
     public int figure;
+    public int chosenRegister;
     public String group;
     public boolean isAi;
     public boolean isReady;
@@ -40,6 +41,7 @@ public class ClientHandler implements Runnable {
 
         this.SERVER = server;
         this.SOCKET = socket;
+        this.chosenRegister = 0;
 
         try {
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -127,6 +129,8 @@ public class ClientHandler implements Runnable {
                         handleBuyUpgrade(message);
                     } else if (message.getMessageType().equals("ReturnCards")) {
                         handleReturnCards(message);
+                    } else if (message.getMessageType().equals("ChooseRegister")){
+                        handleChooseRegister(message);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -142,6 +146,12 @@ public class ClientHandler implements Runnable {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void handleChooseRegister(Message m){
+        int register = (int) (double) m.getMessageBody().getContent()[0];
+        this.chosenRegister = register;
+        SERVER.handleChooseRegister(this);
     }
 
     public void handleReturnCards(Message message){

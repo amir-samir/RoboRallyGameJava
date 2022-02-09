@@ -126,6 +126,10 @@ public class Server {
 
     }
 
+    public void handleChooseRegister(ClientHandler clientHandler){
+        game.handleChooseRegister(clientHandler);
+    }
+
     public void playerAdded(ClientHandler clientHandler) {
         PlayerAdded playerAdded = new PlayerAdded(clientHandler.ID, clientHandler.username, clientHandler.figure);
         String[] keys = {"clientID", "name", "figure"};
