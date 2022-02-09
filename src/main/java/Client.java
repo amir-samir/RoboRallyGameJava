@@ -358,7 +358,11 @@ public class Client implements Runnable {
                                 for (int p = 0; p < register.length; p++){
                                     register[p] = (int) (double) list1.remove(0);
                                 }
-                                map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
+                                ArrayList<BoardElement> neuePusherPanels = new ArrayList<BoardElement>();
+                                neuePusherPanels.add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
+                                neuePusherPanels.addAll(map[y][x]);
+                                map[y][x] = neuePusherPanels;
+                                //map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
                                 break;
                             case "Gear":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
@@ -376,7 +380,11 @@ public class Client implements Runnable {
                                 break;
                             case "Laser":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
-                                map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
+                                ArrayList<BoardElement> neueLaser = new ArrayList<BoardElement>();
+                                neueLaser.add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
+                                neueLaser.addAll(map[y][x]);
+                                map[y][x] = neueLaser;
+                                //map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
                                 break;
                             case "Antenna":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
