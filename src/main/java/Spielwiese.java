@@ -474,7 +474,7 @@ public class Spielwiese {
 
     public ArrayList<ArrayList<Cards>> generatePossibilities(){
         ArrayList<ArrayList<Cards>> possibilities = new ArrayList<>();
-        for (int i = 0; i < 350000; i++){
+        for (int i = 0; i < 500000; i++){
             ArrayList<Cards> playedCards = new ArrayList<>();
             Collections.shuffle(this.cards);
             for (int u = 0; u < 5; u++){
