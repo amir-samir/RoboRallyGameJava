@@ -70,6 +70,7 @@ public class Client implements Runnable {
     private int CubesZahl = 5;
     private RalleyLogger ralleyLogger = new RalleyLogger();
     private String UpgradeCardName;
+    private String titleUserName;
 
 
     /**
@@ -163,6 +164,7 @@ public class Client implements Runnable {
         message.getMessageBody().setKeys(keys);
         bufferedWriter.println(Adopter.javabeanToJson(message));
         figureForGui = figur;
+        titleUserName = name;
         Platform.runLater(new Runnable(){
 
             @Override
@@ -259,9 +261,11 @@ public class Client implements Runnable {
         BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
         buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
         bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
-        Platform.runLater(() -> {
-         getAllInOneView().setImageForUpgradeCard(card);
-        });
+        if (isBuying) {
+            Platform.runLater(() -> {
+                getAllInOneView().setImageForUpgradeCard(card);
+            });
+        }
 
     }
 
@@ -952,6 +956,10 @@ public class Client implements Runnable {
 
     public String getUpgradeCardName(){
         return UpgradeCardName;
+    }
+
+    public String getTitleUserName(){
+        return titleUserName;
     }
 
 }

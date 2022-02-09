@@ -2,7 +2,9 @@ import Messages.*;
 import Messages.Actions.GameFinished;
 import Messages.Phase.StartingPointTaken;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ public class Server {
     public static boolean mapSelected = false;
     public static ClientHandler clientWhoSelectedMap;
     public List<ClientHandler> verbindungen = new ArrayList<ClientHandler>();
-
+    public static List<Integer> choosenBots = new ArrayList<Integer>();
     public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
     //public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
     public Robot[] figuren = new Robot[6];
@@ -46,6 +48,7 @@ public class Server {
 
     public static void main(String[] args) {
         try {
+            clearTxt();
             ServerSocket serverSocket = new ServerSocket(1237);
             Server server = new Server(serverSocket);
             server.protocol = "Version 1.0";
@@ -54,6 +57,15 @@ public class Server {
             e.printStackTrace();
             System.err.println("Fehler. Der game.Server konnte nicht gestartet werden.");
         }
+    }
+
+    /**
+     * Diese Methode sorgt dafür, dass die robots.txt wieder leer ist.
+     */
+    public static void clearTxt() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter("robots.txt");
+        writer.print("");
+        writer.close();
     }
 
     /**
@@ -71,6 +83,12 @@ public class Server {
         ralleyLogger.getLogger().info(nachricht);
     }
 
+    public static synchronized void setChoosenBots(int bot) {
+        choosenBots.add(bot);
+    }
+    public static synchronized List<Integer> getChoosenBots() {
+        return choosenBots;
+    }
     public void sendMessageForSingleClient(Message m, ClientHandler clientHandler){
         clientHandler.writer.println(Adopter.javabeanToJson(m));
         ralleyLogger.getLogger().info(Adopter.javabeanToJson(m));

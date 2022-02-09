@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,12 +18,11 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 import lombok.Data;
 
@@ -30,6 +30,7 @@ import lombok.Data;
 public class FirstView implements Initializable {
    private Thread clientThread;
    private Client client;
+   private List<Integer> choosenBots = new ArrayList<Integer>();
 
    Client client1;
    private int figure = 100;
@@ -49,17 +50,7 @@ public class FirstView implements Initializable {
    private ImageView zoomBotImageView;
    @FXML
    private Label errorLabel;
-
    private int time = 30;
-
-
-
-
-
-
-
-
-
    @FXML
    private AnchorPane rootSignIn;
    @FXML
@@ -68,28 +59,12 @@ public class FirstView implements Initializable {
    private Button signInButton;
    @FXML
    private Label nameExists;
-
-
-
-
-
-
-
-
-
-
-
    private  GetID getID;
    private final FirstViewModel viewModel = new FirstViewModel();
 
    private final SignIn signIn = new SignIn();
-
-
-
    @Override
    @FXML
-
-
    public void initialize(URL arg0, ResourceBundle arg1)  {
 
       insertUsername.textProperty()
@@ -234,69 +209,176 @@ public class FirstView implements Initializable {
       }, 1000,1000);
       time = 30; */
 
-
-
-
-
    }
 
    public FirstView(){
       Client.setFirstView(this);
    }
 
+   public void readFile() {
+      try {
+         FileReader reader = new FileReader("robots.txt");
+         int character;
+
+         while ((character = reader.read()) != -1) {
+            choosenBots.add(character);
+            System.out.print((char) character);
+            System.out.print((char) character);
+
+         }
+         reader.close();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+   }
+
+   public static void writeFile(int figure) {
+      try {
+         FileWriter writer = new FileWriter("robots.txt", true);
+         writer.write(String.valueOf(figure));
+         writer.close();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+
+   }
+
    public void TwinkyRoboterPressed(){
-      figure = 0;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      twinkyImageView.setDisable(true);
-      twinkyImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(0);
-      SaveClients.ausgewaehlteRoboter[0] = 0;
+
+      readFile();
+      if (choosenBots.contains(48)){
+         Warning();
+      }
+      else {
+         figure = 0;
+         writeFile(figure);
+         Server.setChoosenBots(figure);
+         twinkyImageView.setDisable(true);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(0);
+         SaveClients.ausgewaehlteRoboter[0] = 0;
+      }
    }
    public void SmashRoboterPressed(){
-      figure = 1;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      smashBotImageView.setDisable(true);
-      smashBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(1);
-      SaveClients.ausgewaehlteRoboter[1] = 1;
+      readFile();
+      if (choosenBots.contains(49)){
+         Warning();
+      }
+      else {
+         figure = 1;
+         writeFile(figure);
+         smashBotImageView.setDisable(true);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(1);
+         SaveClients.ausgewaehlteRoboter[1] = 1;
+      }
    }
    public void HulkRoboterPressed(){
-      figure = 2;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      hulkBotImageView.setDisable(true);
-      hulkBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(2);
-      SaveClients.ausgewaehlteRoboter[2] = 2;
+      readFile();
+      if (choosenBots.contains(50)){
+         Warning();
+      }
+      else {
+         figure = 2;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(2);
+         SaveClients.ausgewaehlteRoboter[2] = 2;
+      }
    }
-   public void ZoomRoboterPressed(){
-      figure = 3;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      zoomBotImageView.setDisable(true);
-      zoomBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(3);
-      SaveClients.ausgewaehlteRoboter[3] = 3;
+   public void ZoomRoboterPressed() {
+      readFile();
+      if (choosenBots.contains(51)) {
+         Warning();
+      } else {
+         figure = 3;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(3);
+         SaveClients.ausgewaehlteRoboter[3] = 3;
+      }
    }
-   public void SpinRoboterPressed(){
-      figure = 4;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      spinBotImageView.setDisable(true);
-      spinBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(4);
-      SaveClients.ausgewaehlteRoboter[4] = 4;
+   public void SpinRoboterPressed() {
+      readFile();
+      if (choosenBots.contains(52)) {
+         Warning();
+      } else {
+         figure = 4;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(4);
+         SaveClients.ausgewaehlteRoboter[4] = 4;
+      }
    }
-   public void HammerRoboterPressed(){
-      figure = 5;
-      System.out.println("funktioniert");
-      System.out.println(figure);
-      hammerBotImageView.setDisable(true);
-      hammerBotImageView.setVisible(false);
-      SaveClients.client.figurenForGui.add(5);
-      SaveClients.ausgewaehlteRoboter[5] = 5;
+   public void HammerRoboterPressed() {
+      readFile();
+      if (choosenBots.contains(53)) {
+         Warning();
+      } else {
+         figure = 5;
+         writeFile(figure);
+         twinkyImageView.setDisable(true);
+         twinkyImageView.setVisible(false);
+         smashBotImageView.setDisable(true);
+         smashBotImageView.setVisible(false);
+         hulkBotImageView.setDisable(true);
+         zoomBotImageView.setDisable(true);
+         zoomBotImageView.setVisible(false);
+         spinBotImageView.setDisable(true);
+         spinBotImageView.setVisible(false);
+         hammerBotImageView.setDisable(true);
+         hammerBotImageView.setVisible(false);
+         SaveClients.client.figurenForGui.add(5);
+         SaveClients.ausgewaehlteRoboter[5] = 5;
+      }
    }
    public int getFigure(){
       return figure;
@@ -331,8 +413,7 @@ public class FirstView implements Initializable {
             Stage stage = (Stage) signInButton.getScene().getWindow();
             viewModel.takeUsername(stage);
          } else {
-            errorLabel.setTextFill(Paint.valueOf("red"));
-            errorLabel.setText("Bitte wähle ein Roboter und ein Username");
+            WarningUserName();
          }
 
       } catch (IOException e) {
@@ -365,6 +446,23 @@ public class FirstView implements Initializable {
                return;
          }
       }
+   }
+
+   @FXML
+   private void Warning(){
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Fehler bei der Roboter Auswahl");
+      alert.setContentText("Wähle bitte einen anderen Roboter aus.");
+      alert.setHeaderText("Roboter ist vergeben!");
+      alert.showAndWait();
+   }
+   @FXML
+   private void WarningUserName(){
+      Alert alert = new Alert(Alert.AlertType.WARNING);
+      alert.setTitle("Nicht alle Pflichtfelder wurden ausgefüllt");
+      alert.setContentText("Bitte wähle einen Roboter und einen Username.");
+      alert.setHeaderText("Roboter oder Username fehlt");
+      alert.showAndWait();
    }
 
 
