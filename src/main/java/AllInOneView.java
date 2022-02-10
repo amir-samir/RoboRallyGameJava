@@ -1139,4 +1139,15 @@ public class AllInOneView implements Initializable {
 
     }
 
+    public void runGewonnen() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("You won");
+        Parent signIn = FXMLLoader.load(getClass().getResource("fxml/GameFinished.fxml"));
+        Scene signInScene = new Scene(signIn);
+        stage.setScene(signInScene);
+        stage.show();
+        StageSaver.getStageSaver().setUpgradeCardsStageForSwap(stage);
+        stage.setOnCloseRequest(e -> Platform.exit());
+    }
+
 }

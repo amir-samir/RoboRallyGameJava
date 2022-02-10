@@ -7,6 +7,7 @@ public class StageSaver {
     private Stage chatViewStage;
     private Stage upgradeCardsStage;
     private Stage upgradeCardsForSwap;
+    private Stage allInOneStage;
 
     private StageSaver(Stage firstStage) {
         this.currentStage = firstStage;
@@ -46,5 +47,13 @@ public class StageSaver {
 
     public Stage getUpgradeCardsStage(){
         return upgradeCardsStage;
+    }
+
+    public void setAllInOneStage(Stage allInOneStage1) {
+        this.allInOneStage = allInOneStage1;
+    }
+
+    public Stage getAllInOneStage() {
+        return allInOneStage;
     }
 }
