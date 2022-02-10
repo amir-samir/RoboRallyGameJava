@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,14 +21,41 @@ import java.util.*;
 public class AllInOneView implements Initializable {
     ArrayList<BoardElement>[][] mapGui = SaveClients.client.getMap();
     Boolean[] isFilled = new Boolean[5];
+    int[] fromChooseCard = new int[6];
+    int chooseCardIsThis;
     List<HashMap<String,Object>> laserList = new ArrayList<HashMap<String,Object>>();
     List wallList = new ArrayList<>();
     Boolean[] upgradeCardsFilled = new Boolean[3];
     HashMap<Integer, Integer[]> checkPointMap = new HashMap<Integer, Integer[]>();
+    String bildForRegisterCard =  "";
+    private static final Integer BeginTimerSeconds = 30;
+    private Integer currentSeconds = BeginTimerSeconds;
+
 
 
     Boolean adminPrivaPressed = false;
-
+    int RegisterPlatz = -1;
+    @FXML
+    Label timerLabel;
+    int time = 30;
+    @FXML
+    ImageView chooseCard1;
+    @FXML
+    ImageView chooseCard2;
+    @FXML
+    ImageView chooseCard3;
+    @FXML
+    ImageView chooseCard4;
+    @FXML
+    ImageView chooseCard5;
+    @FXML
+    ImageView chooseCard6;
+    @FXML
+    ImageView chooseCard7;
+    @FXML
+    ImageView chooseCard8;
+    @FXML
+    ImageView chooseCard9;
     @FXML
     Label passivCardLabel;
     @FXML
@@ -463,6 +491,7 @@ public class AllInOneView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        setChooseCardUnvisible();
         CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
         DirectionRechts.setVisible(false);
         DirectionLinks.setVisible(false);
@@ -1024,59 +1053,117 @@ public class AllInOneView implements Initializable {
     }
 
     public void ChooseCard1(){
-        if (!adminPrivaPressed) {
-            Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        if (!adminPrivaPressed && !isFilled[0]) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),0);
+            Card1.setImage(getImageForRegisterCard(bildForRegisterCard));
+            bildForRegisterCard = "";
             isFilled[0] = true;
-            SaveClients.client.setCardOfGui("");
+            fromChooseCard[0] = getChooseCardIsThis();
+
         }
         else {
-          SaveClients.client.chooseRegister(0);
-            adminPrivaPressed = false;
+            if (isFilled[0] && !adminPrivaPressed) {
+                resetChooseCard(fromChooseCard[0]);
+                SaveClients.client.sendCardToRegister(null, 0);
+                Card1.setImage(getImageForRegisterCard(""));
+                RegisterPlatz--;
+                isFilled[0] = false;
+            }
+            if (adminPrivaPressed) {
+                SaveClients.client.chooseRegister(0);
+                adminPrivaPressed = false;
+            }
         }
     }
     public void ChooseCard2(){
-        if (!adminPrivaPressed){
-        Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
-        isFilled[1] = true;
-        SaveClients.client.setCardOfGui("");
+        if (!adminPrivaPressed && !isFilled[1]){
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),1);
+            Card2.setImage(getImageForRegisterCard(bildForRegisterCard));
+            bildForRegisterCard = "";
+            isFilled[1] = true;
+            fromChooseCard[1] = getChooseCardIsThis();
         }
         else {
-            SaveClients.client.chooseRegister(1);
-            adminPrivaPressed = false;
+            if (isFilled[1] && !adminPrivaPressed) {
+                resetChooseCard(fromChooseCard[1]);
+                SaveClients.client.sendCardToRegister(null, 1);
+                Card2.setImage(getImageForRegisterCard(""));
+                RegisterPlatz--;
+                isFilled[1] = false;
+            }
+            if (adminPrivaPressed) {
+                SaveClients.client.chooseRegister(1);
+                adminPrivaPressed = false;
+            }
         }
 
     }
     public void ChooseCard3(){
-        if (!adminPrivaPressed) {
-            Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        if (!adminPrivaPressed && !isFilled[2]) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),2);
+            Card3.setImage(getImageForRegisterCard(bildForRegisterCard));
+            bildForRegisterCard = "";
             isFilled[2] = true;
-            SaveClients.client.setCardOfGui("");
+            fromChooseCard[2] = getChooseCardIsThis();
         }
+
         else {
-            SaveClients.client.chooseRegister(2);
-            adminPrivaPressed = false;
+            if (isFilled[2] && !adminPrivaPressed) {
+                resetChooseCard(fromChooseCard[2]);
+                SaveClients.client.sendCardToRegister(null, 2);
+                Card3.setImage(getImageForRegisterCard(""));
+                RegisterPlatz--;
+                isFilled[2] = false;
+            }
+            if (adminPrivaPressed) {
+                SaveClients.client.chooseRegister(2);
+                adminPrivaPressed = false;
+            }
         }
     }
     public void ChooseCard4(){
-        if (!adminPrivaPressed) {
-            Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        if (!isFilled[3] && !adminPrivaPressed) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),3);
+            Card4.setImage(getImageForRegisterCard(bildForRegisterCard));
+            bildForRegisterCard = "";
             isFilled[3] = true;
-            SaveClients.client.setCardOfGui("");
+            fromChooseCard[3] = getChooseCardIsThis();
         }
         else {
-            SaveClients.client.chooseRegister(3);
-            adminPrivaPressed = false;
+            if (isFilled[3] && !adminPrivaPressed) {
+                resetChooseCard(fromChooseCard[3]);
+                SaveClients.client.sendCardToRegister(null, 3);
+                Card4.setImage(getImageForRegisterCard(""));
+                RegisterPlatz--;
+                isFilled[3] = false;
+            }
+
+            if (adminPrivaPressed) {
+                SaveClients.client.chooseRegister(3);
+                adminPrivaPressed = false;
+            }
         }
     }
     public void ChooseCard5(){
-        if (!adminPrivaPressed) {
-            Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+        if (!isFilled[4] && !adminPrivaPressed) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),4);
+            Card5.setImage(getImageForRegisterCard(bildForRegisterCard));
+            bildForRegisterCard = "";
             isFilled[4] = true;
-            SaveClients.client.setCardOfGui("");
+            fromChooseCard[4] = getChooseCardIsThis();
         }
         else {
-            SaveClients.client.chooseRegister(4);
-            adminPrivaPressed = false;
+            if (isFilled[4] && !adminPrivaPressed) {
+                resetChooseCard(fromChooseCard[4]);
+                SaveClients.client.sendCardToRegister(null, 4);
+                Card5.setImage(getImageForRegisterCard(""));
+                RegisterPlatz--;
+                isFilled[4] = false;
+            }
+            if (adminPrivaPressed) {
+                SaveClients.client.chooseRegister(4);
+                adminPrivaPressed = false;
+            }
         }
     }
 
@@ -1222,4 +1309,250 @@ public class AllInOneView implements Initializable {
         stage.setOnCloseRequest(e -> Platform.exit());
     }
 
+    public void setChooseCardUnvisible(){
+        chooseCard1.setVisible(false);
+        chooseCard2.setVisible(false);
+        chooseCard3.setVisible(false);
+        chooseCard4.setVisible(false);
+        chooseCard5.setVisible(false);
+        chooseCard6.setVisible(false);
+        chooseCard7.setVisible(false);
+        chooseCard8.setVisible(false);
+        chooseCard9.setVisible(false);
+        chooseCard1.setDisable(true);
+        chooseCard2.setDisable(true);
+        chooseCard3.setDisable(true);
+        chooseCard4.setDisable(true);
+        chooseCard5.setDisable(true);
+        chooseCard6.setDisable(true);
+        chooseCard7.setDisable(true);
+        chooseCard8.setDisable(true);
+        chooseCard9.setDisable(true);
+
+
+    }
+
+    public void fillChooseCard(){
+        chooseCard1.setVisible(true);
+        chooseCard2.setVisible(true);
+        chooseCard3.setVisible(true);
+        chooseCard4.setVisible(true);
+        chooseCard5.setVisible(true);
+        chooseCard6.setVisible(true);
+        chooseCard7.setVisible(true);
+        chooseCard8.setVisible(true);
+        chooseCard9.setVisible(true);
+        chooseCard1.setDisable(false);
+        chooseCard2.setDisable(false);
+        chooseCard3.setDisable(false);
+        chooseCard4.setDisable(false);
+        chooseCard5.setDisable(false);
+        chooseCard6.setDisable(false);
+        chooseCard7.setDisable(false);
+        chooseCard8.setDisable(false);
+        chooseCard9.setDisable(false);
+        chooseCard1.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(0).getName()));
+        chooseCard2.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(1).getName()));
+        chooseCard3.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(2).getName()));
+        chooseCard4.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(3).getName()));
+        chooseCard5.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(4).getName()));
+        chooseCard6.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(5).getName()));
+        chooseCard7.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(6).getName()));
+        chooseCard8.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(7).getName()));
+        chooseCard9.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(8).getName()));
+    }
+
+    public void takeCard1(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard1.setDisable(true);
+            chooseCard1.setVisible(false);
+            chooseCardIsThis = 0;
+            bildForRegisterCard = SaveClients.client.getHandcards().get(0).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(0).getName());
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard2(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard2.setDisable(true);
+            chooseCard2.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(1).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(1).getName());
+            chooseCardIsThis = 1;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard3(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard3.setDisable(true);
+            chooseCard3.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(2).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(2).getName());
+            chooseCardIsThis = 2;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard4(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            //SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatz);
+            chooseCard4.setDisable(true);
+            chooseCard4.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(3).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(3).getName());
+            chooseCardIsThis = 3;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard5(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard5.setDisable(true);
+            chooseCard5.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(4).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(4).getName());
+            chooseCardIsThis = 4;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard6(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard6.setDisable(true);
+            chooseCard6.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(5).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(5).getName());
+            chooseCardIsThis = 5;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard7(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard7.setDisable(true);
+            chooseCard7.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(6).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(6).getName());
+            chooseCardIsThis = 6;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard8(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard8.setDisable(true);
+            chooseCard8.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(7).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(7).getName());
+            chooseCardIsThis = 7;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+    public void takeCard9(){
+        if (RegisterPlatz < 4) {
+            RegisterPlatz++;
+            chooseCard9.setDisable(true);
+            chooseCard9.setVisible(false);
+            bildForRegisterCard = SaveClients.client.getHandcards().get(8).getName();
+            SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(8).getName());
+            chooseCardIsThis = 8;
+        }
+        else {
+            SaveClients.client.printMessage("Dein Register ist voll!");
+        }
+    }
+
+    public int getChooseCardIsThis() {
+        return chooseCardIsThis;
+    }
+
+    public void resetChooseCard(int i){
+        switch (i){
+            case 0:
+                chooseCard1.setVisible(true);
+                chooseCard1.setDisable(false);
+                break;
+            case 1:
+                chooseCard2.setVisible(true);
+                chooseCard2.setDisable(false);
+                break;
+            case 2:
+                chooseCard3.setVisible(true);
+                chooseCard3.setDisable(false);
+                break;
+            case 3:
+                chooseCard4.setVisible(true);
+                chooseCard4.setDisable(false);
+                break;
+            case 4:
+                chooseCard5.setVisible(true);
+                chooseCard5.setDisable(false);
+                break;
+            case 5:
+                chooseCard6.setVisible(true);
+                chooseCard6.setDisable(false);
+                break;
+            case 6:
+                chooseCard7.setVisible(true);
+                chooseCard7.setDisable(false);
+                break;
+            case 7:
+                chooseCard8.setVisible(true);
+                chooseCard8.setDisable(false);
+                break;
+            case 8:
+                chooseCard9.setVisible(true);
+                chooseCard9.setDisable(false);
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    public void startTimer() {
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+
+                if(time > 0)
+                {
+                    Platform.runLater(() -> timerLabel.setText("00" + ":" + Integer.toString(time) + "Sekunden zum auswählen"));
+                    time--;
+                    if(time < 6)
+                    {
+                        timerLabel.setTextFill(Color.web("red"));
+                    }
+                }
+                else {
+                    timerLabel.setVisible(false);
+                    timer.cancel();
+                }
+            }
+        }, 1000,1000);
+        time = 30;
+        timerLabel.setVisible(true);
+        timerLabel.setText("");
+        timerLabel.setTextFill(Color.web("black"));
+    }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="865.0" prefWidth="934.0" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllInOneView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="859.0" prefWidth="934.0" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllInOneView">
     <ComboBox fx:id="PrivateMessage" layoutX="461.0" layoutY="749.0" prefHeight="30.0" prefWidth="179.0" />
     <TextField fx:id="privateMsgInput" layoutX="461.0" layoutY="780.0" prefHeight="45.0" prefWidth="179.0" />
     <Button fx:id="sendPrivateMsg" layoutX="461.0" layoutY="831.0" mnemonicParsing="false" onAction="#sendPrivateMessage" prefHeight="19.0" prefWidth="179.0" text="SEND!Priavte" />
@@ -78,22 +79,22 @@
          <Image url="@../assets/Karte.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="DirectionLinks" fitHeight="30.0" fitWidth="59.0" layoutX="661.0" layoutY="667.0" onMouseClicked="#pressLeftDirection" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="DirectionLinks" fitHeight="30.0" fitWidth="59.0" layoutX="760.0" layoutY="446.0" onMouseClicked="#pressLeftDirection" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../assets/pfeilLinksChangeDirection.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="DirectionRechts" fitHeight="30.0" fitWidth="59.0" layoutX="725.0" layoutY="667.0" onMouseClicked="#pressRightDirection" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="DirectionRechts" fitHeight="30.0" fitWidth="59.0" layoutX="814.0" layoutY="446.0" onMouseClicked="#pressRightDirection" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../assets/pfeilRechtsChooseDirection.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="DirectionOben" fitHeight="30.0" fitWidth="59.0" layoutX="691.0" layoutY="642.0" onMouseClicked="#pressUpDirection" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="DirectionOben" fitHeight="30.0" fitWidth="59.0" layoutX="784.0" layoutY="400.0" onMouseClicked="#pressUpDirection" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../assets/pfeilObenChangeDirection.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="DirectionUnten" fitHeight="30.0" fitWidth="59.0" layoutX="691.0" layoutY="684.0" onMouseClicked="#pressDownDirecton" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="DirectionUnten" fitHeight="30.0" fitWidth="46.0" layoutX="784.0" layoutY="476.0" onMouseClicked="#pressDownDirecton" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../assets/pfeilUntenChangeDirection.png" />
       </image>
@@ -121,4 +122,56 @@
          <Font size="14.0" />
       </font>
    </Label>
+   <ImageView fx:id="chooseCard1" fitHeight="123.0" fitWidth="74.0" layoutX="686.0" layoutY="527.0" onMouseClicked="#takeCard1" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard2" fitHeight="123.0" fitWidth="74.0" layoutX="762.0" layoutY="527.0" onMouseClicked="#takeCard2" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard3" fitHeight="123.0" fitWidth="74.0" layoutX="836.0" layoutY="527.0" onMouseClicked="#takeCard3" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard4" fitHeight="123.0" fitWidth="74.0" layoutX="686.0" layoutY="624.0" onMouseClicked="#takeCard4" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard5" fitHeight="123.0" fitWidth="74.0" layoutX="762.0" layoutY="624.0" onMouseClicked="#takeCard5" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard6" fitHeight="123.0" fitWidth="74.0" layoutX="836.0" layoutY="624.0" onMouseClicked="#takeCard6" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard7" fitHeight="123.0" fitWidth="74.0" layoutX="686.0" layoutY="720.0" onMouseClicked="#takeCard7" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard8" fitHeight="123.0" fitWidth="74.0" layoutX="762.0" layoutY="720.0" onMouseClicked="#takeCard8" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="chooseCard9" fitHeight="123.0" fitWidth="74.0" layoutX="836.0" layoutY="720.0" onMouseClicked="#takeCard9" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../assets/Karte.png" />
+      </image>
+   </ImageView>
+   <Label fx:id="timerLabel" depthTest="DISABLE" layoutX="506.0" layoutY="551.0" prefHeight="102.0" prefWidth="172.0" wrapText="true">
+      <font>
+         <Font size="24.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor></Label>
 </AnchorPane>
