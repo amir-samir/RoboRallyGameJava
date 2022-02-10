@@ -3,6 +3,7 @@ import Messages.Phase.BuyUpgrade;
 import Messages.Phase.SelectedCard;
 import Messages.Phase.SetStartingPoint;
 import com.google.gson.internal.LinkedTreeMap;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -25,6 +26,7 @@ public class KI implements Runnable {
     private boolean connected;
     private int ID;
     private ArrayList<BoardElement>[][] map;
+    private ArrayList<String> upgradeShop;
 
     private final BufferedReader bufferedReader;
     private final PrintWriter bufferedWriter;
@@ -34,11 +36,14 @@ public class KI implements Runnable {
     private Robot[] figuren = new Robot[6];
     private String selectedMap;
     private boolean figurSelected = false;
+    private boolean startPointTaken = false;
+    private boolean upgradeBought = false;
     private int nextCheckPoint;
 
 
     /**
      * A Constructor that builds a connection between the AI and the server.
+     *
      * @throws IOException Throw this exception if the connection between server and client fails.
      */
     public KI() throws IOException {
@@ -49,7 +54,7 @@ public class KI implements Runnable {
         isAi = true;
     }
 
-    public void setReady(){
+    public void setReady() {
         if (player.get(ID) != null) {
             player.get(ID).ready = true;
         }
@@ -57,18 +62,18 @@ public class KI implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(setStatus));
     }
 
-    public void configuration(){
+    public void configuration() {
         String name;
         int figur = (int) Math.floor(Math.random() * 6);
-        if (figur == 1){
+        if (figur == 1) {
             name = "BummBot";
-        } else if (figur == 2){
+        } else if (figur == 2) {
             name = "Annihilator 3000";
-        } else if (figur == 3){
+        } else if (figur == 3) {
             name = "Oma Manfred";
-        } else if (figur == 4){
+        } else if (figur == 4) {
             name = "MONSTER_Garry";
-        } else if (figur == 5){
+        } else if (figur == 5) {
             name = "RobotKarol";
         } else {
             name = "CrashBot";
@@ -80,29 +85,10 @@ public class KI implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(message));
     }
 
-    public int getID(){
-        return ID;
-    }
-
-    /**
-     * A method that receive and returns information from the game.Server.
-     * @throws IOException Throw this exception if the connection between server and client fails.
-     */
-    public String receiveFromServer() throws IOException {
-        return bufferedReader.readLine();
-    }
-
-    public void closeConnection() throws IOException {
-        SOCKET.close();
-    }
-
-    public boolean isConnected(){
-        return connected;
-    }
-
-    public void setStartingPoint(){
+    public void setStartingPoint() {
+        startPointTaken = true;
         ArrayList<Integer[]> list = new ArrayList();
-        if (selectedMap.equals("DeathTrap")){
+        if (selectedMap.equals("DeathTrap")) {
             list.add(new Integer[]{1, 11});
             list.add(new Integer[]{3, 12});
             list.add(new Integer[]{4, 11});
@@ -119,16 +105,16 @@ public class KI implements Runnable {
         }
         Collections.shuffle(list);
 
-        for (int i = 0; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             boolean free = true;
-            for (Robot robot: figuren){
+            for (Robot robot : figuren) {
                 if (robot != null) {
                     if (robot.getX() == list.get(i)[0] && robot.getY() == list.get(i)[1]) {
                         free = false;
                     }
                 }
             }
-            if (free){
+            if (free) {
                 SetStartingPoint setStartingPoint = new SetStartingPoint(list.get(i)[0], list.get(i)[1]);
                 setStartingPoint.getMessageBody().setKeys(new String[]{"x", "y"});
                 bufferedWriter.println(Adopter.javabeanToJson(setStartingPoint));
@@ -137,7 +123,7 @@ public class KI implements Runnable {
         }
     }
 
-    public void sendHelloServer(Message message){
+    public void sendHelloServer(Message message) {
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
         String[] keys = {"group", "isAI", "protocol"};
@@ -146,21 +132,21 @@ public class KI implements Runnable {
         bufferedWriter.println(S);
     }
 
-    public void sendCardToRegister(String card, int register){
+    public void sendCardToRegister(String card, int register) {
         SelectedCard selectedCard = new SelectedCard(card, register);
         selectedCard.getMessageBody().setKeys(new String[]{"card", "register"});
         bufferedWriter.println(Adopter.javabeanToJson(selectedCard));
     }
 
-    public void mapSelected(String map){
+    public void mapSelected(String map) {
         MapSelected mapSelected = new MapSelected(map);
         String[] key = {"map"};
         mapSelected.getMessageBody().setKeys(key);
         bufferedWriter.println(Adopter.javabeanToJson(mapSelected));
     }
 
-    public void updateFigure(int x, int y, int ID){
-        for (Robot robot: figuren){
+    public void updateFigure(int x, int y, int ID) {
+        for (Robot robot : figuren) {
             if (robot != null) {
                 if (robot.getGamerID() == ID) {
                     robot.setX(x);
@@ -173,45 +159,7 @@ public class KI implements Runnable {
         }
     }
 
-    public ArrayList<Cards> arrayToList (ArrayList<String> array){
-        ArrayList<Cards> handcards= new ArrayList<Cards>();
-        for (String s: array) {
-            switch (s){
-                case "MoveI":
-                    handcards.add(new Move1Card());
-                    break;
-                case "MoveII":
-                    handcards.add(new Move2Card());
-                    break;
-                case "MoveIII":
-                    handcards.add(new Move3Card());
-                    break;
-                case "TurnLeft":
-                    handcards.add(new LeftTurnCard());
-                    break;
-                case "TurnRight":
-                    handcards.add(new RightTurnCard());
-                    break;
-                case "UTurn":
-                    handcards.add(new UTurnCard());
-                    break;
-                case "BackUp":
-                    handcards.add(new BackUpCard());
-                    break;
-                case "PowerUp":
-                    handcards.add(new PowerUpCard());
-                    break;
-                case "Again":
-                    handcards.add(new AgainCard());
-                    break;
-                default:
-                    break;
-            }
-        }
-        return handcards;
-    }
-
-    public void playCards(ArrayList<String> list){
+    public void playCards(ArrayList<String> list) {
         Spielwiese spielwiese = new Spielwiese(this.map, list);
         list = spielwiese.simulate(figuren[player.get(this.ID).figur], this.nextCheckPoint);
         try {
@@ -225,25 +173,25 @@ public class KI implements Runnable {
             sendCardToRegister(list.get(3), 3);
             TimeUnit.SECONDS.sleep(2);
             sendCardToRegister(list.get(4), 4);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public String[] changeListIntoArray(ArrayList<String> list){
+    public String[] changeListIntoArray(ArrayList<String> list) {
         String[] orientations = new String[list.size()];
-        for(int i = 0; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             orientations[i] = list.get(i);
         }
         return orientations;
     }
 
-    public void generateMap(Message m){
+    public void generateMap(Message m) {
         ArrayList<BoardElement>[][] map = new ArrayList[10][13];
         int i = 0;
-        while (i < map.length){
+        while (i < map.length) {
             int u = 0;
-            while (u < map[i].length){
+            while (u < map[i].length) {
                 map[i][u] = new ArrayList<BoardElement>();
                 u++;
             }
@@ -251,15 +199,15 @@ public class KI implements Runnable {
         }
         ArrayList<Object> list = (ArrayList<Object>) m.getMessageBody().getContent()[0];
         int x = 0;
-        while (x < list.size()){
+        while (x < list.size()) {
             ArrayList<Object> y_list = (ArrayList<Object>) list.get(x);
             int y = 0;
-            while (y < y_list.size()){
+            while (y < y_list.size()) {
                 ArrayList<Object> field = (ArrayList<Object>) y_list.get(y);
                 int z = 0;
-                while (z < field.size()){
+                while (z < field.size()) {
                     LinkedTreeMap<String, Object> typ = (LinkedTreeMap<String, Object>) field.get(z);
-                    if (typ == null){
+                    if (typ == null) {
                         map[y][x].add(new Empty("A"));
                     } else {
                         String zuPrüfen = (String) typ.get("type");
@@ -276,7 +224,7 @@ public class KI implements Runnable {
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
                                 ArrayList<Double> list1 = (ArrayList<Double>) typ.get("registers");
                                 int[] register = new int[list1.size()];
-                                for (int p = 0; p < register.length; p++){
+                                for (int p = 0; p < register.length; p++) {
                                     register[p] = (int) (double) list1.remove(0);
                                 }
                                 map[y][x].add(new PushPanel((String) typ.get("isOnBoard"), orientations, register));
@@ -289,7 +237,7 @@ public class KI implements Runnable {
                                 map[y][x].add(new Pit((String) typ.get("isOnBoard")));
                                 break;
                             case "EnergySpace":
-                                map[y][x].add(new EnergySpace((String) typ.get("isOnBoard"), (int)(double) typ.get("count")));
+                                map[y][x].add(new EnergySpace((String) typ.get("isOnBoard"), (int) (double) typ.get("count")));
                                 break;
                             case "Wall":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
@@ -297,14 +245,14 @@ public class KI implements Runnable {
                                 break;
                             case "Laser":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
-                                map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int)(double) typ.get("count")));
+                                map[y][x].add(new Laser((String) typ.get("isOnBoard"), orientations, (int) (double) typ.get("count")));
                                 break;
                             case "Antenna":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
                                 map[y][x].add(new Antenna((String) typ.get("isOnBoard"), orientations));
                                 break;
                             case "CheckPoint":
-                                map[y][x].add(new CheckPoint((String) typ.get("isOnBoard"), (int)(double) typ.get("order")));
+                                map[y][x].add(new CheckPoint((String) typ.get("isOnBoard"), (int) (double) typ.get("order")));
                                 break;
                             case "RestartPoint":
                                 orientations = changeListIntoArray((ArrayList<String>) typ.get("orientations"));
@@ -322,11 +270,53 @@ public class KI implements Runnable {
         this.map = map;
     }
 
-    public void handleCheckPointReached(Message m){
+    public void buyUpgradeCard(){
+        boolean isBuying = false;
+        String card = null;
+        for (String s: upgradeShop){
+            if (s.equals("RearLaser")){
+                isBuying = true;
+                card = "RearLaser";
+            }
+        }
+        if (isBuying && !upgradeBought){
+            upgradeBought = true;
+            BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
+            buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+            bufferedWriter.println(buyUpgrade);
+        } else {
+            BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
+            buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
+            bufferedWriter.println(buyUpgrade);
+        }
+    }
+
+    public void handleCheckPointReached(Message m) {
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
-        if (clientID == this.ID){
+        if (clientID == this.ID) {
             nextCheckPoint += 1;
         }
+    }
+
+    public String handleExchangeSho(Message m) {
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
+        this.upgradeShop = karten;
+        return null;
+    }
+
+    public String handleRefillSho(Message m) {
+        ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
+        for (String s : karten) {
+            this.upgradeShop.add(s);
+        }
+        return null;
+    }
+
+    public String handleUpgradeBough(Message m) {
+        int clientID = (int) (double) m.getMessageBody().getContent()[0];
+        String card = (String) m.getMessageBody().getContent()[1];
+        this.upgradeShop.remove(card);
+        return null;
     }
 
     /**
@@ -386,9 +376,11 @@ public class KI implements Runnable {
                 } else if (message.getMessageType().equals("CurrentPlayer")){
                     int activePlayer = (int)(double)message.getMessageBody().getContent()[0];
                     if (this.ID == activePlayer){
-                        setStartingPoint();
-                    } else {
-
+                        if (!startPointTaken) {
+                            setStartingPoint();
+                        } else {
+                            buyUpgradeCard();
+                        }
                     }
                 } else if (message.getMessageType().equals("GameStarted")){
                     generateMap(message);
@@ -449,26 +441,11 @@ public class KI implements Runnable {
                         e.printStackTrace();
                     }
                 } else if (message.getMessageType().equals("ExchangeShop")){
-                    BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
-                    buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
-                    BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
-                    buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
+                    this.handleExchangeSho(message);
                 } else if (message.getMessageType().equals("RefillShop")){
-                    BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
-                    buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
-                    BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
-                    buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
+                    this.handleRefillSho(message);
                 } else if (message.getMessageType().equals("UpgradeBought")){
-                    BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
-                    buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
-                    BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
-                    buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-                    bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
+                    this.handleUpgradeBough(message);
                 } else if (message.getMessageType().equals("CheckPointReached")){
                     handleCheckPointReached(message);
                 }
