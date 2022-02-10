@@ -519,6 +519,47 @@ public class AllInOneView implements Initializable {
                             saveMap[x][y] = image22;
                         }
                     }
+                    //laba
+                    if (Objects.equals(mapGui[x][y].get(1).getType(), "ConveyorBelt")) {
+                        // Muss evtl. noch weiter angepasst werden
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "right")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image11), y, x);
+                                saveMap[x][y] = image11;
+                            } else {
+                                gridpane1.add(new ImageView(image62), y, x);
+                                saveMap[x][y] = image71;
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "bottom")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image37), y, x);
+                                saveMap[x][y] = image37;
+                            } else {
+                                gridpane1.add(new ImageView(image54), y, x);
+                                saveMap[x][y] = image31;
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "left")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image2), y, x);
+                                saveMap[x][y] = image2;
+                            } else {
+                                gridpane1.add(new ImageView(image61), y, x);
+                                saveMap[x][y] = image85;
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "top")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image36), y, x);
+                                saveMap[x][y] = image36;
+                            } else {
+                                gridpane1.add(new ImageView(image65), y, x);
+                                saveMap[x][y] = image4;
+                            }
+                        }
+
+                    }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "PushPanel")){
                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
                            case "bottom":
@@ -602,6 +643,10 @@ public class AllInOneView implements Initializable {
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DeathTrap")) {
                             gridpane1.add(new ImageView(image91),y,x);
                             saveMap[x][y] = image91;
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "Twister")) {
+                            gridpane1.add(new ImageView(image0),y,x);
+                            saveMap[x][y] = image0;
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DizzyHighway")) {
                             gridpane1.add(new ImageView(image98),y,x);
@@ -772,6 +817,7 @@ public class AllInOneView implements Initializable {
                         }*/
 
                     }
+                    //dudu
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "CheckPoint")){
                         switch (mapGui[x][y].get(0).getCount()){
                             case 0:
@@ -788,7 +834,7 @@ public class AllInOneView implements Initializable {
                                 break;
                             case 3:
                                 gridpane1.add(new ImageView(image54),y,x);
-                                saveMap[x][y] = image1;
+                                saveMap[x][y] = image54;
                                 break;
                             case 4:
                                 gridpane1.add(new ImageView(image48),y,x);
