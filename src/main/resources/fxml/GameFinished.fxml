@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="401.0" prefWidth="594.0" styleClass="MapsBackground" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameFinishedController">
+   <children>
+      <ImageView fx:id="gewonnenBild" fitHeight="401.0" fitWidth="597.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/gameFinishedHulk.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

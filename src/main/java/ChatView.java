@@ -180,6 +180,7 @@ public class ChatView {
         Scene signInScene = new Scene(signIn);
         stage.setScene(signInScene);
         stage.show();
+        StageSaver.getStageSaver().setAllInOneStage(stage);
         stage.setOnCloseRequest(e -> close());
     }
 

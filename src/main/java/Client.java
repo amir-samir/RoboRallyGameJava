@@ -69,6 +69,7 @@ public class Client implements Runnable {
     private RalleyLogger ralleyLogger = new RalleyLogger();
     private String UpgradeCardName;
     private String titleUserName;
+    private int robterGewonnen;
 
 
     /**
@@ -446,8 +447,17 @@ public class Client implements Runnable {
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         String s;
         if (clientID == this.ID){
+            robterGewonnen = player.get(this.ID).figur;
             s = "Du hast das Spiel gewonnen! Glückwunsch!";
             //GUI: GEWONNEN
+            Platform.runLater(() -> {
+                try {
+                    getAllInOneView().runGewonnen();
+                    StageSaver.getStageSaver().getAllInOneStage().close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
         } else {
             s = player.get(clientID).name + " (" + clientID + ") hat das Spiel gewonnen. Nächstes mal klappts bestimmt...";
             //GUI: VERLOREN
@@ -1007,5 +1017,9 @@ public class Client implements Runnable {
 
     public Socket getSOCKET() {
         return SOCKET;
+    }
+
+    public int getRobterGewonnen(){
+        return robterGewonnen;
     }
 }
