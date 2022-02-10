@@ -208,10 +208,10 @@ public class Spielwiese {
     }
 
     /**
-     *
-     * @param direction
-     * @param robot
-     * @return
+     * Diese Methode dreht einen Roboter.
+     * @param direction Die Richtung, in die der Roboter gedreht werden soll
+     * @param robot Der Roboter, der gedreht werden soll
+     * @return Der Roboter, der nach der Drehung herauskommt
      */
     public Robot turnRobot(String direction, Robot robot){
         switch (robot.getDirection()){
@@ -239,6 +239,13 @@ public class Spielwiese {
         return robot;
     }
 
+    /**
+     * Diese Methode simuliert Bewegungen des Roboters.
+     * @param robot Der Roboter, der bewegt werden soll
+     * @param direction Die Richtung, in die der Roboter bewegt werden soll
+     * @param necessary Boolean der angibt, ob diese Bewegung zwingend ausgeführt werden soll (auch wenn der Roboter tot ist)
+     * @return Der Roboter, der nach der Bewegung herauskommt
+     */
     public Robot checkMovement(Robot robot, String direction, boolean necessary){
         switch (direction) {
             case "top":
@@ -354,6 +361,11 @@ public class Spielwiese {
         }
     }
 
+    /**
+     * Diese Methode simuliert Bewegungen durch Förderbänder
+     * @param robot Der Roboter, der bewegt werden soll
+     * @return Der Roboter, der nach der Bewegung herauskommt
+     */
     public Robot checkConveyor(Robot robot){
         try {
             String robotDirection = robot.getDirection();
@@ -521,6 +533,12 @@ public class Spielwiese {
         }
     }
 
+    /**
+     * Diese Methode simuliert einen reboot
+     * @param robot Der Roboter, der gestorben ist
+     * @param isOnBoard Das Feld, auf dem der Roboter zuletzt gestanden hat
+     * @return Der Roboter, der nach dem reboot herauskommt
+     */
     public Robot reboot(Robot robot, String isOnBoard){
         robot.setX(searchX("RestartPoint"));
         robot.setY(searchY("RestartPoint"));
@@ -529,6 +547,10 @@ public class Spielwiese {
         return robot;
     }
 
+    /**
+     * Diese Methode generiert aus den Handkarten eine Vielzahl an Möglichkeiten, in der die Handkarten gespielt werden können.
+     * @return Eine Liste der Sequenzen, die mit den Handkarten möglich sind
+     */
     public ArrayList<ArrayList<Cards>> generatePossibilities(){
         ArrayList<ArrayList<Cards>> possibilities = new ArrayList<>();
         for (int i = 0; i < 150000; i++){
@@ -544,6 +566,11 @@ public class Spielwiese {
         return possibilities;
     }
 
+    /**
+     * Diese Methode wandelt eine Liste mit Strings in eine Liste mit Karten-Objekten um.
+     * @param array Eine Liste mit Strings
+     * @return Eine Liste gefüllt mit Karten-Objekten
+     */
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
         ArrayList<Cards> handCards = new ArrayList<>();
         for (String a: array) {
@@ -594,6 +621,10 @@ public class Spielwiese {
         return handCards;
     }
 
+    /**
+     * Diese Methode zählt die Schadenskarten, die sich in den Handkarten befinden.
+     * @return Anzahl der Schadenkarten
+     */
     public int countDamageCards(){
         int zähler = 0;
         for (Cards card: this.cards){
@@ -604,6 +635,11 @@ public class Spielwiese {
         return zähler;
     }
 
+    /**
+     * Diese Methode sucht nach einem bestimmten Feld auf der Karte
+     * @param element Der Name des gesuchten Felds
+     * @return Die x-Koordinate des gesuchten Felds
+     */
     public int searchX(String element) {
         for (int i = 0; i < map.length; i++) {
             for (int u = 0; u < map[i].length; u++) {
@@ -617,6 +653,12 @@ public class Spielwiese {
         return -1;
     }
 
+    /**
+     * Diese Methode sucht nach einem bestimmten Feld auf der Karte
+     * @param element Der Name des gesuchten Felds
+     * @param index Das Attribut "count", dass das gesuchte Feld haben soll
+     * @return Die x-Koordinate des gesuchten Felds
+     */
     public int searchX(String element, int index) {
         for (int i = 0; i < map.length; i++) {
             for (int u = 0; u < map[i].length; u++) {
@@ -630,6 +672,11 @@ public class Spielwiese {
         return -1;
     }
 
+    /**
+     * Diese Methode sucht nach einem bestimmten Feld auf der Karte
+     * @param element Der Name des gesuchten Felds
+     * @return Die y-Koordinate des gesuchten Felds
+     */
     public int searchY(String element) {
         for (int i = 0; i < map.length; i++) {
             for (int u = 0; u < map[i].length; u++) {
@@ -643,6 +690,12 @@ public class Spielwiese {
         return -1;
     }
 
+    /**
+     * Diese Methode sucht nach einem bestimmten Feld auf der Karte
+     * @param element Der Name des gesuchten Felds
+     * @param index Das Attribut "count", dass das gesuchte Feld haben soll
+     * @return Die y-Koordinate des gesuchten Felds
+     */
     public int searchY(String element, int index) {
         for (int i = 0; i < map.length; i++) {
             for (int u = 0; u < map[i].length; u++) {
@@ -656,6 +709,11 @@ public class Spielwiese {
         return -1;
     }
 
+    /**
+     * Diese Methode kopiert einen Roboter
+     * @param toCopy Der Roboter, der kopiert werden soll
+     * @return Der kopierte Roboter
+     */
     public Robot copyRobot(Robot toCopy){
         Robot ergebnis = new Robot(toCopy.getGamerID());
         ergebnis.setDirection(toCopy.getDirection());
