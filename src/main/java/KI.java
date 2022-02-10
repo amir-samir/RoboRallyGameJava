@@ -17,7 +17,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * In dieser Klasse agiert die künstliche Intelligenz für das Spiel Robo-Rally.
+ *
+ * @author Luca Weyhofen
+ *
+ * @version 2.1
+ */
 public class KI implements Runnable {
 
     private final Socket SOCKET;
@@ -42,9 +48,9 @@ public class KI implements Runnable {
 
 
     /**
-     * A Constructor that builds a connection between the AI and the server.
-     *
-     * @throws IOException Throw this exception if the connection between server and client fails.
+     * Dies ist der Konstruktor der Klasse.
+     * Hier verbindet sich die KI mit dem Server.
+     * @throws IOException Wenn die Verbindung zum Server nicht klappt, wird diese Exception geworfen
      */
     public KI() throws IOException {
         SOCKET = new Socket("localhost", 1237);
@@ -54,6 +60,9 @@ public class KI implements Runnable {
         isAi = true;
     }
 
+    /**
+     * Diese Methode setzt die KI auf den Status "bereit".
+     */
     public void setReady() {
         if (player.get(ID) != null) {
             player.get(ID).ready = true;
@@ -62,6 +71,9 @@ public class KI implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(setStatus));
     }
 
+    /**
+     * Hier wird ein zufälliger Name für die KI generiert und dem Server mitgeteilt.
+     */
     public void configuration() {
         String name;
         int figur = (int) Math.floor(Math.random() * 6);
@@ -85,6 +97,9 @@ public class KI implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(message));
     }
 
+    /**
+     * In dieser Methode wählt die KI einen zufälligen Startpunkt.
+     */
     public void setStartingPoint() {
         startPointTaken = true;
         ArrayList<Integer[]> list = new ArrayList();
@@ -123,6 +138,10 @@ public class KI implements Runnable {
         }
     }
 
+    /**
+     * Die Nachricht empfängt die Willkommensnachricht des Servers und verschickt die HelloServer Nachricht
+     * @param message Die Willkommensnachricht des Servers
+     */
     public void sendHelloServer(Message message) {
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
@@ -132,12 +151,21 @@ public class KI implements Runnable {
         bufferedWriter.println(S);
     }
 
+    /**
+     * In dieser Methode werden die gewünschte Karte in ein gewünschtes Register gelegt.
+     * @param card Die Karte, die gespielt werden soll
+     * @param register Das Register, in das die Karte gelegt werden soll
+     */
     public void sendCardToRegister(String card, int register) {
         SelectedCard selectedCard = new SelectedCard(card, register);
         selectedCard.getMessageBody().setKeys(new String[]{"card", "register"});
         bufferedWriter.println(Adopter.javabeanToJson(selectedCard));
     }
 
+    /**
+     * Sollte die KI eine zufällige Map auswählen dürfen, wird diese hier verschickt.
+     * @param map Die Map, die ausgewählt wurde
+     */
     public void mapSelected(String map) {
         MapSelected mapSelected = new MapSelected(map);
         String[] key = {"map"};
@@ -145,6 +173,12 @@ public class KI implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(mapSelected));
     }
 
+    /**
+     * Aktualisierung der Positionen der Roboter.
+     * @param x neue x-Koordinate
+     * @param y neue y-Koordinate
+     * @param ID ID des Roboters, der seine Position geändert hat
+     */
     public void updateFigure(int x, int y, int ID) {
         for (Robot robot : figuren) {
             if (robot != null) {
@@ -159,6 +193,10 @@ public class KI implements Runnable {
         }
     }
 
+    /**
+     * In dieser Methode werden die Karten berechnet und gelegt, die die KI spielen soll.
+     * @param list Liste an verfügbaren Karten
+     */
     public void playCards(ArrayList<String> list) {
         Spielwiese spielwiese = new Spielwiese(this.map, list);
         list = spielwiese.simulate(figuren[player.get(this.ID).figur], this.nextCheckPoint);
@@ -178,6 +216,11 @@ public class KI implements Runnable {
         }
     }
 
+    /**
+     * Diese Methode verwandelt eine String Liste in Array
+     * @param list Die umzuwandelnde Liste
+     * @return Das fertige Array
+     */
     public String[] changeListIntoArray(ArrayList<String> list) {
         String[] orientations = new String[list.size()];
         for (int i = 0; i < list.size(); i++) {
@@ -186,6 +229,10 @@ public class KI implements Runnable {
         return orientations;
     }
 
+    /**
+     * Hier wird die Karte generiert.
+     * @param m Die Nachricht mit der Map, die vom Server verschickt wurde
+     */
     public void generateMap(Message m) {
         ArrayList<BoardElement>[][] map = new ArrayList[10][13];
         int i = 0;
@@ -270,6 +317,9 @@ public class KI implements Runnable {
         this.map = map;
     }
 
+    /**
+     * Diese Methode kauft für die KI UpgradeKarten.
+     */
     public void buyUpgradeCard(){
         boolean isBuying = false;
         String card = null;
@@ -291,6 +341,10 @@ public class KI implements Runnable {
         }
     }
 
+    /**
+     * Verarbeitet die CheckPointReached Nachricht
+     * @param m Die Nachricht vom Server
+     */
     public void handleCheckPointReached(Message m) {
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         if (clientID == this.ID) {
@@ -298,6 +352,11 @@ public class KI implements Runnable {
         }
     }
 
+    /**
+     * Verarbeitet die exchangeShop Nachricht
+     * @param m Die Nachricht
+     * @return null
+     */
     public String handleExchangeSho(Message m) {
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         this.upgradeShop = karten;
