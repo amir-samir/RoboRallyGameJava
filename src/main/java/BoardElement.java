@@ -1,15 +1,22 @@
 /**
+ * Overarching class for all BoardElement Types.
  * @author yiluye
  */
-
-
 public abstract class BoardElement {
 
     private String type;
     private String isOnBoard;
 
+    /**
+     * robot movement after activating Boardelements effect
+     * @param robot
+     * @param server
+     */
     public abstract void effect(Robot robot, Server server);
 
+    /**
+     * setter and getter
+     */
     public void setType(String type){
         this.type = type;
     }

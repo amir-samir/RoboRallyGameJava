@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * map "Twister"
+ * Has all the BoardElements of the map Twister hardcoded
+ * @author yiluye
+ */
 public class Twister extends Board {
 
     public Twister() {

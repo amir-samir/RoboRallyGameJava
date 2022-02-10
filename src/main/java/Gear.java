@@ -1,9 +1,17 @@
 import Messages.Actions.PlayerTurning;
-
+/**
+ * Class for the BoardElement type "Gear".
+ * @author yiluye
+ */
 public class Gear extends BoardElement {
 
     String[] orientations;
 
+    /**
+     * Constructor
+     * @param isOnBoard
+     * @param orientations
+     */
     public Gear(String isOnBoard, String[] orientations) {
         this.setType("Gear");
         this.setIsOnBoard(isOnBoard);
@@ -15,6 +23,12 @@ public class Gear extends BoardElement {
         return orientations;
     }
 
+    /**
+     * robot movement when the effect of Gear is activated
+     * effect of Gear: turn clockwise or counterclockwise
+     * @param robot
+     * @param server
+     */
     @Override
     public void effect(Robot robot, Server server) {
         if (this.orientations[0].equals("clockwise")) {
@@ -28,7 +42,7 @@ public class Gear extends BoardElement {
                 case "left":
                     robot.setDirection("top");
                     break;
-                case "rigth":
+                case "right":
                     robot.setDirection("bottom");
             }
         } else {
@@ -42,7 +56,7 @@ public class Gear extends BoardElement {
                 case "left":
                     robot.setDirection("bottom");
                     break;
-                case "rigth":
+                case "right":
                     robot.setDirection("top");
             }
         }

@@ -1,0 +1,16 @@
+INFO: { "messageType": "HelloClient", "messageBody": { "protocol": "Version 2.1" }}
+INFO: Server wurde gestartet.
+INFO: { "messageType": "HelloClient", "messageBody": { "protocol": "Version 2.1" }}
+INFO: Server wurde gestartet.
+INFO: { "messageType": "PlayerAdded", "messageBody": { "clientID": 2001, "name": "xiao", "figure": 3 }}
+INFO: { "messageType": "PlayerAdded", "messageBody": { "clientID": 2000, "name": "yilu", "figure": 0 }}
+INFO: { "messageType": "ReceivedChat", "messageBody": { "message": "hi", "from": 2000, "isPrivate": false }}
+INFO: { "messageType": "ReceivedChat", "messageBody": { "message": "xiao", "from": 2001, "isPrivate": false }}
+INFO: { "messageType": "SelectMap", "messageBody": { "availableMaps": ["DizzyHighway","ExtraCrispy","LostBearings","DeathTrap","Twister"] }}
+INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2000, "ready": true }}
+INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2001, "ready": true }}
+INFO: { "messageType": "MapSelected", "messageBody": { "map": "DizzyHighway" }}
+INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2000, "ready": false }}
+INFO: { "messageType": "SelectMap", "messageBody": { "availableMaps": ["DizzyHighway","ExtraCrispy","LostBearings","DeathTrap","Twister"] }}
+INFO: { "messageType": "PlayerStatus", "messageBody": { "clientID": 2000, "ready": true }}
+INFO: { "messageType": "MapSelected", "messageBody": { "map": "DizzyHighway" }}

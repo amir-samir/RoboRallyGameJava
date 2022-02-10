@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * map "LostBearings"
+ * Has all the BoardElements of the map LostBearings hardcoded
+ * @author yiluye
+ */
 public class LostBearings extends Board{
 
     public LostBearings() {
