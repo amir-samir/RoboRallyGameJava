@@ -363,6 +363,11 @@ public class KI implements Runnable {
         return null;
     }
 
+    /**
+     * Verarbeitung der refillShop Nachricht
+     * @param m RefillShop Nachricht
+     * @return null
+     */
     public String handleRefillSho(Message m) {
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         for (String s : karten) {
@@ -371,6 +376,11 @@ public class KI implements Runnable {
         return null;
     }
 
+    /**
+     * Verarbeitung der UpgradeBought Nachricht
+     * @param m UpgradeBought Nachricht
+     * @return null
+     */
     public String handleUpgradeBough(Message m) {
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         String card = (String) m.getMessageBody().getContent()[1];
@@ -379,8 +389,8 @@ public class KI implements Runnable {
     }
 
     /**
-     * This method is an overridden method which displays the input that is coming from the server in
-     * the Chat view.
+     * Diese Methode überschreibt die Methode run() aus Runnable.
+     * Hier werden die eingehenden Nachrichten vom Server verarbeitet und es wird entsprechend darauf reagiert.
      */
     @Override
     public void run() {
@@ -517,6 +527,11 @@ public class KI implements Runnable {
         }
     }
 
+    /**
+     * Dies ist die Main-Methode der KI.
+     * @param args Kommandozeilenargumente
+     * @throws IOException Sollte die Verbindung zum Server nicht korrekt laufen, wird diese Exception geworfen
+     */
     public static void main(String[] args) throws IOException {
         KI ki = new KI();
         Thread thread = new Thread(ki);
