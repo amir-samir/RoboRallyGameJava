@@ -643,6 +643,7 @@ public class Client implements Runnable {
                 getAllInOneView().setDefaultMap();
                 for (int i = 0; i < figuren.length; i++) {
                     if (figuren[i] != null && figuren[i].getX() != -1) {
+
                         getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                     }
                 }
@@ -662,7 +663,14 @@ public class Client implements Runnable {
         int x = (int) (double) m.getMessageBody().getContent()[1];
         int y = (int) (double) m.getMessageBody().getContent()[2];
         Platform.runLater(() -> {
+            getAllInOneView().setDefaultMap();
             getAllInOneView().moveCheckpoints(checkpointID, x, y);
+            for (int i = 0; i < figuren.length; i++) {
+                if (figuren[i] != null && figuren[i].getX() != -1) {
+                    getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                }
+            }
+
         });
     }
 
