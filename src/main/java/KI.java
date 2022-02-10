@@ -333,11 +333,11 @@ public class KI implements Runnable {
             upgradeBought = true;
             BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
             buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-            bufferedWriter.println(buyUpgrade);
+            bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
         } else {
             BuyUpgrade buyUpgrade = new BuyUpgrade(false, null);
             buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
-            bufferedWriter.println(buyUpgrade);
+            bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
         }
     }
 

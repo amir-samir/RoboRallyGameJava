@@ -9,7 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="AI improvements" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_16_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_16_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestMap.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +120,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.KI">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="innige-irrweg-hp" />
@@ -180,9 +189,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.KI" />
         <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
         <item itemvalue="Application.RalleyLogger" />
       </list>
@@ -234,13 +243,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00053" summary="map changing">
-      <created>1642764507624</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1642764507624</updated>
     </task>
     <task id="LOCAL-00054" summary="FirstView änderungen">
       <created>1643024093494</created>
@@ -578,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644527334548</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Merge">
+      <created>1644527771378</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1644527771378</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +620,6 @@
     <MESSAGE value="Bugfix:&#10;- AI now VERY intelligent ;=)" />
     <MESSAGE value="Bugfix:&#10;- Twister" />
     <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
-    <MESSAGE value="Merge" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Added JavaDoc Comments in Game" />
     <MESSAGE value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
@@ -622,7 +630,8 @@
     <MESSAGE value="Added JavaDocs to Robot" />
     <MESSAGE value="Bugfix:&#10;- Timer after everyone has played his cards" />
     <MESSAGE value="AI improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI improvements" />
+    <MESSAGE value="Merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
