@@ -235,20 +235,6 @@
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
     </task>
-    <task id="LOCAL-00051" summary="LaserDing">
-      <created>1642607501410</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1642607501410</updated>
-    </task>
-    <task id="LOCAL-00052" summary="map changing">
-      <created>1642763972762</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1642763972762</updated>
-    </task>
     <task id="LOCAL-00053" summary="map changing">
       <created>1642764507624</created>
       <option name="number" value="00053" />
@@ -578,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644526099397</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="AI improvements">
+      <created>1644526135678</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1644526135678</updated>
+    </task>
+    <task id="LOCAL-00103" summary="AI improvements">
+      <created>1644527334548</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1644527334548</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
