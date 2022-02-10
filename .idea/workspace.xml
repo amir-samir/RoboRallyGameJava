@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- NullPointerException in UpgradeShop" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,20 +234,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00041" summary="Merge: new Images">
-      <created>1642018274028</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1642018274028</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Bugfix:&#10;- Improved random AI&#10;- Improved Messages">
-      <created>1642176873487</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1642176873487</updated>
     </task>
     <task id="LOCAL-00043" summary="Bugfix:&#10;- Call effect() from BoardElement">
       <created>1642244118609</created>
@@ -581,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644504621787</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Added JavaDoc Comments in Game">
+      <created>1644509915580</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1644509915580</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Bugfix:&#10;- NullPointerException in UpgradeShop">
+      <created>1644510167041</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1644510167041</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,8 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="LaserDing" />
-    <MESSAGE value="Timer fertig Gui" />
     <MESSAGE value="map changing" />
     <MESSAGE value="FirstView änderungen" />
     <MESSAGE value="Upgrade Cards" />
@@ -625,7 +620,9 @@
     <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
     <MESSAGE value="Merge" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Added JavaDoc Comments in Game" />
+    <MESSAGE value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,7 +642,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>138</line>
+          <line>149</line>
           <properties class="Game" method="prepareUpgradeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
