@@ -1,11 +1,17 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * prepare programmingcards for each Player
+ * @author chen
+ */
 public class ProgrammingCardsForPlayer {
 
     private ArrayList<Cards> deck = new ArrayList<Cards>();
     private ArrayList<Cards> discard = new ArrayList<Cards>();
 
+    /**
+     * initialize a new deck with all programmingcards
+     */
     public ProgrammingCardsForPlayer(){
         for (int i = 0; i < 5; i++) {
             deck.add(new Move1Card());

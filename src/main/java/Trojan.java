@@ -1,11 +1,21 @@
 import Messages.Phase.ReplaceCard;
-
+/**
+ * class for damageCard Trojan
+ * @author chen
+ */
 public class Trojan extends DamageCards {
-
+    /**
+     * Constructor
+     */
     public Trojan(){
         this.setName("Trojan");
     }
 
+    /**
+     * immediately take two SPAM damage cards and play the firstcard of your deck in current register after activating Trojan
+     * @param robot affected robot
+     * @param server connect to server
+     */
     @Override
     public void effect(Robot robot, Server server) {
         Cards activateCard = robot.getFirstCard();
@@ -21,3 +31,4 @@ public class Trojan extends DamageCards {
     }
 
 }
+
