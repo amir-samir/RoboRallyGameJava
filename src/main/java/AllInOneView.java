@@ -953,6 +953,7 @@ public class AllInOneView implements Initializable {
 
     public void ChooseCard1(){
         if (!adminPrivaPressed) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),0);
             Card1.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
             isFilled[0] = true;
             SaveClients.client.setCardOfGui("");
@@ -964,9 +965,10 @@ public class AllInOneView implements Initializable {
     }
     public void ChooseCard2(){
         if (!adminPrivaPressed){
-        Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
-        isFilled[1] = true;
-        SaveClients.client.setCardOfGui("");
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),1);
+            Card2.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
+            isFilled[1] = true;
+            SaveClients.client.setCardOfGui("");
         }
         else {
             SaveClients.client.chooseRegister(1);
@@ -976,6 +978,7 @@ public class AllInOneView implements Initializable {
     }
     public void ChooseCard3(){
         if (!adminPrivaPressed) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),2);
             Card3.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
             isFilled[2] = true;
             SaveClients.client.setCardOfGui("");
@@ -987,6 +990,7 @@ public class AllInOneView implements Initializable {
     }
     public void ChooseCard4(){
         if (!adminPrivaPressed) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),3);
             Card4.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
             isFilled[3] = true;
             SaveClients.client.setCardOfGui("");
@@ -998,6 +1002,7 @@ public class AllInOneView implements Initializable {
     }
     public void ChooseCard5(){
         if (!adminPrivaPressed) {
+            SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),4);
             Card5.setImage(getImageForRegisterCard(SaveClients.client.getCardOfGui()));
             isFilled[4] = true;
             SaveClients.client.setCardOfGui("");
