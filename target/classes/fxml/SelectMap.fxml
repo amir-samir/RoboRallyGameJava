@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="690.0" prefWidth="601.0" styleClass="selectMapBackgroundColor" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectMapView">
+<AnchorPane prefHeight="876.0" prefWidth="602.0" styleClass="selectMapBackgroundColor" stylesheets="@SignInStyle.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectMapView">
     <children>
         <Pane prefHeight="400.0" prefWidth="200.0">
             <children>
@@ -55,5 +55,15 @@
          </image>
       </ImageView>
       <Line endX="487.0" layoutX="114.0" layoutY="676.0" startX="-113.99999237060547" stroke="#07660b" />
+      <ImageView fitHeight="150.0" fitWidth="312.0" layoutX="250.0" layoutY="689.0" onMouseClicked="#ChooseTwisterMap" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/twisterMap.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="11.0" layoutY="748.0" prefHeight="31.0" prefWidth="138.0" text="Twister Map" textFill="#f6ca06">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
