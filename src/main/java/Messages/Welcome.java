@@ -1,5 +1,8 @@
 package Messages;
-
+/**
+ * this class implements the MessageType "Welcome".
+ * @author Luca Weyhofen
+ */
 public class Welcome extends Message {
 
     public Welcome(int id){

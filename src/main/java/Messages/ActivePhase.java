@@ -1,5 +1,9 @@
 package Messages;
 
+/**
+ * this class implements the specific messageType "ActivePhase".
+ * @author Luca Weyhofen
+ */
 public class ActivePhase extends Message {
 
     public ActivePhase(int phase){

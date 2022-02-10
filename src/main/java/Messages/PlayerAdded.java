@@ -1,5 +1,9 @@
 package Messages;
-
+/**
+ * this class implements the specific messageType "PlayerAdded".
+ * it is used to notify clients when a new client connects to the game.
+ * @author Luca Weyhofen
+ */
 public class PlayerAdded extends Message{
 
     public PlayerAdded(int id, String name, int figur){

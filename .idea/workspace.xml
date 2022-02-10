@@ -15,6 +15,18 @@
       <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ActivePhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ActivePhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Error1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Error1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/GameStarted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/GameStarted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/HelloClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/HelloClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/HelloServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/HelloServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/MapSelected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/MapSelected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerAdded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerAdded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/SelectMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SelectMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/SendChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SendChat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
@@ -54,20 +66,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

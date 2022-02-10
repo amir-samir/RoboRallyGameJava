@@ -1,5 +1,9 @@
 package Messages;
-
+/**
+ * this implements the specific messageType "PlayerStatus".
+ * it is used to
+ * @author Luca Weyhofen
+ */
 public class PlayerStatus extends Message{
     public PlayerStatus(int clientID, boolean ready){
         super();

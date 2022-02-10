@@ -1,5 +1,9 @@
 package Messages;
-
+/**
+ * this class implements the specific messageType "HelloServer".
+ * This messageType is used to send chat messages from the server to the client and from client to server.
+ * @author Luca Weyhofen
+ */
 public class HelloServer extends Message{
 
    public HelloServer(String group, boolean isAI, String protocol) {

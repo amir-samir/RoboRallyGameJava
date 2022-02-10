@@ -1,5 +1,9 @@
 package Messages;
-
+/**
+ * this class implements the specific messageType "HelloClient".
+ * it is used to send chat messages from the client to the server and from server to client.
+ * @author Luca Weyhofen
+ */
 public class HelloClient extends Message{
 
     public HelloClient(String protocol){

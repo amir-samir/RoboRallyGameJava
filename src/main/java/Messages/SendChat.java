@@ -1,5 +1,10 @@
 package Messages;
 
+/**
+ * this class implements the specific messageType "SendChat".
+ * it is used to send chat messages from the client to the server.
+ * @author Luca Weyhofen
+ */
 public class SendChat extends Message{
 
     public SendChat(String message, int id){

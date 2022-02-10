@@ -1,5 +1,9 @@
 package Messages;
-
+/**
+ * this class implements the specific messageType "MapSelected".
+ * all available Maps will be sent from the server to the client
+ * @author Luca Weyhofen
+ */
 public class SelectMap extends Message{
     String availableMaps;
 
