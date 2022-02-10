@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- NullPointerException in UpgradeShop" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Added JavaDoc comments in class UpgradeShop" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,13 +234,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00043" summary="Bugfix:&#10;- Call effect() from BoardElement">
-      <created>1642244118609</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1642244118609</updated>
     </task>
     <task id="LOCAL-00044" summary="Bugfix:&#10;- Encoding GameStarted-Message">
       <created>1642265125910</created>
@@ -578,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644510167041</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Added JavaDoc comments in class UpgradeShop">
+      <created>1644511180248</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1644511180248</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="map changing" />
     <MESSAGE value="FirstView änderungen" />
     <MESSAGE value="Upgrade Cards" />
     <MESSAGE value="Logging" />
@@ -622,7 +621,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Added JavaDoc Comments in Game" />
     <MESSAGE value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
+    <MESSAGE value="Added JavaDoc comments in class UpgradeShop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc comments in class UpgradeShop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
