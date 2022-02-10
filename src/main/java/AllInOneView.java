@@ -518,15 +518,7 @@ public class AllInOneView implements Initializable {
     }
     //vorne
     public void moveCheckpoints(int id, int x, int y) {
-        checkPointMap.replace(id, new Integer[]{x,y});
-        // ID 0
-        gridpane1.add(new ImageView(image61),checkPointMap.get(0)[1],checkPointMap.get(0)[0]);
-        //ID 1
-        gridpane1.add(new ImageView(image65),checkPointMap.get(1)[1],checkPointMap.get(1)[0]);
-        //ID 2
-        gridpane1.add(new ImageView(image62),checkPointMap.get(2)[1],checkPointMap.get(2)[0]);
-        //ID 3
-        gridpane1.add(new ImageView(image54),checkPointMap.get(3)[1],checkPointMap.get(3)[0]);
+        checkPointMap.replace(id, new Integer[]{y,x});
     }
 
     public void updateCubes(){
@@ -575,6 +567,9 @@ public class AllInOneView implements Initializable {
                             } else {
                                 gridpane1.add(new ImageView(image62), y, x);
                                 saveMap[x][y] = image71;
+                                //sasa
+                                Integer[] check3 = new Integer[]{x,y};
+                                checkPointMap.put(2, check3);
                             }
                         }
                         if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "bottom")) {
@@ -584,6 +579,8 @@ public class AllInOneView implements Initializable {
                             } else {
                                 gridpane1.add(new ImageView(image54), y, x);
                                 saveMap[x][y] = image31;
+                                Integer[] check2 = new Integer[]{x,y};
+                                checkPointMap.put(1, check2);
                             }
                         }
                         if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "left")) {
@@ -593,6 +590,8 @@ public class AllInOneView implements Initializable {
                             } else {
                                 gridpane1.add(new ImageView(image61), y, x);
                                 saveMap[x][y] = image85;
+                                Integer[] check1 = new Integer[]{x,y};
+                                checkPointMap.put(0, check1);
                             }
                         }
                         if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "top")) {
@@ -602,6 +601,8 @@ public class AllInOneView implements Initializable {
                             } else {
                                 gridpane1.add(new ImageView(image65), y, x);
                                 saveMap[x][y] = image4;
+                                Integer[] check4 = new Integer[]{x,y};
+                                checkPointMap.put(3, check4);
                             }
                         }
 
@@ -894,6 +895,8 @@ public class AllInOneView implements Initializable {
                             case 4:
                                 gridpane1.add(new ImageView(image48),y,x);
                                 saveMap[x][y] = image48;
+                                Integer[] check5 = new Integer[]{x,y};
+                                checkPointMap.put(4, check5);
                                 break;
                         }
                     }
@@ -919,9 +922,6 @@ public class AllInOneView implements Initializable {
         Card1.setImage(image4);
     }
 
-    public void setFigureOnMap(int x, int y){
-        gridpane1.add(new ImageView(figureTest),y,x);
-    }
     public void setFigureOnMapNew(int figure,String direction, int x, int y){
         if (figure == 0){
             if (direction == "top"){
@@ -1007,6 +1007,28 @@ public class AllInOneView implements Initializable {
                 gridpane1.add(new ImageView(HammerUnten),y,x);
             }
         }
+        //gaga
+        // ID 0
+        if (checkPointMap.get(0) != null) {
+            gridpane1.add(new ImageView(image61), checkPointMap.get(0)[1], checkPointMap.get(0)[0]);
+        }
+        //ID 1
+        if (checkPointMap.get(1) != null) {
+            gridpane1.add(new ImageView(image65), checkPointMap.get(1)[1], checkPointMap.get(1)[0]);
+        }
+        //ID 2
+        if (checkPointMap.get(2) != null) {
+            gridpane1.add(new ImageView(image62), checkPointMap.get(2)[1], checkPointMap.get(2)[0]);
+        }
+        //ID 3
+        if (checkPointMap.get(3) != null) {
+            gridpane1.add(new ImageView(image54), checkPointMap.get(3)[1], checkPointMap.get(3)[0]);
+        }
+        //ID 4
+        if (checkPointMap.get(4) != null) {
+            gridpane1.add(new ImageView(image48), checkPointMap.get(4)[1], checkPointMap.get(4)[0]);
+        }
+
     }
 
     public Image getImageForRegisterCard(String cardName) {

@@ -497,7 +497,7 @@ public class Game {
                 }
             }
         }
-        if (activeMap == "Twister"){
+        if (activeMap.equals("Twister")){
             for (int i = 0; i < board.getMap().length; i++) {
                 for (int u = 0; u < board.getMap()[i].length; u++) {
                     for (BoardElement boardElement : board.getMap()[i][u]) {

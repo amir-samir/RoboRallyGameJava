@@ -97,7 +97,6 @@ public class ChatView {
     }
     public void comboAction(ActionEvent event) {
         String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
-        System.out.println(privateMsgInput.getText());
 
     }
 
