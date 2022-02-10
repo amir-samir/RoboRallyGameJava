@@ -23,6 +23,7 @@ public class AllInOneView implements Initializable {
     List<HashMap<String,Object>> laserList = new ArrayList<HashMap<String,Object>>();
     List wallList = new ArrayList<>();
     Boolean[] upgradeCardsFilled = new Boolean[3];
+    HashMap<Integer, Integer[]> checkPointMap = new HashMap<Integer, Integer[]>();
 
 
     Boolean adminPrivaPressed = false;
@@ -486,6 +487,22 @@ public class AllInOneView implements Initializable {
         gridpane1.setHgap(-80);
 
     }
+    //vorne
+    public void moveCheckpoints(int id, int x, int y) {
+        checkPointMap.replace(id, new Integer[]{x,y});
+        // ID 0
+        gridpane1.add(new ImageView(image61),checkPointMap.get(0)[1],checkPointMap.get(0)[0]);
+        //ID 1
+        gridpane1.add(new ImageView(image65),checkPointMap.get(1)[1],checkPointMap.get(1)[0]);
+        //ID 2
+        gridpane1.add(new ImageView(image62),checkPointMap.get(2)[1],checkPointMap.get(2)[0]);
+        //ID 3
+        gridpane1.add(new ImageView(image54),checkPointMap.get(3)[1],checkPointMap.get(3)[0]);
+    }
+
+    public void updateCubes(){
+        CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
+    }
 
     public void sendPrivateMessage(){
         String selectedUser = PrivateMessage.getValue().toString().split(",")[0];
@@ -518,6 +535,47 @@ public class AllInOneView implements Initializable {
                             gridpane1.add(new ImageView(image22),y,x);
                             saveMap[x][y] = image22;
                         }
+                    }
+                    //laba
+                    if (Objects.equals(mapGui[x][y].get(1).getType(), "ConveyorBelt")) {
+                        // Muss evtl. noch weiter angepasst werden
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "left") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "right")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image11), y, x);
+                                saveMap[x][y] = image11;
+                            } else {
+                                gridpane1.add(new ImageView(image62), y, x);
+                                saveMap[x][y] = image71;
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "top") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "bottom")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image37), y, x);
+                                saveMap[x][y] = image37;
+                            } else {
+                                gridpane1.add(new ImageView(image54), y, x);
+                                saveMap[x][y] = image31;
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "left")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image2), y, x);
+                                saveMap[x][y] = image2;
+                            } else {
+                                gridpane1.add(new ImageView(image61), y, x);
+                                saveMap[x][y] = image85;
+                            }
+                        }
+                        if (Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(1).getOrientations()[1], "top")) {
+                            if (mapGui[x][y].get(0).getSpeed() == 1) {
+                                gridpane1.add(new ImageView(image36), y, x);
+                                saveMap[x][y] = image36;
+                            } else {
+                                gridpane1.add(new ImageView(image65), y, x);
+                                saveMap[x][y] = image4;
+                            }
+                        }
+
                     }
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "PushPanel")){
                        switch (mapGui[x][y].get(0).getOrientations()[0]) {
@@ -602,6 +660,10 @@ public class AllInOneView implements Initializable {
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DeathTrap")) {
                             gridpane1.add(new ImageView(image91),y,x);
                             saveMap[x][y] = image91;
+                        }
+                        if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "Twister")) {
+                            gridpane1.add(new ImageView(image0),y,x);
+                            saveMap[x][y] = image0;
                         }
                         if (Objects.equals(mapGui[x][y].get(0).getIsOnBoard(), "DizzyHighway")) {
                             gridpane1.add(new ImageView(image98),y,x);
@@ -772,23 +834,33 @@ public class AllInOneView implements Initializable {
                         }*/
 
                     }
+                    //dudu
                     if (Objects.equals(mapGui[x][y].get(0).getType(), "CheckPoint")){
                         switch (mapGui[x][y].get(0).getCount()){
                             case 0:
                                 gridpane1.add(new ImageView(image61),y,x);
                                 saveMap[x][y] = image61;
+                                Integer[] check1 = new Integer[]{x,y};
+                                checkPointMap.put(0, check1);
+
                                 break;
                             case 1:
                                 gridpane1.add(new ImageView(image65),y,x);
                                 saveMap[x][y] = image65;
+                                Integer[] check2 = new Integer[]{x,y};
+                                checkPointMap.put(1, check2);
                                 break;
                             case 2:
                                 gridpane1.add(new ImageView(image62),y,x);
                                 saveMap[x][y] = image62;
+                                Integer[] check3 = new Integer[]{x,y};
+                                checkPointMap.put(2, check3);
                                 break;
                             case 3:
                                 gridpane1.add(new ImageView(image54),y,x);
-                                saveMap[x][y] = image1;
+                                saveMap[x][y] = image54;
+                                Integer[] check4 = new Integer[]{x,y};
+                                checkPointMap.put(3, check4);
                                 break;
                             case 4:
                                 gridpane1.add(new ImageView(image48),y,x);

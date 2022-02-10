@@ -484,6 +484,9 @@ public class Client implements Runnable {
         if (clientID == this.ID){
             s = "Du hast " + number + "Energie von folgender Quelle hinzugewonnen: " + source;
             this.cubesZahl = number;
+            Platform.runLater(() -> {
+                getAllInOneView().updateCubes();
+            });
         } else s = player.get(clientID).name + " (" + clientID + ") hat " + number + "Energie von folgender Quelle gewonnen: " + source;
         return s;
     }
@@ -551,6 +554,9 @@ public class Client implements Runnable {
                 costs = 1;
             }
             this.cubesZahl -= costs;
+            Platform.runLater(() -> {
+                getAllInOneView().updateCubes();
+            });
             s = "Du hast folgende Karte gekauft: " + card;
         } else s = player.get(clientID).name + " (" + clientID + ") hat folgende Karte gekauft: " + card;
         this.upgradeShop.remove(card);
@@ -592,7 +598,9 @@ public class Client implements Runnable {
         int checkpointID = (int) (double) m.getMessageBody().getContent()[0];
         int x = (int) (double) m.getMessageBody().getContent()[1];
         int y = (int) (double) m.getMessageBody().getContent()[2];
-        //GUI: Checkpooints verschieben...
+        Platform.runLater(() -> {
+            getAllInOneView().moveCheckpoints(checkpointID, x, y);
+        });
     }
 
     /**
