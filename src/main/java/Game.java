@@ -73,8 +73,8 @@ public class Game {
                 board = new DeathTrap();
                 break;
             case "Twister":
-                //board = new Twister();
-                //break;
+                board = new Twister();
+                break;
         }
         startGame();
     }
