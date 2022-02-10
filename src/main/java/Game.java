@@ -520,7 +520,7 @@ public class Game {
      * @param xKoordinaten x-Koordinate der zu bewegenden CheckPoints
      * @param yKoordinaten y-Koordinate der zu bewegenden CheckPoints
      */
-    public void moveCheckpoint(ArrayList<Integer> xKoordinaten, ArrayList<Integer> yKoordinaten){
+    public void moveCheckpoint(ArrayList<Integer> xKoordinaten, ArrayList<Integer> yKoordinaten) {
         for (int za = 0; za < xKoordinaten.size(); za++) {
             int i = xKoordinaten.get(za);
             int u = yKoordinaten.get(za);
@@ -532,13 +532,13 @@ public class Game {
                     break;
                 }
             }
-            for (int p = 0; p < board.getMap()[i][u].size(); p++) {
-                if (board.getMap()[i][u].get(p).getType().equals("ConveyorBelt")) {
-                    conveyor = board.getMap()[i][u].get(p);
-                    break;
-                }
-            }
             for (int z = 0; z < 2; z++) {
+                for (int p = 0; p < board.getMap()[i][u].size(); p++) {
+                    if (board.getMap()[i][u].get(p).getType().equals("ConveyorBelt")) {
+                        conveyor = board.getMap()[i][u].get(p);
+                        break;
+                    }
+                }
                 switch (conveyor.getOrientations()[0]) {
                     case "top":
                         i -= 1;

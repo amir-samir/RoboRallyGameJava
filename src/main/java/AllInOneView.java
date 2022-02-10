@@ -518,7 +518,7 @@ public class AllInOneView implements Initializable {
     }
     //vorne
     public void moveCheckpoints(int id, int x, int y) {
-        checkPointMap.replace(id, new Integer[]{y,x});
+        checkPointMap.replace(id, new Integer[]{x,y});
     }
 
     public void updateCubes(){

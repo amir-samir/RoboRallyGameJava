@@ -9,9 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Added JavaDoc comments in Client">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_23_30__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_23_30__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,13 +245,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00062" summary="Bugfix">
-      <created>1643573810810</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1643573810810</updated>
     </task>
     <task id="LOCAL-00063" summary="Bugfix">
       <created>1643573874644</created>
@@ -581,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644532434779</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Merge">
+      <created>1644534780234</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1644534780234</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,14 +626,14 @@
     <MESSAGE value="Added JavaDocs to Robot" />
     <MESSAGE value="Bugfix:&#10;- Timer after everyone has played his cards" />
     <MESSAGE value="AI improvements" />
-    <MESSAGE value="Merge" />
     <MESSAGE value="Bugfix:&#10;- AI" />
     <MESSAGE value="Added JavaDoc comments in KI" />
     <MESSAGE value="Bugfix:&#10;- Lost Bearings: PushPanel" />
     <MESSAGE value="Bugfix:&#10;- Lost Bearings: Pits" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Added JavaDoc comments in Client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc comments in Client" />
+    <MESSAGE value="Merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -654,6 +662,11 @@
           <line>69</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>535</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
           <line>517</line>
@@ -662,6 +675,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
+          <line>522</line>
+          <properties class="Game" method="moveCheckpoint">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
