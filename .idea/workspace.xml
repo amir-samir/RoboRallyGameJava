@@ -9,16 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Added JavaDoc comments in KI">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Lost Bearings: PushPanel">
+      <change afterPath="$PROJECT_DIR$/log.txt.1.lck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log.txt.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DeathTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LostBearings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LostBearings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,13 +242,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00058" summary="Upgrade Cards">
-      <created>1643490077595</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1643490077595</updated>
     </task>
     <task id="LOCAL-00059" summary="Bugfix">
       <created>1643495076167</created>
@@ -588,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644528561781</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Bugfix:&#10;- Lost Bearings: PushPanel">
+      <created>1644530567001</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1644530567001</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +605,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix:&#10;- ProgrammingPhase starts when all Players have chosen all cards" />
     <MESSAGE value="Bugfix:&#10;- Activation starts when all Players have chosen all cards" />
     <MESSAGE value="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter" />
     <MESSAGE value="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
@@ -632,7 +629,8 @@
     <MESSAGE value="Merge" />
     <MESSAGE value="Bugfix:&#10;- AI" />
     <MESSAGE value="Added JavaDoc comments in KI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc comments in KI" />
+    <MESSAGE value="Bugfix:&#10;- Lost Bearings: PushPanel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Lost Bearings: PushPanel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -60,7 +60,7 @@ public class LostBearings extends Board{
         map[2][6].add(new Pit("1A"));
         map[2][7].add(new Empty("1A"));
         map[2][8].add(new CheckPoint("1A", 2));
-        map[2][9].add(new EnergySpace("1A", 1));
+        map[2][9].add(new Pit("1A"));
         map[2][10].add(new EnergySpace("1A", 1));
         map[2][11].add(new Empty("1A"));
         map[2][12].add(new Empty("1A"));
@@ -129,10 +129,10 @@ public class LostBearings extends Board{
         map[7][3].add(new Empty("1A"));
         map[7][4].add(new Empty("1A"));
         map[7][5].add(new EnergySpace("1A", 1));
-        map[7][6].add(new EnergySpace("1A", 1));
+        map[7][6].add(new Pit("1A"));
         map[7][7].add(new Empty("1A"));
         map[7][8].add(new CheckPoint("1A", 3));
-        map[7][9].add(new EnergySpace("1A", 1));
+        map[7][9].add(new Pit("1A"));
         map[7][10].add(new EnergySpace("1A", 1));
         map[7][11].add(new Empty("1A"));
         map[7][12].add(new Empty("1A"));
