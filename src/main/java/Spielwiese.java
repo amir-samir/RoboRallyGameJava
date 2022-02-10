@@ -25,7 +25,6 @@ public class Spielwiese {
             for (Cards karte: this.cards){
                 if (karte.getName().equals("Spam") || karte.getName().equals("Trojan") || karte.getName().equals("Virus") || karte.getName().equals("Worm")){
                     ergebnis.add(karte.getName());
-                    this.cards.remove(karte);
                 }
             }
             while (ergebnis.size() < 5){
@@ -43,7 +42,8 @@ public class Spielwiese {
             }
         }
         for (ArrayList<Cards> list: possibilities){
-            robotResults.add(testMoveRobot(list, TestRoboter));
+            Robot robotToTest = copyRobot(robot);
+            robotResults.add(testMoveRobot(list, robotToTest));
         }
         int groesse = robotResults.size();
         int besteVersion = 0;
@@ -99,8 +99,10 @@ public class Spielwiese {
                 break;
             case "TurnLeft":
                 robot = turnRobot("counterclockwise", robot);
+                break;
             case "TurnRight":
                 robot = turnRobot("clockwise", robot);
+                break;
             case "UTurn":
                 robot = turnRobot("clockwise", robot);
                 robot = turnRobot("clockwise", robot);
@@ -474,7 +476,7 @@ public class Spielwiese {
 
     public ArrayList<ArrayList<Cards>> generatePossibilities(){
         ArrayList<ArrayList<Cards>> possibilities = new ArrayList<>();
-        for (int i = 0; i < 500000; i++){
+        for (int i = 0; i < 150000; i++){
             ArrayList<Cards> playedCards = new ArrayList<>();
             Collections.shuffle(this.cards);
             for (int u = 0; u < 5; u++){
@@ -597,5 +599,15 @@ public class Spielwiese {
             }
         }
         return -1;
+    }
+
+    public Robot copyRobot(Robot toCopy){
+        Robot ergebnis = new Robot(toCopy.getGamerID());
+        ergebnis.setDirection(toCopy.getDirection());
+        ergebnis.setX(toCopy.getX());
+        ergebnis.setY(toCopy.getY());
+        ergebnis.setDead(toCopy.getDead());
+        ergebnis.setReceivedPunishment(toCopy.isReceivedPunishment());
+        return ergebnis;
     }
 }
