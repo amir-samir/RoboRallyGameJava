@@ -627,7 +627,6 @@ public class Client implements Runnable {
                     for(Player player: player.values()){
                         if(player.ID == clientID){
                             player.ready = isReady;
-                            //Information an GUI weitergeben?
                         }
                     }
                     if(isReady){

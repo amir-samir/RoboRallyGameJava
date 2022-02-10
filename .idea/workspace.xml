@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Twister">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- moving Checkpoints">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,13 +237,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00037" summary="Bugfix">
-      <created>1641997370200</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1641997370200</updated>
     </task>
     <task id="LOCAL-00038" summary="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection">
       <created>1642016525589</created>
@@ -580,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644498352056</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Bugfix:&#10;- moving Checkpoints">
+      <created>1644499680999</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1644499680999</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,7 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adding Spam Cards" />
     <MESSAGE value="LaserDing" />
     <MESSAGE value="Timer fertig Gui" />
     <MESSAGE value="map changing" />
@@ -624,7 +624,8 @@
     <MESSAGE value="Bugfix:&#10;- AI now VERY intelligent ;=)" />
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Twister" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Twister" />
+    <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- moving Checkpoints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
