@@ -442,6 +442,11 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(returnCards));
     }
 
+    /**
+     * Die CheckPointReached Nachricht wird verarbeitet.
+     * @param m CheckPointReached Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleCheckPointReached(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
@@ -452,6 +457,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die GameFinished Nachricht wird verarbeitet.
+     * @param m GameFinished Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleGameFinished(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         String s;
@@ -474,6 +484,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die replaceCard Nachricht wird verarbeitet.
+     * @param m replaceCard Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleReplaceCard(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[2];
         int register = (int) (double) m.getMessageBody().getContent()[0];
@@ -485,6 +500,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die energy Nachricht wird verarbeitet.
+     * @param m energy Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleEnergy(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
@@ -500,6 +520,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die pickDamage Nachricht wird verarbeitet.
+     * @param m pickDamage Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handlePickDamage(Message m){
         int count = (int)(double) m.getMessageBody().getContent()[0];
         ArrayList<String> list = (ArrayList<String>) m.getMessageBody().getContent()[1];
@@ -507,7 +532,11 @@ public class Client implements Runnable {
         return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
     }
 
-
+    /**
+     * Die refillShop Nachricht wird verarbeitet.
+     * @param m refillShop Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleRefillShop(Message m){
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         for (String s: karten){
@@ -527,6 +556,11 @@ public class Client implements Runnable {
         return toSend;
     }
 
+    /**
+     * Die exchangeShop Nachricht wird verarbeitet.
+     * @param m exchangeShop Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleExchangeShop(Message m){
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         this.upgradeShop = karten;
@@ -545,6 +579,11 @@ public class Client implements Runnable {
         return toSend;
     }
 
+    /**
+     * Die upgradeBought Nachricht wird verarbeitet.
+     * @param m upgradeBought Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleUpgradeBought(Message m){
         int clientID = (int)(double)m.getMessageBody().getContent()[0];
         String card = (String) m.getMessageBody().getContent()[1];
@@ -572,6 +611,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die registerChosen Nachricht wird verarbeitet.
+     * @param m registerChosen Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleRegisterChosen(Message m){
         int clientID = (int)(double)m.getMessageBody().getContent()[0];
         int register = (int)(double)m.getMessageBody().getContent()[1];
@@ -582,6 +626,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die connectionUpdate Nachricht wird verarbeitet.
+     * @param m connectionUpdate Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleConnectionUpdate(Message m){
         int clientID = (int)(double) m.getMessageBody().getContent()[0];
         Player player = this.player.remove(clientID);
@@ -603,6 +652,11 @@ public class Client implements Runnable {
         return player.name + " (" + clientID + ") hat die Verbindung verloren und wurde entfernt.";
     }
 
+    /**
+     * Die checkpointMoved Nachricht wird verarbeitet.
+     * @param m checkpointMoved Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public void handleCheckPointMoved(Message m){
         int checkpointID = (int) (double) m.getMessageBody().getContent()[0];
         int x = (int) (double) m.getMessageBody().getContent()[1];
@@ -613,8 +667,8 @@ public class Client implements Runnable {
     }
 
     /**
-     * This method is an overridden method which displays the input that is coming from the server in
-     * the Chat view.
+     * Diese Methode überschreibt die run() Methode aus Runnable.
+     * Sie empfängt und verarbeitet die Daten, die vom Server empfangen werden.
      */
     @Override
     public void run() {
@@ -934,6 +988,11 @@ public class Client implements Runnable {
         }
     }
 
+    /**
+     * Die damage Nachricht wird verarbeitet.
+     * @param m damage Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleDamage(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         List<String> damageCards = (List<String>) m.getMessageBody().getContent()[1];
@@ -962,16 +1021,8 @@ public class Client implements Runnable {
         selectMapView = selectMapView1;
     }
 
-    public SelectMapView getSelectMapView(){
-        return selectMapView;
-    }
-
     public static void setMaybeMapsController(MaybeMapsController maybeMapsController1){
         maybeMapsController = maybeMapsController1;
-    }
-
-    public MaybeMapsController getMaybeMapsController(){
-        return maybeMapsController;
     }
 
     public ChatView getChatView(){
