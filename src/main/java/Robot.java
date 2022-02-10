@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Dieser Klasse modelliert die Roboter, also die Figuren, die für das Spiel nötig sind.
+ *
+ * @author Yilu Ye
+ * @author Chen Zhaohang
+ * @author Luca Weyhofen
+ *
+ * @version 2.1
+ */
 public class Robot {
 
 
@@ -27,6 +36,10 @@ public class Robot {
     private int startPointY;
 
 
+    /**
+     * Dies ist der Konstruktor
+     * @param ID Die ID des Spielers, der diesen Roboter steuert
+     */
     public Robot(int ID){
         deck = new ProgrammingCardsForPlayer();
         handCards = new ArrayList<Cards>();
@@ -47,6 +60,10 @@ public class Robot {
         this.gamerID = ID;
     }
 
+    /**
+     * In dieser Methode werden die Handkarten des Spielers bestimmt.
+     * @return Gibt die Anzahl der Karten zurück, die ersetzt werden müssen (SpamBlocker)
+     */
     public int drawHandCards(){
         boolean spamBlocker = false;
         boolean memorySwap = false;
@@ -90,6 +107,12 @@ public class Robot {
         } else return 0;
     }
 
+    /**
+     * Es wird die entsprechende Karte in das gewählte Register gelegt und verarbeitet.
+     * @param card Die Karte, die in das Register gelegt werden soll
+     * @param register Das Register, in das die Karte gelegt werden soll
+     * @return Boolean der angibt, ob die Karte richtig eingefügt werden konnte
+     */
     public boolean cardIntoRegister(String card, int register){
         if(ableToFillRegisters) {
             if (card == null) {
@@ -112,6 +135,10 @@ public class Robot {
         return false;
     }
 
+    /**
+     * Gibt zurück, ob alle Register mit Karten befüllt wurden
+     * @return Boolean der angibt, ob alle Register mit Karten befüllt wurden
+     */
     public boolean allRegistersFilled(){
         for (Cards card: this.register){
             if (card == null){
@@ -122,6 +149,9 @@ public class Robot {
         return true;
     }
 
+    /**
+     * Im Falle, das ein Spieler zu langsam agiert hat, werden hier die neuen Karten in die Register gelegt.
+     */
     public void fillRegisters(){
         int zähler = this.handCards.size();
         for (int i = 0; i < zähler; i++){
@@ -140,6 +170,9 @@ public class Robot {
         }
     }
 
+    /**
+     * Diese Methode mischt das Deck des Roboters
+     */
     public void mischen(){
         ArrayList<Cards> cards = deck.getDiscard();
         Collections.shuffle(cards);
@@ -149,6 +182,9 @@ public class Robot {
         deck.setDiscard(new ArrayList<Cards>());
     }
 
+    /**
+     * Diese Methode leert alle Register
+     */
     public void clearRegister(){
         for (int i = 0; i < register.length; i++){
             deck.getDiscard().add(register[i]);
@@ -156,6 +192,11 @@ public class Robot {
         }
     }
 
+    /**
+     * Es wird eine permanente Upgrade-Karte zum Roboter hinzugefügt.
+     * @param card Die Karte, die hinzugefügt wird
+     * @return Boolean der angibt, ob das Hinzufügen erfolgreich war
+     */
     public boolean addPermUpgrade(UpgradeCards card){
         boolean doubleCard = false;
         for (int i = 0; i < permanentCards.length; i++){
@@ -176,6 +217,11 @@ public class Robot {
         return true;
     }
 
+    /**
+     * Es wird eine temporäre Upgrade-Karte zum Roboter hinzugefügt.
+     * @param card Die Karte, die hinzugefügt wird
+     * @return Boolean der angibt, ob das Hinzufügen erfolgreich war
+     */
     public boolean addTempUpgrade(UpgradeCards card){
         boolean doubleCard = false;
         for (int i = 0; i < temporaryCards.length; i++){
@@ -196,6 +242,9 @@ public class Robot {
         return true;
     }
 
+    /**
+     * Legt alle Handkarten ab.
+     */
     public void clearHandcards(){
         int zähler = handCards.size();
         for (int i = 0; i < zähler; i++){
