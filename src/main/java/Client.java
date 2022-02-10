@@ -216,6 +216,7 @@ public class Client implements Runnable {
         SelectedCard selectedCard = new SelectedCard(card, register);
         selectedCard.getMessageBody().setKeys(new String[]{"card", "register"});
         bufferedWriter.println(Adopter.javabeanToJson(selectedCard));
+        System.out.println(Adopter.javabeanToJson(selectedCard));
     }
 
     public void mapSelected(String map){
@@ -727,7 +728,7 @@ public class Client implements Runnable {
                             try {
                                 StageSaver.getStageSaver().getUpgradeCardsStage().close();
                                 getAllInOneView().resetRegisterCard();
-                                getAllInOneView().runChooseCardsForSwap();
+                                getAllInOneView().fillChooseCard();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
@@ -738,7 +739,7 @@ public class Client implements Runnable {
                             try {
                                 StageSaver.getStageSaver().getUpgradeCardsStage().close();
                                 getAllInOneView().resetRegisterCard();
-                                getChatView().ChooseCard();
+                                getAllInOneView().fillChooseCard();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
@@ -761,9 +762,7 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("TimerStarted")){
                     toSend = "Der Timer wurde gestartet.";
                     Platform.runLater(() -> {
-                        if (getChooseCards() != null) {
-                            getChooseCards().startTimer();
-                        }
+                        getAllInOneView().startTimer();
                         if (getChooseCardsForSwap() != null){
                             getChooseCardsForSwap().startTimer();
                         }
@@ -772,9 +771,7 @@ public class Client implements Runnable {
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
                     Platform.runLater(() -> {
-                        if (getChooseCards() != null) {
-                            StageSaver.getStageSaver().getChooseCardStage().close();
-                        }
+                        getAllInOneView().setChooseCardUnvisible();
                         if (getChooseCardsForSwap() != null){
                             StageSaver.getStageSaver().getUpgradeCardsForSwap().close();
                         }
