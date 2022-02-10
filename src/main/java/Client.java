@@ -447,7 +447,11 @@ public class Client implements Runnable {
         String s;
         if (clientID == this.ID){
             s = "Du hast das Spiel gewonnen! Glückwunsch!";
-        } else s = player.get(clientID).name + " (" + clientID + ") hat das Spiel gewonnen. Nächstes mal klappts bestimmt...";
+            //GUI: GEWONNEN
+        } else {
+            s = player.get(clientID).name + " (" + clientID + ") hat das Spiel gewonnen. Nächstes mal klappts bestimmt...";
+            //GUI: VERLOREN
+        }
         return s;
     }
 
