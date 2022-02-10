@@ -437,8 +437,8 @@ public class Client implements Runnable {
         int number = (int) (double) m.getMessageBody().getContent()[1];
         String s;
         if (clientID == this.ID){
-            s = "Du hast folgenden Checkpoint erreicht: " + number;
-        } else s = player.get(clientID).name + " (" + clientID + ") hat folgenden Checkpoint erreicht: " + number;
+            s = "Du hast folgenden Checkpoint erreicht: " + (number+1);
+        } else s = player.get(clientID).name + " (" + clientID + ") hat folgenden Checkpoint erreicht: " + (number+1);
         return s;
     }
 

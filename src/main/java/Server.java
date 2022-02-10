@@ -262,6 +262,10 @@ public class Server {
                 board = new LostBearings();
                 s = board.json;
                 break;
+            case "Twister":
+                board = new Twister();
+                s = board.json;
+                break;
             default:
                 s = null;
         }
