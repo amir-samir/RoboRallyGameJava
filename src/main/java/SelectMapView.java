@@ -27,6 +27,10 @@ public SelectMapView(){
         SaveClients.client.mapSelected("LostBearings");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
+    public void ChooseTwisterMap(){
+    SaveClients.client.mapSelected("Twister");
+    StageSaver.getStageSaver().getCurrentStage().close();
+    }
 
     public void CallRunMap() throws Exception {
     RunMap();
@@ -37,7 +41,6 @@ public SelectMapView(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SelectMap.fxml"));
         Scene scene = new Scene(loader.load());
         stage1.setScene(scene);
-        scene.getStylesheets().add("SignInStyle.css");
         stage1.show();
 
         //Close if Bye

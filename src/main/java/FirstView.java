@@ -370,12 +370,12 @@ public class FirstView implements Initializable {
          smashBotImageView.setDisable(true);
          smashBotImageView.setVisible(false);
          hulkBotImageView.setDisable(true);
+         hulkBotImageView.setVisible(false);
          zoomBotImageView.setDisable(true);
          zoomBotImageView.setVisible(false);
          spinBotImageView.setDisable(true);
          spinBotImageView.setVisible(false);
          hammerBotImageView.setDisable(true);
-         hammerBotImageView.setVisible(false);
          SaveClients.client.figurenForGui.add(5);
          SaveClients.ausgewaehlteRoboter[5] = 5;
       }

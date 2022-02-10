@@ -1,38 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="innige-irrweg-hp:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cfb236-0ed7-47a2-9897-7d923def34f4" name="Changes" comment="Bugfix:&#10;- ChooseDamageCard">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Antenna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Antenna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CheckPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DeathTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DizzyHighway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EnergySpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EnergySpace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtraCrispy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Gear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LostBearings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LostBearings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PushPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PushPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Twister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Twister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -52,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="BoardElements" />
+        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,20 +46,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/ExtraCrispy.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Pit.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Robot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/PushPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DeathTrap.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Empty.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/GetID.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Wall.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Laser.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/EnergySpace.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ConveyorBelt.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Gear.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Game.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Client.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -112,11 +92,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Client/innige-irrweg-hp.jar" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -134,10 +115,18 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.GetID">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="innige-irrweg-hp" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;localhost&quot; 1235" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GetID" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GetID" />
       <module name="innige-irrweg-hp" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$PATH_TO_FX$&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,60 +138,63 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RalleyLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RalleyLogger" />
+      <module name="innige-irrweg-hp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="innige-irrweg-hp" />
+      <option name="PROGRAM_PARAMETERS" value="1235" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="jsonTest.CurrentCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="innige-irrweg-hp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="jsonTest" />
-      <option name="METHOD_NAME" value="CurrentCardTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Client" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Client/innige-irrweg-hp.jar" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\LuXusHD\IdeaProjects\Hauptprojekt" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
     </configuration>
-    <configuration name="mapTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="innige-irrweg-hp" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="mapTest" />
-      <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Server" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/innige_irrweg_hp_jar/innige-irrweg-hp.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\LuXusHD\IdeaProjects\Hauptprojekt" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <configuration name="innige-irrweg-hp.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/innige_irrweg_hp_jar/innige-irrweg-hp.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
+      <item itemvalue="Application.RalleyLogger" />
       <item itemvalue="Application.KI" />
-      <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
-      <item itemvalue="JUnit.mapTest.Test" />
+      <item itemvalue="JAR Application.Server" />
+      <item itemvalue="JAR Application.Client" />
+      <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.KI" />
-        <item itemvalue="JUnit.mapTest.Test" />
-        <item itemvalue="JUnit.jsonTest.CurrentCardTest" />
+        <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
+        <item itemvalue="Application.RalleyLogger" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4ba5efd-79a7-4cce-8eac-18f3be3d564a" name="Changes" comment="Merge: Bugfix" />
+      <changelist id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
       <created>1638741223995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -226,208 +218,25 @@
       <workItem from="1642265081549" duration="212000" />
       <workItem from="1642278457933" duration="1317000" />
       <workItem from="1642326786929" duration="7643000" />
-      <workItem from="1642630990866" duration="572000" />
-      <workItem from="1642676410276" duration="8802000" />
-      <workItem from="1642686104206" duration="866000" />
-      <workItem from="1643023263621" duration="359000" />
-      <workItem from="1643039275369" duration="2144000" />
-      <workItem from="1643136044824" duration="3550000" />
-    </task>
-    <task id="LOCAL-00013" summary="Bugfix">
-      <created>1641328280070</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1641328280070</updated>
-    </task>
-    <task id="LOCAL-00014" summary="updated git-ignore">
-      <created>1641328575276</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1641328575276</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Improved method generateMap()">
-      <created>1641421076965</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1641421076965</updated>
-    </task>
-    <task id="LOCAL-00016" summary="SetStartingPoint &amp; ActivePhase support">
-      <created>1641509218698</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1641509218698</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merge: GUI &amp; Kommunikation">
-      <created>1641640016711</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1641640016711</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Support for SetStartingPoint">
-      <created>1641650949015</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1641650949015</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Changes by Amir">
-      <created>1641650969450</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1641650969450</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Merge: BoardElement -&gt; JSON Chat">
-      <created>1641652292871</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1641652292871</updated>
-    </task>
-    <task id="LOCAL-00021" summary="bugfix">
-      <created>1641652477458</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1641652477458</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Merge: New Gui -&gt; Kommunikation">
-      <created>1641653276592</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1641653276592</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Initialisieren von Start Karten">
-      <created>1641670130152</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1641670130152</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Merge: Added Cards to Branch Kommunikation">
-      <created>1641725697502</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1641725697502</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Bugfix">
-      <created>1641725926149</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1641725926149</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Bugfix: Multiple Starting Points">
-      <created>1641726303054</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1641726303054</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Started implementing ProgrammingPhase">
-      <created>1641729136724</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1641729136724</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Implemented message selectedCard">
-      <created>1641734451470</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1641734451470</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Improved programmierPhase">
-      <created>1641739000032</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1641739000032</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Dairen, Amir Cards">
-      <created>1641753701663</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1641753701663</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Dairen, Amir Cards">
-      <created>1641753782313</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1641753782313</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Dairen, Amir ChooseCards">
-      <created>1641759775052</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1641759775052</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Bugfix">
-      <created>1641761735830</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1641761735830</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Bugfix">
-      <created>1641761960368</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1641761960368</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Bugfix">
-      <created>1641762957823</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1641762957823</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Bugfix">
-      <created>1641991945998</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1641991945998</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Bugfix">
-      <created>1641997370200</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1641997370200</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection">
-      <created>1642016525589</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1642016525589</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection">
-      <created>1642016555012</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1642016555012</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection">
-      <created>1642016802658</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1642016802658</updated>
+      <workItem from="1642607404678" duration="154000" />
+      <workItem from="1642890276611" duration="4151000" />
+      <workItem from="1643065378500" duration="175000" />
+      <workItem from="1643197311055" duration="366000" />
+      <workItem from="1643381149929" duration="6582000" />
+      <workItem from="1643468246620" duration="14838000" />
+      <workItem from="1643569081662" duration="7189000" />
+      <workItem from="1643577047269" duration="1453000" />
+      <workItem from="1643578526261" duration="2980000" />
+      <workItem from="1643581896204" duration="2453000" />
+      <workItem from="1643631145079" duration="1363000" />
+      <workItem from="1643815073607" duration="3185000" />
+      <workItem from="1643827144677" duration="3546000" />
+      <workItem from="1643832902929" duration="178000" />
+      <workItem from="1644066529004" duration="8542000" />
+      <workItem from="1644398868710" duration="952000" />
+      <workItem from="1644419282488" duration="935000" />
+      <workItem from="1644431471457" duration="14843000" />
+      <workItem from="1644491983792" duration="5264000" />
     </task>
     <task id="LOCAL-00041" summary="Merge: new Images">
       <created>1642018274028</created>
@@ -485,98 +294,294 @@
       <option name="project" value="LOCAL" />
       <updated>1642359134106</updated>
     </task>
-    <task id="LOCAL-00049" summary="BugFix RestartPoint">
-      <created>1642608690549</created>
+    <task id="LOCAL-00049" summary="Adding Spam Cards">
+      <created>1642368434598</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1642608690549</updated>
+      <updated>1642368434598</updated>
     </task>
-    <task id="LOCAL-00050" summary="Change Direction graphics">
-      <created>1642621946890</created>
+    <task id="LOCAL-00050" summary="LaserDing">
+      <created>1642436146609</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1642621946890</updated>
+      <updated>1642436146611</updated>
     </task>
-    <task id="LOCAL-00051" summary="Change Direction function gui">
-      <created>1642623287470</created>
+    <task id="LOCAL-00051" summary="LaserDing">
+      <created>1642607501410</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1642623287470</updated>
+      <updated>1642607501410</updated>
     </task>
-    <task id="LOCAL-00052" summary="Timer fertig Gui">
-      <created>1642628081056</created>
+    <task id="LOCAL-00052" summary="map changing">
+      <created>1642763972762</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1642628081056</updated>
+      <updated>1642763972762</updated>
     </task>
-    <task id="LOCAL-00053" summary="Timer fertig Gui">
-      <created>1642628531781</created>
+    <task id="LOCAL-00053" summary="map changing">
+      <created>1642764507624</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1642628531781</updated>
+      <updated>1642764507624</updated>
     </task>
-    <task id="LOCAL-00054" summary="Merge: Bugfix">
-      <created>1642630318536</created>
+    <task id="LOCAL-00054" summary="FirstView änderungen">
+      <created>1643024093494</created>
       <option name="number" value="00054" />
       <option name="presentableId" value="LOCAL-00054" />
       <option name="project" value="LOCAL" />
-      <updated>1642630318537</updated>
+      <updated>1643024093495</updated>
     </task>
-    <task id="LOCAL-00055" summary="Bugfix:&#10;- ConveyorBelt">
-      <created>1642683600503</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1642683600503</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Merge: Timer">
-      <created>1643025382583</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1643025382583</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Bugfix">
-      <created>1643026797015</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1643026797015</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy">
-      <created>1643039917948</created>
+    <task id="LOCAL-00058" summary="Upgrade Cards">
+      <created>1643490077595</created>
       <option name="number" value="00058" />
       <option name="presentableId" value="LOCAL-00058" />
       <option name="project" value="LOCAL" />
-      <updated>1643039917948</updated>
+      <updated>1643490077595</updated>
     </task>
-    <task id="LOCAL-00059" summary="Bugfix:&#10;- ChooseDamageCard">
-      <created>1643138733885</created>
+    <task id="LOCAL-00059" summary="Bugfix">
+      <created>1643495076167</created>
       <option name="number" value="00059" />
       <option name="presentableId" value="LOCAL-00059" />
       <option name="project" value="LOCAL" />
-      <updated>1643138733885</updated>
+      <updated>1643495076167</updated>
     </task>
-    <task id="LOCAL-00060" summary="Bugfix:&#10;- ChooseDamageCard">
-      <created>1643139022763</created>
+    <task id="LOCAL-00060" summary="Bugfix">
+      <created>1643495638472</created>
       <option name="number" value="00060" />
       <option name="presentableId" value="LOCAL-00060" />
       <option name="project" value="LOCAL" />
-      <updated>1643139022763</updated>
+      <updated>1643495638472</updated>
     </task>
-    <task id="LOCAL-00061" summary="Bugfix:&#10;- ChooseDamageCard">
-      <created>1643139566415</created>
+    <task id="LOCAL-00061" summary="Bugfix">
+      <created>1643572671939</created>
       <option name="number" value="00061" />
       <option name="presentableId" value="LOCAL-00061" />
       <option name="project" value="LOCAL" />
-      <updated>1643139566415</updated>
+      <updated>1643572671939</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Bugfix">
+      <created>1643573810810</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1643573810810</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Bugfix">
+      <created>1643573874644</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1643573874644</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Logging">
+      <created>1643575493359</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1643575493359</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Bugfix">
+      <created>1643815247997</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1643815247998</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Bugfix">
+      <created>1643815254927</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1643815254927</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Bugfix:&#10;- MemorySwap">
+      <created>1643818395976</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1643818395976</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Bugfix:&#10;- FXML">
+      <created>1643828127765</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1643828127765</updated>
+    </task>
+    <task id="LOCAL-00057" summary="FirstView änderungen">
+      <created>1643484982772</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1643484982772</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Bugfix:&#10;- MemorySwap">
+      <created>1643829446714</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1643829446715</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Merge">
+      <created>1644076551080</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1644076551080</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Merge:&#10;- Connecting GUI for AdminPrivilege&#10;- Improved FirstView">
+      <created>1644402811007</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1644402811007</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Bugfix">
+      <created>1644403105821</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1644403105821</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Bugfix:&#10;- UTurn">
+      <created>1644403792807</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1644403792807</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Bugfix:&#10;- UpgradeShop">
+      <created>1644409339000</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1644409339000</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Bugfix:&#10;- Activation starts when all Players have chosen all cards">
+      <created>1644410476826</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1644410476826</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter">
+      <created>1644412788918</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1644412788918</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Bugfix:&#10;- ConnectionUpdate: Remove Player">
+      <created>1644413770159</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1644413770159</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Merge:&#10;- Bugfix">
+      <created>1644420443132</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1644420443132</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Bugfix:&#10;- ConnectionUpdate: Remove">
+      <created>1644424286203</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1644424286203</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Bugfix, Improved AI">
+      <created>1644433928051</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1644433928052</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Improved AI">
+      <created>1644434235225</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1644434235225</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Merge:&#10;- new GUI Features (Amir &amp; Dairen)&#10;- new KI">
+      <created>1644447761885</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1644447761885</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Bugfix">
+      <created>1644448397676</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1644448397676</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Bugfix:&#10;- AI now VERY intelligent ;=)">
+      <created>1644495578792</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1644495578792</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Bugfix">
+      <created>1644495724304</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1644495724304</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Bugfix:&#10;- Twister">
+      <created>1644498300238</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1644498300238</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Bugfix:&#10;- Twister">
+      <created>1644498352056</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1644498352056</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Bugfix:&#10;- moving Checkpoints">
+      <created>1644499680999</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1644499680999</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Bugfix:&#10;- moving Checkpoints">
+      <created>1644502346456</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1644502346456</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Merge">
+      <created>1644503972369</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1644503972369</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Bugfix">
+      <created>1644504621787</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1644504621787</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,32 +600,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge: Added Cards to Branch Kommunikation" />
-    <MESSAGE value="Bugfix: Multiple Starting Points" />
-    <MESSAGE value="Started implementing ProgrammingPhase" />
-    <MESSAGE value="Implemented message selectedCard" />
-    <MESSAGE value="Improved programmierPhase" />
-    <MESSAGE value="Dairen, Amir Cards" />
-    <MESSAGE value="Dairen, Amir ChooseCards" />
-    <MESSAGE value="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection" />
-    <MESSAGE value="Merge: new Images" />
-    <MESSAGE value="Bugfix:&#10;- Improved random AI&#10;- Improved Messages" />
-    <MESSAGE value="Bugfix:&#10;- Call effect() from BoardElement" />
-    <MESSAGE value="Bugfix:&#10;- Encoding GameStarted-Message" />
-    <MESSAGE value="Merge:&#10;- new GUI&#10;- new Bugfixes" />
-    <MESSAGE value="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI" />
-    <MESSAGE value="BugFix" />
-    <MESSAGE value="BugFix RestartPoint" />
-    <MESSAGE value="Change Direction graphics" />
-    <MESSAGE value="Change Direction function gui" />
+    <MESSAGE value="LaserDing" />
     <MESSAGE value="Timer fertig Gui" />
-    <MESSAGE value="Merge: Bugfix" />
-    <MESSAGE value="Bugfix:&#10;- ConveyorBelt" />
-    <MESSAGE value="Merge: Timer" />
+    <MESSAGE value="map changing" />
+    <MESSAGE value="FirstView änderungen" />
+    <MESSAGE value="Upgrade Cards" />
+    <MESSAGE value="Logging" />
+    <MESSAGE value="Bugfix:&#10;- FXML" />
+    <MESSAGE value="Bugfix:&#10;- MemorySwap" />
+    <MESSAGE value="Merge:&#10;- Connecting GUI for AdminPrivilege&#10;- Improved FirstView" />
+    <MESSAGE value="Bugfix:&#10;- UTurn" />
+    <MESSAGE value="Bugfix:&#10;- UpgradeShop" />
+    <MESSAGE value="Bugfix:&#10;- ProgrammingPhase starts when all Players have chosen all cards" />
+    <MESSAGE value="Bugfix:&#10;- Activation starts when all Players have chosen all cards" />
+    <MESSAGE value="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter" />
+    <MESSAGE value="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
+    <MESSAGE value="Merge:&#10;- Bugfix" />
+    <MESSAGE value="Bugfix:&#10;- ConnectionUpdate: Remove" />
+    <MESSAGE value="Bugfix, Improved AI" />
+    <MESSAGE value="Improved AI" />
+    <MESSAGE value="Merge:&#10;- new GUI Features (Amir &amp; Dairen)&#10;- new KI" />
+    <MESSAGE value="Bugfix:&#10;- AI now VERY intelligent ;=)" />
+    <MESSAGE value="Bugfix:&#10;- Twister" />
+    <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
+    <MESSAGE value="Merge" />
     <MESSAGE value="Bugfix" />
-    <MESSAGE value="Bugfix:&#10;- U-Turn Card&#10;- ConveyorBelt: Map ExtraCrispy" />
-    <MESSAGE value="Bugfix:&#10;- ChooseDamageCard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- ChooseDamageCard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,18 +635,9 @@
           <option name="timeStamp" value="8" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/KI.java</url>
-          <line>213</line>
-          <properties class="KI">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Robot.java</url>
-          <line>144</line>
-          <properties class="Robot" method="setAbleToFillRegisters">
+          <line>122</line>
+          <properties class="Robot">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -649,15 +645,40 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>949</line>
-          <properties class="Game">
+          <line>138</line>
+          <properties class="Game" method="prepareUpgradeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/innige_irrwege_hp9$Server.ic" NAME="Server Coverage Results" MODIFIED="1642029014960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
