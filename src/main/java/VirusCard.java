@@ -1,6 +1,5 @@
 import Messages.Phase.ReplaceCard;
 
-import Messages.Phase.ReplaceCard;
 /**
  * class for damageCard VirusCard
  * @author chen
