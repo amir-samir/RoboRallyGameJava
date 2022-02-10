@@ -2,6 +2,11 @@ import lombok.Data;
 
 import java.util.ArrayList;
 
+/**
+ * Class to create a board from a map object
+ *Overarching class for maps.
+ * @author yiluye
+ */
 @Data
 public abstract class Board {
 
@@ -31,6 +36,11 @@ public abstract class Board {
         this.json = json;
     }
 
+    /**
+     * Gibt die X Koordinate von einem BoardElement zurück
+     * @param element
+     * @return X
+     */
     public int searchX(String element) {
         for (int i = 0; i < map.length; i++) {
             for (int u = 0; u < map[i].length; u++) {
@@ -44,6 +54,11 @@ public abstract class Board {
         return -1;
     }
 
+    /**
+     * Gibt die Y Koordinate von einem BoardElement zurück
+     * @param element
+     * @return Y
+     */
     public int searchY(String element) {
         for (int i = 0; i < map.length; i++) {
             for (int u = 0; u < map[i].length; u++) {

@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * map "DizzyHighway"
+ * Has all the BoardElements of the map DizzyHighway hardcoded
+ * @author yiluye
+ */
 public class DizzyHighway extends Board {
 
     public DizzyHighway() {

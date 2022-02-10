@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * map "DeathTrap"
+ * Has all the BoardElements of the map DeathTrap hardcoded
+ * @author yiluye
+ */
 public class DeathTrap extends Board {
 
     public DeathTrap() {

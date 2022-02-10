@@ -7,6 +7,17 @@ import java.util.List;
 
 import static java.lang.Math.abs;
 
+/**
+ * Die Klasse Game stellt die fundamentale Logik eines "RoboRally"-Spiels zur Verfügung.
+ * Sie koordiniert die einzelnen Phasen einer Runde und stellt den richtigen Ablauf sicher.
+ *
+ * @author Chen Zhaohang
+ * @author Yilu Ye
+ * @author Luca Weyhofen
+ *
+ * @version 2.1
+ */
+
 public class Game {
 
     private final Server SERVER;
@@ -33,7 +44,14 @@ public class Game {
 
     private CardsForGame cardsForGame;
 
-
+    /**
+     * Dies ist der Konstruktor der Klasse Game, indem die Bedingungen für eine neue Runde festgelegt werden.
+     * @param server Der Server, von dem aus das Spiel gehostet wird
+     * @param hashMap Die Verbindungen zu den einzelnen, verbundenen Spielern
+     * @param verbindungen Eine Liste, die pauschal alle aktiven und verbundenen Spieler enthält
+     * @param activeMap Die Karte, auf der die Partie stattfinden soll
+     * @param figuren Ein Array bestehend aus sechs Robotern. Roboter, die nicht verwendet werden beinhalten den Wert null
+     */
     public Game(Server server, HashMap<Integer, ClientHandler> hashMap, List<ClientHandler> verbindungen, String activeMap, Robot[] figuren){
         this.SERVER = server;
         this.users = hashMap;
@@ -79,6 +97,10 @@ public class Game {
         startGame();
     }
 
+    /**
+     * Diese Methode regelt den richtigen Ablauf einer Runde.
+     * Je nachdem, in welcher Phase sich das Spiel gerade befindet, werden die entsprechenden Methoden aufgerufen.
+     */
     public void startGame(){
         try {
             if (this.activePhase == 0) {
@@ -104,18 +126,27 @@ public class Game {
         }
     }
 
+    /**
+     * Hier wird die aktuelle Phase an alle Spieler verschickt.
+     */
     public void sendActivePhase(){
         ActivePhase activePhase = new ActivePhase(this.activePhase);
         activePhase.getMessageBody().setKeys(new String[]{"phase"});
         SERVER.sendMessageForAllUsers(activePhase);
     }
 
+    /**
+     * Hier wird ein Hinweis auf den Beginn der Aufbau-Phase an alle Spieler verschickt.
+     */
     public void aufbauPhase(){
         ActivePhase activePhase = new ActivePhase(this.activePhase);
         activePhase.getMessageBody().setKeys(new String[]{"phase"});
         SERVER.sendMessageForSingleClient(activePhase, verbindungen.get(activePlayer));
     }
 
+    /**
+     * In dieser Methode wird der UpgradeShop vorbereitet und anschließend an alle Spieler versendet.
+     */
     public void prepareUpgradeShop(){
         if (this.upgradeShop.isSomebodyBoughtOne()){
             ArrayList<String> upgradeCards = new ArrayList<>();
@@ -146,6 +177,9 @@ public class Game {
         upgradeShop.setSomebodyBoughtOne(false);
     }
 
+    /**
+     * In dieser Methode wird der Spieler, der als Nächstes eine Upgrade-Karte kaufen darf, ermittelt und benachrichtigt.
+     */
     public void upgradePhase(){
         this.activePlayerID = 0;
         if (this.upgradeReihenfolge.size() != 0){
@@ -165,6 +199,13 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode regelt die Kauf-Wünsche der einzelnen Spieler.
+     * Im Falle einer gültigen Wahl wird der Kauf getätigt und bestätigt.
+     * @param isBuying Boolean der angibt, ob der Wunsch eine Karte zu kaufen, besteht
+     * @param card Die Karte, die gekauft wird
+     * @param clientHandler Der Spieler, der die Karte kaufen möchte
+     */
     public void handleBuyUpgrade(boolean isBuying, String card, ClientHandler clientHandler){
         boolean bought = false;
         if (this.activePhase == 1 && this.activePlayerID == clientHandler.ID){
@@ -216,12 +257,21 @@ public class Game {
         }
     }
 
+    /**
+     * Sofern ein Spieler korrekt eine Upgrade-Karte gekauft hat, wird dies bestätigt und an alle Spieler verschickt.
+     * @param clientID Die ID des Spielers, der die Karte gekauft hat
+     * @param card Die Karte, die der Spieler gekauft hat
+     */
     public void sendUpgradeBought(int clientID, String card){
         UpgradeBought upgradeBought = new UpgradeBought(clientID, card);
         upgradeBought.getMessageBody().setKeys(new String[] {"clientID", "card"});
         SERVER.sendMessageForAllUsers(upgradeBought);
     }
 
+    /**
+     * Diese Methode läutet die Programmier-Phase ein.
+     * Es werden die Karten der einzelnen Spieler gezogen und versendet.
+     */
     public void programmierPhase(){
         ActivePhase activePhase = new ActivePhase(this.activePhase);
         activePhase.getMessageBody().setKeys(new String[]{"phase"});
@@ -245,6 +295,12 @@ public class Game {
         }
     }
 
+    /**
+     * Sofern ein Spieler (aufgrund einer Upgrade-Karte) Karten zurück auf den Stapel legen darf, wird dies
+     * von dieser Methode bewerkstelligt.
+     * @param cards Eine Liste der zurückgegebenen Karten
+     * @param clientHandler Der Spieler, der die Karten zurücklegt
+     */
     public void handleReturnCards(ArrayList<String> cards, ClientHandler clientHandler) {
         ArrayList<Cards> newDeck = arrayToList(cards);
         Robot robot = figuren[clientHandler.figure];
@@ -263,6 +319,11 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode wandelt eine Liste bestehend aus Strings (von Kartennamen) in eine Liste mit Karten-Objekten um.
+     * @param array Liste der umzuwandelnden Strings
+     * @return Die Liste an Karten-Objekten
+     */
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
         ArrayList<Cards> handcards= new ArrayList<Cards>();
         for (String s: array) {
@@ -313,6 +374,10 @@ public class Game {
         return handcards;
     }
 
+    /**
+     * Diese Methode fügt dem Spam-Kartenstapel neue Spam-Karten hinzu.
+     * @param i Anzahl der Karten, die hinzugefügt werden sollen
+     */
     public void newSpamCards(int i){
         while (i > 0){
             cardsForGame.spamCards.add(new Spam());
@@ -320,6 +385,9 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode startet die Aktivierungsphase und führt sie durch.
+     */
     public void aktivierungsPhase(){
         for (int i = 0; i < 5; i++) {
             ArrayList<ClientHandler> reihenfolge = reihenfolgeBestimmen();
@@ -338,6 +406,11 @@ public class Game {
         beendeAktivierungsPhase();
     }
 
+    /**
+     * Sollte ein Spieler (aufgrund einer Upgrade-Karte) sich die Priorität in einem Register sichern können, wird
+     * dies in dieser Methode ermöglicht.
+     * @param clientHandler Der Spieler, der Priorität beantragt hat
+     */
     public void handleChooseRegister(ClientHandler clientHandler){
         adminPrivilege.add(clientHandler);
         RegisterChosen registerChosen = new RegisterChosen(clientHandler.ID, clientHandler.chosenRegister);
@@ -345,6 +418,10 @@ public class Game {
         SERVER.sendMessageForAllUsers(registerChosen);
     }
 
+    /**
+     * Diese Methode bestimmt die Reihenfolge, in der die Spieler am Zug sind.
+     * @return Eine Liste mit Spielern, in der korrekten Reihenfolge
+     */
     public ArrayList<ClientHandler> reihenfolgeBestimmen(){
         ArrayList<ClientHandler> reihenfolge = new ArrayList<ClientHandler>();
         ArrayList<Robot> falscheReihenfolge = new ArrayList<Robot>();
@@ -390,6 +467,10 @@ public class Game {
         return reihenfolge;
     }
 
+    /**
+     * Im Rahmen der Aktivierungs-Phase müssen einige besondere Felder auf der Map aktiviert werden.
+     * Dies geschieht in dieser Methode.
+     */
     public void aktiviereMapElemente(){
         activateBlueConveyor();
         activateGreenConveyor();
@@ -401,6 +482,9 @@ public class Game {
         activateCheckpoint();
     }
 
+    /**
+     * Die blauen Förderbänder werden hier aktiviert.
+     */
     public void activateBlueConveyor(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -426,6 +510,11 @@ public class Game {
         }
     }
 
+    /**
+     * Sollte es auf einer Map nötig sein, CheckPoints zu verschieben, wird diese Methode aufgerufen.
+     * @param i x-Koordinate des zu bewegenden CheckPoints
+     * @param u y-Koordinate des zu bewegenden CheckPoints
+     */
     public void moveCheckpoint(int i, int u){
         BoardElement conveyor = null;
         BoardElement checkPoint = null;
@@ -463,6 +552,9 @@ public class Game {
         SERVER.sendMessageForAllUsers(checkpointMoved);
     }
 
+    /**
+     * Die grünen Förderbänder werden aktiviert.
+     */
     public void activateGreenConveyor(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -477,6 +569,9 @@ public class Game {
         }
     }
 
+    /**
+     * Die Push-Panel werden aktiviert.
+     */
     public void activatePushPanel(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -493,6 +588,9 @@ public class Game {
         }
     }
 
+    /**
+     * Die Gears werden aktiviert.
+     */
     public void activateGear(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -505,6 +603,9 @@ public class Game {
         }
     }
 
+    /**
+     * Die Laser (der Map) werden verschossen.
+     */
     public void activateBoardLaser(){
         for (int i = 0; i < board.getMap().length; i++) {
             for (int u = 0; u < board.getMap()[i].length; u++) {
@@ -520,6 +621,9 @@ public class Game {
         }
     }
 
+    /**
+     * Die Laser der Roboter werden verschossen.
+     */
     public void activateRobotLaser(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -561,6 +665,9 @@ public class Game {
         }
     }
 
+    /**
+     * Die Energie-Felder der Map werden aktiviert.
+     */
     public void activateEnergySpace(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -573,6 +680,9 @@ public class Game {
         }
     }
 
+    /**
+     * Die CheckPoints werden aktiviert.
+     */
     public void activateCheckpoint(){
         for (Robot robot: figuren){
             if (robot != null){
@@ -585,7 +695,9 @@ public class Game {
         }
     }
 
-
+    /**
+     * Diese Methode beendet die Aktivierungsphase und bereitet die nächste Phase vor.
+     */
     public void beendeAktivierungsPhase(){
         try {
             for (Robot robot : figuren) {
@@ -607,6 +719,11 @@ public class Game {
         }
     }
 
+    /**
+     * Nach einem Reboot, kann ein Spieler seine Direction, also die seine aktuelle Ausrichtung, in dieser Methode verändern.
+     * @param direction Die gewünschte, neue Ausrichtung
+     * @param clientHandler Der Spieler, der sich anders ausrichten möchte
+     */
     public void handleRebootDirection(String direction, ClientHandler clientHandler){
         Robot rob = null;
         for (Robot robot: figuren){
@@ -648,6 +765,9 @@ public class Game {
         }
     }
 
+    /**
+     * Hier werden die aktuell in einem Register gespielten Karten verschickt.
+     */
     public void currentCardVerschicken(){
         int anzahlSpieler = 0;
         for (Robot robot: figuren){
@@ -668,6 +788,12 @@ public class Game {
         SERVER.sendMessageForAllUsers(currentCards);
     }
 
+    /**
+     * Mithilfe dieser Methode können Spieler ihre Startpunkte auswählen.
+     * @param x x-Koordinate des Startpunkts
+     * @param y y-Koordinate des Startpunkts
+     * @param clientHandler Der Spieler, der gerade einen Punkt gewählt hat
+     */
     public void setStartingPoint(int x, int y, ClientHandler clientHandler) {
         if (!verbindungen.get(activePlayer).equals(clientHandler) || activePhase != 0){
             sendError("Du kannst aktuell keine Startposition wählen.", clientHandler);
@@ -697,12 +823,23 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode prüft, ob sich bereits ein anderer Roboter an einer bestimmten Position befindet.
+     * @param x x-Koordinate
+     * @param y y-Koordinate
+     * @param i Ein Iterator
+     * @return Boolean der angibt, ob das Feld belegt ist
+     */
     public boolean feldBelegt(int x, int y, int i){
         if (figuren[i].getX() == x && figuren[i].getY() == y){
             return true;
         } else return false;
     }
 
+    /**
+     * Diese Methode prüft, ob die Aufbau-Phase beendet werden kann.
+     * @return Boolean der angibt, ob die Aufbau-Phase abgeschlossen ist
+     */
     public boolean aufbauPhaseFertig(){
         for (int i = 0; i < figuren.length; i++){
             if (figuren[i] != null) {
@@ -714,6 +851,12 @@ public class Game {
         return true;
     }
 
+    /**
+     * Während der Programmierphase können Spieler Karten in bestimmte Register legen. Dies wird von dieser Methode bearbeitet.
+     * @param card Die Karte, die in ein Register gelegt werden soll
+     * @param register Das Register, in das die Karte gelegt werden soll
+     * @param clientHandler Der Spieler, der eine Karte legen möchte
+     */
     public void handleSelectedCard(String card, int register, ClientHandler clientHandler){
        try {
            if (figuren[clientHandler.figure].cardIntoRegister(card, register)) {
@@ -739,6 +882,10 @@ public class Game {
        }
     }
 
+    /**
+     * Diese Methode prüft, ob alle Spieler die Programmierphase abgeschlossen haben.
+     * @return Boolean der angibt, ob alle Spieler alle Register mit Karten befüllt haben.
+     */
     public boolean allPlayerReady(){
         for (Robot robot: figuren){
             if (robot != null) {
@@ -750,6 +897,10 @@ public class Game {
         return true;
     }
 
+    /**
+     * Diese Methode startet den Timer, wenn ein Spieler alle Register befüllt hat.
+     * @return Der gestartete Timer
+     */
     public OurTimer startTimer(){
         try {
             TimerStarted timerStarted = new TimerStarted();
@@ -762,6 +913,10 @@ public class Game {
         return null;
     }
 
+    /**
+     * Wenn der Timer abgelaufen ist, oder alle Spieler alle Register befüllt haben, wird diese Methode aufgerufen.
+     * Sie ermittelt zu langsam agierende Spieler und bereitet die Aktivierungsphase vor.
+     */
     public void timerEnded(){
         try {
             ArrayList<Integer> schlafmützen = checkWhoIsntDone();
@@ -780,6 +935,10 @@ public class Game {
         }
     }
 
+    /**
+     * Sollte ein Spieler nicht rechtzeitig seine Register befüllt haben, werden die Register der Spieler mit dieser Methode befüllt.
+     * @param integers IDs der Spieler, die zu langsam waren
+     */
     public void fillRegisters(Integer[] integers) {
         for (Integer integer : integers) {
             if (integer != null) {
@@ -802,12 +961,20 @@ public class Game {
         }
     }
 
+    /**
+     * Sobald ein Spieler alle Register befüllt hat, werden alle Spieler darüber informiert.
+     * @param clientHandler Der Spieler, der alle Register befüllt hat.
+     */
     public void sendSelectionFinished(ClientHandler clientHandler){
         SelectionFinished selectionFinished = new SelectionFinished(clientHandler.ID);
         selectionFinished.getMessageBody().setKeys(new String[] {"clientID"});
         SERVER.sendMessageForAllUsers(selectionFinished);
     }
 
+    /**
+     * Diese Methode prüft, welche Spieler noch nicht alle Register mit Karten befüllt haben.
+     * @return Liste der IDs von Spieler, die noch nicht fertig sind
+     */
     public ArrayList<Integer> checkWhoIsntDone(){
         ArrayList<Integer> schlafmützen = new ArrayList<Integer>();
         for (int i = 0; i < figuren.length; i++) {
@@ -822,12 +989,18 @@ public class Game {
         return schlafmützen;
     }
 
+    /**
+     * Der aktive Spieler wird verschickt.
+     */
     public void sendActivePlayer(){
         CurrentPlayer currentPlayer = new CurrentPlayer(verbindungen.get(activePlayer).ID);
         currentPlayer.getMessageBody().setKeys(new String[]{"clientID"});
         SERVER.sendMessageForAllUsers(currentPlayer);
     }
 
+    /**
+     * Sobald ein Spieler seine Startposition gewählt hat, wird in dieser Methode der nächste Spieler bestimmt.
+     */
     public void nextPlayerAufbauPhase(){
         activePlayer += 1;
         if (verbindungen.size() == activePlayer){
@@ -835,6 +1008,11 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode wandelt eine Liste mit Karten-Objekten in ein Datenfeld mit Strings um.
+     * @param cards Die Liste mit Karten, die umgewandelt werden soll
+     * @return Das Datenfeld mit den entsprechenden Strings befüllt
+     */
     public String[] convertListToArray(ArrayList cards){
         String[] newCards = new String[cards.size()];
         for (int i = 0; i < newCards.length; i++){
@@ -844,6 +1022,13 @@ public class Game {
         return newCards;
     }
 
+    /**
+     * Diese Methode bewegt die Roboter auf der Map.
+     * @param robot Der Roboter, der bewegt werden soll
+     * @param direction Die Richtung, in die der Roboter bewegt werden soll
+     * @param necessary Boolean der angibt, ob die Bewegung auch im Falle eines gestorbenen Roboters ausgeführt werden soll
+     * @return Boolean der angibt, ob der Roboter bewegt werden konnte
+     */
     public boolean checkMovement(Robot robot, String direction, boolean necessary){
         Movement movement;
         switch (direction) {
@@ -1008,6 +1193,11 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode bewegt Roboter, die auf einem Förderband stehen
+     * @param robot Der Roboter, der bewegt wird
+     * @return Boolean der angibt, ob die Bewegung erfolgreich war
+     */
     public boolean checkConveyor(Robot robot){
         try {
             String robotDirection = robot.getDirection();
@@ -1219,12 +1409,23 @@ public class Game {
         }
     }
 
+    /**
+     * Wenn ein Roboter seine Position geändert hat, werden mit dieser Methode alle Spieler benachrichtigt.
+     * @param ID ID des Spielers, der bewegt wurde
+     * @param x x-Koordinate der neuen Position
+     * @param y y-Koordinate der neuen Position
+     */
     public void sendMovement(int ID, int x, int y){
         Movement movement = new Movement(ID, x, y);
         movement.getMessageBody().setKeys(new String[]{"clientID", "x", "y"});
         SERVER.sendMessageForAllUsers(movement);
     }
 
+    /**
+     * Diese Methode dreht Roboter und verschickt einen entsprechenden Hinweis an alle Spieler.
+     * @param robot Der Roboter, der gedreht werden soll
+     * @param rotation Die Richtung, in die der Roboter gedreht werden soll
+     */
     public void sendRotation(Robot robot, String rotation){
         switch (robot.getDirection()){
             case "top":
@@ -1254,6 +1455,14 @@ public class Game {
         SERVER.sendMessageForAllUsers(playerTurning);
     }
 
+    /**
+     * Der Weg und der getroffene Roboter eines Laser-Schusses werden mit dieser Methode berechnet.
+     * @param x x-Koordinate des Lasers
+     * @param y y-Koordinate des Lasers
+     * @param direction Die Richtung, in die der Laser fliegt
+     * @param r Der Roboter, der geschossen hat
+     * @return Der Roboter, der getroffen wird ("null" wenn niemand getroffen wird)
+     */
     public Robot laserFired(int x, int y, String direction, Robot r){
         boolean stillFlying = true;
         while (stillFlying) {
@@ -1369,6 +1578,11 @@ public class Game {
         return null;
     }
 
+    /**
+     * Ein Spieler kann hier eine Sorte an Schadenskarten auswählen.
+     * @param clientHandler Der Spieler, der eine Schadenskarte zieht
+     * @param card Die Karte, die der Spieler gewählt hat
+     */
     public void chooseDamageCard(ClientHandler clientHandler, String card){
         Robot rob = null;
         for (Robot robot: figuren){
@@ -1387,6 +1601,11 @@ public class Game {
 
     }
 
+    /**
+     * Es werden Spam-Karten in das Deck eines Spielers gemischt.
+     * @param robot Der Roboter, der Schadenskarten ziehen muss
+     * @param count Die Anzahl der Spam-Karten
+     */
     public void drawDamageSpam(Robot robot, int count){
         try {
             String[] karten = new String[count];
@@ -1407,6 +1626,11 @@ public class Game {
         }
     }
 
+    /**
+     * Es werden Virus-Karten in das Deck eines Spielers gemischt.
+     * @param robot Der Roboter, der Schadenskarten ziehen muss
+     * @param count Die Anzahl der Virus-Karten
+     */
     public void drawDamageVirus(Robot robot, int count){
         try {
             String[] karten = new String[count];
@@ -1427,6 +1651,13 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode wird aufgerufen, wenn ein Spieler eine andere Art von Schadenskarten ziehen muss.
+     * @param robot Der Spieler, der neue Schadenskarten ziehen muss
+     * @param karten Ein Array an Karten, die bereits regelkonform gezogen wurden
+     * @param i Iterator
+     * @return Das aufgefüllte, vollständige Array der gezogenen Schadenskarten
+     */
     public String[] chooseNewCard(Robot robot, String[] karten, int i) {
         chooseDamageCard = true;
         robot.setAbleToChooseDamageCard(true);
@@ -1487,6 +1718,10 @@ public class Game {
         }
     }
 
+    /**
+     * Wenn ein Spieler einen Virus freisetzt, wird diese Methode aufgerufen.
+     * @param rob Der Roboter, der das Virus freisetzt
+     */
     public void sendVirus(Robot rob){
         for (Robot robot: figuren){
             if (robot != null && !robot.equals(rob)){
@@ -1500,6 +1735,11 @@ public class Game {
         }
     }
 
+    /**
+     * Diese Methode führt einen Reboot durch.
+     * @param robot Der Roboter, der gestoben ist
+     * @param isOnBoard Das Board, auf dem der Roboter zuletzt stand
+     */
     public void reboot(Robot robot, String isOnBoard){
         try {
             drawDamageSpam(robot, 2);
@@ -1585,12 +1825,21 @@ public class Game {
         }
     }
 
+    /**
+     * Fehler werden mit dieser Methode versendet.
+     * @param nachricht Die Fehlermeldung
+     * @param clientHandler Der Spieler, der die Fehlermeldung erhalten soll
+     */
     public void sendError(String nachricht, ClientHandler clientHandler){
         Error1 error1 = new Error1(nachricht);
         error1.getMessageBody().setKeys(new String[]{"error"});
         SERVER.sendMessageForSingleClient(error1, clientHandler);
     }
 
+    /**
+     * Diese Methode entfernt einen Spieler aus dem Spiel
+     * @param clientHandler Der Spieler, der entfernt werden soll.
+     */
     public void exitPlayer(ClientHandler clientHandler){
         users.remove(clientHandler.ID);
         verbindungen.remove(clientHandler);
@@ -1612,23 +1861,26 @@ public class Game {
         }
     }
 
-    public ClientHandler getFirstPlayer(){
-        return verbindungen.get(0);
-    }
-
-    public List<DamageCards> getTwoDamageCards() {
-        List<DamageCards> damageCards = new ArrayList<>();
-        return damageCards;
-    }
-
+    /**
+     * Gibt das aktuelle Register zurück.
+     * @return Das aktive Register
+     */
     public int getActiveRegister() {
         return activeRegister;
     }
 
+    /**
+     * Gibt die Anzahl der zu erreichenden CheckPoints zurück.
+     * @return Anzahl der CheckPoints
+     */
     public int getNeededCheckpoints() {
         return neededCheckpoints;
     }
 
+    /**
+     * Gibt die Karten zurück, die vom Spiel zentral verwaltet werden.
+     * @return Karten, die vom Spiel verwaltet werden
+     */
     public CardsForGame getCardsForGame() {
         return cardsForGame;
     }

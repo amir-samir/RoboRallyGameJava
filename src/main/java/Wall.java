@@ -1,7 +1,16 @@
+/**
+ * Class for the BoardElement type "Wall".
+ * @author yiluye
+ */
 public class Wall extends BoardElement {
 
     String[] orientations;
 
+    /**
+     * Constructor
+     * @param isOnBoard
+     * @param orientations
+     */
     public Wall(String isOnBoard, String[] orientations) {
         this.setType("Wall");
         this.setIsOnBoard(isOnBoard);
@@ -10,9 +19,14 @@ public class Wall extends BoardElement {
 
     @Override
     public void effect(Robot robot, Server server) {
-        //gamer.getRobot().forward(0);
+
     }
 
+    /**
+     * getter
+     * @return
+     */
+    @Override
     public String[] getOrientations() {
         return orientations;
     }

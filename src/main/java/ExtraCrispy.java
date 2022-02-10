@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * map "ExtraCrispy"
+ * Has all the BoardElements of the map ExtraCrispy hardcoded
+ * @author yiluye
+ */
 public class ExtraCrispy extends Board{
 
     public ExtraCrispy() {

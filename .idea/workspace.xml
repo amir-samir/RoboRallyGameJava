@@ -9,22 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Merge">
-      <change afterPath="$PROJECT_DIR$/log.txt.1.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log.txt.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_02_2022_14_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_02_2022_14_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_14_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_14_33__Changes_.xml" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Added JavaDoc comments in class UpgradeShop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Twister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Twister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SelectMapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SelectMapView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/SelectMap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Spielwiese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Spielwiese.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +115,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KI">
+  <component name="RunManager" selected="Application.GetID">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="innige-irrweg-hp" />
@@ -196,9 +184,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.KI" />
         <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
         <item itemvalue="Application.RalleyLogger" />
       </list>
@@ -250,41 +238,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00040" summary="Bugfix&#10;Improved ActivationPhase&#10;Improved KI&#10;Improved MapSelection">
-      <created>1642016802658</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1642016802658</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Merge: new Images">
-      <created>1642018274028</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1642018274028</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Bugfix:&#10;- Improved random AI&#10;- Improved Messages">
-      <created>1642176873487</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1642176873487</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Bugfix:&#10;- Call effect() from BoardElement">
-      <created>1642244118609</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1642244118609</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Bugfix:&#10;- Encoding GameStarted-Message">
-      <created>1642265125910</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1642265125910</updated>
     </task>
     <task id="LOCAL-00045" summary="Merge:&#10;- new GUI&#10;- new Bugfixes">
       <created>1642335511669</created>
@@ -594,7 +547,42 @@
       <option name="project" value="LOCAL" />
       <updated>1644503972369</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Bugfix">
+      <created>1644504621787</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1644504621787</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Added JavaDoc Comments in Game">
+      <created>1644509915580</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1644509915580</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Bugfix:&#10;- NullPointerException in UpgradeShop">
+      <created>1644510167041</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1644510167041</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Added JavaDoc comments in class UpgradeShop">
+      <created>1644511180248</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1644511180248</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Added JavaDoc comments in class UpgradeShop">
+      <created>1644511252234</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1644511252234</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,9 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="LaserDing" />
-    <MESSAGE value="Timer fertig Gui" />
-    <MESSAGE value="map changing" />
     <MESSAGE value="FirstView änderungen" />
     <MESSAGE value="Upgrade Cards" />
     <MESSAGE value="Logging" />
@@ -634,11 +619,14 @@
     <MESSAGE value="Improved AI" />
     <MESSAGE value="Merge:&#10;- new GUI Features (Amir &amp; Dairen)&#10;- new KI" />
     <MESSAGE value="Bugfix:&#10;- AI now VERY intelligent ;=)" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Twister" />
     <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
     <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
+    <MESSAGE value="Bugfix" />
+    <MESSAGE value="Added JavaDoc Comments in Game" />
+    <MESSAGE value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
+    <MESSAGE value="Added JavaDoc comments in class UpgradeShop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc comments in class UpgradeShop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -658,7 +646,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>118</line>
+          <line>149</line>
           <properties class="Game" method="prepareUpgradeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -672,17 +660,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
-          <line>43</line>
+          <line>65</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
-          <line>63</line>
+          <line>85</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
-          <line>47</line>
+          <line>69</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
