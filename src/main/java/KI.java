@@ -30,23 +30,22 @@ public class KI implements Runnable {
     private final PrintWriter bufferedWriter;
 
     public String protocol;
-    public HashMap<Integer, Player> player = new HashMap<Integer, Player>();
-    public Robot[] figuren = new Robot[6];
+    private HashMap<Integer, Player> player = new HashMap<Integer, Player>();
+    private Robot[] figuren = new Robot[6];
     private String selectedMap;
-    public int figureForGui;
-    public boolean figurSelected = false;
+    private boolean figurSelected = false;
+    private int nextCheckPoint;
 
 
     /**
-     * A Constructor that builds a connection between the client and the server and asks the server if
-     * the username is not taken.
-     *
-     * @throws IOException            Throw this exception if the connection between server and client fails.
+     * A Constructor that builds a connection between the AI and the server.
+     * @throws IOException Throw this exception if the connection between server and client fails.
      */
     public KI() throws IOException {
         SOCKET = new Socket("localhost", 1237);
         bufferedReader = new BufferedReader(new InputStreamReader(SOCKET.getInputStream()));
         bufferedWriter = new PrintWriter(SOCKET.getOutputStream(), true);
+        nextCheckPoint = 0;
         isAi = true;
     }
 
@@ -56,10 +55,6 @@ public class KI implements Runnable {
         }
         SetStatus setStatus = new SetStatus(true);
         bufferedWriter.println(Adopter.javabeanToJson(setStatus));
-    }
-
-    public Integer getFigur(){
-        return figureForGui;
     }
 
     public void configuration(){
@@ -164,14 +159,6 @@ public class KI implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(mapSelected));
     }
 
-    public void playCard(String card){
-        PlayCard playCard = new PlayCard(card);
-        String[] key = {"card"};
-        playCard.getMessageBody().setKeys(key);
-
-        bufferedWriter.println(Adopter.javabeanToJson(playCard));
-    }
-
     public void updateFigure(int x, int y, int ID){
         for (Robot robot: figuren){
             if (robot != null) {
@@ -184,15 +171,6 @@ public class KI implements Runnable {
                 } else robot.setDirection("right");
             }
         }
-    }
-
-    public int getFigurenID(int ID){
-        for (int i = 0; i < figuren.length; i++){
-            if (figuren[i].getGamerID() == ID){
-                return i;
-            }
-        }
-        return -1;
     }
 
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
@@ -235,7 +213,7 @@ public class KI implements Runnable {
 
     public void playCards(ArrayList<String> list){
         Spielwiese spielwiese = new Spielwiese(this.map, list);
-        list = spielwiese.simulate(figuren[player.get(this.ID).figur], 0);
+        list = spielwiese.simulate(figuren[player.get(this.ID).figur], this.nextCheckPoint);
         try {
             TimeUnit.SECONDS.sleep(2);
             sendCardToRegister(list.get(0), 0);
@@ -342,6 +320,13 @@ public class KI implements Runnable {
             x += 1;
         }
         this.map = map;
+    }
+
+    public void handleCheckPointReached(Message m){
+        int clientID = (int) (double) m.getMessageBody().getContent()[0];
+        if (clientID == this.ID){
+            nextCheckPoint += 1;
+        }
     }
 
     /**
@@ -484,6 +469,8 @@ public class KI implements Runnable {
                     BuyUpgrade buyUpgrade2 = new BuyUpgrade(false, null);
                     buyUpgrade2.getMessageBody().setKeys(new String[]{"isBuying", "card"});
                     bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade2));
+                } else if (message.getMessageType().equals("CheckPointReached")){
+                    handleCheckPointReached(message);
                 }
                 else {
                 }
@@ -492,10 +479,6 @@ public class KI implements Runnable {
                 break;
             }
         }
-    }
-
-    public ArrayList<Cards> getHandcards(){
-        return figuren[player.get(ID).figur].getHandCards();
     }
 
     public static void main(String[] args) throws IOException {

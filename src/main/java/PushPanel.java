@@ -12,7 +12,7 @@ public class PushPanel extends BoardElement {
 
     @Override
     public void effect(Robot robot, Server server) {
-        server.game.checkMovement(robot, this.orientations[0], true);
+        server.getGame().checkMovement(robot, this.orientations[0], true);
     }
 
     @Override

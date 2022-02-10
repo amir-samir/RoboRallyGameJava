@@ -12,9 +12,9 @@ public class ConveyorBelt extends BoardElement {
 
     @Override
     public void effect(Robot robot, Server server) {
-        server.game.checkConveyor(robot);
+        server.getGame().checkConveyor(robot);
         if (speed == 2){
-            server.game.checkConveyor(robot);
+            server.getGame().checkConveyor(robot);
         }
     }
 

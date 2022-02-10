@@ -9,14 +9,14 @@ public class Worm extends DamageCards {
     @Override
     public void effect(Robot robot, Server server) {
         Cards activateCard = robot.getFirstCard();
-        robot.getRegister()[server.game.getActiveRegister()] = activateCard;
+        robot.getRegister()[server.getGame().getActiveRegister()] = activateCard;
 
-        ReplaceCard replaceCard = new ReplaceCard(server.game.getActiveRegister(), activateCard.getName(), robot.getGamerID());
+        ReplaceCard replaceCard = new ReplaceCard(server.getGame().getActiveRegister(), activateCard.getName(), robot.getGamerID());
         replaceCard.getMessageBody().setKeys(new String[]{"register", "newCard", "clientID"});
         server.sendMessageForAllUsers(replaceCard);
 
-        server.game.reboot(robot, server.game.board.getMap()[robot.getX()][robot.getY()].get(0).getIsOnBoard());
-        server.game.getCardsForGame().wormCards.add(new Worm());
+        server.getGame().reboot(robot, server.getGame().board.getMap()[robot.getX()][robot.getY()].get(0).getIsOnBoard());
+        server.getGame().getCardsForGame().wormCards.add(new Worm());
     }
 
 }

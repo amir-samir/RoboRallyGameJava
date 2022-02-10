@@ -12,9 +12,9 @@ public class Move3Card extends Cards {
     @Override
     public void effect(Robot robot, Server server) {
         try {
-            server.game.checkMovement(robot, robot.getDirection(), false);
-            server.game.checkMovement(robot, robot.getDirection(), false);
-            server.game.checkMovement(robot, robot.getDirection(), false);
+            server.getGame().checkMovement(robot, robot.getDirection(), false);
+            server.getGame().checkMovement(robot, robot.getDirection(), false);
+            server.getGame().checkMovement(robot, robot.getDirection(), false);
         } catch (Exception e) {
             e.printStackTrace();
         }

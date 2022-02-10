@@ -19,21 +19,20 @@ import java.util.List;
 
 public class Server {
 
-    public static int laufendeID = 2000;
-    public static boolean mapSelected = false;
-    public static ClientHandler clientWhoSelectedMap;
-    public List<ClientHandler> verbindungen = new ArrayList<ClientHandler>();
-    public static List<Integer> choosenBots = new ArrayList<Integer>();
-    public HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
-    //public static HashMap<String, Integer> ids = new HashMap<String, Integer>();
-    public Robot[] figuren = new Robot[6];
-    RalleyLogger ralleyLogger = new RalleyLogger();
-    public String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "DeathTrap"};
-    String activeMap = null;
-    Game game;
-
     private ServerSocket serverSocket;
     public String protocol;
+    private static int laufendeID = 2000;
+    private static List<Integer> choosenBots = new ArrayList<>();
+    private List<ClientHandler> verbindungen = new ArrayList<>();
+    private HashMap<Integer, ClientHandler> users = new HashMap<Integer, ClientHandler>();
+    RalleyLogger ralleyLogger = new RalleyLogger();
+
+    private Robot[] figuren = new Robot[6];
+    private String[] availableMaps = {"DizzyHighway", "ExtraCrispy", "LostBearings", "DeathTrap", "Twister"};
+    private static boolean mapSelected = false;
+    private static ClientHandler clientWhoSelectedMap;
+    private String activeMap = null;
+    private Game game;
 
 
 
@@ -83,12 +82,6 @@ public class Server {
         ralleyLogger.getLogger().info(nachricht);
     }
 
-    public static synchronized void setChoosenBots(int bot) {
-        choosenBots.add(bot);
-    }
-    public static synchronized List<Integer> getChoosenBots() {
-        return choosenBots;
-    }
     public void sendMessageForSingleClient(Message m, ClientHandler clientHandler){
         clientHandler.writer.println(Adopter.javabeanToJson(m));
         ralleyLogger.getLogger().info(Adopter.javabeanToJson(m));
@@ -204,6 +197,7 @@ public class Server {
         if (cH.isReady) {
             if (!this.mapSelected && !cH.isAi) {
                 clientWhoSelectedMap = cH;
+                mapSelected = true;
                 SelectMap selectMap = new SelectMap(availableMaps);
                 String[] keys = {"availableMaps"};
                 selectMap.getMessageBody().setKeys(keys);
@@ -382,5 +376,13 @@ public class Server {
         GameFinished gameFinished = new GameFinished(robot.getGamerID());
         gameFinished.getMessageBody().setKeys(new String[]{"clientID"});
         sendMessageForAllUsers(gameFinished);
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public static synchronized void setChoosenBots(int bot) {
+        choosenBots.add(bot);
     }
 }

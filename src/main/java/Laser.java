@@ -12,7 +12,7 @@ public class Laser extends BoardElement {
 
     @Override
     public void effect(Robot robot, Server server){
-        server.game.drawDamageSpam(robot, count);
+        server.getGame().drawDamageSpam(robot, count);
     }
 
     @Override
