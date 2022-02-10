@@ -6,16 +6,38 @@ import java.util.Collections;
 
 import static java.lang.Math.abs;
 
+
+/**
+ * Diese Klasse wird von der KI verwendet, um die beste Abfolge von spielbaren Karten zu finden.
+ * Hierfür werden in dieser Klasse verschiedene Varianten generiert und getestet.
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Luca Weyhofen
+ *
+ * @version 2.1
+ */
 public class Spielwiese {
 
     private ArrayList<BoardElement>[][] map;
     private ArrayList<Cards> cards;
 
+    /**
+     * Dies ist der Konstruktor
+     * @param map Die Karte, auf der die Züge simuliert werden sollen
+     * @param cards Die Karten, die in einem Zug zur Verfügung stehen
+     */
     public Spielwiese(ArrayList<BoardElement>[][] map, ArrayList<String> cards){
         this.map = map;
         this.cards = arrayToList(cards);
     }
 
+    /**
+     * Diese Methode berechnet aus einer Menge von Karten die beste Möglichkeit den Zug durchzuführen.
+     * @param robot Der Roboter, für den der beste Zug gefunden werden soll
+     * @param nextCheckpoint Der nächste CheckPoint, der angesteuert werden soll
+     * @return Eine Liste an Karten, die von der KI gespielt werden sollen
+     */
     public ArrayList<String> simulate(Robot robot, int nextCheckpoint){
         Robot TestRoboter = robot;
         ArrayList<ArrayList<Cards>> possibilities = generatePossibilities();
@@ -64,6 +86,13 @@ public class Spielwiese {
         return result;
     }
 
+    /**
+     * Diese Methode berechnet den Abstand zwischen einem Roboter und einer Zielkoordinate
+     * @param robot Der Roboter, für den der Abstand bestimmt werden soll
+     * @param x Die x-Koordinate des Zielpunktes
+     * @param y Die y-Koordinate des Zielpunktes
+     * @return Der Abstand zwischen Roboter und Zielpunkt
+     */
     public int abstandBerechnen(Robot robot, int x, int y){
         int robotX = robot.getX();
         int robotY = robot.getY();
@@ -73,6 +102,12 @@ public class Spielwiese {
         return entfernungGesamt;
     }
 
+    /**
+     * Diese Methode ermittelt einen Roboter, der bei Durchführung der Kartensequenz herauskommen würde
+     * @param procedure Die fünf Karten, die gespielt wurden (und simuliert werden sollen)
+     * @param robot Der Roboter, für den der Zug simuliert werden soll
+     * @return Der Roboter, der nach der Simulation herauskommt
+     */
     public Robot testMoveRobot(ArrayList<Cards> procedure, Robot robot){
         Robot testRoboter = robot;
         for (int i = 0; i < 5; i++){
@@ -83,6 +118,14 @@ public class Spielwiese {
         return testRoboter;
     }
 
+    /**
+     * Hier werden einzelne Karten simuliert.
+     * @param list Die gesamte Kartensequenz
+     * @param activeCard Die Karte, die simuliert werden soll
+     * @param robot Der Roboter, für den die karte simuliert wird
+     * @param i Die Stelle der Karte
+     * @return Der Roboter, der nach der Simulation herauskommt
+     */
     public Robot manageCard(ArrayList<Cards> list, Cards activeCard, Robot robot, int i){
         switch (activeCard.getName()){
             case "MoveI":
@@ -123,6 +166,12 @@ public class Spielwiese {
         return robot;
     }
 
+    /**
+     * Hier werden einzelne Elemente der Map simuliert.
+     * @param robot Der Roboter, für den das Element der Map simuliert werden soll
+     * @param runde Das aktuell aktive Register
+     * @return Der Roboter, der nach der Simulation herauskommt
+     */
     public Robot manageBoardElement(Robot robot, int runde){
         ArrayList<BoardElement> liste = map[robot.getX()][robot.getY()];
         for (BoardElement element: liste){
@@ -158,6 +207,12 @@ public class Spielwiese {
         return robot;
     }
 
+    /**
+     *
+     * @param direction
+     * @param robot
+     * @return
+     */
     public Robot turnRobot(String direction, Robot robot){
         switch (robot.getDirection()){
             case "top":

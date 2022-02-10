@@ -65,7 +65,7 @@ public class Client implements Runnable {
     public int figureForGui;
     public String CardOfGui = "SomeCard";
     public ObservableList<Integer> figurenForGui;
-    private int CubesZahl = 5;
+    private int cubesZahl = 5;
     private RalleyLogger ralleyLogger = new RalleyLogger();
     private String UpgradeCardName;
     private String titleUserName;
@@ -479,11 +479,11 @@ public class Client implements Runnable {
     public String handleEnergy(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
-        this.CubesZahl = number;
         String source = (String) m.getMessageBody().getContent()[2];
         String s;
         if (clientID == this.ID){
             s = "Du hast " + number + "Energie von folgender Quelle hinzugewonnen: " + source;
+            this.cubesZahl = number;
         } else s = player.get(clientID).name + " (" + clientID + ") hat " + number + "Energie von folgender Quelle gewonnen: " + source;
         return s;
     }
@@ -542,6 +542,15 @@ public class Client implements Runnable {
             Platform.runLater(() -> {
                 getAllInOneView().setImageForUpgradeCard(card);
             });
+            int costs = 0;
+            if (card.equals("AdminPrivilege") || card.equals("SpamBlocker")){
+                costs = 3;
+            } else if (card.equals("RearLaser")){
+                costs = 2;
+            } else if (card.equals("MemorySwap")){
+                costs = 1;
+            }
+            this.cubesZahl -= costs;
             s = "Du hast folgende Karte gekauft: " + card;
         } else s = player.get(clientID).name + " (" + clientID + ") hat folgende Karte gekauft: " + card;
         this.upgradeShop.remove(card);
@@ -992,7 +1001,7 @@ public class Client implements Runnable {
     }
 
     public int getCubesZahl(){
-        return CubesZahl;
+        return cubesZahl;
     }
 
     public static void setChooseCardsForSwap(ChooseCardsForSwap chooseCardsForSwap1){
