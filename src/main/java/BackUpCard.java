@@ -1,11 +1,21 @@
+/**
+ * class for programmingcard BackUpCard
+ * @author chen
+ */
 public class BackUpCard extends Cards {
-
     final String description = "Cards.Cards.BackUpCard moves your robot 1 space back without changing its facing direction.";
-
+    /**
+     * Constructor
+     */
     public BackUpCard(){
         this.setName("BackUp");
     }
 
+    /**
+     * robot movement after activating backupcard
+     * @param robot affected robot
+     * @param server connect to server
+     */
     @Override
     public void effect(Robot robot, Server server){
         try {
