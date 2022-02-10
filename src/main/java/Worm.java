@@ -1,11 +1,22 @@
 import Messages.Phase.ReplaceCard;
-
+/**
+ * class for damageCard WormCard
+ * @author chen
+ */
 public class Worm extends DamageCards {
 
+    /**
+     * Constructor
+     */
     public Worm(){
         this.setName("Worm");
     }
 
+    /**
+     * reboot robot after activating worm effect
+     * @param robot affected robot
+     * @param server connect to server
+     */
     @Override
     public void effect(Robot robot, Server server) {
         Cards activateCard = robot.getFirstCard();
@@ -20,3 +31,5 @@ public class Worm extends DamageCards {
     }
 
 }
+
+

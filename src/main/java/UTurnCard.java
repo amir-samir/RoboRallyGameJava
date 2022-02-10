@@ -1,13 +1,24 @@
 import Messages.Actions.PlayerTurning;
 
+/**
+ * class for programmingcard uTurnCard
+ * @author chen
+ */
 public class UTurnCard extends Cards {
 
     final String description = "The Cards.UTurnCard turns your robot 180 degrees so it faces the opposite direction. The robot remains in its current space.";
-
+    /**
+     * Constructor
+     */
     public UTurnCard(){
         this.setName("UTurn");
     }
 
+    /**
+     * robot will turn 180 degrees after activating uturncard
+     * @param robot affected robot
+     * @param server connect to server
+     */
     @Override
     public void effect(Robot robot, Server server){
         switch (robot.getDirection()){
@@ -32,3 +43,4 @@ public class UTurnCard extends Cards {
     }
 
 }
+

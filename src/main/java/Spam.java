@@ -1,11 +1,21 @@
 import Messages.Phase.ReplaceCard;
-
+/**
+ * class for damagecard SpamCard
+ * @author chen
+ */
 public class Spam extends DamageCards {
-
+    /**
+     * Constructor
+     */
     public Spam(){
         this.setName("Spam");
     }
 
+    /**
+     * robot will play the firstcard of the deck in current register after activating spamcard.
+     * @param robot affected robot
+     * @param server connect to server
+     */
     @Override
     public void effect (Robot robot, Server server) {
         Cards activateCard = robot.getFirstCard();

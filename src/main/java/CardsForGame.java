@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
 /**
- * Diese Klasse repräsentiert alle Kartenstapel, die zentral vom Spiel verwaltet werden.
- *
- * @author Chen Zhaohang
- * @author Luca Weyhofen
- *
- * @version 2.1
+ * prepare damageCards and upgradeCards for game
+ * @author chen
  */
 public class CardsForGame {
 
@@ -18,8 +13,7 @@ public class CardsForGame {
     ArrayList<UpgradeCards> upgradeCards = new ArrayList<>();
 
     /**
-     * Das ist der Konstruktor.
-     * Hier werden alle Kartenstapel initialisiert.
+     * initialize all the damagecards and upgradecards for game
      */
     public CardsForGame(){
         initSpamCard();
@@ -28,45 +22,40 @@ public class CardsForGame {
         initVirusCard();
         initUpgradeCards();
     }
-
     /**
-     * Die Spam-Karten werden erstellt.
+     * initialize spam cards
      */
     public void initSpamCard() {
         for (int i = 0; i < 38; i++) {
             spamCards.add(new Spam());
         }
     }
-
     /**
-     * Die Virus-Karten werden erstellt.
+     * initialize virus cards
      */
     public void initVirusCard() {
         for (int i = 0; i < 18; i++) {
             virusCards.add(new VirusCard());
         }
     }
-
     /**
-     * Die Wurm-Karten werden erstellt.
+     * initialize worm cards
      */
     public void initWormCard() {
         for (int i = 0; i < 6; i++) {
             wormCards.add(new Worm());
         }
     }
-
     /**
-     * Die Trojaner-Karten werden erstellt.
+     * initialize trojan cards
      */
     public void initTrojanCard() {
         for (int i = 0; i < 12; i++) {
             trojanHorse.add(new Trojan());
         }
     }
-
     /**
-     * Die Upgrade-Karten werden erstellt.
+     * initialize upgrade cards
      */
     public void initUpgradeCards(){
         for (int i = 0; i < 10; i++){
