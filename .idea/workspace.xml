@@ -9,14 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix:&#10;- Lost Bearings: PushPanel">
-      <change afterPath="$PROJECT_DIR$/log.txt.1.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log.txt.lck" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LostBearings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LostBearings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,20 +237,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00059" summary="Bugfix">
-      <created>1643495076167</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1643495076167</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Bugfix">
-      <created>1643495638472</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1643495638472</updated>
     </task>
     <task id="LOCAL-00061" summary="Bugfix">
       <created>1643572671939</created>
@@ -586,7 +567,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644530567001</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Bugfix:&#10;- Lost Bearings: Pits">
+      <created>1644531146822</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1644531146822</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Bugfix">
+      <created>1644531461077</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1644531461077</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix:&#10;- Activation starts when all Players have chosen all cards" />
     <MESSAGE value="Bugfix:&#10;- UpgradeShop: Amount of Cards&#10;- ChooseRegister: Adopter" />
     <MESSAGE value="Bugfix:&#10;- ConnectionUpdate: Remove Player" />
     <MESSAGE value="Merge:&#10;- Bugfix" />
@@ -616,7 +610,6 @@
     <MESSAGE value="Bugfix:&#10;- AI now VERY intelligent ;=)" />
     <MESSAGE value="Bugfix:&#10;- Twister" />
     <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Added JavaDoc Comments in Game" />
     <MESSAGE value="Bugfix:&#10;- NullPointerException in UpgradeShop" />
     <MESSAGE value="Added JavaDoc comments in class UpgradeShop" />
@@ -630,7 +623,9 @@
     <MESSAGE value="Bugfix:&#10;- AI" />
     <MESSAGE value="Added JavaDoc comments in KI" />
     <MESSAGE value="Bugfix:&#10;- Lost Bearings: PushPanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix:&#10;- Lost Bearings: PushPanel" />
+    <MESSAGE value="Bugfix:&#10;- Lost Bearings: Pits" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

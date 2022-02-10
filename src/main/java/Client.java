@@ -125,12 +125,21 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
+    /**
+     * Diese Methode versendet die ausgewählten Kategorien an Schadenskarten an den Server.
+     * @param cards Datenfeld mit den ausgewählten Schadenskarten-Kategorien
+     */
     public void sendSelectedDamage(String[] cards){
         SelectedDamage selectedDamage = new SelectedDamage(cards);
         selectedDamage.getMessageBody().setKeys(new String[]{"cards"});
         bufferedWriter.println(Adopter.javabeanToJson(selectedDamage));
     }
 
+    /**
+     * Diese Methode sendet Name und Figur des Spielers an den Server.
+     * @param name Name des Spielers
+     * @param figur Nummer der Figur des Spielers
+     */
     public void configuration(String name, int figur){
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
@@ -139,37 +148,19 @@ public class Client implements Runnable {
         figureForGui = figur;
         titleUserName = name;
         Platform.runLater(new Runnable(){
-
             @Override
             public void run() {
                     getChatView().setImageFromFigur(figur);
 
             }
         });
-
-
-    }
-
-    public int getID(){
-        return ID;
     }
 
     /**
-     * A method that receive and returns information from the game.Server.
-     * @throws IOException Throw this exception if the connection between server and client fails.
+     * Diese Methode versendet den ausgewählten Startpunkt an den Server.
+     * @param x x-Koordinate
+     * @param y y-Koordinate
      */
-    public String receiveFromServer() throws IOException {
-        return bufferedReader.readLine();
-    }
-
-    public void closeConnection() throws IOException {
-        SOCKET.close();
-    }
-
-    public boolean isConnected(){
-        return connected;
-    }
-
     public void setStartingPoint(int x, int y){
         SetStartingPoint setStartingPoint = new SetStartingPoint(x, y);
         setStartingPoint.getMessageBody().setKeys(new String[]{"x", "y"});
@@ -177,6 +168,10 @@ public class Client implements Runnable {
         System.out.println(Adopter.javabeanToJson(setStartingPoint));
     }
 
+    /**
+     * Verschicken der HelloServer Nachricht an den Server.
+     * @param message HelloServer Nachricht
+     */
     public void sendHelloServer(Message message){
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
@@ -186,6 +181,11 @@ public class Client implements Runnable {
         bufferedWriter.println(S);
     }
 
+    /**
+     * Diese Methode verschickt die Kartenauswahl des Spielers an den Server.
+     * @param card Die ausgewählte Karte
+     * @param register Das Register, in das die Karte gespielt werden soll
+     */
     public void sendCardToRegister(String card, int register){
         SelectedCard selectedCard = new SelectedCard(card, register);
         selectedCard.getMessageBody().setKeys(new String[]{"card", "register"});
@@ -193,6 +193,10 @@ public class Client implements Runnable {
         System.out.println(Adopter.javabeanToJson(selectedCard));
     }
 
+    /**
+     * Wenn der Spieler eine Map ausgewählt hat, wird diese hier an den Server verschickt.
+     * @param map Die ausgewählte Map
+     */
     public void mapSelected(String map){
         MapSelected mapSelected = new MapSelected(map);
         String[] key = {"map"};
@@ -200,6 +204,10 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(mapSelected));
     }
 
+    /**
+     * Versendung der playCard Nachricht
+     * @param card Gespielte Karte
+     */
     public void playCard(String card){
         PlayCard playCard = new PlayCard(card);
         String[] key = {"card"};
@@ -208,6 +216,12 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(playCard));
     }
 
+    /**
+     * Die neue Position der Roboter wird aktualisiert.
+     * @param x neue x-Koordinate
+     * @param y neue y-Koordinate
+     * @param ID ID des Spielers, der sich bewegt hat
+     */
     public void updateFigure(int x, int y, int ID){
         for (Robot robot: figuren){
             if (robot != null) {
@@ -222,27 +236,32 @@ public class Client implements Runnable {
         }
     }
 
-    public int getFigurenID(int ID){
-        for (int i = 0; i < figuren.length; i++){
-            if (figuren[i].getGamerID() == ID){
-                return i;
-            }
-        }
-        return -1;
-    }
-
+    /**
+     * Wenn der Spieler eine Upgrade-Karte kauft, wird dies hier dem Server mitgeteilt.
+     * @param isBuying Boolean der angibt, ob der Spieler eine Karte kauft
+     * @param card Karte, die der Spieler kaufen möchte
+     */
     public void buyUpgrade(boolean isBuying, String card){
         BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
         buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
         bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
     }
 
+    /**
+     * Im Rahmen der AdminPrivilege-Karte kann ein Register ausgewählt werden.
+     * @param register Das ausgewählte Register
+     */
     public void chooseRegister(int register){
         ChooseRegister chooseRegister = new ChooseRegister(register);
         chooseRegister.getMessageBody().setKeys(new String[]{"register"});
         bufferedWriter.println(Adopter.javabeanToJson(chooseRegister));
     }
 
+    /**
+     * Umwandlung einer Liste voll Strings in eine Liste voller Karten
+     * @param array Liste mit Strings
+     * @return Liste mit Karten-Objekte
+     */
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
         ArrayList<Cards> handcards= new ArrayList<Cards>();
         for (String s: array) {
@@ -293,6 +312,10 @@ public class Client implements Runnable {
         return handcards;
     }
 
+    /**
+     * Die Map wird generiert.
+     * @param m Die Nachricht, in der die Map verschickt wurde
+     */
     public void generateMap(Message m){
         ArrayList<BoardElement>[][] map = new ArrayList[10][13];
         int i = 0;
@@ -386,6 +409,11 @@ public class Client implements Runnable {
         this.map = map;
     }
 
+    /**
+     * Umwandlung einr Liste von Strings in ein Datenfeld mit Strings
+     * @param list Eine Liste mit Strings
+     * @return Ein Datenfeld befüllt mir Strings
+     */
     public String[] changeListIntoArray(ArrayList<String> list){
         String[] orientations = new String[list.size()];
         for(int i = 0; i < list.size(); i++){
@@ -394,18 +422,24 @@ public class Client implements Runnable {
         return orientations;
     }
 
+    /**
+     * Nach einem reboot, kann ein Spieler eine neue Ausrichtung wählen
+     * @param direction Die neue Ausrichtung des Spielers
+     */
     public void setNewDirection(String direction){
         RebootDirection rebootDirection = new RebootDirection(direction);
         rebootDirection.getMessageBody().setKeys(new String[]{"direction"});
         bufferedWriter.println(Adopter.javabeanToJson(rebootDirection));
     }
 
+    /**
+     * Verarbeitung der returnCards Nachricht (memory swap)
+     * @param cards Die Karten, die zurückgegeben werden
+     */
     public void returnCards(String[] cards){
         ReturnCards returnCards = new ReturnCards(cards);
         returnCards.getMessageBody().setKeys(new String[]{"cards"});
         bufferedWriter.println(Adopter.javabeanToJson(returnCards));
-
-        //programming
     }
 
     public String handleCheckPointReached(Message m){
@@ -1037,5 +1071,9 @@ public class Client implements Runnable {
 
     public String getCardOfGui(){
         return CardOfGui;
+    }
+
+    public int getID(){
+        return ID;
     }
 }
