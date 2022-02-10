@@ -19,9 +19,11 @@ public class UpgradeShop {
 
     public boolean remove(UpgradeCards card){
         for (int i = 0; i < upgradeCards.length; i++){
-            if (upgradeCards[i].getName() == card.getName()){
-                upgradeCards[i] = null;
-                return true;
+            if (upgradeCards[i] != null) {
+                if (upgradeCards[i].getName().equals(card.getName())) {
+                    upgradeCards[i] = null;
+                    return true;
+                }
             }
         }
         return false;
