@@ -10,9 +10,15 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Diese Klasse fungiert als Bindestück zwischen game.Client und game.Server. Sie sorgt für die richtige Verarbeitung der
- * Nachrichten und Befehle, die von den Benutzern (Clients) gesendet werden.
- * @author Luca, Dairen
+ * Diese Klasse fungiert als Bindestück zwischen Client Server.
+ * Sie sorgt für die richtige Verarbeitung der Nachrichten und Befehle, die von den Benutzern (Clients)
+ * gesendet werden und verschickt Informationen vom Server an den zugehörigen Client.
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Luca Weyhofen
+ *
+ * @version 2.1
  */
 
 public class ClientHandler implements Runnable {
@@ -30,15 +36,13 @@ public class ClientHandler implements Runnable {
 
     public BufferedReader reader;
     public PrintWriter writer;
+
     /**
-     * Diese Methode stellt den Konstruktor dar. Sie initialisiert die globalen Variablen und fügt nach Überprüfung den
-     * eingegebenen Namen als neuen Username hinzu.
-     * @param socket Initialisiert die Globale Variable Socket.
-     * @param server Initialisiert die Globale Variable game.Server.
+     * Dies ist der Konstruktor
+     * @param socket Initialisiert die Globale Variable Socket
+     * @param server Initialisiert die Globale Variable Server
      */
-
     public ClientHandler(Socket socket, Server server) {
-
         this.SERVER = server;
         this.SOCKET = socket;
         this.chosenRegister = 0;
@@ -92,7 +96,6 @@ public class ClientHandler implements Runnable {
                         int figure = (int) (double) message.getMessageBody().getContent()[1];
                         String name = (String) message.getMessageBody().getContent()[0];
                         username = name;
-                        SERVER.addUsername(this);
                         if (SERVER.checkFigure(figure, this)) {
                             this.figure = figure;
                             SERVER.playerAdded(this);
@@ -148,29 +151,48 @@ public class ClientHandler implements Runnable {
         }
     }
 
-
+    /**
+     * Die chooseRegister-Nachricht wird an den Server weitergeleitet.
+     * @param m Die empfangene Nachricht
+     */
     public void handleChooseRegister(Message m){
         int register = (int) (double) m.getMessageBody().getContent()[0];
         this.chosenRegister = register;
         SERVER.handleChooseRegister(this);
     }
 
+    /**
+     * Die returnCards-Nachricht wird an den Server weitergeleitet.
+     * @param message Die empfangene Nachricht
+     */
     public void handleReturnCards(Message message){
         ArrayList<String> cards = (ArrayList<String>) message.getMessageBody().getContent()[0];
         SERVER.handleReturnCards(cards, this);
     }
 
+    /**
+     * Die buyUpgrade-Nachricht wird an den Server weitergeleitet.
+     * @param message Die empfangene Nachricht
+     */
     public void handleBuyUpgrade(Message message){
         boolean isBuying = (boolean) message.getMessageBody().getContent()[0];
         String card = (String) message.getMessageBody().getContent()[1];
         SERVER.handleBuyUpgrade(isBuying, card, this);
     }
 
+    /**
+     * Die selectDamage-Nachricht wird an den Server weitergeleitet.
+     * @param message Die empfangene Nachricht
+     */
     public void handleSelectedDamage(Message message){
         ArrayList<String> list = (ArrayList<String>) message.getMessageBody().getContent()[0];
         SERVER.handleSelectDamage(this, list);
     }
 
+    /**
+     * Die Welcome-Nachricht wird an den Client verschickt.
+     * @param message Die empfangene helloServer-Nachricht
+     */
     public void sendWelcomeMessage(Message message){
         isAi = (boolean) message.getMessageBody().getContent()[1];
         group = (String) message.getMessageBody().getContent()[0];
@@ -184,7 +206,7 @@ public class ClientHandler implements Runnable {
     }
 
     /**
-     * Diese Methode schließt für ein ordnungsgemäßes Schließen der Verbindung zum game.Server alle zugehörigen Instanzen.
+     * Diese Methode schließt für ein ordnungsgemäßes Schließen der Verbindung zum Server alle zugehörigen Instanzen.
      * @param socket Der Socket, der geschlossen werden soll
      * @param bufferedReader Der BufferedReader, der geschlossen werden soll
      * @param bufferedWriter Der BufferedWriter, der geschlossen werden soll
@@ -203,9 +225,5 @@ public class ClientHandler implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public String getUsername(){
-        return username;
     }
 }
