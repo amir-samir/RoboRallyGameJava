@@ -40,14 +40,14 @@ public class DeathTrap extends Board {
 
         //row 1
         map[1][0].add(new CheckPoint("2A", 4));
-        map[1][1].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{1, 2, 3}));
+        map[1][1].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{1, 3, 5}));
         map[1][2].add(new Empty("2A"));
         map[1][3].add(new Wall("2A", new String[]{"bottom"}));
         map[1][4].add(new ConveyorBelt("2A", new String[]{"top", "right"}, 1));
         map[1][5].add(new ConveyorBelt("2A", new String[]{"left", "right"}, 1));
         map[1][6].add(new Empty("2A"));
         map[1][7].add(new Pit("2A"));
-        map[1][8].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{1, 2, 3}));
+        map[1][8].add(new PushPanel("2A", new String[]{"left"}, new int[]{1, 3, 5}));
         map[1][9].add(new ConveyorBelt("2A", new String[]{"top", "bottom"}, 1));
         map[1][10].add(new Empty("A"));
         map[1][11].add(new StartPoint("A"));
@@ -56,12 +56,12 @@ public class DeathTrap extends Board {
         //row 2
         map[2][0].add(new Empty("2A"));
         map[2][1].add(new Pit("2A"));
-        map[2][2].add(new PushPanel("2A", new String[]{"right"}, new int[]{2, 3}));
+        map[2][2].add(new PushPanel("2A", new String[]{"right"}, new int[]{2, 4}));
         map[2][3].add(new Pit("2A"));
         map[2][4].add(new EnergySpace("2A", 1));
         map[2][5].add(new Empty("2A"));
         map[2][6].add(new EnergySpace("2A", 1));
-        map[2][7].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{2, 3}));
+        map[2][7].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{2, 4}));
         map[2][8].add(new CheckPoint("2A", 3));
         map[2][9].add(new ConveyorBelt("2A", new String[]{"top", "bottom"}, 1));
         map[2][10].add(new Empty("A"));
@@ -73,7 +73,7 @@ public class DeathTrap extends Board {
         map[3][1].add(new Empty("2A"));
         map[3][2].add(new EnergySpace("2A", 1));
         map[3][3].add(new Empty("2A"));
-        map[3][4].add(new PushPanel("2A", new String[]{"top"}, new int[]{2, 3}));
+        map[3][4].add(new PushPanel("2A", new String[]{"top"}, new int[]{2, 4}));
         map[3][5].add(new Empty("2A"));
         map[3][6].add(new Empty("2A"));
         map[3][7].add(new Pit("2A"));
@@ -90,7 +90,7 @@ public class DeathTrap extends Board {
         map[4][3].add(new Pit("2A"));
         map[4][4].add(new CheckPoint("2A", 1));
         map[4][5].add(new Empty("2A"));
-        map[4][6].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{2, 3}));
+        map[4][6].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{1, 3, 5}));
         map[4][7].add(new Empty("2A"));
         map[4][8].add(new ConveyorBelt("2A", new String[]{"right", "bottom"}, 1));
         map[4][9].add(new ConveyorBelt("2A", new String[]{"top", "left"}, 1));
@@ -102,8 +102,8 @@ public class DeathTrap extends Board {
         map[5][0].add(new ConveyorBelt("2A", new String[]{"bottom", "right"}, 1));
         map[5][1].add(new ConveyorBelt("2A", new String[]{"left", "top"}, 1));
         map[5][2].add(new Empty("2A"));
-        map[5][3].add(new PushPanel("2A", new String[]{"top"}, new int[]{2, 3}));
-        map[5][4].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{2, 3}));
+        map[5][3].add(new PushPanel("2A", new String[]{"top"}, new int[]{1, 3, 5}));
+        map[5][4].add(new PushPanel("2A", new String[]{"bottom"}, new int[]{2, 4}));
         map[5][5].add(new Wall("2A", new String[]{"bottom"}));
         map[5][6].add(new Pit("2A"));
         map[5][7].add(new Empty("2A"));
@@ -145,14 +145,14 @@ public class DeathTrap extends Board {
 
         //row 8
         map[8][0].add(new ConveyorBelt("2A", new String[]{"bottom", "top"}, 1));
-        map[8][1].add(new PushPanel("2A", new String[]{"right"}, new int[]{2, 4}));
+        map[8][1].add(new PushPanel("2A", new String[]{"right"}, new int[]{1, 3, 5}));
         map[8][2].add(new Pit("2A"));
         map[8][3].add(new Empty("2A"));
         map[8][4].add(new ConveyorBelt("2A", new String[]{"right", "left"}, 1));
         map[8][5].add(new ConveyorBelt("2A", new String[]{"bottom", "left"}, 1));
         map[8][6].add(new Wall("A", new String[]{"top"}));
         map[8][7].add(new CheckPoint("2A", 2));
-        map[8][8].add(new PushPanel("2A", new String[]{"top"}, new int[]{2, 4}));
+        map[8][8].add(new PushPanel("2A", new String[]{"top"}, new int[]{1, 3, 5}));
         map[8][9].add(new Empty("2A"));
         map[8][10].add(new Empty("A"));
         map[8][11].add(new StartPoint("A"));

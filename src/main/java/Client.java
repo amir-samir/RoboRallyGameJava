@@ -21,7 +21,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * Diese Klasse stellt das Verbindungsstück eines Spielers zum Server dar.
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Luca Weyhofen
+ *
+ * @Version: 2.1
+ */
 public class Client implements Runnable {
 
     private final Socket SOCKET;
@@ -73,10 +81,9 @@ public class Client implements Runnable {
 
 
     /**
-     * A Constructor that builds a connection between the client and the server and asks the server if
-     * the username is not taken.
-     *
-     * @throws IOException            Throw this exception if the connection between server and client fails.
+     * Dies ist der Konstruktor.
+     * Er stellt die Verbindung zwischen Server und Client her und bereitet den Client auf die Verwendung vor.
+     * @throws IOException Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
         SOCKET = new Socket("localhost", 1237);
@@ -89,38 +96,13 @@ public class Client implements Runnable {
         isAi = false;
     }
 
-    public static Client getClient(){
-        return client;
-    }
-
-    public static Thread getThread(){
-        return thread;
-    }
-
-    public void setReady(){
-        if(ready){
-            ready = false;
-            player.get(ID).ready = false;
-            SetStatus setStatus = new SetStatus(false);
-            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
-        } else if (!ready){
-            ready = true;
-            if (player.get(ID) != null) {
-                player.get(ID).ready = true;
-            }
-            SetStatus setStatus = new SetStatus(true);
-            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
-        }
-    }
-    public void setCardOfGui(String cardName){
-        this.CardOfGui = cardName;
-    }
-    public String getCardOfGui(){
-        return CardOfGui;
-    }
-
+    /**
+     * Diese Methode sendet Chatnachrichten an einen anderen Spieler.
+     * @param senderId Die ID des Versenders
+     * @param message Die Nachricht
+     * @param userName Die ID des Empfängers
+     */
     public void singleMessage(int senderId, String message, int userName){
-        //int empfaenger = ids.get(userName);
         String[] keys = {"message", "to"};
         SendChat sendChat = new SendChat(message, userName);
         sendChat.getMessageBody().setKeys(keys);
@@ -132,8 +114,8 @@ public class Client implements Runnable {
     }
 
     /**
-     * A method that transfer the input to the game.Server.
-     * @param input The input from user.
+     * Diese Methode verschickt Chatnachrichten an alle Spieler.
+     * @param input Die Nachricht
      */
     public void printMessage(String input) {
         SendChat message = new SendChat(input, -1);
@@ -141,14 +123,6 @@ public class Client implements Runnable {
         message.getMessageBody().setKeys(key);
         String toSend = Adopter.javabeanToJson(message);
         bufferedWriter.println(toSend);
-    }
-
-    public synchronized  ObservableList getUsernames(){
-        return usernamesGui;
-    }
-
-    public Integer getFigur(){
-        return figureForGui;
     }
 
     public void sendSelectedDamage(String[] cards){
@@ -1035,5 +1009,33 @@ public class Client implements Runnable {
 
     public int getRobterGewonnen(){
         return robterGewonnen;
+    }
+
+    public static Client getClient(){
+        return client;
+    }
+
+    public void setReady(){
+        if(ready){
+            ready = false;
+            player.get(ID).ready = false;
+            SetStatus setStatus = new SetStatus(false);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        } else if (!ready){
+            ready = true;
+            if (player.get(ID) != null) {
+                player.get(ID).ready = true;
+            }
+            SetStatus setStatus = new SetStatus(true);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        }
+    }
+
+    public void setCardOfGui(String cardName){
+        this.CardOfGui = cardName;
+    }
+
+    public String getCardOfGui(){
+        return CardOfGui;
     }
 }
