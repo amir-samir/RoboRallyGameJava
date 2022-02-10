@@ -569,6 +569,13 @@ public class Client implements Runnable {
         return player.name + " (" + clientID + ") hat die Verbindung verloren und wurde entfernt.";
     }
 
+    public void handleCheckPointMoved(Message m){
+        int checkpointID = (int) (double) m.getMessageBody().getContent()[0];
+        int x = (int) (double) m.getMessageBody().getContent()[1];
+        int y = (int) (double) m.getMessageBody().getContent()[2];
+        //GUI: Checkpooints verschieben...
+    }
+
     /**
      * This method is an overridden method which displays the input that is coming from the server in
      * the Chat view.
@@ -875,6 +882,9 @@ public class Client implements Runnable {
                     toSend = handleRegisterChosen(message);
                 } else if (message.getMessageType().equals("ConnectionUpdate")) {
                     toSend = handleConnectionUpdate(message);
+                } else if (message.getMessageType().equals("CheckpointMoved")){
+                    handleCheckPointMoved(message);
+                    toSend = null;
                 } else {
                     toSend = inputFromServer;
                 }
