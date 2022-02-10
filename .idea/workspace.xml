@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Added JavaDocs to Robot">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OurTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OurTimer.java" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="AI improvements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,20 +234,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00049" summary="Adding Spam Cards">
-      <created>1642368434598</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1642368434598</updated>
-    </task>
-    <task id="LOCAL-00050" summary="LaserDing">
-      <created>1642436146609</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1642436146611</updated>
     </task>
     <task id="LOCAL-00051" summary="LaserDing">
       <created>1642607501410</created>
@@ -581,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644522277682</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Bugfix:&#10;- Timer after everyone has played his cards">
+      <created>1644522996894</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1644522996894</updated>
+    </task>
+    <task id="LOCAL-00101" summary="AI improvements">
+      <created>1644526099397</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1644526099397</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,8 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix:&#10;- MemorySwap" />
-    <MESSAGE value="Merge:&#10;- Connecting GUI for AdminPrivilege&#10;- Improved FirstView" />
     <MESSAGE value="Bugfix:&#10;- UTurn" />
     <MESSAGE value="Bugfix:&#10;- UpgradeShop" />
     <MESSAGE value="Bugfix:&#10;- ProgrammingPhase starts when all Players have chosen all cards" />
@@ -625,7 +620,9 @@
     <MESSAGE value="Added JavaDocs to Spielwiese" />
     <MESSAGE value="Added JavaDocs to Server" />
     <MESSAGE value="Added JavaDocs to Robot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDocs to Robot" />
+    <MESSAGE value="Bugfix:&#10;- Timer after everyone has played his cards" />
+    <MESSAGE value="AI improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="AI improvements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -634,15 +631,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>149</line>
-          <properties class="Game" method="prepareUpgradeShop">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/mapTest.java</url>
           <line>148</line>
@@ -662,16 +650,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/Spielwiese.java</url>
           <line>69</line>
           <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/OurTimer.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
-          <line>873</line>
-          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
