@@ -2,7 +2,11 @@ package Messages.Actions;
 
 import Messages.Message;
 import Messages.MessageBody;
-
+/**
+ * this class implements the specific messageType "Movement".
+ * it is used to send the action of movement from a robot.
+ * @author Luca Weyhofen
+ */
 public class Movement extends Message {
 
     public Movement(int id, int x, int y){

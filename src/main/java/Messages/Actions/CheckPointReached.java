@@ -1,7 +1,11 @@
 package Messages.Actions;
 import Messages.Message;
 import Messages.MessageBody;
-
+/**
+ * this class implements the specific messageType "CheckpointReached".
+ * a message will be sent when a player has reached a checkpoint.
+ * @author Luca Weyhofen
+ */
 public class CheckPointReached extends Message {
 
     public CheckPointReached(int id, int number){

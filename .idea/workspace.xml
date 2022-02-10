@@ -9,29 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Added JavaDocs to Spielwiese">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="@JavaDoc for message package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ActivePhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ActivePhase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Error1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Error1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/GameStarted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/GameStarted.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/HelloClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/HelloClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/HelloServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/HelloServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/MapSelected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/MapSelected.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerAdded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerAdded.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/SelectMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SelectMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/SendChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/SendChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConveyorBelt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DeathTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeathTrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Laser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckPointReached.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckPointReached.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/DrawDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/DrawDamage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/Energy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/Energy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/CardPlayed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/CardPlayed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/CurrentPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/CurrentPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ReceivedChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ReceivedChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RestartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestartPoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,13 +246,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00047" summary="Bugfix">
-      <created>1642339927453</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1642339927453</updated>
     </task>
     <task id="LOCAL-00048" summary="Bugfix:&#10;- Map-CheckPoints&#10;- Card-Effects&#10;- BoardElement-Effects&#10;- KI">
       <created>1642359134106</created>
@@ -601,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644513953923</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="@JavaDoc for message package">
+      <created>1644519513045</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1644519513051</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +609,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Logging" />
     <MESSAGE value="Bugfix:&#10;- FXML" />
     <MESSAGE value="Bugfix:&#10;- MemorySwap" />
     <MESSAGE value="Merge:&#10;- Connecting GUI for AdminPrivilege&#10;- Improved FirstView" />
@@ -645,7 +633,8 @@
     <MESSAGE value="Added JavaDoc comments in class UpgradeShop" />
     <MESSAGE value="Bugfix: EnergyCubes&#10;Added JavaDocs to Spielwiese" />
     <MESSAGE value="Added JavaDocs to Spielwiese" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDocs to Spielwiese" />
+    <MESSAGE value="@JavaDoc for message package" />
+    <option name="LAST_COMMIT_MESSAGE" value="@JavaDoc for message package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

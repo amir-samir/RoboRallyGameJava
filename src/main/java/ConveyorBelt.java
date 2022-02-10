@@ -9,9 +9,9 @@ public class ConveyorBelt extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param orientations
-     * @param speed
+     * @param isOnBoard which board is this Element on
+     * @param orientations which orientations does this belt have
+     * @param speed which speed does this belt have
      */
     public ConveyorBelt(String isOnBoard, String[] orientations, int speed) {
         this.setType("ConveyorBelt");
@@ -21,9 +21,9 @@ public class ConveyorBelt extends BoardElement {
     }
 
     /**
-     * robot movement when conveyor belt has speed 2
-     * @param robot
-     * @param server
+     * robot movement when he activated a conveyor belt which has speed 2
+     * @param robot affected robot in this situation
+     * @param server connected to server
      */
     @Override
     public void effect(Robot robot, Server server) {
@@ -34,14 +34,18 @@ public class ConveyorBelt extends BoardElement {
     }
 
     /**
-     * getter
-     * @return
+     * getter from speed
+     * @return speed from this belt
      */
     @Override
     public int getSpeed() {
         return speed;
     }
 
+    /**
+     * getter from orientations
+     * @return the local Orientations from this affected robot
+     */
     @Override
     public String[] getOrientations() {
         return orientations;

@@ -9,9 +9,9 @@ public class Laser extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param orientations
-     * @param count
+     * @param isOnBoard which board is this laser on
+     * @param orientations which orientations does this laser have
+     * @param count how many lines does this laser have
      */
     public Laser(String isOnBoard, String[] orientations, int count){
         this.setType("Laser");
@@ -23,8 +23,8 @@ public class Laser extends BoardElement {
     /**
      * The action of the robot when the laser is triggered
      * Laser effect: get 2 spamCard
-     * @param robot
-     * @param server
+     * @param robot robot who is hit by a laser
+     * @param server connect to server
      */
     @Override
     public void effect(Robot robot, Server server){
@@ -33,7 +33,7 @@ public class Laser extends BoardElement {
 
     /**
      * getter
-     * @return
+     * @return the orientation from laser
      */
     @Override
     public String[] getOrientations() {
