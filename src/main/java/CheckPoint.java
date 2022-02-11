@@ -32,6 +32,7 @@ public class CheckPoint extends BoardElement {
             server.sendMessageForAllUsers(checkPointReached);
             if (server.getGame().getNeededCheckpoints()-1 == count){
                 server.endGame(robot);
+                server.getGame().endGame();
             }
         }
     }

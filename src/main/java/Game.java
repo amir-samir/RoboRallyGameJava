@@ -1871,6 +1871,17 @@ public class Game {
     }
 
     /**
+     * Ends the game
+     */
+    public void endGame(){
+        for (int i = 0; i < figuren.length; i++){
+            figuren[i] = null;
+        }
+        activePhase = 5;
+        startGame();
+    }
+
+    /**
      * Gibt das aktuelle Register zurück.
      * @return Das aktive Register
      */
