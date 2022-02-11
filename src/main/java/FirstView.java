@@ -25,7 +25,10 @@ import java.net.URL;
 import java.util.*;
 
 import lombok.Data;
-
+/**
+ * View Class of FirstView Window
+ * @author Dairen Gonschior, Amir Azim
+ */
 @Data
 public class FirstView implements Initializable {
    private Thread clientThread;
@@ -63,6 +66,9 @@ public class FirstView implements Initializable {
    private final FirstViewModel viewModel = new FirstViewModel();
 
    private final SignIn signIn = new SignIn();
+   /**
+    * Overrides the initialize class to show all necessary images and animations when the window starts
+    */
    @Override
    @FXML
    public void initialize(URL arg0, ResourceBundle arg1)  {
@@ -193,28 +199,16 @@ public class FirstView implements Initializable {
       rotate5.setInterpolator(Interpolator.LINEAR);
       rotate5.setByAngle(360);
       rotate5.play();
-
-     /* Timer timer = new Timer();
-      timer.scheduleAtFixedRate(new TimerTask() {
-         public void run() {
-
-            if(time > 0)
-            {
-               Platform.runLater(() -> setunvisible(SaveClients.ausgewaehlteRoboter) );
-               time--;
-            }
-            else
-               timer.cancel();
-         }
-      }, 1000,1000);
-      time = 30; */
-
    }
-
+   /**
+    * Sets the firstview for the client
+    */
    public FirstView(){
       Client.setFirstView(this);
    }
-
+   /**
+    * Reads robots.txt file and looks for choosen bots
+    */
    public void readFile() {
       try {
          FileReader reader = new FileReader("robots.txt");
@@ -231,7 +225,9 @@ public class FirstView implements Initializable {
          e.printStackTrace();
       }
    }
-
+   /**
+    * Writes the choosen bot to robots.txt file
+    */
    public static void writeFile(int figure) {
       try {
          FileWriter writer = new FileWriter("robots.txt", true);
@@ -242,7 +238,9 @@ public class FirstView implements Initializable {
       }
 
    }
-
+   /**
+    * Wählt den TwinkyBot aus und Disabled alle anderen Bots
+    */
    public void TwinkyRoboterPressed(){
 
       readFile();
@@ -268,6 +266,9 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[0] = 0;
       }
    }
+   /**
+    * Wählt den SmashBot aus und Disabled alle anderen Bots
+    */
    public void SmashRoboterPressed(){
       readFile();
       if (choosenBots.contains(49)){
@@ -291,6 +292,9 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[1] = 1;
       }
    }
+   /**
+    * Wählt den Hulkbot aus und Disabled alle anderen Bots
+    */
    public void HulkRoboterPressed(){
       readFile();
       if (choosenBots.contains(50)){
@@ -314,6 +318,9 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[2] = 2;
       }
    }
+   /**
+    * Wählt den ZoomBots aus und Disabled alle anderen Bots
+    */
    public void ZoomRoboterPressed() {
       readFile();
       if (choosenBots.contains(51)) {
@@ -336,6 +343,9 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[3] = 3;
       }
    }
+   /**
+    * Wählt den SpinBot aus und Disabled alle anderen Bots
+    */
    public void SpinRoboterPressed() {
       readFile();
       if (choosenBots.contains(52)) {
@@ -358,6 +368,9 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[4] = 4;
       }
    }
+   /**
+    * Wählt den HammerBot aus und Disabled alle anderen Bots
+    */
    public void HammerRoboterPressed() {
       readFile();
       if (choosenBots.contains(53)) {
@@ -380,35 +393,37 @@ public class FirstView implements Initializable {
          SaveClients.ausgewaehlteRoboter[5] = 5;
       }
    }
+
+   /**
+    * Getter für figure
+    */
    public int getFigure(){
       return figure;
    }
 
-
-
-
+   /**
+    * Diese Funktion wird nicht verwendet
+    */
    public void chooseUserName() throws IOException {
       viewModel.chooseUsername();
-      // Fade: Hide and Show the Title Photo
-
    }
-
+   /**
+    * Setter für Client
+    */
    public void setClient(Client client){
       this.client = client;
-      //this.clientThread = new Thread(client);
-      //clientThread.start();
    }
 
 
-
+   /**
+    * Speichert den ausgewählten Usernamen und Bot und versendet die PlayerValues Message im Client
+    */
    public void submitUserName() {
 
       try {
          if (viewModel.getUsername() != null && getFigure() != 100) {
             setClient(SaveClients.client);
             SaveClients.client.configuration(viewModel.getUsername(), getFigure());
-            //viewModel.client1.configuration(viewModel.getUsername(), getFigure());
-            System.out.println(viewModel.getUsername() + getFigure());
             //Passing the current stage to the ViewModel
             Stage stage = (Stage) signInButton.getScene().getWindow();
             viewModel.takeUsername(stage);
@@ -420,7 +435,9 @@ public class FirstView implements Initializable {
         e.printStackTrace();
       }
    }
-
+   /**
+    * Diese Funktion nicht verwendet
+    */
    public void setunvisible(int[] figuren){
       for (int i = 0; i < figuren.length; i++){
          switch (figuren[i]){
@@ -448,6 +465,9 @@ public class FirstView implements Initializable {
       }
    }
 
+   /**
+    * Gibt eine alertBox aus, wenn ein Roboter gewählt wird, der bereits vergeben ist
+    */
    @FXML
    private void Warning(){
       Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -456,6 +476,9 @@ public class FirstView implements Initializable {
       alert.setHeaderText("Roboter ist vergeben!");
       alert.showAndWait();
    }
+   /**
+    * Gibt eine alertBox aus, wenn entweder Username oder Bot nicht ausgewählt wurden und ein sign in versucht wird
+    */
    @FXML
    private void WarningUserName(){
       Alert alert = new Alert(Alert.AlertType.WARNING);

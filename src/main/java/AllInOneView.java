@@ -18,6 +18,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+/**
+ * Model, Controller and View Class of the AllInOneView Window
+ * @author Dairen Gonschior, Amir Azim
+ */
+
 public class AllInOneView implements Initializable {
     ArrayList<BoardElement>[][] mapGui = SaveClients.client.getMap();
     Boolean[] isFilled = new Boolean[5];
@@ -922,6 +927,7 @@ public class AllInOneView implements Initializable {
     public void setFigureOnMap(int x, int y){
         gridpane1.add(new ImageView(figureTest),y,x);
     }
+
     public void setFigureOnMapNew(int figure,String direction, int x, int y){
         if (figure == 0){
             if (direction == "top"){
