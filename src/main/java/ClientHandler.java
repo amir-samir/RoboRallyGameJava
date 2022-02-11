@@ -136,14 +136,12 @@ public class ClientHandler implements Runnable {
                         handleChooseRegister(message);
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
                     SERVER.exitPlayer(this);
                     try {
                         SOCKET.close();
                         writer.close();
                         reader.close();
                     } catch (IOException f) {
-                        f.printStackTrace();
                     }
                 }
             } else {

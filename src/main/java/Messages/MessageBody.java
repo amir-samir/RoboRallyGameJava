@@ -1,5 +1,9 @@
 package Messages;
 
+/**
+ * Diese Klasse stellt den Inhalt einer verschickten Nachricht dar.
+ * @author Luca Weyhofen
+ */
 public class MessageBody {
 
     Object[] content;

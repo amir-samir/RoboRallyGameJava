@@ -1,5 +1,9 @@
 package Messages;
 
+/**
+ * ActiveCards Nachricht
+ * @author Mateo Pranjic
+ */
 public class ActiveCards {
     int clientID;
     String card;

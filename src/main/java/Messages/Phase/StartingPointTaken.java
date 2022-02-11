@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * StartingPointTaken Nachricht
+ * @author Luca Weyhofen
+ */
 public class StartingPointTaken extends Message {
 
     public StartingPointTaken(int x, int y, int id){

@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * UpgradeBought Nachricht
+ * @author MateoPranjic
+ */
 public class UpgradeBought extends Message {
     public UpgradeBought(int clientID, String card){
         Object[] daten = new Object[2];

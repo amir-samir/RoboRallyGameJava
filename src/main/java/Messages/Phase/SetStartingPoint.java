@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * SetStartingPoint Nachricht
+ * @author Luca Weyhofen
+ */
 public class SetStartingPoint extends Message {
 
     public SetStartingPoint(int x, int y){

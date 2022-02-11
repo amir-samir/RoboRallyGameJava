@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * NotYourCards Nachricht
+ * @author Mateo Pranjic
+ */
 public class NotYourCards extends Message {
 
     public NotYourCards(int id, int numberOfCards){

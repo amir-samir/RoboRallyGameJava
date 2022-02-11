@@ -1,5 +1,13 @@
 import java.util.logging.*;
 
+/**
+ * Diese Klasse stellt den Logger speziell für das Spiel RoboRally dar.
+ *
+ * @author Yilu Ye
+ * @author Luca Weyhofen
+ *
+ * @version 2.1
+ */
 public class RalleyLogger {
 
     private static Logger logger = Logger.getLogger("");;

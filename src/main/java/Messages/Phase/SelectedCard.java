@@ -2,6 +2,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * SelectedCard Nachricht
+ * @author MateoPranjic
+ */
 public class SelectedCard extends Message {
 
     public SelectedCard(String card, int register){

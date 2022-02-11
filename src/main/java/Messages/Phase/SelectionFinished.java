@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * SelectionFinished Nachricht
+ * @author Mateo Pranjic
+ */
 public class SelectionFinished extends Message {
 
     public SelectionFinished(int id){

@@ -4,6 +4,10 @@ import Messages.ActiveCards;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * CurrentCards Nachricht
+ * @author Luca Weyhofen
+ */
 public class CurrentCards extends Message {
 
     public CurrentCards(ActiveCards[] cards){

@@ -3,6 +3,10 @@ package Messages.Actions;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * ReturnCard Nachricht
+ * @author Luca Weyhofen
+ */
 public class ReturnCards extends Message {
 
     public ReturnCards(String[] cards){
