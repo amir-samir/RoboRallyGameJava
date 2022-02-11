@@ -9,55 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix, JavaDoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/Animation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckpointMoved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/CheckpointMoved.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/GameFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/GameFinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/PickDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/PickDamage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/PlayerTurning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/PlayerTurning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/RebootDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/RebootDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/RegisterChosen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/RegisterChosen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/ReturnCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/ReturnCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Actions/SelectedDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Actions/SelectedDamage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ActiveCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ActiveCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Adopter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Alive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Alive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/BackToJava.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/ConnectionUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/CurrentCardObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/CurrentCardObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/MessageBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/MessageBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/BuyUpgrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/CardSelected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CardSelected.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/CardsYouGotNow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CardsYouGotNow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/CurrentCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ExchangeShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/NotYourCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/NotYourCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/RefillShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/ReplaceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/ReplaceCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/SelectedCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/SelectedCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/SelectionFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/SelectionFinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/SetStartingPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/SetStartingPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/ShuffleCoding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/StartingPointTaken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/StartingPointTaken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/TimerEnded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/TimerEnded.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/TimerStarted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/TimerStarted.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/UpgradeBought.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/Phase/YourCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/Phase/YourCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerConfirmed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerReady.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PlayerValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Messages/PlayerValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PrivateMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/PublicMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Messages/SetName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RalleyLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RalleyLogger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,13 +237,6 @@
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
       <workItem from="1644532861667" duration="6105000" />
-    </task>
-    <task id="LOCAL-00045" summary="Merge:&#10;- new GUI&#10;- new Bugfixes">
-      <created>1642335511669</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1642335511669</updated>
     </task>
     <task id="LOCAL-00046" summary="Bugfix">
       <created>1642339658937</created>
@@ -628,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644541131126</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Bugfix, JavaDoc">
+      <created>1644544890553</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1644544890553</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Timer fertig Gui" />
     <MESSAGE value="map changing" />
     <MESSAGE value="FirstView änderungen" />
     <MESSAGE value="Upgrade Cards" />
@@ -672,7 +624,8 @@
     <MESSAGE value="Merge" />
     <MESSAGE value="Gui änderung und karte abwählen" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Bugfix, JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix, JavaDoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
