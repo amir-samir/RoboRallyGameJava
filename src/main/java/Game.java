@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.List;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.toRadians;
 
 /**
  * Die Klasse Game stellt die fundamentale Logik eines "RoboRally"-Spiels zur Verfügung.
@@ -38,6 +39,7 @@ public class Game {
     private int neededCheckpoints;
     private String currentDamageCard = null;
     private boolean chooseDamageCard = true;
+    private boolean endGame = false;
 
     Board board;
 
@@ -103,23 +105,25 @@ public class Game {
      */
     public void startGame(){
         try {
-            if (this.activePhase == 0) {
-                if (!aufbauPhaseFertig()) {
-                    sendActivePlayer();
-                    aufbauPhase();
-                } else {
-                    activePhase = 1;
-                    startGame();
+            if (!endGame) {
+                if (this.activePhase == 0) {
+                    if (!aufbauPhaseFertig()) {
+                        sendActivePlayer();
+                        aufbauPhase();
+                    } else {
+                        activePhase = 1;
+                        startGame();
+                    }
+                } else if (this.activePhase == 1) {
+                    sendActivePhase();
+                    prepareUpgradeShop();
+                    this.upgradeReihenfolge = reihenfolgeBestimmen();
+                    upgradePhase();
+                } else if (this.activePhase == 2) {
+                    programmierPhase();
+                } else if (this.activePhase == 3) {
+                    aktivierungsPhase();
                 }
-            } else if (this.activePhase == 1) {
-                sendActivePhase();
-                prepareUpgradeShop();
-                this.upgradeReihenfolge = reihenfolgeBestimmen();
-                upgradePhase();
-            } else if (this.activePhase == 2) {
-                programmierPhase();
-            } else if (this.activePhase == 3) {
-                aktivierungsPhase();
             }
         } catch (Exception e){
             e.printStackTrace();
@@ -1864,9 +1868,7 @@ public class Game {
         }
 
         if (zähler <= 1){
-            GameFinished gameFinished = new GameFinished(lastOne.getGamerID());
-            gameFinished.getMessageBody().setKeys(new String[]{"clientID"});
-            SERVER.sendMessageForAllUsers(gameFinished);
+            SERVER.endGame(lastOne);
         }
     }
 
@@ -1877,6 +1879,7 @@ public class Game {
         for (int i = 0; i < figuren.length; i++){
             figuren[i] = null;
         }
+        this.endGame = true;
         activePhase = 5;
         startGame();
     }

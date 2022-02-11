@@ -6,35 +6,40 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SelectMapView {
-public SelectMapView(){
-    Client.setSelectMapView(this);
-}
 
-    public void ChooseExtraCrispyMap() throws IOException {
-       SaveClients.client.mapSelected("ExtraCrispy");
-       StageSaver.getStageSaver().getCurrentStage().close();
+    public SelectMapView() {
+        Client.setSelectMapView(this);
     }
 
-    public void ChooseDizzyHighwayMap(){
+    public void ChooseExtraCrispyMap() throws IOException {
+        SaveClients.client.mapSelected("ExtraCrispy");
+        StageSaver.getStageSaver().getCurrentStage().close();
+    }
+
+    public void ChooseDizzyHighwayMap() {
         SaveClients.client.mapSelected("DizzyHighway");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
-    public void ChooseDeathTrapMap(){
+
+    public void ChooseDeathTrapMap() {
         SaveClients.client.mapSelected("DeathTrap");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
-    public void ChooseLostBearingMap(){
+
+    public void ChooseLostBearingMap() {
         SaveClients.client.mapSelected("LostBearings");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
-    public void ChooseTwisterMap(){
-    SaveClients.client.mapSelected("Twister");
-    StageSaver.getStageSaver().getCurrentStage().close();
+
+    public void ChooseTwisterMap() {
+        SaveClients.client.mapSelected("Twister");
+        StageSaver.getStageSaver().getCurrentStage().close();
     }
 
     public void CallRunMap() throws Exception {
-    RunMap();
+        RunMap();
     }
+
     public void selectMapNew() throws IOException {
         Stage stage1 = new Stage();
         StageSaver.getStageSaver().setStageSaver(stage1);
@@ -50,7 +55,7 @@ public SelectMapView(){
         });
     }
 
-    public void RunMap() throws Exception{
+    public void RunMap() throws Exception {
         Stage stage = new Stage();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/MaybeMap.fxml"));
@@ -66,5 +71,4 @@ public SelectMapView(){
             System.exit(0);
         });
     }
-
 }

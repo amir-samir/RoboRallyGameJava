@@ -15,15 +15,15 @@ public class SignIn extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-      try {
-          stage.setTitle("Sign In");
-          Parent signIn = FXMLLoader.load(getClass().getResource("fxml/game.ChooseCards.fxml"));
-          Scene signInScene = new Scene(signIn);
-          stage.setScene(signInScene);
-          stage.show();
-          stage.setOnCloseRequest(e -> Platform.exit());
-      } catch (IOException e){
-          e.printStackTrace();
-      }
+        try {
+            stage.setTitle("Sign In");
+            Parent signIn = FXMLLoader.load(getClass().getResource("fxml/game.ChooseCards.fxml"));
+            Scene signInScene = new Scene(signIn);
+            stage.setScene(signInScene);
+            stage.show();
+            stage.setOnCloseRequest(e -> Platform.exit());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

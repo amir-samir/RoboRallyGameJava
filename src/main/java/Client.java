@@ -65,11 +65,9 @@ public class Client implements Runnable {
     ChatView chatView = new ChatView();
     public static ChatView chatView1;
     public static SelectMapView selectMapView = new SelectMapView();
-    public static MaybeMapsController maybeMapsController;
     public static ChooseCardsForSwap chooseCardsForSwap;
     public static AllInOneView allInOneView;
     public static FirstView firstView;
-    public static ChooseCards chooseCards;
     private String selectedMap;
     public int figureForGui;
     public String CardOfGui = "SomeCard";
@@ -469,7 +467,7 @@ public class Client implements Runnable {
      * @param m GameFinished Nachricht
      * @return String, der im Chatfenster erscheint
      */
-    public String handleGameFinished(Message m){
+    public String handleGameFinished(Message m) throws IOException {
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         String s;
         if (clientID == this.ID){
@@ -503,6 +501,9 @@ public class Client implements Runnable {
                 }
             });
         }
+        bufferedWriter.close();
+        SOCKET.close();
+        bufferedReader.close();
         return s;
     }
 
@@ -1060,10 +1061,6 @@ public class Client implements Runnable {
         selectMapView = selectMapView1;
     }
 
-    public static void setMaybeMapsController(MaybeMapsController maybeMapsController1){
-        maybeMapsController = maybeMapsController1;
-    }
-
     public ChatView getChatView(){
         return chatView1;
     }
@@ -1085,14 +1082,6 @@ public class Client implements Runnable {
 
     public ArrayList<Cards> getHandcards(){
         return figuren[player.get(ID).figur].getHandCards();
-    }
-
-    public static void setChooseCards(ChooseCards chooseCards1){
-        chooseCards = chooseCards1;
-    }
-
-    public ChooseCards getChooseCards(){
-        return chooseCards;
     }
 
     public ArrayList<BoardElement>[][] getMap(){

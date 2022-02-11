@@ -473,6 +473,7 @@ public class Server {
         GameFinished gameFinished = new GameFinished(robot.getGamerID());
         gameFinished.getMessageBody().setKeys(new String[]{"clientID"});
         sendMessageForAllUsers(gameFinished);
+        //System.exit(0);
     }
 
     /**

@@ -13,7 +13,7 @@ public class StageSaver {
         this.currentStage = firstStage;
     }
 
-    public static StageSaver getStageSaver(){
+    public static StageSaver getStageSaver() {
         return stageSaver;
     }
 

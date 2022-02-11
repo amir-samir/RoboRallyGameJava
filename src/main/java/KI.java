@@ -517,6 +517,8 @@ public class KI implements Runnable {
                     this.handleUpgradeBough(message);
                 } else if (message.getMessageType().equals("CheckPointReached")){
                     handleCheckPointReached(message);
+                } else if (message.getMessageType().equals("GameFinished")){
+                    System.exit(0);
                 }
                 else {
                 }
