@@ -560,6 +560,14 @@ public class AllInOneView implements Initializable {
                             gridpane1.add(new ImageView(image22),y,x);
                             saveMap[x][y] = image22;
                         }
+                        if (mapGui[x][y].size() == 2 && Objects.equals(mapGui[x][y].get(1).getType(), "Wall") && Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "bottom")){
+                            gridpane1.add(new ImageView(image100),y,x);
+                            saveMap[x][y] = image100;
+                        }
+                        if (mapGui[x][y].size() == 2 && Objects.equals(mapGui[x][y].get(1).getType(), "Wall") && Objects.equals(mapGui[x][y].get(1).getOrientations()[0], "top")){
+                            gridpane1.add(new ImageView(image101),y,x);
+                            saveMap[x][y] = image101;
+                        }
                     }
                     //laba
                     if (Objects.equals(mapGui[x][y].get(1).getType(), "ConveyorBelt")) {
@@ -795,8 +803,8 @@ public class AllInOneView implements Initializable {
                                     saveMap[x][y] = image43;
                                 } else {
                                     // kaaa
-                                    gridpane1.add(new ImageView(image30), y, x);
-                                    saveMap[x][y] = image30;
+                                    gridpane1.add(new ImageView(image99), y, x);
+                                    saveMap[x][y] = image99;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "top")) {

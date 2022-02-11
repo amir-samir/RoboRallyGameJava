@@ -10,25 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Gui änderung und karte abwählen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SpamExtraViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/energyStationWallBottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/energyStationWandOben.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/gewonnenHammer.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/gewonnenSpin.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/gewonnenTwinky.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/loser.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/SpamExtraView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.1" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt.2" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameFinishedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameFinishedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AllInOne.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChatView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCardsForSwap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ChooseCardsForSwap.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
     </list>
@@ -51,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UpgradePhase" />
+        <entry key="$PROJECT_DIR$" value="GuiBruiDrui" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,7 +116,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetID">
+  <component name="RunManager" selected="Application.KI">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="innige-irrweg-hp" />
@@ -157,17 +140,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RalleyLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RalleyLogger" />
-      <module name="innige-irrweg-hp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="innige-irrweg-hp" />
       <option name="PROGRAM_PARAMETERS" value="1235" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mapTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="innige-irrweg-hp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="mapTest" />
+      <option name="METHOD_NAME" value="Test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,19 +180,19 @@
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GetID" />
-      <item itemvalue="Application.RalleyLogger" />
       <item itemvalue="Application.KI" />
       <item itemvalue="JAR Application.Server" />
       <item itemvalue="JAR Application.Client" />
       <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
+      <item itemvalue="JUnit.mapTest.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KI" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.KI" />
+        <item itemvalue="JUnit.mapTest.Test" />
         <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
-        <item itemvalue="Application.RalleyLogger" />
       </list>
     </recent_temporary>
   </component>
