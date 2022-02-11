@@ -211,6 +211,9 @@ public class AllInOneView implements Initializable {
     Image image97 = new Image("assets/2EinleitungLinksnachunten74.png");
     Image image98 = new Image("assets/Runtergreen.png");
     Image image99 = new Image("assets/kommischerechtsunten.png");
+    Image image100 = new Image("assets/energyStationWallBottom.png");
+    Image image101 = new Image("assets/energyStationWandOben.png");
+
 
 
 
@@ -1082,6 +1085,7 @@ public class AllInOneView implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),0);
             Card1.setImage(getImageForRegisterCard(bildForRegisterCard));
             bildForRegisterCard = "";
+            setChoosecardDisabledFalseTempo();
             isFilled[0] = true;
             fromChooseCard[0] = getChooseCardIsThis();
 
@@ -1092,6 +1096,7 @@ public class AllInOneView implements Initializable {
                 SaveClients.client.sendCardToRegister(null, 0);
                 Card1.setImage(getImageForRegisterCard(""));
                 RegisterPlatz--;
+                setChoosecardDisabledFalseTempo();
                 isFilled[0] = false;
             }
             if (adminPrivaPressed) {
@@ -1105,6 +1110,7 @@ public class AllInOneView implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),1);
             Card2.setImage(getImageForRegisterCard(bildForRegisterCard));
             bildForRegisterCard = "";
+            setChoosecardDisabledFalseTempo();
             isFilled[1] = true;
             fromChooseCard[1] = getChooseCardIsThis();
         }
@@ -1113,6 +1119,7 @@ public class AllInOneView implements Initializable {
                 resetChooseCard(fromChooseCard[1]);
                 SaveClients.client.sendCardToRegister(null, 1);
                 Card2.setImage(getImageForRegisterCard(""));
+                setChoosecardDisabledFalseTempo();
                 RegisterPlatz--;
                 isFilled[1] = false;
             }
@@ -1128,6 +1135,7 @@ public class AllInOneView implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),2);
             Card3.setImage(getImageForRegisterCard(bildForRegisterCard));
             bildForRegisterCard = "";
+            setChoosecardDisabledFalseTempo();
             isFilled[2] = true;
             fromChooseCard[2] = getChooseCardIsThis();
         }
@@ -1137,6 +1145,7 @@ public class AllInOneView implements Initializable {
                 resetChooseCard(fromChooseCard[2]);
                 SaveClients.client.sendCardToRegister(null, 2);
                 Card3.setImage(getImageForRegisterCard(""));
+                setChoosecardDisabledFalseTempo();
                 RegisterPlatz--;
                 isFilled[2] = false;
             }
@@ -1151,6 +1160,7 @@ public class AllInOneView implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),3);
             Card4.setImage(getImageForRegisterCard(bildForRegisterCard));
             bildForRegisterCard = "";
+            setChoosecardDisabledFalseTempo();
             isFilled[3] = true;
             fromChooseCard[3] = getChooseCardIsThis();
         }
@@ -1159,6 +1169,7 @@ public class AllInOneView implements Initializable {
                 resetChooseCard(fromChooseCard[3]);
                 SaveClients.client.sendCardToRegister(null, 3);
                 Card4.setImage(getImageForRegisterCard(""));
+                setChoosecardDisabledFalseTempo();
                 RegisterPlatz--;
                 isFilled[3] = false;
             }
@@ -1174,6 +1185,7 @@ public class AllInOneView implements Initializable {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),4);
             Card5.setImage(getImageForRegisterCard(bildForRegisterCard));
             bildForRegisterCard = "";
+            setChoosecardDisabledFalseTempo();
             isFilled[4] = true;
             fromChooseCard[4] = getChooseCardIsThis();
         }
@@ -1182,6 +1194,7 @@ public class AllInOneView implements Initializable {
                 resetChooseCard(fromChooseCard[4]);
                 SaveClients.client.sendCardToRegister(null, 4);
                 Card5.setImage(getImageForRegisterCard(""));
+                setChoosecardDisabledFalseTempo();
                 RegisterPlatz--;
                 isFilled[4] = false;
             }
@@ -1224,9 +1237,16 @@ public class AllInOneView implements Initializable {
         SaveClients.client.setNewDirection("left");
     }
 
+    public void setDirectionUnvisible(){
+        DirectionOben.setVisible(false);
+        DirectionLinks.setVisible(false);
+        DirectionRechts.setVisible(false);
+        DirectionUnten.setVisible(false);
+    }
+
     public void runUpgradeCards() throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Upgrade cards");
+        stage.setTitle(SaveClients.client.getTitleUserName());
         Parent signIn = FXMLLoader.load(getClass().getResource("fxml/UpgradeCards.fxml"));
         Scene signInScene = new Scene(signIn);
         stage.setScene(signInScene);
@@ -1237,7 +1257,7 @@ public class AllInOneView implements Initializable {
 
     public void runChooseCardsForSwap() throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Choose Cards");
+        stage.setTitle(SaveClients.client.getTitleUserName());
         Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCardsForSwap.fxml"));
         Scene signInScene = new Scene(signIn);
         stage.setScene(signInScene);
@@ -1303,7 +1323,13 @@ public class AllInOneView implements Initializable {
     }
 
     public void upgradeCardPressed(){
-        if (SaveClients.client.getUpgradeCardName().equals("AdminPrivilege")){
+        if (SaveClients.client.getUpgradeCardName()[0].equals("AdminPrivilege")){
+            adminPrivaPressed = true;
+        }
+    }
+
+    public void upgradeCard1Pressed(){
+        if (SaveClients.client.getUpgradeCardName()[1].equals("AdminPrivilege")){
             adminPrivaPressed = true;
         }
     }
@@ -1358,6 +1384,30 @@ public class AllInOneView implements Initializable {
 
     }
 
+    public void setChooseCardDisabledTempo(){
+        chooseCard1.setDisable(true);
+        chooseCard2.setDisable(true);
+        chooseCard3.setDisable(true);
+        chooseCard4.setDisable(true);
+        chooseCard5.setDisable(true);
+        chooseCard6.setDisable(true);
+        chooseCard7.setDisable(true);
+        chooseCard8.setDisable(true);
+        chooseCard9.setDisable(true);
+    }
+
+    public void setChoosecardDisabledFalseTempo(){
+        chooseCard1.setDisable(false);
+        chooseCard2.setDisable(false);
+        chooseCard3.setDisable(false);
+        chooseCard4.setDisable(false);
+        chooseCard5.setDisable(false);
+        chooseCard6.setDisable(false);
+        chooseCard7.setDisable(false);
+        chooseCard8.setDisable(false);
+        chooseCard9.setDisable(false);
+    }
+
     public void fillChooseCard(){
         RegisterPlatz = -1;
         chooseCard1.setVisible(true);
@@ -1394,6 +1444,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard1.setDisable(true);
             chooseCard1.setVisible(false);
+            setChooseCardDisabledTempo();
             chooseCardIsThis = 0;
             bildForRegisterCard = SaveClients.client.getHandcards().get(0).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(0).getName());
@@ -1407,6 +1458,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard2.setDisable(true);
             chooseCard2.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(1).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(1).getName());
             chooseCardIsThis = 1;
@@ -1420,6 +1472,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard3.setDisable(true);
             chooseCard3.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(2).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(2).getName());
             chooseCardIsThis = 2;
@@ -1434,6 +1487,7 @@ public class AllInOneView implements Initializable {
             //SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatz);
             chooseCard4.setDisable(true);
             chooseCard4.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(3).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(3).getName());
             chooseCardIsThis = 3;
@@ -1447,6 +1501,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard5.setDisable(true);
             chooseCard5.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(4).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(4).getName());
             chooseCardIsThis = 4;
@@ -1460,6 +1515,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard6.setDisable(true);
             chooseCard6.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(5).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(5).getName());
             chooseCardIsThis = 5;
@@ -1473,6 +1529,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard7.setDisable(true);
             chooseCard7.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(6).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(6).getName());
             chooseCardIsThis = 6;
@@ -1486,6 +1543,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard8.setDisable(true);
             chooseCard8.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(7).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(7).getName());
             chooseCardIsThis = 7;
@@ -1499,6 +1557,7 @@ public class AllInOneView implements Initializable {
             RegisterPlatz++;
             chooseCard9.setDisable(true);
             chooseCard9.setVisible(false);
+            setChooseCardDisabledTempo();
             bildForRegisterCard = SaveClients.client.getHandcards().get(8).getName();
             SaveClients.client.setCardOfGui(SaveClients.client.getHandcards().get(8).getName());
             chooseCardIsThis = 8;
@@ -1564,7 +1623,7 @@ public class AllInOneView implements Initializable {
 
                 if(time > 0)
                 {
-                    Platform.runLater(() -> timerLabel.setText("00" + ":" + Integer.toString(time) + "Sekunden zum auswählen"));
+                    Platform.runLater(() -> timerLabel.setText("00" + ":" + Integer.toString(time)));
                     time--;
                     if(time < 6)
                     {
@@ -1581,5 +1640,19 @@ public class AllInOneView implements Initializable {
         timerLabel.setVisible(true);
         timerLabel.setText("");
         timerLabel.setTextFill(Color.web("black"));
+    }
+
+    public void hideTimer(){
+        timerLabel.setVisible(false);
+    }
+
+    public void runDamageCardExtra() throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle(SaveClients.client.getTitleUserName());
+        Parent signIn = FXMLLoader.load(getClass().getResource("fxml/SpamExtraView.fxml"));
+        Scene signInScene = new Scene(signIn);
+        stage.setScene(signInScene);
+        stage.show();
+        stage.setOnCloseRequest(e -> Platform.exit());
     }
 }
