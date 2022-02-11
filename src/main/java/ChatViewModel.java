@@ -101,40 +101,15 @@ public class ChatViewModel {
     public BooleanProperty sendButtonProperty() {
         return sendButton;
     }
-    /**
-     * Retrieves the current property of the createRoomGameProperty
-     * @return Boolean Property of the createRoomGameProperty
-     */
-    public BooleanProperty createRoomGameProperty() {
-        return createRoomGame;
-    }
-    /**
-     * Retrieves the current property of the leftCard
-     * @return Boolean Property of the leftCard
-     */
 
-    public final void joiningGame() {
-        client.printMessage("/JOIN");
-    }
-    public final void createRoomGame()  {
-        client.printMessage("/CREATE");
 
-    }
     /**
      * set Ready for the game.Client
      */
     public final void startingGame() {
-        //client.printMessage("funktioniert");
         client.setReady();
     }
 
-    /**
-     * set unready for game.Client
-     */
-    public final void exitingGame() {
-        client.printMessage("set unready");
-        //client.setReady();
-    }
     /**
      * Fetch the current message from game.ChatView, pass it on to the server and
      * empty the text field for the user.

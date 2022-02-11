@@ -1,11 +1,23 @@
 import Messages.Phase.ReplaceCard;
 
+/**
+ * class for damageCard VirusCard
+ * @author chen
+ */
 public class VirusCard extends DamageCards {
 
+    /**
+     * Constructor
+     */
     public VirusCard(){
         this.setName("Virus");
     }
 
+    /**
+     * any robot on the board within a six-space radius take a virus card after activating viruscard
+     * @param robot affected robot
+     * @param server connect to server
+     */
     @Override
     public void effect(Robot robot, Server server) {
         Cards activateCard = robot.getFirstCard();

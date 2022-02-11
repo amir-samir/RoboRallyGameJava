@@ -1,7 +1,7 @@
 package Messages;
 /**
  * this class implements the specific messageType "ConnectionUpdate".
- * it is used to send updates on the connection status of players while the game is starting.
+ * it is used to send updates on the connection status of players while the game is running.
  * @author Luca Weyhofen
  */
 public class ConnectionUpdate extends Message {

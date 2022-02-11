@@ -3,6 +3,10 @@ package Messages.Actions;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * SelectedDamage Nachricht
+ * @author Mateo Pranjic
+ */
 public class SelectedDamage extends Message {
 
     public SelectedDamage(String[] cards){

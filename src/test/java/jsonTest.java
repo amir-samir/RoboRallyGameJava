@@ -2,6 +2,7 @@ import Messages.*;
 import Messages.Actions.PlayerTurning;
 import Messages.Actions.RebootDirection;
 import Messages.Phase.CurrentCards;
+import Messages.Phase.SelectedCard;
 import Messages.Phase.YourCards;
 import com.google.gson.internal.LinkedTreeMap;
 import org.junit.Test;
@@ -305,6 +306,15 @@ public class jsonTest {
        PlayerTurning playerTurning = new PlayerTurning(2000, "counterclockwise");
         playerTurning.getMessageBody().setKeys(new String[]{"clientID", "rotation"});
         String json = Adopter.javabeanToJson(playerTurning);
+        System.out.println(json);
+    }
+
+    @Test
+    public void CardNull(){
+        SelectedCard nullCard = new SelectedCard(null, 2);
+        nullCard.getMessageBody().setKeys(new String[]{"card", "register"});
+        String json = Adopter.javabeanToJson(nullCard);
+        Message m = Adopter.getMessage(json);
         System.out.println(json);
     }
 }

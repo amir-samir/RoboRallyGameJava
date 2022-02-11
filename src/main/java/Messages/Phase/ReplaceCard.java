@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * ReplaceCard Nachricht
+ * @author MateoPranjic
+ */
 public class ReplaceCard extends Message {
 
     public ReplaceCard(int register, String newCard, int id){

@@ -3,6 +3,9 @@ package Messages.Actions;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * Diese Klasse verkörpert die Nachricht die verschickt wird, wenn sich ein Roboter dreht.
+ */
 public class PlayerTurning extends Message {
 
     public PlayerTurning(int id, String rotation){

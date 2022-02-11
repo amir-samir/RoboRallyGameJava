@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jdk">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/jdk.16" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,5 +1,9 @@
 package Messages;
 
+/**
+ * PlayerValues Nachricht
+ * @author Luca Weyhofen
+ */
 public class PlayerValues extends Message {
 
     public PlayerValues(String name, int figur){

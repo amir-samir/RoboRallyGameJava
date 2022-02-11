@@ -1,5 +1,9 @@
 package Messages;
 
+/**
+ * Diese Klasse ist das Grundgerüst einer jeden verschickten Nachricht.
+ * @author Luca Weyhofen
+ */
 public class Message {
 
     String messageType;

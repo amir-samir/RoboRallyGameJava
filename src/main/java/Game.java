@@ -497,59 +497,68 @@ public class Game {
                 }
             }
         }
-        if (activeMap == "Twister"){
+        if (activeMap.equals("Twister")){
+            ArrayList<Integer> xKoordinaten = new ArrayList<Integer>();
+            ArrayList<Integer> yKoordinaten = new ArrayList<Integer>();
             for (int i = 0; i < board.getMap().length; i++) {
                 for (int u = 0; u < board.getMap()[i].length; u++) {
-                    for (BoardElement boardElement : board.getMap()[i][u]) {
-                        if (boardElement.getType().equals("CheckPoint")) {
-                            moveCheckpoint(i, u);
+                    int zähler = board.getMap()[i][u].size();
+                    for (int check = 0; check < zähler; check++) {
+                        if (board.getMap()[i][u].get(check).getType().equals("CheckPoint")) {
+                            xKoordinaten.add(i);
+                            yKoordinaten.add(u);
                         }
                     }
                 }
             }
+            moveCheckpoint(xKoordinaten, yKoordinaten);
         }
     }
 
     /**
      * Sollte es auf einer Map nötig sein, CheckPoints zu verschieben, wird diese Methode aufgerufen.
-     * @param i x-Koordinate des zu bewegenden CheckPoints
-     * @param u y-Koordinate des zu bewegenden CheckPoints
+     * @param xKoordinaten x-Koordinate der zu bewegenden CheckPoints
+     * @param yKoordinaten y-Koordinate der zu bewegenden CheckPoints
      */
-    public void moveCheckpoint(int i, int u){
-        BoardElement conveyor = null;
-        BoardElement checkPoint = null;
-        for (int p = 0; p < board.getMap()[i][u].size(); p++){
-           if (board.getMap()[i][u].get(p).getType().equals("CheckPoint")){
-               checkPoint = board.getMap()[i][u].remove(p);
-               break;
-           }
-        }
-        for (int p = 0; p < board.getMap()[i][u].size(); p++){
-            if (board.getMap()[i][u].get(p).getType().equals("ConveyorBelt")){
-                conveyor = board.getMap()[i][u].get(p);
-                break;
+    public void moveCheckpoint(ArrayList<Integer> xKoordinaten, ArrayList<Integer> yKoordinaten) {
+        for (int za = 0; za < xKoordinaten.size(); za++) {
+            int i = xKoordinaten.get(za);
+            int u = yKoordinaten.get(za);
+            BoardElement conveyor = null;
+            BoardElement checkPoint = null;
+            for (int p = 0; p < board.getMap()[i][u].size(); p++) {
+                if (board.getMap()[i][u].get(p).getType().equals("CheckPoint")) {
+                    checkPoint = board.getMap()[i][u].remove(p);
+                    break;
+                }
             }
-        }
-        for (int z = 0; z < 2; z++) {
-            switch (conveyor.getOrientations()[0]) {
-                case "top":
-                    i -= 1;
-                    break;
-                case "bottom":
-                    i += 1;
-                    break;
-                case "left":
-                    u -= 1;
-                    break;
-                case "right":
-                    u += 1;
-                    break;
+            for (int z = 0; z < 2; z++) {
+                for (int p = 0; p < board.getMap()[i][u].size(); p++) {
+                    if (board.getMap()[i][u].get(p).getType().equals("ConveyorBelt")) {
+                        conveyor = board.getMap()[i][u].get(p);
+                        break;
+                    }
+                }
+                switch (conveyor.getOrientations()[0]) {
+                    case "top":
+                        i -= 1;
+                        break;
+                    case "bottom":
+                        i += 1;
+                        break;
+                    case "left":
+                        u -= 1;
+                        break;
+                    case "right":
+                        u += 1;
+                        break;
+                }
             }
+            board.getMap()[i][u].add(checkPoint);
+            CheckpointMoved checkpointMoved = new CheckpointMoved(checkPoint.getCount(), i, u);
+            checkpointMoved.getMessageBody().setKeys(new String[]{"checkpointID", "x", "y"});
+            SERVER.sendMessageForAllUsers(checkpointMoved);
         }
-        board.getMap()[i][u].add(checkPoint);
-        CheckpointMoved checkpointMoved = new CheckpointMoved(checkPoint.getCount(), i, u);
-        checkpointMoved.getMessageBody().setKeys(new String[]{"checkpointID", "x", "y"});
-        SERVER.sendMessageForAllUsers(checkpointMoved);
     }
 
     /**
@@ -1859,6 +1868,17 @@ public class Game {
             gameFinished.getMessageBody().setKeys(new String[]{"clientID"});
             SERVER.sendMessageForAllUsers(gameFinished);
         }
+    }
+
+    /**
+     * Ends the game
+     */
+    public void endGame(){
+        for (int i = 0; i < figuren.length; i++){
+            figuren[i] = null;
+        }
+        activePhase = 5;
+        startGame();
     }
 
     /**

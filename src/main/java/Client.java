@@ -21,7 +21,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * Diese Klasse stellt das Verbindungsstück eines Spielers zum Server dar.
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Luca Weyhofen
+ *
+ * @Version: 2.1
+ */
 public class Client implements Runnable {
 
     private final Socket SOCKET;
@@ -73,10 +81,9 @@ public class Client implements Runnable {
 
 
     /**
-     * A Constructor that builds a connection between the client and the server and asks the server if
-     * the username is not taken.
-     *
-     * @throws IOException            Throw this exception if the connection between server and client fails.
+     * Dies ist der Konstruktor.
+     * Er stellt die Verbindung zwischen Server und Client her und bereitet den Client auf die Verwendung vor.
+     * @throws IOException Throw this exception if the connection between server and client fails.
      */
     public Client() throws IOException {
         SOCKET = new Socket("localhost", 1237);
@@ -89,38 +96,13 @@ public class Client implements Runnable {
         isAi = false;
     }
 
-    public static Client getClient(){
-        return client;
-    }
-
-    public static Thread getThread(){
-        return thread;
-    }
-
-    public void setReady(){
-        if(ready){
-            ready = false;
-            player.get(ID).ready = false;
-            SetStatus setStatus = new SetStatus(false);
-            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
-        } else if (!ready){
-            ready = true;
-            if (player.get(ID) != null) {
-                player.get(ID).ready = true;
-            }
-            SetStatus setStatus = new SetStatus(true);
-            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
-        }
-    }
-    public void setCardOfGui(String cardName){
-        this.CardOfGui = cardName;
-    }
-    public String getCardOfGui(){
-        return CardOfGui;
-    }
-
+    /**
+     * Diese Methode sendet Chatnachrichten an einen anderen Spieler.
+     * @param senderId Die ID des Versenders
+     * @param message Die Nachricht
+     * @param userName Die ID des Empfängers
+     */
     public void singleMessage(int senderId, String message, int userName){
-        //int empfaenger = ids.get(userName);
         String[] keys = {"message", "to"};
         SendChat sendChat = new SendChat(message, userName);
         sendChat.getMessageBody().setKeys(keys);
@@ -132,8 +114,8 @@ public class Client implements Runnable {
     }
 
     /**
-     * A method that transfer the input to the game.Server.
-     * @param input The input from user.
+     * Diese Methode verschickt Chatnachrichten an alle Spieler.
+     * @param input Die Nachricht
      */
     public void printMessage(String input) {
         SendChat message = new SendChat(input, -1);
@@ -143,20 +125,21 @@ public class Client implements Runnable {
         bufferedWriter.println(toSend);
     }
 
-    public synchronized  ObservableList getUsernames(){
-        return usernamesGui;
-    }
-
-    public Integer getFigur(){
-        return figureForGui;
-    }
-
+    /**
+     * Diese Methode versendet die ausgewählten Kategorien an Schadenskarten an den Server.
+     * @param cards Datenfeld mit den ausgewählten Schadenskarten-Kategorien
+     */
     public void sendSelectedDamage(String[] cards){
         SelectedDamage selectedDamage = new SelectedDamage(cards);
         selectedDamage.getMessageBody().setKeys(new String[]{"cards"});
         bufferedWriter.println(Adopter.javabeanToJson(selectedDamage));
     }
 
+    /**
+     * Diese Methode sendet Name und Figur des Spielers an den Server.
+     * @param name Name des Spielers
+     * @param figur Nummer der Figur des Spielers
+     */
     public void configuration(String name, int figur){
         PlayerValues message = new PlayerValues(name, figur);
         String[] keys = {"name", "figure"};
@@ -165,37 +148,19 @@ public class Client implements Runnable {
         figureForGui = figur;
         titleUserName = name;
         Platform.runLater(new Runnable(){
-
             @Override
             public void run() {
                     getChatView().setImageFromFigur(figur);
 
             }
         });
-
-
-    }
-
-    public int getID(){
-        return ID;
     }
 
     /**
-     * A method that receive and returns information from the game.Server.
-     * @throws IOException Throw this exception if the connection between server and client fails.
+     * Diese Methode versendet den ausgewählten Startpunkt an den Server.
+     * @param x x-Koordinate
+     * @param y y-Koordinate
      */
-    public String receiveFromServer() throws IOException {
-        return bufferedReader.readLine();
-    }
-
-    public void closeConnection() throws IOException {
-        SOCKET.close();
-    }
-
-    public boolean isConnected(){
-        return connected;
-    }
-
     public void setStartingPoint(int x, int y){
         SetStartingPoint setStartingPoint = new SetStartingPoint(x, y);
         setStartingPoint.getMessageBody().setKeys(new String[]{"x", "y"});
@@ -203,6 +168,10 @@ public class Client implements Runnable {
         System.out.println(Adopter.javabeanToJson(setStartingPoint));
     }
 
+    /**
+     * Verschicken der HelloServer Nachricht an den Server.
+     * @param message HelloServer Nachricht
+     */
     public void sendHelloServer(Message message){
         protocol = (String) message.getMessageBody().getContent()[0];
         HelloServer output = new HelloServer(GROUP, isAi, protocol);
@@ -212,12 +181,22 @@ public class Client implements Runnable {
         bufferedWriter.println(S);
     }
 
+    /**
+     * Diese Methode verschickt die Kartenauswahl des Spielers an den Server.
+     * @param card Die ausgewählte Karte
+     * @param register Das Register, in das die Karte gespielt werden soll
+     */
     public void sendCardToRegister(String card, int register){
         SelectedCard selectedCard = new SelectedCard(card, register);
         selectedCard.getMessageBody().setKeys(new String[]{"card", "register"});
         bufferedWriter.println(Adopter.javabeanToJson(selectedCard));
+        System.out.println(Adopter.javabeanToJson(selectedCard));
     }
 
+    /**
+     * Wenn der Spieler eine Map ausgewählt hat, wird diese hier an den Server verschickt.
+     * @param map Die ausgewählte Map
+     */
     public void mapSelected(String map){
         MapSelected mapSelected = new MapSelected(map);
         String[] key = {"map"};
@@ -225,6 +204,10 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(mapSelected));
     }
 
+    /**
+     * Versendung der playCard Nachricht
+     * @param card Gespielte Karte
+     */
     public void playCard(String card){
         PlayCard playCard = new PlayCard(card);
         String[] key = {"card"};
@@ -233,6 +216,12 @@ public class Client implements Runnable {
         bufferedWriter.println(Adopter.javabeanToJson(playCard));
     }
 
+    /**
+     * Die neue Position der Roboter wird aktualisiert.
+     * @param x neue x-Koordinate
+     * @param y neue y-Koordinate
+     * @param ID ID des Spielers, der sich bewegt hat
+     */
     public void updateFigure(int x, int y, int ID){
         for (Robot robot: figuren){
             if (robot != null) {
@@ -247,27 +236,32 @@ public class Client implements Runnable {
         }
     }
 
-    public int getFigurenID(int ID){
-        for (int i = 0; i < figuren.length; i++){
-            if (figuren[i].getGamerID() == ID){
-                return i;
-            }
-        }
-        return -1;
-    }
-
+    /**
+     * Wenn der Spieler eine Upgrade-Karte kauft, wird dies hier dem Server mitgeteilt.
+     * @param isBuying Boolean der angibt, ob der Spieler eine Karte kauft
+     * @param card Karte, die der Spieler kaufen möchte
+     */
     public void buyUpgrade(boolean isBuying, String card){
         BuyUpgrade buyUpgrade = new BuyUpgrade(isBuying, card);
         buyUpgrade.getMessageBody().setKeys(new String[]{"isBuying", "card"});
         bufferedWriter.println(Adopter.javabeanToJson(buyUpgrade));
     }
 
+    /**
+     * Im Rahmen der AdminPrivilege-Karte kann ein Register ausgewählt werden.
+     * @param register Das ausgewählte Register
+     */
     public void chooseRegister(int register){
         ChooseRegister chooseRegister = new ChooseRegister(register);
         chooseRegister.getMessageBody().setKeys(new String[]{"register"});
         bufferedWriter.println(Adopter.javabeanToJson(chooseRegister));
     }
 
+    /**
+     * Umwandlung einer Liste voll Strings in eine Liste voller Karten
+     * @param array Liste mit Strings
+     * @return Liste mit Karten-Objekte
+     */
     public ArrayList<Cards> arrayToList (ArrayList<String> array){
         ArrayList<Cards> handcards= new ArrayList<Cards>();
         for (String s: array) {
@@ -318,6 +312,10 @@ public class Client implements Runnable {
         return handcards;
     }
 
+    /**
+     * Die Map wird generiert.
+     * @param m Die Nachricht, in der die Map verschickt wurde
+     */
     public void generateMap(Message m){
         ArrayList<BoardElement>[][] map = new ArrayList[10][13];
         int i = 0;
@@ -411,6 +409,11 @@ public class Client implements Runnable {
         this.map = map;
     }
 
+    /**
+     * Umwandlung einr Liste von Strings in ein Datenfeld mit Strings
+     * @param list Eine Liste mit Strings
+     * @return Ein Datenfeld befüllt mir Strings
+     */
     public String[] changeListIntoArray(ArrayList<String> list){
         String[] orientations = new String[list.size()];
         for(int i = 0; i < list.size(); i++){
@@ -419,20 +422,31 @@ public class Client implements Runnable {
         return orientations;
     }
 
+    /**
+     * Nach einem reboot, kann ein Spieler eine neue Ausrichtung wählen
+     * @param direction Die neue Ausrichtung des Spielers
+     */
     public void setNewDirection(String direction){
         RebootDirection rebootDirection = new RebootDirection(direction);
         rebootDirection.getMessageBody().setKeys(new String[]{"direction"});
         bufferedWriter.println(Adopter.javabeanToJson(rebootDirection));
     }
 
+    /**
+     * Verarbeitung der returnCards Nachricht (memory swap)
+     * @param cards Die Karten, die zurückgegeben werden
+     */
     public void returnCards(String[] cards){
         ReturnCards returnCards = new ReturnCards(cards);
         returnCards.getMessageBody().setKeys(new String[]{"cards"});
         bufferedWriter.println(Adopter.javabeanToJson(returnCards));
-
-        //programming
     }
 
+    /**
+     * Die CheckPointReached Nachricht wird verarbeitet.
+     * @param m CheckPointReached Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleCheckPointReached(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
@@ -443,6 +457,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die GameFinished Nachricht wird verarbeitet.
+     * @param m GameFinished Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleGameFinished(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         String s;
@@ -465,6 +484,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die replaceCard Nachricht wird verarbeitet.
+     * @param m replaceCard Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleReplaceCard(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[2];
         int register = (int) (double) m.getMessageBody().getContent()[0];
@@ -476,6 +500,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die energy Nachricht wird verarbeitet.
+     * @param m energy Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleEnergy(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         int number = (int) (double) m.getMessageBody().getContent()[1];
@@ -484,10 +513,18 @@ public class Client implements Runnable {
         if (clientID == this.ID){
             s = "Du hast " + number + "Energie von folgender Quelle hinzugewonnen: " + source;
             this.cubesZahl = number;
+            Platform.runLater(() -> {
+                getAllInOneView().updateCubes();
+            });
         } else s = player.get(clientID).name + " (" + clientID + ") hat " + number + "Energie von folgender Quelle gewonnen: " + source;
         return s;
     }
 
+    /**
+     * Die pickDamage Nachricht wird verarbeitet.
+     * @param m pickDamage Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handlePickDamage(Message m){
         int count = (int)(double) m.getMessageBody().getContent()[0];
         ArrayList<String> list = (ArrayList<String>) m.getMessageBody().getContent()[1];
@@ -495,7 +532,11 @@ public class Client implements Runnable {
         return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
     }
 
-
+    /**
+     * Die refillShop Nachricht wird verarbeitet.
+     * @param m refillShop Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleRefillShop(Message m){
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         for (String s: karten){
@@ -515,6 +556,11 @@ public class Client implements Runnable {
         return toSend;
     }
 
+    /**
+     * Die exchangeShop Nachricht wird verarbeitet.
+     * @param m exchangeShop Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleExchangeShop(Message m){
         ArrayList<String> karten = (ArrayList<String>) m.getMessageBody().getContent()[0];
         this.upgradeShop = karten;
@@ -533,6 +579,11 @@ public class Client implements Runnable {
         return toSend;
     }
 
+    /**
+     * Die upgradeBought Nachricht wird verarbeitet.
+     * @param m upgradeBought Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleUpgradeBought(Message m){
         int clientID = (int)(double)m.getMessageBody().getContent()[0];
         String card = (String) m.getMessageBody().getContent()[1];
@@ -551,12 +602,20 @@ public class Client implements Runnable {
                 costs = 1;
             }
             this.cubesZahl -= costs;
+            Platform.runLater(() -> {
+                getAllInOneView().updateCubes();
+            });
             s = "Du hast folgende Karte gekauft: " + card;
         } else s = player.get(clientID).name + " (" + clientID + ") hat folgende Karte gekauft: " + card;
         this.upgradeShop.remove(card);
         return s;
     }
 
+    /**
+     * Die registerChosen Nachricht wird verarbeitet.
+     * @param m registerChosen Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleRegisterChosen(Message m){
         int clientID = (int)(double)m.getMessageBody().getContent()[0];
         int register = (int)(double)m.getMessageBody().getContent()[1];
@@ -567,6 +626,11 @@ public class Client implements Runnable {
         return s;
     }
 
+    /**
+     * Die connectionUpdate Nachricht wird verarbeitet.
+     * @param m connectionUpdate Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleConnectionUpdate(Message m){
         int clientID = (int)(double) m.getMessageBody().getContent()[0];
         Player player = this.player.remove(clientID);
@@ -579,6 +643,7 @@ public class Client implements Runnable {
                 getAllInOneView().setDefaultMap();
                 for (int i = 0; i < figuren.length; i++) {
                     if (figuren[i] != null && figuren[i].getX() != -1) {
+
                         getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                     }
                 }
@@ -588,16 +653,29 @@ public class Client implements Runnable {
         return player.name + " (" + clientID + ") hat die Verbindung verloren und wurde entfernt.";
     }
 
+    /**
+     * Die checkpointMoved Nachricht wird verarbeitet.
+     * @param m checkpointMoved Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public void handleCheckPointMoved(Message m){
         int checkpointID = (int) (double) m.getMessageBody().getContent()[0];
         int x = (int) (double) m.getMessageBody().getContent()[1];
         int y = (int) (double) m.getMessageBody().getContent()[2];
-        //GUI: Checkpooints verschieben...
+        Platform.runLater(() -> {
+            getAllInOneView().moveCheckpoints(checkpointID, x, y);
+            /*for (int i = 0; i < figuren.length; i++) {
+                if (figuren[i] != null && figuren[i].getX() != -1) {
+                    getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
+                }
+            }*/
+
+        });
     }
 
     /**
-     * This method is an overridden method which displays the input that is coming from the server in
-     * the Chat view.
+     * Diese Methode überschreibt die run() Methode aus Runnable.
+     * Sie empfängt und verarbeitet die Daten, die vom Server empfangen werden.
      */
     @Override
     public void run() {
@@ -747,7 +825,7 @@ public class Client implements Runnable {
                             try {
                                 StageSaver.getStageSaver().getUpgradeCardsStage().close();
                                 getAllInOneView().resetRegisterCard();
-                                getChatView().ChooseCard();
+                                getAllInOneView().fillChooseCard();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
@@ -770,9 +848,7 @@ public class Client implements Runnable {
                 } else if (message.getMessageType().equals("TimerStarted")){
                     toSend = "Der Timer wurde gestartet.";
                     Platform.runLater(() -> {
-                        if (getChooseCards() != null) {
-                            getChooseCards().startTimer();
-                        }
+                        getAllInOneView().startTimer();
                         if (getChooseCardsForSwap() != null){
                             getChooseCardsForSwap().startTimer();
                         }
@@ -781,9 +857,7 @@ public class Client implements Runnable {
                     ArrayList<Double> list = (ArrayList<Double>) message.getMessageBody().getContent()[0];
                     String s = "Der Timer ist beendet." + "\n" + "Folgende Spieler sind nicht fertig geworden: ";
                     Platform.runLater(() -> {
-                        if (getChooseCards() != null) {
-                            StageSaver.getStageSaver().getChooseCardStage().close();
-                        }
+                        getAllInOneView().setChooseCardUnvisible();
                         if (getChooseCardsForSwap() != null){
                             StageSaver.getStageSaver().getUpgradeCardsForSwap().close();
                         }
@@ -921,6 +995,11 @@ public class Client implements Runnable {
         }
     }
 
+    /**
+     * Die damage Nachricht wird verarbeitet.
+     * @param m damage Nachricht
+     * @return String, der im Chatfenster erscheint
+     */
     public String handleDamage(Message m){
         int clientID = (int) (double) m.getMessageBody().getContent()[0];
         List<String> damageCards = (List<String>) m.getMessageBody().getContent()[1];
@@ -949,16 +1028,8 @@ public class Client implements Runnable {
         selectMapView = selectMapView1;
     }
 
-    public SelectMapView getSelectMapView(){
-        return selectMapView;
-    }
-
     public static void setMaybeMapsController(MaybeMapsController maybeMapsController1){
         maybeMapsController = maybeMapsController1;
-    }
-
-    public MaybeMapsController getMaybeMapsController(){
-        return maybeMapsController;
     }
 
     public ChatView getChatView(){
@@ -1030,5 +1101,37 @@ public class Client implements Runnable {
 
     public int getRobterGewonnen(){
         return robterGewonnen;
+    }
+
+    public static Client getClient(){
+        return client;
+    }
+
+    public void setReady(){
+        if(ready){
+            ready = false;
+            player.get(ID).ready = false;
+            SetStatus setStatus = new SetStatus(false);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        } else if (!ready){
+            ready = true;
+            if (player.get(ID) != null) {
+                player.get(ID).ready = true;
+            }
+            SetStatus setStatus = new SetStatus(true);
+            bufferedWriter.println(Adopter.javabeanToJson(setStatus));
+        }
+    }
+
+    public void setCardOfGui(String cardName){
+        this.CardOfGui = cardName;
+    }
+
+    public String getCardOfGui(){
+        return CardOfGui;
+    }
+
+    public int getID(){
+        return ID;
     }
 }

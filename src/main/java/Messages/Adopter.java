@@ -12,32 +12,6 @@ public class Adopter {
      * @param message
      * @return Json String
      */
-//    public static String javabeanToJson(Message message) {
-//        String jsonBody = getJsonBody(message);
-//        String final_json = "";
-//        if (jsonBody.equals("MessageBody ist leer!")){
-//            final_json = "{ \"messageType\": \"" + message.getMessageType() + "\", \"messageBody\": { }}";
-//        }
-//        else {
-//            gson = new Gson();
-//            String jsonType = gson.toJson(message);
-//            Object[] keys = message.messageBody.getkeys();
-//            for (Object k: keys){
-//                String key = (String) k;
-//                jsonType = jsonType.replaceFirst("content", key);
-//            }
-//            int index = jsonType.indexOf("\"messageBody");
-//            jsonType = jsonType.substring(0,index);
-//            String messageType = message.getMessageType();
-//            jsonBody = jsonBody.replaceFirst(messageType, "messageBody");
-//            jsonBody = jsonBody.substring(1);
-//            final_json = new StringBuilder(jsonType).append(jsonBody).toString();
-//        }
-//
-//        return final_json;
-//    }
-
-
     public static String javabeanToJson(Message message) {
         String jsonBody = getJsonBody(message);
         String final_json = "";

@@ -3,6 +3,10 @@ package Messages.Phase;
 import Messages.Message;
 import Messages.MessageBody;
 
+/**
+ * CardSelected Nachricht
+ * @author Luca Weyhofen
+ */
 public class CardSelected extends Message {
 
     public CardSelected(int clientID, int register, boolean filled){
