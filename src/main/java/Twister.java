@@ -26,6 +26,7 @@ public class Twister extends Board {
                 }i++;
             }
 
+            //row 0
             map[0][0].add(new Empty("A"));
             map[0][1].add(new Empty("A"));
             map[0][2].add(new ConveyorBelt("A", new String[]{"right", "left"}, 1));
@@ -41,6 +42,7 @@ public class Twister extends Board {
             map[0][11].add(new Empty("6B"));
             map[0][12].add(new Empty("6B"));
 
+            //row 1
             map[1][0].add(new Empty("A"));
             map[1][1].add(new StartPoint("A"));
             map[1][2].add(new Empty("A"));
@@ -56,6 +58,7 @@ public class Twister extends Board {
             map[1][11].add(new ConveyorBelt("6B", new String[]{"bottom", "left"}, 2));
             map[1][12].add(new Empty("6B"));
 
+            //row 2
             map[2][0].add(new Empty("A"));
             map[2][1].add(new Wall("A", new String[]{"top"}));
             map[2][2].add(new Empty("A"));
@@ -70,6 +73,7 @@ public class Twister extends Board {
             map[2][11].add(new ConveyorBelt("6B", new String[]{"bottom", "top"}, 2));
             map[2][12].add(new Empty("6B"));
 
+            //row 3
             map[3][0].add(new StartPoint("A"));
             map[3][1].add(new Empty("A"));
             map[3][2].add(new Empty("A"));
@@ -85,6 +89,7 @@ public class Twister extends Board {
             map[3][11].add(new ConveyorBelt("6B", new String[]{"left", "top"}, 2));
             map[3][12].add(new Empty("6B"));
 
+            //row 4
             map[4][0].add(new Antenna("A", new String[]{"right"}));
             map[4][1].add(new StartPoint("A"));
             map[4][2].add(new Wall("A", new String[]{"right"}));
@@ -101,6 +106,7 @@ public class Twister extends Board {
             map[4][11].add(new Empty("6B"));
             map[4][12].add(new Wall("6B", new String[]{"top"}));
 
+            //row 5
             map[5][0].add(new Empty("A"));
             map[5][1].add(new StartPoint("A"));
             map[5][2].add(new Wall("A", new String[]{"right"}));
@@ -117,6 +123,7 @@ public class Twister extends Board {
             map[5][12].add(new Wall("6B", new String[]{"bottom"}));
             map[5][12].add(new Laser("6B", new String[]{"top"}, 1));
 
+            //row 6
             map[6][0].add(new StartPoint("A"));
             map[6][1].add(new Empty("A"));
             map[6][2].add(new Empty("A"));
@@ -131,6 +138,7 @@ public class Twister extends Board {
             map[6][11].add(new ConveyorBelt("6B", new String[]{"bottom", "left"}, 2));
             map[6][12].add(new Empty("6B"));
 
+            //row 7
             map[7][0].add(new RestartPoint("A", new String[]{"right"}));
             map[7][1].add(new Wall("A", new String[]{"bottom"}));
             map[7][2].add(new Empty("A"));
@@ -147,6 +155,7 @@ public class Twister extends Board {
             map[7][11].add(new ConveyorBelt("6B", new String[]{"bottom", "top"}, 2));
             map[7][12].add(new Empty("6B"));
 
+            //row 8
             map[8][0].add(new Empty("A"));
             map[8][1].add(new StartPoint("A"));
             map[8][2].add(new Empty("A"));
@@ -161,6 +170,7 @@ public class Twister extends Board {
             map[8][11].add(new ConveyorBelt("6B", new String[]{"left", "top"}, 2));
             map[8][12].add(new Empty("6B"));
 
+            //row 9
             map[9][0].add(new Empty("A"));
             map[9][1].add(new Empty("A"));
             map[9][2].add(new ConveyorBelt("A", new String[]{"right", "left"}, 1));
@@ -176,6 +186,7 @@ public class Twister extends Board {
             map[9][11].add(new Empty("6B"));
             map[9][12].add(new Empty("6B"));
 
+            //build a map
             this.setMap(map);
         }
     }

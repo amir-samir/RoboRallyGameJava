@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Class to create a board from a map object
- *Overarching class for maps.
+ * Overarching class for maps.
  * @author yiluye
  */
 @Data
