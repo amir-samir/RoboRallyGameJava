@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Gui änderung und karte abwählen">
-      <change afterPath="$PROJECT_DIR$/log.txt.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_02_2022_01_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_02_2022_01_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_02_2022_01_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_02_2022_01_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,13 +237,6 @@
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
       <workItem from="1644532861667" duration="6105000" />
-    </task>
-    <task id="LOCAL-00043" summary="Bugfix:&#10;- Call effect() from BoardElement">
-      <created>1642244118609</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1642244118609</updated>
     </task>
     <task id="LOCAL-00044" summary="Bugfix:&#10;- Encoding GameStarted-Message">
       <created>1642265125910</created>
@@ -586,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644539570811</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Bugfix">
+      <created>1644540458772</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1644540458772</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,12 +620,12 @@
     <MESSAGE value="Improved AI" />
     <MESSAGE value="Merge:&#10;- new GUI Features (Amir &amp; Dairen)&#10;- new KI" />
     <MESSAGE value="Bugfix:&#10;- AI now VERY intelligent ;=)" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Bugfix:&#10;- Twister" />
     <MESSAGE value="Bugfix:&#10;- moving Checkpoints" />
     <MESSAGE value="Merge" />
     <MESSAGE value="Gui änderung und karte abwählen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gui änderung und karte abwählen" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

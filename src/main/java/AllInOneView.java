@@ -926,6 +926,28 @@ public class AllInOneView implements Initializable {
     }
 
     public void setFigureOnMapNew(int figure,String direction, int x, int y){
+        //gaga
+        // ID 0
+        if (checkPointMap.get(0) != null) {
+            gridpane1.add(new ImageView(image61), checkPointMap.get(0)[1], checkPointMap.get(0)[0]);
+        }
+        //ID 1
+        if (checkPointMap.get(1) != null) {
+            gridpane1.add(new ImageView(image65), checkPointMap.get(1)[1], checkPointMap.get(1)[0]);
+        }
+        //ID 2
+        if (checkPointMap.get(2) != null) {
+            gridpane1.add(new ImageView(image62), checkPointMap.get(2)[1], checkPointMap.get(2)[0]);
+        }
+        //ID 3
+        if (checkPointMap.get(3) != null) {
+            gridpane1.add(new ImageView(image54), checkPointMap.get(3)[1], checkPointMap.get(3)[0]);
+        }
+        //ID 4
+        if (checkPointMap.get(4) != null) {
+            gridpane1.add(new ImageView(image48), checkPointMap.get(4)[1], checkPointMap.get(4)[0]);
+        }
+
         if (figure == 0){
             if (direction == "top"){
                 gridpane1.add(new ImageView(TwinkyOben),y,x);
@@ -1010,28 +1032,6 @@ public class AllInOneView implements Initializable {
                 gridpane1.add(new ImageView(HammerUnten),y,x);
             }
         }
-        //gaga
-        // ID 0
-        if (checkPointMap.get(0) != null) {
-            gridpane1.add(new ImageView(image61), checkPointMap.get(0)[1], checkPointMap.get(0)[0]);
-        }
-        //ID 1
-        if (checkPointMap.get(1) != null) {
-            gridpane1.add(new ImageView(image65), checkPointMap.get(1)[1], checkPointMap.get(1)[0]);
-        }
-        //ID 2
-        if (checkPointMap.get(2) != null) {
-            gridpane1.add(new ImageView(image62), checkPointMap.get(2)[1], checkPointMap.get(2)[0]);
-        }
-        //ID 3
-        if (checkPointMap.get(3) != null) {
-            gridpane1.add(new ImageView(image54), checkPointMap.get(3)[1], checkPointMap.get(3)[0]);
-        }
-        //ID 4
-        if (checkPointMap.get(4) != null) {
-            gridpane1.add(new ImageView(image48), checkPointMap.get(4)[1], checkPointMap.get(4)[0]);
-        }
-
     }
 
     public Image getImageForRegisterCard(String cardName) {

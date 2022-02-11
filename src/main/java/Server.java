@@ -215,23 +215,6 @@ public class Server {
      * @param cH Der Spieler, der die Nachricht verschickt hat
      */
     public void handleReady(ClientHandler cH){
-       /* int countReady = 0;
-        for (ClientHandler clientHandler: users.values()){
-            if(clientHandler.isReady){
-                countReady += 1;
-            }
-        }
-        */
-        /*if (countReady == 1){
-            if (cH.isReady){
-                SelectMap selectMap = new SelectMap(availableMaps);
-                String[] keys = {"availableMaps"};
-                selectMap.getMessageBody().setKeys(keys);
-                cH.writer.println(Adopter.javabeanToJson(selectMap));
-                System.out.println(Adopter.javabeanToJson(selectMap));
-            }
-        }
-         */
         if (cH.isReady) {
             if (!this.mapSelected && !cH.isAi) {
                 clientWhoSelectedMap = cH;
