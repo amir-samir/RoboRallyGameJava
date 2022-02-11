@@ -1,0 +1,1 @@
+![Klassendiagramm](uploads/b98c88d6b7e05274c5c3e927d3538bd4/Klassendiagramm.png)

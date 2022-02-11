@@ -1,0 +1,1 @@
+![Bildschirmfoto_2022-01-27_um_15.22.10](uploads/a5bbc05f9fe94ffe423aa81cd3ae5434/Bildschirmfoto_2022-01-27_um_15.22.10.png)[Richtlinien_für_die_Benutzeroberfläche_von_Robo_Rally.pdf](uploads/6927fdf109abbd8a8448ad9cb3db0fdd/Richtlinien_für_die_Benutzeroberfläche_von_Robo_Rally.pdf)
