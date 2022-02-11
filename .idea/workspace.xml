@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Bugfix">
-      <change afterPath="$PROJECT_DIR$/innige-irrwege-hp.wiki" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="Last Merge" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,11 +181,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
         <item itemvalue="Application.KI" />
-        <item itemvalue="Application.RalleyLogger" />
         <item itemvalue="Application.GetID" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="JAR Application.innige-irrweg-hp.jar" />
+        <item itemvalue="Application.RalleyLogger" />
       </list>
     </recent_temporary>
   </component>
@@ -239,13 +235,6 @@
       <workItem from="1644419282488" duration="935000" />
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
-    </task>
-    <task id="LOCAL-00051" summary="LaserDing">
-      <created>1642607501410</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1642607501410</updated>
     </task>
     <task id="LOCAL-00052" summary="map changing">
       <created>1642763972762</created>
@@ -583,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644549864667</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Last Merge">
+      <created>1644553690015</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1644553690015</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +598,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bugfix:&#10;- MemorySwap" />
     <MESSAGE value="Merge:&#10;- Connecting GUI for AdminPrivilege&#10;- Improved FirstView" />
     <MESSAGE value="Bugfix:&#10;- UTurn" />
     <MESSAGE value="Bugfix:&#10;- UpgradeShop" />
@@ -627,7 +622,8 @@
     <MESSAGE value="Added JavaDocs to Robot" />
     <MESSAGE value="Merge" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Last Merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last Merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -639,7 +635,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
           <line>153</line>
-          <properties class="Game">
+          <properties class="Game" method="prepareUpgradeShop">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
