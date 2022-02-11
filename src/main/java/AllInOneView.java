@@ -18,6 +18,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+/**
+ * Diese Klasse dient als Kontroller und Modell für die ALLINONE View
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Mateo
+ *
+ * @Version: 2.1
+ */
+
 public class AllInOneView implements Initializable {
     ArrayList<BoardElement>[][] mapGui = SaveClients.client.getMap();
     Boolean[] isFilled = new Boolean[5];
@@ -277,17 +287,24 @@ public class AllInOneView implements Initializable {
 
     Image[][] saveMap = new Image[10][13];
 
-
+    /**
+     * setAllInOneView für Client
+     */
     public AllInOneView(){
      Client.setAllInOneView(this);
     }
+    /**
+     * Nachrichten verschicken.
+     */
     public void sendMessage() {
 
         SaveClients.client.printMessage(writeField.textProperty().get());
         writeField.clear();
 
     }
-
+    /**
+     * generiert alle Laser auf der Map
+     */
     public void getLaserOnMaps() {
         for (int x = 0; x < gridpane1.getRowCount(); x++) {
             for (int y = 0; y < gridpane1.getColumnCount(); y++) {
@@ -492,7 +509,9 @@ public class AllInOneView implements Initializable {
             }
         }
     }
-
+    /**
+     * initializiert die ALlInONE View
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setChooseCardUnvisible();
@@ -521,14 +540,25 @@ public class AllInOneView implements Initializable {
 
     }
     //vorne
+    /**
+     * speichert die Checkpoints Koordinaten für die Twister Map
+     * @param id checkpoint id
+     * @param x xKoordinate vom Checkpoint
+     * @param y yKoordinate vom Checkpoint
+     */
+
     public void moveCheckpoints(int id, int x, int y) {
         checkPointMap.replace(id, new Integer[]{x,y});
     }
-
+    /**
+     * Aktualisiert die Zahl der Energy Cubes
+     */
     public void updateCubes(){
         CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
     }
-
+    /**
+     * Private Nachricht verschicken
+     */
     public void sendPrivateMessage(){
         String selectedUser = PrivateMessage.getValue().toString().split(",")[0];
         String msg = privateMsgInput.getText();
@@ -536,11 +566,9 @@ public class AllInOneView implements Initializable {
         SaveClients.client.singleMessage(SaveClients.client.getID(), msg, Integer.parseInt(selectedUser));
         privateMsgInput.clear();
     }
-
-    public void setReady(){
-        SaveClients.client.setReady();
-    }
-
+    /**
+     * Generiert die Map
+     */
     public void generateMap(){
 
         for (int x = 0; x < gridpane1.getRowCount(); x++){
@@ -920,7 +948,10 @@ public class AllInOneView implements Initializable {
         }
     }
 
-
+    /**
+     * gibt die Koordinaten von GridPane zurück
+     * @param event auslöser Event
+     */
     public void clickGrid(javafx.scene.input.MouseEvent event) {
         Node clickedNode = event.getPickResult().getIntersectedNode();
         if (clickedNode != gridpane1) {
@@ -932,10 +963,13 @@ public class AllInOneView implements Initializable {
         }
     }
 
-    public void ChangeImageTest(){
-        Card1.setImage(image4);
-    }
-
+    /**
+     * setzt die Figuren auf der Map
+     * @param figure Roboter
+     * @param direction Blick Richtung vom Roboter
+     * @param x xKoordinate vom Roboter
+     * @param y yKoordinate vom Roboter
+     */
     public void setFigureOnMapNew(int figure,String direction, int x, int y){
         if (figure == 0){
             if (direction == "top"){
@@ -1045,6 +1079,10 @@ public class AllInOneView implements Initializable {
 
     }
 
+    /**
+     * gibt die Bilder vom Register zurück
+     * @param cardName Name von der Karte
+     */
     public Image getImageForRegisterCard(String cardName) {
         switch (cardName) {
             case "MoveI":
@@ -1088,6 +1126,9 @@ public class AllInOneView implements Initializable {
         }
     }
 
+    /**
+     * erste Karte in Register drücken
+     */
     public void ChooseCard1(){
         if (!adminPrivaPressed && !isFilled[0]) {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),0);
@@ -1113,6 +1154,9 @@ public class AllInOneView implements Initializable {
             }
         }
     }
+    /**
+     * zweite Karte in Register drücken
+     */
     public void ChooseCard2(){
         if (!adminPrivaPressed && !isFilled[1]){
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),1);
@@ -1138,6 +1182,10 @@ public class AllInOneView implements Initializable {
         }
 
     }
+
+    /**
+     * dritte Karte in Register drücken
+     */
     public void ChooseCard3(){
         if (!adminPrivaPressed && !isFilled[2]) {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),2);
@@ -1163,6 +1211,10 @@ public class AllInOneView implements Initializable {
             }
         }
     }
+
+    /**
+     * vierte Karte in Register drücken
+     */
     public void ChooseCard4(){
         if (!isFilled[3] && !adminPrivaPressed) {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),3);
@@ -1188,6 +1240,9 @@ public class AllInOneView implements Initializable {
             }
         }
     }
+    /**
+     * fünfte Karte in Register drücken
+     */
     public void ChooseCard5(){
         if (!isFilled[4] && !adminPrivaPressed) {
             SaveClients.client.sendCardToRegister(SaveClients.client.getCardOfGui(),4);
@@ -1212,7 +1267,9 @@ public class AllInOneView implements Initializable {
             }
         }
     }
-
+    /**
+     * alle Bilder vom Register entfernen
+     */
     public void resetRegisterCard(){
         Card1.setImage(Karte);
         Card2.setImage(Karte);
@@ -1221,37 +1278,51 @@ public class AllInOneView implements Initializable {
         Card5.setImage(Karte);
         Arrays.fill(isFilled,false);
     }
-
+    /**
+     * Direction Pfeile zeigen
+     */
     public void ChooseDirectionSetvisible(){
         DirectionUnten.setVisible(true);
         DirectionRechts.setVisible(true);
         DirectionLinks.setVisible(true);
         DirectionOben.setVisible(true);
     }
-
+    /**
+     * rechte pfeil drücken
+     */
     public void pressRightDirection(){
         SaveClients.client.setNewDirection("right");
     }
-
+    /**
+     * untere pfeil drücken
+     */
     public void pressDownDirecton(){
         SaveClients.client.setNewDirection("bottom");
     }
-
+    /**
+     * obere pfeil drücken
+     */
     public void pressUpDirection(){
         SaveClients.client.setNewDirection("top");
     }
-
+    /**
+     * linke pfeil drücken
+     */
     public void pressLeftDirection(){
         SaveClients.client.setNewDirection("left");
     }
-
+    /**
+     * Direction Pfeile ausblenden
+     */
     public void setDirectionUnvisible(){
         DirectionOben.setVisible(false);
         DirectionLinks.setVisible(false);
         DirectionRechts.setVisible(false);
         DirectionUnten.setVisible(false);
     }
-
+    /**
+     * UpgradeCards Fenster öffnen
+     */
     public void runUpgradeCards() throws IOException {
         Stage stage = new Stage();
         stage.setTitle(SaveClients.client.getTitleUserName());
@@ -1262,7 +1333,9 @@ public class AllInOneView implements Initializable {
         StageSaver.getStageSaver().setUpgradeCardsStage(stage);
         stage.setOnCloseRequest(e -> Platform.exit());
     }
-
+    /**
+     * ChooseCardsForSwap Fenster öffnen
+     */
     public void runChooseCardsForSwap() throws IOException {
         Stage stage = new Stage();
         stage.setTitle(SaveClients.client.getTitleUserName());
@@ -1273,7 +1346,10 @@ public class AllInOneView implements Initializable {
         StageSaver.getStageSaver().setUpgradeCardsStageForSwap(stage);
         stage.setOnCloseRequest(e -> Platform.exit());
     }
-
+    /**
+     * Bilder für UpgradeCards einfügen
+     * @param cardname Name von der Karte
+     */
     public void setImageForUpgradeCard(String cardname){
         switch (cardname){
             case "AdminPrivilege" :
@@ -1329,19 +1405,25 @@ public class AllInOneView implements Initializable {
                 UpgradeCard1.setImage(SpamBlocker);
         }
     }
-
+    /**
+     * erste upgrade Kart gedrückt
+     */
     public void upgradeCardPressed(){
         if (SaveClients.client.getUpgradeCardName()[0].equals("AdminPrivilege")){
             adminPrivaPressed = true;
         }
     }
-
+    /**
+     * zweite upgrade Kart gedrückt
+     */
     public void upgradeCard1Pressed(){
         if (SaveClients.client.getUpgradeCardName()[1].equals("AdminPrivilege")){
             adminPrivaPressed = true;
         }
     }
-
+    /**
+     * speichert die Map ohne Roboter
+     */
     public void setDefaultMap(){
         for (int i = 0; i < 10; i++){
             for (int j = 0; j < 13; j++){
@@ -1349,7 +1431,9 @@ public class AllInOneView implements Initializable {
             }
         }
     }
-
+    /**
+     * Upgrade Cards ausblenden
+     */
     public void setUnvisibleUpGradeCards(){
         UpgradeCard3.setDisable(true);
         UpgradeCard3.setVisible(false);
@@ -1357,7 +1441,9 @@ public class AllInOneView implements Initializable {
         UpgradeCard4.setVisible(false);
 
     }
-
+    /**
+     * Gewonnen Fenster öffnen
+     */
     public void runGewonnen() throws IOException {
         Stage stage = new Stage();
         stage.setTitle("You won");
@@ -1368,7 +1454,9 @@ public class AllInOneView implements Initializable {
         StageSaver.getStageSaver().setUpgradeCardsStageForSwap(stage);
         stage.setOnCloseRequest(e -> Platform.exit());
     }
-
+    /**
+     * HandCards ausblenden
+     */
     public void setChooseCardUnvisible(){
         chooseCard1.setVisible(false);
         chooseCard2.setVisible(false);
@@ -1391,7 +1479,9 @@ public class AllInOneView implements Initializable {
 
 
     }
-
+    /**
+     * HandCards disable
+     */
     public void setChooseCardDisabledTempo(){
         chooseCard1.setDisable(true);
         chooseCard2.setDisable(true);
@@ -1403,7 +1493,9 @@ public class AllInOneView implements Initializable {
         chooseCard8.setDisable(true);
         chooseCard9.setDisable(true);
     }
-
+    /**
+     * HandCards enaabled
+     */
     public void setChoosecardDisabledFalseTempo(){
         chooseCard1.setDisable(false);
         chooseCard2.setDisable(false);
@@ -1415,7 +1507,9 @@ public class AllInOneView implements Initializable {
         chooseCard8.setDisable(false);
         chooseCard9.setDisable(false);
     }
-
+    /**
+     * Bilder in Hand Cards einfügen
+     */
     public void fillChooseCard(){
         RegisterPlatz = -1;
         chooseCard1.setVisible(true);
@@ -1447,6 +1541,9 @@ public class AllInOneView implements Initializable {
         chooseCard9.setImage(getImageForRegisterCard(SaveClients.client.getHandcards().get(8).getName()));
     }
 
+    /**
+     * erste HandCard auswählen
+     */
     public void takeCard1(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1461,6 +1558,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * zweite HandCard auswählen
+     */
     public void takeCard2(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1475,6 +1575,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * dritte HandCard auswählen
+     */
     public void takeCard3(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1489,6 +1592,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * vierte HandCard auswählen
+     */
     public void takeCard4(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1504,6 +1610,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * fünfte HandCard auswählen
+     */
     public void takeCard5(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1518,6 +1627,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * sixte HandCard auswählen
+     */
     public void takeCard6(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1532,6 +1644,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * siebte HandCard auswählen
+     */
     public void takeCard7(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1546,6 +1661,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * achte HandCard auswählen
+     */
     public void takeCard8(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1560,6 +1678,9 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
+    /**
+     * neunte HandCard auswählen
+     */
     public void takeCard9(){
         if (RegisterPlatz < 4) {
             RegisterPlatz++;
@@ -1574,11 +1695,16 @@ public class AllInOneView implements Initializable {
             SaveClients.client.printMessage("Dein Register ist voll!");
         }
     }
-
+    /**
+     * speichert eine HandKarte für Karte abwählen
+     */
     public int getChooseCardIsThis() {
         return chooseCardIsThis;
     }
-
+    /**
+     * reset HandCard
+     * @param i Karten index
+     */
     public void resetChooseCard(int i){
         switch (i){
             case 0:
@@ -1623,6 +1749,9 @@ public class AllInOneView implements Initializable {
         }
     }
 
+    /**
+     * startet den Teimer
+     */
     public void startTimer() {
 
         Timer timer = new Timer();
@@ -1649,11 +1778,15 @@ public class AllInOneView implements Initializable {
         timerLabel.setText("");
         timerLabel.setTextFill(Color.web("black"));
     }
-
+    /**
+     * Timer ausblenden
+     */
     public void hideTimer(){
         timerLabel.setVisible(false);
     }
-
+    /**
+     * öffnet das Fenster (DamageCardExtra)
+     */
     public void runDamageCardExtra() throws IOException {
         Stage stage = new Stage();
         stage.setTitle(SaveClients.client.getTitleUserName());
