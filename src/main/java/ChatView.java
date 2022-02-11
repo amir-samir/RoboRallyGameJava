@@ -18,7 +18,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ * View Class of chatview Window
+ * @author Dairen Gonschior, Amir Azim
+ */
 
 public class ChatView {
 
@@ -70,8 +73,10 @@ public class ChatView {
     public ChatView(){
         clientnew.setChatViewModel(this);
     }
-    
-    
+
+    /**
+     * Initialisiert die ChatView
+     */
     @FXML
     void initialize() {
         FigureChat.setImage(testImage);
@@ -88,45 +93,43 @@ public class ChatView {
 
 
     }
-
+    /**
+     * Handles the sending of private messages
+     */
     public void sendPrivateMsgFun() {
         String selectedUser = PrivateMessage.getValue().toString().split(",")[0];
         String msg = privateMsgInput.getText();
 
         clientnew.singleMessage(clientnew.getID(), msg, Integer.parseInt(selectedUser));
     }
+    /**
+     * Allows the choices for the ChatView
+     */
     public void comboAction(ActionEvent event) {
         String selectedUser = PrivateMessage.getValue().toString().split(",")[1];
 
     }
 
+    /**
+     * Initializes the ChatView
+     */
     public void startGame() {
-        System.out.println(PrivateMessage);
         viewModel.startingGame();
     }
 
 
-
+    /**
+     * Sends Groupmessage
+     */
     public void sendMessage() {
 
         viewModel.sendMessage();
 
     }
-    public void ChooseCard() throws Exception{
-        try {
-            Stage stage = new Stage();
-            StageSaver.getStageSaver().setChooseCardStage(stage);
-            stage.setTitle(SaveClients.client.getTitleUserName());
-            Parent signIn = FXMLLoader.load(getClass().getResource("fxml/ChooseCards.fxml"));
-            Scene signInScene = new Scene(signIn);
-            stage.setScene(signInScene);
-            stage.show();
-            stage.setOnCloseRequest(e -> Platform.exit());
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
 
+    /**
+     * Sets the client for the viewModel and thus provides the possibility to select the other clients for private messages
+     */
     public void selectMap() throws IOException {
         Stage stage1 = new Stage();
         StageSaver.getStageSaver().setStageSaver(stage1);
@@ -141,7 +144,10 @@ public class ChatView {
     }
 
 
-
+    /**
+     * Sets the client for the viewModel and thus
+     * provides the possibility to select the other clients for private messages
+     */
     public void setClient() {
 
         viewModel.setClient(clientnew);
@@ -149,9 +155,17 @@ public class ChatView {
         PrivateMessage.setItems(clientnew.usernamesGui);
 
     }
+    /**
+     Set the image to the image of the robot that was selected
+     @param figure is the id of the selected roborter
+     */
     public void setImageFromFigur(int figure){
         FigureChat.setImage(getImageForChatFigure(figure));
     }
+    /**
+     finds the right roborter image based on the robot id
+     @param figure is the id of the selected roborter
+     */
     public Image getImageForChatFigure(int figure) {
         switch (figure){
             case 0:
@@ -172,6 +186,9 @@ public class ChatView {
 
 
     }
+    /**
+     Opens the all-in-one view Window
+     */
     public void runAllInOne() throws IOException {
         Stage stage = new Stage();
         stage.setTitle(SaveClients.client.getTitleUserName());
@@ -182,7 +199,9 @@ public class ChatView {
         StageSaver.getStageSaver().setAllInOneStage(stage);
         stage.setOnCloseRequest(e -> close());
     }
-
+    /**
+     Closes the game window and the client when pressing the close button
+     */
     public void close() {
         try {
             SaveClients.client.getSOCKET().close();
@@ -191,7 +210,9 @@ public class ChatView {
             e.printStackTrace();
         }
     }
-
+    /**
+     Closes the game window and the client when pressing the close button
+     */
     public ListView<String> getChatBox(){
         return chatBox;
     }

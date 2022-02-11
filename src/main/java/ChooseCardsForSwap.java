@@ -10,6 +10,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+/**
+ * View Class of ChooseCardsForSwap Window
+ * @author Amir Azim
+ */
 
 public class ChooseCardsForSwap implements Initializable {
     @FXML
@@ -379,7 +383,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * Starts and shows the Timer in the Window
+     */
     public void startTimer() {
 
         Timer timer = new Timer();

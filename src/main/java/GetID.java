@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
+/**
+ * Model Class of GetID Window
+ * @author Amir Azim, Dairen Gonschior
+ */
 
 public class GetID extends Application {
     private Thread clientThread;
@@ -16,11 +18,16 @@ public class GetID extends Application {
     public Client client2;
     public Stage stageGetID;
 
+    /**
+     * Launches the Application
+     */
     public static void main(String[] args){
 
         Application.launch(args);
     }
-
+    /**
+     * Überschreibt die Start Funktion von Application, öffnet das GetID Fenster
+     */
     @Override
     public void start(Stage stage) throws Exception {
         try {
@@ -37,7 +44,9 @@ public class GetID extends Application {
         }
     }
 
-
+    /**
+     * Starts the firstView Window and closes the GetID Window
+     */
     public void GetIDPressed() throws IOException {
         StageSaver.getStageSaver().getCurrentStage().close();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/FirstView.fxml"));

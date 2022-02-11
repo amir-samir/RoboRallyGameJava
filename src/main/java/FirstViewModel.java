@@ -10,7 +10,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.Socket;
-
+/**
+ * Model Class of FirstView Window
+ * @author Dairen Gonschior, Amir Azim, Mateo
+ */
 public class FirstViewModel {
 
 Client client1;
@@ -22,30 +25,47 @@ Client client1;
     private StringProperty username = new SimpleStringProperty();
     private BooleanProperty signInButton = new SimpleBooleanProperty();
 
+
+    /**
+     * Getter username
+     */
     public StringProperty getUsernameProperty() {
         return username;
     }
-
+    /**
+     * signInButton Getter
+     */
     public BooleanProperty getSignInButton(){
         return signInButton;
     }
 
+    /**
+     * Getter final Username
+     */
     public final String getUsername(){
         return username.get();
     }
 
+    /**
+     * Setter username, wird nicht verwendet
+     */
     public final void setUsername(String readUsername){
         username.set(readUsername);
     }
 
-
+    /**
+     * Wird nicht verwendet
+     */
     public void chooseUsername() throws IOException {
         //game.Client client = new game.Client(getUsername());
         //client1 = client;
     }
 
 
-
+    /**
+     * Öffnet das ChatView Fenster und schließt die FirstView
+     * @param stage ist die stage der Chatview
+     */
     public void takeUsername(Stage stage) throws IOException {
 
         //game.Client client = new game.Client(getUsername());

@@ -2,15 +2,18 @@ package Messages;
 import com.google.gson.Gson;
 
 import java.util.Map;
-
+/**
+ * Die Adopter Klasse wird benötigt, um Java Klassen in JSON Strings zu konvertieren und JSON Strings zu Message Klassen zu Konvertieren.
+ * Uns ist bewusst das in Adopter ien Schreibfehler ist, dieser hat aber einen moralischen Wert für unser Team und wurde daher nicht ausgebessert.
+ * @author Dairen Gonschior
+ */
 public class Adopter {
 
-    public static Gson gson;
 
     /**
-     * java Object to json String
-     * @param message
-     * @return Json String
+     * Konvertiert eine Message Class zu einem JSON String
+     * @param message Zu konvertierende Message Class
+     * @return JSON der aus der Message Class konvertiert wurde
      */
     public static String javabeanToJson(Message message) {
         String jsonBody = getJsonBody(message);
@@ -24,7 +27,11 @@ public class Adopter {
 
         return final_json;
     }
-
+    /**
+     * Diese Funktion schaut, ob in einem String Buchstaben vorkommen.
+     * @param value String der überprüft werden soll.
+     * @return Gibt True or False zurück, je nachdem ob sich ein Buchstabe im String befindet.
+     */
     public static boolean checkForLetter(String value) {
         boolean hasLetters = false;
         for (char ch : value.toCharArray()) {
@@ -35,7 +42,11 @@ public class Adopter {
         }
         return hasLetters;
     }
-
+    /**
+     * Diese Funktion zieht den MessageBody aus einer Message und wandelt diese in einen JSON String um.
+     * @param message ist die zu konvertierende Message.
+     * @return Wenn es einen MessageBody gibt wird dieser als JSON zurückgegeben.
+     */
     public static String getJsonBody(Message message) {
         String json = "{ ";
         Gson gson = new Gson();
@@ -77,76 +88,11 @@ public class Adopter {
         return json.trim();
     }
 
-    public static String insertString(
-            String originalString,
-            String stringToBeInserted,
-            int index)
-    {
-
-        // Create a new string
-        String newString = originalString.substring(0, index + 1)
-                + stringToBeInserted
-                + originalString.substring(index + 1);
-
-        // return the modified String
-        return newString;
-    }
-
-    private static int countOccurences(
-            String json, char searchedChar) {
-        int count = 0;
-        for (int i = 0; i < json.length(); i++) {
-            Character currentChar = json.charAt(i);
-            if (currentChar.equals(searchedChar) ) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-
-    private static String replaceFirstOccurences(
-            String json, char originalChar, String replacement) {
-        StringBuilder sb = new StringBuilder(json);
-        int index = json.indexOf(originalChar);
-        for (int i = 0; i < json.length(); i++) {
-            Character currentChar = json.charAt(i);
-            if (currentChar.equals(originalChar) ) {
-                json = sb.deleteCharAt(index).toString();
-                json = insertString(json, replacement, index-1);
-                break;
-            }
-        }
-        return json;
-    }
-
-    public static String jsonWithBrackets(String json) {
-        StringBuilder sb = new StringBuilder(json);
-        int count = countOccurences(json, '[');
-
-        for (int i = 0; i < count; i++) {
-            if (json.contains("[")) {
-                int indexAuf = json.indexOf("[");
-                int indexZu = json.indexOf("]");
-                sb = new StringBuilder(json);
-                json = sb.deleteCharAt(indexAuf).toString();
-                json = insertString(json, "[", indexAuf);
-                json = replaceFirstOccurences(json, '[', "%");
-                sb = new StringBuilder(json);
-                json = sb.deleteCharAt(indexZu).toString();
-                json = insertString(json, "]", indexZu -2);
-                json = replaceFirstOccurences(json, ']', "§");
-            }
-        }
-        json = json.replace("%", "[");
-        json = json.replace("§", "]");
-        return json;
-    }
 
     /**
-     *
-     * @param json
-     * @return message
+     * Diese Funktion wandelt einen JSON String in eine Message Klasse um.
+     * @param json JSON String der konvertiert werden soll.
+     * @return Gibt die aus dem JSON String konvertierte Message zurück.
      */
     public static Message getMessage(String json) {
         Gson gson = new Gson();
@@ -174,14 +120,5 @@ public class Adopter {
 
     }
 
-
-    /**
-     *
-     * @param message
-     * @return M
-     */
-    public static Message adopterMessage(Message message) {
-        return new Gson().fromJson(new Gson().toJson((message.getMessageBody().toString())), Message.class);
-    }
 
 }

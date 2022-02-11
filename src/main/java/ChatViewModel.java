@@ -3,39 +3,32 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+/**
+ * Model Class of chatview Window
+ * @author Amir Azim
+ */
 
 public class ChatViewModel {
-    // Properties corresponding to game.ChatView
     private StringProperty message = new SimpleStringProperty();
     private BooleanProperty sendButton = new SimpleBooleanProperty();
     private BooleanProperty startGame = new SimpleBooleanProperty();
-    private BooleanProperty exitGame = new SimpleBooleanProperty();
-    private BooleanProperty joinGame = new SimpleBooleanProperty();
-    private BooleanProperty createRoomGame = new SimpleBooleanProperty();
     private StringProperty privteMessage = new SimpleStringProperty();
 
-    private Thread clientThread;
     private Client client;
-    private ClientHandler clientHandler;
+
 
 
     /**
-     * Sets and runs the current client, called from the View-Class
-     * param client The successfully constructed game.Client from Welcome-View
-     *  clientHandler
+     * Sets the current client
+     * @param client client which should be setted
      */
     public void setClient(Client client) {
         this.client = client;
-        //this.clientThread = new Thread(client);
-        //clientThread.start();
     }
 
-    public void chooseBotClient() {
-
-    }
 
     /**
-     * Get the current client. Accessed by the game.ChatView-Class to append incoming messages
+     * Getter for the current client.
      * @return The current client-object
      */
     public Client getClient() {
@@ -43,77 +36,60 @@ public class ChatViewModel {
         return client;
     }
 
-    // Getters and Setters for Properties
 
     /**
-     * Access the message property for bidirectional binding with the View-Class
-     * @return The message String Property bound to the Textfield
+     * Getter für die message
+     * @return Gibt die message zurück
      */
     public StringProperty messageProperty() {
         return message;
     }
+    /**
+     * Getter für die privateMessage
+     * @return Gibt die privateMessage zurück
+     */
     public StringProperty privateMessageProperty() {
         return privteMessage;
     }
 
     /**
-     * Retrieves the actual String-message from the message property
-     * Performs a quick check if the message entered is null.
-     * @return the actual message submitted by the user
+     * Getter für die final Message
+     * @return Gibt die final message zurück
      */
     public final String getMessage() {
         return message.get() != null ? message.get() : "";
     }
 
     /**
-     * Sets the content of the user's text field.
-     * Used in sendMessage()-method to set the text field back to empty after the user hits submit-button
-     * @param newMessage The new content of the message-text field
+     * Setter für die final Message
+     * @param newMessage ISt der Inhalt der message
      */
     public final void setMessage(String newMessage) {
         message.set(newMessage);
     }
     /**
-     * Retrieves the current property of the startGame
-     * @return Boolean Property of the startGame
+     * Getter für die startGame variable
+     * @return Gibt startGame zurück
      */
     public BooleanProperty startGameProperty() {
         return startGame;
     }
     /**
-     * Retrieves the current property of the exitGame
-     * @return Boolean Property of the exitGame
-     */
-    public BooleanProperty joinGameProperty() {
-        return joinGame;
-    }
-    /**
-     * Retrieves the current property of the exitGame
-     * @return Boolean Property of the exitGame
-     */
-    public BooleanProperty exitGameProperty() {
-        return exitGame;
-    }
-    /**
-     * Retrieves the current property of the sendButton
-     * @return Boolean Property of the sendButton
+     * Getter für sendButton
+     * @return sendButton wird zurückgegeben
      */
     public BooleanProperty sendButtonProperty() {
         return sendButton;
     }
-
-
     /**
-     * set Ready for the game.Client
+     * Setzt den Client auf Ready bzw. Unready
      */
     public final void startingGame() {
         client.setReady();
     }
 
     /**
-     * Fetch the current message from game.ChatView, pass it on to the server and
-     * empty the text field for the user.
-     * Close the screen and shutdown client-side process if user enters "!BYE".
+     * Holt sich die aktuelle Nachricht und leitet diese an den Server weiter.
      */
     public final void sendMessage() {
         String currentMessage = getMessage();

@@ -7,6 +7,10 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+/**
+ * Controller Class of UpgradeCards Window
+ * @author Dairen Gonschior, Amir Azim
+ */
 
 public class UpgradeCardsController implements Initializable {
 
@@ -34,6 +38,10 @@ public class UpgradeCardsController implements Initializable {
 
     String[] upgradeCardsName = new String[6];
 
+
+    /**
+     * Override of the initialize function, to display the right amount of cards and energy cubes
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (int i = 0; i < SaveClients.client.getUpgradeShop().size(); i++){
@@ -43,14 +51,19 @@ public class UpgradeCardsController implements Initializable {
         setCards(SaveClients.client.getUpgradeShop());
         CubesText.setText("Energy cubes: " + SaveClients.client.getCubesZahl());
     }
-
+    /**
+     * Sets the Images of the Cards
+     */
     public void setCards(ArrayList<String> upgradecards){
         for (int i = 0; i < upgradecards.size(); i++){
             getCardView(i).setDisable(false);
             getCardView(i).setImage(getImageForCard(upgradecards.get(i)));
         }
     }
-
+    /**
+     * Returns the right imageviwe for the given card ID
+     * @param k The Card ID
+     */
     public ImageView getCardView(int k){
         switch (k){
             case 0 :
@@ -69,7 +82,10 @@ public class UpgradeCardsController implements Initializable {
                 return Card1;
         }
     }
-
+    /**
+     * Gets the right image for the given Card name
+     * @param cardImage Cardname as String
+     */
     public Image getImageForCard(String cardImage){
         switch (cardImage){
             case "AdminPrivilege" :
@@ -84,35 +100,53 @@ public class UpgradeCardsController implements Initializable {
                 return SpamBlocker;
         }
     }
-
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void Card1Pressed(){
         SaveClients.client.buyUpgrade(true, upgradeCardsName[0]);
     }
 
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void Card2Pressed(){
         SaveClients.client.buyUpgrade(true, upgradeCardsName[1]);
     }
-
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void Card3Pressed(){
         SaveClients.client.buyUpgrade(true,  upgradeCardsName[2]);
     }
-
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void Card4Pressed(){
         SaveClients.client.buyUpgrade(true, upgradeCardsName[3]);
     }
-
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void Card5Pressed(){
         SaveClients.client.buyUpgrade(true, upgradeCardsName[4]);
     }
-
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void Card6Pressed(){
         SaveClients.client.buyUpgrade(true, upgradeCardsName[5]);
     }
-
+    /**
+     * Saves Upgradecard which was bought in the Client
+     */
     public void NoCardChoossen(){
         SaveClients.client.buyUpgrade(false, null);
     }
 
+    /**
+     * Disables all CardSlots
+     */
     public void setDisabled(){
         Card1.setDisable(true);
         Card2.setDisable(true);

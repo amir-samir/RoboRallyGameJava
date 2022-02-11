@@ -5,6 +5,10 @@ import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+/**
+ * Controller Class of the GameFinished Window
+ * @author Dairen Gonschior, Amir Azim
+ */
 
 public class GameFinishedController implements Initializable {
     @FXML
@@ -18,6 +22,10 @@ public class GameFinishedController implements Initializable {
     Image hammerGewonnen = new Image("assets/gewonnenHammer.gif");
     Image loser = new Image("assets/loser.gif");
 
+
+    /**
+     * Displays the Winner Gif with the Winner Bot.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (SaveClients.client.getIstGewinner()) {
