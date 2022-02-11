@@ -6,7 +6,7 @@ public class StartPoint extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
+     * @param isOnBoard on which board is this element
      */
     public StartPoint(String isOnBoard){
         this.setType("StartPoint");

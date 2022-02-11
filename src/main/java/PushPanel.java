@@ -9,9 +9,9 @@ public class PushPanel extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param orientations
-     * @param registers
+     * @param isOnBoard on which board is this element
+     * @param orientations which orientation does this element have
+     * @param registers which register is on the PushPanel
      */
     public PushPanel(String isOnBoard, String[] orientations, int[] registers) {
         this.setType("PushPanel");
@@ -23,8 +23,8 @@ public class PushPanel extends BoardElement {
     /**
      * Robot movement when the effect of PushPanel is triggered
      * depends on the Register nummer on the PushPanel
-     * @param robot
-     * @param server
+     * @param robot robot who is activated the effect of PushPanel
+     * @param server connected to server
      */
     @Override
     public void effect(Robot robot, Server server) {
@@ -33,13 +33,17 @@ public class PushPanel extends BoardElement {
 
     /**
      * getter
-     * @return
+     * @return number of register
      */
     @Override
     public int[] getRegisters() {
         return registers;
     }
 
+    /**
+     * getter
+     * @return robot will be pushed in which orientation
+     */
     @Override
     public String[] getOrientations() {
         return orientations;

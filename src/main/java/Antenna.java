@@ -8,8 +8,8 @@ public class Antenna extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param orientations
+     * @param isOnBoard on which board is this element
+     * @param orientations which orientation does this element have
      */
     public Antenna(String isOnBoard, String[] orientations){
         this.setType("Antenna");

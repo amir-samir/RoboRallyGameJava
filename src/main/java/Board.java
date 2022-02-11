@@ -37,9 +37,9 @@ public abstract class Board {
     }
 
     /**
-     * Gibt die X Koordinate von einem BoardElement zurück
-     * @param element
-     * @return X
+     * suche die X Koordinate von diesem BoardElement
+     * @param element betroffene BoardElement
+     * @return X koordinate von diesem betroffenen BoardElement
      */
     public int searchX(String element) {
         for (int i = 0; i < map.length; i++) {
@@ -55,9 +55,9 @@ public abstract class Board {
     }
 
     /**
-     * Gibt die Y Koordinate von einem BoardElement zurück
-     * @param element
-     * @return Y
+     * suche die Y Koordinate von diesem BoardElement
+     * @param element betroffene BoardElement
+     * @return Y koordinate von diesem betroffenen BoardElement
      */
     public int searchY(String element) {
         for (int i = 0; i < map.length; i++) {

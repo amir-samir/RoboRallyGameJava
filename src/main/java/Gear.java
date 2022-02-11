@@ -9,8 +9,8 @@ public class Gear extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param orientations
+     * @param isOnBoard on which board is this element
+     * @param orientations which oreintation does this element have
      */
     public Gear(String isOnBoard, String[] orientations) {
         this.setType("Gear");
@@ -26,8 +26,9 @@ public class Gear extends BoardElement {
     /**
      * robot movement when the effect of Gear is activated
      * effect of Gear: turn clockwise or counterclockwise
-     * @param robot
-     * @param server
+     * because the robot may have different orientations, we use switch case in this situation
+     * @param robot robot who is on a Gear
+     * @param server connected to server
      */
     @Override
     public void effect(Robot robot, Server server) {

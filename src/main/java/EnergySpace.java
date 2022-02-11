@@ -9,8 +9,8 @@ public class EnergySpace extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param count
+     * @param isOnBoard on which board is this element
+     * @param count how many EnergyCube in this EnergySpace
      */
     public EnergySpace(String isOnBoard, int count){
         this.setType("EnergySpace");
@@ -21,8 +21,8 @@ public class EnergySpace extends BoardElement {
     /**
      * robot get an EnergyCube when he activated EnergySpace and there is an EnergyCube in the EnergySpace
      * every robot will get an EnergyCube when he arrived in Register 5
-     * @param robot
-     * @param server
+     * @param robot affected robot in this situation
+     * @param server connected to server
      */
     @Override
     public void effect(Robot robot, Server server) {

@@ -5,7 +5,7 @@
 public class Pit extends BoardElement {
     /**
      * Constructor
-     * @param isOnBoard
+     * @param isOnBoard on which board is this element
      */
     public Pit(String isOnBoard){
         this.setType("Pit");

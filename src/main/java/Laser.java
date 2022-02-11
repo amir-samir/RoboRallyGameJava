@@ -24,7 +24,7 @@ public class Laser extends BoardElement {
      * The action of the robot when the laser is triggered
      * Laser effect: get 2 spamCard
      * @param robot robot who is hit by a laser
-     * @param server connect to server
+     * @param server connected to server
      */
     @Override
     public void effect(Robot robot, Server server){

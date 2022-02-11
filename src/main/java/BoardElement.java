@@ -8,9 +8,9 @@ public abstract class BoardElement {
     private String isOnBoard;
 
     /**
-     * robot movement after activating Boardelements effect
-     * @param robot
-     * @param server
+     * robot movement after activating BoardElements effect
+     * @param robot affected robot in this situation
+     * @param server connected to server
      */
     public abstract void effect(Robot robot, Server server);
 

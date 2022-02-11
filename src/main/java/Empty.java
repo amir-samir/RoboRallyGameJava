@@ -5,7 +5,7 @@
 public class Empty extends BoardElement {
     /**
      * Constructor
-     * @param isOnBoard
+     * @param isOnBoard on which board is this element
      */
     public Empty(String isOnBoard) {
         this.setType("Empty");

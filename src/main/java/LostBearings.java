@@ -23,6 +23,7 @@ public class LostBearings extends Board{
         this.setWidth(13);
         json = "{\"messageType\":\"GameStarted\",\"messageBody\":{\"gameMap\":[[[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"},{\"orientations\":[\"right\"],\"isOnBoard\":\"LostBearings\",\"type\":\"RestartPoint\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"StartPoint\"}],[{\"orientations\":[\"right\"],\"isOnBoard\":\"Start A\",\"type\":\"Antenna\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"StartPoint\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"StartPoint\"}],[{\"orientations\":[\"top\"],\"isOnBoard\":\"Start A\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"StartPoint\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"StartPoint\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"orientations\":[\"bottom\"],\"isOnBoard\":\"Start A\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"StartPoint\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}]],[[{\"speed\":1,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"Start A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"orientations\":[\"right\"],\"isOnBoard\":\"Start A\",\"type\":\"Wall\"}],[{\"orientations\":[\"right\"],\"isOnBoard\":\"Start A\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"Start A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"Start A\",\"type\":\"ConveyorBelt\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"speed\":1,\"orientations\":[\"bottom\",\"top\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"speed\":1,\"orientations\":[\"left\",\"top\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"},{\"order\":1,\"isOnBoard\":\"LostBearings\",\"type\":\"CheckPoint\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"bottom\",\"left\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"speed\":1,\"orientations\":[\"bottom\",\"top\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"count\":1,\"isOnBoard\":\"1A\",\"type\":\"EnergySpace\"}],[{\"speed\":2,\"orientations\":[\"bottom\",\"top\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"orientations\":[\"counterclockwise\"],\"isOnBoard\":\"1A\",\"type\":\"Gear\"}],[{\"orientations\":[\"clockwise\"],\"isOnBoard\":\"1A\",\"type\":\"Gear\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"count\":1,\"isOnBoard\":\"1A\",\"type\":\"EnergySpace\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Pit\"}],[{\"orientations\":[\"left\"],\"isOnBoard\":\"1A\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"orientations\":[\"left\"],\"isOnBoard\":\"1A\",\"type\":\"Wall\"},{\"count\":1,\"orientations\":[\"right\"],\"isOnBoard\":\"1A\",\"type\":\"Laser\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Pit\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"count\":1,\"isOnBoard\":\"1A\",\"type\":\"EnergySpace\"}],[{\"orientations\":[\"clockwise\"],\"isOnBoard\":\"1A\",\"type\":\"Gear\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"},{\"order\":2,\"isOnBoard\":\"LostBearings\",\"type\":\"CheckPoint\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"orientations\":[\"counterclockwise\"],\"isOnBoard\":\"1A\",\"type\":\"Gear\"}],[{\"count\":1,\"isOnBoard\":\"1A\",\"type\":\"EnergySpace\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"},{\"order\":3,\"isOnBoard\":\"LostBearings\",\"type\":\"CheckPoint\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Pit\"}],[{\"orientations\":[\"right\"],\"isOnBoard\":\"1A\",\"type\":\"Wall\"},{\"count\":1,\"orientations\":[\"left\"],\"isOnBoard\":\"1A\",\"type\":\"Laser\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"orientations\":[\"right\"],\"isOnBoard\":\"1A\",\"type\":\"Wall\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Pit\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"count\":1,\"isOnBoard\":\"1A\",\"type\":\"EnergySpace\"}],[{\"speed\":2,\"orientations\":[\"bottom\",\"top\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"orientations\":[\"clockwise\"],\"isOnBoard\":\"1A\",\"type\":\"Gear\"}],[{\"orientations\":[\"counterclockwise\"],\"isOnBoard\":\"1A\",\"type\":\"Gear\"}],[{\"speed\":2,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"count\":1,\"isOnBoard\":\"1A\",\"type\":\"EnergySpace\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]],[[{\"speed\":1,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"speed\":1,\"orientations\":[\"top\",\"right\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"},{\"order\":0,\"isOnBoard\":\"LostBearings\",\"type\":\"CheckPoint\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"right\",\"bottom\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"speed\":1,\"orientations\":[\"top\",\"bottom\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}]],[[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"left\",\"right\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}],[{\"speed\":1,\"orientations\":[\"right\",\"left\"],\"isOnBoard\":\"1A\",\"type\":\"ConveyorBelt\"}],[{\"isOnBoard\":\"1A\",\"type\":\"Empty\"}]]]}}";
 
+        //row 0
         map[0][0].add(new RestartPoint("A", new String[]{"right"}));
         map[0][1].add(new Empty("A"));
         map[0][2].add(new ConveyorBelt("A", new String[]{"right", "left"}, 1));
@@ -37,6 +38,7 @@ public class LostBearings extends Board{
         map[0][11].add(new ConveyorBelt("1A", new String[]{"top", "bottom"},1));
         map[0][12].add(new Empty("1A"));
 
+        //row 1
         map[1][0].add(new Empty("A"));
         map[1][1].add(new StartPoint("A"));
         map[1][2].add(new Empty("A"));
@@ -51,6 +53,7 @@ public class LostBearings extends Board{
         map[1][11].add(new ConveyorBelt("1A", new String[]{"top", "right"},1));
         map[1][12].add(new ConveyorBelt("1A", new String[]{"left", "right"},1));
 
+        //row 2
         map[2][0].add(new Empty("A"));
         map[2][1].add(new Wall("A", new String[]{"top"}));
         map[2][2].add(new Empty("A"));
@@ -65,6 +68,7 @@ public class LostBearings extends Board{
         map[2][11].add(new Empty("1A"));
         map[2][12].add(new Empty("1A"));
 
+        //row 3
         map[3][0].add(new StartPoint("A"));
         map[3][1].add(new Empty("A"));
         map[3][2].add(new Empty("A"));
@@ -80,6 +84,7 @@ public class LostBearings extends Board{
         map[3][11].add(new Empty("1A"));
         map[3][12].add(new Empty("1A"));
 
+        //row 4
         map[4][0].add(new Antenna("A", new String[]{"right"}));
         map[4][1].add(new StartPoint("A"));
         map[4][2].add(new Wall("A", new String[]{"right"}));
@@ -94,6 +99,7 @@ public class LostBearings extends Board{
         map[4][11].add(new CheckPoint("1A", 0));
         map[4][12].add(new Empty("1A"));
 
+        //row 5
         map[5][0].add(new Empty("A"));
         map[5][1].add(new StartPoint("A"));
         map[5][2].add(new Wall("A", new String[]{"right"}));
@@ -108,6 +114,7 @@ public class LostBearings extends Board{
         map[5][11].add(new Empty("1A"));
         map[5][12].add(new Empty("1A"));
 
+        //row 6
         map[6][0].add(new StartPoint("A"));
         map[6][1].add(new Empty("A"));
         map[6][2].add(new Empty("A"));
@@ -123,6 +130,7 @@ public class LostBearings extends Board{
         map[6][11].add(new Empty("1A"));
         map[6][12].add(new Empty("1A"));
 
+        //row 7
         map[7][0].add(new Empty("A"));
         map[7][1].add(new Wall("A", new String[]{"bottom"}));
         map[7][2].add(new Empty("A"));
@@ -137,6 +145,7 @@ public class LostBearings extends Board{
         map[7][11].add(new Empty("1A"));
         map[7][12].add(new Empty("1A"));
 
+        //row 8
         map[8][0].add(new Empty("A"));
         map[8][1].add(new StartPoint("A"));
         map[8][2].add(new Empty("A"));
@@ -151,6 +160,7 @@ public class LostBearings extends Board{
         map[8][11].add(new ConveyorBelt("1A", new String[]{"right", "bottom"},1));
         map[8][12].add(new ConveyorBelt("1A", new String[]{"right", "left"},1));
 
+        //row 9
         map[9][0].add(new Empty("A"));
         map[9][1].add(new Empty("A"));
         map[9][2].add(new ConveyorBelt("A", new String[]{"right", "left"}, 1));
@@ -165,6 +175,7 @@ public class LostBearings extends Board{
         map[9][11].add(new ConveyorBelt("1A", new String[]{"top", "bottom"},1));
         map[9][12].add(new Empty("1A"));
 
+        //build a map
         this.setMap(map);
     }
 }

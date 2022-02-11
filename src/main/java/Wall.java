@@ -8,8 +8,8 @@ public class Wall extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param orientations
+     * @param isOnBoard on which board is this element
+     * @param orientations which orientation does this element have
      */
     public Wall(String isOnBoard, String[] orientations) {
         this.setType("Wall");
@@ -24,7 +24,7 @@ public class Wall extends BoardElement {
 
     /**
      * getter
-     * @return
+     * @return orientation of this wall
      */
     @Override
     public String[] getOrientations() {

@@ -9,8 +9,8 @@ public class CheckPoint extends BoardElement {
 
     /**
      * Constructor
-     * @param isOnBoard
-     * @param count
+     * @param isOnBoard on which board is this Element
+     * @param count which number does this CheckPoint have
      */
     public CheckPoint(String isOnBoard, int count) {
         this.setType("CheckPoint");
@@ -20,8 +20,8 @@ public class CheckPoint extends BoardElement {
 
     /**
      * Robot action when he gets arrive in a CheckPoint
-     * @param robot
-     * @param server
+     * @param robot robot who gets arrive in a CheckPoint
+     * @param server connected to server
      */
     @Override
     public void effect(Robot robot, Server server) {
@@ -36,6 +36,10 @@ public class CheckPoint extends BoardElement {
         }
     }
 
+    /**
+     * getter for count
+     * @return the count of this CheckPoint
+     */
     @Override
     public int getCount() {
         return count;
