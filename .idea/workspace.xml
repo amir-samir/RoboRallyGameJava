@@ -11,10 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="21db7267-cf47-4527-9a15-fb0a4f33be8b" name="Changes" comment="last BugFix for 2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllInOneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllInOneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChooseCardsForSwap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChooseCardsForSwap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameFinishedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameFinishedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SaveClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SaveClients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SelectMapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SelectMapView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,13 +242,6 @@
       <workItem from="1644431471457" duration="14843000" />
       <workItem from="1644491983792" duration="5264000" />
       <workItem from="1644532861667" duration="6105000" />
-    </task>
-    <task id="LOCAL-00044" summary="Bugfix:&#10;- Encoding GameStarted-Message">
-      <created>1642265125910</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1642265125910</updated>
     </task>
     <task id="LOCAL-00045" summary="Merge:&#10;- new GUI&#10;- new Bugfixes">
       <created>1642335511669</created>
@@ -588,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644550290849</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="last BugFix for 2022">
+      <created>1644552706871</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1644552706871</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
