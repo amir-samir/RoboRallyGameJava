@@ -5,70 +5,56 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Diese Klasse dient als Kontroller und Modell für die SelectMap View
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Mateo
+ *
+ * @Version: 2.1
+ */
 public class SelectMapView {
 
     public SelectMapView() {
         Client.setSelectMapView(this);
     }
 
+    /**
+     * Extra Crispy Map auswählen
+     */
     public void ChooseExtraCrispyMap() throws IOException {
         SaveClients.client.mapSelected("ExtraCrispy");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
 
+    /**
+     * Dizzy Highway Map auswählen
+     */
     public void ChooseDizzyHighwayMap() {
         SaveClients.client.mapSelected("DizzyHighway");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
 
-    public void ChooseDeathTrapMap() {
+/**
+     *
+     * Death Trap Map auswählen
+     */    public void ChooseDeathTrapMap() {
         SaveClients.client.mapSelected("DeathTrap");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
 
-    public void ChooseLostBearingMap() {
+/**
+     * Lost Bearings Map auswählen
+     */    public void ChooseLostBearingMap() {
         SaveClients.client.mapSelected("LostBearings");
         StageSaver.getStageSaver().getCurrentStage().close();
     }
 
-    public void ChooseTwisterMap() {
+/**
+     * Twister Map auswählen
+     */    public void ChooseTwisterMap() {
         SaveClients.client.mapSelected("Twister");
         StageSaver.getStageSaver().getCurrentStage().close();
-    }
-
-    public void CallRunMap() throws Exception {
-        RunMap();
-    }
-
-    public void selectMapNew() throws IOException {
-        Stage stage1 = new Stage();
-        StageSaver.getStageSaver().setStageSaver(stage1);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SelectMap.fxml"));
-        Scene scene = new Scene(loader.load());
-        stage1.setScene(scene);
-        stage1.show();
-
-        //Close if Bye
-        stage1.setOnCloseRequest(e -> {
-            //clientHandler.writer.equals("bye");
-            stage1.close();
-        });
-    }
-
-    public void RunMap() throws Exception {
-        Stage stage = new Stage();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/MaybeMap.fxml"));
-        Scene scene = new Scene(loader.load());
-        stage.setScene(scene);
-        stage.show();
-
-        //Close if Bye
-        stage.setOnCloseRequest(e -> {
-            Platform.exit();
-            //clientHandler.writer.equals("bye");
-            stage.close();
-            System.exit(0);
-        });
     }
 }

@@ -10,11 +10,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
-/**
- * View Class of ChooseCardsForSwap Window
- * @author Amir Azim
- */
 
+/**
+ * Diese Klasse dient als Kontroller und Modell für die ChooseCardForSwap View
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Mateo
+ *
+ * @Version: 2.1
+ */
 public class ChooseCardsForSwap implements Initializable {
     @FXML
     ImageView Card1;
@@ -68,11 +73,16 @@ public class ChooseCardsForSwap implements Initializable {
     Label timerLabel;
     int time = 30;
 
+    /**
+     * set ChooseCardsForSwap für den Client
+     */
     public ChooseCardsForSwap(){
         Client.setChooseCardsForSwap(this);
     }
 
-
+    /**
+     * initializiert die View von ChooseCardsForSwap
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Card1.setImage(getImageForCard(SaveClients.client.getHandcards().get(0).getName()));
@@ -89,6 +99,10 @@ public class ChooseCardsForSwap implements Initializable {
         Card12.setImage(getImageForCard(SaveClients.client.getHandcards().get(11).getName()));
     }
 
+    /**
+     * gibt die Bilder für die Karten zurück
+     * @param cardName Name von der Karte
+     */
     public Image getImageForCard(String cardName) {
         switch (cardName) {
             case "MoveI":
@@ -132,6 +146,9 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
+    /**
+     * erste Karte auswählen
+     */
    public void ChooseCard1(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(0).getName(), RegisterPlatzFor9);
@@ -153,6 +170,9 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
+    /**
+     * zweite Karte auswählen
+     */
     public void ChooseCard2(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(1).getName(), RegisterPlatzFor9);
@@ -174,6 +194,9 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
+    /**
+     * dritte Karte auswählen
+     */
     public void ChooseCard3(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(2).getName(), RegisterPlatzFor9);
@@ -195,6 +218,9 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
+    /**
+     * vierte Karte auswählen
+     */
     public void ChooseCard4(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(3).getName(), RegisterPlatzFor9);
@@ -215,7 +241,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * fünfte Karte auswählen
+     */
     public void ChooseCard5(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(4).getName(), RegisterPlatzFor9);
@@ -237,6 +265,9 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
+    /**
+     * sixte Karte auswählen
+     */
     public void ChooseCard6(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(5).getName(), RegisterPlatzFor9);
@@ -258,6 +289,9 @@ public class ChooseCardsForSwap implements Initializable {
         }
     }
 
+    /**
+     * siebte Karte auswählen
+     */
     public void ChooseCard7(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(6).getName(), RegisterPlatzFor9);
@@ -278,7 +312,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * achte Karte auswählen
+     */
     public void ChooseCard8(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(7).getName(), RegisterPlatzFor9);
@@ -299,7 +335,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * neunte Karte auswählen
+     */
     public void ChooseCard9(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(8).getName(), RegisterPlatzFor9);
@@ -320,7 +358,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * zehnte Karte auswählen
+     */
     public void ChooseCard10(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(9).getName(), RegisterPlatzFor9);
@@ -341,7 +381,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * elfte Karte auswählen
+     */
     public void ChooseCard11(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(10).getName(), RegisterPlatzFor9);
@@ -362,7 +404,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
-
+    /**
+     * zwölfte Karte auswählen
+     */
     public void ChooseCard12(){
         if (istSchonverschickt && RegisterPlatzFor9 < 5){
             SaveClients.client.sendCardToRegister(SaveClients.client.getHandcards().get(11).getName(), RegisterPlatzFor9);
@@ -383,8 +427,9 @@ public class ChooseCardsForSwap implements Initializable {
             }
         }
     }
+
     /**
-     * Starts and shows the Timer in the Window
+     * Timer starten
      */
     public void startTimer() {
 

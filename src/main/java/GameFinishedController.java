@@ -5,9 +5,15 @@ import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 /**
- * Controller Class of the GameFinished Window
- * @author Dairen Gonschior, Amir Azim
+ * Diese Klasse dient als Kontroller und Modell für die GameFinished View
+ *
+ * @author Amir Azim
+ * @author Dairen Gonschior
+ * @author Mateo
+ *
+ * @Version: 2.1
  */
 
 public class GameFinishedController implements Initializable {
@@ -22,9 +28,8 @@ public class GameFinishedController implements Initializable {
     Image hammerGewonnen = new Image("assets/gewonnenHammer.gif");
     Image loser = new Image("assets/loser.gif");
 
-
     /**
-     * Displays the Winner Gif with the Winner Bot.
+     * initialisiert die View von Game Finished
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
