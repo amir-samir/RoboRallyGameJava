@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -75,9 +76,10 @@ public class Client implements Runnable {
     public ObservableList<Integer> figurenForGui;
     private int cubesZahl = 5;
     private RalleyLogger ralleyLogger = new RalleyLogger();
-    private String UpgradeCardName;
+    private String[] UpgradeCardName = new String[2];
     private String titleUserName;
     private int robterGewonnen;
+    private boolean istGewinner = false;
 
 
     /**
@@ -93,6 +95,7 @@ public class Client implements Runnable {
         chatMessages = FXCollections.observableArrayList();
         figurenForGui = FXCollections.observableArrayList();
         upgradeShop = new ArrayList<>();
+        Arrays.fill(UpgradeCardName,"leer");
         isAi = false;
     }
 
@@ -430,6 +433,10 @@ public class Client implements Runnable {
         RebootDirection rebootDirection = new RebootDirection(direction);
         rebootDirection.getMessageBody().setKeys(new String[]{"direction"});
         bufferedWriter.println(Adopter.javabeanToJson(rebootDirection));
+        Platform.runLater(() -> {
+            getAllInOneView().setDirectionUnvisible();
+        });
+
     }
 
     /**
@@ -467,12 +474,16 @@ public class Client implements Runnable {
         String s;
         if (clientID == this.ID){
             robterGewonnen = player.get(this.ID).figur;
+            istGewinner = true;
             s = "Du hast das Spiel gewonnen! Glückwunsch!";
             //GUI: GEWONNEN
             Platform.runLater(() -> {
                 try {
                     getAllInOneView().runGewonnen();
                     StageSaver.getStageSaver().getAllInOneStage().close();
+                    if (StageSaver.getStageSaver().getUpgradeCardsStage() != null) {
+                        StageSaver.getStageSaver().getUpgradeCardsStage().close();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -480,6 +491,17 @@ public class Client implements Runnable {
         } else {
             s = player.get(clientID).name + " (" + clientID + ") hat das Spiel gewonnen. Nächstes mal klappts bestimmt...";
             //GUI: VERLOREN
+            Platform.runLater(() -> {
+                try {
+                    getAllInOneView().runGewonnen();
+                    StageSaver.getStageSaver().getAllInOneStage().close();
+                    if (StageSaver.getStageSaver().getUpgradeCardsStage() != null) {
+                        StageSaver.getStageSaver().getUpgradeCardsStage().close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
         }
         return s;
     }
@@ -529,6 +551,13 @@ public class Client implements Runnable {
         int count = (int)(double) m.getMessageBody().getContent()[0];
         ArrayList<String> list = (ArrayList<String>) m.getMessageBody().getContent()[1];
         //GUI: Neues Fenster: Karte wählen mit list
+        Platform.runLater(() -> {
+            try {
+                getAllInOneView().runDamageCardExtra();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         return "Der Stapel mit den Schadenskarten ist leer. Bitte wähle eine andere Sorte.";
     }
 
@@ -862,6 +891,9 @@ public class Client implements Runnable {
                             StageSaver.getStageSaver().getUpgradeCardsForSwap().close();
                         }
                     });
+                    Platform.runLater(() -> {
+                        getAllInOneView().hideTimer();
+                    });
                     for (Double doubl: list){
                         s += "(" + doubl + ") ";
                     }
@@ -1084,10 +1116,15 @@ public class Client implements Runnable {
     }
 
     public void setUpgradeCardName(String name){
-        this.UpgradeCardName = name;
+        if (UpgradeCardName[0].equals("leer")){
+            UpgradeCardName[0] = name;
+        }
+        else {
+            UpgradeCardName[1] = name;
+        }
     }
 
-    public String getUpgradeCardName(){
+    public String[] getUpgradeCardName(){
         return UpgradeCardName;
     }
 
@@ -1134,4 +1171,10 @@ public class Client implements Runnable {
     public int getID(){
         return ID;
     }
+
+    public boolean getIstGewinner(){
+        return istGewinner;
+    }
+
+
 }

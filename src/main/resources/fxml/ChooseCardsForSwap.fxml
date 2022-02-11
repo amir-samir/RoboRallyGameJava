@@ -5,49 +5,49 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="443.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseCardsForSwap">
+<AnchorPane prefHeight="533.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseCardsForSwap">
     <children>
-        <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="32.0" onMouseClicked="#ChooseCard1" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card1" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="122.0" onMouseClicked="#ChooseCard1" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card2" fitHeight="150.0" fitWidth="109.0" layoutX="126.0" layoutY="32.0" onMouseClicked="#ChooseCard2" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card2" fitHeight="150.0" fitWidth="109.0" layoutX="126.0" layoutY="117.0" onMouseClicked="#ChooseCard2" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card3" fitHeight="150.0" fitWidth="109.0" layoutX="234.0" layoutY="32.0" onMouseClicked="#ChooseCard3" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card3" fitHeight="150.0" fitWidth="109.0" layoutX="234.0" layoutY="117.0" onMouseClicked="#ChooseCard3" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card4" fitHeight="150.0" fitWidth="109.0" layoutX="343.0" layoutY="32.0" onMouseClicked="#ChooseCard4" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card4" fitHeight="150.0" fitWidth="109.0" layoutX="343.0" layoutY="117.0" onMouseClicked="#ChooseCard4" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card5" fitHeight="150.0" fitWidth="109.0" layoutX="452.0" layoutY="32.0" onMouseClicked="#ChooseCard5" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card5" fitHeight="150.0" fitWidth="109.0" layoutX="452.0" layoutY="117.0" onMouseClicked="#ChooseCard5" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card9" fitHeight="150.0" fitWidth="109.0" layoutX="234.0" layoutY="182.0" onMouseClicked="#ChooseCard9" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card9" fitHeight="150.0" fitWidth="109.0" layoutX="234.0" layoutY="272.0" onMouseClicked="#ChooseCard9" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card10" fitHeight="150.0" fitWidth="109.0" layoutX="343.0" layoutY="182.0" onMouseClicked="#ChooseCard10" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card10" fitHeight="150.0" fitWidth="109.0" layoutX="343.0" layoutY="272.0" onMouseClicked="#ChooseCard10" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card11" fitHeight="150.0" fitWidth="109.0" layoutX="452.0" layoutY="182.0" onMouseClicked="#ChooseCard11" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Card11" fitHeight="150.0" fitWidth="109.0" layoutX="452.0" layoutY="272.0" onMouseClicked="#ChooseCard11" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Card8" fitHeight="150.0" fitWidth="109.0" layoutX="126.0" layoutY="182.0" onMouseClicked="#ChooseCard8" pickOnBounds="true">
+        <ImageView fx:id="Card8" fitHeight="150.0" fitWidth="109.0" layoutX="126.0" layoutY="272.0" onMouseClicked="#ChooseCard8" pickOnBounds="true">
             <image>
                 <Image url="@../assets/Karte.png" />
             </image>
@@ -56,22 +56,22 @@
             <font>
                 <Font name="Arial Bold" size="64.0" />
             </font></Label>
-      <ImageView fx:id="Card7" fitHeight="150.0" fitWidth="109.0" layoutX="20.0" layoutY="182.0" onMouseClicked="#ChooseCard7" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Card7" fitHeight="150.0" fitWidth="109.0" layoutX="20.0" layoutY="272.0" onMouseClicked="#ChooseCard7" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Karte.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Card12" fitHeight="150.0" fitWidth="109.0" layoutX="561.0" layoutY="182.0" onMouseClicked="#ChooseCard12" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Card12" fitHeight="150.0" fitWidth="109.0" layoutX="561.0" layoutY="272.0" onMouseClicked="#ChooseCard12" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Karte.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Card6" fitHeight="150.0" fitWidth="109.0" layoutX="561.0" layoutY="32.0" onMouseClicked="#ChooseCard6" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Card6" fitHeight="150.0" fitWidth="109.0" layoutX="561.0" layoutY="117.0" onMouseClicked="#ChooseCard6" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Karte.png" />
          </image>
       </ImageView>
-      <Label layoutX="7.0" layoutY="331.0" prefHeight="61.0" prefWidth="656.0" text="Memory swap: Die ersten drei Karten, die du auswählst werden deinem Deck zugefügt, danach wird dein Register befüllt" textFill="#f50909" wrapText="true">
+      <Label layoutX="15.0" layoutY="31.0" prefHeight="61.0" prefWidth="656.0" text="Memory swap: Die ersten drei Karten, die du auswählst werden deinem Deck zugefügt, danach wird dein Register befüllt" textFill="#f50909" wrapText="true">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
