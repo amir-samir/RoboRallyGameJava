@@ -663,13 +663,12 @@ public class Client implements Runnable {
         int x = (int) (double) m.getMessageBody().getContent()[1];
         int y = (int) (double) m.getMessageBody().getContent()[2];
         Platform.runLater(() -> {
-            getAllInOneView().setDefaultMap();
             getAllInOneView().moveCheckpoints(checkpointID, x, y);
-            for (int i = 0; i < figuren.length; i++) {
+            /*for (int i = 0; i < figuren.length; i++) {
                 if (figuren[i] != null && figuren[i].getX() != -1) {
                     getAllInOneView().setFigureOnMapNew(i, figuren[i].getDirection(), figuren[i].getX(), figuren[i].getY());
                 }
-            }
+            }*/
 
         });
     }
@@ -815,7 +814,7 @@ public class Client implements Runnable {
                             try {
                                 StageSaver.getStageSaver().getUpgradeCardsStage().close();
                                 getAllInOneView().resetRegisterCard();
-                                getAllInOneView().fillChooseCard();
+                                getAllInOneView().runChooseCardsForSwap();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
