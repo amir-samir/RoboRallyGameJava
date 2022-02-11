@@ -210,6 +210,7 @@ public class AllInOneView implements Initializable {
     Image image96 = new Image("assets/2EinleitungUntennachrechts810.png");
     Image image97 = new Image("assets/2EinleitungLinksnachunten74.png");
     Image image98 = new Image("assets/Runtergreen.png");
+    Image image99 = new Image("assets/kommischerechtsunten.png");
 
 
 
@@ -763,6 +764,7 @@ public class AllInOneView implements Initializable {
                                     saveMap[x][y] = image44;
                                 } else {
                                     gridpane1.add(new ImageView(image29), y, x);
+                                    saveMap[x][y] = image29;
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "right") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) {
@@ -781,6 +783,7 @@ public class AllInOneView implements Initializable {
                                 } else {
                                     gridpane1.add(new ImageView(image16), y, x);
                                     saveMap[x][y] = image16;
+                                    //momo
                                 }
                             }
                             if (Objects.equals(mapGui[x][y].get(0).getOrientations()[0], "bottom") && Objects.equals(mapGui[x][y].get(0).getOrientations()[1], "left")) {
@@ -1195,6 +1198,7 @@ public class AllInOneView implements Initializable {
         Card3.setImage(Karte);
         Card4.setImage(Karte);
         Card5.setImage(Karte);
+        Arrays.fill(isFilled,false);
     }
 
     public void ChooseDirectionSetvisible(){
@@ -1355,6 +1359,7 @@ public class AllInOneView implements Initializable {
     }
 
     public void fillChooseCard(){
+        RegisterPlatz = -1;
         chooseCard1.setVisible(true);
         chooseCard2.setVisible(true);
         chooseCard3.setVisible(true);
