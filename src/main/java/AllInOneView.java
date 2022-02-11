@@ -1359,6 +1359,7 @@ public class AllInOneView implements Initializable {
     }
 
     public void fillChooseCard(){
+        RegisterPlatz = -1;
         chooseCard1.setVisible(true);
         chooseCard2.setVisible(true);
         chooseCard3.setVisible(true);
