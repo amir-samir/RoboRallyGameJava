@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
  * @author Dairen Gonschior
  * @author Mateo
  *
- * @Version: 2.1
+ * @version 2.1
  */
 
 public class GameFinishedController implements Initializable {

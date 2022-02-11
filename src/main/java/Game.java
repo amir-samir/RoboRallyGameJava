@@ -932,10 +932,10 @@ public class Game {
      */
     public void timerEnded(){
         try {
-            ArrayList<Integer> schlafmützen = checkWhoIsntDone();
-            Integer[] zuLangsameSpieler = new Integer[schlafmützen.size()];
+            ArrayList<Integer> schlafmuetzen = checkWhoIsntDone();
+            Integer[] zuLangsameSpieler = new Integer[schlafmuetzen.size()];
             for (int i = 0; i < zuLangsameSpieler.length; i++) {
-                zuLangsameSpieler[i] = schlafmützen.get(i);
+                zuLangsameSpieler[i] = schlafmuetzen.get(i);
             }
             TimerEnded timerEnded = new TimerEnded(zuLangsameSpieler);
             timerEnded.getMessageBody().setKeys(new String[]{"clientIDs"});
@@ -989,17 +989,17 @@ public class Game {
      * @return Liste der IDs von Spieler, die noch nicht fertig sind
      */
     public ArrayList<Integer> checkWhoIsntDone(){
-        ArrayList<Integer> schlafmützen = new ArrayList<Integer>();
+        ArrayList<Integer> schlafmuetzen = new ArrayList<Integer>();
         for (int i = 0; i < figuren.length; i++) {
             if (figuren[i] != null) {
                 if (figuren[i].getAbleToFillRegisters()) {
-                    schlafmützen.add(figuren[i].getGamerID());
+                    schlafmuetzen.add(figuren[i].getGamerID());
                     figuren[i].setAbleToFillRegisters(false);
                 } else {
                 }
             }
         }
-        return schlafmützen;
+        return schlafmuetzen;
     }
 
     /**

@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
  * @author Dairen Gonschior
  * @author Luca Weyhofen
  *
- * @Version: 2.1
+ * @version 2.1
  */
 public class Client implements Runnable {
 
@@ -341,9 +341,9 @@ public class Client implements Runnable {
                     if (typ == null){
                         map[y][x].add(new Empty("A"));
                     } else {
-                        String zuPrüfen = (String) typ.get("type");
+                        String zuPruefen = (String) typ.get("type");
                         String[] orientations;
-                        switch (zuPrüfen) {
+                        switch (zuPruefen) {
                             case "StartPoint":
                                 map[y][x].add(new StartPoint((String) typ.get("isOnBoard")));
                                 break;
@@ -686,7 +686,6 @@ public class Client implements Runnable {
     /**
      * Die checkpointMoved Nachricht wird verarbeitet.
      * @param m checkpointMoved Nachricht
-     * @return String, der im Chatfenster erscheint
      */
     public void handleCheckPointMoved(Message m){
         int checkpointID = (int) (double) m.getMessageBody().getContent()[0];

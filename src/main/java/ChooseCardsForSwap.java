@@ -18,7 +18,7 @@ import java.util.TimerTask;
  * @author Dairen Gonschior
  * @author Mateo
  *
- * @Version: 2.1
+ * @version 2.1
  */
 public class ChooseCardsForSwap implements Initializable {
     @FXML

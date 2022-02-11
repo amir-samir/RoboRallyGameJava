@@ -257,9 +257,9 @@ public class KI implements Runnable {
                     if (typ == null) {
                         map[y][x].add(new Empty("A"));
                     } else {
-                        String zuPrüfen = (String) typ.get("type");
+                        String zuPruefen = (String) typ.get("type");
                         String[] orientations;
-                        switch (zuPrüfen) {
+                        switch (zuPruefen) {
                             case "StartPoint":
                                 map[y][x].add(new StartPoint((String) typ.get("isOnBoard")));
                                 break;
